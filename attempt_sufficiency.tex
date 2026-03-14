@@ -1,0 +1,43 @@
+\documentclass{amsart}
+\begin{document}
+
+Let $\sigma$ be a reflection and let $U_{\sigma}:\xi\to \xi\circ\sigma.$ We have
+$$[U_{\sigma},M_f]\xi=(f\xi)\circ\sigma-f\cdot (\xi\circ\sigma)=(f\circ\sigma-f)\cdot (\xi\circ\sigma)=M_{U_{\sigma}f-f}U_{\sigma}\xi.$$
+In other words,
+$$[U_{\sigma},M_f]=M_{U_{\sigma}f-f}U_{\sigma}=-U_{\sigma}M_{U_{\sigma}f-f}.$$
+
+Thus,
+$$[T_e,M_f]=M_{\partial_ef}-\frac12\sum_{v\in R}k(v)\langle v,e\rangle M_{S_vf}U_{\sigma_v},$$
+where
+$$(S_vf)(x)=\frac{f(\sigma_vx)-f(x)}{\langle x,v\rangle}.$$
+
+Now,
+$$[R_v,M_f]=[T_v\Delta^{-\frac12},M_f]=[T_v,M_f]\Delta^{-\frac12}-R_v[\Delta^{\frac12},M_f]\Delta^{-\frac12}.$$
+It, therefore, suffices to establish
+$$[T_v,M_f]\Delta^{-\frac12}\in\mathcal{L}_{d,\infty},\quad [\Delta^{\frac12},M_f]\Delta^{-\frac12}\in\mathcal{L}_{d,\infty}.$$
+Using DOIs, it suffices to obtain 
+$$[T_v,M_f]\Delta^{-\frac12}\in\mathcal{L}_{d,\infty},\quad \Delta^{-\frac12}[\Delta,M_f]\Delta^{-\frac12}\in\mathcal{L}_{d,\infty}.$$
+Since
+$$[\Delta,M_f]=-\sum_{v\in R}T_v[T_v,M_f]+[T_v,M_f]T_v,$$
+it suffices to establish
+$$[T_v,M_f]\Delta^{-\frac12}\in\mathcal{L}_{d,\infty},\quad \Delta^{-\frac12}[T_v,M_f]\in\mathcal{L}_{d,\infty}$$
+for {\it all} $v\in R.$
+
+Next step is potentially sub-optimal. It suffices to establish
+$$M_{\partial_vf}\Delta^{-\frac12}\in\mathcal{L}_{d,\infty},\quad M_{S_vf}\Delta^{-\frac12}\in\mathcal{L}_{d,\infty}$$
+for {\it all} $v\in R.$ 
+
+Abstract Cwikel estimates should guarantee this provided that $\partial_vf\in L_d$ and $S_vf\in L_d$
+for {\it all} $v\in R.$
+
+If, for example, $v=e_1,$ then
+$$(S_vf)(x)=\frac{f(x_1,x_2,\cdots,x_d)-f(-x_1,x_2,\cdots,x_d)}{x_1}=$$
+$$=\frac1{x_1}\int_{-x_1}^{x_1}(\partial_1f)(u,x_2,\cdots,x_d)du=\frac12\int_{-1}^1(\partial_1f)(x_1v,x_2,\cdots,x_d)dv.$$
+In other words,
+$$S_vf=\frac12\int_{-1}^1D_{(v^{-1},1,\cdots,1)}(\partial_1f)dv.$$
+Hence,
+$$\|S_vf\|_d\leq \frac12\int_{-1}^1\|D_{(v^{-1},1,\cdots,1)}(\partial_1f)\|_d dv=\frac12\int_{-1}^1|v|^{-\frac1d}\|\partial_1f\|_ddv=c_d\|\partial_1v\|_d.$$
+Of course, $v=e_1$ was only chosen for my convenience. Exactly the same argument works for whatever $v.$ Hence, the norm of the commutator is estimated from the above by the usual Sobolev norm. 
+
+The question is whether this condition is necessary.
+\end{document}

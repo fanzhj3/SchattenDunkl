@@ -1,0 +1,93 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\begin{document}
+
+Let us consider the simplest example: $G=\mathbb{Z}_2.$ This group acts in $\mathbb{R}$ by reflections. So, its elements are $x\to x$ and $x\to -x.$ Weyl chambers of this group are $\mathbb{R}_+$ and $\mathbb{R}_-.$ Roots are $\{1,-1\}$ (or $\{\sqrt{2},-\sqrt{2}\}$?). They are equipped with numbers $k_1$ and $k_{-1}.$ Denote for brevity $k=k_1+k_{-1}.$ Measure is
+$$dw(x)=|x|^kdx.$$
+We have
+$$w(B(x,r))\sim r\cdot (|x|+r)^k.$$
+By definition, the $p$-th power of Dunkl Besov semi-norm is defined by the formula
+$$\|f\|_{Dunkl-Besov}^p=\int_{\mathbb{R}\times\mathbb{R}}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{w(B(x,\big||x|-|y|\big|))^2}|x|^k|y|^kdxdy.$$
+
+
+Define (the $p$-th power of) non-Dunkl Besov semi-norm by setting
+$$\int_{\mathbb{R}\times\mathbb{R}}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+
+\begin{thm} Dunkl Besov semi-norm and non-Dunkl Besov semi-norm are equivalent.
+\end{thm}
+
+The proof of the theorem is a combination of the following 4 lemmas.
+
+\begin{lem} We have
+$$\|f\|_{Dunkl-Besov}^p\sim \int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_-\times\mathbb{R}_-}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_+\times\mathbb{R}_+}\Big(\frac{|x-y|}{x+y}\Big)^p\frac{|f(x)-f(-y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+\end{lem}
+\begin{proof} We have 
+$$w(B(x,\big||x|-|y|\big|))\sim \big||x|-|y|\big|\cdot \max\{|x|,|y|\}^k.$$
+Thus,
+$$\|f\|_{Dunkl-Besov}^p\sim\int_{\mathbb{R}\times\mathbb{R}}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy=$$
+$$=\int_{\mathbb{R}_+\times\mathbb{R}_+}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_-\times\mathbb{R}_-}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+2\int_{\mathbb{R}_+\times\mathbb{R}_-}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+It is immediate that
+$$\int_{\mathbb{R}_+\times\mathbb{R}_+}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy=$$
+$$=\int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy,$$
+$$\int_{\mathbb{R}_-\times\mathbb{R}_-}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy=$$
+$$=\int_{\mathbb{R}_-\times\mathbb{R}_-}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy,$$
+$$\int_{\mathbb{R}_+\times\mathbb{R}_-}\Big(\frac{\big||x|-|y|\big|}{|x-y|}\Big)^p\frac{|f(x)-f(y)|^p}{\big||x|-|y|\big|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy=$$
+$$=\int_{\mathbb{R}_+\times\mathbb{R}_+}\Big(\frac{|x-y|}{x+y}\Big)^p\frac{|f(x)-f(-y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+This completes the proof.
+\end{proof}
+
+\begin{lem} We have
+$$\|f\|_{non-Dunkl-Besov}^p\sim \int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_-\times\mathbb{R}_-}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(-y)|^p}{(x+y)^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+\end{lem}
+\begin{proof} The argument is identical to the  one in the preceding lemma.
+\end{proof}
+
+\begin{lem} We have
+$$\|f\|_{Dunkl-Besov}^p\sim \int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_-\times\mathbb{R}_-}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_+}|f(y)-f(-y)|^p\frac{dy}{y}.$$
+\end{lem}
+\begin{proof} Define the measure $\nu$ on $\mathbb{R}_+\times\mathbb{R}_+$ by setting
+$$d\nu(x,y)=\frac{|x|^k|y|^k}{|x-y|^2\cdot\max\{|x|^{2k},|y|^{2k}\}}dxdy.$$
+Set
+$$F_1(x,y)=f(x)-f(y),\quad F_2(x,y)=f(-x)-f(-y),\quad F_3(x,y)=\frac{x-y}{x+y}(f(x)-f(-y)),\quad x,y>0,$$
+By Lemma 2, we have 
+$$\|f\|_{Dunkl-Besov}\sim \|F_1\|_{L_p(\nu)}+\|F_2\|_{L_p(\nu)}+\|F_3\|_{L_p(\nu)}.$$
+
+Set
+$$F_4(x,y)=\frac{x-y}{x+y}(f(x)-f(y)),\quad F_5(x,y)=\frac{x-y}{x+y}(f(y)-f(-y)),\quad x,y>0.$$
+Clearly, $F_3=F_4+F_5$ and $|F_4|\leq F_1.$ Thus,
+$$\|F_3\|_{L_p(\nu)}\leq\|F_4\|_{L_p(\nu)}+\|F_5\|_{L_p(\nu)}\leq\|F_1\|_{L_p(\nu)}+\|F_5\|_{L_p(\nu)}.$$
+Also, $F_5=F_3-F_4$ and $|F_4|\leq F_1.$ Thus
+$$\|F_5\|_{L_p(\nu)}\leq\|F_4\|_{L_p(\nu)}+\|F_3\|_{L_p(\nu)}\leq\|F_1\|_{L_p(\nu)}+\|F_3\|_{L_p(\nu)}.$$
+Consequently,
+$$\frac12(\|F_1\|_{L_p(\nu)}+\|F_5\|_{L_p(\nu)})\leq\|F_1\|_{L_p(\nu)}+\|F_3\|_{L_p(\nu)}\leq 2(\|F_1\|_{L_p(\nu)}+\|F_5\|_{L_p(\nu)}).$$
+Substituting this into the preceding paragraph, we obtain
+$$\|f\|_{Dunkl-Besov}\sim \|F_1\|_{L_p(\nu)}+\|F_2\|_{L_p(\nu)}+\|F_5\|_{L_p(\nu)}.$$
+
+It remains to note that
+$$\|F_5\|_{L_p(\nu)}^p=\int_{\mathbb{R}_+\times\mathbb{R}_+}\Big(\frac{|x-y|}{x+y}\Big)^p\frac{|f(y)-f(-y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy=$$
+$$=\int_{\mathbb{R}_+}|f(y)-f(-y)|^p\Big(\int_{\mathbb{R}_+}\frac{|x-y|^{p-2}}{(x+y)^p}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dx\Big)dy=$$
+$$\stackrel{x=uy}{=}\int_{\mathbb{R}_+}|f(y)-f(-y)|^p\Big(\int_{\mathbb{R}_+}\frac{|u-1|^{p-2}}{(u+1)^p}\frac{u^k}{\max\{u^{2k},1\}}du\Big)y^{-1}dy=$$
+$$=c_p\int_{\mathbb{R}_+}|f(y)-f(-y)|^py^{-1}dy.$$
+This completes the proof.
+\end{proof}
+
+\begin{lem} We have
+$$\|f\|_{non-Dunkl-Besov}^p\sim \int_{\mathbb{R}_+\times\mathbb{R}_+}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_-\times\mathbb{R}_-}\frac{|f(x)-f(y)|^p}{|x-y|^2}\frac{|x|^k|y|^k}{\max\{|x|^{2k},|y|^{2k}\}}dxdy+$$
+$$+\int_{\mathbb{R}_+}|f(y)-f(-y)|^p\frac{dy}{y}.$$
+\end{lem}
+\begin{proof} The argument is identical to the  one in the preceding lemma.
+\end{proof}
+
+
+\end{document}
