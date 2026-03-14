@@ -1,0 +1,96 @@
+\documentclass{amsart}
+\newtheorem{lem}{Lemma}
+\begin{document}
+
+Here, I copied Lemma 6.2 from our Bessel paper for convenience.
+
+\begin{lem}\label{L2Cwikel}
+There exists a constant $C_{n,\lambda}>0$ such that for every $f\in L_2(\mathbb{R}_+^{n+1})$ and for every $g\in L_2(\mathbb{R}_+,r^ndr)$, we have
+$$\|M_fg(\sqrt{\Delta_{\lambda}})\|_{\mathcal{L}_2(L_2(\mathbb{R}_+^{n+1},m_{\lambda}))}\leq C_{n,\lambda}\|f\|_{L_2(\mathbb{R}_+^{n+1})}\|g\|_{L_2(\mathbb{R}_+,r^ndr)}.$$
+\end{lem}
+\begin{proof} Suppose first $f\in C_c^{\infty}(\mathbb{R}^{n+1}_+)$ (this, in particular, means $f$ vanishes near the boundary) and $g\in C_c(\mathbb{R}_+)$ (this, in particular, means $g$ vanishes near $0$). By the functional calculus \cite{Yosida},
+$$|g|^2(\sqrt{\Delta_{\lambda}})=(\mathcal{F}\otimes U_{\lambda})^{-1}M_{|g|^2}(\mathcal{F}\otimes U_{\lambda}).$$
+Therefore, for every $h\in C_c(\mathbb{R}_+^{n+1}),$
+\begin{align*}
+&\big(|g|^2(\sqrt{\Delta_{\lambda}})(h)\big)(x)\\
+&=\frac{1}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}e^{i\langle x',z'\rangle}\phi_{\lambda}(x_{n+1}z_{n+1})\Big(|g|^2(|z|)\cdot\int_{\mathbb{R}_+^{n+1}}e^{-i\langle y',z'\rangle}\phi_\lambda(y_{n+1}z_{n+1})h(y)dm_\lambda(y)\Big)dm_\lambda(z).
+\end{align*}
+Since both $h\in C_c(\mathbb{R}_+^{n+1})$ and $g\in C_c(\mathbb{R}_+),$ it follows from the Fubini theorem that
+$$|g|^2(\sqrt{\Delta_{\lambda}})(h)\big)(x)=\frac{1}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}\Big(\int_{\mathbb{R}_+^{n+1}}e^{i\langle x'-y',z'\rangle}|g|^2(|z|)\phi_{\lambda}(x_{n+1}z_{n+1})\phi_\lambda(y_{n+1}z_{n+1})dm_\lambda(z)\Big)h(y)dm_\lambda(y)$$
+for every $h\in C_c(\mathbb{R}_+^{n+1}).$ Setting
+$$K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,y)= \frac{1}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}e^{i\langle z',x'-y'\rangle}\phi_\lambda(x_{n+1}z_{n+1})|g|^2(|z|)\phi_\lambda(z_{n+1}y_{n+1})dm_\lambda(z),\quad x,y\in\mathbb{R}^{n+1}_+,$$
+we write
+$$\big(|g|^2(\sqrt{\Delta_{\lambda}})(h)\big)(x)=\int_{\mathbb{R}_+^{n+1}}K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,y)h(y)dm_\lambda(y)$$
+for every $h\in C_c(\mathbb{R}_+^{n+1}).$ Consequently,
+$$\big(M_f|g|^2(\sqrt{\Delta_{\lambda}})M_{\bar{f}}(h)\big)(x)=\int_{\mathbb{R}_+^{n+1}}f(x)\bar{f}(y)K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,y)h(y)dm_\lambda(y)$$
+for every $h\in C_c(\mathbb{R}_+^{n+1}).$
+
+Consider the integral operator $A_{f,g}$ with integral kernel
+$$(x,y)\to f(x)\bar{f}(y)K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,y),\quad x,y\in\mathbb{R}^{n+1}_+.$$
+Since $f\in C_c(\mathbb{R}^{n+1}_+),$ it follows that the integral kernel of the operator $A_{f,g}$ is compactly supported in the open half-space $\mathbb{R}^{n+1}_+.$ It is immediate that the mapping
+$$(x,y)\to K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,y),\quad x,y\in\mathbb{R}^{n+1}_+,$$
+is smooth. Hence, the integral kernel of $A_{f,g}$ is smooth and compactly supported in the Cartesian product of open half-spaces $\mathbb{R}^{n+1}_+\times\mathbb{R}^{n+1}_+.$ By Lemma \ref{smoothing fact}, $A_{f,g}\in\mathcal{L}_1(L_2(\mathbb{R}^{n+1}_+,m_{\lambda})).$ In particular, $A_{f,g}$ is bounded on $L_2(\mathbb{R}^{n+1}_+,m_{\lambda}).$ In the preceding paragraph, we established that
+$$M_f|g|^2(\sqrt{\Delta_{\lambda}})M_{\bar{f}}(h)=A_{f,g}(h),\quad h\in C_c(\mathbb{R}_+^{n+1}).$$
+Since $C_c(\mathbb{R}_+^{n+1})$ is dense in $L_2(\mathbb{R}^{n+1}_+,m_{\lambda})$ and since both operators $M_f|g|^2(\sqrt{\Delta_{\lambda}})M_{\bar{f}}$ and $A_{f,g}$ are bounded, it follows that
+$$M_f|g|^2(\sqrt{\Delta_{\lambda}})M_{\bar{f}}=A_{f,g}.$$
+In particular, $A_{f,g}$ is positive. Hence,
+$$\|M_fg(\sqrt{\Delta_{\lambda}})\|_{\mathcal{L}_2(L_2(\mathbb{R}_+^{n+1},m_{\lambda}))}^2=\|A_{f,g}\|_{\mathcal{L}_1(L_2(\mathbb{R}_+^{n+1},m_{\lambda}))}={\rm Tr}_{B(L_2(\mathbb{R}^{n+1}_+,m_{\lambda}))}(A_{f,g}).$$
+By Lemma \ref{smoothing fact}, we can compute the trace of $A_{f,g}$ as follows
+\begin{align*}
+{\rm Tr}_{B(L_2(\mathbb{R}^{n+1}_+,m_{\lambda}))}(A_{f,g})&=\int_{\mathbb{R}_+^{n+1}}f(x)\bar{f}(x)K_{|g|^2(\sqrt{\Delta_{\lambda}})}(x,x)dm_{\lambda}(x)\\
+&=\frac{1}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}|f(x)|^2\Big(\int_{\mathbb{R}_+^{n+1}}\phi_{\lambda}^2(x_{n+1}z_{n+1})|g(|z|)|^2dm_{\lambda}(z)\Big)dm_{\lambda}(x)\\
+&=\frac{1}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}|f(x)|^2\Big(\int_{\mathbb{R}_+^{n+1}}(x_{n+1}z_{n+1})^{2\lambda}\phi_{\lambda}^2(x_{n+1}z_{n+1})|g(|z|)|^2dz\Big)dx.
+\end{align*}
+The function $\psi_{\lambda}:t\to t^{\lambda}\phi_{\lambda}(t)=t^{\frac12}J_{\lambda-\frac12}(t),$ $t>0,$ is bounded (see e.g. \cite[p.364]{MR167642}). Hence,
+\begin{align*}
+|{\rm Tr}_{B(L_2(\mathbb{R}^{n+1}_+,m_{\lambda}))}(A_{f,g})|&\leq\frac{\|\psi_{\lambda}\|_{\infty}^2}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}|f(x)|^2\Big(\int_{\mathbb{R}_+^{n+1}}|g(|z|)|^2dz\Big)dx\\
+&=\frac{\|\psi_{\lambda}\|_{\infty}^2}{(2\pi)^n}\int_{\mathbb{R}_+^{n+1}}|f(x)|^2dx\cdot\int_0^{\infty}|g(r)|^2r^ndr\cdot\frac12{\rm Vol}(\mathbb{S}^n).
+\end{align*}
+Consequently,
+$$\|M_fg(\sqrt{\Delta_{\lambda}})\|_{\mathcal{L}_2(L_2(\mathbb{R}_+^{n+1},m_{\lambda}))}\leq c_n\|\psi_{\lambda}\|_{\infty}\|f\|_{L_2(\mathbb{R}_+^{n+1})}\|g\|_{L_2(\mathbb{R}_+,r^ndr)}$$
+for every $f\in C_c^{\infty}(\mathbb{R}^{n+1}_+)$ and for every $g\in C_c(\mathbb{R}_+).$
+
+The assertion in the most general case follows by approximation.
+\end{proof}
+
+We similarly have a Dunkl transform
+$$(Df)(\lambda)=\int_{\mathbb{R}^N}E(-i\lambda,x)f(x)w(x)dx.$$
+$$(Ef)(x)=\int_{\mathbb{R}^N}E(i\lambda,x)f(\lambda)w(\lambda)d\lambda.$$
+It is known that $D$ and $E$ are unitary operators on $L_2(w(x)dx)$ and that $D\circ E=E\circ D$ (possibly modulo constant factors).
+
+We have
+$$g(\Delta^{\frac12})=E\circ M_{g(|t|)}\circ D.$$
+Thus,
+$$(g(\Delta^{\frac12})\xi)(x)=\int_{\mathbb{R}^N}E(i\lambda,x)g(|\lambda|)\Big(\int_{\mathbb{R}^N}E(-i\lambda,y)\xi(y)w(y)dy\Big)w(\lambda)d\lambda=$$
+$$=\int_{\mathbb{R}^N}\Big(\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,y)g(|\lambda|)w(\lambda)d\lambda\Big)\xi(y)w(y)dy.$$
+Its integral kernel is written as
+$$K_{g(\Delta^{\frac12})}(x,y)=\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,y)g(|\lambda|)w(\lambda)d\lambda.$$
+So, integral kernel of $M_fg(\Delta^{\frac12})$ is
+$$K_{M_fg(\Delta^{\frac12})}(x,y)=f(x)\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,y)g(|\lambda|)w(\lambda)d\lambda.$$
+Thus, trace of $M_fg(\Delta^{\frac12})$ is
+$$\int_{\mathbb{R}^N}f(x)\Big(\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,x)g(|\lambda|)w(\lambda)d\lambda\Big)w(x)dx.$$
+If we want to show
+$$|{\rm Tr}(M_fg(\Delta^{\frac12}))|\leq \|f\|_{L_1(\mathbb{R}^N)}\|g\|_{L_1(\mathbb{R}_+,r^{N-1}dr)},$$
+then we need to show
+$$\Big|\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,x)g(|\lambda|)w(\lambda)d\lambda\Big|\cdot w(x)\leq \|g\|_{L_1(\mathbb{R}_+,r^{N-1}dr)}.$$
+Of course, it would suffice to have
+$$|E(i\lambda,x)E(-i\lambda,x)|\leq \frac1{w(x)w(\lambda)}.$$
+
+{\bf Side comment:} I am not absolutely sure that we crucially need $\|f\|_{L_1(\mathbb{R}^N)}.$ however, we do crucially need $\|g\|_{L_1(\mathbb{R}_+,r^{N-1}dr)}.$
+
+
+{\bf Example 1:} In the usual case (when $E(i\lambda,x)=\exp(-i\langle \lambda,x\rangle$ and $w=1$), this is obviously true.
+
+{\bf Example 2:} In case $G=\mathbb{Z}_2,$ we have $w(x)=|x|^{2k}dx$ and
+$$E(i\lambda,x)=j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda),$$
+where $j_{\beta}$ is an even entire function defined by the formula $j_{\beta}(z)=c_{\beta}z^{-\beta}J_{\beta}(z),$ $z\in\mathbb{C}.$ It, therefore, suffices to show
+$$|j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda)|^2\leq |x|^{-2k}|\lambda|^{-2k}.$$
+In other words, we need to check
+$$j_{k-\frac12}(x)=O(|x|^{-k}),\quad j_{k+\frac12}(x)=O(|x|^{-k-1}),\quad x\in\mathbb{R}.$$
+In other words, we need to check
+$$J_{k-\frac12}(x)=O(|x|^{-\frac12}),\quad J_{k+\frac12}(x)=O(|x|^{-\frac12}),\quad x\in\mathbb{R}.$$
+It is a standard result that in theory of Bessel functions that these estimate are globally true.
+
+
+
+\end{document}
