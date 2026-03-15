@@ -75,6 +75,9 @@ then we need to show
 $$\Big|\int_{\mathbb{R}^N}E(i\lambda,x)E(-i\lambda,x)g(|\lambda|)w(\lambda)d\lambda\Big|\cdot w(x)\leq \|g\|_{L_1(\mathbb{R}_+,r^{N-1}dr)}.$$
 Of course, it would suffice to have
 $$|E(i\lambda,x)E(-i\lambda,x)|\leq \frac1{w(x)w(\lambda)}.$$
+Note that $E(-i\lambda,x)$ is the complex conjugate of $E(i\lambda,x)$ (this is stated without a proof in Anker-Trojan-2023) So, the required estimate is equivalent to
+$$|E(i\lambda,x)|\leq \frac1{w^{\frac12}(x)w^{\frac12}(\lambda)}.$$
+
 
 {\bf Side comment:} I am not absolutely sure that we crucially need $\|f\|_{L_1(\mathbb{R}^N)}.$ however, we do crucially need $\|g\|_{L_1(\mathbb{R}_+,r^{N-1}dr)}.$
 
@@ -84,7 +87,7 @@ $$|E(i\lambda,x)E(-i\lambda,x)|\leq \frac1{w(x)w(\lambda)}.$$
 {\bf Example 2:} In case $G=\mathbb{Z}_2,$ we have $w(x)=|x|^{2k}dx$ and
 $$E(i\lambda,x)=j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda),$$
 where $j_{\beta}$ is an even entire function defined by the formula $j_{\beta}(z)=c_{\beta}z^{-\beta}J_{\beta}(z),$ $z\in\mathbb{C}.$ It, therefore, suffices to show
-$$|j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda)|^2\leq |x|^{-2k}|\lambda|^{-2k}.$$
+$$|j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda)|\leq |x|^{-k}|\lambda|^{-k}.$$
 In other words, we need to check
 $$j_{k-\frac12}(x)=O(|x|^{-k}),\quad j_{k+\frac12}(x)=O(|x|^{-k-1}),\quad x\in\mathbb{R}.$$
 In other words, we need to check
