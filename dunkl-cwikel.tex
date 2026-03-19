@@ -84,7 +84,7 @@ $$|E(i\lambda,x)|\leq \frac1{w^{\frac12}(x)w^{\frac12}(\lambda)}.$$
 
 {\bf Example 1:} In the usual case (when $E(i\lambda,x)=\exp(-i\langle \lambda,x\rangle$ and $w=1$), this is obviously true.
 
-{\bf Example 2:} In case $G=\mathbb{Z}_2,$ we have $w(x)=|x|^{2k}dx$ and
+{\bf Example 2:} In case $G=\mathbb{Z}_2,$ we have $w(x)=|x|^{2k}$ and
 $$E(i\lambda,x)=j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda),$$
 where $j_{\beta}$ is an even entire function defined by the formula $j_{\beta}(z)=c_{\beta}z^{-\beta}J_{\beta}(z),$ $z\in\mathbb{C}.$ It, therefore, suffices to show
 $$|j_{k-\frac12}(x\lambda)+\frac{i\lambda x}{2k+1}j_{k+\frac12}(x\lambda)|\leq |x|^{-k}|\lambda|^{-k}.$$
@@ -94,6 +94,24 @@ In other words, we need to check
 $$J_{k-\frac12}(x)=O(|x|^{-\frac12}),\quad J_{k+\frac12}(x)=O(|x|^{-\frac12}),\quad x\in\mathbb{R}.$$
 It is a standard result that in theory of Bessel functions that these estimate are globally true.
 
-
-
+{\bf Example 3:} let us check it for the group $S_3.$ there is a formula (Amri, 2015, on arxiv). In this formula, the space is
+$$V=\{x\in\mathbb{R}^3:\ x_1+x_2+x_3=0\}$$
+and the formula is valid for $\lambda_1<\lambda_2<\lambda_3.$
+$$E(i\mu,\lambda)=\frac1{V(\lambda)^{2k}}\int_{[\lambda_2,\lambda_1]\times[\lambda_3,\lambda_2]}$$
+$$\Big\{3(\lambda_1-\lambda_2)(\nu_1-\nu_2)\mathcal{J}_{k-\frac12}(i\frac{(\mu_1-\mu_2)(\nu_1-\nu_2)}{2})-$$
+$$-6\big(\nu_1\nu_2+\frac{\lambda_3}{2}(\nu_1+\nu_2)+\lambda_1\lambda_2\big)\mathcal{J}_{k-\frac12}'(i\frac{(\mu_1-\mu_2)(\nu_1-\nu_2)}{2})\Big\}$$
+$$(\lambda_3-\nu_1)(\lambda_3-\nu_2)\exp(-\frac{3i}{2}\mu_3(\nu_1+\nu_2))W(\nu,\lambda)^{k-1}d\nu_1d\nu_2.$$
+Here,
+$$\mathcal{J}_{k-\frac12}(z)=c_k\int_{-1}^1e^{zt}(1-t^2)^{k-1}dt$$
+and 
+$$W(\nu,\lambda)=(\lambda_1-\nu_1)(\lambda_1-\nu_2)(\lambda_2-\nu_2)(\nu_1-\lambda_2)(\nu_1-\lambda_3)(\nu_2-\lambda_3).$$
+Denote for brevity $\mu_1-\mu_2=2\alpha$ and $\mu_3=\frac{2}{3}\beta.$ Clearly,
+$$\mu_1-\mu_3=\frac{\mu_1+\mu_2}{2}+\frac{\mu_1-\mu_2}{2}-\mu_3=-\frac{\mu_3}{2}+\frac{\mu_1-\mu_2}{2}-\mu_3=\alpha-\beta,$$
+$$\mu_2-\mu_3=-\alpha+\beta.$$
+So, the task is to prove
+$$\Big|\int_{[\lambda_2,\lambda_1]\times[\lambda_3,\lambda_2]}$$
+$$\Big\{3(\lambda_1-\lambda_2)(\nu_1-\nu_2)\mathcal{J}_{k-\frac12}(i\alpha(\nu_1-\nu_2))-$$
+$$-6\big(\nu_1\nu_2+\frac{\lambda_3}{2}(\nu_1+\nu_2)+\lambda_1\lambda_2\big)\mathcal{J}_{k-\frac12}'(i\alpha(\nu_1-\nu_2))\Big\}$$
+$$(\lambda_3-\nu_1)(\lambda_3-\nu_2)\exp(-i\beta(\nu_1+\nu_2))W(\nu,\lambda)^{k-1}d\nu_1d\nu_2\Big|\leq$$
+$$\leq |V(\lambda)|^k\cdot |\alpha|^{-k}\cdot |\alpha^2-\beta^2|^{-k}.$$
 \end{document}

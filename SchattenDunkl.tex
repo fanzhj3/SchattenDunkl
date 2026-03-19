@@ -1,41 +1,17 @@
-\documentclass[12pt]{amsart}
-\usepackage{ amsmath, amsthm, amsfonts, amssymb, color}
- \usepackage{mathrsfs}
-\usepackage{amsfonts, amsmath}
- \usepackage{amsmath,amstext,amsthm,amssymb,amsxtra}
- \usepackage{txfonts} %also pxfonts
- \usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
- \allowdisplaybreaks
- \usepackage{pgf,tikz}
- \usepackage{multirow}%newtablepackage1
- \usepackage{diagbox} %newtablepackage2
-\usepackage{cite}
- \usepackage{tikz}
+\documentclass{amsart}
+\usepackage{amssymb, color}
+\usepackage{mathrsfs}
+\usepackage{esint}
 
-\usetikzlibrary{decorations.pathreplacing}
 
- %\usepackage{showkeys}
- \textwidth =166mm
- \textheight =232mm
-\marginparsep=0cm
-\oddsidemargin=2mm
-\evensidemargin=2mm
-\headheight=13pt
-\headsep=0.8cm
-\parskip=0pt
-\hfuzz=6pt
-\widowpenalty=10000
- \setlength{\topmargin}{-0.2cm}
+%\usepackage{txfonts} %also pxfonts
+\usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
 
-\DeclareMathOperator*{\essinf}{ess\ inf}
-\DeclareMathOperator*{\esssup}{ess\ sup}
-\setcounter {tocdepth}{1}
+
+
+
 \begin{document}
 
- \baselineskip 16.6pt
-\hfuzz=6pt
-
-\widowpenalty=10000
 
 \newtheorem{cl}{Claim}
 \newtheorem{theorem}{Theorem}[section]
@@ -53,8 +29,6 @@
 
 \def\SL{\sqrt H}
 
-\newcommand{\mar}[1]{{\marginpar{\sffamily{\scriptsize
-        #1}}}}
 
 \newcommand{\as}[1]{{\mar{AS:#1}}}
 \newcommand{\cE}{\mathcal{E}}
@@ -891,49 +865,67 @@ equipped with the norm
 $$\|f\|_{L^p(L^{q,r})^{\rm symm}}:=\max\{\|f\|_{L_x^{p}(L_y^{q,r})},\|f\|_{L_y^p(L_x^{q,r})}\}.$$
 
 \begin{lemma}\label{Russo}
-Let $(X,\mu)$ be a measure space and let $2<p<\infty$. Suppose that $K:X\times X\rightarrow \mathbb{C}$ belongs to $L^p(L^{p',\infty})^{\rm symm}$. The integral operator $$T_Kf(x):=\int_X K(x,y)f(y)d\mu(y)$$
-belongs to $S^{p,\infty}(L^2(X,d\mu))$. Moreover, we have
-\begin{align}
-  \|T_K\|_{S^{p,\infty}(L^2(X,d\mu))}\lesssim \|K\|_{L^p(L^{p',\infty})^{\rm symm}}.
-\end{align}
+Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu).$ The integral operator
+$$T_Kf(x):=\int_X K(x,y)f(y)d\mu(y)$$
+belongs to $S_{p,\infty}(L_2(X,d\mu)).$ Moreover, we have
+$$\|T_K\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|K\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}.$$
 \end{lemma}
 \begin{proof}
 The proof is given in \cite[Lemma 2]{JW} (see also \cite[Corollary 11.2]{HKarxiv}).
 \end{proof}
-In what follows, let $X=\mathbb{R}^N$ and $d\mu=dw$ for the underlying measure.
-\begin{proposition}\label{upper bound}
-    Let ${\color{red}p>\max\{2,N\}}$ and $b\in B^p_{\D}(\mathbb{R}^N)$. For any $j\in\{1,2,\ldots,N\}$, we have
-    $$\|[b,R_{\D,j}]\|_{S^{p}(L^2(\mathbb{R}^N,dw))}\lesssim\|b\|_{B^p_{\D}(\mathbb{R}^N)}.$$
-\end{proposition}
-\begin{proof}
-Our strategy is to adjust the argument in \cite[Proposition 11.8]{HKarxiv} to obtain the desired result.
-For any $(w\otimes w)$-measurable function $F$ on $\mathbb{R}^{2N}$, we define a linear map $\mathcal{T}:F\rightarrow \mathcal{T}(F)$, where $\mathcal{T}(F)$ is an integral operator on $L^2(\mathbb{R}^N,dw)$ with kernel
-$$\mathbb{R}^N\times\mathbb{R}^N\ni(x,y)\mapsto \frac{\|x-y\|}{d(x,y)}K_{\D,j}(x,y)F(x,y),\quad d(x,y)\neq 0.$$
-Now we {\it claim} that $\mathcal{T}$ is a bounded linear map from $L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))$ to $S^{p,\infty}(L^2(\mathbb{R}^N,dw))$ for all $p>2$. To see this, we apply Lemma \ref{Russo} and then Lemma \ref{kernelestimate} to deduce that for $p>2$,
-\begin{align}\label{Russoright}
-  \|\mathcal{T}(F)\|_{S^{p,\infty}(L^2(\mathbb{R}^N,dw))}&\lesssim\left\|\frac{\|x-y\|}{d(x,y)}|K_{\D,j}(x,y)||F(x,y)|\right\|_{L_x^p(L_y^{p',\infty})^{\rm symm}}\nonumber\\&\lesssim \left\|\frac{|F(x,y)|}{w(B(x,d(x,y)))}\right\|_{L_x^p(L_y^{p',\infty})^{\rm symm}}.
-\end{align}
-By weak-type H\"{o}lder's inequality, for $1/q=1-2/p$,
-\begin{align}\label{beforeinterpolation}
-\left\|\frac{|F(x,y)|}{w(B(x,d(x,y)))}\right\|_{L_x^p(L_y^{p',\infty})}&\lesssim\left\|\frac{|F(x,y)|}{w(B(x,d(x,y)))^{2/p}}\right\|_{L_x^p(L_y^p)}\left\|\frac{1}{w(B(x,d(x,y)))^{1/q}}\right\|_{L_x^\infty( L_y^{q,\infty})}\nonumber\\
-&\lesssim \|F\|_{L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))},
-\end{align}
-where the last inequality follows from \cite[Lemma 11.7]{HKarxiv}. Changing the role of $x$ and $y$ and then applying the doubling inequality \eqref{doublinginequality}, we deduce that
-$$\left\|\frac{|F(x,y)|}{w(B(x,d(x,y)))}\right\|_{L_y^p(L_x^{p',\infty})}\lesssim \|F\|_{L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))}.$$
-Therefore, the right-hand side of \eqref{Russoright} is also dominated by $\|F\|_{L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))}$.
-This finishes the proof of the claim. To obtain the desired result, we apply the real interpolation argument. Given $p>2$, we choose $2<p_0<p<p_1<\infty$ and $\theta\in (0,1)$ such that $\frac{1}{p}=\frac{1-\theta}{p_0}+\frac{\theta}{p_1}$. We have
-\begin{align}\label{beforetaking}
-\|\mathcal{T}(F)\|_{S^{p}(L^2(\mathbb{R}^N,dw))}
-&=\|\mathcal{T}(F)\|_{(S^{p_0,\infty}(L^2(\mathbb{R}^N,dw)),S^{p_1,\infty}(L^2(\mathbb{R}^N,dw)))_{\theta,p}}\nonumber\\
-&\lesssim \|F\|_{(L^{p_0}(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y)),L^{p_1}(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y)))_{\theta,p}}\nonumber\\
-&=\|F\|_{L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))}.
-\end{align}
-where the inequality above follows from the real interpolation theorem (see \cite[Theorem 3.11.8]{Bergh}) and the equalities follow from the real interpolation theorem for $S^p$ spaces (see \cite[Th\'{e}or\`{e}m 2]{MR296684}) and $L^p$ spaces (see \cite[Theorem 5.2.1]{Bergh}).
 
-We consider
-$$F_b(x,y):=\frac{d(x,y)}{\|x-y\|}(b(x)-b(y)).$$ We have  $$\|F_b\|_{L^p(\mathbb{R}^{2N},w(B(x,d(x,y)))^{-2}dw(x)dw(y))}=\|b\|_{B^p_{\D}(\mathbb{R}^N)},$$ and
-$$\mathcal{T}(F_b)=[b,R_{\D,j}].$$
-Taking $F=F_b$ in the inequality \eqref{beforetaking} yields the required inequality in Proposition \ref{upper bound}.
+\begin{lemma}\label{s4 holder lemma} Let $p>2$ and let $\frac1q=1-\frac2p.$ We have $$\|F_1F_2\|_{L_p(L_{p',\infty})(X\times X,\mu\times\mu)}\leq 2^{\frac1{pp'}}\|F_1\|_{L_p(X\times X,\mu\times\mu)}\|F_2\|_{L_{\infty}(L_{q,\infty})(X\times X,\mu\times\mu)}.$$
+\end{lemma}
+\begin{proof} We clearly have
+$$LHS=\Big(\int_X\|F_1(x,\cdot)F_2(x,\cdot)\|_{L_{p',\infty}(X,\mu)}^pd\mu(x)\Big)^{\frac1p}.$$
+Clearly, $\frac1{p'}=\frac1p+\frac1q.$ Thus,
+$$\|F_1(x,\cdot)F_2(x,\cdot)\|_{L_{p',\infty}(X,\mu)}
+\leq 2^{\frac1{p'}}\|F_1(x,\cdot)\|_{L_{p,\infty}(X,\mu)}\|F_2(x,\cdot)\|_{L_{q,\infty}(X,\mu)}\leq$$
+$$\leq 2^{\frac1{p'}}\|F_1(x,\cdot)\|_{L_p(X,\mu)}\|F_2(x,\cdot)\|_{L_{q,\infty}(X,\mu)}.$$
+Hence,
+$$LHS\leq 2^{\frac1{pp'}}\Big(\int_X\|F_1(x,\cdot)\|_{L_p(X,\mu)}^p\|F_2(x,\cdot)\|_{L_{q,\infty}(X,\mu)}^pd\mu(x)\Big)^{\frac1p}\leq$$
+$$\leq 2^{\frac1{pp'}}\Big(\int_X\|F_1(x,\cdot)\|_{L_p(X,\mu)}^pd\mu(x)\Big)^{\frac1p}\times\sup_{x\in X}\|F_2(x,\cdot)\|_{L_{q,\infty}(X,\mu)}=$$
+$$=2^{\frac1{pp'}}\|F_1\|_{L_p(X\times X,\mu\times\mu)}\|F_2\|_{L_{\infty}(L_{q,\infty})(X\times X,\mu\times\mu)}.$$
+\end{proof}
+
+\begin{lemma}\label{s4 first lemma}
+Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(X\times X)$ and $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
+$$\|T_{FG}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
+\end{lemma}
+\begin{proof} By Lemma \ref{Russo},
+$$\|T_{FG}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|FG\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}.$$
+
+Let $\frac1q=1-\frac2p.$ It follows from Lemma \ref{s4 holder lemma} that
+$$\|F_1F_2\|_{L_p(L_{p',\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}\leq$$
+$$\leq 2^{\frac1{pp'}}\|F_1\|_{L_p(X\times X,\mu\times\mu)}\|F_2\|_{L_{\infty}(L_{q,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}.$$
+Setting $F_1=FG^{\frac2p}$ and $F_2=G^{\frac1q},$ we obtain
+$$\|FG\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}\leq$$
+$$\leq 2^{\frac1{pp'}}\|FG^{\frac2p}\|_{L_p(X\times X,\mu\times\mu)}\|G^{\frac1q}\|_{L_{\infty}(L_{q,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}=$$
+$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{\frac1q}=$$
+$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
+\end{proof}
+
+\begin{lemma}\label{s4 second lemma}
+Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(X\times X)$ and $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
+$$\|T_{FG}\|_{S_p(L_2(X,d\mu))}\leq c_{p,G}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}.$$
+\end{lemma}
+\begin{proof} The assertion follows from Lemma \ref{s4 first lemma} by real interpolation.
+\end{proof}
+
+
+
+\begin{proposition}\label{upper bound}
+Let ${\color{red}p>\max\{2,N\}}$ and $b\in B^p_{\D}(\mathbb{R}^N).$ For every $j\in\{1,2,\ldots,N\},$ we have
+$$\|[b,R_{\D,j}]\|_{S_{p}(L_2(\mathbb{R}^N,w(x)dx))}\lesssim\|b\|_{B^p_{\D}(\mathbb{R}^N)}.$$
+\end{proposition}
+\begin{proof} In what follows, let $X=\mathbb{R}^N$ and $d\mu(x)=w(x)dx.$ 
+
+Set
+$$F(x,y)=w(B(x,d(x,y)))K_{{\rm Dunkl},j}(x,y)(f(x)-f(y)),\quad x\neq y,$$
+$$G(x,y)=\frac1{w(B(x,d(x,y)))},\quad x\neq y.$$
+By \cite[Lemma 11.7]{HKarxiv}, $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ By Lemma \ref{kernelestimate},
+$$\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\leq c_R\|f\|_{B^p_{\D}(\mathbb{R}^N)}.$$
+The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
 

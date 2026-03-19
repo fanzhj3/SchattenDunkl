@@ -1,0 +1,68 @@
+\documentclass{amsart}
+\begin{document}
+
+$$\|f\|_{B^{p}_{Dunkl}(\mathbb{R}^N)}:=\left(\int_{\mathbb{R}^{N}}\int_{\mathbb{R}^{N}}\left(\frac{d(x,y)}{\|x-y\|}\right)^{p}\frac{|f(x)-f(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\right)^{1/p}.$$
+
+Consider the Weyl group $\mathbb{Z}_2^2$ equipped with multiplicity function $k(2^{\frac12},0)=a$ and $k(0,2^{\frac12})=b.$ We have
+$$w(x)=|x_1|^{2a}|x_2|^{2b}.$$
+We have
+$$d(x,y)\sim \big||x_1|-|y_1|\big|+\big||x_2|-|y_2|\big|.$$
+Thus, for 
+$$w(B(x,d(x,y)))\sim \big||x_1|-|y_1|\big|+\big||x_2|-|y_2|\big|^2\times \big(|x_1|+|y_1|+\big||x_2|-|y_2|\big|\big)^{2a}\times$$
+$$\times \big(|x_2|+|y_2|+\big||x_1|-|y_1|\big|\big)^{2b}.$$
+
+Consider, for example, the first quadrant for $x$ and the second quadrant for $y.$ We have
+$$\int_{\mathbb{R}^2_+}\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}}{(x_1+y_1+|x_2-y_2|)^{p+4a}}\frac{|f(x)-f(s_1(y))|^p}{(x_2+y_2+|x_1-y_1|)^{4b}}(x_1y_1)^{2a}(x_2y_2)^{2b}dxdy.$$
+We already know that
+$$\int_{\mathbb{R}^2_+}\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}}{(x_1+y_1+|x_2-y_2|)^{p+4a}}\frac{|f(x)-f(y)|^p}{(x_2+y_2+|x_1-y_1|)^{4b}}(x_1y_1)^{2a}(x_2y_2)^{2b}dxdy$$
+is controlled by the Besov norm in the first quadrant. We therefore, need to control
+$$\int_{\mathbb{R}^2_+}\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}}{(x_1+y_1+|x_2-y_2|)^{p+4a}}\frac{|f(y)-f(s_1(y))|^p}{(x_2+y_2+|x_1-y_1|)^{4b}}(x_1y_1)^{2a}(x_2y_2)^{2b}dxdy=$$
+$$=\int_{\mathbb{R}^2_+}\Big(\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}\Big)|f(y)-f(s_1(y))|^pdy.$$
+
+So, we need to compute (an equivalent expression for)
+$$\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
+Effectively, we want to show that this is equivalent to
+$$\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
+
+If $x_1\notin (\frac12y_1,2y_1),$ then $|x_1-y_1|\sim x_1+y_1$ and the corresponding integrals are equivalent. We, effectively, need to show
+$$\int_{\frac12y_1}^{2y_1}\int_{\mathbb{R}_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}\sim$$
+$$\sim\int_{\frac12y_1}^{2y_1}\int_{\mathbb{R}_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
+In other words, we need to show
+$$\int_0^{y_1}\int_{\mathbb{R}_+}\frac{(x_1+|x_2-y_2|)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+x_1)^{4b}}\sim$$
+$$\sim\int_0^{y_1}\int_{\mathbb{R}_+}\frac{(x_1+|x_2-y_2|)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(x_2+y_2+x_1)^{4b}}.$$
+
+
+We split the integration by $x_2$ into the following domains:
+$$I=(2y_2,\infty),\quad II=(0,\frac12y_2),\quad III=(\frac12y_2,2y_2).$$
+We, therefore, need to show
+$$\int_0^{y_1}\int_{2y_2}^{\infty}\frac{(x_1+x_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{p+4a}(x_2+x_1)^{4b}}+$$
+$$+\int_0^{y_1}\int_0^{\frac12y_2}\frac{(x_1+y_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{p+4a}(y_2+x_1)^{4b}}+$$
+$$+\int_0^{y_1}\int_{\frac12y_2}^{2y_2}\frac{(x_1+|x_2-y_2|)^{p-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(y_2+x_1)^{4b}}\sim$$
+$$\sim\int_0^{y_1}\int_{2y_2}^{\infty}\frac{(x_1+x_2)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{4a}(x_2+x_1)^{4b}}+$$
+$$+\int_0^{y_1}\int_0^{\frac12y_2}\frac{(x_1+y_2)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{4a}(y_2+x_1)^{4b}}+$$
+$$+\int_0^{y_1}\int_{\frac12y_2}^{2y_2}\frac{(x_1+|x_2-y_2|)^{-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(y_2+x_1)^{4b}}.$$
+In other words, we need to show
+$$\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{p-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{p+4a}}+$$
+$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{p-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{p+4a}}+$$
+$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{p-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+x_2)^{p+4a}(y_2+x_1)^{4b}}\sim$$
+$$\sim\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{4a}}+$$
+$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{4a}}+$$
+$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+x_2)^{4a}(y_2+x_1)^{4b}}.$$
+Substituting $x_1=t_1y_1,$ $x_2=t_2y_1$ and denoting $y=\frac{y_2}{y_1},$ we equivalently rewrite the latter assertion as
+$$\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{p-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+t_2)^{p+4a}}+$$
+$$+\int_0^1\int_0^y\frac{(t_1+y)^{p-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+y)^{p+4a}}+$$
+$$+\int_0^1\int_0^y\frac{(t_1+t_2)^{p-4}y^{4b}dt_2dt_1}{(1+t_2)^{p+4a}(y+t_1)^{4b}}\sim$$
+$$\sim\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+t_2)^{4a}}+$$
+$$+\int_0^1\int_0^y\frac{(t_1+y)^{-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+y)^{4a}}+$$
+$$+\int_0^1\int_0^y\frac{(t_1+t_2)^{-4}y^{4b}dt_2dt_1}{(1+t_2)^{4a}(y+t_1)^{4b}}.$$
+
+We would like to show
+$$\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{p-4b-4}t_2^{2b}dt_2dt_1}{(1+t_2)^{p+4a}}\sim  \int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{-4b-4}t_2^{2b}dt_2dt_1}{(1+t_2)^{4a}},$$
+$$\int_0^1\int_0^y(t_1+y)^{p-4b-4}(t_2y)^{2b}dt_2dt_1\sim(1+y)^p\int_0^1\int_0^y(t_1+y)^{-4b-4}(t_2y)^{2b}dt_2dt_1,$$
+$$\int_0^1\int_0^y\frac{(t_1+t_2)^{p-4}dt_2dt_1}{(1+t_2)^{p+4a}(y+t_1)^{4b}}\sim\int_0^1\int_0^y\frac{(t_1+t_2)^{-4}dt_2dt_1}{(1+t_2)^{4a}(y+t_1)^{4b}}.$$
+
+The second one reads as
+$$\Big|(1+y)^{p-4b-3}-y^{p-4b-3}\Big|\sim (1+y)^p\cdot \Big|(1+y)^{-4b-3}-y^{-4b-3}\Big|.$$
+This is NOT TRUE for small $y.$
+
+\end{document}
