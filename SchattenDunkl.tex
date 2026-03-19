@@ -853,16 +853,9 @@ This completes the proof of Lemma \ref{lem:gallery-simple}.
 \section{Proof of upper bound}
 \setcounter{equation}{0}
 
-{\color{red}[Zhijie will add some Comment about the idea in this section later]}
-
-Let $(X,\mu)$ be a measure space and let $L^p(L^{q,r})$ denote the mixed-norm space consisting of all $\mu$-measurable functions $f:X\times X \to \mathbb{C}$ such that
-\[
-\|f\|_{L^p(L^{q,r})} := \Big\|\, \|f(x,y)\|_{L^{q,r}_y(X,\mu)}\,\Big\|_{L^p_x(X,\mu)} < \infty.
-\]
-Next, we define
-$$L^p(L^{q,r})^{\rm symm}:=L_x^{p}(L_y^{q,r})\cap L_y^p(L_x^{q,r}),$$
-equipped with the norm
-$$\|f\|_{L^p(L^{q,r})^{\rm symm}}:=\max\{\|f\|_{L_x^{p}(L_y^{q,r})},\|f\|_{L_y^p(L_x^{q,r})}\}.$$
+Let $(X,\mu)$ be a measure space and let $L_p(L_{q,\infty})^{\rm symm}(X\times X,\mu\times\mu)$ denote the mixed-norm space consisting of all $\mu\times\mu$-measurable functions $f:X\times X \to \mathbb{C}$ such that
+$$\int_X\|f(x,\cdot)\|_{L_{q,\infty}(X,\mu)}^pd\mu(x),\int_X\|f(\cdot,y)\|_{L_{q,\infty}(X,\mu)}^pd\mu(y)<\infty.$$
+We equip $L_p(L_{q,\infty})^{\rm symm}(X\times X,\mu\times\mu)$ with its natural norm.
 
 \begin{lemma}\label{Russo}
 Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu).$ The integral operator
@@ -915,17 +908,15 @@ $$\|T_{FG}\|_{S_p(L_2(X,d\mu))}\leq c_{p,G}\|F\|_{L_p(X\times X,G^2(\mu\times\mu
 
 
 \begin{proposition}\label{upper bound}
-Let ${\color{red}p>\max\{2,N\}}$ and $b\in B^p_{\D}(\mathbb{R}^N).$ For every $j\in\{1,2,\ldots,N\},$ we have
-$$\|[b,R_{\D,j}]\|_{S_{p}(L_2(\mathbb{R}^N,w(x)dx))}\lesssim\|b\|_{B^p_{\D}(\mathbb{R}^N)}.$$
+Let $p>2$ and $b\in B^p_{\D}(\mathbb{R}^N).$ For every $1\leq j\leq N,$ we have
+$$\|[R_{\D,j},M_f]\|_{S_{p}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{R,k}\|f\|_{B^p_{\D}(\mathbb{R}^N)}.$$
 \end{proposition}
-\begin{proof} In what follows, let $X=\mathbb{R}^N$ and $d\mu(x)=w(x)dx.$ 
-
-Set
+\begin{proof} In what follows, let $X=\mathbb{R}^N$ and $d\mu(x)=w(x)dx.$ Set
 $$F(x,y)=w(B(x,d(x,y)))K_{{\rm Dunkl},j}(x,y)(f(x)-f(y)),\quad x\neq y,$$
 $$G(x,y)=\frac1{w(B(x,d(x,y)))},\quad x\neq y.$$
 By \cite[Lemma 11.7]{HKarxiv}, $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ By Lemma \ref{kernelestimate},
 $$\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\leq c_R\|f\|_{B^p_{\D}(\mathbb{R}^N)}.$$
-The assertion follows now from Lemma \ref{s4 second lemma}.
+Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FG.$ The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
 
