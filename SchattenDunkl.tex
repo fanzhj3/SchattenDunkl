@@ -229,16 +229,12 @@ There exists a constant $C$ such that for $j\in\{1,2,\ldots,N\}$ and every $x,y$
 The proof is given in \cite[Theorem 1.1]{MR4733961}.
 \end{proof}
 
-\begin{lemma}\label{nondegenerate}
-For $j\in\{1,2,\ldots,N\}$, and for every ball $B=B(x_0,r)\subset \mathbb{R}^N$, there is another ball $\widehat{B}=B(y_0,r)$ with $y_0=x_0+5re_j$ such that for every $(x,y)\in B\times \widehat{B}$, $K_{\D,j}(x,y)$ does not change sign and satisfies
-\begin{align*}
-|K_{\D,j}(x,y)|\geq\frac{C}{w(B(x_0,r))}.
-\end{align*}
+\begin{lemma}\label{nondegenerate} Let $1\leq j\leq N.$ If $x_j\geq y_j,$ then
+$$K_{\D,j}(x,y)\geq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+If $x_j\leq y_j,$ then
+$$K_{\D,j}(x,y)\leq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
 \end{lemma}
-\begin{proof}
-The lower bound is given in \cite[Theorem 1.2]{MR4733961}, while the fact that $K_{\D,j}(x,y)$ does not change sign can be seen in the proof of \cite[Theorem 1.2]{MR4733961}. Indeed, with the choice $y_0:=x_0+5re_j$, we have $y_j-x_j\geq 3r$ for all $(x,y)\in B\times \widehat{B}$. Together with the fact that the heat kernel $h_t(x,y)$ associated with the Dunkl Laplacian is  positive, the representation
-$$K_{\D,j}(x,y)=-\frac{C}{2}\int_0^\infty \frac{y_j-x_j}{t}h_t(x,y)\frac{dt}{\sqrt{t}},$$
-implies that $K_{\D,j}(x,y)<0$ (and thus, does not change sign) on $ B\times \widehat{B}$.
+\begin{proof} The lower bound is identical to that in \cite[Theorem 1.2]{MR4733961}.
 \end{proof}
 
 \subsection{Schatten class}
