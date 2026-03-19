@@ -2160,61 +2160,24 @@ This completes the proof of Theorem \ref{main:Poincaredunkl}.
 \end{proof}
 
 
-\section{Failure of global Poincar\'e inequality}
+\section{Failure of global Poincare inequality}
 \setcounter{equation}{0}
 
-{\color{red}[Comments: it seems better to extend the following result to general $N$ and general Weyl group]}
 \begin{proposition}\label{lem:counterexample-Poincare}
-Let $k>0$ and $w_k$ be the Dunkl measure on $\mathbb{R}$ given by $dw_k(x)=|x|^{2k}\,dx$. Then there do not exist constants $C\ge1$ and $\lambda\ge1$ such that the following inequality holds for all intervals $I\subset\mathbb{R}$ and all Lipschitz functions $f$:
-\begin{equation}\label{eq:Poincare-claim}
-\fint_{I}\fint_{I} |f(x)-f(y)|\,dw_k(x)\,dw_k(y)
-\;\le\; C\,|I|\,\fint_{\lambda I} |f'(z)|\,dw_k(z).
-\end{equation}
+Let $k>0$ and let $w_k(x)=|x|^{2k}.$ For every $N\in\mathbb{N},$ there exists smooth real-valued function $f$ such that $$\inf_{c\in\mathbb{R}}\int_{-1}^1|f_N(x)-c|\cdot|x|^{2k}dx\geq \frac1{6(2k+1)},$$
+$$\int_{\mathbb{R}}|f_N'(z)|\cdot |z|^{2k}dz=N^{-2k}\int_{\mathbb{R}}\frac{|z|^{2k}dz}{\cosh^2(z)}.$$
 \end{proposition}
+\begin{proof} Set $f_N(x)=\tanh(Nx),$ $x\in\mathbb{N}.$ Suppose $c\geq0.$ We have
+$$\int_{-1}^1|f_N(x)-c|\cdot|x|^{2k}dx\geq\int_{-1}^0(c-\tanh(Nx))|x|^{2k}dx=$$
+$$=\frac{c}{2k+1}+\int_0^1\tanh(Nx)x^{2k}dx\geq \int_{\frac12}^1\tanh(Nx)x^{2k}dx\geq$$
+$$\geq \tanh(\frac12N)\cdot \int_{\frac12}^1x^{2k}dx\geq \frac13\cdot\frac1{4k+2}.$$
+Suppose $c<0.$ We have
+$$\int_{-1}^1|f_N(x)-c|\cdot|x|^{2k}dx\geq\int_0^1(\tanh(Nx)-c)|x|^{2k}dx=$$
+$$=-\frac{c}{2k+1}+\int_0^1\tanh(Nx)x^{2k}dx\geq \int_{\frac12}^1\tanh(Nx)x^{2k}dx\geq$$
+$$\geq \tanh(\frac12N)\cdot \int_{\frac12}^1x^{2k}dx\geq \frac13\cdot\frac1{4k+2}.$$
 
-\begin{proof}
-Fix $r>0$ and let $I=(-r,r)$, so that by evenness of the weight we have
-\[
-w_k(I_-)=w_k(I_+)=\tfrac12\,w_k(I),
-\qquad I_-:=(-r,0),\ I_+:=(0,r).
-\]
-For $M\in\mathbb{N}$, define $f_M(x):=\tanh(Mx)$. It follows that  $f_M$ is smooth, $|f_M|\le1$, and $f_M(x)\to\operatorname{sgn}(x)$, as $M\rightarrow \infty$,  for every $x\neq0$.
-
-
-On the one hand, by the dominated convergence theorem,
-\[
-\lim_{M\to\infty}\ \fint_I\fint_I |f_M(x)-f_M(y)|\,dw_k(x)\,dw_k(y)
-=\fint_I\fint_I |\operatorname{sgn}(x)-\operatorname{sgn}(y)|\,dw_k(x)\,dw_k(y).
-\]
-Since $|\operatorname{sgn}(x)-\operatorname{sgn}(y)|=0$ if $xy>0$ and $|\operatorname{sgn}(x)-\operatorname{sgn}(y)|=2$ if $xy<0$, we have
-\[
-\fint_I\fint_I |\operatorname{sgn}(x)-\operatorname{sgn}(y)|\,dw_k(x)\,dw_k(y)
-=\frac{4\,w_k(I_-)w_k(I_+)}{w_k(I)^2}
-=\frac{4\cdot(w_k(I)/2)\cdot(w_k(I)/2)}{w_k(I)^2}=1.
-\]
-Therefore,
-\begin{equation}\label{eq:LHS-limit}
-\lim_{M\to\infty}\ \fint_I\fint_I |f_M(x)-f_M(y)|\,dw_k(x)\,dw_k(y)=1.
-\end{equation}
-On the other hand, we apply the change of variables to see that
-\[
-\int_{\lambda I} |f_M'(z)|\,dw_k(z)
-=\int_{-\lambda r}^{\lambda r} M\operatorname{sech}^2(Mz)\,|z|^{2k}\,dz
-=M^{-2k}\int_{-\lambda Mr}^{\lambda Mr} \operatorname{sech}^2(u)\,|u|^{2k}\,du.
-\]
-Since $k>0$ and $\int_{\mathbb{R}}\operatorname{sech}^2(u)\,|u|^{2k}\,du<\infty$, we have
-\[
-\int_{\lambda I} |f_M'(z)|\,dw_k(z)\lesssim M^{-2k}.
-\]
-Dividing by the fixed positive number $w_k(\lambda I)$ yields
-\begin{equation}\label{eq:RHS-limit}
-|I|\,\fint_{\lambda I} |f_M'(z)|\,dw_k(z)
-=\frac{|I|}{w_k(\lambda I)}\int_{\lambda I}|f_M'(z)|\,dw_k(z)\;\longrightarrow\;0\quad
-\text{as}\ M\to\infty.
-\end{equation}
-
-\smallskip
-Combining \eqref{eq:LHS-limit} and \eqref{eq:RHS-limit}, we see that the inequality \eqref{eq:Poincare-claim} fails for the sequence $f_M$ as $M\to\infty$, no matter how large one chooses the constants $C\ge1$ and $\lambda\ge1$. This contradiction proves that no universal constants $C,\lambda$ can make \eqref{eq:Poincare-claim} valid for all intervals and all Lipschitz $f$.
+At the same time,
+$$\int_{\mathbb{R}}|f_N'(z)|\cdot |z|^{2k}dz=\int_{\mathbb{R}}\frac{N|z|^{2k}dz}{\cosh^2(Nz)}=N^{-2k}\int_{\mathbb{R}}\frac{|z|^{2k}dz}{\cosh^2(z)}.$$
 \end{proof}
 
 \section{Constant characterization}
