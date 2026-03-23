@@ -924,6 +924,32 @@ $$(f(x)-f(y))\cdot |(x-y)_j|\cdot K(x,y),$$
 where $K$ is the POSITIVE integral kernel of $\Delta^{-\frac12}.$ this should make the life easier.}
 
 
+{\color{blue} here is my plan to simplify the argument:
+
+Step 1: verify the assumptions used in Hytonen's paper for every chamber. conclude, using Hytonen theorem, that $f$ is Dunkl-Sobolev in every chamber.
+
+Step 2: fix $g_1,g_2\in G$ such that $g_1\neq g_2.$ consider integral operator on $L_2(\Gamma\times\Gamma,w(x)dx)$ whose integral kernel is
+$$(f(g_1x)-f(g_2y))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
+if our commutator is in $\mathcal{L}_p,$ then so is this integral operator.
+
+on the other hand, if our commutator is in $\mathcal{L}_p,$ then the function $f\circ g_2$ is Dunkl-Sobolev in $\Gamma.$ repeating the argument in Sufficiency part, we conclude that integral operator with integral kernel
+$$(f(g_2x)-f(g_2y))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma,$$
+belongs to $\mathcal{L}_p.$
+
+combining the results in the preceding paragraphs, we conclude that integral operator with integral kernel
+$$(f(g_1x)-f(g_2x))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma,$$
+belongs to $\mathcal{L}_p.$
+
+Step 3: let $T_{g_1,g_2,j}$ be an integral operator on $L_2(\Gamma\times\Gamma,w(x)dx)$ whose integral kernel is
+$$|(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
+we need to show the following result: 
+
+EXPECTED THEOREM: suppose $f$ is Dunkl-Sobolev on $\Gamma.$ we have $M_fT_{g_1,g_2,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
+
+having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $T_{g_1,g_2,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$
+}
+
+
 {\color{red}[Zhijie will add some Comment about the idea in this section later]}
 \begin{lemma}\label{constructHPQ}
  Assume that $P$ and $Q$ are two $w$-measurable sets on $\mathbb{R}^N$ such that $P\subset Q$. Suppose that there exist constants $1<A<B<\infty$ such that
