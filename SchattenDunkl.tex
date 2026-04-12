@@ -942,7 +942,7 @@ belongs to $\mathcal{L}_p.$
 
 Step 3: let $T_{g_1,g_2,j}$ be an integral operator on $L_2(\Gamma\times\Gamma,w(x)dx)$ whose integral kernel is
 $$|(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
-we need to show the following result: 
+we need to show the following result:
 
 EXPECTED THEOREM: suppose $f$ is Dunkl-Sobolev on $\Gamma.$ we have $M_fT_{g_1,g_2,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
 
@@ -1017,6 +1017,7 @@ $$|e_{Q,s}|+|f_{Q,s}|\leq w(Q)^{-1/2}\chi_{6\sqrt{N}Q},$$ and that
   |\langle b,H\rangle_{L^2(\mathbb{R}^N,dw)}|&\lesssim w(Q)^{1/2}\sum_{s=1}^4|\langle [b,R_{\D,j}]e_{Q,s},f_{Q,s}\rangle_{L^2(\mathbb{R}^N,dw)}|.
 \end{align}
 \end{lemma}
+
 
 {\color{red} THE MOST IMPORTANT TASK FOR ZHIJIE. please get rid of complex median method in this proof. our functions are WITHOUT LOSS OF GENERALITY real-valued.}
 
@@ -1203,7 +1204,7 @@ For any $1\leq p<\infty$ and $f\in L^1_{\rm loc}(\mathbb{R}^N,dw)$, we define th
 \end{definition}
 
 \begin{lemma}\label{MartingaleBesov}
-Suppose that $1\le p<\infty$ and $b\in L^1_{\mathrm{loc}}(\mathbb{R}^N,dw)$. We have
+Suppose that $1<p<\infty$ and $b\in L^1_{\mathrm{loc}}(\mathbb{R}^N,dw)$. We have
 \[
 \|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|b\|_{{MB}^p(\mathbb{R}^N,dw)}.
 \]
@@ -1268,7 +1269,7 @@ Summing over $\nu$ yields the required assertion.
 
 
 \begin{lemma}\label{standard}
-Suppose that $1\leq p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$. If $[b,R_{\D,j}]\in S^p$ for some $j\in\{1,2,\ldots,N\}$, then
+Suppose that $1< p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$. If $[b,R_{\D,j}]\in S^p$ for some $j\in\{1,2,\ldots,N\}$, then
 \[
 \|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|[b,R_{\D,j}]\|_{S^p}.
 \]
@@ -1364,7 +1365,7 @@ Since $Q\subset W_Q$ for all $Q\in\sigma(\mathbb{D}_{\Gamma,k+10})$, we see that
 \begin{align}
   {\rm I}_{\sigma,\tilde{\sigma}}^p
   &\lesssim \sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ W_Q\in\mathbb{D}_{k-k_0}^\tau }}\fint_{W_Q}|b(x)-(b)_{W_Q}|^pdw(x)\nonumber\\
-    &\lesssim \sum_{\tau=1}^{2^N}\sum_{Q\in\mathbb{D}_{k-k_0}^\tau }\fint_{Q}|b(x)-(b)_{Q}|^pdw(x)\nonumber\\
+    &\lesssim \sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\tau }\fint_{Q}|b(x)-(b)_{Q}|^pdw(x)\nonumber\\
     &\lesssim \|b\|_{B^p(\mathbb{R}^N,dw)}^p,
 \end{align}
 where in the last inequality we used the fact that oscillation space ${\rm OSC}^{p,p}(\mathbb{R}^N,dw)$ is equivalent to Besov space $B^p(\mathbb{R}^N,dw)$ (see e.g., \cite[Proposition 17.5]{HKarxiv}). Similarly, the second term ${\rm II}_{\sigma,\tilde{\sigma}}$ is also bounded by $\|b\|_{B^p(\mathbb{R}^N,dw)}$. Together with Lemma \ref{standard}, we deduce that
@@ -1421,7 +1422,7 @@ To show \eqref{supinequality}, we first write
 where
 $$\Theta_{m,k}^\nu:=\left\{Q\in\sigma(\mathbb{D}_{\Gamma,k+10}):A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,\ \alpha(Q)\geq -k+m-10,\ P_Q\in\mathbb{D}_{k-k_0}^\nu\right\}.$$
 Note that for any $Q\in \mathbb{D}_{k-k_0-m}^\nu$, there are at most $c2^{mN}$ cubes $W\in\sigma(\mathbb{D}_{\Gamma,k+10})$ such that $P_W^{[m]}=Q$, where $c$ is an absolute constant. Denote these cubes by $Q_{[m]}^{1}$, $Q_{[m]}^{2}$, $\ldots$, $Q_{[m]}^{\iota}$ with $\iota\leq c2^{mN}$. Let
-$\delta_{Q,m,\ell}:=1$ if $P_{Q_{[m]}^\ell}=Q$ and $\delta_{Q,m,\ell}:=0$ otherwise. Let
+$\delta_{Q,m,\ell}:=1$ if $P_{Q_{[m]}^\ell}^{[m]}=Q$ and $\delta_{Q,m,\ell}:=0$ otherwise. Let
 $$\Xi_{m,k,\ell}^\nu:=\left\{Q\in \mathbb{D}_{k-k_0-m}^\nu: A_22^{-k+1}\leq \|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|,\ \alpha({Q_{[m]}^\ell})\geq -k+m-10\right\}.$$
 We have
 \begin{align}\label{rhs888}
@@ -1450,7 +1451,7 @@ By H\"{o}lder's inequality and the definition of $\lambda_Q$,
 Since $p>N$, we have
 \begin{align*}
 &\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-p}\delta_{Q,m,\ell}\chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell))\nonumber\\
-&\lesssim\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\cdot 2^{-kp}=C\sum_{m\geq 1}2^{-m(p-N)}\lesssim 1.
+&\lesssim\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\cdot 2^{kp}=C\sum_{m\geq 1}2^{-m(p-N)}\lesssim 1.
 \end{align*}
 Combining this with the same reindexing and counting argument used to derive \eqref{rhs888}, we obtain
 \begin{align}\label{longdisplay}
@@ -1553,7 +1554,7 @@ We have
 &=2^{10}\sum_{\tau=1}^{2^N}\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in\Delta_{m,k+m-10,\ell}^{\nu,\tau}}2^{-(k+m)}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-1}\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}(\xi_{Q}^{(s)}\otimes \eta_{Q}^{(s)})\nonumber\\
 &=\sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}a_Q^\nu(\xi_{Q}^{(s)}\otimes \eta_{Q}^{(s)}),
 \end{align}
-where for any $Q\in \mathbb{D}_k^\nu$,
+where for any $Q\in \mathbb{D}_k^\tau$,
 \begin{align*}
   a_Q^\nu&:=2^{10}\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-1}\times\nonumber\\
   &\hspace{1.0cm}\times\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell}).
@@ -1566,8 +1567,8 @@ It follows from equalities \eqref{rhs7777}, \eqref{rhs8888} and Lemma \ref{NWOLE
 \end{align}
 By H\"{o}lder's inequality and the definition of $a_Q^\nu$,
 \begin{align}\label{eded}
-  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}\bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-p}\tilde{\delta}_{Q,m,\ell}\bigg)^{\frac{p'}{p}}\times\nonumber\\
+  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
+  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}\bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-p}\tilde{\delta}_{Q,m,\ell}\bigg)^{\frac{p'}{p}}\times\nonumber\\
   &\hspace{0.7cm}\times \bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}|\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell})|^{p'}\bigg)\Bigg)^{\frac{1}{p'}}.
 \end{align}
 Observe that \(\tilde{\delta}_{Q,m,\ell}\in\{0,1\}\) and that \(\tilde{\delta}_{Q,m,\ell}=1\) only when
@@ -1579,8 +1580,8 @@ $
 \end{align}
 Substituting \eqref{substtttt} into \eqref{eded} and then applying a similar argument as in \eqref{longdisplay}, we deduce that
 \begin{align*}
-  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}
+  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
+  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}
 \sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}|\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\times\nonumber\\
 &\hspace{1.0cm}\times \tilde{\delta}_{Q,m,\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell})|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
   &=\Bigg(\sum_{(k,Q)\in\Upsilon^\nu}|\psi_{k,Q}|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
@@ -2386,7 +2387,7 @@ The proof is divided into three steps.
 
 By Lemma \ref{standard}, if $[b,R_{\D,j}]\in S^N$ for some $j\in\{1,2,...,N\}$, then $b\in B^N(\mathbb{R}^N,dw)$. This, together with the inequality \eqref{globallocalvol}, yields that for every Weyl chamber $\Gamma$, we have
 $$\|b\|_{B^N(\Gamma,dw)}:=\left(\int_{\Gamma}\int_{\Gamma}\frac{|b(x)-b(y)|^N}{w(B_\Gamma(x,\|x-y\|))^2}dw(x)dw(y)\right)^{1/N}<+\infty.$$
-By Theorem \ref{main:dunkldoubling}, $(\Gamma,\|\cdot\|,dw)$ is a doubling metric measure space having lower dimension $N$. 
+By Theorem \ref{main:dunkldoubling}, $(\Gamma,\|\cdot\|,dw)$ is a doubling metric measure space having lower dimension $N$.
 Together with Theorem \ref{main:Poincaredunkl} and H\"{o}lder's inequality, this implies that $(\Gamma,\|\cdot\|,dw)$ supports a $(1,N)$--Poincar\'e inequality. It follows from Lemma \ref{Hytonen-KorteLemma} that $b\equiv c_{\Gamma}$ on $\Gamma$ almost everywhere for some constant $c_\Gamma$.
 
 {\bf $\bullet$ Step 2.} {\it Show that $c_{\Gamma}=c_{\sigma_\alpha(\Gamma)}$ for each Weyl chamber $\Gamma$ and $\alpha\in \Delta$.}
