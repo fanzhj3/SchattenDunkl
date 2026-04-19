@@ -919,34 +919,78 @@ Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FG.$ The ass
 \section{Proof of lower bound}
 \setcounter{equation}{0}
 
-{\color{blue} it is most inconvenient that integral kernel of $R_{\D,j}$ is not positive. however, the only source of non-positivity is the factor $(x-y)_j.$ since triangular truncation operator is bounded on $\mathcal{L}_p,$ it follows that, instead of $[R_{\D,j},M_f],$ we need to consider the operator $T_{j,f}$ whose integral kernel is
-$$(f(x)-f(y))\cdot |(x-y)_j|\cdot K(x,y),$$
-where $K$ is the POSITIVE integral kernel of $\Delta^{-\frac12}.$ this should make the life easier.}
+\begin{lemma}\label{hytonen verification lemma} Let $\Gamma$ be a chamber. Measure-metric space $(\Gamma,w(x)dx,{\rm dist}_{\mathbb{R}^d})$ and operator $T_{\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{\Gamma}}$ satisfy the conditions in Theorem 1.1 in \cite{HKarxiv}.
+\end{lemma}
+\begin{proof} {\color{red} Zhijie will do it.}
+\end{proof}
+
+\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then, for every chamber $\Gamma,$
+\begin{align*}
+\int_{\Gamma\times\Gamma}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}dw(x)dw(y)<\infty.
+\end{align*}
+In other words, $f\in\dot{W}^{\frac{d}{p},p}_{{\rm Dunkl}}(\Gamma)$ for every chamber $\Gamma.$
+\end{lemma}
+\begin{proof} This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.1 in \cite{HKarxiv}.
+\end{proof}
+
+Let $U_g:L_2(\mathbb{R}^N)\to L_2(\mathbb{R}^N)$ be given by the formula $U_g\xi=\xi\circ g^{-1}.$ Denote for brevity
+$$A_{g_1,g_2,\Gamma,j}=U_{g_1}^{-1}M_{\chi_{g_1(\Gamma)}}R_{{\rm Dunkl},j}M_{\chi_{g_2(\Gamma)}}U_{g_2}.$$
 
 
-{\color{blue} here is my plan to simplify the argument:
+\begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$}}
+$$M_{(f\circ g_1)-(f\circ g_2)}A_{g_1,g_2,\Gamma,j}\in \mathcal{L}_p(L_2(\Gamma,w))$$
+for every distinct $g_1,g_2\in G$ and for every chamber $\Gamma.$
+\end{lemma}
+\begin{proof} Consider chambers $g_1(\Gamma)$ and $g_2(\Gamma).$ By assumption, 
+$$M_{\chi_{g_1(\Gamma)}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g_2(\Gamma)}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$$
+We have
+$$U_{g_1}^{-1}M_{\chi_{g_1(\Gamma)}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g_2(\Gamma)}}U_{g_2}\in\mathcal{L}_p(L_2(\Gamma,w)).$$
+We, therefore, have
+\begin{equation}\label{dccc eq0}
+A_{g_1,g_2,\Gamma,j}M_{(f\circ g_2)\cdot\chi_{\Gamma}}-M_{(f\circ g_1)\cdot\chi_{\Gamma}}A_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w)).
+\end{equation}
 
-Step 1: verify the assumptions used in Hytonen's paper for every chamber. conclude, using Hytonen theorem, that $f$ is Dunkl-Sobolev in every chamber.
+Let us denote by $K_{g_1,g_2,\Gamma,j}$ the operator $A_{g_1,g_2,\Gamma,j}.$ Denote for brevity
+$$G(x,y)=\frac{1}{w(B(x,|x-y|))},\quad x,y\in\Gamma,$$
+$$F(x,y)=w(B(x,|x-y|))\cdot K_{g_1,g_2,\Gamma,j}(x,y)\cdot (f(g_2y)-f(g_2x)),\quad x,y\in\Gamma.$$
+In those notations,
+$$[A_{g_1,g_2,\Gamma,j},M_{(f\circ g_1)\cdot\chi_{\Gamma}}]=T_{FG}.$$
+By Lemma \ref{s4 second lemma},
+$$\|T_{FG}\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{p,G}\|F\|_{L_2(\Gamma\times\Gamma,G^2(w\times w))}.$$
+By Lemma \ref{kernelestimate}, {\color{red} conflict of notations: $G$ is a group and also $G$ is a function in Section 4.}
+$$|F(x,y)|\leq c_G|f(g_2x)-f(g_2y)|,\quad x,y\in\Gamma.$$
+Thus,
+$$\|[A_{g_1,g_2,\Gamma,j},M_{(f\circ g_2)\cdot\chi_{\Gamma}}]\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq$$
+$$\leq c_{p,G}\Big(\int_{\Gamma\times\Gamma}\frac{|f(g_2x)-f(g_2y)|^p}{w(B(x,|x-y|))^2}dw(x)dw(y)\Big)^{\frac1p}.$$
+We know from Lemma \ref{chamber sobolev lemma} that the right hand side of the latter inequality is finite. Hence,
+\begin{equation}\label{dccc eq1}
+A_{g_1,g_2,\Gamma,j}M_{(f\circ g_2)\cdot\chi_{\Gamma}}-M_{(f\circ g_2)\cdot\chi_{\Gamma}}A_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w)).
+\end{equation}
 
-Step 2: fix $g_1,g_2\in G$ such that $g_1\neq g_2.$ consider integral operator on $L_2(\Gamma\times\Gamma,w(x)dx)$ whose integral kernel is
-$$(f(g_1x)-f(g_2y))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
-if our commutator is in $\mathcal{L}_p,$ then so is this integral operator.
+Combining \eqref{dccc eq0} and \eqref{dccc eq1}, we complete the proof.
+\end{proof}
 
-on the other hand, if our commutator is in $\mathcal{L}_p,$ then the function $f\circ g_2$ is Dunkl-Sobolev in $\Gamma.$ repeating the argument in Sufficiency part, we conclude that integral operator with integral kernel
-$$(f(g_2x)-f(g_2y))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma,$$
-belongs to $\mathcal{L}_p.$
+It is decidedly inconvenient that integral kernel of $A_{g_1,g_2,\Gamma,j}$ is not positive. This, however, can be easily fixed by using special Double Operator Integral.
 
-combining the results in the preceding paragraphs, we conclude that integral operator with integral kernel
-$$(f(g_1x)-f(g_2x))\cdot |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma,$$
-belongs to $\mathcal{L}_p.$
+Indeed, integral kernel of $A_{g_1,g_2,\Gamma,j}$ is given by the formula
+$$(x,y)\to (g_1x-g_2y)_j\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
+Here, $K$ is the integral kernel of $\Delta_{{\rm Dunkl}}^{-\frac12}.$ Consider the operator $B_{g_1,g_2,\Gamma,j}$ {\color{red} I do not know whether this operator is bounded} whose integral kernel is given by the formula
+$$(x,y)\to |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
 
-Step 3: let $T_{g_1,g_2,j}$ be an integral operator on $L_2(\Gamma\times\Gamma,w(x)dx)$ whose integral kernel is
-$$|(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
-we need to show the following result:
+\begin{lemma}\label{another different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{another different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$}}
+$$M_{(f\circ g_1)-(f\circ g_2)}B_{g_1,g_2,\Gamma,j}\in \mathcal{L}_p(L_2(\Gamma,w))$$
+for every distinct $g_1,g_2\in G$ and for every chamber $\Gamma.$
+\end{lemma}
+\begin{proof} We clearly have
+$$M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}=\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}(M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}).$$
+Schur multiplier $\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}$ is easily seen to be bounded on $\mathcal{L}_p(L_2(\Gamma,w)).$ This completes the proof.
+\end{proof}
 
-EXPECTED THEOREM: suppose $f$ is Dunkl-Sobolev on $\Gamma.$ we have $M_fT_{g_1,g_2,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
+{\color{red} here is my plan to simplify the argument:
 
-having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $T_{g_1,g_2,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$
+EXPECTED THEOREM: suppose $f\in\dot{W}^{\frac{d}{p},p}_{{\rm Dunkl}}(\Gamma).$  we have $M_fB_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
+
+having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $M_{|f|}B_{g_1,g_2,\Gamma,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$
 }
 
 
