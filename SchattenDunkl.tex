@@ -970,18 +970,20 @@ A_{g_1,g_2,\Gamma,j}M_{(f\circ g_2)\cdot\chi_{\Gamma}}-M_{(f\circ g_2)\cdot\chi_
 Combining \eqref{dccc eq0} and \eqref{dccc eq1}, we complete the proof.
 \end{proof}
 
-It is decidedly inconvenient that integral kernel of $A_{g_1,g_2,\Gamma,j}$ is not positive. This, however, can be easily fixed by using special Double Operator Integral.
+It is decidedly inconvenient that integral kernel $K_{g_1,g_2,\Gamma,j}$ of the operator $A_{g_1,g_2,\Gamma,j}$ is not positive. 
+\begin{lemma}\label{dh lemma} Integral kernel of $R_{{\rm Dunkl},j}$ has the same sign as $(x-y)_j.$
+\end{lemma}
+\begin{proof} This should follow from Lemma 3.3 in {\color{red} refer to Dziubanski-Hejna paper Ji refers to}.
+\end{proof}
 
-Indeed, integral kernel of $A_{g_1,g_2,\Gamma,j}$ is given by the formula
-$$(x,y)\to (g_1x-g_2y)_j\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
-Here, $K$ is the integral kernel of $\Delta_{{\rm Dunkl}}^{-\frac12}.$ Consider the operator $B_{g_1,g_2,\Gamma,j}$ {\color{red} I do not know whether this operator is bounded} whose integral kernel is given by the formula
-$$(x,y)\to |(g_1x-g_2y)_j|\cdot K(g_1x,g_2y),\quad x,y\in\Gamma.$$
+Consider the operator $B_{g_1,g_2,\Gamma,j}$ {\color{red} I do not know whether this operator is bounded} whose integral kernel is given by the formula
+$$(x,y)\to |K|(g_1x,g_2y),\quad x,y\in\Gamma.$$
 
 \begin{lemma}\label{another different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{another different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$}}
 $$M_{(f\circ g_1)-(f\circ g_2)}B_{g_1,g_2,\Gamma,j}\in \mathcal{L}_p(L_2(\Gamma,w))$$
 for every distinct $g_1,g_2\in G$ and for every chamber $\Gamma.$
 \end{lemma}
-\begin{proof} We clearly have
+\begin{proof} By Lemma \ref{dh lemma}, $K_{g_1,g_2,\Gamma,j}(x,y)$ has the same sign as $(g_1x-g_2y)_j.$ Thus,
 $$M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}=\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}(M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}).$$
 Schur multiplier $\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}$ is easily seen to be bounded on $\mathcal{L}_p(L_2(\Gamma,w)).$ This completes the proof.
 \end{proof}
@@ -990,7 +992,7 @@ Schur multiplier $\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}$ is easily seen to be 
 
 EXPECTED THEOREM: suppose $f\in\dot{W}^{\frac{d}{p},p}_{{\rm Dunkl}}(\Gamma).$  we have $M_fB_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
 
-having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $M_{|f|}B_{g_1,g_2,\Gamma,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$
+having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $M_{|f|}B_{g_1,g_2,\Gamma,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$ or, possibly, $e_Q=w(Q)^{-\frac12}\chi_Q$ and $f_Q=w(Q)^{-\frac12}\chi_{Q+e_js(Q)}$ --- to match Zhijie's argument more closely.
 }
 
 
