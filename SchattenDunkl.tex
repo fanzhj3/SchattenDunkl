@@ -997,6 +997,42 @@ having this theorem, the assertion would be much easier. on the other hand, it i
 
 
 {\color{red}[Zhijie will add some Comment about the idea in this section later]}
+
+{\color{blue} Consider the case proposed by Zhijie: $G=\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$ acting on $\mathbb{R}^3$ (by reflections with respect to coordinate planes).
+
+Suppose $f\in\dot{W}^{\frac{3}{p},p}(\mathbb{R}^3_+)$
+$$M_f\chi_{\mathbb{R}^3_+}\frac{D_1}{(D_1^2+D_2^2+D_3^2)^{\frac12}}\chi_{\Gamma}\in\mathcal{L}_p(L_2(\mathbb{R}^3))$$
+for octant $\Gamma=\mathbb{R}_-\times\mathbb{R}^2_+.$
+
+We have
+$$\sup_n\|(\sigma_n\otimes id\otimes id)\cdot M_f\chi_{\mathbb{R}^3_+}\frac{D_1}{(D_1^2+D_2^2+D_3^2)^{\frac12}}\chi_{\Gamma}\cdot (\sigma_{\frac1n}\otimes id\otimes id)\|_p<\infty.$$
+In other words,
+$$\sup_n\|M_{(\sigma_n\otimes id\otimes id)f\cdot \chi_{\mathbb{R}^3_+}}\frac{nD_1}{(n^2D_1^2+D_2^2+D_3^2)^{\frac12}}\chi_{\Gamma}\|_p<\infty.$$
+When $n\to\infty,$ we have
+$$(\sigma_n\otimes id\otimes id)f\cdot\chi_{\mathbb{R}^3}\to \chi_{\mathbb{R}_+}\otimes g,$$
+where $g$ is the trace (i.e., boundary value) of $f$ on the face $\{(0,x_2,x_3),\ x_2,x_3\geq0\}.$ We also have
+$$\frac{nD_1}{(n^2D_1^2+D_2^2+D_3^2)^{\frac12}}\to {\rm sgn}(D_1).$$
+Thus,
+$$M_{\chi_{\mathbb{R}_+}\otimes g}\cdot {\rm sgn}(D_1)\cdot M_{\chi_{\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^3)).$$
+In other words,
+$$(M_{\chi_{\mathbb{R}_+}}\otimes M_g)\cdot({\rm sgn}(D)\otimes 1)\cdot (M_{\chi_{\mathbb{R}_-}}\otimes M_{\chi_{\mathbb{R}^2_+}})\in \mathcal{L}_p(L_2(\mathbb{R})\otimes L_2(\mathbb{R}^2)).$$
+In other words,
+$$M_{\chi_{\mathbb{R}_+}}{\rm sgn}(D)M_{\chi_{\mathbb{R}_-}}\otimes M_g\in \mathcal{L}_p(L_2(\mathbb{R})\otimes L_2(\mathbb{R}^2)).$$
+Thus, either 
+$$M_{\chi_{\mathbb{R}_+}}{\rm sgn}(D)M_{\chi_{\mathbb{R}_-}}\in\mathcal{L}_p(L_2(\mathbb{R})),\quad M_g\in \mathcal{L}_p(L_2(\mathbb{R}^2))$$
+or 
+$$M_{\chi_{\mathbb{R}_+}}{\rm sgn}(D)M_{\chi_{\mathbb{R}_-}}=0$$
+or $M_g=0.$ If the first option holds, then $g=0.$ The second option does not hold. If the third option holds, then $g=0.$ In either case, $g=0.$
+
+The conclusion is: boundary value of $f$ on the face $\{0\}\times\mathbb{R}^2_+$ is zero.
+
+{\color{red} why this is important: if we have functions $f_1\in\dot{W}^{\frac{3}{p},p}(\mathbb{R}_+\times\mathbb{R}_+^2)$ and $f_2\in\dot{W}^{\frac{3}{p},p}(\mathbb{R}_-\times\mathbb{R}_+^2)$ having the same boundary values on the common face of their domains, then $f_1\sqcup f_2\in\dot{W}^{\frac3p,p}(\mathbb{R}\times\mathbb{R}^2_+).$
+
+why this is insufficient: because we cannot yet conclude that boundary values of our $f$ on OTHER faces are also trivial.
+}
+}
+
+
 \begin{lemma}\label{constructHPQ}
  Assume that $P$ and $Q$ are two $w$-measurable sets on $\mathbb{R}^N$ such that $P\subset Q$. Suppose that there exist constants $1<A<B<\infty$ such that
 \begin{align}\label{twosidecond}
