@@ -846,7 +846,7 @@ This completes the proof of Lemma \ref{lem:gallery-simple}.
 \end{proof}
 
 
-\section{Proof of upper bound}
+\section{Proof of SOME upper bound}
 \setcounter{equation}{0}
 
 Let $(X,\mu)$ be a measure space and let $L_p(L_{q,\infty})^{\rm symm}(X\times X,\mu\times\mu)$ denote the mixed-norm space consisting of all $\mu\times\mu$-measurable functions $f:X\times X \to \mathbb{C}$ such that
@@ -878,96 +878,170 @@ $$=2^{\frac1{pp'}}\|F_1\|_{L_p(X\times X,\mu\times\mu)}\|F_2\|_{L_{\infty}(L_{q,
 \end{proof}
 
 \begin{lemma}\label{s4 first lemma}
-Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(X\times X)$ and $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
-$$\|T_{FG}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
+Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $F\in L_p(X\times X,H^2(\mu\times\mu))$ and $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
+$$\|T_{FH}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\|H\|_{L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
 \end{lemma}
 \begin{proof} By Lemma \ref{Russo},
-$$\|T_{FG}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|FG\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}.$$
+$$\|T_{FH}\|_{S_{p,\infty}(L_2(X,d\mu))}\leq c_p \|FH\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}.$$
 
 Let $\frac1q=1-\frac2p.$ It follows from Lemma \ref{s4 holder lemma} that
 $$\|F_1F_2\|_{L_p(L_{p',\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}\leq$$
 $$\leq 2^{\frac1{pp'}}\|F_1\|_{L_p(X\times X,\mu\times\mu)}\|F_2\|_{L_{\infty}(L_{q,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}.$$
-Setting $F_1=FG^{\frac2p}$ and $F_2=G^{\frac1q},$ we obtain
-$$\|FG\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}\leq$$
-$$\leq 2^{\frac1{pp'}}\|FG^{\frac2p}\|_{L_p(X\times X,\mu\times\mu)}\|G^{\frac1q}\|_{L_{\infty}(L_{q,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}=$$
-$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{\frac1q}=$$
-$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\|G\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
+Setting $F_1=FH^{\frac2p}$ and $F_2=H^{\frac1q},$ we obtain
+$$\|FH\|_{L_p(L_{p',\infty})^{\rm symm}(X\times X,\mu\times\mu)}\leq$$
+$$\leq 2^{\frac1{pp'}}\|FH^{\frac2p}\|_{L_p(X\times X,\mu\times\mu)}\|H^{\frac1q}\|_{L_{\infty}(L_{q,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}=$$
+$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\|H\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{\frac1q}=$$
+$$=2^{\frac1{pp'}}\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\|H\|_{L_{\infty}(L_{1,\infty})^{{\rm symm}}(X\times X,\mu\times\mu)}^{1-\frac2p}.$$
 \end{proof}
 
 \begin{lemma}\label{s4 second lemma}
-Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $K\in L_p(X\times X)$ and $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
-$$\|T_{FG}\|_{S_p(L_2(X,d\mu))}\leq c_{p,G}\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}.$$
+Let $(X,\mu)$ be a measure space and let $2<p<\infty.$ Suppose that $F\in L_p(X\times X,GH^2(\mu\times\mu))$ and $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ We have
+$$\|T_{FH}\|_{S_p(L_2(X,d\mu))}\leq c_{p,H}\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}.$$
 \end{lemma}
 \begin{proof} The assertion follows from Lemma \ref{s4 first lemma} by real interpolation.
 \end{proof}
 
 
-
 \begin{proposition}\label{upper bound}
-Let $p>2$ and $b\in B^p_{\D}(\mathbb{R}^N).$ For every $1\leq j\leq N,$ we have
-$$\|[R_{\D,j},M_f]\|_{S_{p}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{R,k}\|f\|_{B^p_{\D}(\mathbb{R}^N)}.$$
+Let $p>2,$ let $\Gamma$ be a chamber and let $f\in \dot{W}^{\frac{N}{p},p}(\Gamma).$ Let $V$ be an integral operator whose integral kernel $K$ satisfies the condition
+$$|K(x,y)|\leq\frac1{w(B(x,|x-y|))}.$$
+For every $1\leq j\leq N,$ we have
+$$\|[V,M_f]\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{R,k}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
 \end{proposition}
-\begin{proof} In what follows, let $X=\mathbb{R}^N$ and $d\mu(x)=w(x)dx.$ Set
-$$F(x,y)=w(B(x,d(x,y)))K_{{\rm Dunkl},j}(x,y)(f(x)-f(y)),\quad x\neq y,$$
-$$G(x,y)=\frac1{w(B(x,d(x,y)))},\quad x\neq y.$$
-By \cite[Lemma 11.7]{HKarxiv}, $G\in L_{\infty}(L_{1,\infty})^{\rm symm}(X\times X,\mu\times\mu).$ By Lemma \ref{kernelestimate},
-$$\|F\|_{L_p(X\times X,G^2(\mu\times\mu))}\leq c_R\|f\|_{B^p_{\D}(\mathbb{R}^N)}.$$
-Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FG.$ The assertion follows now from Lemma \ref{s4 second lemma}.
+\begin{proof} In what follows, let $X=\Gamma$ and $d\mu(x)=w(x)dx.$ Set
+$$F(x,y)=w(B(x,|x-y|))K(x,y)(f(x)-f(y)),\quad x\neq y,$$
+$$H(x,y)=\frac1{w(B(x,|x-y|))},\quad x\neq y.$$
+By \cite[Lemma 11.7]{HKarxiv}, $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(\Gamma\times\Gamma,\mu\times\mu).$ By assumption on the kernel $K,$
+$$\|F\|_{L_p(\Gamma\times\Gamma,G^2(\mu\times\mu))}\leq\Big(\int_{\Gamma\times\Gamma}|f(x)-f(y)|^p\frac{w(x)w(y)dxdy}{w^2(B(x,|x-y|))}\Big)^{\frac1p}.$$
+By \eqref{twosideinequ},
+$$w(B(x,|x-y|))\geq c_{R,k}'|x-y|^Nw^{\frac12}(x)w^{\frac12}(y),\quad x,y\in\mathbb{R}^N.$$
+Thus,
+$$\|F\|_{L_p(\Gamma\times\Gamma,H^2(\mu\times\mu))}\leq$$
+$$\leq (c_{R,k}')^{-\frac2p}\Big(\int_{\Gamma\times\Gamma}\frac{|f(x)-f(y)|^p}{|x-y|^{2N}}dxdy\Big)^{\frac1p}=(c_{R,k}')^{-\frac2p}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
+Obviously, the integral kernel of the operator $[V,M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
 
 \section{Proof of lower bound}
 \setcounter{equation}{0}
 
-\begin{lemma}\label{hytonen verification lemma} Let $\Gamma$ be a chamber. Measure-metric space $(\Gamma,w(x)dx,{\rm dist}_{\mathbb{R}^d})$ and operator $T_{\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{\Gamma}}$ satisfy the conditions in Theorem 1.1 in \cite{HKarxiv}.
+\begin{lemma}\label{for reverse holder first lemma} Let $\Gamma$ be a chamber and let $x_0\in\Gamma.$ We have
+$$\sup_{x\in B(x_0,r)\cap\Gamma}w(x)\leq \frac{c_{k,\Gamma}}{m(B(x_0,r)\cap\Gamma)}\int_{B(x_0,r)\cap\Gamma}w(x)dx.$$
 \end{lemma}
-\begin{proof} {\color{red} Zhijie will do it.}
+\begin{proof} If $x=x_0+y,$ $y\in B(0,r),$ then
+$$|\langle x,v\rangle|\leq |\langle x_0,v\rangle|+r|\langle y,v\rangle|\leq |\langle x_0,v\rangle|+r\sqrt{2}.$$
+Thus,
+$$w(x)=\prod_{v\in R}(|\langle x_0,v\rangle|+|\langle y,v\rangle|)^{\epsilon\cdot k(v)}\leq\prod_{v\in R}(|\langle x_0,v\rangle|+r\sqrt{2})^{k(v)}.$$
+In particular,
+$$LHS\leq \prod_{v\in R}(|\langle x_0,v\rangle|+r\sqrt{2})^{k(v)}.$$
+
+By convexity, $x_0+\Gamma\subset\Gamma.$ Hence,
+$$x_0+(B(0,r)\cap\Gamma)\subset B(x_0,r)\cap\Gamma.$$
+So,
+$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq\int_{x_0+(B(0,r)\cap\Gamma)}w(x)dx=\int_{B(0,r)\cap\Gamma}w(x_0+y)dy.$$
+If $y\in\Gamma,$ then
+$$|\langle x_0+y,v\rangle|=|\langle x_0,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
+Thus,
+$$w(x_0+y)=\prod_{v\in R}(|\langle x_0,v\rangle|+|\langle y,v\rangle|)^{k(v)}\geq$$
+$$\geq\max\{\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)},\prod_{v\in R}|\langle y,v\rangle|^{k(v)}\}.$$
+Hence,
+$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq\int_{B(0,r)\cap\Gamma}w(x_0+y)dy\geq$$
+$$\geq\max\Big\{\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}dy,\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy\Big\}.$$
+Obviously,
+$$\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}dy=r^N\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}\int_{B(0,1)\cap\Gamma}dy,$$
+$$\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy=r^{N+\sum_{v\in R}k(v)}\int_{B(0,1)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy.$$
+Thus,
+$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq c_{k,\Gamma}^{(1)}\max\{r^N\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)},r^{N+\sum_{v\in R}k(v)}\}.$$
+Combining this with the preceding paragraph, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then, for every chamber $\Gamma,$
-\begin{align*}
-\int_{\Gamma\times\Gamma}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}dw(x)dw(y)<\infty.
-\end{align*}
-In other words, $f\in\dot{W}^{\frac{d}{p},p}_{{\rm Dunkl}}(\Gamma)$ for every chamber $\Gamma.$
+\begin{lemma}\label{for reverse holder second lemma} Let $\Gamma$ be a chamber and let $x_0\in\Gamma.$ Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$ For every $r>0,$ we have
+$$\Big(\frac{\int_{B(x_0,r)\cap\Gamma}w^{1-t}(x)dx}{\int_{B(x_0,r)\cap\Gamma}w(x)dx}\Big)^{\frac1t}\leq c_{t,k,\Gamma} \frac{m(B(x_0,r)\cap\Gamma)}{\int_{B(x_0,r)\cap\Gamma}w(x)dx}.$$
 \end{lemma}
-\begin{proof} This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.1 in \cite{HKarxiv}.
+\begin{proof} If $v\in R$ is such that
+$$2\sqrt{2}r\leq |\langle x_0,v\rangle|,$$
+then
+$$|\langle x,v\rangle|\geq |\langle x_0,v\rangle|-|\langle x-x_0,v\rangle|\geq |\langle x_0,v\rangle|-r\sqrt{2}\geq \frac12|\langle x_0,v\rangle|,\quad x\in B(x_0,r).$$
+In this case,
+$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq 2^{(t-1)|R|k(v)}|\langle x_0,v\rangle|^{(1-t)|R|k(v)}\cdot\int_{B(x_0,r)}dx=$$
+$$=2^{(t-1)|R|k(v)}|\langle x_0,v\rangle|^{(1-t)|R|k(v)}\cdot {\rm Vol}(\mathbb{B}^N)r^N.$$
+
+If $v\in R$ is such that
+$$|\langle x_0,v\rangle|\leq 2\sqrt{2}r,$$
+then let $y_0=\langle x_0,v\rangle$ and $z_0=x_0-\frac12y_0v_0.$ Note that $|y_0|\leq 2\sqrt{2}r.$ Using new variables $y=\langle x,v\rangle$ and $z=x-\frac12yv,$ we write
+$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx=\int_{|y-y_0|^2+|z-z_0|^2\leq r^2}|y|^{(1-t)|R|k(v)}dydz\leq$$
+$$\leq \int_{|y-y_0|^2,|z-z_0|^2\leq r^2}|y|^{(1-t)|R|k(v)}dydz=$$
+$$=r^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y-y_0|\leq r}|y|^{(1-t)|R|k(v)}dy\leq$$
+$$=r^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq (1+2\sqrt{2}) r}|y|^{(1-t)|R|k(v)}dy=$$
+$$=r^{N+(1-t)|R|k(v)}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq 1+2\sqrt{2}}|y|^{(1-t)|R|k(v)}dy.$$
+
+Combining the estimates in the preceding paragraphs, we write
+$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq c_1R^n\big(\max\{|\langle x_0,v\rangle|,r\}\big)^{(1-t)|R|k(v)}.$$
+By H\"older inequality,
+$$\int_{B(x_0,r)}w^{1-t}(x)dx\leq \prod_{v\in R}\Big(\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\Big)^{\frac1{|R|}}\leq$$
+$$\leq c_2R^N\prod_{v\in R}\big(\max\{|\langle x_0,v\rangle|,r\}\big)^{(1-t)k(v)}.$$
+The assertion follows easily.
 \end{proof}
 
-Let $U_g:L_2(\mathbb{R}^N)\to L_2(\mathbb{R}^N)$ be given by the formula $U_g\xi=\xi\circ g^{-1}.$ Denote for brevity
-$$A_{g_1,g_2,\Gamma,j}=U_{g_1}^{-1}M_{\chi_{g_1(\Gamma)}}R_{{\rm Dunkl},j}M_{\chi_{g_2(\Gamma)}}U_{g_2}.$$
-
-
-\begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$}}
-$$M_{(f\circ g_1)-(f\circ g_2)}A_{g_1,g_2,\Gamma,j}\in \mathcal{L}_p(L_2(\Gamma,w))$$
-for every distinct $g_1,g_2\in G$ and for every chamber $\Gamma.$
+\begin{lemma}\label{hytonen verification lemma} Let $\Gamma$ be a chamber equipped with Euclidean distance. Measures $dx$ and $w(x)dx$ and operator $T_{\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{\Gamma}}$ satisfy {\color{red} on $\Gamma$} the conditions in Theorem 1.4 in \cite{Hytonen-new}.
 \end{lemma}
-\begin{proof} Consider chambers $g_1(\Gamma)$ and $g_2(\Gamma).$ By assumption, 
-$$M_{\chi_{g_1(\Gamma)}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g_2(\Gamma)}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$$
-We have
-$$U_{g_1}^{-1}M_{\chi_{g_1(\Gamma)}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g_2(\Gamma)}}U_{g_2}\in\mathcal{L}_p(L_2(\Gamma,w)).$$
+\begin{proof} {\bf Step 1:} We claim that measures $dx$ and $w(x)dx$ are $A_{\infty}$-equivalent (in the sense of Proposition 1.2 in \cite{Hytonen-new}). This verifies Assumption (i) in Theorem 1.4 in \cite{Hytonen-new}.
+
+Let $x_0\in\Gamma.$ By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
+$$\Big(\frac1{m(B\cap\Gamma)}\int_{B\cap\Gamma}w^t(x)dx\Big)^{\frac1t}\leq\frac{c_{k,\Gamma}}{m(B\cap\Gamma)}\int_{B\cap\Gamma}w(x)dx,\quad t>0.$$
+$$\Big(\frac{\int_{B\cap\Gamma}w^{1-t}(x)dx}{\int_{B\cap\Gamma}w(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(B\cap\Gamma)}{\int_{B\cap\Gamma}w(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
+The assertion follows now from Proposition 3.6 in \cite{Hytonen-new}.
+
+{\bf Step 2:} Assumption (ii) in Theorem 1.4 in \cite{Hytonen-new} is obvious.
+
+{\bf Step 3:} Integral kernel $K_j$ of the operator $T_{\Gamma,j}$ satisfies the estimates
+$$|K_j(x,y)|\leq\frac{c_G}{w(B(x,|x-y|)\cap \Gamma)},\quad x,y\in\Gamma,$$
+$$|K_j(x,y)-K_j(x',y)|\leq \frac{|x-x'|}{|x-y|}\cdot\frac{c_G}{w(B(x,|x-y|))},\quad |x-x'|\leq\frac12|x-y|,\quad x,x',y\in\Gamma,$$
+$$|K_j(x,y)-K_j(x,y')|\leq \frac{|y-y'|}{|x-y|}\cdot\frac{c_G}{w(B(x,|x-y|))},\quad |y-y'|\leq\frac12|x-y|,\quad x,y,y'\in\Gamma.$$ 
+In other words, $K_j$ is a standard kernel for the measure $w(x)dx.$
+
+This follows from Theorem 1.1 in \cite{MR4733961}.
+
+{\bf Step 4:} Kernel $K_j$ is non-degenerate in the following sense: for every $x\in\Gamma$ and $r>0,$ there exists $y\in\Gamma$ with $|x-y|=r$ and
+$$|K_j(x,y)|\geq\frac{c_G}{w(B(x,|x-y|)\cap \Gamma)}.$$
+
+Let 
+$$c_{\Gamma}=(\max_{z\in\Gamma,\ |z|=1}|z_j|)^{-1}.$$
+Choose $z\in\Gamma$ such that $|z_j|=c_{\Gamma}^{-1}$ and $|z|=1.$ Set $y=x+rz.$ Since $x,z\in\Gamma,$ it follows that $y\in\Gamma.$ Clearly, $|(x-y)_j|\geq rc_{\Gamma}^{-1}$ and $|x-y|=r.$  The claim follows from {\color{red} the proof of the} Theorem 1.2 in \cite{MR4733961}.
+
+{\bf Step 4:} Lebesgue measure on $\Gamma$ is, obviously, $N$-regular and possesses the $(1,1)$ Poincare inequality.
+\end{proof}
+
+\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$
+\end{lemma}
+\begin{proof} This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.4 in \cite{Hytonen-new}.
+\end{proof}
+
+Let $U_g:L_2(\mathbb{R}^N,w(x)dx)\to L_2(\mathbb{R}^N,w(x)dx)$ be given by the formula $U_g\xi=\xi\circ g^{-1}.$ Denote for brevity
+$$A_{g,\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}U_g.$$
+
+\begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$}}
+$$M_{(f-f\circ g)\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in \mathcal{L}_p(L_2(\Gamma,w(x)dx))$$
+for every $g\in G$ and for every chamber $\Gamma.$
+\end{lemma}
+\begin{proof} By assumption, 
+$$M_{\chi_{\Gamma}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g\Gamma}}U_g\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$$
 We, therefore, have
 \begin{equation}\label{dccc eq0}
-A_{g_1,g_2,\Gamma,j}M_{(f\circ g_2)\cdot\chi_{\Gamma}}-M_{(f\circ g_1)\cdot\chi_{\Gamma}}A_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w)).
+A_{g,\Gamma,j}M_{f\circ g}-M_fA_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).
 \end{equation}
 
-Let us denote by $K_{g_1,g_2,\Gamma,j}$ the operator $A_{g_1,g_2,\Gamma,j}.$ Denote for brevity
-$$G(x,y)=\frac{1}{w(B(x,|x-y|))},\quad x,y\in\Gamma,$$
-$$F(x,y)=w(B(x,|x-y|))\cdot K_{g_1,g_2,\Gamma,j}(x,y)\cdot (f(g_2y)-f(g_2x)),\quad x,y\in\Gamma.$$
-In those notations,
-$$[A_{g_1,g_2,\Gamma,j},M_{(f\circ g_1)\cdot\chi_{\Gamma}}]=T_{FG}.$$
-By Lemma \ref{s4 second lemma},
-$$\|T_{FG}\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{p,G}\|F\|_{L_2(\Gamma\times\Gamma,G^2(w\times w))}.$$
-By Lemma \ref{kernelestimate}, {\color{red} conflict of notations: $G$ is a group and also $G$ is a function in Section 4.}
-$$|F(x,y)|\leq c_G|f(g_2x)-f(g_2y)|,\quad x,y\in\Gamma.$$
-Thus,
-$$\|[A_{g_1,g_2,\Gamma,j},M_{(f\circ g_2)\cdot\chi_{\Gamma}}]\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{p,G}\Big(\int_{\Gamma\times\Gamma}\frac{|f(g_2x)-f(g_2y)|^p}{w(B(x,|x-y|))^2}dw(x)dw(y)\Big)^{\frac1p}.$$
-We know from Lemma \ref{chamber sobolev lemma} that the right hand side of the latter inequality is finite. Hence,
+Let us denote by $K_{g,\Gamma,j}$ the integral kernel of the operator $A_{g,\Gamma,j}.$ By Lemma \ref{kernelestimate},
+$$|K_{g,\Gamma,j}|(x,y)\leq\frac{c_G}{w(B(x,|x-y|))},\quad x,y\in\Gamma.$$
+We know from Lemma \ref{chamber sobolev lemma} that $f\in\dot{W}^{\frac{N}{p},p}(\Gamma).$ We now infer from the Proposition \ref{upper bound} that 
+the right hand side of the latter inequality is finite. Hence,
 \begin{equation}\label{dccc eq1}
-A_{g_1,g_2,\Gamma,j}M_{(f\circ g_2)\cdot\chi_{\Gamma}}-M_{(f\circ g_2)\cdot\chi_{\Gamma}}A_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w)).
+A_{g,\Gamma,j}M_{f\circ g}-M_{f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).
 \end{equation}
 
-Combining \eqref{dccc eq0} and \eqref{dccc eq1}, we complete the proof.
+Combining \eqref{dccc eq0} and \eqref{dccc eq1}, we write
+$$M_{f-f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).$$
+Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 \end{proof}
 
 It is decidedly inconvenient that integral kernel $K_{g_1,g_2,\Gamma,j}$ of the operator $A_{g_1,g_2,\Gamma,j}$ is not positive. 
