@@ -911,7 +911,7 @@ $$\|[V,M_f]\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{R,k}\|f\|_{\dot{W}^{\fr
 \begin{proof} In what follows, let $X=\Gamma$ and $d\mu(x)=w(x)dx.$ Set
 $$F(x,y)=w(B(x,|x-y|))K(x,y)(f(x)-f(y)),\quad x\neq y,$$
 $$H(x,y)=\frac1{w(B(x,|x-y|))},\quad x\neq y.$$
-By \cite[Lemma 11.7]{HKarxiv}, $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(\Gamma\times\Gamma,\mu\times\mu).$ By assumption on the kernel $K,$
+By \cite[Lemma 5.7]{HKarxiv}, $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(\Gamma\times\Gamma,\mu\times\mu).$ By assumption on the kernel $K,$
 $$\|F\|_{L_p(\Gamma\times\Gamma,G^2(\mu\times\mu))}\leq\Big(\int_{\Gamma\times\Gamma}|f(x)-f(y)|^p\frac{w(x)w(y)dxdy}{w^2(B(x,|x-y|))}\Big)^{\frac1p}.$$
 By \eqref{twosideinequ},
 $$w(B(x,|x-y|))\geq c_{R,k}'|x-y|^Nw^{\frac12}(x)w^{\frac12}(y),\quad x,y\in\mathbb{R}^N.$$
@@ -1034,7 +1034,6 @@ A_{g,\Gamma,j}M_{f\circ g}-M_fA_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx))
 Let us denote by $K_{g,\Gamma,j}$ the integral kernel of the operator $A_{g,\Gamma,j}.$ By Lemma \ref{kernelestimate},
 $$|K_{g,\Gamma,j}|(x,y)\leq\frac{c_G}{w(B(x,|x-y|))},\quad x,y\in\Gamma.$$
 We know from Lemma \ref{chamber sobolev lemma} that $f\in\dot{W}^{\frac{N}{p},p}(\Gamma).$ We now infer from the Proposition \ref{upper bound} that 
-the right hand side of the latter inequality is finite. Hence,
 \begin{equation}\label{dccc eq1}
 A_{g,\Gamma,j}M_{f\circ g}-M_{f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).
 \end{equation}
@@ -1064,7 +1063,10 @@ Schur multiplier $\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}$ is easily seen to be 
 
 {\color{red} here is my plan to simplify the argument:
 
-EXPECTED THEOREM: suppose $f\in\dot{W}^{\frac{d}{p},p}_{{\rm Dunkl}}(\Gamma).$  we have $M_fB_{g_1,g_2,\Gamma,j}\in\mathcal{L}_p$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
+EXPECTED THEOREM: suppose $f\in\dot{W}^{\frac{d}{p},p}(\Gamma).$  we have $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ iff $g\in L_p({\color{red}\mbox{specify the weight}}).$
+
+what this weight should be? if $g$ is reflection with respect to the vector $v,$ then I expect the weight to be $|\langle x,v\rangle|^{-N}.$ 
+
 
 having this theorem, the assertion would be much easier. on the other hand, it is much easier to prove this theorem instead of the lower bound in Theorem 1.2 because now there are no commutators!!! and, of course, integral kernel of $M_{|f|}B_{g_1,g_2,\Gamma,j}$ is positive. so, one can take $e_Q=f_Q=w(Q)^{-\frac12}\chi_Q.$ or, possibly, $e_Q=w(Q)^{-\frac12}\chi_Q$ and $f_Q=w(Q)^{-\frac12}\chi_{Q+e_js(Q)}$ --- to match Zhijie's argument more closely.
 }
@@ -2580,11 +2582,6 @@ By induction, $c_{\Gamma^{(M)}}=c_{\Gamma^{(0)}}$, i.e., $c_{\Gamma_1}=c_{\Gamma
 
 This completes the proof of Proposition~\ref{constantpro}.
 \end{proof}
-
-\section{Quantum differentiability in the Dunkl setting}
-{\color{red}(maybe)Zhijie will do this after the confirmation of the main body.}
-
-\bigskip
 
  \noindent
  {\bf Acknowledgements:}
