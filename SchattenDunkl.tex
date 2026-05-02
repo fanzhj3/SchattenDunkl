@@ -856,7 +856,46 @@ This completes the proof of Lemma \ref{lem:gallery-simple}.
 \begin{theorem}\label{sobolev comparison theorem} For every $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ we have
 $$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq c_R\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 \end{theorem}
-\begin{proof} {\color{red} TO BE DONE}
+\begin{proof} {\color{red} TO BE DONE.
+
+{\bf Case 1:} let $\Gamma_2=g\Gamma_1$ with $g\in G$ being reflection (with respect to the vector $v\in R$). we would like to estimate
+$$\int_{\Gamma_1\times\Gamma_2}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}$$
+or, in other words,
+$$\int_{\Gamma_1\times\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(x)-f(gy)|^p \frac{dxdy}{|x-y|^{2N}}.$$
+we already have an estimate for
+$$\int_{\Gamma_1\times\Gamma_1}|f(x)-f(y)|^p \frac{dxdy}{|x-y|^{2N}}.$$
+hence, we do have an estimate for
+$$\int_{\Gamma_1\times\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{|x-y|^{2N}}.$$
+by triangle inequality, we need an estimate for
+$$\int_{\Gamma_1\times\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(y)-f(gy)|^p \frac{dxdy}{|x-y|^{2N}}.$$
+in other words, we need to estimate
+$$\int_{\Gamma_1}|f(y)-f(gy)|^p\Big(\int_{\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p\frac{dx}{|x-y|^{2N}}\Big)dy.$$
+
+the corresponding term in the usual Sobolev case is
+$$\int_{\Gamma_1}|f(y)-f(gy)|^p\Big(\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\Big)dy.$$
+note that
+$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\approx |\langle y,v\rangle|^{-N}.$$
+Indeed, (assume for definiteness $v=e_N$ and $\Gamma_1\subset\mathbb{R}^{N-1}\times\mathbb{R}_+$) we obviously have
+$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\leq \int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{|x-gy|^{2N}}=$$
+$$=\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{(|x|^2+|y_N|^2)^N}=|y_N|^{-N}\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{(|x|^2+1)^N}.$$
+On the other hand, let $z=(y_1,\cdots,y_{N-1},0).$ Since $z\in\Gamma_1,$ it follows that $z+\Gamma_1\subset\Gamma_1.$ Thus,
+$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\geq \int_{z+\Gamma_1}\frac{dx}{|x-gy|^{2N}}=$$
+$$=\int_{\Gamma_1}\frac{dx}{(|x|^2+|y_N|^2)^N}=|y_N|^{-N}\int_{\Gamma_1}\frac{dx}{(|x|^2+1)^N}.$$
+
+so, we need to show
+$$\int_{\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p\frac{dx}{|x-y|^{2N}}\leq |\langle y,v\rangle|^{-N}.$$
+assume for definiteness $v=e_N$ and $\Gamma_1\subset\mathbb{R}^{N-1}\times\mathbb{R}_+.$ it suffices to prove
+$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'-y'|^2+|x_N-y_N|^2}{|x'-y'|^2+(x_N+y_N)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'-y'|^2+|x_N-y_N|^2)^N}\leq y_N^{-N},\quad y\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
+by translation invariance in $x'$ variable, it suffices to prove
+$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'|^2+|x_N-y_N|^2}{|x'|^2+(x_N+y_N)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'|^2+|x_N-y_N|^2)^N}\leq y_N^{-N},\quad y\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
+by dilation invariance, it suffices to prove
+$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'|^2+|x_N-1|^2}{|x'|^2+(x_N+1)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'|^2+|x_N-1|^2)^N}<\infty.$$
+this is TRUE. so, we proved the assertion in Case 1.
+
+{\bf Case 2:} HERE IS THE IDEA. if $\Gamma_1$ and $\Gamma_2$ are two distinct chambers, which are not adjacent, then the angle between them is strictly positive. REFERENCE IS NEEDED.
+
+hence, $|x-gy|\approx |x|+|y|.$ the argument would be simpler.
+}
 \end{proof}
 
 
