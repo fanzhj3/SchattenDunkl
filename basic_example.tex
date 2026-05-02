@@ -1,9 +1,11 @@
 \documentclass{amsart}
 \begin{document}
 
-$$\|f\|_{B^{p}_{Dunkl}(\mathbb{R}^N)}:=\left(\int_{\mathbb{R}^{N}}\int_{\mathbb{R}^{N}}\left(\frac{d(x,y)}{\|x-y\|}\right)^{p}\frac{|f(x)-f(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\right)^{1/p}.$$
+The aim is to show that strange Besov norm defined by the formula 
+$$\|f\|_{B^{p}_{Dunkl}(\mathbb{R}^N)}:=\left(\int_{\mathbb{R}^{N}}\int_{\mathbb{R}^{N}}\left(\frac{d(x,y)}{\|x-y\|}\right)^{p}\frac{|f(x)-f(y)|^p}{w(B(x,d(x,y)))^2}w(x)w(y)dxdy\right)^{1/p}$$
+is controlled by the usual Sobolev norm $\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$ In this file, we only deal with the following example.
 
-Consider the Weyl group $\mathbb{Z}_2^2$ equipped with multiplicity function $k(2^{\frac12},0)=a$ and $k(0,2^{\frac12})=b.$ We have
+Weyl group $\mathbb{Z}_2^2$ acting on $\mathbb{R}^2$ is equipped with multiplicity function $k(2^{\frac12},0)=a$ and $k(0,2^{\frac12})=b.$ We have
 $$w(x)=|x_1|^{2a}|x_2|^{2b}.$$
 We have
 $$d(x,y)\sim \big||x_1|-|y_1|\big|+\big||x_2|-|y_2|\big|.$$
@@ -19,50 +21,184 @@ is controlled by the Besov norm in the first quadrant. We therefore, need to con
 $$\int_{\mathbb{R}^2_+}\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}}{(x_1+y_1+|x_2-y_2|)^{p+4a}}\frac{|f(y)-f(s_1(y))|^p}{(x_2+y_2+|x_1-y_1|)^{4b}}(x_1y_1)^{2a}(x_2y_2)^{2b}dxdy=$$
 $$=\int_{\mathbb{R}^2_+}\Big(\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}\Big)|f(y)-f(s_1(y))|^pdy.$$
 
-So, we need to compute (an equivalent expression for)
-$$\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
-Effectively, we want to show that this is equivalent to
-$$\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
+Similar expression for the usual Sobolev norm is
+$$\int_{\mathbb{R}^2_+}\Big(\int_{\mathbb{R}^2_+}\frac{dx}{(x_1+y_1+|x_2-y_2|)^4}\Big)|f(y)-f(s_1(y))|^pdy\approx y_1^{-2}.$$
 
-If $x_1\notin (\frac12y_1,2y_1),$ then $|x_1-y_1|\sim x_1+y_1$ and the corresponding integrals are equivalent. We, effectively, need to show
-$$\int_{\frac12y_1}^{2y_1}\int_{\mathbb{R}_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}\sim$$
-$$\sim\int_{\frac12y_1}^{2y_1}\int_{\mathbb{R}_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(x_2+y_2+|x_1-y_1|)^{4b}}.$$
-In other words, we need to show
-$$\int_0^{y_1}\int_{\mathbb{R}_+}\frac{(x_1+|x_2-y_2|)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+x_1)^{4b}}\sim$$
-$$\sim\int_0^{y_1}\int_{\mathbb{R}_+}\frac{(x_1+|x_2-y_2|)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(x_2+y_2+x_1)^{4b}}.$$
+So, we need to establish
+$$\int_{\mathbb{R}^2_+}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_1+|x_2-y_2|)^{p+4a}(x_2+y_2+|x_1-y_1|)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+We have $9$ regions: (A) $x_1<\frac12y_1$ and $x_2<\frac12y_2$ (B) $x_1<\frac12y_1$ and $x_2\in(\frac12y_2,y_2)$ (C) $x_1<\frac12y_1$ and $x_2>2y_2$ (D) $x_1\in(\frac12y_1,2y_1)$ and $x_2<\frac12y_2$ (E) $x_1\in(\frac12y_1,2y_1)$ and $x_2\in (\frac12y_2,2y_2)$ (F) $x_1\in(\frac12y_1,2y_1)$ and $x_2>2y_2$ (G) $x_1>2y_1$ and $x_2<\frac12y_2$ (H) $x_1>2y_1$ and $x_2\in(\frac12y_2,2y_2)$ (I) $x_1>2y_1$ and $x_2>2y_2.$
+
+{\bf Case A} we have $|x_1-y_1|\sim y_1$ and $|x_2-y_2|\sim y_2,$ $x_1+y_1\sim y_1$ and $x_2+y_2\sim y_2.$ we, therefore, need to show
+$$\int_0^{\frac12y_1}\int_0^{\frac12y_2}\frac{(y_1+y_2)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(y_1+y_2)^{p+4a}(y_2+y_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\frac{y_1^{2a}y_1^{2b}}{(y_1+y_2)^{4a+4b+4}}\int_0^{\frac12y_1}\int_0^{\frac12y_2}x_1^{2a}x_2^{2b}dx\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$y_1^{4a+3}y_2^{4b+1}\leq (y_1+y_2)^{4a+4b+4}.$$
+This is, obviously, true.
+
+{\bf Case B} we have $|x_1-y_1|\sim y_1,$ $x_1+y_1\sim y_1,$ $x_2+y_2\sim y_2,$ $x_2\sim y_2.$ we, therefore, need to show
+$$\int_0^{\frac12y_1}\int_{\frac12y_2}^{2y_2}\frac{(y_1+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}y_2^{4b}dx}{(y_1+|x_2-y_2|)^{p+4a}(y_2+y_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\int_0^{y_1}\int_0^{y_2}\frac{(y_1+x_2)^{p-4}(x_1y_1)^{2a}y_2^{4b}dx}{(y_1+x_2)^{p+4a}(y_2+y_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$\frac{y_1^{2a+2}y_2^{4b}}{(y_1+y_2)^{4b}}\int_0^{y_1}\int_0^{y_2}\frac{(y_1+x_2)^{p-4}x_1^{2a}dx}{(y_1+x_2)^{p+4a}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$\frac{y_1^{4a+3}y_2^{4b}}{(y_1+y_2)^{4b}}\int_0^{y_2}\frac{dx_2}{(y_1+x_2)^{4a+4}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+It suffices to show
+$$\frac{y_1^{4a+3}y_2^{4b}}{(y_1+y_2)^{4b}}\int_0^{\infty}\frac{dx_2}{(y_1+x_2)^{4a+4}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+This is, obviously, true.
+
+{\bf Case C} we have $|x_1-y_1|\sim y_1,$ $x_1+y_1\sim y_1,$ $|x_2-y_2|\sim x_2,$ $x_2+y_2\sim x_2.$ we, therefore, need to show
+$$\int_0^{\frac12y_1}\int_{2y_2}^{\infty}\frac{(y_1+x_2)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(y_1+x_2)^{p+4a}(x_2+y_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(y_1+x_2)^{4a+4b+4}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$y_1^{4a+3}y_2^{2b}\int_{y_2}^{\infty}\frac{x_2^{2b}dx_2}{(y_1+x_2)^{4a+4b+4}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+
+Substituting $x_2=y_1u$ and denoting $\frac{y_2}{y_1}=t,$ it suffices to check
+$$\int_t^{\infty}\frac{u^{2b}du}{(u+1)^{4a+4b+4}}\leq 1,\quad t>0.$$
+It suffices to show
+$$\int_0^{\infty}\frac{u^{2b}du}{(u+1)^{4a+4b+4}}<\infty,$$
+which is, obviously, true.
+
+{\bf Case D} we have $x_1\sim y_1,$ $|x_2-y_2|\sim y_2,$ $x_2+y_2\sim y_2.$ we, therefore, need to show
+$$\int_{\frac12y_1}^{2y_1}\int_0^{\frac12y_2}\frac{(|x_1-y_1|+y_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx}{(y_1+y_2)^{p+4a}(y_2+|x_1-y_1|)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words,
+$$\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx}{(y_1+y_2)^{p+4a}(y_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$\frac{y_1^{4a+2}y_2^{2b}}{(y_1+y_2)^{p+4a}}\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{p-4}x_2^{2b}dx}{(y_2+x_1)^{4b}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$\frac{y_1^{4a+2}y_2^{4b+1}}{(y_1+y_2)^{p+4a}}\int_0^{y_1}(x_1+y_2)^{p-4-4b}dx_1\leq 1,\quad y\in\mathbb{R}^2_+.$$
+
+Substituting $x_1=y_2u$ and denoting $t=\frac{y_1}{y_2},$ we need to check
+$$\frac{t^{4a+2}}{(t+1)^{p+4a}}\int_0^t(u+1)^{p-4-4b}du\leq 1,\quad t>0.$$
+This is obviously true.
+
+{\bf Case E} we have $x_1\sim x_1+y_1\sim y_1$ and $x_2\sim x_2+y_2\sim y_2.$ we, therefore, need to check
+$$\int_{\frac12y_1}^{2y_1}\int_{\frac12y_2}^{2y_2}\frac{(|x_1-y_1|+|x_2-y_2|)^{p-4}y_1^{4a}y_2^{4b}dx}{(y_1+|x_2-y_2|)^{p+4a}(y_2+|x_1-y_1|)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{p-4}y_1^{4a}y_2^{4b}dx}{(y_1+x_2)^{p+4a}(y_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+Here, we need further split into case $y_1>y_2$ and $y_2>y_1.$
+
+If $y_1>y_2,$ then we need to check
+$$y_1^{2-p}y_2^{4b}\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{p-4}dx}{(y_2+x_1)^{4b}}\leq 1,\quad y_1>y_2>0.$$
+If $y_1<y_2,$ then we need to check
+$$y_1^{4a+2}\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{p-4}dx}{(y_1+x_2)^{p+4a}}\leq 1,\quad y_2>y_1>0.$$
 
 
-We split the integration by $x_2$ into the following domains:
-$$I=(2y_2,\infty),\quad II=(0,\frac12y_2),\quad III=(\frac12y_2,2y_2).$$
-We, therefore, need to show
-$$\int_0^{y_1}\int_{2y_2}^{\infty}\frac{(x_1+x_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{p+4a}(x_2+x_1)^{4b}}+$$
-$$+\int_0^{y_1}\int_0^{\frac12y_2}\frac{(x_1+y_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{p+4a}(y_2+x_1)^{4b}}+$$
-$$+\int_0^{y_1}\int_{\frac12y_2}^{2y_2}\frac{(x_1+|x_2-y_2|)^{p-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+|x_2-y_2|)^{p+4a}(y_2+x_1)^{4b}}\sim$$
-$$\sim\int_0^{y_1}\int_{2y_2}^{\infty}\frac{(x_1+x_2)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{4a}(x_2+x_1)^{4b}}+$$
-$$+\int_0^{y_1}\int_0^{\frac12y_2}\frac{(x_1+y_2)^{-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{4a}(y_2+x_1)^{4b}}+$$
-$$+\int_0^{y_1}\int_{\frac12y_2}^{2y_2}\frac{(x_1+|x_2-y_2|)^{-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+|x_2-y_2|)^{4a}(y_2+x_1)^{4b}}.$$
-In other words, we need to show
-$$\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{p-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{p+4a}}+$$
-$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{p-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{p+4a}}+$$
-$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{p-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+x_2)^{p+4a}(y_2+x_1)^{4b}}\sim$$
-$$\sim\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+x_2)^{4a}}+$$
-$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+y_2)^{-4b-4}y_1^{4a}(x_2y_2)^{2b}dx_2dx_1}{(y_1+y_2)^{4a}}+$$
-$$+\int_0^{y_1}\int_0^{y_2}\frac{(x_1+x_2)^{-4}y_1^{4a}y_2^{4b}dx_2dx_1}{(y_1+x_2)^{4a}(y_2+x_1)^{4b}}.$$
-Substituting $x_1=t_1y_1,$ $x_2=t_2y_1$ and denoting $y=\frac{y_2}{y_1},$ we equivalently rewrite the latter assertion as
-$$\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{p-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+t_2)^{p+4a}}+$$
-$$+\int_0^1\int_0^y\frac{(t_1+y)^{p-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+y)^{p+4a}}+$$
-$$+\int_0^1\int_0^y\frac{(t_1+t_2)^{p-4}y^{4b}dt_2dt_1}{(1+t_2)^{p+4a}(y+t_1)^{4b}}\sim$$
-$$\sim\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+t_2)^{4a}}+$$
-$$+\int_0^1\int_0^y\frac{(t_1+y)^{-4b-4}(t_2y)^{2b}dt_2dt_1}{(1+y)^{4a}}+$$
-$$+\int_0^1\int_0^y\frac{(t_1+t_2)^{-4}y^{4b}dt_2dt_1}{(1+t_2)^{4a}(y+t_1)^{4b}}.$$
 
-We would like to show
-$$\int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{p-4b-4}t_2^{2b}dt_2dt_1}{(1+t_2)^{p+4a}}\sim  \int_0^1\int_y^{\infty}\frac{(t_1+t_2)^{-4b-4}t_2^{2b}dt_2dt_1}{(1+t_2)^{4a}},$$
-$$\int_0^1\int_0^y(t_1+y)^{p-4b-4}(t_2y)^{2b}dt_2dt_1\sim(1+y)^p\int_0^1\int_0^y(t_1+y)^{-4b-4}(t_2y)^{2b}dt_2dt_1,$$
-$$\int_0^1\int_0^y\frac{(t_1+t_2)^{p-4}dt_2dt_1}{(1+t_2)^{p+4a}(y+t_1)^{4b}}\sim\int_0^1\int_0^y\frac{(t_1+t_2)^{-4}dt_2dt_1}{(1+t_2)^{4a}(y+t_1)^{4b}}.$$
+In the first case, we substitute $x_k=y_2u_k$ and setting $t=\frac{y_1}{y_2},$ reduce to the inequality
+$$t^{2-p}\int_0^t\int_0^1\frac{(u_1+u_2)^{p-4}du}{(1+u_1)^{4b}}\leq 1,\quad t>1.$$
+In the second case, we substitute $x_k=y_1u_k$ and setting $t=\frac{y_2}{y_1},$ reduce to the inequality
+$$\int_0^1\int_0^t\frac{(u_1+u_2)^{p-4}dx}{(1+u_2)^{p+4a}}\leq 1,\quad t>1.$$
 
-The second one reads as
-$$\Big|(1+y)^{p-4b-3}-y^{p-4b-3}\Big|\sim (1+y)^p\cdot \Big|(1+y)^{-4b-3}-y^{-4b-3}\Big|.$$
-This is NOT TRUE for small $y.$
+In other words, we need to check the following inequalities:
+$$t^{2-p}\int_0^1\int_0^1\frac{(u_1+u_2)^{p-4}du}{(1+u_1)^{4b}}\leq 1,\quad t>1,$$
+$$t^{2-p}\int_1^t\int_0^1u_1^{p-4-4b}du\leq 1,\quad t>1,$$
+$$\int_0^1\int_0^{\infty}\frac{(u_1+u_2)^{p-4}dx}{(1+u_2)^{p+4a}}<\infty.$$
 
+In other words, we need to check
+$$\int_0^1\int_0^1\frac{(u_1+u_2)^{p-4}du}{(1+u_1)^{4b}}<\infty,$$
+$$t^{2-p}\int_1^tu_1^{p-4-4b}du_1\leq 1,\quad t>1,$$
+$$\int_0^1\int_0^{\infty}\frac{(u_1+u_2)^{p-4}dx}{(1+u_2)^{p+4a}}<\infty.$$
+Each of the latter inequalities is obvious.
+
+{\bf Case F} we have $x_1\sim x_1+y_1\sim y_1$ and $|x_2-y_2|\sim x_2+y_2\sim x_2.$ we, therefore, need to check
+$$\int_{\frac12y_1}^{2y_1}\int_{2y_2}^{\infty}\frac{(|x_1-y_1|+x_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx}{(y_1+x_2)^{p+4a}(x_2+|x_1-y_1|)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{p-4}y_1^{4a}(x_2y_2)^{2b}dx}{(y_1+x_2)^{p+4a}(x_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$y_1^{4a+2}y_2^{2b}\int_0^{y_1}\int_{y_2}^{\infty}\frac{(x_1+x_2)^{p-4-4b}x_2^{2b}dx}{(y_1+x_2)^{p+4a}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+Substituting $x_k=y_1u_k$ and denoting $t=\frac{y_2}{y_1},$ we reduce to the inequality
+$$t^{2b}\int_0^1\int_t^{\infty}\frac{(u_1+u_2)^{p-4-4b}u_2^{2b}du}{(1+u_2)^{p+4a}}\leq 1,\quad t>0.$$
+
+If $t>1,$ then we need to check
+$$t^{2b}\int_0^1\int_t^{\infty}u_2^{-4-2b-4a}du\leq 1,\quad t>1.$$
+Equivalently,
+$$t^{2b}\int_t^{\infty}u_2^{-4-2b-4a}du_2\leq 1,\quad t>1.$$
+This is obvious.
+
+If $t\in(0,1),$ then we need to check
+$$t^{2b}\int_0^1\int_1^{\infty}\frac{(u_1+u_2)^{p-4-4b}u_2^{2b}du}{(1+u_2)^{p+4a}}\leq 1,\quad t\in(0,1),$$
+$$t^{2b}\int_0^1\int_t^1\frac{(u_1+u_2)^{p-4-4b}u_2^{2b}du}{(1+u_2)^{p+4a}}\leq 1,\quad t\in(0,1).$$
+In other words, we need to check
+$$\int_0^1\int_1^{\infty}\frac{(u_1+u_2)^{p-4-4b}u_2^{2b}du}{(1+u_2)^{p+4a}}<\infty,$$
+$$t^{2b}\int_0^1\int_t^1(u_1+u_2)^{p-4-4b}u_2^{2b}du\leq 1,\quad t\in(0,1).$$
+The first of those inequalities is equivalent to
+$$\int_0^1\int_1^{\infty}u_2^{-2b-4a-4}du<\infty,$$
+which is obvious.
+
+The second inequality would follow if we establish
+$$t^{2b}\int_0^1\int_t^1(u_1+u_2)^{p-4-2b}du\leq 1,\quad t\in(0,1).$$
+This, in turn, would follow from the inequality
+$$\int_0^1\int_t^1(u_1+u_2)^{p-4}du\leq 1,\quad t\in(0,1).$$
+In other words,
+$$\int_0^1\int_0^1(u_1+u_2)^{p-4}du<\infty.$$
+This is obvious.
+
+{\bf Case G} we have $|x_1-y_1|\sim x_1+y_1\sim x_1,$ $|x_2-y_2|\sim x_2+y_2\sim y_2.$ we, therefore, need to check
+$$\int_{2y_1}^{\infty}\int_0^{\frac12y_2}\frac{(x_1+y_2)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+y_2)^{p+4a}(y_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words, we need to check
+$$\int_{y_1}^{\infty}\int_0^{y_2}(x_1+y_2)^{-4-4a-4b}(x_1y_1)^{2a}(x_2y_2)^{2b}dx\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$y_1^{2a+2}y_2^{2b}\int_{y_1}^{\infty}\int_0^{y_2}(x_1+y_2)^{-4-4a-4b}x_1^{2a}x_2^{2b}dx\leq 1,\quad y\in\mathbb{R}^2_+.$$
+Substituting $x_k=y_2u_k$ and $t=\frac{y_1}{y_2},$ we reduce to the inequality
+$$t^{2a+2}\int_t^{\infty}\int_0^1(u_1+1)^{-4-4a-4b}u_1^{2a}u_2^{2b}du\leq 1,\quad t>0.$$
+In other words,
+$$t^{2a+2}\int_t^{\infty}(u_1+1)^{-4-4a-4b}u_1^{2a}du_1\leq 1,\quad t>0.$$
+This is obvious.
+
+{\bf Case H} we have $|x_1-y_1|\sim x_1+y_1\sim x_1$ and $x_2+y_2\sim x_2\sim y_2.$ we, therefore, need to check
+$$\int_{2y_1}^{\infty}\int_{\frac12y_2}^{2y_2}\frac{(x_1+|x_2-y_2|)^{p-4}(x_1y_1)^{2a}y_2^{4b}dx}{(x_1+|x_2-y_2|)^{p+4a}(y_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words,
+$$\int_{y_1}^{\infty}\int_0^{y_2}\frac{(x_1+x_2)^{-4-4a}(x_1y_1)^{2a}y_2^{4b}dx}{(y_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+In other words,
+$$y_1^{2a+2}y_2^{4b}\int_{y_1}^{\infty}\int_0^{y_2}\frac{(x_1+x_2)^{-4-4a}x_1^{2a}dx}{(y_2+x_1)^{4b}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+Substituting $x_k=y_2u_k$ and denoting $t=\frac{y_1}{y_2},$ we reduce to the inequality
+$$t^{2a+2}\int_t^{\infty}\int_0^1\frac{(u_1+u_2)^{-4-4a}u_1^{2a}du}{(1+u_1)^{4b}}\leq 1,\quad t>0.$$
+
+If $t>1,$ this is equivalent to
+$$t^{2a+2}\int_t^{\infty}\int_0^1u_1^{-4-2a-4b}du\leq 1,\quad t>1.$$
+This is obvious.
+
+If $t\in(0,1),$ this is equivalent to a combination
+$$t^{2a+2}\int_1^{\infty}\int_0^1\frac{(u_1+u_2)^{-4-4a}u_1^{2a}du}{(1+u_1)^{4b}}\leq 1,\quad t\in(0,1),$$
+$$t^{2a+2}\int_t^1\int_0^1\frac{(u_1+u_2)^{-4-4a}u_1^{2a}du}{(1+u_1)^{4b}}\leq 1,\quad t\in(0,1).$$
+In other words,
+$$\int_1^{\infty}\int_0^1\frac{(u_1+u_2)^{-4-4a}u_1^{2a}du}{(1+u_1)^{4b}}<\infty,$$
+$$t^{2a+2}\int_t^1\int_0^1(u_1+u_2)^{-4-4a}u_1^{2a}du\leq 1,\quad t\in(0,1).$$
+The first inequality is obvious. The second one would follow if we establish
+$$t^{2a+2}\int_t^1\int_0^1(u_1+u_2)^{-4-2a}du\leq 1,\quad t\in(0,1).$$
+This is the same as
+$$t^{2a+2}\int_{t<|u|<1}|u|^{-4-2a}du\leq 1,\quad t\in(0,1).$$
+This would follow from the inequality
+$$t^{2a+2}\int_{t<|u|<\infty}|u|^{-4-2a}du\leq 1,\quad t>0.$$
+This is obvious.
+
+{\bf Case I} we have $|x_1-y_1|\sim x_1+y_1\sim x_1$ and $|x_2-y_2|\sim x_2+y_2\sim x_2.$ we, therefore, need to check
+$$\int_{2y_1}^{\infty}\int_{2y_2}^{\infty}\frac{(x_1+x_2)^{p-4}(x_1y_1)^{2a}(x_2y_2)^{2b}dx}{(x_1+x_2)^{p+4a}(x_2+x_1)^{4b}}\leq y_1^{-2},\quad y\in\mathbb{R}^2_+.$$
+
+In other words,
+$$y_1^{2a+2}y_2^{2b}\int_{y_1}^{\infty}\int_{y_2}^{\infty}\frac{x_1^{2a}x_2^{2b}dx}{(x_1+x_2)^{4a+4b+4}}\leq 1,\quad y\in\mathbb{R}^2_+.$$
+Substituting $x_k=y_2u_k$ and denoting $t=\frac{y_1}{y_2},$ we reduce to
+$$t^{2a+2}\int_t^{\infty}\int_1^{\infty}\frac{u_1^{2a}u_2^{2b}du}{(u_1+u_2)^{4a+4b+4}}\leq 1,\quad t>0.$$
+It would suffice to prove
+$$t^{2a+2}\int_t^{\infty}\int_1^{\infty}\frac{du}{(u_1+u_2)^{2a+2b+4}}\leq 1,\quad t>0.$$
+It would suffice to prove
+$$\int_t^{\infty}\int_1^{\infty}\frac{du}{(u_1+u_2)^{2b+2}}\leq 1,\quad t>0.$$
+This is the same as
+$$\int_0^{\infty}\int_1^{\infty}\frac{du}{(u_1+u_2)^{2b+2}}<\infty.$$
+This is obvious.
+
+So, we proved the estimate in each particular case.
 \end{document}
