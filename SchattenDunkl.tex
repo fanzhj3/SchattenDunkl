@@ -1012,7 +1012,8 @@ Choose $z\in\Gamma$ such that $|z_j|=c_{\Gamma}^{-1}$ and $|z|=1.$ Set $y=x+rz.$
 {\bf Step 4:} Lebesgue measure on $\Gamma$ is, obviously, $N$-regular and possesses the $(1,1)$ Poincare inequality.
 \end{proof}
 
-\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$
+\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Furthermore,
+$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
 \end{lemma}
 \begin{proof} This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.4 in \cite{Hytonen-new}.
 \end{proof}
@@ -1022,7 +1023,8 @@ $$A_{g,\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}U_g.$$
 
 \begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$}}
 $$M_{(f-f\circ g)\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in \mathcal{L}_p(L_2(\Gamma,w(x)dx))$$
-for every $g\in G$ and for every chamber $\Gamma.$
+for every $g\in G$ and for every chamber $\Gamma.$ Furthermore,
+$$\|M_{(f-f\circ g)\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\|_{ \mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
 \end{lemma}
 \begin{proof} By assumption, 
 $$M_{\chi_{\Gamma}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{g\Gamma}}U_g\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$$
