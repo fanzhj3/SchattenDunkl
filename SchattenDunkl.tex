@@ -1080,6 +1080,121 @@ $$\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\leq c_{R,k}\|f\|_{\dot{W}^{\frac{N}{p
 Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
+\section{Simplified version of Zhijie's argument}
+
+\begin{lemma}\label{from rs lemma} Let $\mathcal{D}$ be the standard system of dyadic cubes. Let $O_v\in O(N,\mathbb{R})$ be such $O_ve_N=v$ and let $g\in G.$ We have
+$$\Big\|\Big\{w(O_vQ)^{-1}\langle T\chi_{gO_vQ},\chi_{O_vQ}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq c_{g,v}\|T\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
+\end{lemma}
+\begin{proof} {\color{red} to be done later}.
+\end{proof}
+
+It is decidedly inconvenient that integral kernel $K_j$ of the operator $R_{{\rm Dunkl},j}$ is not positive. 
+\begin{lemma}\label{dh lemma} Integral kernel of $R_{{\rm Dunkl},j}$ has the same sign as $(x-y)_j.$
+\end{lemma}
+\begin{proof} This should follow from Lemma 3.3 in {\color{red} refer to Dziubanski-Hejna paper Ji refers to}.
+\end{proof}
+
+Consider the operator $B_j$ {\color{red} I do not know whether this operator is bounded} whose integral kernel is given by the formula
+$$(x,y)\to |K_j|(x,y),\quad x,y\in\mathbb{R}^N.$$
+
+\begin{lemma}\label{from schur lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ It follows that
+$$M_{|f|\chi_{\Gamma}}B_jM_{\chi_{g\Gamma}}\in \mathcal{L}_p(L_2(\Gamma,w(x)dx))$$
+\end{lemma}
+\begin{proof} Multiplying by ${\rm sgn}(f)$ on the left, we may assume without loss of generality that $f\geq0.$ By Lemma \ref{dh lemma}, $K_j(x,y)$ has the same sign as $(x-y)_j.$ Thus,
+$$M_{f\chi_{\Gamma}}B_jM_{\chi_{g\Gamma}}=\mathfrak{S}_{{\rm sgn}((x-y)_j)}(M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}).$$
+Schur multiplier $\mathfrak{S}_{{\rm sgn}((x-y)_j)}$ is easily seen to be bounded on $\mathcal{L}_p(L_2(\Gamma,w)).$ This completes the proof.
+\end{proof}
+
+Let $g\in\Gamma$ be a reflection with respect to vector $v_0\in R.$
+
+\begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ It follows that
+$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
+\end{lemma}
+\begin{proof} The assertion follows by combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}.
+\end{proof}
+
+We consider only those $Q$ with
+$$|\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R},$$
+$$|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
+I will specify the constant later.
+
+By Lemma \ref{nondegenerate}, we have
+$$w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$=w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|K_j|(x,y)w(x)w(y)dxdy\geq$$
+$$\geq c_Rw(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy.$$
+
+We have
+$$|\langle x,v\rangle|\geq|\langle O_{v_0}c_Q,v\rangle|-|\langle (x-O_{v_0}c_Q),v\rangle|\geq |\langle O_{v_0}c_Q,v\rangle|-|x-O_{v_0}c_Q|\geq$$
+$$\geq |\langle O_{v_0}c_Q,v\rangle|-N^{\frac12}s(Q)\geq \frac12|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_vQ.$$
+We have
+$$|\langle y,v\rangle|\geq|\langle gO_{v_0}c_Q,v\rangle|-|\langle (y-gO_{v_0}c_Q),v\rangle|\geq |\langle gO_{v_0}c_Q,v\rangle|-|y-gO_{v_0}c_Q|\geq$$
+$$\geq |\langle gO_{v_0}c_Q,v\rangle|-N^{\frac12}s(Q)\geq \frac12|\langle gO_{v_0}c_Q,v\rangle|,\quad y\in gO_vQ.$$
+Consequently,
+$$w(x)\geq w(O_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v},\quad x\in O_{v_0}Q,$$
+$$w(y)\geq w(gO_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v}=w(O_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v},\quad y\in gO_{v_0}Q.$$
+
+Thus,
+$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\geq c_Rw(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy.$$
+
+Next,
+$$w(B(x,|x-y|))\leq c_R|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v}.$$
+We have
+$$|x-y|\leq |x-O_{v_0}c_Q|+|y-gO_{v_0}c_Q|+|O_{v_0}c_Q-gO_{v_0}c_Q|\leq$$
+$$\leq 2N^{\frac12}s(Q)+|O_{v_0}c_Q-(O_{v_0}c_Q-2\langle O_{v_0}c_Q,v_0\rangle v_0)|=$$
+$$=2N^{\frac12}s(Q)+2|\langle O_{v_0}c_Q,v_0\rangle|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|,\quad x\in O_{v_0}Q,\quad y\in gO_{v_0}Q.$$
+Next,
+$$|\langle x,v\rangle|\leq|\langle O_{v_0}c_Q,v\rangle|+|\langle x-O_{v_0}c_Q,v\rangle|\leq |\langle O_{v_0}c_Q,v\rangle|+|x-O_{v_0}c_Q|\leq $$
+$$\leq |\langle O_{v_0}c_Q,v\rangle|+N^{\frac12}s(Q)\leq \frac32|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_{v_0Q}.$$
+Thus,
+$$w(B(x,|x-y|))\leq c_R|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
+Hence,
+$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\geq c_R\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|dxdy\times$$
+$$\times w(O_{v_0}Q)^{-1}\cdot \frac{w^2(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^{N+1}\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+
+Clearly,
+$$\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|dxdy=\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
+$$\geq\int_{O_{v_0}Q}|f|(x)\Big(\max\Big\{\int_{gO_{v_0}Q}(x-y)_jdy,\int_{gO_{v_0}Q}(y-x)_jdy\Big\}\Big)dx.$$
+Next,
+$$\int_{gO_{v_0}Q}(x-y)_jdy=x_jm(Q)-(gO_{v_0}c_Q)_jm(Q).$$
+Thus,
+$$\max\Big\{\int_{gO_{v_0}Q}(x-y)_jdy,\int_{gO_{v_0}Q}(y-x)_jdy\Big\}=m(Q)\cdot |x_j-(gO_{v_0}c_Q)_j|\geq $$
+$$\geq m(Q)\cdot |(O_{v_0}c_Q)_j-(gO_{v_0}c_Q)_j|-m(Q)\cdot |(x-O_{v_0c_Q})_j|\geq$$
+$$\geq m(Q)\cdot |(O_{v_0}c_Q-gO_{v_0}c_Q)_j|-m(Q)\cdot N^{\frac12}s(Q)=$$
+$$= 2m(Q)\cdot |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|-m(Q)\cdot N^{\frac12}s(Q)\geq $$
+$$\geq m(Q)\cdot |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|.$$
+
+Hence,
+$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\geq c_R\int_{O_{v_0}Q}|f|(x)dx\times$$
+$$\times w(O_{v_0}Q)^{-1}\cdot \frac{m(Q)\cdot w^2(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+
+Next,
+$$w(O_{v_0}Q)\leq \int_{O_{v_0}Q}w(x)dx.$$
+We have
+$$|\langle x,v\rangle|\leq|\langle O_{v_0}c_Q,v\rangle|+|\langle x-O_{v_0}c_Q,v\rangle|\leq$$
+$$\leq |\langle O_{v_0}c_Q,v\rangle|+|x-O_{v_0}c_Q|\leq |\langle O_{v_0}c_Q,v\rangle|+N^{\frac12}s(Q)\leq \frac32|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_{v_0}Q.$$
+Thus,
+$$w(x)\leq c_Rw(O_{v_0}c_Q),\quad x\in O_{v_0}Q.$$
+Thus,
+$$w(O_{v_0}Q)\leq c_Rm(Q)w(O_{v_0}c_Q).$$
+
+Finally,
+$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\geq c_R\int_{O_{v_0}Q}|f|(x)dx\times$$
+$$\times \frac{w(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+
+That is, we have
+$$\Big\{a_{v_0}(Q)\cdot \int_{O_{v_0}Q}|f|(x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q)}}\in l_p.$$
+Here,
+$$a_{v_0}(Q)=\frac{w(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+
+Comment: if it happens that $(v_0)_j=0,$ then we consider instead
+$$\frac1{m(Q)}\int_{O_{v_0}Q}|f|(x)\cdot |(x-O_{v_0}c_Q)_j|dx\cdot a_{v_0}(Q).$$
+
+It remains to see how one should proceed.
+
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb}}
 \setcounter{equation}{0}
 
@@ -1203,23 +1318,6 @@ $$M_{f-f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).$$
 Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 \end{proof}
 
-It is decidedly inconvenient that integral kernel $K_{g_1,g_2,\Gamma,j}$ of the operator $A_{g_1,g_2,\Gamma,j}$ is not positive. 
-\begin{lemma}\label{dh lemma} Integral kernel of $R_{{\rm Dunkl},j}$ has the same sign as $(x-y)_j.$
-\end{lemma}
-\begin{proof} This should follow from Lemma 3.3 in {\color{red} refer to Dziubanski-Hejna paper Ji refers to}.
-\end{proof}
-
-Consider the operator $B_{g_1,g_2,\Gamma,j}$ {\color{red} I do not know whether this operator is bounded} whose integral kernel is given by the formula
-$$(x,y)\to |K|(g_1x,g_2y),\quad x,y\in\Gamma.$$
-
-\begin{lemma}\label{another different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{another different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w)).$}}
-$$M_{(f\circ g_1)-(f\circ g_2)}B_{g_1,g_2,\Gamma,j}\in \mathcal{L}_p(L_2(\Gamma,w))$$
-for every distinct $g_1,g_2\in G$ and for every chamber $\Gamma.$
-\end{lemma}
-\begin{proof} By Lemma \ref{dh lemma}, $K_{g_1,g_2,\Gamma,j}(x,y)$ has the same sign as $(g_1x-g_2y)_j.$ Thus,
-$$M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}=\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}(M_{|(f\circ g_1)-(f\circ g_2)|}B_{g_1,g_2,\Gamma,j}).$$
-Schur multiplier $\mathfrak{S}_{{\rm sgn}((g_1x-g_2y)_j)}$ is easily seen to be bounded on $\mathcal{L}_p(L_2(\Gamma,w)).$ This completes the proof.
-\end{proof}
 
 {\color{red} here is my plan to simplify the argument:
 
