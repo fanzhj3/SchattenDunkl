@@ -856,82 +856,122 @@ This completes the proof of Lemma \ref{lem:gallery-simple}.
 
 \section{Comparison of Sobolev norms}
 
-\begin{theorem}\label{sobolev comparison theorem} For every $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ we have
-$$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq c_R\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
+\begin{theorem}\label{sobolev comparison theorem} For every $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ $p>N,$ we have
+$$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq c_{p,R}\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 \end{theorem}
 
-\begin{lemma}\label{main comparison lemma} For every chamber $\Gamma$ and for every $1\neq g\in G,$ we have
-$$\int_{\Gamma}\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq c_{p,R}\int_{\Gamma}\frac{dx}{|x-gy|^p},\quad x,y\in\Gamma,\quad p>N.$$
+\begin{lemma}\label{s4 first compute lemma} For every convex polyhedral cone $\Gamma,$ we have
+$$\int_{\Gamma}\frac{dx}{|x-y|^{2N}}\geq c_{\Gamma}{\rm dist}(y,\Gamma)^{-N},\quad y\notin\Gamma.$$
 \end{lemma}
-\begin{proof} {\color{red} the full proof is to be written eventually. at the moment, we give a proof in the special case: suppose $g$ is reflection with respect to the vector $v$ which is orthogonal to the common face of $\Gamma$ and $g\Gamma.$}
-
-
-note that
-$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\approx |\langle y,v\rangle|^{-N}.$$
-Indeed, (assume for definiteness $v=e_N$ and $\Gamma_1\subset\mathbb{R}^{N-1}\times\mathbb{R}_+$) we obviously have
-$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\leq \int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{|x-gy|^{2N}}=$$
-$$=\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{(|x|^2+|y_N|^2)^N}=|y_N|^{-N}\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{dx}{(|x|^2+1)^N}.$$
-On the other hand, let $z=(y_1,\cdots,y_{N-1},0).$ Since $z\in\Gamma_1,$ it follows that $z+\Gamma_1\subset\Gamma_1.$ Thus,
-$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\geq \int_{z+\Gamma_1}\frac{dx}{|x-gy|^{2N}}=$$
-$$=\int_{\Gamma_1}\frac{dx}{(|x|^2+|y_N|^2)^N}=|y_N|^{-N}\int_{\Gamma_1}\frac{dx}{(|x|^2+1)^N}.$$
-
-so, we need to show
-$$\int_{\Gamma_1}\Big(\frac{|x-y|}{|x-gy|}\Big)^p\frac{dx}{|x-y|^{2N}}\leq |\langle y,v\rangle|^{-N}.$$
-assume for definiteness $v=e_N$ and $\Gamma_1\subset\mathbb{R}^{N-1}\times\mathbb{R}_+.$ it suffices to prove
-$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'-y'|^2+|x_N-y_N|^2}{|x'-y'|^2+(x_N+y_N)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'-y'|^2+|x_N-y_N|^2)^N}\leq y_N^{-N},\quad y\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
-by translation invariance in $x'$ variable, it suffices to prove
-$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'|^2+|x_N-y_N|^2}{|x'|^2+(x_N+y_N)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'|^2+|x_N-y_N|^2)^N}\leq y_N^{-N},\quad y\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
-by dilation invariance, it suffices to prove
-$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\Big(\frac{|x'|^2+|x_N-1|^2}{|x'|^2+(x_N+1)^2}\Big)^{\frac{p}{2}}\frac{dx'dx_N}{(|x'|^2+|x_N-1|^2)^N}<\infty.$$
-This is true. So, we proved the assertion in {\color{red} this special case}.
+\begin{proof} Find a point $z\in\Gamma$ such that
+$$|y-z|={\rm dist}(y,\Gamma).$$
+We have $z+\Gamma\subset\Gamma.$ Thus,
+$$\int_{\Gamma}\frac{dx}{|x-y|^{2N}}\geq \int_{z+\Gamma}\frac{dx}{|x-y|^{2N}}=\int_{\Gamma}\frac{dx}{|x-(y-z)|^{2N}}.$$
+Clearly,
+$$|x-(y-z)|\leq |x|+|y-z|.$$
+Thus,
+$$\int_{\Gamma}\frac{dx}{|x-y|^{2N}}\geq\int_{\Gamma}\frac{dx}{(|x|+|y-z|)^{2N}}=|y-z|^{-N}\int_{\Gamma}\frac{dx}{(|x|+1)^{2N}}.$$
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{sobolev comparison theorem}] We have
+\begin{lemma}\label{s4 second compute lemma} If $p\in(N,2N),$ then
+$$\sup_{a>0}\int_{\mathbb{R}^N}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}<\infty.$$
+\end{lemma}
+\begin{proof} {\bf Step 1:} we claim that, for every $a>0,$
+$$\int_{\mathbb{R}^N}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}\leq$$
+$$\leq 4^p\int_{\mathbb{R}^{N-1}\times(-a,a)}\frac{|x|^{p-2N}dx}{(1+|x'|+a)^p}+3^{2N-p}\int_{\mathbb{R}^N}\frac{|x|^{p-2N}dx}{(1+|x|)^p}.$$
+
+
+We clearly have
+$$\int_{\mathbb{R}^N}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}=$$
+$$=\int_{\mathbb{R}^{N-1}\times(\frac{a}{2},\frac{3a}{2})}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}+\int_{\mathbb{R}^{N-1}\times\mathbb{R}\backslash(\frac{a}{2},\frac{3a}{2})}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}.$$
+
+If $x_N\notin(\frac{a}{2},\frac{3a}{2}),$ then $|x_N-a|\geq \frac13|x_N|.$ Hence, $|x-ae_N|\geq \frac13|x|.$ Thus,
+$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}\backslash(\frac{a}{2},\frac{3a}{2})}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}\leq$$
+$$\leq \int_{\mathbb{R}^{N-1}\times\mathbb{R}\backslash(\frac{a}{2},\frac{3a}{2})}\frac{3^{2N-p}|x|^{p-2N}dx}{(1+|x|)^p}\leq \int_{\mathbb{R}^N}\frac{3^{2N-p}|x|^{p-2N}dx}{(1+|x|)^p}.$$
+
+If $x_N\in(\frac{a}{2},\frac{3a}{2}),$ then (here, we using the notation $x'=(x_1,\cdots,x_{N-1})$) $$1+|x|\geq1+\max\{|x'|,\frac12a\}\geq\frac14(1+|x'|+a).$$
+Thus,
+$$\int_{\mathbb{R}^{N-1}\times(\frac{a}{2},\frac{3a}{2})}\frac{|x-ae_N|^{p-2N}dx}{(1+|x|)^p}\leq 4^p\int_{\mathbb{R}^{N-1}\times(\frac{a}{2},\frac{3a}{2})}\frac{|x-ae_N|^{p-2N}dx}{(1+|x'|+a)^p}=$$
+$$=4^p\int_{\mathbb{R}^{N-1}\times(-\frac{a}{2},\frac{a}{2})}\frac{|x|^{p-2N}dx}{(1+|x'|+a)^p}\leq 4^p\int_{\mathbb{R}^{N-1}\times(-a,a)}\frac{|x|^{p-2N}dx}{(1+|x'|+a)^p}.$$
+
+Combining all preceding estimates, we infer the claim in Step 1.
+
+{\bf Step 2:} we claim that
+$$\sup_{a>0}\int_{\mathbb{R}^{N-1}\times(-a,a)}\frac{|x|^{p-2N}dx}{(1+|x'|+a)^p}<\infty.$$
+
+Passing to polar coordinates in $\mathbb{R}^{N-1},$ we equivalently rewrite the claim as
+$$\sup_{a>0}\int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(1+r+a)^p}<\infty.$$
+
+If $0<a<1,$ then
+$$\int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(1+r+a)^p}\leq \int_{\mathbb{R}_+\times(0,1)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(1+r)^p}.$$
+
+If $a\geq 1,$ then
+$$\int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(1+r+a)^p}\leq \int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}=$$
+$$=\int_{(a,\infty)\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}+$$
+$$+\int_0^a\int_0^r\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}dx_Ndr}{(r+a)^p}+\int_0^a\int_0^{x_N}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}\leq$$
+$$\leq\int_{(a,\infty)\times(0,a)}\frac{r^{p-2N}r^{N-2}drdx_N}{r^p}+$$
+$$+\int_0^a\int_0^r\frac{r^{p-2N}r^{N-2}dx_Ndr}{a^p}+\int_0^a\int_0^{x_N}\frac{x_N^{p-2N}r^{N-2}drdx_N}{a^p}=$$
+$$=\int_a^{\infty}r^{-N-1}dr+a^{-p}\int_0^ar^{p-N-1}dr+\frac1{N-1}a^{-p}\int_0^ax_N^{p-N-1}dx_N=$$
+$$=\frac1Na^{-N}+\frac1{p-N}a^{-N}+\frac1{(N-1)(p-N)}a^{-N}\leq \frac1N+\frac1{p-N}+\frac1{(N-1)(p-N)}.$$
+This yields the claim in Step 2.
+
+Combining Steps 1 and 2, we complete the proof of the lemma.
+\end{proof}
+
+
+\begin{lemma}\label{s4 third compute lemma} If $p\in(N,2N),$ then $$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{|x-y|^{p-2N}dx}{|x+z|^p}\leq c_{p,N}z_N^{-N},\quad y,z\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
+\end{lemma}
+\begin{proof} By dilation invariance, we may assume without loss of generality that $z_N=1.$ By translation invariance in $\mathbb{R}^{N-1},$ we may assume without loss of generality that $z_1=\cdots=z_{N-1}=0.$ We, therefore, have
+$$|x+z|=|x+e_N|\geq \max\{1,|x|\}\geq\frac12(1+|x|),\quad x\in\mathbb{R}^{N-1}\times\mathbb{R}_+.$$
+Thus,
+$$\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{|x-y|^{p-2N}dx}{|x+z|^p}\leq 2^p\int_{\mathbb{R}^{N-1}\times\mathbb{R}_+}\frac{|x-y|^{p-2N}dx}{(1+|x|)^p}\leq$$
+$$=2^p\int_{\mathbb{R}^N}\frac{|x-y|^{p-2N}dx}{(1+|x|)^p}=2^p\int_{\mathbb{R}^N}\frac{\big|x-|y|e_N\big|^{p-2N}dx}{(1+|x|)^p}.$$
+The assertion follows from Lemma \ref{s4 second compute lemma}.
+\end{proof}
+
+
+
+\begin{lemma}\label{s4 main lemma} If $p\in(N,2N),$ then
+$$\int_{\Gamma}\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq c_p{\rm dist}(gy,\Gamma)^{-N},\quad y\in\Gamma.$$
+\end{lemma}
+\begin{proof} Find a point $z\in\Gamma$ such that
+$$|gy-z|={\rm dist}(gy,\Gamma).$$
+By the finite-dimensional Hahn-Banach theorem, affine hyperplane $P$ passing through $z$ and orthogonal to $gy-z$ splits the space into two half-spaces, one of them containing $gy,$ the other one containing $\Gamma$ (denote this one by $H$). {\color{red} it would be good to find exactly suitable statement of the Hahn-Banach theorem.}
+
+We have $y\in H,$ $\Gamma\subset H$ and $gy\notin H.$ So,
+$$\int_{\Gamma}\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq\int_H\frac{|x-y|^{p-2N}dx}{|x-gy|^p}.$$
+The assertion follows now from Lemma \ref{s4 third compute lemma}.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{sobolev comparison theorem}] {\bf Case 1:} Let $p\in(N,2N).$
+
+We have
 $$\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}=$$
 $$=\Big(\int_{\Gamma\times \Gamma}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(x)-f(gy)|^p \frac{dxdy}{|x-y|^{2N}}\Big)^{\frac1p}\leq$$
 $$\leq\Big(\int_{\Gamma\times \Gamma}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{|x-y|^{2N}}\Big)^{\frac1p}+$$
 $$+\Big(\int_{\Gamma\times \Gamma}\Big(\frac{|x-y|}{|x-gy|}\Big)^p|f(y)-f(gy)|^p \frac{dxdy}{|x-y|^{2N}}\Big)^{\frac1p}\leq$$
 $$\leq\Big(\int_{\Gamma\times \Gamma}|f(x)-f(y)|^p \frac{dxdy}{|x-y|^{2N}}\Big)^{\frac1p}+$$
-$$+\Big(\int_{\Gamma}|f(y)-f(gy)|^p\Big(\int_{\Gamma}\Big(\frac{|x-y|}{|x-gy|}\Big)^p\frac{dx}{|x-y|^{2N}}\Big)dy\Big)^{\frac1p}.$$
-Obviously, the first summand on the right hand side is less than $\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$ By Lemma \ref{main comparison lemma},
+$$+\Big(\int_{\Gamma}|f(y)-f(gy)|^p\Big(\int_{\Gamma}\frac{|x-y|^{p-2N}}{|x-gy|^p}dx\Big)dy\Big)^{\frac1p}.$$
+Obviously, the first summand on the right hand side is less than $\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$ By Lemmas \ref{s4 main lemma} and \ref{s4 first compute lemma},
 $$\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}\leq \|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}+$$
-$$+c_{p,R}^{\frac1p}\Big(\int_{\Gamma}|f(y)-f(gy)|^p\Big(\int_{\Gamma}\frac{dx}{|x-gy|^{2N}}\Big)dy\Big)^{\frac1p}=$$
+$$+c_{p,R}^{(1)}\Big(\int_{\Gamma}|f(y)-f(gy)|^p\Big(\int_{\Gamma}\frac{dx}{|x-gy|^{2N}}\Big)dy\Big)^{\frac1p}=$$
 $$=\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}+c_{p,R}^{\frac1p}\Big(\int_{\Gamma\times \Gamma}\frac{|f(y)-f(gy)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}\leq$$
-$$\leq\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}+c_{p,R}^{\frac1p}\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(gy)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}+$$
-$$+c_{p,R}^{\frac1p}\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(y)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}.$$
+$$\leq\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}+c_{p,R}^{(1)}\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(gy)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}+$$
+$$+c_{p,R}^{(1)}\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(y)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}.$$
 Now,
 $$\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(gy)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}=\Big(\int_{\Gamma\times g\Gamma}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\Big)^{\frac1p}\leq \|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}$$
 and
 $$\Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(y)|^pdxdy}{|x-gy|^{2N}}\Big)^{\frac1p}\leq \Big(\int_{\Gamma\times \Gamma}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\Big)^{\frac1p}\leq \|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 Thus,
-$$\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}\leq (1+2c_{p,R}^{\frac1p}) \|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
+$$\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}\leq (1+2c_{p,R}^{(1)}) \|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 Summing over $\Gamma$ and $1\neq g\in G,$ we obtain
-$$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq |G|^2(1+2c_{p,R}^{\frac1p})\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
+$$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq |G|^2(1+2c_{p,R}^{(1)})\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
+
+{\bf Case 2:} Let $p\geq 2N.$ We have
+$$\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}\leq$$
+$$\leq\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^{2N}|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\Big)^{\frac1p}=\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 \end{proof}
-
-
-%\begin{construction}\label{translation invariant} Let $\Gamma_1$ and $\Gamma_2$ be convex polyhedral cones such that $\Gamma_1\cap\Gamma_2$ has empty interior. Let $X$ be the span of $\Gamma_1\cap\Gamma_2$ and set $\Delta_1=X+\Gamma_1,$ $\Delta_2=X+\Gamma_2.$
-%\end{construction}
-%
-%\begin{lemma} We have $\Delta_1\cap\Delta_2=X.$
-%\end{lemma}
-%\begin{proof} Every element $z\in X$ can be written as linear combination $\sum_{k=1}^K\lambda_kx_k,$ $\lambda_k\in\mathbb{R},$ $x_k\in \Gamma_1\cap\Gamma_2.$ Set
-%$$z'=\sum_{\substack{1\leq k\leq K\\ \lambda_k>0}}\lambda_kx_k,\quad z''=-\sum_{\substack{1\leq k\leq K\\ \lambda_k<0}}\lambda_kx_k.$$
-%Since $\Gamma_1$ and $\Gamma_2$ are convex and positive homogeneous, it follows that $z',z''\in \Gamma_1\cap\Gamma_2.$ Thus, $z$ can be written as $z'-z'',$ $z',z''\in\Gamma_1\cap\Gamma_2.$
-%
-%Take element $u\in\Delta_1\cap\Delta_2.$ Since $u\in\Delta_1,$ it follows that $u=x+z_1,$ $x\in\Gamma_1,$ $z_1\in X.$ By the preceding paragraph, $z_1=z_2-z_3,$ $z_2,z_3\in \Gamma_1\cap\Gamma_2.$ Thus, $u=x+z_2-z_3,$ $x\in\Gamma_1,$ $z_2,z_3\in\Gamma_1\cap\Gamma_2.$ Since $u\in\Delta_2,$ it follows that $u=y+z_4,$ $y\in\Gamma_2,$ $z_4\in X.$ By the preceding paragraph, $z_4=z_5-z_6,$ $z_5,z_6\in\Gamma_1\cap\Gamma_2.$ Thus, $u=y+z_5-z_6,$ $y\in\Gamma_1,$ $z_5,z_6\in\Gamma_1\cap\Gamma_2.$ 
-%
-%Given $u=x+z_2-z_3,$ $u=y+z_5-z_6,$ we conclude that $x+z_2+z_6=y+z_3+z_5.$ Since $x\in\Gamma_1,$ $z_2,z_6\in\Gamma_1\cap\Gamma_2,$ it follows from convexity and positive homogeneity of $\Gamma_1$ that $x+z_2+z_6\in\Gamma_1.$ Since $y\in\Gamma_2,$ $z_3,z_5\in\Gamma_1\cap\Gamma_2,$ it follows from convexity and positive homogeneity of $\Gamma_2$ that $y+z_3+z_5\in\Gamma_2.$ However, $y+z_3+z_5=x+z_2+z_6.$ Thus, $x+z_2+z_6\in\Gamma_2.$ Since also $x+z_2+z_6\in\Gamma_1,$ it follows that $x+z_2+z_6\in \Gamma_1\cap\Gamma_2\subset X.$ Since $z_2,z_6\in\Gamma_1\cap\Gamma_2\subset X$ and since $X$ is a linear space, it follows that $x\in X.$ Recall that $u=x+z_1$ for some $z_1\in X.$ Since $x\in X$ and $z_1\in X$ and since $X$ is a linear space, it follows that $u\in X.$ Since $u$ was chosen to be an arbitrary element of intersection, the assertion follows.
-%\end{proof}
-%
-%\begin{lemma} Let $\Gamma_1$ and $\Gamma_2$ be as in Construction \ref{translation invariant}. If $y\in\Gamma_2,$ then the projection of $y$ onto $X$ belongs to $\Gamma_1\cap\Gamma_2.$
-%\end{lemma}
-%
-%\begin{lemma} Let $\Gamma$ be a chamber $1\neq g\in G.$ We have
-%$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\geq$$ 
-%\end{lemma}
-%\begin{proof} The projection of 
-%\end{proof}
 
 
 
