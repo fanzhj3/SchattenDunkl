@@ -1193,7 +1193,14 @@ $$a_{v_0}(Q)=\frac{w(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{
 Comment: if it happens that $(v_0)_j=0,$ then we consider instead
 $$\frac1{m(Q)}\int_{O_{v_0}Q}|f|(x)\cdot |(x-O_{v_0}c_Q)_j|dx\cdot a_{v_0}(Q).$$
 
-It remains to see how one should proceed.
+Now, we do one more restriction: fix a cube $Q_0$ such that $O_{v_0}Q_0\subset\Gamma$ and such that
+$$|\langle x,v_0\rangle|\leq {\rm const}_{Q_0}|\langle x,v\rangle|,\quad x\in O_{v_0}Q_0,\quad v\in R.$$
+We consider {\it only} those $Q$ which are contained in $Q_0.$ Consequently,
+$$\Big\{\frac1{|\langle O_{v_0}c_Q,v_0\rangle|^N}\int_{O_{v_0}Q}|f|(x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q)}}\in l_p.$$
+In other words,
+$$\Big\{\frac1{|(c_Q)_N|^N}\int_Q|f|(O_{v_0}x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq {\rm const}\cdot s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq {\rm const}\cdot s(Q)}}\in l_p.$$
+
+{\color{red} Now, we need to think how to obtain the required weighted $L_p$-estimate.}
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb}}
 \setcounter{equation}{0}
