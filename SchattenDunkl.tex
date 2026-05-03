@@ -909,7 +909,7 @@ If $a\geq 1,$ then
 $$\int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(1+r+a)^p}\leq \int_{\mathbb{R}_+\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}=$$
 $$=\int_{(a,\infty)\times(0,a)}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}+$$
 $$+\int_0^a\int_0^r\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}dx_Ndr}{(r+a)^p}+\int_0^a\int_0^{x_N}\frac{(r^2+x_N^2)^{\frac{p}{2}-N}r^{N-2}drdx_N}{(r+a)^p}\leq$$
-$$\leq\int_{(a,\infty)\times(0,a)}\frac{r^{p-2N}r^{N-2}drdx_N}{r^p}+$$
+$$\leq\footnote{It is exactly at this point we are using the assumption $p<2N.$}\int_{(a,\infty)\times(0,a)}\frac{r^{p-2N}r^{N-2}drdx_N}{r^p}+$$
 $$+\int_0^a\int_0^r\frac{r^{p-2N}r^{N-2}dx_Ndr}{a^p}+\int_0^a\int_0^{x_N}\frac{x_N^{p-2N}r^{N-2}drdx_N}{a^p}=$$
 $$=\int_a^{\infty}r^{-N-1}dr+a^{-p}\int_0^ar^{p-N-1}dr+\frac1{N-1}a^{-p}\int_0^ax_N^{p-N-1}dx_N=$$
 $$=\frac1Na^{-N}+\frac1{p-N}a^{-N}+\frac1{(N-1)(p-N)}a^{-N}\leq \frac1N+\frac1{p-N}+\frac1{(N-1)(p-N)}.$$
@@ -930,17 +930,32 @@ The assertion follows from Lemma \ref{s4 second compute lemma}.
 \end{proof}
 
 
+We need the following elementary version of the Hahn-Banach theorem.
+
+\begin{lemma}\label{hahn-banach lemma} Let $K\subset\mathbb{R}^N$ be a convex set and let $y\notin K.$ Let $z\in K$ be the point closest to $y.$ Affine hyperplane $P$ passing through $z$ and orthogonal to $y-z$ splits the space into two half-spaces, one of them containing $y,$ the other one containing $K.$ 
+\end{lemma}
+\begin{proof} By translation invariance, we may assume without loss of generality that $z=0.$ By rotation and dilation invariance, we may assume without loss of generality that $y=e_N.$ By assumption, ${\rm dist}(e_N,K)=1.$ We need to show that $K$ is contained in the (closed) lower half-plane.
+
+Assume the contrary: let $x\in K$ be such that $x_N>0.$ Since $0\in K$ and since $K$ is convex, it follows that $\epsilon x\in K$ for every $\epsilon\in(0,1).$ Thus,
+$${\rm dist}(e_N,K)\leq |e_N-\epsilon x|,\quad \epsilon\in(0,1).$$
+Since $\epsilon\in(0,1)$ is arbitrary, it follows that
+$${\rm dist}(e_N,K)\leq \inf_{\epsilon\in(0,1)}|e_N-\epsilon x|=\inf\big(\epsilon^2\sum_{k=1}^{N-1}x_k^2+(1-\epsilon x_N)^2\big)^{\frac12}.$$
+Since $x_N>0,$ it follows that infimum is strictly less than $1.$ Thus, ${\rm dist}(e_N,K)<1.$ However, it is granted in the lemma that ${\rm dist}(e_N,K)=1.$ This contradiction shows that such an $x$ cannot exist. This completes the proof.
+\end{proof}
+
 
 \begin{lemma}\label{s4 main lemma} If $p\in(N,2N),$ then
 $$\int_{\Gamma}\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq c_p{\rm dist}(gy,\Gamma)^{-N},\quad y\in\Gamma.$$
 \end{lemma}
 \begin{proof} Find a point $z\in\Gamma$ such that
 $$|gy-z|={\rm dist}(gy,\Gamma).$$
-By the finite-dimensional Hahn-Banach theorem, affine hyperplane $P$ passing through $z$ and orthogonal to $gy-z$ splits the space into two half-spaces, one of them containing $gy,$ the other one containing $\Gamma$ (denote this one by $H$). {\color{red} it would be good to find exactly suitable statement of the Hahn-Banach theorem.}
+By Lemma \ref{hahn-banach lemma}, affine hyperplane passing through $z$ and orthogonal to $gy-z$ splits the space into two half-spaces, one of them containing $gy,$ the other one containing $\Gamma$ (denote this one by $H$).
 
 We have $y\in H,$ $\Gamma\subset H$ and $gy\notin H.$ So,
 $$\int_{\Gamma}\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq\int_H\frac{|x-y|^{p-2N}dx}{|x-gy|^p}.$$
-The assertion follows now from Lemma \ref{s4 third compute lemma}.
+Using Lemma \ref{s4 third compute lemma}, we write
+$$\int_H\frac{|x-y|^{p-2N}dx}{|x-gy|^p}\leq c_{p,N}{\rm dist}(gy,H)^{-N}.$$
+Since $z\in \partial H$ and since $gy-z$ is orthogonal to $\partial H,$ it follows that ${\rm dist}(gy,H)=|gy-z|={\rm dist}(gy,\Gamma).$
 \end{proof}
 
 
