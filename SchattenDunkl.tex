@@ -25,6 +25,9 @@
 \newtheorem{assum}{Assumption}[section]
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{construction}[theorem]{Construction}
+
+
 \renewcommand{\theequation}
 {\thesection.\arabic{equation}}
 
@@ -856,6 +859,30 @@ This completes the proof of Lemma \ref{lem:gallery-simple}.
 \begin{theorem}\label{sobolev comparison theorem} For every $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ we have
 $$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq c_R\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
 \end{theorem}
+
+%\begin{construction}\label{translation invariant} Let $\Gamma_1$ and $\Gamma_2$ be convex polyhedral cones such that $\Gamma_1\cap\Gamma_2$ has empty interior. Let $X$ be the span of $\Gamma_1\cap\Gamma_2$ and set $\Delta_1=X+\Gamma_1,$ $\Delta_2=X+\Gamma_2.$
+%\end{construction}
+%
+%\begin{lemma} We have $\Delta_1\cap\Delta_2=X.$
+%\end{lemma}
+%\begin{proof} Every element $z\in X$ can be written as linear combination $\sum_{k=1}^K\lambda_kx_k,$ $\lambda_k\in\mathbb{R},$ $x_k\in \Gamma_1\cap\Gamma_2.$ Set
+%$$z'=\sum_{\substack{1\leq k\leq K\\ \lambda_k>0}}\lambda_kx_k,\quad z''=-\sum_{\substack{1\leq k\leq K\\ \lambda_k<0}}\lambda_kx_k.$$
+%Since $\Gamma_1$ and $\Gamma_2$ are convex and positive homogeneous, it follows that $z',z''\in \Gamma_1\cap\Gamma_2.$ Thus, $z$ can be written as $z'-z'',$ $z',z''\in\Gamma_1\cap\Gamma_2.$
+%
+%Take element $u\in\Delta_1\cap\Delta_2.$ Since $u\in\Delta_1,$ it follows that $u=x+z_1,$ $x\in\Gamma_1,$ $z_1\in X.$ By the preceding paragraph, $z_1=z_2-z_3,$ $z_2,z_3\in \Gamma_1\cap\Gamma_2.$ Thus, $u=x+z_2-z_3,$ $x\in\Gamma_1,$ $z_2,z_3\in\Gamma_1\cap\Gamma_2.$ Since $u\in\Delta_2,$ it follows that $u=y+z_4,$ $y\in\Gamma_2,$ $z_4\in X.$ By the preceding paragraph, $z_4=z_5-z_6,$ $z_5,z_6\in\Gamma_1\cap\Gamma_2.$ Thus, $u=y+z_5-z_6,$ $y\in\Gamma_1,$ $z_5,z_6\in\Gamma_1\cap\Gamma_2.$ 
+%
+%Given $u=x+z_2-z_3,$ $u=y+z_5-z_6,$ we conclude that $x+z_2+z_6=y+z_3+z_5.$ Since $x\in\Gamma_1,$ $z_2,z_6\in\Gamma_1\cap\Gamma_2,$ it follows from convexity and positive homogeneity of $\Gamma_1$ that $x+z_2+z_6\in\Gamma_1.$ Since $y\in\Gamma_2,$ $z_3,z_5\in\Gamma_1\cap\Gamma_2,$ it follows from convexity and positive homogeneity of $\Gamma_2$ that $y+z_3+z_5\in\Gamma_2.$ However, $y+z_3+z_5=x+z_2+z_6.$ Thus, $x+z_2+z_6\in\Gamma_2.$ Since also $x+z_2+z_6\in\Gamma_1,$ it follows that $x+z_2+z_6\in \Gamma_1\cap\Gamma_2\subset X.$ Since $z_2,z_6\in\Gamma_1\cap\Gamma_2\subset X$ and since $X$ is a linear space, it follows that $x\in X.$ Recall that $u=x+z_1$ for some $z_1\in X.$ Since $x\in X$ and $z_1\in X$ and since $X$ is a linear space, it follows that $u\in X.$ Since $u$ was chosen to be an arbitrary element of intersection, the assertion follows.
+%\end{proof}
+%
+%\begin{lemma} Let $\Gamma_1$ and $\Gamma_2$ be as in Construction \ref{translation invariant}. If $y\in\Gamma_2,$ then the projection of $y$ onto $X$ belongs to $\Gamma_1\cap\Gamma_2.$
+%\end{lemma}
+%
+%\begin{lemma} Let $\Gamma$ be a chamber $1\neq g\in G.$ We have
+%$$\int_{\Gamma_1}\frac{dx}{|x-gy|^{2N}}\geq$$ 
+%\end{lemma}
+%\begin{proof} The projection of 
+%\end{proof}
+
 \begin{proof} {\color{red} TO BE DONE.
 
 {\bf Case 1:} let $\Gamma_2=g\Gamma_1$ with $g\in G$ being reflection (with respect to the vector $v\in R$). we would like to estimate
@@ -894,7 +921,10 @@ this is TRUE. so, we proved the assertion in Case 1.
 
 {\bf Case 2:} HERE IS THE IDEA. if $\Gamma_1$ and $\Gamma_2$ are two distinct chambers, which are not adjacent, then the angle between them is strictly positive. REFERENCE IS NEEDED.
 
-hence, $|x-gy|\approx |x|+|y|.$ the argument would be simpler.
+unfortunately, the above alternative is false. see the example below.
+
+example: $N,$ root system is $\{e_k\}_{k=1}^N.$ chambers are given by permutations on the set $\{1,\cdots,N\}.$ that is, let $\pi$ be a permutation. chamber is $\{x_{\pi(1)}\geq x_{\pi(2)}\geq \cdots \geq x_{\pi(n)}\}.$ suppose we have two permutations: $\pi_1$ and $\pi_2$ such that $\pi_1(1)=\pi_2(3),$ $\pi_1(2)=\pi_2(2),$ $\pi_1(3)=\pi_2(1),$ $\pi_1(k)=\pi_2(k)$ for $4\leq k\leq N.$ intersection of these two chambers is $\{\pi_1(1)=\pi_1(2)=\pi_1(3)\geq\pi_1(4)\geq\cdots\geq\pi_1(N)\}.$
+
 }
 \end{proof}
 
