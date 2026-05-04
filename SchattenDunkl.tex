@@ -1107,100 +1107,106 @@ Schur multiplier $\mathfrak{S}_{{\rm sgn}((x-y)_j)}$ is easily seen to be bounde
 
 Let $g\in\Gamma$ be a reflection with respect to vector $v_0\in R.$
 
-\begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ It follows that
-$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
+\begin{lemma}\label{for zhijie auxiliary estimates} Suppose $Q\in\mathcal{D}$ is such that
+$$|\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R}.$$
+\begin{enumerate}[{\rm (i)}]
+\item\label{fzha} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
+$$\frac12|\langle O_{v_0}c_Q,v\rangle|\leq|\langle x,v\rangle|\leq\frac32|\langle O_{v_0}c_Q,v\rangle|,$$
+$$\frac12|\langle gO_{v_0}c_Q,v\rangle|\leq|\langle y,v\rangle|\leq\frac32|\langle gO_{v_0}c_Q,v\rangle|.$$
+\item\label{fzhb} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
+$$c_k^{-1}w(O_{v_0}c_Q)\leq w(x),w(y)\leq c_kw(O_{v_0}c_Q).$$
+\item\label{fzhc} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
+$$|(c_Q)_N|=|\langle O_{v_0}c_Q,v_0\rangle|\leq |x-y|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|=3|(c_Q)_N|.$$
+\item\label{fzhd} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
+$$w(B(x,|x-y|))\leq c_k|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v},$$
+$$w(B(x,|x-y|))\geq c_k^{-1}|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
+\item\label{fzhe} We have
+$$c_k^{-1}m(Q)w(O_{v_0}Q)\leq w(O_{v_0}Q)\leq c_km(Q)w(O_{v_0}Q).$$
+\end{enumerate}
 \end{lemma}
-\begin{proof} The assertion follows by combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}.
-\end{proof}
-
-We consider only those $Q$ with
-$$|\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R},$$
-$$|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
-I will specify the constant later.
-
-By Lemma \ref{nondegenerate}, we have
-$$w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
-$$=w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|K_j|(x,y)w(x)w(y)dxdy\geq$$
-$$\geq c_Rw(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy.$$
-
-We have
+\begin{proof} We have
 $$|\langle x,v\rangle|\geq|\langle O_{v_0}c_Q,v\rangle|-|\langle (x-O_{v_0}c_Q),v\rangle|\geq |\langle O_{v_0}c_Q,v\rangle|-|x-O_{v_0}c_Q|\geq$$
 $$\geq |\langle O_{v_0}c_Q,v\rangle|-N^{\frac12}s(Q)\geq \frac12|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_vQ.$$
-We have
-$$|\langle y,v\rangle|\geq|\langle gO_{v_0}c_Q,v\rangle|-|\langle (y-gO_{v_0}c_Q),v\rangle|\geq |\langle gO_{v_0}c_Q,v\rangle|-|y-gO_{v_0}c_Q|\geq$$
-$$\geq |\langle gO_{v_0}c_Q,v\rangle|-N^{\frac12}s(Q)\geq \frac12|\langle gO_{v_0}c_Q,v\rangle|,\quad y\in gO_vQ.$$
-Consequently,
-$$w(x)\geq w(O_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v},\quad x\in O_{v_0}Q,$$
-$$w(y)\geq w(gO_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v}=w(O_{v_0}c_Q)\cdot 2^{-\sum_{v\in R}k_v},\quad y\in gO_{v_0}Q.$$
+The other inequalities in \eqref{fzha} are proved similarly.
 
-Thus,
-$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
-$$\geq c_Rw(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy.$$
+The assertion \eqref{fzhb} follows immediately from \eqref{fzha}.
 
-Next,
-$$w(B(x,|x-y|))\leq c_R|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v}.$$
 We have
 $$|x-y|\leq |x-O_{v_0}c_Q|+|y-gO_{v_0}c_Q|+|O_{v_0}c_Q-gO_{v_0}c_Q|\leq$$
 $$\leq 2N^{\frac12}s(Q)+|O_{v_0}c_Q-(O_{v_0}c_Q-2\langle O_{v_0}c_Q,v_0\rangle v_0)|=$$
 $$=2N^{\frac12}s(Q)+2|\langle O_{v_0}c_Q,v_0\rangle|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|,\quad x\in O_{v_0}Q,\quad y\in gO_{v_0}Q.$$
-Next,
-$$|\langle x,v\rangle|\leq|\langle O_{v_0}c_Q,v\rangle|+|\langle x-O_{v_0}c_Q,v\rangle|\leq |\langle O_{v_0}c_Q,v\rangle|+|x-O_{v_0}c_Q|\leq $$
-$$\leq |\langle O_{v_0}c_Q,v\rangle|+N^{\frac12}s(Q)\leq \frac32|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_{v_0Q}.$$
-Thus,
-$$w(B(x,|x-y|))\leq c_R|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
-Hence,
-$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
-$$\geq c_R\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|dxdy\times$$
-$$\times w(O_{v_0}Q)^{-1}\cdot \frac{w^2(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^{N+1}\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+The other inequality in \eqref{fzhc} is proved similarly.
 
-Clearly,
-$$\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|dxdy=\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
-$$\geq\int_{O_{v_0}Q}|f|(x)\Big(\max\Big\{\int_{gO_{v_0}Q}(x-y)_jdy,\int_{gO_{v_0}Q}(y-x)_jdy\Big\}\Big)dx.$$
-Next,
-$$\int_{gO_{v_0}Q}(x-y)_jdy=x_jm(Q)-(gO_{v_0}c_Q)_jm(Q).$$
-Thus,
-$$\max\Big\{\int_{gO_{v_0}Q}(x-y)_jdy,\int_{gO_{v_0}Q}(y-x)_jdy\Big\}=m(Q)\cdot |x_j-(gO_{v_0}c_Q)_j|\geq $$
-$$\geq m(Q)\cdot |(O_{v_0}c_Q)_j-(gO_{v_0}c_Q)_j|-m(Q)\cdot |(x-O_{v_0c_Q})_j|\geq$$
-$$\geq m(Q)\cdot |(O_{v_0}c_Q-gO_{v_0}c_Q)_j|-m(Q)\cdot N^{\frac12}s(Q)=$$
-$$= 2m(Q)\cdot |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|-m(Q)\cdot N^{\frac12}s(Q)\geq $$
-$$\geq m(Q)\cdot |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|.$$
+Note that
+$$w(B(x,|x-y|))\leq c_k|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v},$$
+$$w(B(x,|x-y|))\leq c_k^{-1}|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v}.$$
+The assertion \eqref{fzhd} follows immediately from \eqref{fzha} and \eqref{fzhc}.
 
-Hence,
-$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
-$$\geq c_R\int_{O_{v_0}Q}|f|(x)dx\times$$
-$$\times w(O_{v_0}Q)^{-1}\cdot \frac{m(Q)\cdot w^2(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+Finally, the assertion \eqref{fzhe} follows immediately from \eqref{fzhb}.
+\end{proof}
 
-Next,
-$$w(O_{v_0}Q)\leq \int_{O_{v_0}Q}w(x)dx.$$
+\begin{lemma}\label{for zhijie extra estimate} Suppose that $v_0$ is not orthogonal to $e_j.$ Suppose $Q\in\mathcal{D}$ is such that
+$$|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
 We have
-$$|\langle x,v\rangle|\leq|\langle O_{v_0}c_Q,v\rangle|+|\langle x-O_{v_0}c_Q,v\rangle|\leq$$
-$$\leq |\langle O_{v_0}c_Q,v\rangle|+|x-O_{v_0}c_Q|\leq |\langle O_{v_0}c_Q,v\rangle|+N^{\frac12}s(Q)\leq \frac32|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_{v_0}Q.$$
-Thus,
-$$w(x)\leq c_Rw(O_{v_0}c_Q),\quad x\in O_{v_0}Q.$$
-Thus,
-$$w(O_{v_0}Q)\leq c_Rm(Q)w(O_{v_0}c_Q).$$
+$$\int_{gO_{v_0}Q}|(x-y)_j|dy\geq m(Q)\cdot |(c_Q)_N|\cdot |(v_0)_j|.$$
+\end{lemma}
+\begin{proof} Clearly,
+$$\int_{gO_{v_0}Q}|(x-y)_j|dy\geq\max\Big\{\int_{gO_{v_0}Q}(x-y)_jdy,\int_{gO_{v_0}Q}(y-x)_jdy\Big\}.$$
+Next,
+$$\int_{gO_{v_0}Q}(x-y)_jdy=(x-gO_{v_0}c_Q)_j\cdot m(Q)$$
+and
+$$|(x-gO_{v_0}c_Q)_j|\geq |(O_{v_0}c_Q)_j-(gO_{v_0}c_Q)_j|-|(x-O_{v_0c_Q})_j|\geq$$
+$$\geq |(O_{v_0}c_Q-gO_{v_0}c_Q)_j|-N^{\frac12}s(Q)=$$
+$$= 2|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|-N^{\frac12}s(Q)\geq|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|.$$
+Combining these inequalities, we complete the proof.
+\end{proof}
 
-Finally,
-$$w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
-$$\geq c_R\int_{O_{v_0}Q}|f|(x)dx\times$$
-$$\times \frac{w(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+\begin{nota} Let $Q_0\in\mathcal{D}$ be such that
+\begin{enumerate}[{\rm (i)}]
+\item $Q_0\subset O_{v_0}^{-1}\Gamma$ touches the plane $\{x_N=0\}.$
+\item $O_{v_0}Q$ is separated from any plane $\{\langle x,v\rangle=0\},$ $v_0\neq v\in R.$
+\end{enumerate}
+If $v_0$ is not orthogonal to $e_j,$ then denote by $\mathcal{D}_{v_0,Q_0}$ the collection of all cubes $Q\in\mathcal{D}$ such that
+$$|\langle c_Q,O_{v_0}^{-1}v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle c_Q,O_{v_0}^{-1}g^{-1}v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R},$$
+$$|(c_Q)_N|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
+\end{nota}
 
-That is, we have
-$$\Big\{a_{v_0}(Q)\cdot \int_{O_{v_0}Q}|f|(x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q)}}\in l_p.$$
-Here,
-$$a_{v_0}(Q)=\frac{w(O_{v_0}c_Q)}{|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}}.$$
+\begin{lemma}\label{for zhijie inq0 lemma} If $Q\in\mathcal{D}_{v_0,Q_0}$ and if $x\in O_{v_0}Q,$ $y\in gO_{v_0}Q,$ then
+$$c_k^{-1}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q)\leq w(B(x,|x-y|))\leq c_{k,Q_0}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q).$$
+\end{lemma}
+\begin{proof} The left hand side estimate immediately follows from Lemma \ref{for zhijie auxiliary estimates} \eqref{fzhd} (it does not require the assumption $Q\subset Q_0$).
 
-Comment: if it happens that $(v_0)_j=0,$ then we consider instead
-$$\frac1{m(Q)}\int_{O_{v_0}Q}|f|(x)\cdot |(x-O_{v_0}c_Q)_j|dx\cdot a_{v_0}(Q).$$
+By assumption,
+$$|\langle z,v_0\rangle|\leq c_{Q_0}|\langle x,v\rangle|,\quad x\in Q_0,\quad v\in R.$$
+Since $O_{v_0}c_Q\in Q_0,$ it follows that
+$$|\langle O_{v_0}c_Q,v_0\rangle|\leq c_{Q_0}|\langle O_{v_0}c_Q,v\rangle|,\quad x\in Q_0,\quad v\in R.$$
+The latter inequality combined with Lemma \ref{for zhijie auxiliary estimates} \eqref{fzhd} now yield the right hand estimate.
+\end{proof}
 
-Now, we do one more restriction: fix a cube $Q_0$ such that $O_{v_0}Q_0\subset\Gamma$ and such that
-$$|\langle x,v_0\rangle|\leq {\rm const}_{Q_0}|\langle x,v\rangle|,\quad x\in O_{v_0}Q_0,\quad v\in R.$$
-We consider {\it only} those $Q$ which are contained in $Q_0.$ Consequently,
-$$\Big\{\frac1{|\langle O_{v_0}c_Q,v_0\rangle|^N}\int_{O_{v_0}Q}|f|(x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q)\\ |\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q)}}\in l_p.$$
-In other words,
-$$\Big\{\frac1{|(c_Q)_N|^N}\int_Q|f|(O_{v_0}x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ O_{v_0}Q\subset\Gamma\\ |\langle O_{v_0}c_Q,v\rangle|\geq {\rm const}\cdot s(Q)\\ |\langle gO_{v_0}c_Q,v\rangle|\geq {\rm const}\cdot s(Q)}}\in l_p.$$
+\begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ We have
+$$\Big\{\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\Big\}_{Q\in\mathcal{D}_{v_0,Q_0}}\in l_p.$$
+\end{lemma}
+\begin{proof} Combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}, we obtain
+$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
+In particular,
+$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}_{v_0,Q_0}}\in l_p.$$
 
-{\color{red} Now, we need to think how to obtain the required weighted $L_p$-estimate.}
+By Lemma \ref{nondegenerate}, we have
+$$w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$=w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|K_j|(x,y)w(x)w(y)dxdy\geq$$
+$$\stackrel{L.\ref{nondegenerate}}{\geq} c_k^{(1)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhb}}{\geq} c_k^{(2)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhc}}{\geq} c_k^{(3)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhe}}{\geq} c_k^{(4)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
+$$\stackrel{L.\ref{for zhijie inq0 lemma}}{\geq} c_{k,Q_0}^{(5)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|\cdot\frac1{|(c_Q)_N|^{N+1}}dxdy=$$
+$$=c_{k,Q_0}^{(5)}\frac1{m(Q)\cdot |(c_Q)_N|^{N+1}}\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
+$$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx.$$
+\end{proof}
+
+{\color{red} in case $v_0$ is orthogonal to $e_j,$ we similarly obtain
+$$\Big\{\frac1{|(c_Q)_N|^N\cdot s(Q)}\int_{O_{v_0}Q}|f|(x)|(x-O_{v_0}c_Q)_j|dx\Big\}_{Q\in\mathcal{D}_{v_0,Q_0}}\in l_p.$$
+}
+
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb}}
 \setcounter{equation}{0}
