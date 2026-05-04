@@ -1107,46 +1107,73 @@ Schur multiplier $\mathfrak{S}_{{\rm sgn}((x-y)_j)}$ is easily seen to be bounde
 
 Let $g\in\Gamma$ be a reflection with respect to vector $v_0\in R.$
 
-\begin{lemma}\label{for zhijie auxiliary estimates} Suppose $Q\in\mathcal{D}$ is such that
-$$|\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R}.$$
+\begin{lemma}\label{for zhijie auxiliary estimates} Let $Q_0\in\mathcal{D}$ be such that
 \begin{enumerate}[{\rm (i)}]
+\item $Q_0\subset O_{v_0}^{-1}\Gamma$ touches the plane $\{x_N=0\}.$
+\item $O_{v_0}Q_0$ is separated from any plane $\{\langle x,v\rangle=0\},$ $v_0\neq v\in R.$
+\end{enumerate}
+If $Q\in\mathcal{D}$ is such that $Q\subset Q_0$ and\footnote{Here, we use the shorthand
+$${\rm const}_{Q_0}=\frac1{2N^{\frac12}}\min\{\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle x,v\rangle|,\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle gx,v\rangle|\}.$$}
+$$|(c_Q)_N|\geq 2N^{\frac12}s(Q),\quad s(Q)\leq {\rm const}_{Q_0}.$$
+\begin{enumerate}[{\rm (i)}]
+\item\label{fzhpre} We have
+$$|\langle O_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle gO_{v_0}c_Q,v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R}.$$
 \item\label{fzha} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
 $$\frac12|\langle O_{v_0}c_Q,v\rangle|\leq|\langle x,v\rangle|\leq\frac32|\langle O_{v_0}c_Q,v\rangle|,$$
 $$\frac12|\langle gO_{v_0}c_Q,v\rangle|\leq|\langle y,v\rangle|\leq\frac32|\langle gO_{v_0}c_Q,v\rangle|.$$
 \item\label{fzhb} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
 $$c_k^{-1}w(O_{v_0}c_Q)\leq w(x),w(y)\leq c_kw(O_{v_0}c_Q).$$
 \item\label{fzhc} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
-$$|(c_Q)_N|=|\langle O_{v_0}c_Q,v_0\rangle|\leq |x-y|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|=3|(c_Q)_N|.$$
+$$|(c_Q)_N|\leq |x-y|\leq 3|(c_Q)_N|.$$
 \item\label{fzhd} If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
-$$w(B(x,|x-y|))\leq c_k|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v},$$
-$$w(B(x,|x-y|))\geq c_k^{-1}|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
+$$c_k^{-1}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q)\leq w(B(x,|x-y|))\leq c_k|(c_Q)_N|^N\cdot w(O_{v_0}c_Q).$$
 \item\label{fzhe} We have
 $$c_k^{-1}m(Q)w(O_{v_0}Q)\leq w(O_{v_0}Q)\leq c_km(Q)w(O_{v_0}Q).$$
 \end{enumerate}
 \end{lemma}
-\begin{proof} We have
+\begin{proof} Since $c_Q\in Q_0,$ it follows that
+$$|\langle O_{v_0}c_Q,v\rangle|\geq \inf_{z\in Q_0}|\langle O_{v_0}z,v|\geq 2N^{\frac12}{\rm const}_{Q_0}\geq 2N^{\frac12}s(Q),\quad v_0\neq v\in R,$$
+$$|\langle gO_{v_0}c_Q,v\rangle|\geq \inf_{z\in Q_0}|\langle gO_{v_0}z,v|\geq 2N^{\frac12}{\rm const}_{Q_0}\geq 2N^{\frac12}s(Q),\quad v_0\neq v\in R.$$
+On the other hand, we have
+$$|\langle gO_{v_0}c_Q,v_0\rangle|=|\langle O_{v_0}c_Q,v_0\rangle|=|\langle O_{v_0}c_Q,O_{v_0}e_N\rangle|=|\langle c_Q,e_N\rangle|=|(c_Q)_N|.$$
+This yields \eqref{fzhpre}.
+
+If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
 $$|\langle x,v\rangle|\geq|\langle O_{v_0}c_Q,v\rangle|-|\langle (x-O_{v_0}c_Q),v\rangle|\geq |\langle O_{v_0}c_Q,v\rangle|-|x-O_{v_0}c_Q|\geq$$
 $$\geq |\langle O_{v_0}c_Q,v\rangle|-N^{\frac12}s(Q)\geq \frac12|\langle O_{v_0}c_Q,v\rangle|,\quad x\in O_vQ.$$
 The other inequalities in \eqref{fzha} are proved similarly.
 
 The assertion \eqref{fzhb} follows immediately from \eqref{fzha}.
 
-We have
+If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then
 $$|x-y|\leq |x-O_{v_0}c_Q|+|y-gO_{v_0}c_Q|+|O_{v_0}c_Q-gO_{v_0}c_Q|\leq$$
 $$\leq 2N^{\frac12}s(Q)+|O_{v_0}c_Q-(O_{v_0}c_Q-2\langle O_{v_0}c_Q,v_0\rangle v_0)|=$$
-$$=2N^{\frac12}s(Q)+2|\langle O_{v_0}c_Q,v_0\rangle|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|,\quad x\in O_{v_0}Q,\quad y\in gO_{v_0}Q.$$
+$$=2N^{\frac12}s(Q)+2|\langle O_{v_0}c_Q,v_0\rangle|\leq 3|\langle O_{v_0}c_Q,v_0\rangle|=3|(c_Q)_N|.$$
 The other inequality in \eqref{fzhc} is proved similarly.
 
 Note that
-$$w(B(x,|x-y|))\leq c_k|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v},$$
-$$w(B(x,|x-y|))\leq c_k^{-1}|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v}.$$
-The assertion \eqref{fzhd} follows immediately from \eqref{fzha} and \eqref{fzhc}.
+$$w(B(x,|x-y|))\geq c_k^{-1}|x-y|^N\cdot w(x).$$
+If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then the it follows from \eqref{fzhb} and \eqref{fzhc} that
+$$w(B(x,|x-y|))\geq c_k^{-1}|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot w(O_{v_0}c_Q).$$
+Thus, we obtained the left hand side estimate in \eqref{fzhd}.
+
+Note that
+$$w(B(x,|x-y|))\leq c_k|x-y|^N\cdot\prod_{v\in R}(|x-y|+|\langle x,v\rangle|)^{k_v}.$$
+If $x\in O_{v_0}Q$ and $y\in gO_{v_0}Q,$ then it follows from \eqref{fzha} and \eqref{fzhc} that
+$$w(B(x,|x-y|))\leq c_k|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}(|\langle O_{v_0}c_Q,v_0\rangle|+|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
+By assumption on $Q_0,$
+$$|\langle z,v_0\rangle|\leq {\rm const}'_{Q_0}|\langle z,v\rangle|,\quad z\in Q_0,\quad v\in R.$$
+Since $O_{v_0}c_Q\in Q_0,$ it follows that
+$$|\langle O_{v_0}c_Q,v_0\rangle|\leq {\rm const}'_{Q_0}|\langle O_{v_0}c_Q,v\rangle|,\quad  v\in R.$$
+Hence,
+$$w(B(x,|x-y|))\leq c_k|\langle O_{v_0}c_Q,v_0\rangle|^N\cdot \prod_{v\in R}((1+{\rm const}'_{Q_0})|\langle O_{v_0}c_Q,v\rangle|)^{k_v}.$$
+Thus, we obtained the right hand side estimate in \eqref{fzhd}.
 
 Finally, the assertion \eqref{fzhe} follows immediately from \eqref{fzhb}.
 \end{proof}
 
 \begin{lemma}\label{for zhijie extra estimate} Suppose that $v_0$ is not orthogonal to $e_j.$ Suppose $Q\in\mathcal{D}$ is such that
-$$|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
+$$|(c_Q)_N|\cdot |(v_0)_j|\geq 2N^{\frac12}s(Q).$$
 We have
 $$\int_{gO_{v_0}Q}|(x-y)_j|dy\geq m(Q)\cdot |(c_Q)_N|\cdot |(v_0)_j|.$$
 \end{lemma}
@@ -1161,48 +1188,28 @@ $$= 2|\langle O_{v_0}c_Q,v_0\rangle|\cdot |(v_0)_j|-N^{\frac12}s(Q)\geq|\langle 
 Combining these inequalities, we complete the proof.
 \end{proof}
 
-\begin{nota} Let $Q_0\in\mathcal{D}$ be such that
-\begin{enumerate}[{\rm (i)}]
-\item $Q_0\subset O_{v_0}^{-1}\Gamma$ touches the plane $\{x_N=0\}.$
-\item $O_{v_0}Q_0$ is separated from any plane $\{\langle x,v\rangle=0\},$ $v_0\neq v\in R.$
-\end{enumerate}
-If $v_0$ is not orthogonal to $e_j,$ then denote by $\mathcal{D}_{v_0,Q_0}$ the collection of all cubes $Q\in\mathcal{D}$ such that $Q\subset Q_0$ and
-$$s(Q)\leq\frac1{2N^{\frac12}}\min\{\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle x,v\rangle|,\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle gx,v\rangle|\},$$
-$$|(c_Q)_N|\cdot |(v_0)_j|\geq 2N^{\frac12}s(Q).$$
-\end{nota}
-
-The purpose of introducing $\mathcal{D}_{v_0,Q_0}$ is that every cube $Q\in\mathcal{D}_{v_0,Q_0}$ automatically satisfies the assumptions in Lemma \ref{for zhijie auxiliary estimates} and \ref{for zhijie extra estimate}. The following lemma delivers a bonus estimate.
-
-\begin{lemma}\label{for zhijie inq0 lemma} If $Q\in\mathcal{D}_{v_0,Q_0}$ and if $x\in O_{v_0}Q,$ $y\in gO_{v_0}Q,$ then
-$$c_k^{-1}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q)\leq w(B(x,|x-y|))\leq c_{k,Q_0}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q).$$
-\end{lemma}
-\begin{proof} The left hand side estimate immediately follows from Lemma \ref{for zhijie auxiliary estimates} \eqref{fzhd} (it does not require the assumption $Q\subset Q_0$).
-
-By assumption,
-$$|\langle z,v_0\rangle|\leq c_{Q_0}|\langle x,v\rangle|,\quad x\in Q_0,\quad v\in R.$$
-Since $O_{v_0}c_Q\in Q_0,$ it follows that
-$$|\langle O_{v_0}c_Q,v_0\rangle|\leq c_{Q_0}|\langle O_{v_0}c_Q,v\rangle|,\quad x\in Q_0,\quad v\in R.$$
-The latter inequality combined with Lemma \ref{for zhijie auxiliary estimates} \eqref{fzhd} now yield the right hand estimate.
-\end{proof}
-
-\begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ If $v_0$ is not orthogonal to $e_j,$ then
-$$\Big\{\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\Big\}_{Q\in\mathcal{D}_{v_0,Q_0}}\in l_p.$$
+\begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ Let $Q_0$ be as in Lemma \ref{for zhijie auxiliary estimates}. If $v_0$ is not orthogonal to $e_j,$ then
+$$\Big\{\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p,\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
 \end{lemma}
 \begin{proof} Combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}, we obtain
 $$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
 In particular,
-$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}_{v_0,Q_0}}\in l_p.$$
+$$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ s(Q)\leq {\rm const}_{Q_0}\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p.$$
+Here, we use the shorthands
+$${\rm const}_{Q_0}=\frac1{2N^{\frac12}}\min\{\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle x,v\rangle|,\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle gx,v\rangle|\},\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
 
-By Lemma \ref{nondegenerate}, we have
+
+Using Lemmas \ref{nondegenerate}, \ref{for zhijie auxiliary estimates} and \ref{for zhijie extra estimate}, we write
 $$w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
 $$=w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|K_j|(x,y)w(x)w(y)dxdy\geq$$
 $$\stackrel{L.\ref{nondegenerate}}{\geq} c_k^{(1)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w(x)w(y)}{w(B(x,|x-y|))}dxdy\geq$$
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhb}}{\geq} c_k^{(2)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|x-y|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhc}}{\geq} c_k^{(3)}w(O_{v_0}Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w^2(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhe}}{\geq} c_k^{(4)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
-$$\stackrel{L.\ref{for zhijie inq0 lemma}}{\geq} c_{k,Q_0}^{(5)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|\cdot\frac1{|(c_Q)_N|^{N+1}}dxdy=$$
+$$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhd}}{\geq} c_{k,Q_0}^{(5)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|\cdot\frac1{|(c_Q)_N|^{N+1}}dxdy=$$
 $$=c_{k,Q_0}^{(5)}\frac1{m(Q)\cdot |(c_Q)_N|^{N+1}}\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
 $$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx.$$
+As the condition $s(Q)\leq {\rm const}_{Q_0}$ excludes only finitely many terms, we can drop this condition.
 \end{proof}
 
 {\color{red} In case $v_0$ is orthogonal to $e_j,$ we similarly obtain
