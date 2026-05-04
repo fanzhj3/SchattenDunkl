@@ -1167,9 +1167,11 @@ Combining these inequalities, we complete the proof.
 \item $O_{v_0}Q$ is separated from any plane $\{\langle x,v\rangle=0\},$ $v_0\neq v\in R.$
 \end{enumerate}
 If $v_0$ is not orthogonal to $e_j,$ then denote by $\mathcal{D}_{v_0,Q_0}$ the collection of all cubes $Q\in\mathcal{D}$ such that
-$$|\langle c_Q,O_{v_0}^{-1}v\rangle|\geq 2N^{\frac12}s(Q),\quad |\langle c_Q,O_{v_0}^{-1}g^{-1}v\rangle|\geq 2N^{\frac12}s(Q),\quad v\in\mathbb{R},$$
-$$|(c_Q)_N|\cdot |(v_0)_j|\geq N^{\frac12}s(Q).$$
+$$s(Q)\leq\frac1{2N^{\frac12}}\min\{\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|\langle x,v|,\inf_{\substack{x\in Q_0\\ v_0\neq v\in R}}|gx,v|\},$$
+$$|(c_Q)_N|\cdot |(v_0)_j|\geq 2N^{\frac12}s(Q).$$
 \end{nota}
+
+The purpose of introducing $\mathcal{D}_{v_0,Q_0}$ is that every cube $Q\in\mathcal{D}_{v_0,Q_0}$ automatically satisfies the assumptions in Lemma \ref{for zhijie auxiliary estimates} and \ref{for zhijie extra estimate}. The following lemma delivers a bonus estimate.
 
 \begin{lemma}\label{for zhijie inq0 lemma} If $Q\in\mathcal{D}_{v_0,Q_0}$ and if $x\in O_{v_0}Q,$ $y\in gO_{v_0}Q,$ then
 $$c_k^{-1}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q)\leq w(B(x,|x-y|))\leq c_{k,Q_0}|(c_Q)_N|^N\cdot w(O_{v_0}c_Q).$$
