@@ -512,46 +512,41 @@ Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FH.$ The ass
 
 {\color{red} I expect the following result to be true.}
 
-\begin{theorem} Let $Q_0$ be a fixed dyadic cube touching the plane $\{x_N=0\}.$ If
-$$\Big\{\frac1{|(c_Q)_N|^N}\int_Q|f|\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p$$
+\begin{theorem} If
+$$\Big\{\int_Q\frac{|f|(y)dy}{|y_N|^N}\Big\}_{\substack{Q\in\mathcal{D}\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p$$
 for some $c>0,$ then
-$$\int_{Q_0}|x_N|^{-N}|f|^p(x)dx<\infty.$$
+$$\int_{\mathbb{R}^N}\frac{|f|^p(y)dy}{|y_N|^N}dx<\infty.$$
 \end{theorem}
 
-For simplicity of notations, $Q_0=(0,1)^N.$
+
 
 It is immediate that
-$$\Big\{\frac1{(c_Q)_N^N}\int_{3Q}|f|\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ (c_Q)_N\geq (c+1)\cdot s(Q)}}\in l_p.$$
+$$\Big\{\int_{3Q}\frac{|f|(y)dy}{|y_N|^N}\Big\}_{\substack{Q\in\mathcal{D}\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\in l_p.$$
 
 Let $x\in Q$ and let $t\in(\frac{s(Q)}{2},s(Q)).$ We have
-$$B(x,t)=x+B(0,t)\subset x+B(0,s(Q))\subset x+[-s(Q),s(Q)]^d\subset Q+[-s(Q),s(Q)]^d=3Q.$$
-$$\int_{B(x,t)}|f|\leq \int_{3Q}|f|.$$
-We also have
-$$x_N\geq (c_Q)_N-s(Q)\geq \frac{c}{c+1}(c_Q)_N.$$
+$$B(x,t)=x+B(0,t)\subset x+B(0,s(Q))\subset x+[-s(Q),s(Q)]^d\subset $$
+$$\subset Q+[-s(Q),s(Q)]^d=3Q.$$
 Thus,
-$$x_N^{-N}\int_{B(x,t)}|f|\leq (1+\frac1c)^N(c_Q)_N^{-N}\int_{3Q}|f|.$$
+$$\int_{B(x,t)}\frac{|f|(y)dy}{|y_N|^N}\leq \int_{3Q}\frac{|f|(y)dy}{|y_N|^N}.$$
 
 
 Set
-$$h(x,t)=x_N^{-N}\int_{B(x,t)}|f|,\quad x\in [0,1]^N,\quad t\in(0,1).$$
+$$h(x,t)=\int_{B(x,t)}\frac{|f|(y)dy}{|y_N|^N},\quad x\in [0,1]^N,\quad t\in(0,1).$$
 So, we have
-$$\sup_{\substack{x\in Q\\ t\in(\frac{s(Q)}{2},s(Q))}}h(x,t)\leq (1+\frac1c)^N \frac1{(c_Q)_N^N}\int_{3Q}|f|.$$
+$$\sup_{\substack{x\in Q\\ t\in(\frac{s(Q)}{2},s(Q))}}h(x,t)\leq \int_{3Q}\frac{|f|(y)dy}{|y_N|^N}.$$
 In particular,
-$$\Big(\int_{Q\times(\frac{s(Q)}{2},s(Q))}h^p(x,t)\frac{dxdt}{t^{N+1}}\Big)^{\frac1p}\leq 2^{\frac{N}{p}}(1+\frac1c)^N\frac1{(c_Q)_N^N}\int_{3Q}|f|.$$
+$$\int_{Q\times(\frac{s(Q)}{2},s(Q))}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq 2^N\Big(\int_{3Q}|f|\Big)^p.$$
 Consequently,
-$$\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\int_{Q\times(\frac{s(Q)}{2},s(Q))}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq$$
-$$\leq 2^N(1+\frac1c)^{Np}\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\frac1{(c_Q)_N^N}\int_{3Q}|f|\Big)^p.$$
+$$\sum_{\substack{Q\in\mathcal{D}\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\int_{Q\times(\frac{s(Q)}{2},s(Q))}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq$$
+$$\leq 2^N\sum_{\substack{Q\in\mathcal{D}\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\int_{3Q}\frac{|f|(y)dy}{|y_N|^N}\Big)^p.$$
 
-Suppose $(x,t)\in (0,1)^N\times(0,1)$ is such that $|x_N|\geq (2c+4)t.$ Find $m\in\mathbb{Z}_+$ such that $t\in(2^{-m-1},2^{-m}].$ Find $Q\in\mathcal{D}$ such that $s(Q)=2^{-m}$ and such that $x\in Q.$ We have
-$$|(c_Q)_N|\geq |x_N|-|(x-c_Q)_N|\geq |x_N|-s(Q)\geq |x_N|-2t\geq (2c+4)t-2t=(2c+2)t\geq (c+1)s(Q).$$ 
+Suppose $(x,t)\in \mathbb{R}^N\times\mathbb{R}_+$ is such that $|x_N|\geq (2c+4)t.$ Find $m\in\mathbb{Z}$ such that $t\in(2^{-m-1},2^{-m}].$ Find $Q\in\mathcal{D}$ such that $s(Q)=2^{-m}$ and such that $x\in Q.$ We have
+$$|(c_Q)_N|\geq |x_N|-|(x-c_Q)_N|\geq |x_N|-s(Q)\geq |x_N|-2t\geq$$
+$$\geq (2c+4)t-2t=(2c+2)t\geq (c+1)s(Q).$$ 
 Hence,
-$$\int_{\substack{x\in (0,1)^N\\ t\in(0,1)\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq$$
-$$\leq 2^N(1+\frac1c)^{Np}\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\frac1{(c_Q)_N^N}\int_{3Q}|f|\Big)^p.$$
-
+$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq 2^N\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\int_{3Q}\frac{|f|(y)dy}{|y_N|^N}\Big)^p.$$
 So,
-$$\int_{\substack{x\in (0,1)^N\\ t\in(0,1)\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
-It is easy to see that {\color{red} do we need details here?}
-$$\int_{\substack{x\in\mathbb{R}^N\\ t\in\mathbb{R}_+\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
+$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
 Furthermore, it is easy to see that {\color{red} do we need details here?}
 $$\int_{\substack{x\in\mathbb{R}^N\\ t\in\mathbb{R}_+\\ x_N\geq t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
 
@@ -666,7 +661,7 @@ Combining these inequalities, we complete the proof.
 \end{proof}
 
 \begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ Let $Q_0$ be as in Lemma \ref{for zhijie auxiliary estimates}. If $v_0$ is not orthogonal to $e_j,$ then
-$$\Big\{\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p,\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
+$$\Big\{\int_Q|f|(O_{v_0}^{-1}x)\frac{dx}{|x_N|^N}\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p,\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
 \end{lemma}
 \begin{proof} Combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}, we obtain
 $$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
@@ -685,7 +680,9 @@ $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhc}}{\geq} c_k^{(3)}
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhe}}{\geq} c_k^{(4)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhd}}{\geq} c_{k,Q_0}^{(5)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|\cdot\frac1{|(c_Q)_N|^{N+1}}dxdy=$$
 $$=c_{k,Q_0}^{(5)}\frac1{m(Q)\cdot |(c_Q)_N|^{N+1}}\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
-$$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx.$$
+$$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\geq$$
+$$\geq c_{k,Q_0}^{(7)}\int_Q|f|(O_{v_0}^{-1}x)\frac{dx}{|x_N|^{-N}}.$$
+
 As the condition $s(Q)\leq {\rm const}_{Q_0}$ excludes only finitely many terms, we can drop this condition.
 \end{proof}
 
