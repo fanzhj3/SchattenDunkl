@@ -816,57 +816,29 @@ Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 
 \section{Useful part of Zhijie argument}
 
-\begin{lemma}\label{constructHPQ}
- Assume that $P$ and $Q$ are two $w$-measurable sets on $\mathbb{R}^N$ such that $P\subset Q$. Suppose that there exist constants $1<A<B<\infty$ such that
-\begin{align}\label{twosidecond}
-  Aw(P)\leq w(Q)\leq Bw(P).
-\end{align}
-There is a $w$-measurable  function $H_{P,Q}$ on $\mathbb{R}^N$ satisfying
-\begin{enumerate}
-  \item\label{111} $|H_{P,Q}(x)|\leq w(Q)^{-1/2}\chi_Q(x)$;\smallskip
-  \item\label{222} $\int_Q H_{P,Q}(x)dw(x)=0$;\smallskip
-  \item\label{333} $|(b)_P-(b)_Q|\approx w(Q)^{-1/2}|\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)}|$, where the implicit constants depending only on $A$ and $B$.
-\end{enumerate}
+\begin{lemma}\label{constructHPQ} Let $P,Q\subset\mathbb{R}^N$ be measurable and such that $P\subset Q.$ 
+There is mean zero\footnote{With respect to measure $w(x)dx.$} function $H_{P,Q}$ on $Q$ with
+$$\|H_{P,Q}\|_{\infty}=\max\Big\{\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}},\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\Big\}$$
+and such that
+$$\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)}=\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}(f_P-f_Q)$$
+for every $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
 \end{lemma}
-\begin{proof}
-Denote by $c_{A,B}:=\min\left\{(A-1)^{1/2},(B-1)^{-1/2}\right\}$ and let
-\begin{align*}
-H_{P,Q}:=c_{A,B}\left(\frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}\chi_P(x)-\frac{w(P)^{1/2}}{w(Q)^{1/2}w(Q\backslash P)^{1/2}}\chi_{Q\backslash P}(x)\right).
-\end{align*}
-Now we verify the function $H_{P,Q}$ satisfies all the required properties.
+\begin{proof} Set
+$$H_{P,Q}=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\chi_P-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\chi_{Q\backslash P}.$$
+Clearly, $H_{P,Q}$ satisfies the expected estimate in the uniform norm and is mean zero on $Q.$
 
-$\bullet $ {\bf Verification of \eqref{111}.}
-
-It is obvious that $\supp H_{P,Q}\subset Q$. Next, we apply inequality \eqref{twosidecond} to see that
-\begin{align}\label{twosdde}
-(A-1)w(P)\leq w(Q\backslash P)=w(Q)-w(P)\leq (B-1)w(P).
-\end{align}
-Thus, $c_{A,B}w(Q\backslash P)^{1/2}\leq w(P)^{1/2}$ and $c_{A,B}w(P)^{1/2}\leq w(Q\backslash P)^{1/2}.$  This verifies property \eqref{111}.
-
-$\bullet $ {\bf Verification of \eqref{222}.}
-
-Note that
-\begin{align*}
-\int_Q H_{P,Q}(x)dw(x)&=c_{A,B}\int_Q \left(\frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}\chi_P(x)-\frac{w(P)^{1/2}}{w(Q)^{1/2}w(Q\backslash P)^{1/2}}\chi_{Q\backslash P}(x)\right)dw(x)\\
-&=c_{A,B}\left(\frac{w(Q\backslash P)^{1/2}w(P)^{1/2}}{w(Q)^{1/2}}-\frac{w(P)^{1/2}w(Q\backslash P)^{1/2}}{w(Q)^{1/2}}\right)\\
-&=0.
-\end{align*}
-This verifies property \eqref{222}.
-
-$\bullet $ {\bf Verification of \eqref{333}.}
-
-We first show a stronger equality, that is,
-\begin{align}\label{strongequality}
-c_{A,B}\big((b)_P-(b)_Q\big)=\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)} \frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}.
-\end{align}
-Indeed, we have
-\begin{align*}
-&{\rm RHS}\ {\rm of}\ \eqref{strongequality}\\
-&=c_{A,B}\left(\frac{w(Q)-w(P)}{w(P)w(Q)}\int_P b(x)dw(x)-\frac{1}{w(Q)}\int_{Q\backslash P}b(x)dw(x)\right)\\
-&=c_{A,B}\left(\fint_Pb(x)dw(x)-\frac{1}{w(Q)}\int_Pb(x)dw(x)-\bigg(\fint_Qb(x)dw(x)-\frac{1}{w(Q)}\int_Pb(x)dw(x)\bigg)\right)\\
-&={\rm LHS}\ {\rm of}\ \eqref{strongequality}.
-\end{align*}
-Combining \eqref{strongequality} with \eqref{twosdde}, we deduce property \eqref{333} and then, Lemma \ref{constructHPQ}.
+We have
+$$\langle f,H_{P,Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\int_P f(x)w(x)dx-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_{Q\backslash P}f(x)w(x)dx=$$
+$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\int_P f(x)w(x)dx-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_Qf(x)w(x)dx+$$
+$$+\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_Pf(x)w(x)dx=$$
+$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\cdot w(P)f_P-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\cdot w(Q)f_Q+$$
+$$+\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\cdot w(P)f_P=$$
+$$=\frac{w(P)^{\frac12}w(Q\backslash P)^{\frac12}}{w(Q)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q+\frac{w(P)^{\frac32}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}f_P=$$
+$$=\frac{w(P)^{\frac12}\cdot w(Q\backslash P)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q+\frac{w(P)^{\frac12}\cdot w(P)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}f_P=$$
+$$=\frac{w(P)^{\frac12}\cdot w(Q)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q=$$
+$$=\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q.$$
+This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{NWOlemma}
