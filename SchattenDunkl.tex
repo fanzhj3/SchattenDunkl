@@ -841,91 +841,73 @@ $$=\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}} f_P-\frac{w(P
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{NWOlemma}
-Let $b$ and $H$ be two $w$-measurable complex-valued functions on $\mathbb{R}^N$. Assume that there is a cube ${\displaystyle Q\in \bigcup_{\nu=1}^{2^N}\mathbb{D}^\nu}$ such that
-\begin{enumerate}
-  \item ${\displaystyle|H(x)|\leq w(Q)^{-1/2}\chi_Q\ { for}\ { all}\  x\in\mathbb{R}^N;}$
-  \item
-${\displaystyle\int_{Q}H(x)dw(x)=0}$.
-\end{enumerate}
-There exist function sequences $\{e_{Q,s}\}_{s=1}^4$ and $\{f_{Q,s}\}_{s=1}^4$ such that
-$$|e_{Q,s}|+|f_{Q,s}|\leq w(Q)^{-1/2}\chi_{6\sqrt{N}Q},$$ and that
-\begin{align}\label{yieldsss}
-  |\langle b,H\rangle_{L^2(\mathbb{R}^N,dw)}|&\lesssim w(Q)^{1/2}\sum_{s=1}^4|\langle [b,R_{\D,j}]e_{Q,s},f_{Q,s}\rangle_{L^2(\mathbb{R}^N,dw)}|.
-\end{align}
+\begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
+$$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
 \end{lemma}
+\begin{proof} {\color{red} TO BE DONE. Follows from Lemma \ref{nondegenerate}.}
 
-
-{\color{red} THE MOST IMPORTANT TASK FOR ZHIJIE. please get rid of complex median method in this proof. our functions are WITHOUT LOSS OF GENERALITY real-valued.}
-
-\begin{proof}
-By Lemma \ref{nondegenerate}, for any $k\in\mathbb{Z}$ and $Q\in\mathbb{D}_k^\nu$, since $Q\subset B(c_Q,\sqrt{N}2^{-k-1})=:B_Q$,
-there exists a ball $\widehat{B_Q}:=B(c_{\widehat{B_Q}},\sqrt{N}2^{-k-1})$ such that $\|c_Q-c_{\widehat{B_Q}}\|=5\sqrt{N}2^{-k-1}$, and that for every $(x,y)\in Q\times \widehat{B_Q}$, $K_{\D,j}(x,y)$ does not change sign and satisfies
- \begin{align}\label{nondegeneratelower}
-  |K_{\D,j}(x,y)|\gtrsim\frac{1}{w(B_Q)}.
-\end{align}
-
-It follows from the doubling inequality \eqref{doublinginequality} that
-$$w(B_Q)\sim w(\widehat{B_Q})\sim w(Q).$$
-
-By \cite[Theorem 1.5]{Zhangwei2}, there exist $\theta\in [0,2\pi)$, depending on $\widehat{B_Q}$ and $b$, and $\alpha_{\widehat{B_Q}}(b)\in\mathbb{C}$ such that if we denote
-$$F_s^Q:=\left\{x\in\widehat{B_Q}:\ -\frac{\pi}{4}+\frac{(s-1)\pi}{2}\leq \arg\Big(e^{i\theta}\big(\alpha_{\widehat{B_Q}}(b)-b(x)\big)\Big)\leq -\frac{\pi}{4}+\frac{s\pi}{2}\ or\ b(x)=\alpha_{\widehat{B_Q}}(b)\right\},$$
-where $s\in\{1,2,3,4\}$, and $\arg(z)$ is the argument of a complex number $z$, then
-$w(F_s^Q)\geq \frac{1}{16}w(\widehat{B_Q})$, and $F_1^Q\cup F_2^Q\cup F_3^Q\cup F_4^Q=\widehat{B_Q}$. $\alpha_{\widehat{B_Q}}(b)$ is called a complex median value of $b$ over $\widehat{B_Q}$.
-Similarly, if we denote
-\begin{align}
-  E_s^Q:=\left\{x\in Q:\ -\frac{\pi}{4}+\frac{(s-1)\pi}{2}\leq \arg\Big(e^{i\theta}\big(b(x)-\alpha_{\widehat{B_Q}}(b)\big)\Big)\leq -\frac{\pi}{4}+\frac{s\pi}{2}\ or\ b(x)=\alpha_{\widehat{B_Q}}(b)\right\}
-\end{align}
-then $E_1^Q\cup E_2^Q\cup E_3^Q \cup E_4^Q= Q$.
-
-It follows from the assumption of $H$ that
-\begin{align*}
-  |\langle b,H\rangle_{L^2(\mathbb{R}^N,dw)}|
-  &=\Bigg|\int_Q b(x)H(x)dw(x)\Bigg|\nonumber\\
-  &=\Bigg|\int_Q\big(b(x)-\alpha_{\widehat{B_Q}}(b)\big)H(x)dw(x)\Bigg|\nonumber\\
-  &\lesssim w(Q)^{-\frac{1}{2}}\int_Q|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)\nonumber\\
-  &\lesssim w(Q)^{-\frac{1}{2}}\sum_{s=1}^4\int_{E_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)=:\sum_{s=1}^4 M_s^Q.
-\end{align*}
-Note that for any $s\in\{1,2,3,4\},$ if $x\in E_s^Q$ and $y\in F_s^Q$, then
-\begin{align}\label{complexmedian}
-  |b(x)-\alpha_{\widehat{B_Q}}(b)|&\leq |e^{i\theta}(b(x)-\alpha_{\widehat{B_Q}}(b))|+|e^{i\theta}(\alpha_{\widehat{B_Q}}(b)-b(y))|\nonumber\\
-  &\leq 2|e^{i\theta}(b(x)-b(y))|=2|b(x)-b(y)|.
-\end{align}
-Combining \eqref{nondegeneratelower} with \eqref{complexmedian}, we deduce that
-\begin{align}
-  M_s^Q&\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)\cdot \frac{w(F_s^Q)}{w(Q)}\nonumber\\
-  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}\int_{F_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)||K_{\D,j}(x,y)|dw(y)dw(x)\nonumber\\
-  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}\int_{F_s^Q}|b(x)-b(y)||K_{\D,j}(x,y)|dw(y)dw(x).
-\end{align}
-Moreover, note that for any $x\in E_1^Q$ and $y\in F_1^Q$, the arguments of $e^{i\theta}(b(x)-\alpha_{\widehat{B_Q}}(b))$ and $e^{i\theta}(\alpha_{\widehat{B_Q}}(b)-b(y))$ both belong to $[-\frac{\pi}{4},\frac{\pi}{4}]$. Thus,
-$$-\frac{\pi}{4}\leq \arg\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big)\leq \frac{\pi}{4}.$$
-This implies that
-\begin{align}
-  |b(x)-b(y)|=\Big|e^{i\theta}\big(b(x)-b(y)\big)\Big|\leq 2{\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big).
-\end{align}
-%and
-%\begin{align}
-%\Big|{\rm Im}\Big(e^{i\theta}(b(x)-b(y))\Big)\Big|\leq {\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big).
-%\end{align}
-Therefore,
-\begin{align*}
-  M_1^Q
-  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_1^Q}\int_{F_1^Q}{\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big)K_{\D,j}(x,y)dw(y)dw(x)\nonumber\\
-   &\lesssim w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_1^Q}\int_{F_1^Q}e^{i\theta}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|\nonumber\\
-   &= w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_1^Q}\int_{F_1^Q}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|.
-\end{align*}
-The other three terms  $M_2^Q$, $M_3^Q$, $M_4^Q$ can be handled in the same way as $M_1^Q$ by rotation. Hence, for $s\in\{1,2,3,4\}$,
-\begin{align}
-  M_s^Q&\lesssim w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_s^Q}\int_{F_s^Q}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|\nonumber\\
-  &=w(Q)^{\frac{1}{2}}\Bigg\langle [b,R_{\D,j}]\frac{\chi_{F_s^Q}}{w(Q)^{1/2}},\frac{\chi_{E_s^Q}}{w(Q)^{1/2}}\Bigg\rangle_{L^2(\mathbb{R}^N,dw)}.
-\end{align}
-Letting
-$$e_{Q,s}:=\frac{\chi_{F_s^Q}}{w(Q)^{1/2}}\  {\rm and}\  f_{Q,s}:=\frac{\chi_{E_s^Q}}{w(Q)^{1/2}},$$
-which deduces \eqref{yieldsss}.
-Clearly, $\supp E_s^Q\subset Q$. Moreover, since $\|c_Q-c_{\widehat{B_Q}}\|=5\sqrt{N}2^{-k-1}$, we see that $\supp F_s^Q\subset  6\sqrt{N}Q$. This completes the proof of Lemma \ref{NWOlemma}.
 \end{proof}
 
+\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $e_Q$ and $f_Q$ supported in $7Q$ such that $\|e_Q\|_{\infty},\|f_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
+$$\frac1{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+\end{lemma}
+\begin{proof} Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
+$$A_1=\{x\in 3Q:\ f(x)\geq\alpha\},\quad B_1=\{x\in Q+3s(Q)e_j:\ f(x)\leq\beta\},$$
+$$A_2=\{x\in 3Q:\ f(x)\leq\beta\},\quad B_2=\{x\in Q+3s(Q)e_j:\ f(x)\geq\beta\},$$
+$$e_{Q,s}=w(Q)^{-\frac12}\chi_{A_s},\quad f_{Q,s}=w(Q)^{-\frac12}\chi_{B_s},\quad s=1,2.$$
 
+We have
+$$\langle[R_{{\rm Dunkl},j},M_f]e_{Q,s},f_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$=\frac1{w(Q)}\int_{B_s\times A_s}K_j(x,y)(f(y)-f(x))w(x)w(y)dxdy.$$
+
+If $x\in B_1$ and $y\in A_1,$ then
+$$f(y)-f(x)=(f(y)-\alpha)+(\alpha-\beta)+(\beta-f(x))=$$
+$$=|f(y)-\alpha|+|\alpha-\beta|+|f(x)-\beta|\geq |f(y)-\alpha|+|\alpha-\beta|\geq0.$$
+If $x\in B_2$ and $y\in A_2,$ then
+$$f(y)-f(x)=(f(y)-\beta)+(\beta-f(x))=$$
+$$=-|f(y)-\beta|-|f(x)-\beta|\leq -|f(y)-\beta|\leq 0.$$
+
+Thus,
+$$\langle[R_{{\rm Dunkl},j},M_f]e_{Q,1},f_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$\geq \frac1{w(Q)}\int_{B_1\times A_1}K_j(x,y)\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy\geq $$
+$$\geq\frac{c_k}{w^2(Q)}\int_{B_1\times A_1}\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy=$$
+$$=\frac{c_k}{w^2(Q)}\cdot\Big(w(B_1)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(B_1)w(A_1)\Big)\geq $$
+$$=\frac{c_k}{w^2(Q)}\cdot\Big(\frac12w(Q)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|\cdot \frac14w^2(Q)\Big)\geq $$
+$$\geq\frac{c_k}{4w(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(Q)\Big)$$
+and
+$$-\langle[R_{{\rm Dunkl},j},M_f]e_{Q,2},f_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$\geq \frac1{w(Q)}\int_{B_2\times A_2}K_j(x,y)|f(y)-\beta|w(x)w(y)dxdy\geq $$
+$$\geq\frac{c_k}{w^2(Q)}\int_{B_2\times A_2}|f(y)-\beta|w(x)w(y)dxdy=$$
+$$=\frac{c_k}{w^2(Q)}\cdot w(B_2)\cdot\int_{A_2}|f(y)-\beta|w(y)dy\geq $$
+$$=\frac{c_k}{2w(Q)}\int_{A_2}|f(y)-\beta|w(y)dy.$$
+
+It remains to note that
+$$\int_{3Q}|f(y)-\alpha|w(y)dy=\int_{A_1}|f(y)-\alpha|w(y)dy+$$
+$$+\int_{A_2}|f(y)-\alpha|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|f(y)-\alpha|w(y)dy\leq$$
+$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy$$
+$$+\int_{A_2}|\alpha-\beta|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|\alpha-\beta|w(y)dy\leq$$
+$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy+2|\alpha-\beta|w(3Q).$$
+Combining the last $3$ equations, we conclude
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq\max_{s=1,2}|\langle[R_{{\rm Dunkl},j},M_f]e_{Q,s},f_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+
+If 
+$$|\langle[R_{{\rm Dunkl},j},M_f]e_{Q,1},f_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|\geq |\langle[R_{{\rm Dunkl},j},M_f]e_{Q,2},f_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|,$$
+then we set $e_Q=e_{Q,1}$ and $f=f_{Q,1}.$ Otherwise, set $e_Q=e_{Q,2}$ and $f_Q=f_{Q,2}.$ Thus,
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+Hence,
+$$c_k'|f_{3Q}-\alpha|\leq|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|$$
+and, finally,
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+\end{proof}
+
+\begin{lemma}\label{standard}
+Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
+$$\Big\{\frac1{w(Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+\end{lemma}
+\begin{proof} Let $\{e_Q\}_{Q\in\mathcal{D}}$ and $\{f_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By {\color{red} some version of Rochberg-Semmes theorem PROOF OR REFERENCE IS NEEDED},
+$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+The assertion follows now from Lemma \ref{improved zhijie lemma}.
+\end{proof}
 
 With the collection $\{\mathbb{D}^\nu\}_{\nu=1}^{2^N}$ of dyadic cubes systems given in Lemma \ref{Nsystems}, we define the conditional expectation of a locally integrable function $f$ on $\mathbb{R}^N$ by the expression
 $$E_k^\nu(f)(x):=\sum_{Q\in\mathbb{D}_k^\nu}(f)_Q\chi_Q(x),\ x\in\mathbb{R}^N.$$
@@ -938,6 +920,12 @@ D_k^\nu (f):=E_{k+1}^\nu (f)-E_k^\nu (f).
 For any $1\leq p<\infty$ and $f\in L^1_{\rm loc}(\mathbb{R}^N,dw)$, we define the martingale Besov  (semi)norm of $f$ by
     $$\|f\|_{{MB}^p(\mathbb{R}^N,dw)}:=\sum_{\nu=1}^{2^N}\bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^{N}}\frac{|D_k^\nu f(x)|^p}{w(B(x,2^{-k}))}dw(x)\bigg)^{1/p}.$$
 \end{definition}
+
+{\color{red} Zhijie uses the inequality}
+\begin{align}
+  \bigg(\fint_Q |D_k^\nu(f)(x)|^pdw(x)\bigg)^{1/p}\leq C_{p,N} \frac1{w(Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx
+\end{align}
+for some constant $C_{p,N}>0.$
 
 \begin{lemma}\label{MartingaleBesov}
 Suppose that $1<p<\infty$ and $b\in L^1_{\mathrm{loc}}(\mathbb{R}^N,dw)$. We have
@@ -1001,47 +989,6 @@ Summing over $\nu$ yields the required assertion.
 
 
 
-
-
-
-\begin{lemma}\label{standard}
-Suppose that $1< p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$. If $[b,R_{\D,j}]\in S^p$ for some $j\in\{1,2,\ldots,N\}$, then
-\[
-\|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|[b,R_{\D,j}]\|_{S^p}.
-\]
-\end{lemma}
-\begin{proof}
-By Lemma \ref{MartingaleBesov}, it suffices to show that
-for each $\nu\in\{1,2,\ldots,2^N\}$, we have
-\begin{align}\label{martingaleassertion}
-  \bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)\bigg)^{1/p}\lesssim\|[b,R_{\D,j}]\|_{S^p}.
-\end{align}
-
-  For any $Q\in\mathbb{D}_k^\nu$, we let $h_Q^1,h_Q^2,\ldots,h_Q^{2^N-1}$ be a family of Haar functions as defined in Section \ref{HaarSection}. Next, we choose $h_Q$ among these functions such that
-  $$h_Q:=\left\{h_Q^i:\ \left|\int_Qb(x)h_Q^i(x)dw(x)\right|\ {\rm is}\ {\rm maximal}\ {\rm with}\ {\rm respect}\ {\rm to}\ i=1,2,\dots,2^{N}-1\right\}.$$
-Note that for every $x\in Q$, $$D_k^{\nu}(b)(x)=\sum_{i=1}^{2^N-1}\langle b,h_Q^i\rangle h_Q^i(x),\ {\rm with}\ \|h_Q^i\|_{\infty}\lesssim w(Q)^{-1/2}.$$ Hence, we have
-\begin{align}
-  \bigg(\fint_Q |D_k^\nu(b)(x)|^pdw(x)\bigg)^{1/p}\leq C_{p,N} w(Q)^{-1/2}\bigg|\int_Qb(x)h_Q(x)dw(x)\bigg|
-\end{align}
-for some constant $C_{p,N}>0$.
-This, together with the doubling inequality \eqref{doublinginequality}, implies
-\begin{align}\label{hhhhhh}
-  \int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)
-  &\lesssim \sum_{Q\in\mathbb{D}_k^\nu}\fint_Q|D_k^\nu(b)(x)|^pdw(x)\nonumber\\
-  &\lesssim \sum_{Q\in\mathbb{D}_k^\nu}w(Q)^{-p/2}|\langle b,h_Q\rangle_{L^2(\mathbb{R}^N,dw)}|^p.
-\end{align}
-By Lemma \ref{NWOlemma}, there exist NWO sequences $\{u_{Q}^{(s)}\}$ and $\{v_{Q}^{(s)}\}$, $s=1,2,3,4$, such that
-\begin{align}\label{yieldssss}
-  |\langle b,h_Q\rangle_{L^2(\mathbb{R}^N,dw)}|&\lesssim w(Q)^{1/2}\sum_{s=1}^4|\langle [b,R_{\D,j}]u_{Q}^{(s)},v_{Q}^{(s)}\rangle_{L^2(\mathbb{R}^N,dw)}|.
-\end{align}
-Substituting \eqref{yieldssss} into \eqref{hhhhhh} and then applying Lemma \ref{NWOLEMMAA}, we deduce that
-\begin{align*}
-  \sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)
-  &\lesssim \sum_{s=1}^4\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|\langle [b,R_{\D,j}]u_{Q}^{(s)},v_{Q}^{(s)}\rangle_{L^2(\mathbb{R}^N,dw)}|^p\nonumber\\
-  &\lesssim \|[b,R_{\D,j}]\|_{S^p}^p.
-\end{align*}
-This shows the inequality \eqref{martingaleassertion} and then finishes the proof of Lemma \ref{standard}.
-\end{proof}
 
 
 
