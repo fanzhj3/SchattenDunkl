@@ -814,111 +814,147 @@ $$M_{f-f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).$$
 Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 \end{proof}
 
+\section{Useful part of Zhijie argument}
 
-{\color{red}[Zhijie may move the following definition to somewhere when writing the introduction]}
-\begin{lemma}\label{besovlemma}
-For any $1\leq p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$, we have
-  \begin{align}
-  \|b\|_{B^{p}_{\D}(\mathbb{R}^N)}\lesssim \|b\|_{B^p(\mathbb{R}^N,dw)}+\|b\|_{B^{p}_{{\rm Non}-{\rm standard}}(\mathbb{R}^N)},
-  \end{align}
-  where we write
-  $$\|b\|_{B^p(\mathbb{R}^N,dw)}:=\Bigg({\int_{\mathbb{R}^N}\int_{\mathbb{R}^N}\frac{|b(x)-b(y)|^p}{w(B(x,\|x-y\|))^2}}dw(x)dw(y)\Bigg)^{1/p}$$
-  and
-  \begin{align*}
-  \|b\|_{B^{p}_{{\rm Non}-{\rm standard}}(\mathbb{R}^N)}
-  &:=\Bigg(\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{k\in\mathbb{Z}}\sum_{{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|}}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\times\nonumber\\
-  &\hspace{3.0cm}\times\fint_{B(c_Q,A_22^{-k+1})}\fint_{B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})}|b(x)-b(y)|^pdw(x)dw(y)\Bigg)^{1/p}.
-  \end{align*}
+\begin{lemma}\label{constructHPQ}
+ Assume that $P$ and $Q$ are two $w$-measurable sets on $\mathbb{R}^N$ such that $P\subset Q$. Suppose that there exist constants $1<A<B<\infty$ such that
+\begin{align}\label{twosidecond}
+  Aw(P)\leq w(Q)\leq Bw(P).
+\end{align}
+There is a $w$-measurable  function $H_{P,Q}$ on $\mathbb{R}^N$ satisfying
+\begin{enumerate}
+  \item\label{111} $|H_{P,Q}(x)|\leq w(Q)^{-1/2}\chi_Q(x)$;\smallskip
+  \item\label{222} $\int_Q H_{P,Q}(x)dw(x)=0$;\smallskip
+  \item\label{333} $|(b)_P-(b)_Q|\approx w(Q)^{-1/2}|\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)}|$, where the implicit constants depending only on $A$ and $B$.
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-Let $\Gamma$ be a  fixed Weyl chamber. By decomposing
-$$\mathbb{R}^N=\bigcup_{\sigma\in G}\sigma(\Gamma),$$
-we write
-\begin{align}\label{besovdecom}
-\|b\|_{B^{p}_{\D}(\mathbb{R}^N)}^p&=\sum_{\sigma,\widetilde{\sigma}\in G}\int_{\sigma(\Gamma)}\int_{\widetilde{\sigma}(\Gamma)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&=\sum_{\sigma\in G}\int_{\sigma(\Gamma)}\int_{\sigma(\Gamma)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&\hspace{1.0cm}+\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\int_{\sigma(\Gamma)}\int_{\widetilde{\sigma}(\Gamma)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&=\sum_{\sigma\in G}\int_{\sigma(\Gamma)}\int_{\sigma(\Gamma)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&\hspace{1.0cm}+\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\int_{\sigma(\Gamma)}\int_{D(y)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&\hspace{1.0cm}+\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\int_{\sigma(\Gamma)}\int_{E(y)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y),
-\end{align}
-where we denote by
-$$D(y):=\left\{x\in \widetilde{\sigma}(\Gamma):\ \|x-y\|< 2^{10}d(x,y)\right\},$$
-$$E(y):=\left\{x\in \widetilde{\sigma}(\Gamma):\ \|x-y\|\geq 2^{10}d(x,y)\right\}.$$
+Denote by $c_{A,B}:=\min\left\{(A-1)^{1/2},(B-1)^{-1/2}\right\}$ and let
+\begin{align*}
+H_{P,Q}:=c_{A,B}\left(\frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}\chi_P(x)-\frac{w(P)^{1/2}}{w(Q)^{1/2}w(Q\backslash P)^{1/2}}\chi_{Q\backslash P}(x)\right).
+\end{align*}
+Now we verify the function $H_{P,Q}$ satisfies all the required properties.
 
-It follows from \eqref{distanceequa} that $d(x,y)=\|x-\widetilde{\sigma}(\sigma(y))\|$ if $x\in \widetilde{\sigma}(\Gamma)$ and $y\in \sigma(\Gamma)$ and that $d(x,y)\leq \|x-y\|$ for all $x,y\in\mathbb{R}^N$. In particular, to estimate the first term on the right-hand side of \eqref{besovdecom}, we note that for each $\sigma\in G$ and for every $x,y\in\sigma(\Gamma)$, $d(x,y)=\|x-y\|$. To estimate the second term, we apply the doubling inequality \eqref{doublinginequality} to
-replace $d(x,y)$ by $\|x-y\|$. Consequently, the first two terms are dominated by $C\|b\|_{B^{p}(\mathbb{R}^N,dw)}$, where we used the facts that $G$ is a finite group and $w$ is a doubling measure. Thus, it remains to estimate the third term.
+$\bullet $ {\bf Verification of \eqref{111}.}
 
-% we write all the elements of $G$ in a sequence $\sigma_1,\sigma_2,\ldots,\sigma_{|G|}$, and set $\Gamma_j:=\sigma_j(\Gamma)$.
-Let ${\mathbb{D}_{\Gamma}:=\bigcup_{k\in\mathbb{Z}}\mathbb{D}_{\Gamma,k}}$ be a system of dyadic cubes over $\Gamma$, which is constructed in Corollary \ref{Construction over gamma}. It follows that ${ \sigma(\mathbb{D}_{\Gamma}):=\bigcup_{k\in\mathbb{Z}}\sigma(\mathbb{D}_{\Gamma,k})}$ is a system of dyadic cubes over $\sigma(\Gamma)$. Recall that $A_2$ is the constant given in Definition \ref{Defsystem}. We have
-\begin{align}\label{rhs111}
-&\int_{\sigma(\Gamma)}\int_{E(y)}\left(\frac{d(x,y)}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,d(x,y)))^2}dw(x)dw(y)\nonumber\\
-&=\int_{\sigma(\Gamma)}\int_{E(y)}\left(\frac{\|x-\widetilde{\sigma}(\sigma(y))\|}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,\|x-\widetilde{\sigma}(\sigma(y))\|))^2}dw(x)dw(y)\nonumber\\
-&\leq \sum_{k\in\mathbb{Z}}\int_{\sigma(\Gamma)}\int_{E_k(y)}\left(\frac{A_22^{-k}}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,A_22^{-k-1}))^2}dw(x)dw(y)\nonumber\\
-&=\sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\int_{Q}\int_{E_k(y)}\left(\frac{A_22^{-k}}{\|x-y\|}\right)^p\frac{|b(x)-b(y)|^p}{w(B(x,A_22^{-k-1}))^2}dw(x)dw(y),
+It is obvious that $\supp H_{P,Q}\subset Q$. Next, we apply inequality \eqref{twosidecond} to see that
+\begin{align}\label{twosdde}
+(A-1)w(P)\leq w(Q\backslash P)=w(Q)-w(P)\leq (B-1)w(P).
 \end{align}
-where
-$$E_k(y):=\left\{x\in E(y):\ A_2 2^{-k-1}\leq \|x-\widetilde{\sigma}(\sigma(y))\|\leq A_22^{-k}\right\}.$$
-It follows from the doubling inequality \eqref{doublinginequality} and the $G$-invariance of the Dunkl measure that for every $y\in Q$ and $x\in E_k(y)\subset B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})$ with $Q\in \sigma(\mathbb{D}_{\Gamma,k+10})$,
-$$w(B(x,A_22^{-k-1}))\sim w(B(\widetilde{\sigma}(\sigma(c_Q)),2^{-k}))\sim w(B(c_Q,2^{-k}))\sim w(Q).$$
-Substituting this inequality into \eqref{rhs111}, we deduce that
-\begin{align}\label{rhs333}
-  &{\rm RHS}\ {\rm of}\ \eqref{rhs111}\nonumber\\
-  &\lesssim\sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\frac{2^{-kp}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_k(y)}\left(\frac{|b(x)-b(y)|}{\|x-y\|}\right)^pdw(x)dw(y)\nonumber\\
-    &\lesssim \sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\sum_{\ell\in\mathbb{Z}}\frac{2^{-kp}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_{k,\ell}(y)}\left(\frac{|b(x)-b(y)|}{\|x-y\|}\right)^pdw(x)dw(y)\nonumber\\
-    &\lesssim \sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\sum_{\ell\in\mathbb{Z}}\frac{2^{(\ell-k)p}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_{k,\ell}(y)}|b(x)-b(y)|^pdw(x)dw(y),
-\end{align}
-where $$E_{k,\ell}(y):=\left\{x\in E_k(y):\ A_22^{-\ell-1}\leq \|x-y\|\leq A_22^{-\ell}\right\}.$$
-Note that for every $y\in \sigma(\Gamma)$ and $x\in E_{k,\ell}(y)$,
-$$A_22^{-k-1}\leq \|x-\widetilde{\sigma}(\sigma(y))\|=d(x,y)\leq 2^{-10}\|x-y\|\leq A_22^{-\ell-10}.$$
-This implies that the summands on the right-hand side of \eqref{rhs333} vanish provided $\ell>k-9$. To continue, for every $Q\in \mathbb{D}_{\Gamma}$, we denote by $$U_k(Q):=B(c_Q,A_22^{-k+1})\backslash B(c_Q,A_22^{-k-2}).$$
-Note that the reflection $\sigma$ is linear and preserves the Euclidean norm. Therefore, if $y\in Q\in\sigma(\mathbb{D}_{\Gamma,k+10})$ and $x\in E_{k,\ell}(y)$, then
-$$\|x-\widetilde{\sigma}(\sigma(c_Q))\|\leq \|x-\widetilde{\sigma}(\sigma(y))\|+\|\widetilde{\sigma}(\sigma(y))-\widetilde{\sigma}(\sigma(c_Q))\|\leq A_22^{-k}+A_22^{-(k+10)}\leq A_22^{-(k+1)},$$
-$$\|x-\widetilde{\sigma}(\sigma(c_Q))\|\geq \|x-\widetilde{\sigma}(\sigma(y))\|-\|\widetilde{\sigma}(\sigma(y))-\widetilde{\sigma}(\sigma(c_Q))\|\geq A_22^{-k-1}-A_22^{-(k+10)}\geq A_22^{-(k-2)},$$
-$$\|x-c_Q\|\leq \|x-y\|+\|y-c_Q\|\leq A_22^{-\ell}+A_22^{-(k+10)}\leq A_22^{-\ell+1},$$
-$$\|x-c_Q\|\geq \|x-y\|-\|y-c_Q\|\geq A_22^{-\ell-1}-A_22^{-(k+10)}\geq A_22^{-\ell-2}.$$
-In other words, we have $x\in U_k(\widetilde{\sigma}(\sigma(Q)))\cap U_{\ell}(Q)$. Combining these facts, we see that
-\begin{align}\label{rhs444}
-&{\rm RHS}\ {\rm of}\ \eqref{rhs333}\nonumber\\
-&=\sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\sum_{\ell\leq k-9}\frac{2^{(\ell-k)p}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_{k,\ell}(y)}|b(x)-b(y)|^pdw(x)dw(y)\nonumber\\
-&\lesssim \sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\sum_{\ell\leq k-9}\frac{2^{(\ell-k)p}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_{k,\ell}}|b(x)-b(y)|^pdw(x)dw(y),
-\end{align}
-where
-$$E_{k,\ell}:=\widetilde{\sigma}(\Gamma)\cap U_k(\widetilde{\sigma}(\sigma(Q)))\cap U_{\ell}(Q).$$
+Thus, $c_{A,B}w(Q\backslash P)^{1/2}\leq w(P)^{1/2}$ and $c_{A,B}w(P)^{1/2}\leq w(Q\backslash P)^{1/2}.$  This verifies property \eqref{111}.
 
-We {\it claim} that if $\ell\geq -\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)+3$, then
-\begin{align}\label{setclaim1}
-B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})\cap B(c_Q,A_22^{-\ell+1})=\varnothing.
-\end{align}
-In particular, we have $U_k(\widetilde{\sigma}(\sigma(Q)))\cap U_{\ell}(Q)=\varnothing$. If this is not the case, then there exists an element $x_0\in B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})\cap B(c_Q,A_22^{-\ell+1})$. Equivalently, we have $\|x_0-\widetilde{\sigma}(\sigma(c_Q))\|\leq A_22^{-k+1}$ and $\|x_0-c_Q\|\leq A_22^{-\ell+1}$. Together with the inequality $\ell\leq k-9$, we see that
-$$\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\leq \|x_0-\widetilde{\sigma}(\sigma(c_Q))\|+\|x_0-c_Q\|\leq A_22^{-k+1}+A_22^{-\ell+1}\leq A_22^{-\ell+2}.$$
-It follows from the assumption $\ell\geq -\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)+3$ that
-$$A_22^{-\ell+2}\leq \frac{1}{2}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|.$$
-Combining with the above two inequalities, we deduce that $c_Q=\widetilde{\sigma}(\sigma(c_Q))\in \sigma(\Gamma)\cap \widetilde{\sigma}(\Gamma)$, which  is a contradiction since each $c_Q$ does not lie in the boundaries of the Weyl chambers. This ends the proof of  \eqref{setclaim1}.
+$\bullet $ {\bf Verification of \eqref{222}.}
 
-Next, we {\it claim} that if $\ell\leq \min\left\{k-4,-\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)-3\right\}$, then
-\begin{align}\label{setclaim2}
-B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})\subset B(c_Q,A_22^{-\ell-2}).
-\end{align}
-In particular, we have $U_k(\widetilde{\sigma}(\sigma(Q)))\cap U_{\ell}(Q)=\varnothing$. Indeed, we take $x$ to be an arbitrary element of $B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})$, then
-$$\|x-c_Q\|\leq \|x-\widetilde{\sigma}(\sigma(c_Q))\|+\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\leq A_22^{-k+1}+\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\leq A_22^{-\ell-2},$$
-where the last inequality follows from the assumption. This ends the proof of \eqref{setclaim2}.
+Note that
+\begin{align*}
+\int_Q H_{P,Q}(x)dw(x)&=c_{A,B}\int_Q \left(\frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}\chi_P(x)-\frac{w(P)^{1/2}}{w(Q)^{1/2}w(Q\backslash P)^{1/2}}\chi_{Q\backslash P}(x)\right)dw(x)\\
+&=c_{A,B}\left(\frac{w(Q\backslash P)^{1/2}w(P)^{1/2}}{w(Q)^{1/2}}-\frac{w(P)^{1/2}w(Q\backslash P)^{1/2}}{w(Q)^{1/2}}\right)\\
+&=0.
+\end{align*}
+This verifies property \eqref{222}.
 
-Denote by $$\ell_{k,Q}:=\min\left\{k-4,-\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)-3\right\},$$
-$$L_{k,Q}:=\min\left\{k-9,-\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)+3\right\}.$$
-Combining \eqref{setclaim1} with \eqref{setclaim2}, we see that
-\begin{align}\label{rhs555}
-&{\rm RHS}\ {\rm of}\ \eqref{rhs444}\nonumber\\
-&=\sum_{k\in\mathbb{Z}}\sum_{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})}\sum_{\ell_{k,Q}<\ell\leq L_{k,Q}}\frac{2^{(\ell-k)p}}{w(B(c_Q,2^{-k}))}\fint_{Q}\int_{E_{k,\ell}}|b(x)-b(y)|^pdw(x)dw(y)\nonumber\\
-&= \sum_{k\in\mathbb{Z}}\sum_{{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|}}}\sum_{-3<\ell+\log_2(A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)\leq 4}\frac{2^{(\ell-k)p}}{w(B(c_Q,2^{-k}))}\times\nonumber\\
-&\hspace{9.0cm}\times\fint_{Q}\int_{E_{k,\ell}}|b(x)-b(y)|^pdw(x)dw(y).
+$\bullet $ {\bf Verification of \eqref{333}.}
+
+We first show a stronger equality, that is,
+\begin{align}\label{strongequality}
+c_{A,B}\big((b)_P-(b)_Q\big)=\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)} \frac{w(Q\backslash P)^{1/2}}{w(P)^{1/2}w(Q)^{1/2}}.
 \end{align}
-Next, using the trivial inclusions
-$E_{k,\ell}\subset B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})$ and $Q\subset B(c_Q,A_22^{-k+1})$,
-the doubling inequality \eqref{doublinginequality} and the $G$-invariance of the Dunkl measure, we conclude that the right-hand side of \eqref{rhs555} is dominated by
-$$C\sum_{k\in\mathbb{Z}}\sum_{{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|}}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\fint_{B(c_Q,A_22^{-k+1})}\fint_{B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})}|b(x)-b(y)|^pdw(x)dw(y).$$
-This ends the proof of Lemma \ref{besovlemma}.
+Indeed, we have
+\begin{align*}
+&{\rm RHS}\ {\rm of}\ \eqref{strongequality}\\
+&=c_{A,B}\left(\frac{w(Q)-w(P)}{w(P)w(Q)}\int_P b(x)dw(x)-\frac{1}{w(Q)}\int_{Q\backslash P}b(x)dw(x)\right)\\
+&=c_{A,B}\left(\fint_Pb(x)dw(x)-\frac{1}{w(Q)}\int_Pb(x)dw(x)-\bigg(\fint_Qb(x)dw(x)-\frac{1}{w(Q)}\int_Pb(x)dw(x)\bigg)\right)\\
+&={\rm LHS}\ {\rm of}\ \eqref{strongequality}.
+\end{align*}
+Combining \eqref{strongequality} with \eqref{twosdde}, we deduce property \eqref{333} and then, Lemma \ref{constructHPQ}.
 \end{proof}
+
+\begin{lemma}\label{NWOlemma}
+Let $b$ and $H$ be two $w$-measurable complex-valued functions on $\mathbb{R}^N$. Assume that there is a cube ${\displaystyle Q\in \bigcup_{\nu=1}^{2^N}\mathbb{D}^\nu}$ such that
+\begin{enumerate}
+  \item ${\displaystyle|H(x)|\leq w(Q)^{-1/2}\chi_Q\ { for}\ { all}\  x\in\mathbb{R}^N;}$
+  \item
+${\displaystyle\int_{Q}H(x)dw(x)=0}$.
+\end{enumerate}
+There exist function sequences $\{e_{Q,s}\}_{s=1}^4$ and $\{f_{Q,s}\}_{s=1}^4$ such that
+$$|e_{Q,s}|+|f_{Q,s}|\leq w(Q)^{-1/2}\chi_{6\sqrt{N}Q},$$ and that
+\begin{align}\label{yieldsss}
+  |\langle b,H\rangle_{L^2(\mathbb{R}^N,dw)}|&\lesssim w(Q)^{1/2}\sum_{s=1}^4|\langle [b,R_{\D,j}]e_{Q,s},f_{Q,s}\rangle_{L^2(\mathbb{R}^N,dw)}|.
+\end{align}
+\end{lemma}
+
+
+{\color{red} THE MOST IMPORTANT TASK FOR ZHIJIE. please get rid of complex median method in this proof. our functions are WITHOUT LOSS OF GENERALITY real-valued.}
+
+\begin{proof}
+By Lemma \ref{nondegenerate}, for any $k\in\mathbb{Z}$ and $Q\in\mathbb{D}_k^\nu$, since $Q\subset B(c_Q,\sqrt{N}2^{-k-1})=:B_Q$,
+there exists a ball $\widehat{B_Q}:=B(c_{\widehat{B_Q}},\sqrt{N}2^{-k-1})$ such that $\|c_Q-c_{\widehat{B_Q}}\|=5\sqrt{N}2^{-k-1}$, and that for every $(x,y)\in Q\times \widehat{B_Q}$, $K_{\D,j}(x,y)$ does not change sign and satisfies
+ \begin{align}\label{nondegeneratelower}
+  |K_{\D,j}(x,y)|\gtrsim\frac{1}{w(B_Q)}.
+\end{align}
+
+It follows from the doubling inequality \eqref{doublinginequality} that
+$$w(B_Q)\sim w(\widehat{B_Q})\sim w(Q).$$
+
+By \cite[Theorem 1.5]{Zhangwei2}, there exist $\theta\in [0,2\pi)$, depending on $\widehat{B_Q}$ and $b$, and $\alpha_{\widehat{B_Q}}(b)\in\mathbb{C}$ such that if we denote
+$$F_s^Q:=\left\{x\in\widehat{B_Q}:\ -\frac{\pi}{4}+\frac{(s-1)\pi}{2}\leq \arg\Big(e^{i\theta}\big(\alpha_{\widehat{B_Q}}(b)-b(x)\big)\Big)\leq -\frac{\pi}{4}+\frac{s\pi}{2}\ or\ b(x)=\alpha_{\widehat{B_Q}}(b)\right\},$$
+where $s\in\{1,2,3,4\}$, and $\arg(z)$ is the argument of a complex number $z$, then
+$w(F_s^Q)\geq \frac{1}{16}w(\widehat{B_Q})$, and $F_1^Q\cup F_2^Q\cup F_3^Q\cup F_4^Q=\widehat{B_Q}$. $\alpha_{\widehat{B_Q}}(b)$ is called a complex median value of $b$ over $\widehat{B_Q}$.
+Similarly, if we denote
+\begin{align}
+  E_s^Q:=\left\{x\in Q:\ -\frac{\pi}{4}+\frac{(s-1)\pi}{2}\leq \arg\Big(e^{i\theta}\big(b(x)-\alpha_{\widehat{B_Q}}(b)\big)\Big)\leq -\frac{\pi}{4}+\frac{s\pi}{2}\ or\ b(x)=\alpha_{\widehat{B_Q}}(b)\right\}
+\end{align}
+then $E_1^Q\cup E_2^Q\cup E_3^Q \cup E_4^Q= Q$.
+
+It follows from the assumption of $H$ that
+\begin{align*}
+  |\langle b,H\rangle_{L^2(\mathbb{R}^N,dw)}|
+  &=\Bigg|\int_Q b(x)H(x)dw(x)\Bigg|\nonumber\\
+  &=\Bigg|\int_Q\big(b(x)-\alpha_{\widehat{B_Q}}(b)\big)H(x)dw(x)\Bigg|\nonumber\\
+  &\lesssim w(Q)^{-\frac{1}{2}}\int_Q|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)\nonumber\\
+  &\lesssim w(Q)^{-\frac{1}{2}}\sum_{s=1}^4\int_{E_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)=:\sum_{s=1}^4 M_s^Q.
+\end{align*}
+Note that for any $s\in\{1,2,3,4\},$ if $x\in E_s^Q$ and $y\in F_s^Q$, then
+\begin{align}\label{complexmedian}
+  |b(x)-\alpha_{\widehat{B_Q}}(b)|&\leq |e^{i\theta}(b(x)-\alpha_{\widehat{B_Q}}(b))|+|e^{i\theta}(\alpha_{\widehat{B_Q}}(b)-b(y))|\nonumber\\
+  &\leq 2|e^{i\theta}(b(x)-b(y))|=2|b(x)-b(y)|.
+\end{align}
+Combining \eqref{nondegeneratelower} with \eqref{complexmedian}, we deduce that
+\begin{align}
+  M_s^Q&\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)|dw(x)\cdot \frac{w(F_s^Q)}{w(Q)}\nonumber\\
+  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}\int_{F_s^Q}|b(x)-\alpha_{\widehat{B_Q}}(b)||K_{\D,j}(x,y)|dw(y)dw(x)\nonumber\\
+  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_s^Q}\int_{F_s^Q}|b(x)-b(y)||K_{\D,j}(x,y)|dw(y)dw(x).
+\end{align}
+Moreover, note that for any $x\in E_1^Q$ and $y\in F_1^Q$, the arguments of $e^{i\theta}(b(x)-\alpha_{\widehat{B_Q}}(b))$ and $e^{i\theta}(\alpha_{\widehat{B_Q}}(b)-b(y))$ both belong to $[-\frac{\pi}{4},\frac{\pi}{4}]$. Thus,
+$$-\frac{\pi}{4}\leq \arg\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big)\leq \frac{\pi}{4}.$$
+This implies that
+\begin{align}
+  |b(x)-b(y)|=\Big|e^{i\theta}\big(b(x)-b(y)\big)\Big|\leq 2{\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big).
+\end{align}
+%and
+%\begin{align}
+%\Big|{\rm Im}\Big(e^{i\theta}(b(x)-b(y))\Big)\Big|\leq {\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big).
+%\end{align}
+Therefore,
+\begin{align*}
+  M_1^Q
+  &\lesssim w(Q)^{-\frac{1}{2}}\int_{E_1^Q}\int_{F_1^Q}{\rm Re}\Big(e^{i\theta}\big(b(x)-b(y)\big)\Big)K_{\D,j}(x,y)dw(y)dw(x)\nonumber\\
+   &\lesssim w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_1^Q}\int_{F_1^Q}e^{i\theta}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|\nonumber\\
+   &= w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_1^Q}\int_{F_1^Q}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|.
+\end{align*}
+The other three terms  $M_2^Q$, $M_3^Q$, $M_4^Q$ can be handled in the same way as $M_1^Q$ by rotation. Hence, for $s\in\{1,2,3,4\}$,
+\begin{align}
+  M_s^Q&\lesssim w(Q)^{-\frac{1}{2}}\Bigg|\int_{E_s^Q}\int_{F_s^Q}\big(b(x)-b(y)\big)K_{\D,j}(x,y)dw(y)dw(x)\Bigg|\nonumber\\
+  &=w(Q)^{\frac{1}{2}}\Bigg\langle [b,R_{\D,j}]\frac{\chi_{F_s^Q}}{w(Q)^{1/2}},\frac{\chi_{E_s^Q}}{w(Q)^{1/2}}\Bigg\rangle_{L^2(\mathbb{R}^N,dw)}.
+\end{align}
+Letting
+$$e_{Q,s}:=\frac{\chi_{F_s^Q}}{w(Q)^{1/2}}\  {\rm and}\  f_{Q,s}:=\frac{\chi_{E_s^Q}}{w(Q)^{1/2}},$$
+which deduces \eqref{yieldsss}.
+Clearly, $\supp E_s^Q\subset Q$. Moreover, since $\|c_Q-c_{\widehat{B_Q}}\|=5\sqrt{N}2^{-k-1}$, we see that $\supp F_s^Q\subset  6\sqrt{N}Q$. This completes the proof of Lemma \ref{NWOlemma}.
+\end{proof}
+
+
+
 With the collection $\{\mathbb{D}^\nu\}_{\nu=1}^{2^N}$ of dyadic cubes systems given in Lemma \ref{Nsystems}, we define the conditional expectation of a locally integrable function $f$ on $\mathbb{R}^N$ by the expression
 $$E_k^\nu(f)(x):=\sum_{Q\in\mathbb{D}_k^\nu}(f)_Q\chi_Q(x),\ x\in\mathbb{R}^N.$$
 Moreover, we define the martingale difference of $f$ by
@@ -931,292 +967,110 @@ For any $1\leq p<\infty$ and $f\in L^1_{\rm loc}(\mathbb{R}^N,dw)$, we define th
     $$\|f\|_{{MB}^p(\mathbb{R}^N,dw)}:=\sum_{\nu=1}^{2^N}\bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^{N}}\frac{|D_k^\nu f(x)|^p}{w(B(x,2^{-k}))}dw(x)\bigg)^{1/p}.$$
 \end{definition}
 
-
-
-
-
-
-\begin{lemma}\label{traceequality}
-Let $T$ be a bounded linear operator on a Hilbert space $H$.
-For any $\xi,\eta\in H$, we have
+\begin{lemma}\label{MartingaleBesov}
+Suppose that $1<p<\infty$ and $b\in L^1_{\mathrm{loc}}(\mathbb{R}^N,dw)$. We have
 \[
-\langle T\xi, \eta\rangle \;=\; \operatorname{Tr}\big((\xi\otimes \eta)T\big),
+\|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|b\|_{{MB}^p(\mathbb{R}^N,dw)}.
 \]
-where $\xi\otimes \eta$ denotes the rank-one operator defined by
-\((\xi\otimes \eta)(x) := \langle x,\eta\rangle \xi\) for $x\in H$.
 \end{lemma}
-
 \begin{proof}
-For any $x\in H$, we have
+We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
+\begin{align}\label{rhs1010}
+  \int_{\mathbb{R}^N}\int_{\mathbb{R}^N}\frac{|b(x)-b(y)|^p}{w(B(x,\|x-y\|))^2}dw(x)dw(y)
+  &\leq \sum_{k\in\mathbb{Z}}\iint_{\substack{2^{-k-1}<\|x-y\|\leq 2^{-k}\\x,y\in\mathbb{R}^N}}\frac{|b(x)-b(y)|^p}{w(B(x,\|x-y\|))^2}dw(x)dw(y)\nonumber\\
+  &\leq \sum_{k\in\mathbb{Z}}\iint_{\substack{2^{-k-1}<\|x-y\|\leq 2^{-k}\\x,y\in\mathbb{R}^N}}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y).
+\end{align}
+Fix $k\in\mathbb{Z}$ and let $\mathbb{D}_k^0$ be the standard system of dyadic cubes over $\mathbb{R}^N$ at scale $2^{-k}$ (see Notation \ref{standardsystem}).
+For each $Q\in\mathbb{D}_k^0$, one has
+$$I_Q:=\left\{y\in\mathbb{R}^N: {\rm dist}(y,Q)\leq 2^{-k}\right\}\subset B(c_Q,\sqrt{N}2^{-k+1}),$$
+where we used the notation ${\rm dist}(y,Q)$ to denote the Euclidean distance from a point $y\in\mathbb{R}^N$ to a set $Q$. By Lemma \ref{Nsystems}, there exists ${\displaystyle Q'\in \bigcup_{\nu=1}^{2^N}\mathbb{D}_{k-k_0}^\nu}$, where $k_0:=\lfloor \log_2(24\sqrt{N})\rfloor$, such that
+$$B(c_Q,\sqrt{N}2^{-k+1})\subset Q'\subset B(c_Q,12N\cdot2^{-k+1}).$$
+With these observations, we conclude that
+\begin{align}\label{RHS1111}
+  &{\rm RHS}\ {\rm of}\ \eqref{rhs1010}\nonumber\\
+  &\leq \sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^0}\int_{Q}\int_{I_Q}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
+   &\leq \sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^0}\int_{Q'}\int_{Q'}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
+   &\leq \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\int_{Q}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y),
+\end{align}
+where in the last inequality we used the fact that each $Q'\in \mathbb{D}_{k-k_0}^\nu$ contains at most $c$ (an absolute constant) $Q\in\mathbb{D}_k^0$. By the doubling inequality \eqref{doublinginequality}, for any $x,y\in Q\in\mathbb{D}_{k-k_0}^\nu$,
+$$w(Q)\sim w(B(x,2^{-k-1}))\sim w(B(y,2^{-k-1})).$$
+Therefore, by inserting and subtracting the conditional expectation $E_{k-k_0}^\nu(b)$, we deduce that
+\begin{align}
+  &{\rm RHS}\ {\rm of}\ \eqref{RHS1111}\nonumber\\
+  &\lesssim \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\int_{Q}\frac{|b(x)-E_{k-k_0}^\nu(b)(x)|^p}{w(B(x,2^{-k-1}))^2}+\frac{|b(y)-E_{k-k_0}^\nu(b)(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
+  &\lesssim\sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\frac{|b(x)-E_{k-k_0}^\nu(b)(x)|^p}{w(B(x,2^{-k-1}))}dw(x)\nonumber\\
+  &\lesssim\sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|b(x)-E_{k}^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x),
+\end{align}
+where the last inequality used the change of index and the doubling inequality \eqref{doublinginequality}.
+
+To proceed, we apply  Lemma~\ref{Haarexpansion} to write
 \[
-(\xi\otimes \eta)T(x) = (\xi\otimes \eta)(Tx) = \langle Tx, \eta\rangle \xi=\langle x, T^*\eta\rangle \xi=(\xi\otimes T^*\eta)(x).
+b(x)-E_k^\nu (b)(x)=\sum_{m=0}^{\infty}D_{k+m}^\nu (b)(x),
 \]
-Hence,
+ where the sum converges pointwise almost everywhere. Moreover, by the lower doubling inequality \eqref{doublinginequality},
+\begin{align*}
+C^{-1}2^{mN}\leq \frac{w(B(x,2^{-k}))}{w(B(x,2^{-(m+k)}))}.
+\end{align*}
+Combining these facts, we deduce that
+\begin{align}\label{eq:A-k-new}
+\Bigg(\int_{\mathbb{R}^N}\frac{|b(x)-E_k^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}
+&\le \sum_{m\ge0}
+\Bigg(\int_{\mathbb{R}^N}\frac{|D_{k+m}^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}\nonumber\\
+&\lesssim \sum_{m\ge0}2^{-mN/p}\Bigg(\int_{\mathbb{R}^N}\frac{|D_{k+m}^\nu (b)(x)|^p}{w(B(x,2^{-(k+m)}))}\,dw(x)\Bigg)^{\!1/p}.
+\end{align}
+Since $\sum_{m\geq 0}2^{-mN/p}=(1-2^{-N/p})^{-1}<+\infty$, by discrete convolution Young's inequality, we have
 \[
-(\xi\otimes \eta)T = \xi\otimes T^*\eta.
+\Bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|b(x)-E_k^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}
+\lesssim
+\Bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_{k}^\nu(b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}.
 \]
-Since the trace of a rank-one operator $u\otimes v$ is given by
-\(\operatorname{Tr}(u\otimes v) = \langle u, v\rangle\), we obtain
-\[
-\operatorname{Tr}((\xi\otimes \eta)T) = \operatorname{Tr}(\xi\otimes T^*\eta) = \langle \xi, T^*\eta\rangle.
-\]
-Finally, $\langle \xi, T^*\eta\rangle = \langle T\xi, \eta\rangle$, which completes the proof.
+Summing over $\nu$ yields the required assertion.
 \end{proof}
 
 
-\begin{lemma}\label{nonstandard}
-Suppose that $N< p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$. Assume that $[b,R_{\D,j}]\in S^p$ for some $j\in\{1,2,\ldots,N\}$, then we have
-\begin{align*}
-\|b\|_{B^{p}_{{\rm Non}-{\rm standard}}(\mathbb{R}^N)}\lesssim \|[b,R_{\D,j}]\|_{S^p}.
-\end{align*}
+
+
+
+
+\begin{lemma}\label{standard}
+Suppose that $1< p<\infty$ and $b\in L^1_{\rm loc}(\mathbb{R}^N,dw)$. If $[b,R_{\D,j}]\in S^p$ for some $j\in\{1,2,\ldots,N\}$, then
+\[
+\|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|[b,R_{\D,j}]\|_{S^p}.
+\]
 \end{lemma}
 \begin{proof}
-Let $k_0:=\lfloor \log_2(24A_2) \rfloor$ be an integer such that $\frac{2^{-(k-k_0)-2}}{3}\leq A_22^{-k+1}<\frac{2^{-(k-k_0)-1}}{3}$.
-By Lemma \ref{Nsystems}, for each $k\in \mathbb{Z}$ and $Q\in\sigma(\mathbb{D}_{\Gamma,k+10})$, there exist  cubes $W_Q,P_Q\in {\displaystyle\bigcup_{\nu=1}^{2^N}\mathbb{D}_{k-k_0}^\nu}$ such that
-\begin{align}\label{Bcontain1}
-B(c_Q,A_22^{-k+1})\subset W_Q\subset B(c_Q,12\sqrt{N} A_22^{-k+1}),
+By Lemma \ref{MartingaleBesov}, it suffices to show that
+for each $\nu\in\{1,2,\ldots,2^N\}$, we have
+\begin{align}\label{martingaleassertion}
+  \bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)\bigg)^{1/p}\lesssim\|[b,R_{\D,j}]\|_{S^p}.
 \end{align}
-\begin{align}\label{Bcontain2}
-  B(\widetilde{\sigma}(\sigma(c_Q)),A_22^{-k+1})\subset P_Q\subset B(\widetilde{\sigma}(\sigma(c_Q)),12\sqrt{N} A_22^{-k+1}).
-\end{align}
-Together with the doubling inequality \eqref{doublinginequality}, we deduce that
-\begin{align*}
-&\|b\|_{B^{p}_{{\rm Non}-{\rm standard}}(\mathbb{R}^N)}^p\nonumber\\
-&\lesssim \sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{k\in\mathbb{Z}}\sum_{{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|}}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\fint_{W_Q}\fint_{P_Q}|b(x)-b(y)|^pdw(x)dw(y)\\
-&=\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{\nu,\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu,W_Q\in\mathbb{D}_{k-k_0}^\tau }}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\fint_{W_Q}\fint_{P_Q}|b(x)-b(y)|^pdw(x)dw(y)\nonumber\\
-&\lesssim \sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ W_Q\in\mathbb{D}_{k-k_0}^\tau }}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\fint_{W_Q}|b(x)-(b)_{W_Q}|^pdw(x)\nonumber\\
-&\hspace{1.0cm}+\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\fint_{P_Q}|b(x)-(b)_{P_Q}|^pdw(x)\nonumber\\
-&\hspace{1.0cm}+\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}\sum_{\nu,\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu,W_Q\in\mathbb{D}_{k-k_0}^\tau }}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{P_Q}-(b)_{W_Q}|^p\nonumber\\
-&=:\sum_{{\substack{\sigma,\widetilde{\sigma}\in G \\ \sigma\neq \widetilde{\sigma}}}}({\rm I}_{\sigma,\tilde{\sigma}}^p+{\rm II}_{\sigma,\tilde{\sigma}}^p+{\rm III}_{\sigma,\tilde{\sigma}}^p).
-\end{align*}
-Since $Q\subset W_Q$ for all $Q\in\sigma(\mathbb{D}_{\Gamma,k+10})$, we see that for each $\widetilde{Q}\in \mathbb{D}_{k-k_0}^\tau$, there are at most finite (an absolute constant) $Q\in \sigma(\mathbb{D}_{\Gamma,k+10})$ such that $W_Q=\widetilde{Q}$. This implies that
+
+  For any $Q\in\mathbb{D}_k^\nu$, we let $h_Q^1,h_Q^2,\ldots,h_Q^{2^N-1}$ be a family of Haar functions as defined in Section \ref{HaarSection}. Next, we choose $h_Q$ among these functions such that
+  $$h_Q:=\left\{h_Q^i:\ \left|\int_Qb(x)h_Q^i(x)dw(x)\right|\ {\rm is}\ {\rm maximal}\ {\rm with}\ {\rm respect}\ {\rm to}\ i=1,2,\dots,2^{N}-1\right\}.$$
+Note that for every $x\in Q$, $$D_k^{\nu}(b)(x)=\sum_{i=1}^{2^N-1}\langle b,h_Q^i\rangle h_Q^i(x),\ {\rm with}\ \|h_Q^i\|_{\infty}\lesssim w(Q)^{-1/2}.$$ Hence, we have
 \begin{align}
-  {\rm I}_{\sigma,\tilde{\sigma}}^p
-  &\lesssim \sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ W_Q\in\mathbb{D}_{k-k_0}^\tau }}\fint_{W_Q}|b(x)-(b)_{W_Q}|^pdw(x)\nonumber\\
-    &\lesssim \sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\tau }\fint_{Q}|b(x)-(b)_{Q}|^pdw(x)\nonumber\\
-    &\lesssim \|b\|_{B^p(\mathbb{R}^N,dw)}^p,
+  \bigg(\fint_Q |D_k^\nu(b)(x)|^pdw(x)\bigg)^{1/p}\leq C_{p,N} w(Q)^{-1/2}\bigg|\int_Qb(x)h_Q(x)dw(x)\bigg|
 \end{align}
-where in the last inequality we used the fact that oscillation space ${\rm OSC}^{p,p}(\mathbb{R}^N,dw)$ is equivalent to Besov space $B^p(\mathbb{R}^N,dw)$ (see e.g., \cite[Proposition 17.5]{HKarxiv}). Similarly, the second term ${\rm II}_{\sigma,\tilde{\sigma}}$ is also bounded by $\|b\|_{B^p(\mathbb{R}^N,dw)}$. Together with Lemma \ref{standard}, we deduce that
-$${\rm I}_{\sigma,\tilde{\sigma}}+{\rm II}_{\sigma,\tilde{\sigma}}\lesssim \|[b,R_{\D,j}]\|_{S^p}.$$
-
-Now we turn to the term ${\rm III}_{\sigma,\tilde{\sigma}}$. For each ${\displaystyle Q\in \bigcup_{\nu=1}^{2^N}\mathbb{D}_{k-k_0}^\nu}$ and $k\in\mathbb{N}$, denote by $Q^{[k]}$ the $k$th strict dyadic ancestor. For convenience, we also set $Q^{[0]}:=Q$.  Pick $\alpha(Q)\in\mathbb{Z}$ such that
-$2^{\alpha(Q)}\leq A_2^{-1}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|<2^{\alpha(Q)+1}.$ Moreover, we let
-$$s_Q:=\log_2(2^{k+10+\alpha(Q)})=k+10+\alpha(Q).$$
-If $A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|$, then $s_Q$ is a positive integer larger than $10$. We have
+for some constant $C_{p,N}>0$.
+This, together with the doubling inequality \eqref{doublinginequality}, implies
+\begin{align}\label{hhhhhh}
+  \int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)
+  &\lesssim \sum_{Q\in\mathbb{D}_k^\nu}\fint_Q|D_k^\nu(b)(x)|^pdw(x)\nonumber\\
+  &\lesssim \sum_{Q\in\mathbb{D}_k^\nu}w(Q)^{-p/2}|\langle b,h_Q\rangle_{L^2(\mathbb{R}^N,dw)}|^p.
+\end{align}
+By Lemma \ref{NWOlemma}, there exist NWO sequences $\{u_{Q}^{(s)}\}$ and $\{v_{Q}^{(s)}\}$, $s=1,2,3,4$, such that
+\begin{align}\label{yieldssss}
+  |\langle b,h_Q\rangle_{L^2(\mathbb{R}^N,dw)}|&\lesssim w(Q)^{1/2}\sum_{s=1}^4|\langle [b,R_{\D,j}]u_{Q}^{(s)},v_{Q}^{(s)}\rangle_{L^2(\mathbb{R}^N,dw)}|.
+\end{align}
+Substituting \eqref{yieldssss} into \eqref{hhhhhh} and then applying Lemma \ref{NWOLEMMAA}, we deduce that
 \begin{align*}
-{\rm III}_{\sigma,\tilde{\sigma}}^p
-&\lesssim \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{P_Q}-(b)_{P_Q^{[s_Q]}}|^p\nonumber\\
-&\hspace{1.0cm}+ \sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ W_Q\in\mathbb{D}_{k-k_0}^\tau}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{W_Q}-(b)_{W_Q^{[s_Q]}}|^p\nonumber\\
-&\hspace{1.0cm}+\sum_{\nu,\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu,W_Q\in\mathbb{D}_{k-k_0}^\tau }}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{P_Q^{[s_Q]}}-(b)_{W_Q^{[s_Q]}}|^p\nonumber\\
-&=:{\rm III}_{\sigma,\tilde{\sigma},1}^p+{\rm III}_{\sigma,\tilde{\sigma},2}^p+{\rm III}_{\sigma,\tilde{\sigma},3}^p.
+  \sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_k^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x)
+  &\lesssim \sum_{s=1}^4\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|\langle [b,R_{\D,j}]u_{Q}^{(s)},v_{Q}^{(s)}\rangle_{L^2(\mathbb{R}^N,dw)}|^p\nonumber\\
+  &\lesssim \|[b,R_{\D,j}]\|_{S^p}^p.
 \end{align*}
-By Lemma \ref{constructHPQ}, for each $m\in\mathbb{N}$ and for each $Q\in\sigma(\mathbb{D}_{\Gamma})$ with $P_Q\in\mathbb{D}_{k-k_0}^\nu$, there is a $w$-measurable function $H_{Q,m}$ on $\mathbb{R}^N$ (alternatively, $H_{Q,m}$ can be taken to be the Haar Basis element $h_{P_Q^{[m]}}^1$ (up to an absolute constant) if we enumerate $Ch(P_Q^{[m]})=\{R_1,R_2,\ldots,R_{2^N}\}$ so that $R_1=P_Q^{[m-1]}$) satisfying
-\begin{enumerate}
-  \item $|H_{Q,m}(x)|\leq w(P_Q^{[m]})^{-1/2}\chi_{P^{[m]}_Q}(x)$;\smallskip
-  \item $\int_{P_Q^{[m]}} H_{Q,m}(x)dw(x)=0$;\smallskip
-  \item $|(b)_{P_Q^{[m-1]}}-(b)_{P_Q^{[m]}}|\approx w(P_Q^{[m]})^{-1/2}|\langle b,H_{Q,m}\rangle_{L^2(\mathbb{R}^N,dw)}|$.
-\end{enumerate}
-For simplicity, we denote by
-$$\Lambda^\nu:=\left\{(k,Q,m):k\in\mathbb{Z}, Q\in\mathcal{\sigma}(\mathbb{D}_{\Gamma,k+10}),A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,P_Q\in\mathbb{D}_{k-k_0}^\nu,1\leq m\leq s_Q\right\}.$$
-By Minkowski's inequality,
-\begin{align}\label{rhs666}
-{\rm III_{\sigma,\tilde{\sigma},1}}
-&\lesssim \sum_{\nu=1}^{2^N}\Bigg(\sum_{(k,Q,m)\in\Lambda^\nu}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{P_Q^{[m-1]}}-(b)_{P_Q^{[m]}}|^p\Bigg)^{1/p}\nonumber\\
-&\lesssim \sum_{\nu=1}^{2^N}\Bigg(\sum_{(k,Q,m)\in\Lambda^\nu}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}w(P_Q^{[m]})^{-p/2}|\langle b,H_{Q,m}\rangle_{L^2(\mathbb{R}^N,dw)}|^p\Bigg)^{1/p}.
-\end{align}
-By Lemma \ref{NWOlemma}, there exist NWO sequences $\{e_{P_Q^{[m]}}^{(s)}\}$ and $\{f_{P_Q^{[m]}}^{(s)}\}$, $s=1,2,3,4$, such that
-\begin{align*}
-w(P_Q^{[m]})^{-1/2}|\langle b,H_{Q,m}\rangle_{L^2(\mathbb{R}^N,dw)}|\lesssim \sum_{s=1}^4\big|\big\langle [b,R_{\D,j}]e_{P_Q^{[m]}}^{(s)},f_{P_Q^{[m]}}^{(s)}\big\rangle_{L^2(\mathbb{R}^N,dw)}\big|.
-\end{align*}
-Thus, the right-hand side of \eqref{rhs666} is dominated by
-$$\sum_{\nu=1}^{2^N}\sum_{s=1}^4\Bigg(\sum_{(k,Q,m)\in\Lambda^\nu}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}\big|\big\langle [b,R_{\D,j}]e_{P_Q^{[m]}}^{(s)},f_{P_Q^{[m]}}^{(s)}\big\rangle_{L^2(\mathbb{R}^N,dw)}\big|^p\Bigg)^{1/p}.$$
-Now taking $\{\varphi_{k,Q,m}\}_{(k,Q,m)\in\Lambda^\nu}$ with unit $\ell^{p'}$ norm, we apply the duality argument to estimate
-\begin{align}\label{repeatduality}
-&\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\big\langle [b,R_{\D,j}]e_{P_Q^{[m]}}^{(s)},f_{P_Q^{[m]}}^{(s)}\big\rangle_{L^2(\mathbb{R}^N,dw)}\varphi_{k,Q,m}\nonumber\\
-&=\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}{\rm Tr}\Big(\big(e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)}\big)[b,R_{\D,j}]\Big)\varphi_{k,Q,m}\nonumber\\
-&={\rm Tr}\Bigg(\Big(\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)})\Big)\cdot [b,R_{\D,j}]\Bigg)\nonumber\\
-&\leq \left\|\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)})\right\|_{S^{p'}}\cdot \|[b,R_{\D,j}]\|_{S^p},
-\end{align}
-where the first equality follows from Lemma \ref{traceequality}.
-It remains to show that
-\begin{align}\label{supinequality}
-\sup_{\|\{\varphi_{k,Q,m}\}_{(k,Q,m)\in\Lambda^\nu}\|_{\ell^{p'}}=1}\left\|\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)})\right\|_{S^{p'}}\lesssim 1.
-\end{align}
-To show \eqref{supinequality}, we first write
-\begin{align}\label{rhs777}
-&\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)})\nonumber\\
-&=\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{Q\in \Theta_{m,k}^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)}),
-\end{align}
-where
-$$\Theta_{m,k}^\nu:=\left\{Q\in\sigma(\mathbb{D}_{\Gamma,k+10}):A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,\ \alpha(Q)\geq -k+m-10,\ P_Q\in\mathbb{D}_{k-k_0}^\nu\right\}.$$
-Note that for any $Q\in \mathbb{D}_{k-k_0-m}^\nu$, there are at most $c2^{mN}$ cubes $W\in\sigma(\mathbb{D}_{\Gamma,k+10})$ such that $P_W^{[m]}=Q$, where $c$ is an absolute constant. Denote these cubes by $Q_{[m]}^{1}$, $Q_{[m]}^{2}$, $\ldots$, $Q_{[m]}^{\iota}$ with $\iota\leq c2^{mN}$. Let
-$\delta_{Q,m,\ell}:=1$ if $P_{Q_{[m]}^\ell}^{[m]}=Q$ and $\delta_{Q,m,\ell}:=0$ otherwise. Let
-$$\Xi_{m,k,\ell}^\nu:=\left\{Q\in \mathbb{D}_{k-k_0-m}^\nu: A_22^{-k+1}\leq \|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|,\ \alpha({Q_{[m]}^\ell})\geq -k+m-10\right\}.$$
-We have
-\begin{align}\label{rhs888}
-&{\rm RHS}\ {\rm of}\ \eqref{rhs777}\nonumber\\
-&=\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in \Xi_{m,k,\ell}^\nu}2^{-k}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-1}\varphi_{k,{Q_{[m]}^\ell},m}\delta_{Q,m,\ell} (e_Q^{(s)}\otimes f_Q^{(s)})\nonumber\\
-&=2^{-k_0}\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in \Xi_{m,k+k_0+m,\ell}^\nu}2^{-(k+m)}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-1}\varphi_{k+k_0+m,{Q_{[m]}^\ell},m}\delta_{Q,m,\ell} (e_Q^{(s)}\otimes f_Q^{(s)})\nonumber\\
-&=\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}\lambda_Q(e_Q^{(s)}\otimes f_Q^{(s)}),
-\end{align}
-where for any $Q\in \mathbb{D}_k^\nu$,
-\begin{align*}
-\lambda_Q&:=2^{-k_0}\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-1}\varphi_{k+k_0+m,{Q_{[m]}^\ell},m}\delta_{Q,m,\ell}\times\nonumber\\
-&\hspace{1.0cm}\times\chi_{[A_22^{-(k+k_0+m-1)},\infty)}(\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|) \chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell)).
-\end{align*}
-It follows from equalities \eqref{rhs777}, \eqref{rhs888} and Lemma \ref{NWOLEMMAA2} that
-\begin{align}\label{rhs999}
-&\left\|\sum_{(k,Q,m)\in\Lambda^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\varphi_{k,Q,m} (e_{P_Q^{[m]}}^{(s)}\otimes f_{P_Q^{[m]}}^{(s)})\right\|_{S^{p'}}\nonumber\\
-&=\left\|\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}\lambda_Q(e_Q^{(s)}\otimes f_Q^{(s)})\right\|_{S^{p'}}\nonumber\\
-&\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|\lambda_Q|^{p'}\Bigg)^{\frac{1}{p'}}.
-\end{align}
-By H\"{o}lder's inequality and the definition of $\lambda_Q$,
-\begin{align*}
-&\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|\lambda_Q|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu} \bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-p}\delta_{Q,m,\ell}\chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell))\bigg)^{\frac{p'}{p}}\times\nonumber\\
-&\hspace{1.0cm}\times \bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}\Big|\varphi_{k+k_0+m,{Q_{[m]}^\ell},m}\delta_{Q,m,\ell}\chi_{[A_22^{-(k+k_0+m-1)},\infty)}(\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|) \chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell))\Big|^{p'}\bigg)    \Bigg)^{\frac{1}{p'}}.
-\end{align*}
-Since $p>N$, we have
-\begin{align*}
-&\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|^{-p}\delta_{Q,m,\ell}\chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell))\nonumber\\
-&\lesssim\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\cdot 2^{kp}=C\sum_{m\geq 1}2^{-m(p-N)}\lesssim 1.
-\end{align*}
-Combining this with the same reindexing and counting argument used to derive \eqref{rhs888}, we obtain
-\begin{align}\label{longdisplay}
-&\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}|\lambda_Q|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\nu}\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}\Big|\varphi_{k+k_0+m,{Q_{[m]}^\ell},m}\times\nonumber\\
-&\hspace{1.0cm}\times\delta_{Q,m,\ell}\chi_{[A_22^{-(k+k_0+m-1)},\infty)}(\|c_{Q_{[m]}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{[m]}^\ell}))\|) \chi_{[-(k+k_0-10),\infty)}(\alpha(Q_{[m]}^\ell))\Big|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&=\Bigg(\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in\Xi_{m,k+k_0+m,\ell}^\nu}\Big|\varphi_{k+k_0+m,{Q_{[m]}^\ell},m}\Big|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&=\Bigg(\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in\Xi_{m,k,\ell}^\nu}\Big|\varphi_{k,{Q_{[m]}^\ell},m}\Big|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&=\Bigg(\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{Q\in \Theta_{m,k}^\nu}|\varphi_{k,Q,m}|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&=\Bigg(\sum_{(k,Q,m)\in\Lambda^\nu}|\varphi_{k,Q,m}|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-&= 1.
-\end{align}
-Substituting this inequality into \eqref{rhs999}, we obtain the desired inequality \eqref{supinequality}. Therefore, ${\rm III}_{\sigma,\tilde{\sigma},1}$ is dominated by $C\|[b,R_{\D,j}]\|_{S^p}$. Similarly,  ${\rm III}_{\sigma,\tilde{\sigma},2}$ is also dominated by $C\|[b,R_{\D,j}]\|_{S^p}$.
-
-Next, we turn to the term ${\rm III}_3$. Set $B_Q:=B(c_Q,(2^{k_0+11}+12\sqrt{N}+1)\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|)$. We {\it claim} that
-\begin{align}\label{claiminclusion}
-  W_Q^{[s_Q]}\cup P_Q^{[s_Q]}\subset B_Q.
-\end{align}
-Indeed, we first note that for any $Q\in\sigma(\mathbb{D}_{\Gamma,k+10})$ with $ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|$ and with $ P_Q\in\mathbb{D}_{k-k_0}^\nu,W_Q\in\mathbb{D}_{k-k_0}^\tau$, we have
-\begin{align}\label{similarcombine}
-  \ell(P_Q^{[s_Q]})=\ell(W_Q^{[s_Q]})=2^{k_0+10+\alpha(Q)}\leq\frac{2^{k_0+10}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|}{A_2}.
-\end{align}
-Combining this inequality with the inclusions that $W_{Q}^{[s_Q]}\subseteq B(c_{W_Q^{[s_Q]}},A_2\ell(W_Q^{[s_Q]}))$ and \eqref{Bcontain1}, we deduce that for any $x\in W_{Q}^{[s_Q]}$,
-\begin{align*}
-\|x-c_Q\|
-&\leq \|x-c_{W_Q^{[s_Q]}}\|+\|c_{W_Q^{[s_Q]}}-c_{W_Q}\|+\|c_{W_Q}-c_Q\|\\
-&\leq 2A_2\ell(W_Q^{[s_Q]})+12\sqrt{N}A_22^{-k+1}\\
-&\leq (2^{k_0+11}+12\sqrt{N}) \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|.
-\end{align*}
-Similarly, combining \eqref{similarcombine} with the inclusions $P_Q^{[s_Q]}\subseteq B(c_{P_Q^{[s_Q]}},A_2\ell(P_Q^{[s_Q]}))$ and \eqref{Bcontain2}, we deduce that for any $x\in P_Q^{[s_Q]}$,
-\begin{align*}
-  \|x-c_Q\|
-  &\leq \|x-c_{P_Q^{[s_Q]}}\|+\|c_{P_Q^{[s_Q]}}-c_{P_Q}\|+\|c_{P_Q}-\widetilde{\sigma}(\sigma(c_Q))\|+\|\widetilde{\sigma}(\sigma(c_Q))-c_Q\|\\
-  &\leq 2A_2\ell(P_Q^{[s_Q]})+12\sqrt{N}A_22^{-k+1}+\|\widetilde{\sigma}(\sigma(c_Q))-c_Q\|\\
-  &\leq (2^{k_0+11}+12\sqrt{N}+1) \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|
-\end{align*}
-This finishes the proof of \eqref{claiminclusion}.
-%and
-%\begin{align*}
-%\|c_{W_Q}-c_{P_Q}\|&\leq \|c_{W_Q}-c_Q\|+\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|+\|\widetilde{\sigma}(\sigma(c_Q))-c_{P_Q}\|\\
-%&\leq \kappa_NA_22^{-k+1}+\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|+\kappa_NA_22^{-k+1}\\
-%&\leq (1+2\kappa_N)\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|.
-%\end{align*}
-
-By Lemma \ref{Nsystems}, for any $Q\in\sigma(\mathbb{D}_{\Gamma})$, there exists a cube $E_Q\in {\displaystyle\bigcup_{\nu=1}^{2^N}\mathbb{D}^\nu}$ such that
-\begin{align}\label{cctain}
-B_Q\subset E_Q\subset 12\sqrt{N} B_Q.
-\end{align}
-We have
-\begin{align}
-  {\rm III}_{\sigma,\tilde{\sigma},3}^p
-  &\lesssim \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ P_Q\in\mathbb{D}_{k-k_0}^\nu}}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{P_Q^{[s_Q]}}-(b)_{E_Q}|^p\nonumber\\
-  &\hspace{1.0cm}+\sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{\substack{Q\in\sigma(\mathbb{D}_{\Gamma,k+10})\nonumber\\ A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|\\ W_Q\in\mathbb{D}_{k-k_0}^\tau }}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}|(b)_{W_Q^{[s_Q]}}-(b)_{E_Q}|^p\nonumber\\
-  &=:{\rm III}_{\sigma,\tilde{\sigma},31}^p+{\rm III}_{\sigma,\tilde{\sigma},32}^p.
-\end{align}
-Next, we combine \eqref{cctain} with \eqref{claiminclusion} and the doubling inequality \eqref{doublinginequality} to see that
-$$w(P_Q^{[s_Q]})\sim w(E_Q).$$
-By Lemma \ref{constructHPQ}, for each $Q\in\sigma(\mathbb{D}_{\Gamma})$ with $P_Q\in\mathbb{D}_{k-k_0}^\nu$, there is a $w$-measurable function $H_{P_Q^{[s_Q]},E_Q}$ on $\mathbb{R}^N$ (unlike the function $H_{Q,m}$ used in estimating ${\rm III}_{\sigma,\tilde{\sigma},1}$ and ${\rm III}_{\sigma,\tilde{\sigma},2}$, $H_{P_Q^{[s_Q]},E_Q}$ cannot be chosen from an arbitrary Haar basis) satisfying
-\begin{enumerate}
-  \item $|H_{P_Q^{[s_Q]},E_Q}(x)|\lesssim w(E_Q)^{-1/2}\chi_{E_Q}(x)$;\smallskip
-  \item $\int_{E_Q} H_{P_Q^{[s_Q]},E_Q}(x)dw(x)=0$;\smallskip
-  \item $|(b)_{P_Q^{[s_Q]}}-(b)_{E_Q}|\approx w(E_Q)^{-1/2}|\langle b,H_{P_Q^{[s_Q]},E_Q}\rangle_{L^2(\mathbb{R}^N,dw)}|$.
-\end{enumerate}
-For simplicity, we denote by
-$$\Upsilon^\nu:=\left\{(k,Q):k\in\mathbb{Z}, Q\in\mathcal{\sigma}(\mathbb{D}_{\Gamma,k+10}),A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,P_Q\in\mathbb{D}_{k-k_0}^\nu\right\}.$$
-
-Therefore,
-\begin{align}\label{substitu1}
-  {\rm III}_{\sigma,\tilde{\sigma},31}^p\lesssim \sum_{\nu=1}^{2^N}\sum_{(k,Q)\in \Upsilon^\nu}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}w(E_Q)^{-p/2}|\langle b,H_{P_Q^{[s_Q]},E_Q}\rangle_{L^2(\mathbb{R}^N,dw)}|^{p}.
-\end{align}
-By Lemma \ref{NWOlemma}, there exist NWO sequences $\{\xi_{E_Q}^{(s)}\}$ and $\{\eta_{E_Q}^{(s)}\}$, $s=1,2,3,4$, such that
-\begin{align*}
-w(E_Q)^{-1/2}|\langle b,H_{P_Q^{[s_Q]},E_Q}\rangle_{L^2(\mathbb{R}^N,dw)}|\lesssim \sum_{s=1}^4\big|\big\langle [b,R_{\D,j}]\xi_{E_Q}^{(s)},\eta_{E_Q}^{(s)}\big\rangle_{L^2(\mathbb{R}^N,dw)}\big|.
-\end{align*}
-Substituting this inequality into \eqref{substitu1} and then repeating the duality argument as in \eqref{repeatduality}, we deduce that
-\begin{align}\label{beclaimm}
-{\rm III}_{\sigma,\tilde{\sigma},31}
-&\lesssim \sum_{s=1}^4\sum_{\nu=1}^{2^N}\Bigg(\sum_{(k,Q)\in \Upsilon^\nu}2^{-kp}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-p}w(E_Q)^{-p/2}\big|\big\langle [b,R_{\D,j}]\xi_{E_Q}^{(s)},\eta_{E_Q}^{(s)}\big\rangle_{L^2(\mathbb{R}^N,dw)}\big|^{p}\Bigg)^{1/p}\nonumber\\
-&\lesssim\sum_{s=1}^4\sum_{\nu=1}^{2^N}\sup_{\|\{\psi_{k,Q}\}_{(k,Q)\in\Upsilon^\nu}\|_{\ell^{p'}}=1}\Bigg\|\sum_{(k,Q)\in\Upsilon^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q}(\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)})\Bigg\|_{S^{p'}}\|[b,R_{\D,j}]\|_{S^p}.
-\end{align}
-We {\it claim} that
-\begin{align}\label{supinequality2}
-\sup_{\|\{\psi_{k,Q}\}_{(k,Q)\in\Upsilon^\nu}\|_{\ell^{p'}}=1}\Bigg\|\sum_{(k,Q)\in\Upsilon^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q}(\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)})\Bigg\|_{S^{p'}}\lesssim 1.
-\end{align}
-To show \eqref{supinequality2}, we first write
-\begin{align}\label{rhs7777}
-&\sum_{(k,Q)\in\Upsilon^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q}(\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)})\nonumber\\
-&=\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{Q\in U_{m,k}^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q} (\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)})\nonumber\\
-&=\sum_{\tau=1}^{2^N}\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{Q\in U_{m,k}^{\nu,\tau}}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q} (\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)}),
-\end{align}
-where
-$$U_{m,k}^\nu:=\left\{Q\in\sigma(\mathbb{D}_{\Gamma,k+10}):A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,\ \ell(E_Q)=2^{-(k-m+10)},\ P_Q\in \mathbb{D}_{k-k_0}^\nu\right\},$$
-$$U_{m,k}^{\nu,\tau}:=\left\{Q\in\sigma(\mathbb{D}_{\Gamma,k+10}):A_22^{-k+1}\leq \|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|,\ E_Q\in\mathbb{D}^\tau_{k-m+10},\ P_Q\in \mathbb{D}_{k-k_0}^\nu\right\}.$$
-Note that for any $Q\in\mathbb{D}^\tau_{k-m+10}$, there are at most $c2^{mN}$ cubes $W\in\sigma(\mathbb{D}_{\Gamma,k+10})$ such that $E_W=Q$, where $c$ is an absolute constant. Denote these cubes by $Q_{\langle m \rangle}^1, Q_{\langle m\rangle}^2,\ldots,Q_{\langle m\rangle}^\varsigma$ with $\varsigma\leq c2^{mN}$. Let $\tilde{\delta}_{Q,m,\ell}=1$ if $E_{Q_{\langle m\rangle}^\ell}=Q$ and $\tilde{\delta}:=0$ otherwise. Let
-$$\Delta_{m,k,l}^{\nu,\tau}:=\left\{Q\in \mathbb{D}_{k-m+10}^\tau: A_22^{-k+1}\leq \|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|,\ P_{Q_{\langle m\rangle}^\ell}\in \mathbb{D}_{k-k_0}^\nu \right\}.$$
-We have
-\begin{align}\label{rhs8888}
-&{\rm RHS}\ {\rm of}\ \eqref{rhs7777}\nonumber\\
-&=\sum_{\tau=1}^{2^N}\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in\Delta_{m,k,\ell}^{\nu,\tau}}2^{-k}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-1}\tilde{\delta}_{Q,m,\ell}\psi_{k,Q_{\langle m \rangle}^\ell}(\xi_{Q}^{(s)}\otimes \eta_{Q}^{(s)})\nonumber\\
-&=2^{10}\sum_{\tau=1}^{2^N}\sum_{m\geq 1}\sum_{k\in\mathbb{Z}}\sum_{\ell=1}^{c2^{mN}}\sum_{Q\in\Delta_{m,k+m-10,\ell}^{\nu,\tau}}2^{-(k+m)}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-1}\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}(\xi_{Q}^{(s)}\otimes \eta_{Q}^{(s)})\nonumber\\
-&=\sum_{\tau=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}a_Q^\nu(\xi_{Q}^{(s)}\otimes \eta_{Q}^{(s)}),
-\end{align}
-where for any $Q\in \mathbb{D}_k^\tau$,
-\begin{align*}
-  a_Q^\nu&:=2^{10}\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-1}\times\nonumber\\
-  &\hspace{1.0cm}\times\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell}).
-\end{align*}
-It follows from equalities \eqref{rhs7777}, \eqref{rhs8888} and Lemma \ref{NWOLEMMAA2} that
-\begin{align}\label{uiop}
-&\Bigg\|\sum_{(k,Q)\in\Upsilon^\nu}2^{-k}\|c_Q-\widetilde{\sigma}(\sigma(c_Q))\|^{-1}\psi_{k,Q}(\xi_{E_Q}^{(s)}\otimes \eta_{E_Q}^{(s)})\Bigg\|_{S^{p'}}\nonumber\\
-&\lesssim \sum_{\tau=1}^{2^N}\left\|\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}a_Q^\nu(\xi_Q^{(s)}\otimes \eta_Q^{(s)})\right\|_{S^{p'}}\nonumber\\
-&\lesssim \sum_{\tau=1}^{2^N}\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}.
-\end{align}
-By H\"{o}lder's inequality and the definition of $a_Q^\nu$,
-\begin{align}\label{eded}
-  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}\bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-p}\tilde{\delta}_{Q,m,\ell}\bigg)^{\frac{p'}{p}}\times\nonumber\\
-  &\hspace{0.7cm}\times \bigg(\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}|\tilde{\delta}_{Q,m,\ell}\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell})|^{p'}\bigg)\Bigg)^{\frac{1}{p'}}.
-\end{align}
-Observe that \(\tilde{\delta}_{Q,m,\ell}\in\{0,1\}\) and that \(\tilde{\delta}_{Q,m,\ell}=1\) only when
-$
-\bigl\|c_{Q_{\langle m\rangle}^{\ell}}-\widetilde{\sigma}\bigl(\sigma(c_{Q_{\langle m\rangle}^{\ell}})\bigr)\bigr\|
-\;\ge\; A_2\,2^{-k+1}$. This, in combination with the assumption $p>N$, implies
-\begin{align}\label{substtttt}
-  &\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|^{-p}\tilde{\delta}_{Q,m,\ell}\lesssim \sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}2^{-(k+m)p}(2^{-k})^{-p}\lesssim \sum_{m\geq 1}2^{-m(p-N)}\lesssim 1.
-\end{align}
-Substituting \eqref{substtttt} into \eqref{eded} and then applying a similar argument as in \eqref{longdisplay}, we deduce that
-\begin{align*}
-  &\Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}|a_Q^\nu|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &\lesssim \Bigg(\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^\tau}
-\sum_{m\geq 1}\sum_{\ell=1}^{c2^{mN}}|\psi_{k+m-10,Q_{\langle m \rangle}^\ell}\times\nonumber\\
-&\hspace{1.0cm}\times \tilde{\delta}_{Q,m,\ell}\chi_{[A_22^{-(k+m-11)},\infty)}(\|c_{Q_{\langle m\rangle}^\ell}-\widetilde{\sigma}(\sigma(c_{Q_{\langle m\rangle}^\ell}))\|)\chi_{\mathbb{D}_{k+m-10-k_0}^\nu}(P_{Q_{\langle m\rangle}^\ell})|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &=\Bigg(\sum_{(k,Q)\in\Upsilon^\nu}|\psi_{k,Q}|^{p'}\Bigg)^{\frac{1}{p'}}\nonumber\\
-  &\lesssim 1.
-\end{align*}
-Substituting this inequality into \eqref{uiop}, we obtain the inequality \eqref{supinequality2}. Together with the inequality \eqref{beclaimm}, we see that ${\rm III}_{\sigma,\tilde{\sigma},31}$ is dominated by $C\|[b,R_{\D,j}]\|_{S^p}$. Similarly, ${\rm III}_{\sigma,\tilde{\sigma},32}$ is dominated by $C\|[b,R_{\D,j}]\|_{S^p}$. This finishes the proof of Lemma \ref{nonstandard}.
+This shows the inequality \eqref{martingaleassertion} and then finishes the proof of Lemma \ref{standard}.
 \end{proof}
+
 
 
 \section{Constant characterization}
