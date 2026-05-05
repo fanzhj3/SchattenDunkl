@@ -544,11 +544,11 @@ Suppose $(x,t)\in \mathbb{R}^N\times\mathbb{R}_+$ is such that $|x_N|\geq (2c+4)
 $$|(c_Q)_N|\geq |x_N|-|(x-c_Q)_N|\geq |x_N|-s(Q)\geq |x_N|-2t\geq$$
 $$\geq (2c+4)t-2t=(2c+2)t\geq (c+1)s(Q).$$ 
 Hence,
-$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq 2^N\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\int_{3Q}\frac{|f|(y)dy}{|y_N|^N}\Big)^p.$$
+$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ |x_N|\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}\leq 2^N\sum_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq (c+1)\cdot s(Q)}}\Big(\int_{3Q}\frac{|f|(y)dy}{|y_N|^N}\Big)^p.$$
 So,
-$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ x_N\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
+$$\int_{\substack{(x,t)\in \mathbb{R}^N\times\mathbb{R}_+\\ |x_N|\geq (2c+4)t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
 Furthermore, it is easy to see that {\color{red} do we need details here?}
-$$\int_{\substack{x\in\mathbb{R}^N\\ t\in\mathbb{R}_+\\ x_N\geq t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
+$$\int_{\substack{x\in\mathbb{R}^N\\ t\in\mathbb{R}_+\\ |x_N|\geq t}}h^p(x,t)\frac{dxdt}{t^{N+1}}<\infty.$$
 
 {\color{red} from this, we should be able to derive that our weighted $L_p$-norm is finite.}
 
@@ -661,7 +661,7 @@ Combining these inequalities, we complete the proof.
 \end{proof}
 
 \begin{lemma} Suppose $M_{f\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ Let $Q_0$ be as in Lemma \ref{for zhijie auxiliary estimates}. If $v_0$ is not orthogonal to $e_j,$ then
-$$\Big\{\int_Q|f|(O_{v_0}^{-1}x)\frac{dx}{|x_N|^N}\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p,\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
+$$\Big\{\int_Q\frac{|f|(O_{v_0}^{-1}x)dx}{|x_N|^N}\Big\}_{\substack{Q\in\mathcal{D}\\ Q\subset Q_0\\ |(c_Q)_N|\geq c\cdot s(Q)}}\in l_p,\quad c=\frac{2N^{\frac12}}{|(v_0)_j|}.$$
 \end{lemma}
 \begin{proof} Combining Lemma \ref{from rs lemma} and Lemma \ref{from schur lemma}, we obtain
 $$\Big\{w(O_{v_0}Q)^{-1}\langle |f|\cdot B_j(\chi_{gO_{v_0}Q}),\chi_{O_{v_0}Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{\substack{Q\in\mathcal{D}\\ O_{v_0}Q\subset\Gamma}}\in l_p.$$
@@ -680,8 +680,7 @@ $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhc}}{\geq} c_k^{(3)}
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhe}}{\geq} c_k^{(4)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)\frac{|(x-y)_j|}{|(c_Q)_N|}\cdot\frac{w(O_{v_0}c_Q)}{w(B(x,|x-y|))}dxdy\geq$$
 $$\stackrel{L.\ref{for zhijie auxiliary estimates} \eqref{fzhd}}{\geq} c_{k,Q_0}^{(5)}m(Q)^{-1}\int_{O_{v_0}Q\times gO_{v_0}Q}|f|(x)|(x-y)_j|\cdot\frac1{|(c_Q)_N|^{N+1}}dxdy=$$
 $$=c_{k,Q_0}^{(5)}\frac1{m(Q)\cdot |(c_Q)_N|^{N+1}}\int_{O_{v_0}Q}|f|(x)\Big(\int_{gO_{v_0}Q}|(x-y)_j|dy\Big)dx\geq$$
-$$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\geq$$
-$$\geq c_{k,Q_0}^{(7)}\int_Q|f|(O_{v_0}^{-1}x)\frac{dx}{|x_N|^{-N}}.$$
+$$\stackrel{L.\ref{for zhijie extra estimate}}{\geq}c_{k,Q_0}^{(6)}\frac1{|(c_Q)_N|^N}\int_{O_{v_0}Q}|f|(x)dx\geq c_{k,Q_0}^{(7)}\int_Q\frac{|f|(O_{v_0}^{-1}x)dx}{|x_N|^N}.$$
 
 As the condition $s(Q)\leq {\rm const}_{Q_0}$ excludes only finitely many terms, we can drop this condition.
 \end{proof}
