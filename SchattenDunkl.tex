@@ -912,8 +912,7 @@ The assertion follows now from Lemma \ref{improved zhijie lemma}.
 In what follows, conditional expectations are with respect to the measure $w(x)dx.$
 
 \begin{lemma}\label{MartingaleBesov} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx)$. We have
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
 \end{lemma}
 \begin{proof} We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
 $$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
@@ -948,35 +947,42 @@ $$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\B
 Obviously,
 $$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx=\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq $$
 $$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_Q\frac{|f(x)-f_Q|^pw(x)dx}{w(B(x,2^{-m}))}=$$
-$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}.$$
-Thus,
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
-
-Clearly,
+$$=c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}.$$
+Note that
 $$f-E_mf=\sum_{l\geq m}(E_{l+1}f-E_lf).$$
 By triangle inequality,
 $$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
-$$\leq\sum_{l\geq m}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}.$$
+$$\leq\sum_{l\geq m}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}.$$
 Note that
 $$w(B(x,2^{-m}))\geq c_k 2^{N(l-m)}w(B(x,2^{-l})).$$
 Thus,
 $$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
-$$\leq c_{p,k}\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}$$
+$$\leq c_{p,k}\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}$$
 and, therefore,
 $$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
-$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p.$$
+$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p.$$
 
 Using the discreet Young's inequality
 $$\|a\ast b\|_p\leq\|a\|_1\|b\|_p$$
 with
-$$a(l)=2^{-\frac{Nl}{p}}\chi_{\mathbb{Z}_+}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
+$$a(l)=2^{-\frac{Nl}{p}}\chi_{\mathbb{Z}_+}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
 we obtain
-$$\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p\leq$$
-$$\leq c_{N,p}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
+$$\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p\leq$$
+$$\leq c_{N,p}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
 Thus,
 $$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
-$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
+$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\leq $$
+$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}\frac1{w(Q)}\int_Q|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx=$$
+$$=c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}|f_Q-f_{{\rm parent}(Q)}|^p.$$
+
+Obviously,
+$$|f_Q-f_{{\rm parent}(Q)}|\leq\frac1{w(Q)}\int_{{\rm parent}(Q)}|f(x)-f_Q|w(x)dx\leq$$
+$$\leq\frac1{w(Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq \frac{c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq $$
+$$\leq \frac{3c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx.$$
+Hence,
+$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
+$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\Big)^p=$$
+$$=c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\Big)^p.$$
 This completes the proof.
 \end{proof}
 
