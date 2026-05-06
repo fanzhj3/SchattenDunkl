@@ -121,7 +121,7 @@ Let $k: R \to [0,\infty)$ be a multiplicity function, which is a $G$-invariant f
 
 Define the Dunkl measure $w(x)dx$ on $\mathbb{R}^N$ by
 $$w(x)=\prod_{v \in R} |\langle x,v\rangle|^{k(v)}.$$
-Let $B(x,r):=\{y\in \mathbb{R}^N:\|x-y\|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. 
+Let $B(x,r):=\{y\in \mathbb{R}^N:\ |x-y|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. 
 Furthermore,
 \begin{align}\label{twosideinequ}
   w(B(x,r))\sim r^N \prod_{v \in R}(|\langle x, v \rangle |+r)^{k(v)},
@@ -149,9 +149,9 @@ Define
 $$d(x,y)=\min_{\sigma\in G}|x-\sigma(y)|,\quad x,y\in\mathbb{R}^N.$$
 Recall from \cite[Chapter VII, proof of Theorem 2.12]{MR514561} that
 \begin{align}\label{distanceequa}
-d(x,y)=\|x-y\|\ {\rm if}\ {\rm and}\ {\rm only}\ {\rm if}\ x,y\in\Gamma
+d(x,y)=|x-y|\mbox{ if and only if }x,y\in\Gamma\mbox{ for some chamber }\Gamma.
 \end{align}
-for some closed Weyl chamber $\Gamma$.
+
 
 
 Denote by $K_{{\rm Dunkl},j}(x,y)$ the integral kernel of $R_{{\rm Dunkl},j}$. We recall the kernel estimates for the Riesz transforms in the Dunkl setting proved in \cite{MR4733961}. Although these estimates may not be sharp (see the comment following Theorem~2.1 in \cite[p.~10]{MR4733961}), they suffice for our purposes.
@@ -208,38 +208,22 @@ $$K_{{\rm Dunkl},j}(x,y)\leq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|
 Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{FLLXarxiv,HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).  For our purposes, we adapt  the extension to the Dunkl setting $(\mathbb{R}^N,\|\cdot\|,w)$ rather than recalling the general  definition
 of NWO sequences and the general extension to spaces of homogeneous type.
 
-{\it Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
-\begin{enumerate}
-  \item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
-  \item $\|e_Q\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{-\frac12}.$
+\begin{definition} Let $\mathcal{D}$ be the dyadic lattice in $\mathbb{R}^N.$ A sequence of functions $\{e_Q\}_{Q\in\mathcal{D}}$ is called nearly weakly orthonormal (NWO, in short) sequence if
+\begin{enumerate}[{\rm (i)}]
+\item ${\rm supp}(e_Q)\subset cQ$ for some positive constant $c$ independent of $Q.$
+\item $\|e_Q\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{-\frac12}.$
 \end{enumerate}
-}
-\begin{lemma}\label{NWOLEMMAA}
-Let $1<p<\infty$, and let $\mathscr{D}$ be a
-system of dyadic cubes over $\mathbb{R}^N$. For any compact operator $ T $ on $ L ^2 (\mathbb R ^{N},dw)$, we have
-\begin{equation*}
-\Bigl(
-\sum_{Q\in \mathscr{D}} |\langle T e_Q, f_Q \rangle_{L^2(\mathbb{R}^N,dw)} | ^{p}
-\Bigr) ^{1/p} \leq C_{N,p,w} \| T \| _{S ^{p}},
-\end{equation*}
-where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences.
+\end{definition}
+
+\begin{lemma}\label{NWO lower estimate}
+Let $1<p<\infty$ and let $\mathcal{D}$ be the dyadic lattice in $\mathbb{R}^N.$
+If $T\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then
+$$\Big\|\Big\{\langle T e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq c_{N,p,w,c_1,c_2}\|T\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$$
+for every NWO systems $\{e_Q\}_{Q\in\mathcal{D}}$ and $\{f_Q\}_{Q\in\mathcal{D}}$ (with respective constants $c_1$ and $c_2$).
 \end{lemma}
-\begin{proof}
-This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
+\begin{proof} {\color{red} reference to \cite{RS} is inappropriate. Rochberg and Semmes do not consider weighted setting. we absolutely must provide correct reference.} This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
 \end{proof}
 
-\begin{lemma}\label{NWOLEMMAA2}
-Let $0<p<\infty$, and let $\mathscr{D}$ be a
-system of dyadic cubes over $\mathbb{R}^N$. Assume that
-$$A=\sum_{Q\in\mathscr{D}}\lambda_Q\langle \cdot,\,e_Q\rangle_{L^2(\mathbb{R}^N,dw)} f_Q,$$
-where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences and $\{\lambda_Q\}_{Q\in\mathscr{D}}$ is a sequence of scalars. We have
-\begin{align}\label{nwose}
-\|A\|_{S^{p}}\leq C_{N,p,w} \|\{\lambda_Q\}_Q\|_{\ell^{p}}.
-\end{align}
-\end{lemma}
-\begin{proof}
-This property can be found in  \cite[(1.9)]{RS} (see also \cite[Section 7]{HKarxiv}).
-\end{proof}
 
 \section{Comparison of Sobolev norms}\label{comparison section}
 
@@ -630,15 +614,14 @@ $$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},
 Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
 $$\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\in l_p.$$
 \end{lemma}
-\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By {\color{red} some version of Rochberg-Semmes theorem PROOF OR REFERENCE IS NEEDED},
+\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
 $$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
 The assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
-In what follows, conditional expectations are with respect to the measure $w(x)dx.$
-
-\begin{lemma}\label{MartingaleBesov} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx)$. We have
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+\begin{lemma}\label{first zhijie estimate} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
 \end{lemma}
 \begin{proof} We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
 $$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
@@ -666,11 +649,13 @@ Thus,
 $$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
 $$\leq c_{p,k}\sum_{Q\in\mathcal{D}}\sum_{\epsilon\in\{-1,0,1\}^d}\frac1{w(Q+\epsilon s(Q))}\int_{Q+\epsilon s(Q)}|f(x)-f_{Q+\epsilon s(Q)}|^pw(x)dx+$$
 $$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
-In other words,
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+This completes the proof.
+\end{proof}
 
-Obviously,
+\begin{lemma}\label{second zhijie estimate} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
+$$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq c_{p,k}\sum_{Q\in\mathcal{D}}|f_Q-f_{{\rm parent}(Q)}|^p.$$
+\end{lemma}
+\begin{proof} Obviously,
 $$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx=\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq $$
 $$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_Q\frac{|f(x)-f_Q|^pw(x)dx}{w(B(x,2^{-m}))}=$$
 $$=c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}.$$
@@ -691,7 +676,7 @@ $$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\
 Using the discreet Young's inequality
 $$\|a\ast b\|_p\leq\|a\|_1\|b\|_p$$
 with
-$$a(l)=2^{-\frac{Nl}{p}}\chi_{\mathbb{Z}_+}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
+$$a(l)=2^{\frac{Nl}{p}}\chi_{\mathbb{Z}_-}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
 we obtain
 $$\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p\leq$$
 $$\leq c_{N,p}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
@@ -700,16 +685,25 @@ $$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,
 $$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\leq $$
 $$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}\frac1{w(Q)}\int_Q|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx=$$
 $$=c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}|f_Q-f_{{\rm parent}(Q)}|^p.$$
+This completes the proof.
+\end{proof}
 
+In what follows, conditional expectations are with respect to the measure $w(x)dx.$
+
+\begin{lemma}\label{MartingaleBesov} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+\end{lemma}
+\begin{proof} Combining Lemmas \ref{first zhijie estimate} and \ref{second zhijie estimate}, we arrive at
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}|f_Q-f_{{\rm parent(Q)}}|^p.$$
 Obviously,
 $$|f_Q-f_{{\rm parent}(Q)}|\leq\frac1{w(Q)}\int_{{\rm parent}(Q)}|f(x)-f_Q|w(x)dx\leq$$
 $$\leq\frac1{w(Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq \frac{c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq $$
-$$\leq \frac{3c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx.$$
-Hence,
-$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
-$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\Big)^p=$$
-$$=c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\Big)^p.$$
+$$\leq \frac{2c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx.$$
 This completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{useful zhijie theorem}] The assertion follows by combining Lemma \ref{standard} and Lemma \ref{MartingaleBesov}.
 \end{proof}
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb}}\label{lower estimate final section}
