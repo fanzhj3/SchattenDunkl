@@ -4,12 +4,10 @@
 \usepackage{esint}
 \usepackage{enumerate}
 
-
-%\usepackage{txfonts} %also pxfonts
 \usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
 
 
-
+\numberwithin{equation}{section}
 
 \begin{document}
 
@@ -21,52 +19,13 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{nota}[theorem]{Notation}
-%\theoremstyle{definition}
 \newtheorem{assum}{Assumption}[section]
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{construction}[theorem]{Construction}
 
 
-\renewcommand{\theequation}
-{\thesection.\arabic{equation}}
-
-\def\SL{\sqrt H}
-
-
-\newcommand{\as}[1]{{\mar{AS:#1}}}
-\newcommand{\cE}{\mathcal{E}}
-\newcommand\R{\mathbb{R}}
-\newcommand\RR{\mathbb{R}}
-\newcommand\CC{\mathbb{C}}
-\newcommand\D {{\rm Dunkl}}
-\newcommand\NN{\mathbb{N}}
-\newcommand\N {{\bf N}}
-\newcommand\ZZ{\mathbb{Z}}
-\newcommand\HH{\mathbb{H}}
-\newcommand\Z{\mathbb{Z}}
-\def\RN {\mathbb{R}^n}
-\renewcommand\Re{\operatorname{Re}}
-\renewcommand\Im{\operatorname{Im}}
-
-\newcommand{\mc}{\mathcal}
-
-\def\hs{\hspace{0.33cm}}
-\newcommand{\la}{\alpha}
-\def \l {\alpha}
-\newcommand{\eps}{\tau}
-\newcommand{\pl}{\partial}
-\newcommand{\supp}{{\rm supp}{\hspace{.05cm}}}
-\newcommand{\x}{\times}
-\newcommand{\lag}{\langle}
-\newcommand{\rag}{\rangle}
-
-\newcommand\wrt{\,{\rm d}}
-
-\newcommand{\norm}[2]{|#1|_{#2}}
-\newcommand{\Norm}[2]{\|#1\|_{#2}}
-
-\title[Schatten class properties of Dunkl--Riesz transform commutators]{Weyl--Chamber geometry, Poincar\'e inequality meets Schatten class properties of Dunkl--Riesz transform commutators}
+\title[Schatten class properties of Dunkl--Riesz transform commutators]{Schatten class properties of Dunkl--Riesz transform commutators}
 
 
 
@@ -74,21 +33,14 @@
 \address{Zhijie Fan, School of Mathematical Sciences, South China Normal University, Guangzhou 510631, China}
 \email{fanzhj3@mail2.sysu.edu.cn}
 
-
-
-
-
-
-
 \author{Ji Li}
-\address{Ji Li, Department of Mathematics, Macquarie University,NSW2109, Australia}
+\address{Ji Li, Department of Mathematics, Macquarie University, NSW 2109, Australia}
 \email{ji.li@mq.edu.au}
 
 
-
 \author{Dmitriy Zanin}
-\address{Dmitriy Zanin, University of New South Wales, Kensington, NSW 2052, Australia}
-\email{d.zanin@unsw.edu.au}
+\address{School of Mathematics and Statistics, Central South University, Changsha 410075, People's Republic of China}
+\email{d.zanin@csu.edu.cn}
 
 
 
@@ -112,11 +64,9 @@
 
 \tableofcontents
 
-%\newpage
 \section{Introduction}
 \subsection{Background and motivation}
-%In [...], Dunkl introduced so-called Dunkl operators, that is a family of first order differential-diffenence operators which play the role similar to the usual partial diffentiation for the reflection group. The Dunkl theory is an interesting subject in analysis and can be view as a  generalization of Fourier analysis in the Euclidean setting. This foundation can be tracked back by the influential paper of Dunkl  [...]. Since then, significant progress has been made in its development. See for example  [...] and the references therein. For further information, we refer the reader to [] for more information and references. Motivated by the extensive research conducted in the Dunkl settings, in this paper we will develop the harmonic analysis on the Dunkl setting. Firstly we would like to introduce the framework of the Dunkl setting in [...] (see also [...]). \\
-{\color{red}[Zhijie will write the background in the Dunkl setting.]}
+
 
 
 \begin{theorem}\label{main theorem} Let $R$ be a normalised root system in $\mathbb{R}^N$ and let $G$ be the corresponding finite reflection group. Let $k:R\to\mathbb{R}_+$ be $G$-invariant multiplicity function. Let $R_{{\rm Dunkl},j}$ be the $j$-th Dunkl-Riesz transform corresponding to $R$ and $k.$ Let $w$ be the Dunkl weight corresponding to $R$ and $k.$ Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
@@ -131,6 +81,16 @@ $$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}
 $$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\geq c_{R,k}^{-1}\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)};$$
 \end{enumerate}
 \end{theorem}
+
+\subsection{Strategy of the proof}
+
+In Section \ref{comparison section}, we introduce our {\it first ad hoc} Sobolev space and demonstrate that its semi-norm is controlled by the usual Sobolev semi-norm. In Section \ref{upper estimate section}, we use Janson-Wolff method to control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the {\it first ad hoc} Sobolev semi-norm of $f.$ Thus, we control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the usual Sobolev semi-norm (i.e., we prove Theorem \ref{main theorem} \eqref{mta}).
+
+In Section \ref{hytonen verification section}, we control, in every chamber $\Gamma,$ the Sobolev semi-norm of $f$ via $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$ This is done by verifying the assumptions in Theorem 1.4 in \cite{Hytonen-new} and applying the latter theorem.
+
+In Section \ref{useful zhijie section}, we introduce our {\it second ad hoc} Sobolev space and use the Rochberg-Semmes method to demonstrate that the semi-norm of the latter space is controlled by $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$
+
+In Section \ref{lower estimate final section}, for every face of each chamber, we compare the boundary traces of $f$ taken from the adjacent regions: the {\it interior trace} is computed by approaching the face from within the given chamber, while the {\it exterior trace} is obtained by approaching the same face from the neighboring chamber that shares the same face. Those boundary values are demonstrated to be the same. This allows us to show that the function $f$ is globally Sobolev and that its Sobolev semi-norm is controlled by $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ (i.e., we prove Theorem \ref{main theorem} \eqref{mtb}).
 
 
 
@@ -161,24 +121,23 @@ Let $k: R \to [0,\infty)$ be a multiplicity function, which is a $G$-invariant f
 
 Define the Dunkl measure $w(x)dx$ on $\mathbb{R}^N$ by
 $$w(x)=\prod_{v \in R} |\langle x,v\rangle|^{k(v)}.$$
-Let $B(x,r):=\{y\in \mathbb{R}^N:\|x-y\|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. Let $\N:=N+\sum_{v\in R}k(v)$. Note that
-$$w(B(tx,tr))=t^{\N}w(B(x,r)),\ {\rm for}\ x\in\mathbb{R}^N,\ t,r>0.$$
+Let $B(x,r):=\{y\in \mathbb{R}^N:\|x-y\|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. 
 Furthermore,
 \begin{align}\label{twosideinequ}
   w(B(x,r))\sim r^N \prod_{v \in R}(|\langle x, v \rangle |+r)^{k(v)},
 \end{align}
 where the implicit constant only depends on $N,R$ and $k$.  It follows from \eqref{twosideinequ} that there exists a constant $C\geq 1$ such that for every $x\in \mathbb{R}^N$,
 \begin{align}\label{doublinginequality}
-C^{-1}\left(\frac{r_2}{r_1}\right)^N\leq \frac{w(B(x,r_2))}{w(B(x,r_1))}\leq C\left(\frac{r_2}{r_1}\right)^\N,\ {\rm for}\ 0<r_1<r_2,
+C^{-1}\left(\frac{r_2}{r_1}\right)^N\leq \frac{w(B(x,r_2))}{w(B(x,r_1))}\leq C\left(\frac{r_2}{r_1}\right)^{N'},\ {\rm for}\ 0<r_1<r_2,
 \end{align}
-so the numbers $\N$ and $N$ are called the upper and lower homogeneous dimensions, respectively.
+so the numbers $N'$ and $N$ are called the upper and lower homogeneous dimensions, respectively.
 
 The Dunkl operators $T_\xi$ are defined by
 $$T_\xi f(x):=\partial_\xi f(x)+\sum_{v\in R}\frac{k(v)}{2}\langle v,\xi\rangle\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle},$$
-where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by $$\Delta_{\D}f(x):=\sum_{j=1}^N T_{e_j}^2f(x)=\Delta_{\mathbb{R}^N}f(x)+\sum_{v\in R}k(v)\delta_v f(x),$$
+where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by $$\Delta_{{\rm Dunkl}}f(x):=\sum_{j=1}^N T_{e_j}^2f(x)=\Delta_{\mathbb{R}^N}f(x)+\sum_{v\in R}k(v)\delta_v f(x),$$
 where $\Delta_{\mathbb{R}^N}$ is the Laplacian on $\mathbb{R}^N$ and $\delta_v$ is defined by
 $$\delta_v f(x):=\frac{\partial_v f(x)}{\langle v,x\rangle}-\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle^2}.$$
-In this article, we consider the Dunkl-Riesz transforms defined by $R_{\D,j}:=T_{e_j}(-\Delta_{\D})^{-1/2}$, $j=1,2,\ldots,N$.
+In this article, we consider the Dunkl-Riesz transforms defined by $R_{{\rm Dunkl},j}:=T_{e_j}(-\Delta_{{\rm Dunkl}})^{-1/2}$, $j=1,2,\ldots,N$.
 
 
 \begin{definition}{\rm
@@ -195,11 +154,11 @@ d(x,y)=\|x-y\|\ {\rm if}\ {\rm and}\ {\rm only}\ {\rm if}\ x,y\in\Gamma
 for some closed Weyl chamber $\Gamma$.
 
 
-Denote by $K_{\D,j}(x,y)$ the integral kernel of $R_{\D,j}$. We recall the kernel estimates for the Riesz transforms in the Dunkl setting proved in \cite{MR4733961}. Although these estimates may not be sharp (see the comment following Theorem~2.1 in \cite[p.~10]{MR4733961}), they suffice for our purposes.
+Denote by $K_{{\rm Dunkl},j}(x,y)$ the integral kernel of $R_{{\rm Dunkl},j}$. We recall the kernel estimates for the Riesz transforms in the Dunkl setting proved in \cite{MR4733961}. Although these estimates may not be sharp (see the comment following Theorem~2.1 in \cite[p.~10]{MR4733961}), they suffice for our purposes.
 \begin{lemma}\label{kernelestimate}
 There exists a constant $C$ such that for $j\in\{1,2,\cdots,N\}$ and every $x,y$ with $d(x,y)\neq 0,$
 \begin{align*}
-|K_{\D,j}(x,y)|\leq \frac{d(x,y)}{|x-y|}\cdot\frac{C}{w(B(x,d(x,y)))}.
+|K_{{\rm Dunkl},j}(x,y)|\leq \frac{d(x,y)}{|x-y|}\cdot\frac{C}{w(B(x,d(x,y)))}.
 \end{align*}
 \end{lemma}
 \begin{proof}
@@ -231,9 +190,9 @@ Multiplying the last two equations, we complete the proof.
 \end{proof}
 
 \begin{lemma}\label{nondegenerate} Let $1\leq j\leq N.$ If $x_j\geq y_j,$ then
-$$K_{\D,j}(x,y)\geq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+$$K_{{\rm Dunkl},j}(x,y)\geq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
 If $x_j\leq y_j,$ then
-$$K_{\D,j}(x,y)\leq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+$$K_{{\rm Dunkl},j}(x,y)\leq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
 \end{lemma}
 \begin{proof} The lower bound is identical to that in \cite[Theorem 1.2]{MR4733961}.
 \end{proof}
@@ -251,8 +210,8 @@ of NWO sequences and the general extension to spaces of homogeneous type.
 
 {\it Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
 \begin{enumerate}
-  \item $\supp e_Q\subseteq cQ$ for some positive constant $c$ independent of $Q$
-  \item $\|e_Q\|_{L^s(\mathbb{R}^{N},dw)}\leq w(Q)^{1/s-1/2}$ for some $s>2$.
+  \item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
+  \item $\|e_Q\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{-\frac12}.$
 \end{enumerate}
 }
 \begin{lemma}\label{NWOLEMMAA}
@@ -282,7 +241,7 @@ where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequen
 This property can be found in  \cite[(1.9)]{RS} (see also \cite[Section 7]{HKarxiv}).
 \end{proof}
 
-\section{Comparison of Sobolev norms}
+\section{Comparison of Sobolev norms}\label{comparison section}
 
 \begin{theorem}\label{sobolev comparison theorem} For every $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ $p>N,$ we have
 $$\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}\leq c_{p,R}\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
@@ -418,8 +377,7 @@ $$\leq\Big(\int_{\Gamma\times g\Gamma}\Big(\frac{d(x,y)}{|x-y|}\Big)^{2N}|f(x)-f
 
 
 
-\section{Proof of Theorem \ref{main theorem} \eqref{mta}}
-\setcounter{equation}{0}
+\section{Proof of Theorem \ref{main theorem} \eqref{mta}}\label{upper estimate section}
 
 Let $(X,\mu)$ be a measure space and let $L_p(L_{q,\infty})^{\rm symm}(X\times X,\mu\times\mu)$ denote the mixed-norm space consisting of all $\mu\times\mu$-measurable functions $f:X\times X \to \mathbb{C}$ such that
 $$\int_X\|f(x,\cdot)\|_{L_{q,\infty}(X,\mu)}^pd\mu(x),\int_X\|f(\cdot,y)\|_{L_{q,\infty}(X,\mu)}^pd\mu(y)<\infty.$$
@@ -505,7 +463,7 @@ Using Lemma \ref{for sufficiency auxiliary lemma}, we conclude that
 $$\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\leq c_{R,k}^{(2)}\left(\int_{\mathbb{R}^N\times\mathbb{R}^N}\Big(\frac{d(x,y)}{|x-y|}\Big)^p|f(x)-f(y)|^p \frac{dxdy}{d(x,y)^{2N}}\right)^{\frac1p}.$$
 Using Theorem \ref{sobolev comparison theorem}, we conclude that
 $$\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\leq c_{R,k}\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}.$$
-Obviously, the integral kernel of the operator $[R_{\D,j},M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
+Obviously, the integral kernel of the operator $[R_{{\rm Dunkl},j},M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
 \section{Expected dyadic result}
@@ -691,8 +649,11 @@ Of course, in this case, we should omit $|(v_0)_j|$ from the definition of $\mat
 }
 
 
-\section{Proof of Theorem \ref{main theorem} \eqref{mtb}}
-\setcounter{equation}{0}
+\section{Proof of restricted version of Theorem \ref{main theorem} \eqref{mtb}}\label{hytonen verification section}
+
+\begin{theorem}\label{chamber sobolev theorem} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Furthermore,
+$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
+\end{theorem}
 
 \begin{lemma}\label{for reverse holder first lemma} Let $\Gamma$ be a chamber and let $x_0\in\Gamma.$ We have
 $$\sup_{x\in B(x_0,r)\cap\Gamma}w(x)\leq \frac{c_{k,\Gamma}}{m(B(x_0,r)\cap\Gamma)}\int_{B(x_0,r)\cap\Gamma}w(x)dx.$$
@@ -781,16 +742,13 @@ Choose $z\in\Gamma$ such that $|z_j|=c_{\Gamma}^{-1}$ and $|z|=1.$ Set $y=x+rz.$
 {\bf Step 4:} Lebesgue measure on $\Gamma$ is, obviously, $N$-regular and possesses the $(1,1)$ Poincare inequality.
 \end{proof}
 
-\begin{lemma}\label{chamber sobolev lemma} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Furthermore,
-$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
-\end{lemma}
-\begin{proof} This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.4 in \cite{Hytonen-new}.
+\begin{proof}[Proof of Theorem \ref{chamber sobolev theorem}] This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.4 in \cite{Hytonen-new}.
 \end{proof}
 
 Let $U_g:L_2(\mathbb{R}^N,w(x)dx)\to L_2(\mathbb{R}^N,w(x)dx)$ be given by the formula $U_g\xi=\xi\circ g^{-1}.$ Denote for brevity
 $$A_{g,\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}U_g.$$
 
-\begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev lemma} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$}}
+\begin{lemma}\label{different chambers cwikel condition} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then\footnote{{\color{red} this footnote is temporary, for the authors' use only. the combination of assertions of Lemmas \ref{chamber sobolev theorem} and \ref{different chambers cwikel condition} yield $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$}}
 $$M_{(f-f\circ g)\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\in \mathcal{L}_p(L_2(\Gamma,w(x)dx))$$
 for every $g\in G$ and for every chamber $\Gamma.$ Furthermore,
 $$\|M_{(f-f\circ g)\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{g\Gamma}}\|_{ \mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
@@ -804,7 +762,7 @@ A_{g,\Gamma,j}M_{f\circ g}-M_fA_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx))
 
 Let us denote by $K_{g,\Gamma,j}$ the integral kernel of the operator $A_{g,\Gamma,j}.$ By Lemma \ref{kernelestimate},
 $$|K_{g,\Gamma,j}|(x,y)\leq\frac{c_G}{w(B(x,|x-y|))},\quad x,y\in\Gamma.$$
-We know from Lemma \ref{chamber sobolev lemma} that $f\in\dot{W}^{\frac{N}{p},p}(\Gamma).$ We now infer from the Proposition \ref{upper bound} that 
+We know from Theorem \ref{chamber sobolev theorem} that $f\in\dot{W}^{\frac{N}{p},p}(\Gamma).$ We now infer from the Proposition \ref{upper bound} that 
 \begin{equation}\label{dccc eq1}
 A_{g,\Gamma,j}M_{f\circ g}-M_{f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).
 \end{equation}
@@ -814,7 +772,7 @@ $$M_{f-f\circ g}A_{g,\Gamma,j}\in\mathcal{L}_p(L_2(\Gamma,w(x)dx)).$$
 Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 \end{proof}
 
-\section{Useful part of Zhijie argument}
+\section{Useful part of Zhijie argument}\label{useful zhijie section}
 
 \begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
 $$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
@@ -961,6 +919,7 @@ $$=c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\Big)
 This completes the proof.
 \end{proof}
 
+\section{Proof of Theorem \ref{main theorem} \eqref{mtb}}\label{lower estimate final section}
 
 
 
