@@ -909,82 +909,75 @@ $$\Big\{\langle [R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}
 The assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
-With the collection $\{\mathbb{D}^\nu\}_{\nu=1}^{2^N}$ of dyadic cubes systems given in Lemma \ref{Nsystems}, we define the conditional expectation of a locally integrable function $f$ on $\mathbb{R}^N$ by the expression
-$$E_k^\nu(f)(x):=\sum_{Q\in\mathbb{D}_k^\nu}(f)_Q\chi_Q(x),\ x\in\mathbb{R}^N.$$
-Moreover, we define the martingale difference of $f$ by
-\[
-D_k^\nu (f):=E_{k+1}^\nu (f)-E_k^\nu (f).
-\]
+In what follows, conditional expectations are with respect to the measure $w(x)dx.$
 
-\begin{definition}
-For any $1\leq p<\infty$ and $f\in L^1_{\rm loc}(\mathbb{R}^N,dw)$, we define the martingale Besov  (semi)norm of $f$ by
-    $$\|f\|_{{MB}^p(\mathbb{R}^N,dw)}:=\sum_{\nu=1}^{2^N}\bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^{N}}\frac{|D_k^\nu f(x)|^p}{w(B(x,2^{-k}))}dw(x)\bigg)^{1/p}.$$
-\end{definition}
-
-{\color{red} Zhijie uses the inequality}
-\begin{align}
-  \bigg(\fint_Q |D_k^\nu(f)(x)|^pdw(x)\bigg)^{1/p}\leq C_{p,N} \frac1{w(Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx
-\end{align}
-for some constant $C_{p,N}>0.$
-
-\begin{lemma}\label{MartingaleBesov}
-Suppose that $1<p<\infty$ and $b\in L^1_{\mathrm{loc}}(\mathbb{R}^N,dw)$. We have
-\[
-\|b\|_{B^p(\mathbb{R}^N,dw)}\lesssim \|b\|_{{MB}^p(\mathbb{R}^N,dw)}.
-\]
+\begin{lemma}\label{MartingaleBesov} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx)$. We have
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
 \end{lemma}
-\begin{proof}
-We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
-\begin{align}\label{rhs1010}
-  \int_{\mathbb{R}^N}\int_{\mathbb{R}^N}\frac{|b(x)-b(y)|^p}{w(B(x,\|x-y\|))^2}dw(x)dw(y)
-  &\leq \sum_{k\in\mathbb{Z}}\iint_{\substack{2^{-k-1}<\|x-y\|\leq 2^{-k}\\x,y\in\mathbb{R}^N}}\frac{|b(x)-b(y)|^p}{w(B(x,\|x-y\|))^2}dw(x)dw(y)\nonumber\\
-  &\leq \sum_{k\in\mathbb{Z}}\iint_{\substack{2^{-k-1}<\|x-y\|\leq 2^{-k}\\x,y\in\mathbb{R}^N}}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y).
-\end{align}
-Fix $k\in\mathbb{Z}$ and let $\mathbb{D}_k^0$ be the standard system of dyadic cubes over $\mathbb{R}^N$ at scale $2^{-k}$ (see Notation \ref{standardsystem}).
-For each $Q\in\mathbb{D}_k^0$, one has
-$$I_Q:=\left\{y\in\mathbb{R}^N: {\rm dist}(y,Q)\leq 2^{-k}\right\}\subset B(c_Q,\sqrt{N}2^{-k+1}),$$
-where we used the notation ${\rm dist}(y,Q)$ to denote the Euclidean distance from a point $y\in\mathbb{R}^N$ to a set $Q$. By Lemma \ref{Nsystems}, there exists ${\displaystyle Q'\in \bigcup_{\nu=1}^{2^N}\mathbb{D}_{k-k_0}^\nu}$, where $k_0:=\lfloor \log_2(24\sqrt{N})\rfloor$, such that
-$$B(c_Q,\sqrt{N}2^{-k+1})\subset Q'\subset B(c_Q,12N\cdot2^{-k+1}).$$
-With these observations, we conclude that
-\begin{align}\label{RHS1111}
-  &{\rm RHS}\ {\rm of}\ \eqref{rhs1010}\nonumber\\
-  &\leq \sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^0}\int_{Q}\int_{I_Q}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
-   &\leq \sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_k^0}\int_{Q'}\int_{Q'}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
-   &\leq \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\int_{Q}\frac{|b(x)-b(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y),
-\end{align}
-where in the last inequality we used the fact that each $Q'\in \mathbb{D}_{k-k_0}^\nu$ contains at most $c$ (an absolute constant) $Q\in\mathbb{D}_k^0$. By the doubling inequality \eqref{doublinginequality}, for any $x,y\in Q\in\mathbb{D}_{k-k_0}^\nu$,
-$$w(Q)\sim w(B(x,2^{-k-1}))\sim w(B(y,2^{-k-1})).$$
-Therefore, by inserting and subtracting the conditional expectation $E_{k-k_0}^\nu(b)$, we deduce that
-\begin{align}
-  &{\rm RHS}\ {\rm of}\ \eqref{RHS1111}\nonumber\\
-  &\lesssim \sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\int_{Q}\frac{|b(x)-E_{k-k_0}^\nu(b)(x)|^p}{w(B(x,2^{-k-1}))^2}+\frac{|b(y)-E_{k-k_0}^\nu(b)(y)|^p}{w(B(x,2^{-k-1}))^2}dw(x)dw(y)\nonumber\\
-  &\lesssim\sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_{k-k_0}^\nu}\int_{Q}\frac{|b(x)-E_{k-k_0}^\nu(b)(x)|^p}{w(B(x,2^{-k-1}))}dw(x)\nonumber\\
-  &\lesssim\sum_{\nu=1}^{2^N}\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|b(x)-E_{k}^\nu(b)(x)|^p}{w(B(x,2^{-k}))}dw(x),
-\end{align}
-where the last inequality used the change of index and the doubling inequality \eqref{doublinginequality}.
+\begin{proof} We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
+$$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
+$$\leq \sum_{m\in\mathbb{Z}}\int_{\substack{x,y\in\mathbb{R}^N\\ 2^{-m-1}<|x-y|< 2^{-m}}}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
+$$\leq \sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\int_{\substack{x,y\in\mathbb{R}^N\\ |x-y|< 2^{-m}}}|f(x)-f(y)|^pw(x)w(y)dxdy.$$
+For $x,y\in\mathbb{R}^N$ with $2^{-m-1}<|x-y|<2^{-m},$ fix $Q\in\mathcal{D}$ with $x\in Q$ and $s(Q)=2^{-m}.$ We have $|x-y|_{\infty}<2^{-m}$ and $|x-c_Q|_{\infty}<2^{-m-1}.$ Thus, $|y-c_Q|_{\infty}<\frac32\cdot 2^{-m}.$ In other words, $y\in 3Q.$ Consequently, there exists $Q\in\mathcal{D}$ with $s(Q)=2^{-m},$ $x,y\in 3Q.$ Thus,
+$$\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\int_{\substack{x,y\in\mathbb{R}^N\\ |x-y|< 2^{-m}}}|f(x)-f(y)|^pw(x)w(y)dxdy\leq$$
+$$\leq \sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(x)-f(y)|^pw(x)w(y)dxdy\leq$$
+$$\leq 2^p\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(x)-f_{3Q}|^pw(x)w(y)dxdy+$$
+$$+2^p\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(y)-f_{3Q}|^pw(x)w(y)dxdy\leq$$
+$$\leq c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w^2(3Q)}\int_{3Q\times 3Q}|f(x)-f_{3Q}|^pw(x)w(y)dxdy=$$
+$$=c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|^pw(x)dx.$$
 
-To proceed, we apply  Lemma~\ref{Haarexpansion} to write
-\[
-b(x)-E_k^\nu (b)(x)=\sum_{m=0}^{\infty}D_{k+m}^\nu (b)(x),
-\]
- where the sum converges pointwise almost everywhere. Moreover, by the lower doubling inequality \eqref{doublinginequality},
-\begin{align*}
-C^{-1}2^{mN}\leq \frac{w(B(x,2^{-k}))}{w(B(x,2^{-(m+k)}))}.
-\end{align*}
-Combining these facts, we deduce that
-\begin{align}\label{eq:A-k-new}
-\Bigg(\int_{\mathbb{R}^N}\frac{|b(x)-E_k^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}
-&\le \sum_{m\ge0}
-\Bigg(\int_{\mathbb{R}^N}\frac{|D_{k+m}^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}\nonumber\\
-&\lesssim \sum_{m\ge0}2^{-mN/p}\Bigg(\int_{\mathbb{R}^N}\frac{|D_{k+m}^\nu (b)(x)|^p}{w(B(x,2^{-(k+m)}))}\,dw(x)\Bigg)^{\!1/p}.
-\end{align}
-Since $\sum_{m\geq 0}2^{-mN/p}=(1-2^{-N/p})^{-1}<+\infty$, by discrete convolution Young's inequality, we have
-\[
-\Bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|b(x)-E_k^\nu (b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}
-\lesssim
-\Bigg(\sum_{k\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|D_{k}^\nu(b)(x)|^p}{w(B(x,2^{-k}))}\,dw(x)\Bigg)^{\!1/p}.
-\]
-Summing over $\nu$ yields the required assertion.
+Next,
+$$\int_{3Q}|f(x)-f_{3Q}|^pw(x)dx=\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f(x)-f_{3Q}|^pw(x)dx\leq $$
+$$\leq 2^{p-1}\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f(x)-f_{Q+\epsilon s(Q)}|^pw(x)dx+$$
+$$+2^{p-1}\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f_{Q+\epsilon s(Q)}-f_{3Q}|^pw(x)dx.$$
+Obviously,
+$$\int_{Q+\epsilon s(Q)}|f_{Q+\epsilon s(Q)}-f_{3Q}|^pw(x)dx=|f_{Q+\epsilon s(Q)}-f_{3Q}|^p\cdot w(Q+\epsilon s(Q))\leq$$
+$$\leq \Big(\int_{Q+\epsilon s(Q)}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(Q+\epsilon s(Q))\leq$$
+$$\leq \Big(\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(Q+\epsilon s(Q))\leq$$
+$$\leq c_{p,k}\Big(\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(3Q).$$
+
+Thus,
+$$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
+$$\leq c_{p,k}\sum_{Q\in\mathcal{D}}\sum_{\epsilon\in\{-1,0,1\}^d}\frac1{w(Q+\epsilon s(Q))}\int_{Q+\epsilon s(Q)}|f(x)-f_{Q+\epsilon s(Q)}|^pw(x)dx+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+In other words,
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+
+Obviously,
+$$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx=\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq $$
+$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_Q\frac{|f(x)-f_Q|^pw(x)dx}{w(B(x,2^{-m}))}=$$
+$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}.$$
+Thus,
+$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}+$$
+$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
+
+Clearly,
+$$f-E_mf=\sum_{l\geq m}(E_{l+1}f-E_lf).$$
+By triangle inequality,
+$$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
+$$\leq\sum_{l\geq m}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}.$$
+Note that
+$$w(B(x,2^{-m}))\geq c_k 2^{N(l-m)}w(B(x,2^{-l})).$$
+Thus,
+$$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
+$$\leq c_{p,k}\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}$$
+and, therefore,
+$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
+$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p.$$
+
+Using the discreet Young's inequality
+$$\|a\ast b\|_p\leq\|a\|_1\|b\|_p$$
+with
+$$a(l)=2^{-\frac{Nl}{p}}\chi_{\mathbb{Z}_+}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
+we obtain
+$$\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p\leq$$
+$$\leq c_{N,p}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
+Thus,
+$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
+$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_ff)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
+This completes the proof.
 \end{proof}
 
 
