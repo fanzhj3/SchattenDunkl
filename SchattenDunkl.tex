@@ -774,6 +774,9 @@ Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 
 \section{Useful part of Zhijie argument}\label{useful zhijie section}
 
+\begin{theorem}\label{useful zhijie theorem} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in B^p(\mathbb{R}^N,w(x)dx).$ 
+\end{theorem}
+
 \begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
 $$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
 \end{lemma}
@@ -921,9 +924,83 @@ This completes the proof.
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb}}\label{lower estimate final section}
 
+\begin{theorem}\label{gluing theorem} Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that
+\begin{enumerate}[{\rm (i)}]
+\item for every chamber $\Gamma,$ we have $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N);$
+\item $f$ belongs to the space $B^p(\mathbb{R}^N,w(x)dx);$
+\end{enumerate}
+It follows that $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N).$
+\end{theorem}
+
+\begin{lemma}\label{s9 compute lemma} Denote $H_+=\mathbb{R}^{N-1}\times\mathbb{R}_+$ and $H_-=\mathbb{R}^{N-1}\times\mathbb{R}_-.$ Let $z\in\mathbb{R}^N$ be such that $z_N=0.$ Suppose $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,2\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,2\epsilon)).$ If 
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f(x)-f(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty,$$
+then 
+$$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty.$$
+\end{lemma}
+\begin{proof} Let $f_1(x)=f(x_1,\cdots,x_{N-1},|x_N|),$ $x\in B(z,2\epsilon).$ It is immediate {\color{red} we, probably, need reference} that $f_1\in\dot{W}^{\frac{N}{p},p}(B(z,2\epsilon)).$ It follows {\color{red} we certainly need a reference}
+$$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
+In particular,
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
+Since $|x_N|,|y_N|\leq |x-y|$ for $x\in H_+,$ $y\in H_-,$ it follows that
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
+Set $f_2=f-f_1.$ By triangle inequality,
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_2(x)-f_2(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
+Note that $f_1=f$ on $H_+\cap B(z,2\epsilon)$ and, therefore, $f_2=0$ on $H_+\cap B(z,2\epsilon).$ We, therefore, have
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_2(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
+In other words,
+$$\int_{H_-\cap B(z,2\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(z,2\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}\Big)dy<\infty.$$
+
+If $y\in B(z,\epsilon),$ then $B(y',\epsilon)\subset B(z,2\epsilon).$ Thus,
+$$\int_{H_-\cap B(z,\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(y',\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}\Big)dy<\infty.$$
+Clearly,
+$$\int_{H_+\cap  B(y',\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}=\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{(|x'|^2+(x_N+|y_N|)^2)^{N+K}}.$$
+Thus,
+$$\int_{H_-\cap B(z,\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{\max\{|x'|,x_N,|y_N|\}^{2N+2K}}\Big)dy<\infty.$$
+Clearly,
+$$\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{\max\{|x'|,x_N,|y_N|\}^{2N+2K}}\geq \int_{\substack{|x'|<\frac12|y_N|\\ x_N\in(0,\frac12|y_N|)}}\frac{|x_N|^K|y_N|^Kdx}{|y_N|^{2N+2K}}=$$
+$$=|y_N|^{-2N-K}\cdot\int_{|x'|<\frac12|y_N|}dx'\cdot \int_0^{\frac12|y_N|}dx_N=|y_N|^{-N}\cdot 2^{-N}{\rm Vol}(\mathbb{B}^{N-1}).$$
+Hence,
+$$\int_{H_-\cap B(z,\epsilon)}\frac{|f_2|^p(y)dy}{|y_N|^N}<\infty.$$
+This completes the proof.
+\end{proof}
+
+\begin{lemma}\label{standard gluing lemma} Denote $H_+=\mathbb{R}^{N-1}\times\mathbb{R}_+$ and $H_-=\mathbb{R}^{N-1}\times\mathbb{R}_-.$ Let $z\in\mathbb{R}^N$ be such that $z_N=0.$ Suppose $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,\epsilon)).$ If
+$$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty,$$
+then $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$ 
+\end{lemma}
+\begin{proof} {\color{red} we need to find reference.}
+\end{proof}
 
 
+\begin{lemma}\label{s9 prefinal lemma} Let $\Gamma_1$ and $\Gamma_2$ be distinct chambers sharing the same face $P\subset\{\langle x,v\rangle=0\}.$ Let $z$ be in the relative interior of $P.$ If $f$ is as in Theorem \ref{gluing theorem}, then $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon))$ for every sufficiently small $\epsilon>0.$
+\end{lemma}
+\begin{proof} To simplify the notations, let $v=e_N.$ Denote for brevity, $k_{e_N}=K.$ Let $z$
 
+For every $\epsilon>0,$ we have
+$$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy<\infty.$$
+Now, let $\epsilon>0$ be so small that $|\langle x,\tilde{v}\rangle|\geq c_{z,\epsilon}>0$ for every $v\neq\tilde{v}\in R$ and for every $x\in B(z,2\epsilon).$ It follows that
+$$w(x)\geq c_{z,\epsilon,k}|x_N|^K,\quad w(y)\geq c_{z,\epsilon,k}|y_N|^K,\quad x,y\in B(z,2\epsilon).$$
+Also,
+$$w(B(x,|x-y|))\geq c_{z,\epsilon,k}|x-y|^N\cdot (|x-y|+|x_N|)^K,\quad x,y\in B(z,2\epsilon).$$
+In other words,
+$$w(B(x,|x-y|))\geq c_{z,\epsilon,k}|x-y|^{N+K},\quad x\in H_+\cap B(z,2\epsilon),\quad y\in H_-\cap B(z,2\epsilon).$$
+
+We, therefore, have
+$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap B(z,2\epsilon)}}\frac{|f(x)-f(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
+By Lemma \ref{s9 compute lemma} and Lemma \ref{standard gluing lemma}, $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$
+\end{proof}
+
+\begin{lemma}\label{s9 final lemma} Suppose $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Suppose that, for every face of every chamber and for every $z$ in the relative interior of that face, we have $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon))$ for every sufficiently small $\epsilon>0.$ It follows that $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N).$ Furthermore, we have
+$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}\leq c_R\sum_{\Gamma}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
+\end{lemma}
+\begin{proof} {\color{red} find reference.}
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{gluing theorem}] The assertion follows by combining Lemmas \ref{s9 prefinal lemma} and \ref{s9 final lemma}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtb}] The assertion follows by combining Theorem \ref{chamber sobolev theorem}, Theorem \ref{useful zhijie theorem} and Theorem \ref{gluing theorem}.
+\end{proof}
 
 \section{Constant characterization}
 \setcounter{equation}{0}
