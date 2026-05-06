@@ -721,7 +721,7 @@ $$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\f
 then 
 $$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty.$$
 \end{lemma}
-\begin{proof} Let $f_1(x)=f(x_1,\cdots,x_{N-1},|x_N|),$ $x\in B(z,2\epsilon).$ It is immediate {\color{red} we, probably, need reference} that $f_1\in\dot{W}^{\frac{N}{p},p}(B(z,2\epsilon)).$ It follows {\color{red} we certainly need a reference}
+\begin{proof} Let $f_1(x)=f(x_1,\cdots,x_{N-1},|x_N|),$ $x\in B(z,2\epsilon).$ It is immediate {\color{red} we, probably, need reference} that $f_1\in\dot{W}^{\frac{N}{p},p}(B(z,2\epsilon)).$ In other words,
 $$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
 In particular,
 $$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
@@ -765,13 +765,13 @@ $$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2
 Now, let $\epsilon>0$ be so small that $|\langle x,\tilde{v}\rangle|\geq c_{z,\epsilon}>0$ for every $v\neq\tilde{v}\in R$ and for every $x\in B(z,2\epsilon).$ It follows that
 $$w(x)\geq c_{z,\epsilon,k}|x_N|^K,\quad w(y)\geq c_{z,\epsilon,k}|y_N|^K,\quad x,y\in B(z,2\epsilon).$$
 Also,
-$$w(B(x,|x-y|))\geq c_{z,\epsilon,k}|x-y|^N\cdot (|x-y|+|x_N|)^K,\quad x,y\in B(z,2\epsilon).$$
-In other words,
-$$w(B(x,|x-y|))\geq c_{z,\epsilon,k}|x-y|^{N+K},\quad x\in H_+\cap B(z,2\epsilon),\quad y\in H_-\cap B(z,2\epsilon).$$
+$$w(B(x,|x-y|))\leq c_{z,\epsilon,k}|x-y|^N\cdot (|x-y|+|x_N|)^K,\quad x,y\in B(z,2\epsilon).$$
+Consequently,
+$$w(B(x,|x-y|))\leq c_{z,\epsilon,k}|x-y|^{N+K},\quad x\in H_+\cap B(z,2\epsilon),\quad y\in H_-\cap B(z,2\epsilon).$$
 
 We, therefore, have
 $$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap B(z,2\epsilon)}}\frac{|f(x)-f(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
-By Lemma \ref{s9 compute lemma} and Lemma \ref{standard gluing lemma}, $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$
+On the other hand, $H_+\cap B(z,2\epsilon)\subset\Gamma_1$ and $H_-\cap B(z,2\epsilon)\subset\Gamma_2.$ Thus, $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,2\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,2\epsilon)).$ By Lemma \ref{s9 compute lemma} and Lemma \ref{standard gluing lemma}, $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$
 \end{proof}
 
 \begin{lemma}\label{s9 final lemma} Suppose $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Suppose that, for every face of every chamber and for every $z$ in the relative interior of that face, we have $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon))$ for every sufficiently small $\epsilon>0.$ It follows that $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N).$ Furthermore, we have
