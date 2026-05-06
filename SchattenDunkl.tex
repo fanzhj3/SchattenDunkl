@@ -816,31 +816,6 @@ Multiplying by $U_g^{-1}$ on the right, we complete the proof.
 
 \section{Useful part of Zhijie argument}
 
-\begin{lemma}\label{constructHPQ} Let $P,Q\subset\mathbb{R}^N$ be measurable and such that $P\subset Q.$ 
-There is mean zero\footnote{With respect to measure $w(x)dx.$} function $H_{P,Q}$ on $Q$ with
-$$\|H_{P,Q}\|_{\infty}=\max\Big\{\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}},\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\Big\}$$
-and such that
-$$\langle b,H_{P,Q}\rangle_{L^2(\mathbb{R}^N,dw)}=\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}(f_P-f_Q)$$
-for every $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
-\end{lemma}
-\begin{proof} Set
-$$H_{P,Q}=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\chi_P-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\chi_{Q\backslash P}.$$
-Clearly, $H_{P,Q}$ satisfies the expected estimate in the uniform norm and is mean zero on $Q.$
-
-We have
-$$\langle f,H_{P,Q}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
-$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\int_P f(x)w(x)dx-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_{Q\backslash P}f(x)w(x)dx=$$
-$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\int_P f(x)w(x)dx-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_Qf(x)w(x)dx+$$
-$$+\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\int_Pf(x)w(x)dx=$$
-$$=\frac{w(Q\backslash P)^{\frac12}}{w(P)^{\frac12}w(Q)^{\frac12}}\cdot w(P)f_P-\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\cdot w(Q)f_Q+$$
-$$+\frac{w(P)^{\frac12}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}\cdot w(P)f_P=$$
-$$=\frac{w(P)^{\frac12}w(Q\backslash P)^{\frac12}}{w(Q)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q+\frac{w(P)^{\frac32}}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}f_P=$$
-$$=\frac{w(P)^{\frac12}\cdot w(Q\backslash P)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q+\frac{w(P)^{\frac12}\cdot w(P)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}}f_P=$$
-$$=\frac{w(P)^{\frac12}\cdot w(Q)}{w(Q)^{\frac12}w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q=$$
-$$=\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}} f_P-\frac{w(P)^{\frac12}w(Q)^{\frac12}}{w(Q\backslash P)^{\frac12}}f_Q.$$
-This completes the proof.
-\end{proof}
-
 \begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
 $$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
 \end{lemma}
@@ -848,16 +823,16 @@ $$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
 
 \end{proof}
 
-\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $e_Q$ and $f_Q$ supported in $7Q$ such that $\|e_Q\|_{\infty},\|f_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
-$$\frac1{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
+$$\frac1{w(3Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
 \end{lemma}
 \begin{proof} Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
 $$A_1=\{x\in 3Q:\ f(x)\geq\alpha\},\quad B_1=\{x\in Q+3s(Q)e_j:\ f(x)\leq\beta\},$$
 $$A_2=\{x\in 3Q:\ f(x)\leq\beta\},\quad B_2=\{x\in Q+3s(Q)e_j:\ f(x)\geq\beta\},$$
-$$e_{Q,s}=w(Q)^{-\frac12}\chi_{A_s},\quad f_{Q,s}=w(Q)^{-\frac12}\chi_{B_s},\quad s=1,2.$$
+$$\xi_{Q,s}=w(Q)^{-\frac12}\chi_{A_s},\quad \eta_{Q,s}=w(Q)^{-\frac12}\chi_{B_s},\quad s=1,2.$$
 
 We have
-$$\langle[R_{{\rm Dunkl},j},M_f]e_{Q,s},f_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
 $$=\frac1{w(Q)}\int_{B_s\times A_s}K_j(x,y)(f(y)-f(x))w(x)w(y)dxdy.$$
 
 If $x\in B_1$ and $y\in A_1,$ then
@@ -868,14 +843,14 @@ $$f(y)-f(x)=(f(y)-\beta)+(\beta-f(x))=$$
 $$=-|f(y)-\beta|-|f(x)-\beta|\leq -|f(y)-\beta|\leq 0.$$
 
 Thus,
-$$\langle[R_{{\rm Dunkl},j},M_f]e_{Q,1},f_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
 $$\geq \frac1{w(Q)}\int_{B_1\times A_1}K_j(x,y)\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy\geq $$
 $$\geq\frac{c_k}{w^2(Q)}\int_{B_1\times A_1}\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy=$$
 $$=\frac{c_k}{w^2(Q)}\cdot\Big(w(B_1)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(B_1)w(A_1)\Big)\geq $$
 $$=\frac{c_k}{w^2(Q)}\cdot\Big(\frac12w(Q)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|\cdot \frac14w^2(Q)\Big)\geq $$
 $$\geq\frac{c_k}{4w(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(Q)\Big)$$
 and
-$$-\langle[R_{{\rm Dunkl},j},M_f]e_{Q,2},f_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$-\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
 $$\geq \frac1{w(Q)}\int_{B_2\times A_2}K_j(x,y)|f(y)-\beta|w(x)w(y)dxdy\geq $$
 $$\geq\frac{c_k}{w^2(Q)}\int_{B_2\times A_2}|f(y)-\beta|w(x)w(y)dxdy=$$
 $$=\frac{c_k}{w^2(Q)}\cdot w(B_2)\cdot\int_{A_2}|f(y)-\beta|w(y)dy\geq $$
@@ -888,24 +863,24 @@ $$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy$$
 $$+\int_{A_2}|\alpha-\beta|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|\alpha-\beta|w(y)dy\leq$$
 $$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy+2|\alpha-\beta|w(3Q).$$
 Combining the last $3$ equations, we conclude
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq\max_{s=1,2}|\langle[R_{{\rm Dunkl},j},M_f]e_{Q,s},f_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq\max_{s=1,2}|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
 
 If 
-$$|\langle[R_{{\rm Dunkl},j},M_f]e_{Q,1},f_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|\geq |\langle[R_{{\rm Dunkl},j},M_f]e_{Q,2},f_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|,$$
-then we set $e_Q=e_{Q,1}$ and $f=f_{Q,1}.$ Otherwise, set $e_Q=e_{Q,2}$ and $f_Q=f_{Q,2}.$ Thus,
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+$$|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|\geq |\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|,$$
+then we set $\xi_Q=\xi_{Q,1}$ and $\eta=\eta_{Q,1}.$ Otherwise, set $\xi_Q=\xi_{Q,2}$ and $\eta_Q=\eta_{Q,2}.$ Thus,
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
 Hence,
-$$c_k'|f_{3Q}-\alpha|\leq|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|$$
+$$c_k'|f_{3Q}-\alpha|\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|$$
 and, finally,
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
 \end{proof}
 
 \begin{lemma}\label{standard}
 Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
-$$\Big\{\frac1{w(Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+$$\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\in l_p.$$
 \end{lemma}
-\begin{proof} Let $\{e_Q\}_{Q\in\mathcal{D}}$ and $\{f_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By {\color{red} some version of Rochberg-Semmes theorem PROOF OR REFERENCE IS NEEDED},
-$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]e_Q,f_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By {\color{red} some version of Rochberg-Semmes theorem PROOF OR REFERENCE IS NEEDED},
+$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
 The assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
