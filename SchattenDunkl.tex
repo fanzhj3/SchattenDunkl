@@ -752,7 +752,23 @@ This completes the proof.
 $$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty,$$
 then $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$ 
 \end{lemma}
-\begin{proof} {\color{red} we need to find reference.}
+\begin{proof} Set $r(x)=(x_1,\cdots,x_{N-1},-x_N),$ $x\in B(z,\epsilon)$ and let $f_1=f+f\circ r,$ $f_2=f-f\circ r.$ It is known that {\color{red} provide reference} that $f_1\in \dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$ Hence, we may assume without loss of generality that $f=-f\circ r$ and
+$$\int_{B(z,\epsilon)}\frac{|f|^p(x)dx}{|x_N|^N}<\infty.$$
+
+We have
+$$\int_{B(z,\epsilon)\times B(z,\epsilon)}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\leq$$ 
+$$\leq\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+$$
+$$+2^{p-1}\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f|^p(x)dxdy}{|x-y|^{2N}}+2^{p-1}\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f|^p(y)dxdy}{|x-y|^{2N}}+$$
+$$+2^{p-1}\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)|^pdxdy}{|x-y|^{2N}}+2^{p-1}\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f|^p(y)dxdy}{|x-y|^{2N}}.$$
+
+It remains to note that, for every $x\in H_+,$
+$$\int_{y\in H_-\cap B(z,\epsilon)}\frac{dy}{|x-y|^{2N}}\leq \int_{y\in\mathbb{R}^N}\frac{dy}{(|y|'^2+(|y_N|+|x_N|)^2)^N}=c_N|x_N|^{-N}.$$
+Thus,
+$$\int_{B(z,\epsilon)\times B(z,\epsilon)}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\leq$$ 
+$$\leq\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+$$
+$$+2^{p-1}c_N\int_{x\in H_+\cap B(z,\epsilon)}\frac{|f|^p(x)dx}{|x_N|^N}+2^{p-1}c_N\int_{H_-\cap B(z,\epsilon)}\frac{|f|^p(y)dy}{|y_N|^N}+$$
+$$+2^{p-1}c_N\int_{H_-\cap B(z,\epsilon)}\frac{|f(x)|^pdx}{|x_N|^N}+2^{p-1}c_N\int_{H_+\cap B(z,\epsilon)}\frac{|f|^p(y)dy}{|y_N|^N}.$$
+Since the right hand side is finite, the assertion follows.
 \end{proof}
 
 
