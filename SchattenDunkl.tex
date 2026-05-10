@@ -210,7 +210,7 @@ of NWO sequences and the general extension to spaces of homogeneous type.
 \begin{lemma}\label{NWO lower estimate}
 Let $1<p<\infty$ and let $\mathcal{D}$ be the dyadic lattice in $\mathbb{R}^N.$
 If $T\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then
-$$\Big\|\Big\{\langle T e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq c_{N,p,w,c_1,c_2}\|T\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$$
+$$\Big\|\Big\{\langle T e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\Big\|_{l_{p,q}(\mathcal{D})}\leq c_{N,p,q,w,c_1,c_2}\|T\|_{\mathcal{L}_{p,q}(L_2(\mathbb{R}^N,w(x)dx))}$$
 for every NWO systems $\{e_Q\}_{Q\in\mathcal{D}}$ and $\{f_Q\}_{Q\in\mathcal{D}}$ (with respective constants $c_1$ and $c_2$).
 \end{lemma}
 \begin{proof} {\color{red} reference to \cite{RS} is inappropriate. Rochberg and Semmes do not consider weighted setting. we absolutely must provide correct reference.} This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
@@ -507,10 +507,15 @@ $$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},
 \begin{lemma}\label{standard} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
 $$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq$$
 $$\leq c_k\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
+If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
+$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\Big\|_{l_{N,\infty}(\mathcal{D})}\leq$$
+$$\leq c_k\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}.$$
 \end{lemma}
-\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
+\begin{proof} We prove only the first assertion. The proof of the second one follows {\it mutatis mutandi}.
+
+Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
 $$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
-The assertion follows now from Lemma \ref{improved zhijie lemma}.
+The first assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
 \begin{lemma}\label{for reverse holder first lemma} Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). We have
@@ -585,6 +590,8 @@ Lemma \ref{hytonen verification lemma} asserts that measures $dx$ and $w(x)dx$ (
 That oscillation semi-norm of the function $f$ with respect to measure $dx$ and distance $(x,y)\to |x-y|_{\infty}$ is equivalent to the Sobolev semi-norm of the function $f$ is a standard fact. The proof (in much more general setting) is available in Proposition 1.29 in \cite{HKarxiv}. The assertion follows now from the preceding paragraph. 
 \end{proof}
 
+\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtd}] The argument follows the one in the proof of Theorem \ref{main theorem} \eqref{mtb} {\it mutatis mutandi}.
+\end{proof}
 
 
 \section{Constant characterization}
