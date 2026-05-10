@@ -540,31 +540,31 @@ $$=s(Q)^N\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac14c_{\Gamma'}s(Q))^{k(v)}\ti
 Combining this with the preceding paragraph, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{for reverse holder second lemma} Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$ For every $r>0,$ we have
-$$\Big(\frac{\int_{B(x_0,r)}w^{1-t}(x)dx}{\int_{B(x_0,r)}w(x)dx}\Big)^{\frac1t}\leq c_{t,k} \frac{m(B(x_0,r))}{\int_{B(x_0,r)}w(x)dx}.$$
+\begin{lemma}\label{for reverse holder second lemma} Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$ Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). We have
+$$\Big(\frac{\int_Qw^{1-t}(x)dx}{\int_Qw(x)dx}\Big)^{\frac1t}\leq c_{t,k} \frac{m(Q)}{\int_Qw(x)dx}.$$
 \end{lemma}
 \begin{proof} If $v\in R$ is such that
-$$2\sqrt{2}r\leq |\langle x_0,v\rangle|,$$
+$$\sqrt{d}s(Q)\leq |\langle c_Q,v\rangle|,$$
 then
-$$|\langle x,v\rangle|\geq |\langle x_0,v\rangle|-|\langle x-x_0,v\rangle|\geq |\langle x_0,v\rangle|-r\sqrt{2}\geq \frac12|\langle x_0,v\rangle|,\quad x\in B(x_0,r).$$
+$$|\langle x,v\rangle|\geq |\langle c_Q,v\rangle|-|\langle x-c_Q,v\rangle|\geq |\langle c_Q,v\rangle|-\frac{\sqrt{d}}{2}s(Q)\geq \frac12|\langle c_Q,v\rangle|,\quad x\in Q.$$
 In this case,
-$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq 2^{(t-1)|R|k(v)}|\langle x_0,v\rangle|^{(1-t)|R|k(v)}\cdot\int_{B(x_0,r)}dx=$$
-$$=2^{(t-1)|R|k(v)}|\langle x_0,v\rangle|^{(1-t)|R|k(v)}\cdot {\rm Vol}(\mathbb{B}^N)r^N.$$
+$$\int_Q|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq 2^{(t-1)|R|k(v)}|\langle c_Q,v\rangle|^{(1-t)|R|k(v)}\cdot\int_Qdx=$$
+$$=2^{(t-1)|R|k(v)}|\langle x_0,v\rangle|^{(1-t)|R|k(v)}\cdot s(Q)^N.$$
 
 If $v\in R$ is such that
-$$|\langle x_0,v\rangle|\leq 2\sqrt{2}r,$$
-then let $y_0=\langle x_0,v\rangle$ and $z_0=x_0-\frac12y_0v_0.$ Note that $|y_0|\leq 2\sqrt{2}r.$ Using new variables $y=\langle x,v\rangle$ and $z=x-\frac12yv,$ we write
-$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx=\int_{|y-y_0|^2+|z-z_0|^2\leq r^2}|y|^{(1-t)|R|k(v)}dydz\leq$$
-$$\leq \int_{|y-y_0|^2,|z-z_0|^2\leq r^2}|y|^{(1-t)|R|k(v)}dydz=$$
-$$=r^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y-y_0|\leq r}|y|^{(1-t)|R|k(v)}dy\leq$$
-$$=r^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq (1+2\sqrt{2}) r}|y|^{(1-t)|R|k(v)}dy=$$
-$$=r^{N+(1-t)|R|k(v)}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq 1+2\sqrt{2}}|y|^{(1-t)|R|k(v)}dy.$$
+$$|\langle c_Q,v\rangle|\leq \sqrt{d}s(Q),$$
+then let $y_0=\langle c_Q,v\rangle$ and $z_0=c_Q-y_0v.$ Let us introduce new variables $y=\langle x,v\rangle$ and $z=x-yv$ (it varies in the plane orthogonal to $v$). We write
+$$\int_Q|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq\int_{|x-c_Q|\leq\frac{\sqrt{d}}{2}s(Q)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq$$
+$$\leq \int_{|y-y_0|,|z-z_0|\leq \frac{\sqrt{d}}{2}r}|y|^{(1-t)|R|k(v)}dydz=$$
+$$=(\frac{\sqrt{d}}{2}s(Q))^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y-y_0|\leq \frac{\sqrt{d}}{2}s(Q)}|y|^{(1-t)|R|k(v)}dy\leq$$
+$$=(\frac{\sqrt{d}}{2}s(Q))^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq \frac{3\sqrt{d}}{2}s(Q)}|y|^{(1-t)|R|k(v)}dy=$$
+$$=s(Q)^{N+(1-t)|R|k(v)}\cdot (\frac{\sqrt{d}}{2})^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq \frac{3\sqrt{d}}{2}}|y|^{(1-t)|R|k(v)}dy.$$
 
 Combining the estimates in the preceding paragraphs, we write
-$$\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq c_1R^n\big(\max\{|\langle x_0,v\rangle|,r\}\big)^{(1-t)|R|k(v)}.$$
+$$\int_Q|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\leq c_1s(Q)^N\big(\max\{|\langle c_Q,v\rangle|,r\}\big)^{(1-t)|R|k(v)}.$$
 By H\"older inequality,
-$$\int_{B(x_0,r)}w^{1-t}(x)dx\leq \prod_{v\in R}\Big(\int_{B(x_0,r)}|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\Big)^{\frac1{|R|}}\leq$$
-$$\leq c_2R^N\prod_{v\in R}\big(\max\{|\langle x_0,v\rangle|,r\}\big)^{(1-t)k(v)}.$$
+$$\int_Qw^{1-t}(x)dx\leq \prod_{v\in R}\Big(\int_Q|\langle x,v\rangle|^{(1-t)|R|k(v)}dx\Big)^{\frac1{|R|}}\leq$$
+$$\leq c_2s(Q)^N\prod_{v\in R}\big(\max\{|\langle c_Q,v\rangle|,s(Q)\}\big)^{(1-t)k(v)}.$$
 The assertion follows easily.
 \end{proof}
 
