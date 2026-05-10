@@ -513,12 +513,8 @@ $$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x
 The assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
-\begin{theorem}\label{chamber sobolev theorem} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Furthermore,
-$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
-\end{theorem}
-
-\begin{lemma}\label{for reverse holder first lemma} Let $\Gamma$ be a chamber and let $x_0\in\Gamma.$ We have
-$$\sup_{x\in B(x_0,r)\cap\Gamma}w(x)\leq \frac{c_{k,\Gamma}}{m(B(x_0,r)\cap\Gamma)}\int_{B(x_0,r)\cap\Gamma}w(x)dx.$$
+\begin{lemma}\label{for reverse holder first lemma} We have
+$$\sup_{x\in B(x_0,r)}w(x)\leq \frac{c_k}{m(B(x_0,r))}\int_{B(x_0,r)}w(x)dx.$$
 \end{lemma}
 \begin{proof} If $x=x_0+y,$ $y\in B(0,r),$ then
 $$|\langle x,v\rangle|\leq |\langle x_0,v\rangle|+r|\langle y,v\rangle|\leq |\langle x_0,v\rangle|+r\sqrt{2}.$$
@@ -527,10 +523,8 @@ $$w(x)=\prod_{v\in R}(|\langle x_0,v\rangle|+|\langle y,v\rangle|)^{\epsilon\cdo
 In particular,
 $$LHS\leq \prod_{v\in R}(|\langle x_0,v\rangle|+r\sqrt{2})^{k(v)}.$$
 
-By convexity, $x_0+\Gamma\subset\Gamma.$ Hence,
-$$x_0+(B(0,r)\cap\Gamma)\subset B(x_0,r)\cap\Gamma.$$
-So,
-$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq\int_{x_0+(B(0,r)\cap\Gamma)}w(x)dx=\int_{B(0,r)\cap\Gamma}w(x_0+y)dy.$$
+Fix chamber $\Gamma$ such that $x_0\in\Gamma.$ We have
+$$\int_{B(x_0,r)}w(x)dx\geq\int_{x_0+(B(0,r)\cap\Gamma)}w(x)dx=\int_{B(0,r)\cap\Gamma}w(x_0+y)dy.$$
 If $y\in\Gamma,$ then
 $$|\langle x_0+y,v\rangle|=|\langle x_0,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
 Thus,
@@ -547,8 +541,8 @@ $$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq c_{k,\Gamma}^{(1)}\max\{r^N\prod_{v\in R}|
 Combining this with the preceding paragraph, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{for reverse holder second lemma} Let $\Gamma$ be a chamber and let $x_0\in\Gamma.$ Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$ For every $r>0,$ we have
-$$\Big(\frac{\int_{B(x_0,r)\cap\Gamma}w^{1-t}(x)dx}{\int_{B(x_0,r)\cap\Gamma}w(x)dx}\Big)^{\frac1t}\leq c_{t,k,\Gamma} \frac{m(B(x_0,r)\cap\Gamma)}{\int_{B(x_0,r)\cap\Gamma}w(x)dx}.$$
+\begin{lemma}\label{for reverse holder second lemma} Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$ For every $r>0,$ we have
+$$\Big(\frac{\int_{B(x_0,r)}w^{1-t}(x)dx}{\int_{B(x_0,r)}w(x)dx}\Big)^{\frac1t}\leq c_{t,k} \frac{m(B(x_0,r))}{\int_{B(x_0,r)}w(x)dx}.$$
 \end{lemma}
 \begin{proof} If $v\in R$ is such that
 $$2\sqrt{2}r\leq |\langle x_0,v\rangle|,$$
@@ -579,9 +573,9 @@ The assertion follows easily.
 \end{lemma}
 \begin{proof} That both measures are doubling is obvious.
 
-Let $x_0\in\Gamma.$ By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
-$$\Big(\frac1{m(B\cap\Gamma)}\int_{B\cap\Gamma}w^t(x)dx\Big)^{\frac1t}\leq\frac{c_{k,\Gamma}}{m(B\cap\Gamma)}\int_{B\cap\Gamma}w(x)dx,\quad t>0.$$
-$$\Big(\frac{\int_{B\cap\Gamma}w^{1-t}(x)dx}{\int_{B\cap\Gamma}w(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(B\cap\Gamma)}{\int_{B\cap\Gamma}w(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
+Let $B\subset\mathbb{R}^N$ be a ball. By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
+$$\Big(\frac1{m(B)}\int_Bw^t(x)dx\Big)^{\frac1t}\leq\frac{c_k}{m(B)}\int_{\Gamma}w(x)dx,\quad t>0.$$
+$$\Big(\frac{\int_Bw^{1-t}(x)dx}{\int_Bw(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(B)}{\int_Bw(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
 The assertion follows now from Proposition 3.6 in \cite{Hytonen-new}.
 \end{proof}
 
