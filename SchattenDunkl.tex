@@ -513,31 +513,30 @@ $$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x
 The assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
-\begin{lemma}\label{for reverse holder first lemma} We have
-$$\sup_{x\in B(x_0,r)}w(x)\leq \frac{c_k}{m(B(x_0,r))}\int_{B(x_0,r)}w(x)dx.$$
+\begin{lemma}\label{for reverse holder first lemma} Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). We have
+$$\sup_{x\in Q}w(x)\leq \frac{c_k}{m(Q)}\int_Qw(x)dx.$$
 \end{lemma}
-\begin{proof} If $x=x_0+y,$ $y\in B(0,r),$ then
-$$|\langle x,v\rangle|\leq |\langle x_0,v\rangle|+r|\langle y,v\rangle|\leq |\langle x_0,v\rangle|+r\sqrt{2}.$$
+\begin{proof} If $x=c_Q+y,$ $y\in [-\frac12s(Q),\frac12s(Q)]^d,$ then
+$$|\langle x,v\rangle|\leq |\langle c_Q,v\rangle|+r|\langle y,v\rangle|\leq |\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q).$$
 Thus,
-$$w(x)=\prod_{v\in R}(|\langle x_0,v\rangle|+|\langle y,v\rangle|)^{\epsilon\cdot k(v)}\leq\prod_{v\in R}(|\langle x_0,v\rangle|+r\sqrt{2})^{k(v)}.$$
+$$w(x)=\prod_{v\in R}|\langle x,v\rangle|^{k(v)}\leq\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{k(v)}.$$
 In particular,
-$$LHS\leq \prod_{v\in R}(|\langle x_0,v\rangle|+r\sqrt{2})^{k(v)}.$$
+$$LHS\leq \prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{k(v)}.$$
 
-Fix chamber $\Gamma$ such that $x_0\in\Gamma.$ We have
-$$\int_{B(x_0,r)}w(x)dx\geq\int_{x_0+(B(0,r)\cap\Gamma)}w(x)dx=\int_{B(0,r)\cap\Gamma}w(x_0+y)dy.$$
+Fix chamber $\Gamma$ such that $c_Q\in\Gamma.$ We have
+$$\int_Qw(x)dx\geq\int_{c_Q+(B(0,\frac12s(Q))\cap\Gamma)}w(x)dx=\int_{B(0,\frac12s(Q))\cap\Gamma}w(c_Q+y)dy.$$
 If $y\in\Gamma,$ then
-$$|\langle x_0+y,v\rangle|=|\langle x_0,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
+$$|\langle c_Q+y,v\rangle|=|\langle c_Q,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
 Thus,
-$$w(x_0+y)=\prod_{v\in R}(|\langle x_0,v\rangle|+|\langle y,v\rangle|)^{k(v)}\geq$$
-$$\geq\max\{\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)},\prod_{v\in R}|\langle y,v\rangle|^{k(v)}\}.$$
+$$w(c_Q+y)=\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{k(v)}.$$
 Hence,
-$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq\int_{B(0,r)\cap\Gamma}w(x_0+y)dy\geq$$
-$$\geq\max\Big\{\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}dy,\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy\Big\}.$$
-Obviously,
-$$\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}dy=r^N\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)}\int_{B(0,1)\cap\Gamma}dy,$$
-$$\int_{B(0,r)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy=r^{N+\sum_{v\in R}k(v)}\int_{B(0,1)\cap\Gamma}\prod_{v\in R}|\langle y,v\rangle|^{k(v)}dy.$$
-Thus,
-$$\int_{B(x_0,r)\cap\Gamma}w(x)dx\geq c_{k,\Gamma}^{(1)}\max\{r^N\prod_{v\in R}|\langle x_0,v\rangle|^{k(v)},r^{N+\sum_{v\in R}k(v)}\}.$$
+$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma}\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{k(v)}dy.$$
+Fix a closed cone $\Gamma'\subset\Gamma$ such that (i) interior of $\Gamma'$ is non-empty and (ii) $\partial\Gamma\cap\partial\Gamma'=\{0\}.$ We have
+$$|\langle y,v\rangle|\geq c_{\Gamma'}|y|,\quad y\in\Gamma',\quad v\in R.$$
+We, therefore, have
+$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma'}\prod_{v\in R}(|\langle c_Q,v\rangle|+c_{\Gamma'}|y|)^{k(v)}dy\geq$$
+$$\geq \int_{\substack{y\in\Gamma'\\ \frac14s(Q)\leq|y|\leq \frac14s(Q)}}\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac12c_{\Gamma'}s(Q))^{k(v)}dy=$$
+$$=s(Q)^N\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac14c_{\Gamma'}s(Q))^{k(v)}\times (2^{-N}-4^{-N})\int_{\substack{y\in\Gamma'\\ |y|\leq1}}dy.$$
 Combining this with the preceding paragraph, we complete the proof.
 \end{proof}
 
@@ -573,9 +572,9 @@ The assertion follows easily.
 \end{lemma}
 \begin{proof} That both measures are doubling is obvious.
 
-Let $B\subset\mathbb{R}^N$ be a ball. By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
-$$\Big(\frac1{m(B)}\int_Bw^t(x)dx\Big)^{\frac1t}\leq\frac{c_k}{m(B)}\int_{\Gamma}w(x)dx,\quad t>0.$$
-$$\Big(\frac{\int_Bw^{1-t}(x)dx}{\int_Bw(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(B)}{\int_Bw(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
+Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
+$$\Big(\frac1{m(Q)}\int_Qw^t(x)dx\Big)^{\frac1t}\leq\frac{c_k}{m(Q)}\int_{\Gamma}w(x)dx,\quad t>0.$$
+$$\Big(\frac{\int_Qw^{1-t}(x)dx}{\int_Qw(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(Q)}{\int_Qw(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
 The assertion follows now from Proposition 3.6 in \cite{Hytonen-new}.
 \end{proof}
 
