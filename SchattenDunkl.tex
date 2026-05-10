@@ -84,16 +84,9 @@ $$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}
 
 \subsection{Strategy of the proof}
 
-In Section \ref{comparison section}, we introduce our {\it first ad hoc} Sobolev space and demonstrate that its semi-norm is controlled by the usual Sobolev semi-norm. In Section \ref{upper estimate section}, we use Janson-Wolff method to control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the {\it first ad hoc} Sobolev semi-norm of $f.$ Thus, we control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the usual Sobolev semi-norm (i.e., we prove Theorem \ref{main theorem} \eqref{mta}).
+In Section \ref{comparison section}, we introduce our {\it ad hoc} Sobolev space and demonstrate that its semi-norm is controlled by the usual Sobolev semi-norm. In Section \ref{upper estimate section}, we use Janson-Wolff method to control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the {\it ad hoc} Sobolev semi-norm of $f.$ Thus, we control the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ by the usual Sobolev semi-norm (i.e., we prove Theorem \ref{main theorem} \eqref{mta}).
 
-In Section \ref{hytonen verification section}, we control, in every chamber $\Gamma,$ the Sobolev semi-norm of $f$ via $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$ This is done by verifying the assumptions in Theorem 1.4 in \cite{Hytonen-new} and applying the latter theorem.
-
-In Section \ref{useful zhijie section}, we introduce our {\it second ad hoc} Sobolev space and use the Rochberg-Semmes method to demonstrate that the semi-norm of the latter space is controlled by $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$
-
-In Section \ref{lower estimate final section}, for every face of each chamber, we compare the boundary traces of $f$ taken from the adjacent regions: the {\it interior trace} is computed by approaching the face from within the given chamber, while the {\it exterior trace} is obtained by approaching the same face from the neighboring chamber that shares the same face. Those boundary values are demonstrated to be the same. This allows us to show that the function $f$ is globally Sobolev and that its Sobolev semi-norm is controlled by $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f]$ (i.e., we prove Theorem \ref{main theorem} \eqref{mtb}).
-
-
-
+In Section \ref{lower estimate section}, we control the oscillation semi-norm of $f$ (with respect to measure $w(x)dx$ and distance $(x,y)\to|x-y|_{\infty}$) via $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$ After that, we verify the assumptions in Proposition 1.2 in \cite{Hytonen-new} for measures $w(x)dx$ and $dx$ and, using the latter proposition, conclude that oscillation semi-norm of $f$ with respect to measure $w(x)dx$ and distance $(x,y)\to|x-y|_{\infty}$ is equivalent to the one with respect to measure $dx$ and distance $(x,y)\to|x-y|_{\infty}.$ The latter is known to be equivalent to the usual Sobolev semi-norm of $f.$
 
 \subsection{Notation}
 Conventionally, we let $\mathbb{N}$ denote the set of positive integers and set $\mathbb{Z}_+ := \{0\} \cup \mathbb{N}$. Throughout the paper, the symbols $C$ and $c$ denote positive constants (possibly varying from line to line) that may depend only on $N$, $p$, and the structural data $(R,k)$ of the Dunkl setting, but are independent of the main parameters (e.g., the symbol $b$ and auxiliary decay factors).
@@ -134,10 +127,9 @@ so the numbers $N'$ and $N$ are called the upper and lower homogeneous dimension
 
 The Dunkl operators $T_\xi$ are defined by
 $$T_\xi f(x):=\partial_\xi f(x)+\sum_{v\in R}\frac{k(v)}{2}\langle v,\xi\rangle\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle},$$
-where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by $$\Delta_{{\rm Dunkl}}f(x):=\sum_{j=1}^N T_{e_j}^2f(x)=\Delta_{\mathbb{R}^N}f(x)+\sum_{v\in R}k(v)\delta_v f(x),$$
-where $\Delta_{\mathbb{R}^N}$ is the Laplacian on $\mathbb{R}^N$ and $\delta_v$ is defined by
-$$\delta_v f(x):=\frac{\partial_v f(x)}{\langle v,x\rangle}-\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle^2}.$$
-In this article, we consider the Dunkl-Riesz transforms defined by $R_{{\rm Dunkl},j}:=T_{e_j}(-\Delta_{{\rm Dunkl}})^{-1/2}$, $j=1,2,\ldots,N$.
+where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by
+$$\Delta_{{\rm Dunkl}}=-\sum_{j=1}^N T_{e_j}^2.$$
+In this article, we consider the Dunkl-Riesz transforms defined by $R_{{\rm Dunkl},j}:=T_{e_j}\Delta_{{\rm Dunkl}}^{-\frac12}$, $j=1,2,\cdots,N.$
 
 
 \begin{definition}{\rm
@@ -450,7 +442,76 @@ $$\|F\|_{L_p(X\times X,H^2(\mu\times\mu))}\leq c_{R,k}\|f\|_{\dot{W}^{\frac{N}{p
 Obviously, the integral kernel of the operator $[R_{{\rm Dunkl},j},M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
 \end{proof}
 
-\section{Proof of restricted version of Theorem \ref{main theorem} \eqref{mtb}}\label{hytonen verification section}
+
+\section{Proof of Theorem \ref{main theorem} \eqref{mtb}}\label{lower estimate section}
+
+
+\begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
+$$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
+\end{lemma}
+\begin{proof} {\color{red} TO BE DONE. Follows from Lemma \ref{nondegenerate}.}
+\end{proof}
+
+\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
+$$\frac1{w(3Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+\end{lemma}
+\begin{proof} Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
+$$A_1=\{x\in 3Q:\ f(x)\geq\alpha\},\quad B_1=\{x\in Q+3s(Q)e_j:\ f(x)\leq\beta\},$$
+$$A_2=\{x\in 3Q:\ f(x)\leq\beta\},\quad B_2=\{x\in Q+3s(Q)e_j:\ f(x)\geq\beta\},$$
+$$\xi_{Q,s}=w(Q)^{-\frac12}\chi_{A_s},\quad \eta_{Q,s}=w(Q)^{-\frac12}\chi_{B_s},\quad s=1,2.$$
+
+We have
+$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
+$$=\frac1{w(Q)}\int_{B_s\times A_s}K_j(x,y)(f(y)-f(x))w(x)w(y)dxdy.$$
+
+If $x\in B_1$ and $y\in A_1,$ then
+$$f(y)-f(x)=(f(y)-\alpha)+(\alpha-\beta)+(\beta-f(x))=$$
+$$=|f(y)-\alpha|+|\alpha-\beta|+|f(x)-\beta|\geq |f(y)-\alpha|+|\alpha-\beta|\geq0.$$
+If $x\in B_2$ and $y\in A_2,$ then
+$$f(y)-f(x)=(f(y)-\beta)+(\beta-f(x))=$$
+$$=-|f(y)-\beta|-|f(x)-\beta|\leq -|f(y)-\beta|\leq 0.$$
+
+Thus,
+$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$\geq \frac1{w(Q)}\int_{B_1\times A_1}K_j(x,y)\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy\geq $$
+$$\geq\frac{c_k}{w^2(Q)}\int_{B_1\times A_1}\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy=$$
+$$=\frac{c_k}{w^2(Q)}\cdot\Big(w(B_1)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(B_1)w(A_1)\Big)\geq $$
+$$=\frac{c_k}{w^2(Q)}\cdot\Big(\frac12w(Q)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|\cdot \frac14w^2(Q)\Big)\geq $$
+$$\geq\frac{c_k}{4w(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(Q)\Big)$$
+and
+$$-\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
+$$\geq \frac1{w(Q)}\int_{B_2\times A_2}K_j(x,y)|f(y)-\beta|w(x)w(y)dxdy\geq $$
+$$\geq\frac{c_k}{w^2(Q)}\int_{B_2\times A_2}|f(y)-\beta|w(x)w(y)dxdy=$$
+$$=\frac{c_k}{w^2(Q)}\cdot w(B_2)\cdot\int_{A_2}|f(y)-\beta|w(y)dy\geq $$
+$$=\frac{c_k}{2w(Q)}\int_{A_2}|f(y)-\beta|w(y)dy.$$
+
+It remains to note that
+$$\int_{3Q}|f(y)-\alpha|w(y)dy=\int_{A_1}|f(y)-\alpha|w(y)dy+$$
+$$+\int_{A_2}|f(y)-\alpha|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|f(y)-\alpha|w(y)dy\leq$$
+$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy$$
+$$+\int_{A_2}|\alpha-\beta|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|\alpha-\beta|w(y)dy\leq$$
+$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy+2|\alpha-\beta|w(3Q).$$
+Combining the last $3$ equations, we conclude
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq\max_{s=1,2}|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+
+If
+$$|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|\geq |\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|,$$
+then we set $\xi_Q=\xi_{Q,1}$ and $\eta=\eta_{Q,1}.$ Otherwise, set $\xi_Q=\xi_{Q,2}$ and $\eta_Q=\eta_{Q,2}.$ Thus,
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+Hence,
+$$c_k'|f_{3Q}-\alpha|\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|$$
+and, finally,
+$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
+\end{proof}
+
+\begin{lemma}\label{standard} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
+$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq$$
+$$\leq c_k\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
+\end{lemma}
+\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
+$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+The assertion follows now from Lemma \ref{improved zhijie lemma}.
+\end{proof}
 
 \begin{theorem}\label{chamber sobolev theorem} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Furthermore,
 $$\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}\leq c_{R,k}\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
@@ -514,293 +575,24 @@ $$\leq c_2R^N\prod_{v\in R}\big(\max\{|\langle x_0,v\rangle|,r\}\big)^{(1-t)k(v)
 The assertion follows easily.
 \end{proof}
 
-\begin{lemma}\label{hytonen verification lemma} Let $\Gamma$ be a chamber equipped with Euclidean distance. Measures $dx$ and $w(x)dx$ and operator $T_{\Gamma,j}=M_{\chi_{\Gamma}}R_{{\rm Dunkl},j}M_{\chi_{\Gamma}}$ satisfy {\color{red} on $\Gamma$} the conditions in Theorem 1.4 in \cite{Hytonen-new}.
+\begin{lemma}\label{hytonen verification lemma} Measures $dx$ and $w(x)dx$ (and distance $(x,y)\to |x-y|_{\infty}$) satisfy the conditions in Proposition 1.2 in \cite{Hytonen-new}.
 \end{lemma}
-\begin{proof} {\bf Step 1:} We claim that measures $dx$ and $w(x)dx$ are $A_{\infty}$-equivalent (in the sense of Proposition 1.2 in \cite{Hytonen-new}). This verifies Assumption (i) in Theorem 1.4 in \cite{Hytonen-new}.
+\begin{proof} That both measures are doubling is obvious.
 
 Let $x_0\in\Gamma.$ By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
 $$\Big(\frac1{m(B\cap\Gamma)}\int_{B\cap\Gamma}w^t(x)dx\Big)^{\frac1t}\leq\frac{c_{k,\Gamma}}{m(B\cap\Gamma)}\int_{B\cap\Gamma}w(x)dx,\quad t>0.$$
 $$\Big(\frac{\int_{B\cap\Gamma}w^{1-t}(x)dx}{\int_{B\cap\Gamma}w(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(B\cap\Gamma)}{\int_{B\cap\Gamma}w(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
 The assertion follows now from Proposition 3.6 in \cite{Hytonen-new}.
-
-{\bf Step 2:} Assumption (ii) in Theorem 1.4 in \cite{Hytonen-new} is obvious.
-
-{\bf Step 3:} Integral kernel $K_j$ of the operator $T_{\Gamma,j}$ satisfies the estimates
-$$|K_j(x,y)|\leq\frac{c_G}{w(B(x,|x-y|)\cap \Gamma)},\quad x,y\in\Gamma,$$
-$$|K_j(x,y)-K_j(x',y)|\leq \frac{|x-x'|}{|x-y|}\cdot\frac{c_G}{w(B(x,|x-y|))},\quad |x-x'|\leq\frac12|x-y|,\quad x,x',y\in\Gamma,$$
-$$|K_j(x,y)-K_j(x,y')|\leq \frac{|y-y'|}{|x-y|}\cdot\frac{c_G}{w(B(x,|x-y|))},\quad |y-y'|\leq\frac12|x-y|,\quad x,y,y'\in\Gamma.$$
-In other words, $K_j$ is a standard kernel for the measure $w(x)dx.$
-
-This follows from Theorem 1.1 in \cite{MR4733961}.
-
-{\bf Step 4:} Kernel $K_j$ is non-degenerate in the following sense: for every $x\in\Gamma$ and $r>0,$ there exists $y\in\Gamma$ with $|x-y|=r$ and
-$$|K_j(x,y)|\geq\frac{c_G}{w(B(x,|x-y|)\cap \Gamma)}.$$
-
-Let
-$$c_{\Gamma}=(\max_{z\in\Gamma,\ |z|=1}|z_j|)^{-1}.$$
-Choose $z\in\Gamma$ such that $|z_j|=c_{\Gamma}^{-1}$ and $|z|=1.$ Set $y=x+rz.$ Since $x,z\in\Gamma,$ it follows that $y\in\Gamma.$ Clearly, $|(x-y)_j|\geq rc_{\Gamma}^{-1}$ and $|x-y|=r.$  The claim follows from {\color{red} the proof of the} Theorem 1.2 in \cite{MR4733961}.
-
-{\bf Step 4:} Lebesgue measure on $\Gamma$ is, obviously, $N$-regular and possesses the $(1,1)$ Poincare inequality.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{chamber sobolev theorem}] This follows immediately from Lemma \ref{hytonen verification lemma} and Theorem 1.4 in \cite{Hytonen-new}.
-\end{proof}
+\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtb}] The left hand side in Lemma \ref{standard} is the oscillation semi-norm of the function $f$ with respect to measure $w(x)dx$ and distance $(x,y)\to |x-y|_{\infty}.$ So, the oscillation semi-norm of the function $f$ with respect to measure $w(x)dx$ and distance $(x,y)\to |x-y|_{\infty}$ is controlled by the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$
 
-\section{Useful part of Zhijie argument}\label{useful zhijie section}
+Lemma \ref{hytonen verification lemma} asserts that measures $dx$ and $w(x)dx$ (and distance $(x,y)\to |x-y|_{\infty}$) satisfy the conditions in Proposition 1.2 in \cite{Hytonen-new}. Appealing to Proposition 1.2 in \cite{Hytonen-new}, we conclude that the oscillation semi-norm of the function $f$ with respect to measure $dx$ and distance $(x,y)\to |x-y|_{\infty}$ is controlled by the one with respect to measure $w(x)dx$ and distance $(x,y)\to |x-y|_{\infty}.$ By the preceding paragraph, the oscillation semi-norm of the function $f$ with respect to measure $dx$ and distance $(x,y)\to |x-y|_{\infty}$ is controlled by the $\|\cdot\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}$-norm of the commutator $[R_{{\rm Dunkl},j},M_f].$
 
-\begin{theorem}\label{useful zhijie theorem} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in B^p(\mathbb{R}^N,w(x)dx).$
-\end{theorem}
-
-\begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
-$$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
-\end{lemma}
-\begin{proof} {\color{red} TO BE DONE. Follows from Lemma \ref{nondegenerate}.}
-
-\end{proof}
-
-\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
-$$\frac1{w(3Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
-\end{lemma}
-\begin{proof} Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
-$$A_1=\{x\in 3Q:\ f(x)\geq\alpha\},\quad B_1=\{x\in Q+3s(Q)e_j:\ f(x)\leq\beta\},$$
-$$A_2=\{x\in 3Q:\ f(x)\leq\beta\},\quad B_2=\{x\in Q+3s(Q)e_j:\ f(x)\geq\beta\},$$
-$$\xi_{Q,s}=w(Q)^{-\frac12}\chi_{A_s},\quad \eta_{Q,s}=w(Q)^{-\frac12}\chi_{B_s},\quad s=1,2.$$
-
-We have
-$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}=$$
-$$=\frac1{w(Q)}\int_{B_s\times A_s}K_j(x,y)(f(y)-f(x))w(x)w(y)dxdy.$$
-
-If $x\in B_1$ and $y\in A_1,$ then
-$$f(y)-f(x)=(f(y)-\alpha)+(\alpha-\beta)+(\beta-f(x))=$$
-$$=|f(y)-\alpha|+|\alpha-\beta|+|f(x)-\beta|\geq |f(y)-\alpha|+|\alpha-\beta|\geq0.$$
-If $x\in B_2$ and $y\in A_2,$ then
-$$f(y)-f(x)=(f(y)-\beta)+(\beta-f(x))=$$
-$$=-|f(y)-\beta|-|f(x)-\beta|\leq -|f(y)-\beta|\leq 0.$$
-
-Thus,
-$$\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
-$$\geq \frac1{w(Q)}\int_{B_1\times A_1}K_j(x,y)\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy\geq $$
-$$\geq\frac{c_k}{w^2(Q)}\int_{B_1\times A_1}\big(|f(y)-\alpha|+|\alpha-\beta|\big)w(x)w(y)dxdy=$$
-$$=\frac{c_k}{w^2(Q)}\cdot\Big(w(B_1)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(B_1)w(A_1)\Big)\geq $$
-$$=\frac{c_k}{w^2(Q)}\cdot\Big(\frac12w(Q)\cdot\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|\cdot \frac14w^2(Q)\Big)\geq $$
-$$\geq\frac{c_k}{4w(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|w(y)dy+|\alpha-\beta|w(Q)\Big)$$
-and
-$$-\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\geq $$
-$$\geq \frac1{w(Q)}\int_{B_2\times A_2}K_j(x,y)|f(y)-\beta|w(x)w(y)dxdy\geq $$
-$$\geq\frac{c_k}{w^2(Q)}\int_{B_2\times A_2}|f(y)-\beta|w(x)w(y)dxdy=$$
-$$=\frac{c_k}{w^2(Q)}\cdot w(B_2)\cdot\int_{A_2}|f(y)-\beta|w(y)dy\geq $$
-$$=\frac{c_k}{2w(Q)}\int_{A_2}|f(y)-\beta|w(y)dy.$$
-
-It remains to note that
-$$\int_{3Q}|f(y)-\alpha|w(y)dy=\int_{A_1}|f(y)-\alpha|w(y)dy+$$
-$$+\int_{A_2}|f(y)-\alpha|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|f(y)-\alpha|w(y)dy\leq$$
-$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy$$
-$$+\int_{A_2}|\alpha-\beta|w(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|\alpha-\beta|w(y)dy\leq$$
-$$\leq\int_{A_1}|f(y)-\alpha|w(y)dy+\int_{A_2}|f(y)-\beta|w(y)dy+2|\alpha-\beta|w(3Q).$$
-Combining the last $3$ equations, we conclude
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq\max_{s=1,2}|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,s},\eta_{Q,s}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
-
-If
-$$|\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|\geq |\langle[R_{{\rm Dunkl},j},M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|,$$
-then we set $\xi_Q=\xi_{Q,1}$ and $\eta=\eta_{Q,1}.$ Otherwise, set $\xi_Q=\xi_{Q,2}$ and $\eta_Q=\eta_{Q,2}.$ Thus,
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-\alpha|w(y)dy\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
-Hence,
-$$c_k'|f_{3Q}-\alpha|\leq|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|$$
-and, finally,
-$$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
-\end{proof}
-
-\begin{lemma}\label{standard}
-Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
-$$\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\in l_p.$$
-\end{lemma}
-\begin{proof} Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
-$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
-The assertion follows now from Lemma \ref{improved zhijie lemma}.
-\end{proof}
-
-\begin{lemma}\label{first zhijie estimate} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
-\end{lemma}
-\begin{proof} We first decompose $\mathbb{R}^N\times \mathbb{R}^N$ into dyadic shells as follows.
-$$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
-$$\leq \sum_{m\in\mathbb{Z}}\int_{\substack{x,y\in\mathbb{R}^N\\ 2^{-m-1}<|x-y|< 2^{-m}}}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
-$$\leq \sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\int_{\substack{x,y\in\mathbb{R}^N\\ |x-y|< 2^{-m}}}|f(x)-f(y)|^pw(x)w(y)dxdy.$$
-For $x,y\in\mathbb{R}^N$ with $2^{-m-1}<|x-y|<2^{-m},$ fix $Q\in\mathcal{D}$ with $x\in Q$ and $s(Q)=2^{-m}.$ We have $|x-y|_{\infty}<2^{-m}$ and $|x-c_Q|_{\infty}<2^{-m-1}.$ Thus, $|y-c_Q|_{\infty}<\frac32\cdot 2^{-m}.$ In other words, $y\in 3Q.$ Consequently, there exists $Q\in\mathcal{D}$ with $s(Q)=2^{-m},$ $x,y\in 3Q.$ Thus,
-$$\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\int_{\substack{x,y\in\mathbb{R}^N\\ |x-y|< 2^{-m}}}|f(x)-f(y)|^pw(x)w(y)dxdy\leq$$
-$$\leq \sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(x)-f(y)|^pw(x)w(y)dxdy\leq$$
-$$\leq 2^p\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(x)-f_{3Q}|^pw(x)w(y)dxdy+$$
-$$+2^p\sum_{m\in\mathbb{Z}}\frac1{w(B(x,2^{-m-1}))^2}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_{3Q\times 3Q}|f(y)-f_{3Q}|^pw(x)w(y)dxdy\leq$$
-$$\leq c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w^2(3Q)}\int_{3Q\times 3Q}|f(x)-f_{3Q}|^pw(x)w(y)dxdy=$$
-$$=c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|^pw(x)dx.$$
-
-Next,
-$$\int_{3Q}|f(x)-f_{3Q}|^pw(x)dx=\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f(x)-f_{3Q}|^pw(x)dx\leq $$
-$$\leq 2^{p-1}\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f(x)-f_{Q+\epsilon s(Q)}|^pw(x)dx+$$
-$$+2^{p-1}\sum_{\epsilon\in\{-1,0,1\}^d}\int_{Q+\epsilon s(Q)}|f_{Q+\epsilon s(Q)}-f_{3Q}|^pw(x)dx.$$
-Obviously,
-$$\int_{Q+\epsilon s(Q)}|f_{Q+\epsilon s(Q)}-f_{3Q}|^pw(x)dx=|f_{Q+\epsilon s(Q)}-f_{3Q}|^p\cdot w(Q+\epsilon s(Q))\leq$$
-$$\leq \Big(\int_{Q+\epsilon s(Q)}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(Q+\epsilon s(Q))\leq$$
-$$\leq \Big(\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(Q+\epsilon s(Q))\leq$$
-$$\leq c_{p,k}\Big(\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p\cdot w^{1-p}(3Q).$$
-
-Thus,
-$$\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy\leq$$
-$$\leq c_{p,k}\sum_{Q\in\mathcal{D}}\sum_{\epsilon\in\{-1,0,1\}^d}\frac1{w(Q+\epsilon s(Q))}\int_{Q+\epsilon s(Q)}|f(x)-f_{Q+\epsilon s(Q)}|^pw(x)dx+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
-This completes the proof.
-\end{proof}
-
-\begin{lemma}\label{second zhijie estimate} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
-$$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq c_{p,k}\sum_{Q\in\mathcal{D}}|f_Q-f_{{\rm parent}(Q)}|^p.$$
-\end{lemma}
-\begin{proof} Obviously,
-$$\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx=\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx\leq $$
-$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-m}}}\int_Q\frac{|f(x)-f_Q|^pw(x)dx}{w(B(x,2^{-m}))}=$$
-$$=c_{p,k}\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}.$$
-Note that
-$$f-E_mf=\sum_{l\geq m}(E_{l+1}f-E_lf).$$
-By triangle inequality,
-$$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
-$$\leq\sum_{l\geq m}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}.$$
-Note that
-$$w(B(x,2^{-m}))\geq c_k 2^{N(l-m)}w(B(x,2^{-l})).$$
-Thus,
-$$\Big(\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\Big)^{\frac1p}\leq$$
-$$\leq c_{p,k}\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}$$
-and, therefore,
-$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
-$$\leq c_{p,k}\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p.$$
-
-Using the discreet Young's inequality
-$$\|a\ast b\|_p\leq\|a\|_1\|b\|_p$$
-with
-$$a(l)=2^{\frac{Nl}{p}}\chi_{\mathbb{Z}_-}(l),\quad b(l)=\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p},$$
-we obtain
-$$\sum_{m\in\mathbb{Z}}\Big(\sum_{l\geq m}2^{\frac{N(m-l)}{p}}\Big(\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\Big)^{\frac1p}\Big)^p\leq$$
-$$\leq c_{N,p}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}.$$
-Thus,
-$$\sum_{m\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|f(x)-(E_mf)(x)|^pw(x)dx}{w(B(x,2^{-m}))}\leq$$
-$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\int_{\mathbb{R}^N}\frac{|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx}{w(B(x,2^{-l}))}\leq $$
-$$\leq c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}\frac1{w(Q)}\int_Q|(E_{l+1}f)(x)-(E_lf)(x)|^pw(x)dx=$$
-$$=c_{p,k}\sum_{l\in\mathbb{Z}}\sum_{\substack{Q\in\mathcal{D}\\ s(Q)=2^{-l-1}}}|f_Q-f_{{\rm parent}(Q)}|^p.$$
-This completes the proof.
-\end{proof}
-
-In what follows, conditional expectations are with respect to the measure $w(x)dx.$
-
-\begin{lemma}\label{MartingaleBesov} Suppose that $1\leq p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N,w(x)dx).$ We have
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq c_{p,k}\sum_{Q\in\mathcal{D}}\Big(\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big)^p.$$
-\end{lemma}
-\begin{proof} Combining Lemmas \ref{first zhijie estimate} and \ref{second zhijie estimate}, we arrive at
-$$\|f\|_{B^p(\mathbb{R}^N,w(x)dx)}^p\leq  c_{p,k}\sum_{Q\in\mathcal{D}}\frac1{w(Q)}\int_Q|f(x)-f_Q|^pw(x)dx+$$
-$$+c_{p,k}\sum_{Q\in\mathcal{D}}|f_Q-f_{{\rm parent(Q)}}|^p.$$
-Obviously,
-$$|f_Q-f_{{\rm parent}(Q)}|\leq\frac1{w(Q)}\int_{{\rm parent}(Q)}|f(x)-f_Q|w(x)dx\leq$$
-$$\leq\frac1{w(Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq \frac{c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx\leq $$
-$$\leq \frac{2c_k}{w(3Q)}\int_{3Q}|f(x)-f_Q|w(x)dx.$$
-This completes the proof.
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{useful zhijie theorem}] The assertion follows by combining Lemma \ref{standard} and Lemma \ref{MartingaleBesov}.
-\end{proof}
-
-\section{Proof of Theorem \ref{main theorem} \eqref{mtb}}\label{lower estimate final section}
-
-\begin{theorem}\label{gluing theorem} Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that
-\begin{enumerate}[{\rm (i)}]
-\item for every chamber $\Gamma,$ we have $f\in\dot{W}^{\frac{N}{p},p}(\Gamma);$
-\item $f$ belongs to the space $B^p(\mathbb{R}^N,w(x)dx);$
-\end{enumerate}
-It follows that $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N).$
-\end{theorem}
-
-\begin{lemma}\label{s9 compute lemma} Denote $H_+=\mathbb{R}^{N-1}\times\mathbb{R}_+$ and $H_-=\mathbb{R}^{N-1}\times\mathbb{R}_-.$ Let $z\in\mathbb{R}^N$ be such that $z_N=0.$ Suppose $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,2\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,2\epsilon)).$ If
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f(x)-f(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty,$$
-then
-$$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty.$$
-\end{lemma}
-\begin{proof} Let $f_1(x)=f(x_1,\cdots,x_{N-1},|x_N|),$ $x\in B(z,2\epsilon).$ It is immediate {\color{red} we, probably, need reference} that $f_1\in\dot{W}^{\frac{N}{p},p}(B(z,2\epsilon)).$ In other words,
-$$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
-In particular,
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N}}dxdy<\infty.$$
-Since $|x_N|,|y_N|\leq |x-y|$ for $x\in H_+,$ $y\in H_-,$ it follows that
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_1(x)-f_1(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
-Set $f_2=f-f_1.$ By triangle inequality,
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_2(x)-f_2(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
-Note that $f_1=f$ on $H_+\cap B(z,2\epsilon)$ and, therefore, $f_2=0$ on $H_+\cap B(z,2\epsilon).$ We, therefore, have
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap  B(z,2\epsilon)}}\frac{|f_2(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
-In other words,
-$$\int_{H_-\cap B(z,2\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(z,2\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}\Big)dy<\infty.$$
-
-If $y\in B(z,\epsilon),$ then $B(y',\epsilon)\subset B(z,2\epsilon).$ Thus,
-$$\int_{H_-\cap B(z,\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(y',\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}\Big)dy<\infty.$$
-Clearly,
-$$\int_{H_+\cap  B(y',\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{|x-y|^{2N+2K}}=\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{(|x'|^2+(x_N+|y_N|)^2)^{N+K}}.$$
-Thus,
-$$\int_{H_-\cap B(z,\epsilon)}|f_2|^p(y)\Big(\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{\max\{|x'|,x_N,|y_N|\}^{2N+2K}}\Big)dy<\infty.$$
-Clearly,
-$$\int_{H_+\cap  B(0,\epsilon)}\frac{|x_N|^K|y_N|^Kdx}{\max\{|x'|,x_N,|y_N|\}^{2N+2K}}\geq \int_{\substack{|x'|<\frac12|y_N|\\ x_N\in(0,\frac12|y_N|)}}\frac{|x_N|^K|y_N|^Kdx}{|y_N|^{2N+2K}}=$$
-$$=|y_N|^{-2N-K}\cdot\int_{|x'|<\frac12|y_N|}dx'\cdot \int_0^{\frac12|y_N|}dx_N=|y_N|^{-N}\cdot 2^{-N}{\rm Vol}(\mathbb{B}^{N-1}).$$
-Hence,
-$$\int_{H_-\cap B(z,\epsilon)}\frac{|f_2|^p(y)dy}{|y_N|^N}<\infty.$$
-This completes the proof.
-\end{proof}
-
-\begin{lemma}\label{standard gluing lemma} Denote $H_+=\mathbb{R}^{N-1}\times\mathbb{R}_+$ and $H_-=\mathbb{R}^{N-1}\times\mathbb{R}_-.$ Let $z\in\mathbb{R}^N$ be such that $z_N=0.$ Suppose $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,\epsilon)).$ If
-$$\int_{B(z,\epsilon)}\frac{|f(x_1,\cdots,x_{N-1},x_N)-f(x_1,\cdots,x_{N-1},-x_N)|^pdx}{|x_N|^N}<\infty,$$
-then $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$
-\end{lemma}
-\begin{proof} Set $r(x)=(x_1,\cdots,x_{N-1},-x_N),$ $x\in B(z,\epsilon)$ and let $f_1=f+f\circ r,$ $f_2=f-f\circ r.$ It is known that {\color{red} provide reference} that $f_1\in \dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$ Hence, we may assume without loss of generality that $f=-f\circ r$ and
-$$\int_{B(z,\epsilon)}\frac{|f|^p(x)dx}{|x_N|^N}<\infty.$$
-
-We have
-$$\int_{B(z,\epsilon)\times B(z,\epsilon)}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\leq$$
-$$\leq\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+$$
-$$+2^{p-1}\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f|^p(x)dxdy}{|x-y|^{2N}}+2^{p-1}\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f|^p(y)dxdy}{|x-y|^{2N}}+$$
-$$+2^{p-1}\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)|^pdxdy}{|x-y|^{2N}}+2^{p-1}\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f|^p(y)dxdy}{|x-y|^{2N}}.$$
-
-It remains to note that, for every $x\in H_+,$
-$$\int_{y\in H_-\cap B(z,\epsilon)}\frac{dy}{|x-y|^{2N}}\leq \int_{y\in\mathbb{R}^N}\frac{dy}{(|y|'^2+(|y_N|+|x_N|)^2)^N}=c_N|x_N|^{-N}.$$
-Thus,
-$$\int_{B(z,\epsilon)\times B(z,\epsilon)}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}\leq$$
-$$\leq\int_{\substack{x\in H_+\cap B(z,\epsilon)\\ y\in H_+\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+\int_{\substack{x\in H_-\cap B(z,\epsilon)\\ y\in H_-\cap B(z,\epsilon)}}\frac{|f(x)-f(y)|^pdxdy}{|x-y|^{2N}}+$$
-$$+2^{p-1}c_N\int_{x\in H_+\cap B(z,\epsilon)}\frac{|f|^p(x)dx}{|x_N|^N}+2^{p-1}c_N\int_{H_-\cap B(z,\epsilon)}\frac{|f|^p(y)dy}{|y_N|^N}+$$
-$$+2^{p-1}c_N\int_{H_-\cap B(z,\epsilon)}\frac{|f(x)|^pdx}{|x_N|^N}+2^{p-1}c_N\int_{H_+\cap B(z,\epsilon)}\frac{|f|^p(y)dy}{|y_N|^N}.$$
-Since the right hand side is finite, the assertion follows.
+That oscillation semi-norm of the function $f$ with respect to measure $dx$ and distance $(x,y)\to |x-y|_{\infty}$ is equivalent to the Sobolev semi-norm of the function $f$ is a standard fact. The proof (in much more general setting) is available in Proposition 1.29 in \cite{HKarxiv}. The assertion follows now from the preceding paragraph. 
 \end{proof}
 
 
-\begin{lemma}\label{s9 prefinal lemma} Let $\Gamma_1$ and $\Gamma_2$ be distinct chambers sharing the same face $P\subset\{\langle x,v\rangle=0\}.$ Let $z$ be in the relative interior of $P.$ If $f$ is as in Theorem \ref{gluing theorem}, then $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon))$ for every sufficiently small $\epsilon>0.$
-\end{lemma}
-\begin{proof} To simplify the notations, let $v=e_N.$ Denote for brevity, $k_{e_N}=K.$ Let $z$
-
-For every $\epsilon>0,$ we have
-$$\int_{B(z,2\epsilon)\times B(z,2\epsilon)}\frac{|f(x)-f(y)|^p}{w(B(x,|x-y|))^2}w(x)w(y)dxdy<\infty.$$
-Now, let $\epsilon>0$ be so small that $|\langle x,\tilde{v}\rangle|\geq c_{z,\epsilon}>0$ for every $v\neq\tilde{v}\in R$ and for every $x\in B(z,2\epsilon).$ It follows that
-$$w(x)\geq c_{z,\epsilon,k}|x_N|^K,\quad w(y)\geq c_{z,\epsilon,k}|y_N|^K,\quad x,y\in B(z,2\epsilon).$$
-Also,
-$$w(B(x,|x-y|))\leq c_{z,\epsilon,k}|x-y|^N\cdot (|x-y|+|x_N|)^K,\quad x,y\in B(z,2\epsilon).$$
-Consequently,
-$$w(B(x,|x-y|))\leq c_{z,\epsilon,k}|x-y|^{N+K},\quad x\in H_+\cap B(z,2\epsilon),\quad y\in H_-\cap B(z,2\epsilon).$$
-
-We, therefore, have
-$$\int_{\substack{x\in H_+\cap B(z,2\epsilon)\\ y\in H_-\cap B(z,2\epsilon)}}\frac{|f(x)-f(y)|^p}{|x-y|^{2N+2K}}|x_N|^K|y_N|^Kdxdy<\infty.$$
-On the other hand, $H_+\cap B(z,2\epsilon)\subset\Gamma_1$ and $H_-\cap B(z,2\epsilon)\subset\Gamma_2.$ Thus, $f\in\dot{W}^{\frac{N}{p},p}(H_+\cap B(z,2\epsilon))$ and $f\in\dot{W}^{\frac{N}{p},p}(H_-\cap B(z,2\epsilon)).$ By Lemma \ref{s9 compute lemma} and Lemma \ref{standard gluing lemma}, $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon)).$
-\end{proof}
-
-\begin{lemma}\label{s9 final lemma} Suppose $f\in\dot{W}^{\frac{N}{p},p}(\Gamma)$ for every chamber $\Gamma.$ Suppose that, for every face of every chamber and for every $z$ in the relative interior of that face, we have $f\in\dot{W}^{\frac{N}{p},p}(B(z,\epsilon))$ for every sufficiently small $\epsilon>0.$ It follows that $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N).$ Furthermore, we have
-$$\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)}\leq c_R\sum_{\Gamma}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
-\end{lemma}
-\begin{proof} {\color{red} find reference.}
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{gluing theorem}] The assertion follows by combining Lemmas \ref{s9 prefinal lemma} and \ref{s9 final lemma}.
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtb}] The assertion follows by combining Theorem \ref{chamber sobolev theorem}, Theorem \ref{useful zhijie theorem} and Theorem \ref{gluing theorem}.
-\end{proof}
 
 \section{Constant characterization}
 \setcounter{equation}{0}
@@ -816,114 +608,6 @@ $$\leq\int_{\mathbb{R}^N\times\mathbb{R}^N}\frac{|f(x)-f(y)|^{2N}dxdy}{|x-y|^{2N
 It follows that $c_1=c_2.$ Since chambers $\Gamma_1$ and $\Gamma_2$ are arbitrary, the assertion follows.
 \end{proof}
 
-\section{Global result from Hytonen}
-\begin{lemma}\label{lem:standard-Besov-dw-dx}
-Let \(1<p<\infty\). Then, for every measurable function
-\(b\) on \(\mathbb R^N\),
-\[
-  \|b\|_{B^p(\mathbb R^N,dw)}
-  \sim
-  \|b\|_{B^p(\mathbb R^N,dx)},
-\]
-where
-\[
-\|b\|_{B^p(\mathbb R^N,d\mu)}
-:=
-\left(
-\int_{\mathbb R^N}\int_{\mathbb R^N}
-\frac{|b(x)-b(y)|^p}
-{\mu(B(x,\|x-y\|))^2}
-\,d\mu(x)\,d\mu(y)
-\right)^{1/p}.
-\]
-\end{lemma}
-
-\begin{proof}
-Write
-\[
-  h_k(x):=\prod_{v\in R}|\langle x,v\rangle|^{k(v)},
-  \qquad dw(x)=h_k(x)\,dx .
-\]
-\(dx\) is obvious doubling, and \(dw\) is doubling
-by \eqref{doublinginequality}.
-
-We first verify that \(dx\) and \(dw\) satisfy the \(A_\infty\)-relation used in
-\cite[Proposition 1.2]{Hytonen-new}. Fix \(s>1\), and set
-\[
-  dw_s(x):=h_k(x)^s\,dx
-  =
-  \prod_{v\in R}|\langle x,v\rangle|^{s k(v)}\,dx .
-\]
-We have
-\[
-  w_s(B(x,r))
-  \sim
-  r^N
-  \prod_{v\in R}\bigl(|\langle x,v\rangle|+r\bigr)^{s k(v)} .
-\]
-On the other hand, \eqref{twosideinequ} gives
-\[
-  w(B(x,r))
-  \sim
-  r^N
-  \prod_{v\in R}\bigl(|\langle x,v\rangle|+r\bigr)^{k(v)} .
-\]
-Since \(|B(x,r)|\sim r^N\), we obtain
-\begin{align*}
-  \left(\fint_{B(x,r)} h_k(z)^s\,dz\right)^{1/s}
-  &=
-  \left(\frac{w_s(B(x,r))}{|B(x,r)|}\right)^{1/s}  \\
-  &\sim
-  \prod_{v\in R}\bigl(|\langle x,v\rangle|+r\bigr)^{k(v)}        \\
-  &\sim
-  \frac{w(B(x,r))}{|B(x,r)|}
-  =
-  \fint_{B(x,r)} h_k(z)\,dz .
-\end{align*}
-Thus \(h_k\in RH_s(dx)\). Hence, by
-\cite[Proposition 3.6]{Hytonen-new}, the two doubling measures
-\(dx\) and \(dw=h_k\,dx\) satisfy the \(A_\infty\)-relation
-\[
-  |E|\leq \varepsilon |B|
-  \quad\Longrightarrow\quad
-  w(E)\leq (1-\delta)w(B)
-\]
-for some \(\varepsilon,\delta\in(0,1)\), every Euclidean ball \(B\), and every
-measurable set \(E\subset B\).
-
-Applying \cite[Proposition 1.2]{Hytonen-new} with
-\(\mu=dx\), \(\nu=dw\), and \(q=p\), we get
-\[
-  \|b\|_{{\rm Osc}^{p,p}(\mathbb R^N,dx)}
-  \sim
-  \|b\|_{{\rm Osc}^{p,p}(\mathbb R^N,dw)} .
-\]
-Finally, since both
-\[
-  (\mathbb R^N,\|\cdot\|,dx)
-  \qquad\text{and}\qquad
-  (\mathbb R^N,\|\cdot\|,dw)
-\]
-are doubling metric measure spaces, \cite[Proposition 11.5]{HKarxiv} yields
-\[
-  \|b\|_{B^p(\mathbb R^N,dx)}
-  \sim
-  \|b\|_{{\rm Osc}^{p,p}(\mathbb R^N,dx)}
-\]
-and
-\[
-  \|b\|_{B^p(\mathbb R^N,dw)}
-  \sim
-  \|b\|_{{\rm Osc}^{p,p}(\mathbb R^N,dw)} .
-\]
-Combining the last three equivalences gives
-\[
-  \|b\|_{B^p(\mathbb R^N,dw)}
-  \sim
-  \|b\|_{B^p(\mathbb R^N,dx)} .
-\]
-This completes the proof.
-\end{proof}
 
  \noindent
  {\bf Acknowledgements:}
