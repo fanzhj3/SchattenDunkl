@@ -407,26 +407,6 @@ $$\|T_{FH}\|_{S_p(L_2(X,d\mu))}\leq c_{p,H}\|F\|_{L_p(X\times X,H^2(\mu\times\mu
 \begin{proof} The assertion follows from Lemma \ref{s4 first lemma} by real interpolation.
 \end{proof}
 
-The following proposition, strictly speaking, is not part of the proof of Theorem \ref{main theorem} \eqref{mta}. Instead, it features in the proof of Theorem \ref{main theorem} \eqref{mtb} in the next section. However, in terms of the employed technique, it certainly belongs to this section.
-
-\begin{proposition}\label{upper bound}
-Let $p>2,$ let $\Gamma$ be a chamber and let $f\in \dot{W}^{\frac{N}{p},p}(\Gamma).$ Let $V$ be an integral operator whose integral kernel $K$ satisfies the condition
-$$|K(x,y)|\leq\frac1{w(B(x,|x-y|))}.$$
-For every $1\leq j\leq N,$ we have
-$$\|[V,M_f]\|_{\mathcal{L}_p(L_2(\Gamma,w(x)dx))}\leq c_{R,k}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
-\end{proposition}
-\begin{proof} In what follows, let $X=\Gamma$ and $d\mu(x)=w(x)dx.$ Set
-$$F(x,y)=w(B(x,|x-y|))K(x,y)(f(x)-f(y)),\quad x\neq y,$$
-$$H(x,y)=\frac1{w(B(x,|x-y|))},\quad x\neq y.$$
-By \cite[Lemma 5.7]{HKarxiv}, $H\in L_{\infty}(L_{1,\infty})^{\rm symm}(\Gamma\times\Gamma,\mu\times\mu).$ By assumption on the kernel $K,$
-$$\|F\|_{L_p(\Gamma\times\Gamma,G^2(\mu\times\mu))}\leq\Big(\int_{\Gamma\times\Gamma}|f(x)-f(y)|^p\frac{w(x)w(y)dxdy}{w^2(B(x,|x-y|))}\Big)^{\frac1p}.$$
-By \eqref{twosideinequ},
-$$w(B(x,|x-y|))\geq c_{R,k}'|x-y|^Nw^{\frac12}(x)w^{\frac12}(y),\quad x,y\in\mathbb{R}^N.$$
-Thus,
-$$\|F\|_{L_p(\Gamma\times\Gamma,H^2(\mu\times\mu))}\leq$$
-$$\leq (c_{R,k}')^{-\frac2p}\Big(\int_{\Gamma\times\Gamma}\frac{|f(x)-f(y)|^p}{|x-y|^{2N}}dxdy\Big)^{\frac1p}=(c_{R,k}')^{-\frac2p}\|f\|_{\dot{W}^{\frac{N}{p},p}(\Gamma)}.$$
-Obviously, the integral kernel of the operator $[V,M_f]$ is $FH.$ The assertion follows now from Lemma \ref{s4 second lemma}.
-\end{proof}
 
 \begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mta}]
 In what follows, let $X=\mathbb{R}^N$ and $d\mu(x)=w(x)dx.$ Set
@@ -578,7 +558,7 @@ The assertion follows easily.
 \begin{proof} That both measures are doubling is obvious.
 
 Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). By Lemmas \ref{for reverse holder first lemma} and \ref{for reverse holder second lemma},
-$$\Big(\frac1{m(Q)}\int_Qw^t(x)dx\Big)^{\frac1t}\leq\frac{c_k}{m(Q)}\int_{\Gamma}w(x)dx,\quad t>0.$$
+$$\Big(\frac1{m(Q)}\int_Qw^t(x)dx\Big)^{\frac1t}\leq\frac{c_k}{m(Q)}\int_Qw(x)dx,\quad t>0.$$
 $$\Big(\frac{\int_Qw^{1-t}(x)dx}{\int_Qw(x)dx}\Big)^{\frac1t}\leq c_G \frac{m(Q)}{\int_Qw(x)dx},\quad 1<t<1+\frac1{|R|\cdot\max_{v\in R}k(v)}.$$
 The assertion follows now from Proposition 3.6 in \cite{Hytonen-new}.
 \end{proof}
