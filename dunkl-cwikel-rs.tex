@@ -1,0 +1,100 @@
+\documentclass{amsart}
+\usepackage{color}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+
+\begin{document}
+
+\begin{thm}\label{rochberg-semmes theorem} Let $e_I$ and $f_I$ be supported on $(2n+1)I.$ Let $r>2$ and suppose that
+$$\sup_Iw(I)^{\frac12-\frac1r}\|e_I\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq 1,\cdot \sup_Iw(I)^{\frac12-\frac1r}\|f_I\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq 1.$$
+If $V$ is an integral operator with integral kernel
+$$K:(x,y)\to\sum_I\lambda_Ie_I(x)f_I(y),$$
+then
+$$\|V\|_{p,\infty}\leq c_{p,n,r}\|\lambda\|_{p,\infty}.$$
+\end{thm}
+
+\begin{thm}\label{kernel smoothness} Integral kernel $K:(x,y)\to K(x,y),$ $x,y\in\mathbb{R}^N,$ of $\Delta^{-\frac12},$ where $\Delta$ is Dunkl Laplacian is smooth except on the sets
+$\{x=gy\},$ $g\in G,$ or on the planes $\{\langle x,v\rangle=0\},$ $\{\langle y,v\rangle=0\}.$ 
+\end{thm}
+\begin{proof} {\color{red} IT IS EXACTLY THIS WE CANNOT PROVE YET.}
+\end{proof}
+
+\begin{lem} We have
+$$K(\lambda x,\lambda y)=\lambda^{-M}K(x,y),\quad x,y\in\mathbb{R}^N.$$
+Here,
+$$M=N-1+\sum_{v\in R}k(v).$$
+\end{lem}
+\begin{proof} Indeed, let $D_{\lambda}$ be the dilation by $\lambda.$ It is obvious (just like in the Euclidean case) that
+$$D_{\lambda}^{-1}T_{\xi}D_{\lambda}=\lambda^{-1}T_{\xi}.$$
+Thus,
+$$D_{\lambda}^{-1}\Delta D_{\lambda}=\lambda^{-2}\Delta.$$
+Thus,
+$$\Delta^{-\frac12}D_{\lambda}=\lambda D_{\lambda}\Delta^{-\frac12}.$$
+In other words,
+$$\int_{\mathbb{R}^N}K(x,y)\xi(\lambda^{-1}y)w(y)dy=\lambda \int_{\mathbb{R}^N}K(\lambda^{-1}x,y)\xi(y)w(y)dy.$$
+Substituting $y=\lambda z$ in the first integral and $y=z$ in the second one, we write
+$$\lambda^{N+\sum_{v\in R}k(v)}\int_{\mathbb{R}^N}K(x,\lambda z)\xi(z)w(z)dz=\lambda \int_{\mathbb{R}^N}K(\lambda^{-1}x,z)\xi(z)w(z)dz.$$
+In other words,
+$$\lambda^{N+\sum_{v\in R}k(v)}K(x,\lambda z)=\lambda K(\lambda^{-1}x,z).$$
+Substituting $\lambda x$ instead of $\lambda$ and $y$ instead of $z,$ we conclude the argument.
+\end{proof}
+
+\begin{lem} We have (provided that $R$ spans $\mathbb{R}^N$)
+$$f(x)K(x,y)=c\sum_{k,l\in\mathbb{Z}^N}c_{k,l}\sum_{I\in\mathcal{D}}s(I)^{-M}w(I)^{1-\frac1r}\|f\|_{L_r(I)}e_{k,I}(x)f_{l,I}(y),$$
+where $e_{k,I}$ and $f_{l,I}$ are supported in $(2n+1)I$ {\color{red} can we specify $n?$}
+$$\sup_{k,I}w(I)^{\frac12-\frac1r}\|e_{k,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq1,$$
+$$\sup_{l,I}w(I)^{\frac12-\frac1r}\|f_{l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq1.$$
+\end{lem}
+\begin{proof} Apply Whitney decomposition to the set $(\Gamma\times\Gamma)\backslash\{x\neq y\}$ (we do not even need the linear transformations).  Here, each cube $Q\in\mathcal{F}$ is of the shape $I\times J,$ where $s(I)=s(J).$ Distance from $x\in I$ to the boundary of $\Gamma$ is comparable to $s(Q)=s(I).$ Distance from $y\in J$ to the boundary of $\Gamma$ is comparable to $s(Q)=s(I).$ Distance from $x\in I$ to $y\in J$ is comparable to $s(Q)=s(I).$ Hence, there exists a fixed number $n$ (possibly, dependent on $\Gamma$) so that $J\subset (2n+1)I.$
+
+We have (provided that $R$ spans $\mathbb{R}^N$)
+$$|\langle x,v\rangle|\geq\epsilon s(I),\quad |\langle y,v\rangle|\geq \epsilon s(I),\quad |x-y|\geq \epsilon s(I),\quad |x|,|y|\leq\epsilon^{-1}s(I),\quad x\in I,\quad y\in J.$$ 
+Set
+$$\Omega_{\epsilon}=\{(x,y)\in\Gamma:\ |\langle x,v\rangle|\geq\epsilon^2,\quad |\langle y,v\rangle|\geq \epsilon^2,\quad |x-y|\geq \epsilon^2,\quad |x|,|y|\leq 1\}.$$
+Thus,
+$$(\frac{x}{\epsilon^{-1}s(I)},\frac{y}{\epsilon^{-1}s(I)})\in\Omega_{\epsilon},\quad x\in I,\quad y\in J.$$
+
+By Theorem \ref{kernel smoothness}, $K\in C^m(\Omega_{\epsilon})$ for every $m\in\mathbb{N}.$ Hence, there exists a rapidly decreasing sequence $\{c_{k,l}\}_{k,l\in\mathbb{Z}^N}$ such that 
+$$K(x,y)=\sum_{k,l\in\mathbb{Z}^N}c_{k,l}e^{i\langle k,x\rangle}e^{i\langle l,y\rangle},\quad (x,y)\in\epsilon^{-1}\Omega_{\epsilon}.$$
+We, therefore, have
+$$K(x,y)=(\epsilon^{-1}s(I))^{-M}K(\frac{x}{\epsilon^{-1}s(I)},\frac{y}{\epsilon^{-1}s(I)})=$$
+$$=(\epsilon^{-1}s(I))^{-M}\sum_{k,l\in\mathbb{Z}^N}c_{k,l}e^{\frac{i\epsilon\langle k,x\rangle}{s(I)}}e^{\frac{i\epsilon\langle l,y\rangle}{s(I)}},\quad x\in I,\quad y\in J.$$
+
+Set $J_I=\cup_{I\times J\in\mathcal{F}}J.$ Integral kernel of $M_f\Delta^{-\frac12}$ is
+$$\sum_{k,l\in\mathbb{Z}^N}c_{k,l}\sum_{I\in\mathcal{D}}(\epsilon^{-1}s(I))^{-M}f(x)e^{\frac{i\epsilon\langle k,x\rangle}{s(I)}}\chi_I(x)\cdot e^{\frac{i\epsilon\langle l,y\rangle}{s(I)}}\chi_{J_I}(y).$$
+
+Set
+$$e_{k,I}(x)=\frac{w(I)^{\frac1r-\frac12}}{\|f\|_{L_r(I,w(x)dx)}}f(x)e^{\frac{i\epsilon\langle k,x\rangle}{s(I)}}\chi_I(x).$$
+Obviously,
+$$\sup_{k,I}w(I)^{\frac12-\frac1r}\|e_{k,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=1.$$
+
+Set
+$$f_{l,I}(x)=w(I)^{-\frac12}e^{\frac{i\epsilon\langle l,x\rangle}{s(I)}}\chi_{J_I}(x).$$
+Obviously,
+$$\sup_{l,I}w(I)^{\frac12-\frac1r}\|f_{l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\sup_Iw(I)^{-\frac1r}\|\chi_{A_I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq$$
+$$\leq \sup_Iw(I)^{-\frac1r}\|\chi_{(2n+1)I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(\sup_I\frac{w((2n+1)I)}{w(I)})^{\frac1r}=c_n<\infty.$$
+
+Integral kernel of $M_f\Delta^{-\frac12}$ is
+$$\sum_{k,l\in\mathbb{Z}^N}c_{k,l}\sum_{I\in\mathcal{D}}(\epsilon^{-1}s(I))^{-M}w(I)^{1-\frac1r}\|f\|_{L_r(I,w(x)dx)}e_{k,I}(x)f_{l,I}(y).$$
+\end{proof}
+
+By Theorem \ref{rochberg-semmes theorem} and by the triangle inequality, the norm $\|M_f\Delta^{-\frac12}\|_{N,\infty}$ is controlled by
+$$\sum_{k,l\in\mathbb{Z}^N}|c_{k,l}|\cdot \Big\|\Big\{s(I)^{-M}w(I)^{1-\frac1r}\|f\|_{L_r(I,w(x)dx)}\Big\}_{I\in\mathcal{D}}\Big\|_{N,\infty}.$$
+
+Note that
+$$w(x)\sim s(I)^{\sum_{v\in R}k(v)},\quad x\in I.$$
+Thus,
+$$w(I)=\int_Iw(x)dx\sim s(I)^{N+\sum_{v\in R}k(v)},$$
+$$\|f\|_{L_r(I,w(x)dx)}\sim s(I)^{\frac1r\sum_{v\in R}k(v)}\|f\|_{L_r(I,dx)}.$$
+
+So, $\|M_f\Delta^{-\frac12}\|_{N,\infty}$ is controlled by
+$$\Big\|\Big\{s(I)^{-M}s(I)^{(1-\frac1r)(N+\sum_{v\in R}k(v))}s(I)^{\frac1r\sum_{v\in R}k(v)}\|f\|_{L_r(I,dx)}\Big\}_{I\in\mathcal{D}}\Big\|_{N,\infty}=$$
+$$=\Big\|\Big\{s(I)^{-M}s(I)^{N+\sum_{v\in R}k(v)}s(I)^{-\frac{N}{r}}\|f\|_{L_r(I,dx)}\Big\}_{I\in\mathcal{D}}\Big\|_{N,\infty}.$$
+Since
+$$M=N-1+\sum_{v\in R}k(v),$$
+it follows that the latter expression is
+$$\Big\|\Big\{s(I)^{1-\frac{N}{r}}\|f\|_{L_r(I,dx)}\Big\}_{I\in\mathcal{D}}\Big\|_{N,\infty}.$$
+By Zhijie lemma, this is controlled by $\|f\|_{L_d(\mathbb{R}^N)}.$
+
+\end{document}
