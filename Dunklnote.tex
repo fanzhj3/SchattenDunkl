@@ -75,7 +75,6 @@
 
 \def\hs{\hspace{0.33cm}}
 \newcommand{\la}{\alpha}
-\def \l {\alpha}
 \newcommand{\eps}{\tau}
 \newcommand{\pl}{\partial}
 \newcommand{\supp}{{\rm supp}{\hspace{.05cm}}}
@@ -443,12 +442,12 @@ This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKar
 \end{proof}
 
 \begin{lemma}\label{NWOLEMMAA2}
-Let $0<p<\infty$, and let $\mathscr{D}$ be a
+Let $0<p<\infty$, $0<q\leq \infty$, and let $\mathscr{D}$ be a
 system of dyadic cubes over $\mathbb{R}^N$. Assume that
 $$A=\sum_{Q\in\mathscr{D}}\lambda_Q\langle \cdot,\,e_Q\rangle_{L^2(\mathbb{R}^N,dw)} f_Q,$$
 where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences and $\{\lambda_Q\}_{Q\in\mathscr{D}}$ is a sequence of scalars. We have
 \begin{align}\label{nwose}
-\|A\|_{S^{p}}\leq C_{N,p,w} \|\{\lambda_Q\}_Q\|_{\ell^{p}}.
+\|A\|_{S^{p,q}}\leq C_{N,p,q,w} \|\{\lambda_Q\}_Q\|_{\ell^{p,q}}.
 \end{align}
 \end{lemma}
 \begin{proof}
@@ -1083,28 +1082,1155 @@ w\big(B_\Gamma(x,r)\big)\ \simeq\ r^N\prod_{v\in R_+}\big(L_{v,0}+r\big)^{2k(v)}
 This proves \eqref{eq:ball-2sided-Gamma}. The second statement follows immediately from \eqref{eq:ball-2sided-Gamma}. The third statement follows from the inequalities \eqref{eq:ball-2sided-Gamma} and \eqref{twosideinequ}. This completes the proof of Theorem~\ref{main:dunkldoubling}.
 \end{proof}
 
-\section{Test Section}
+%\section{Test Section}
+%\begin{lemma}\label{lem:Cwikel-Dunkl}
+%Assume that
+%\[
+%N>2
+%\qquad\text{and}\qquad
+%\operatorname{span}(R)=\mathbb R^N.
+%\]
+%Then there exists a constant $C_{N,R,k}>0$ such that, for every
+%$f\in L^N(\mathbb R^N,dx)$,
+%\[
+%M_f(-\Delta_{\D})^{-1/2}
+%\in
+%S^{N,\infty}\bigl(L^2(\mathbb R^N,dw)\bigr)
+%\]
+%and
+%\begin{equation}\label{eq:Cwikel-Dunkl}
+%\bigl\|
+%M_f(-\Delta_{\D})^{-1/2}
+%\bigr\|_
+%{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+%\leq
+%C_{N,R,k}
+%\|f\|_{L^N(\mathbb R^N,dx)}.
+%\end{equation}
+%\end{lemma}
+%
+%\begin{proof}
+%Fix once and for all
+%\[
+%r:=\frac{N+2}{2}.
+%\]
+%Since $N>2$, we have
+%\begin{equation}\label{eq:r-range-Cwikel}
+%2<r<N.
+%\end{equation}
+%Let
+%\[
+%r'=\frac{r}{r-1}.
+%\]
+%Then $r'<2$.
+%
+%We divide the proof into five steps.
+%
+%\medskip
+%\noindent
+%\textbf{Step 1. A localized version of the rank-one decomposition.}
+%
+%Let $K_{\D}(x,y)$ denote the integral kernel of
+%$(-\Delta_{\D})^{-1/2}$.
+%We first record a refinement of the kernel estimate used in the proof of
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl}.
+%
+%Recall that
+%\[
+%V(x,y,t)
+%:=
+%\max\bigl\{
+%w(B(x,t)),w(B(y,t))
+%\bigr\}.
+%\]
+%The mixed derivative estimate for the Dunkl heat kernel used in the proof of
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl} gives, for every pair of
+%multi-indices $\alpha,\beta$,
+%\begin{equation}\label{eq:heat-local-Cwikel}
+%\left|
+%\partial_x^\alpha\partial_y^\beta h_t(x,y)
+%\right|
+%\lesssim
+%t^{-\frac{|\alpha|+|\beta|}{2}}
+%V(x,y,\sqrt t)^{-1}
+%\exp\left(-c\frac{d(x,y)^2}{t}\right).
+%\end{equation}
+%Set
+%\[
+%m:=|\alpha|+|\beta|,
+%\qquad
+%\delta:=d(x,y)>0.
+%\]
+%By the integral representation of the fractional power, already justified in
+%the proof of Lemma~\ref{lem:rank-one-decomposition-Dunkl},
+%\[
+%K_{\D}(x,y)
+%=
+%\frac1{\sqrt\pi}
+%\int_0^\infty h_t(x,y)\,\frac{dt}{\sqrt t},
+%\]
+%and differentiation under the integral sign yields
+%\begin{equation}\label{eq:K-derivative-volume-before}
+%\left|
+%\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
+%\right|
+%\lesssim
+%\int_0^\infty
+%t^{-\frac{m+1}{2}}
+%V(x,y,\sqrt t)^{-1}
+%\exp\left(-c\frac{\delta^2}{t}\right)\,dt.
+%\end{equation}
+%
+%We estimate the two ranges $0<t\leq\delta^2$ and
+%$t\geq\delta^2$ separately.
+%
+%If $0<t\leq\delta^2$, then $\sqrt t\leq\delta$. By
+%\eqref{doublinginequality}, using the upper homogeneous dimension $\N$,
+%\[
+%V(x,y,\sqrt t)
+%\gtrsim
+%\left(\frac{\sqrt t}{\delta}\right)^{\N}
+%V(x,y,\delta).
+%\]
+%Consequently,
+%\begin{align}
+%&\int_0^{\delta^2}
+%t^{-\frac{m+1}{2}}
+%V(x,y,\sqrt t)^{-1}
+%\exp\left(-c\frac{\delta^2}{t}\right)\,dt
+%\nonumber\\
+%&\qquad\lesssim
+%\frac{\delta^\N}{V(x,y,\delta)}
+%\int_0^{\delta^2}
+%t^{-\frac{\N+m+1}{2}}
+%\exp\left(-c\frac{\delta^2}{t}\right)\,dt.
+%\label{eq:small-t-Cwikel}
+%\end{align}
+%Making the change of variables $s=\delta^2/t$, we obtain
+%\begin{align*}
+%\int_0^{\delta^2}
+%t^{-\frac{\N+m+1}{2}}
+%e^{-c\delta^2/t}\,dt
+%&=
+%\delta^{1-\N-m}
+%\int_1^\infty
+%s^{\frac{\N+m-3}{2}}e^{-cs}\,ds
+%\\
+%&\lesssim
+%\delta^{1-\N-m}.
+%\end{align*}
+%Thus,
+%\begin{equation}\label{eq:small-t-result}
+%\int_0^{\delta^2}
+%t^{-\frac{m+1}{2}}
+%V(x,y,\sqrt t)^{-1}
+%e^{-c\delta^2/t}\,dt
+%\lesssim
+%\frac{\delta^{1-m}}{V(x,y,\delta)}.
+%\end{equation}
+%
+%If $t\geq\delta^2$, then $\sqrt t\geq\delta$. Using the lower
+%homogeneous dimension $N$ in \eqref{doublinginequality}, we have
+%\[
+%V(x,y,\sqrt t)
+%\gtrsim
+%\left(\frac{\sqrt t}{\delta}\right)^N
+%V(x,y,\delta).
+%\]
+%Hence
+%\begin{align}
+%&\int_{\delta^2}^{\infty}
+%t^{-\frac{m+1}{2}}
+%V(x,y,\sqrt t)^{-1}
+%e^{-c\delta^2/t}\,dt
+%\nonumber\\
+%&\qquad\lesssim
+%\frac{\delta^N}{V(x,y,\delta)}
+%\int_{\delta^2}^{\infty}
+%t^{-\frac{N+m+1}{2}}\,dt
+%\lesssim
+%\frac{\delta^{1-m}}{V(x,y,\delta)}.
+%\label{eq:large-t-result}
+%\end{align}
+%Combining
+%\eqref{eq:K-derivative-volume-before},
+%\eqref{eq:small-t-result}, and
+%\eqref{eq:large-t-result}, we obtain the localized derivative estimate
+%\begin{equation}\label{eq:localized-K-derivative}
+%\boxed{
+%\left|
+%\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
+%\right|
+%\lesssim
+%\frac{d(x,y)^{1-|\alpha|-|\beta|}}
+%{V(x,y,d(x,y))}
+%}.
+%\end{equation}
+%
+%We now repeat the dyadic localization and Fourier-expansion argument from
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl}, but use
+%\eqref{eq:localized-K-derivative} instead of the cruder estimate
+%\[
+%|\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)|
+%\lesssim
+%d(x,y)^{-(\N-1+|\alpha|+|\beta|)}.
+%\]
+%
+%Fix a Weyl chamber $\Gamma$. Since
+%$\operatorname{span}(R)=\mathbb R^N$, Corollary
+%\ref{coro:chamber-orthant} gives a linear isomorphism
+%\[
+%\Phi:\mathbb R^N\longrightarrow\mathbb R^N
+%\]
+%such that
+%\[
+%\Phi(\Gamma)=\Omega:=\mathbb R_+^N.
+%\]
+%Let $\mathbb D_\Gamma$ be the dyadic system constructed in
+%Corollary~\ref{Construction over gamma}.
+%For
+%\[
+%I=\Phi^{-1}(Q)\in\mathbb D_\Gamma,
+%\]
+%write
+%\[
+%\ell(I)=\ell(Q).
+%\]
+%
+%As in the proof of Lemma~\ref{lem:rank-one-decomposition-Dunkl},
+%after fixing $\sigma,\tau\in G$ and localizing by the function $\psi$,
+%the relevant pairs $(x,y)$ satisfy
+%\begin{equation}\label{eq:distance-scale-Cwikel}
+%d(x,y)\simeq\ell(I).
+%\end{equation}
+%Moreover, all points occurring after introducing the fixed smooth cutoffs in
+%the Fourier expansion remain within distance $C\ell(I)$ from
+%$\sigma I$ and $\tau I^\ast$, respectively. By the doubling property,
+%Theorem~\ref{main:dunkldoubling}, the $G$-invariance of $dw$, and
+%\eqref{eq:distance-scale-Cwikel},
+%\begin{equation}\label{eq:V-wI-comparable}
+%V(x,y,d(x,y))
+%\simeq
+%w(I)
+%\end{equation}
+%uniformly on the support of each localized piece. Here, as in
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl},
+%\[
+%I^\ast=\Phi^{-1}((2Q)\cap\Omega),
+%\qquad
+%w(I^\ast)\simeq w(I).
+%\]
+%
+%Therefore \eqref{eq:localized-K-derivative} implies that, on every such
+%localized piece,
+%\begin{equation}\label{eq:localized-K-derivative-I}
+%\left|
+%\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
+%\right|
+%\lesssim
+%\frac{\ell(I)^{1-|\alpha|-|\beta|}}{w(I)}.
+%\end{equation}
+%
+%Let $c_Q$ be the center of $Q$ and put
+%\[
+%a=\frac{\Phi(\sigma^{-1}x)-c_Q}{\ell(I)},
+%\qquad
+%b=\frac{\Phi(\tau^{-1}y)-c_Q}{\ell(I)}.
+%\]
+%Using exactly the same cutoffs $\chi_Q$ and $\psi$ as in the proof of
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl}, define
+%\begin{equation}\label{eq:rescaled-H-Cwikel}
+%\begin{split}
+%\widetilde H_{\sigma,\tau,I}(a,b)
+%:={}&
+%\frac{w(I)}{\ell(I)}
+%\chi_Q(a,b)\psi(a-b)
+%\\
+%&\times
+%K_{\D}\left(
+%\sigma\Phi^{-1}(c_Q+\ell(I)a),
+%\tau\Phi^{-1}(c_Q+\ell(I)b)
+%\right).
+%\end{split}
+%\end{equation}
+%Every derivative of total order $m$ with respect to $(a,b)$ produces a factor
+%$\ell(I)^m$. Hence, by
+%\eqref{eq:localized-K-derivative-I},
+%\[
+%\frac{w(I)}{\ell(I)}
+%\ell(I)^m
+%\frac{\ell(I)^{1-m}}{w(I)}
+%\lesssim1.
+%\]
+%The derivatives of the fixed cutoffs are uniformly bounded. Thus, for every
+%integer $M\geq0$,
+%\begin{equation}\label{eq:H-uniform-CM-Cwikel}
+%\sup_{\sigma,\tau\in G}
+%\sup_{I\in\mathbb D_\Gamma}
+%\|
+%\widetilde H_{\sigma,\tau,I}
+%\|_{C^M(\mathbb R^{2N})}
+%<\infty.
+%\end{equation}
+%
+%Consequently, the same Fourier-series argument as in
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl} gives coefficients
+%$b_{p,q,I}^{\sigma,\tau}$ such that
+%\[
+%\widetilde H_{\sigma,\tau,I}(a,b)
+%=
+%\sum_{p,q\in\mathbb Z^N}
+%b_{p,q,I}^{\sigma,\tau}
+%e^{\frac{\pi i}{2}p\cdot a}
+%e^{\frac{\pi i}{2}q\cdot b}
+%\]
+%and, for every $M>0$,
+%\begin{equation}\label{eq:bpq-rapid-Cwikel}
+%\sup_{\sigma,\tau\in G}
+%\sup_{I\in\mathbb D_\Gamma}
+%|b_{p,q,I}^{\sigma,\tau}|
+%\leq
+%C_M(1+|p|+|q|)^{-M}.
+%\end{equation}
+%
+%Fix $M>2N$ and set
+%\[
+%c_{p,q}:=
+%C_M(1+|p|+|q|)^{-M},
+%\]
+%with $C_M$ chosen large enough that
+%\[
+%|b_{p,q,I}^{\sigma,\tau}|\leq c_{p,q}
+%\]
+%for every $\sigma,\tau,I$. Then
+%\begin{equation}\label{eq:cpq-l1-Cwikel}
+%\sum_{p,q\in\mathbb Z^N}c_{p,q}<\infty.
+%\end{equation}
+%The quotient
+%\[
+%a_{p,q,I}^{\sigma,\tau}
+%:=
+%\frac{b_{p,q,I}^{\sigma,\tau}}{c_{p,q}}
+%\]
+%satisfies
+%\[
+%|a_{p,q,I}^{\sigma,\tau}|\leq1.
+%\]
+%We absorb this factor into the first rank-one function.
+%
+%For
+%\[
+%A_{\sigma,I}
+%:=
+%\|f\|_{L^r(\sigma I,dw)},
+%\]
+%define, when $A_{\sigma,I}>0$,
+%\begin{equation}\label{eq:e-Cwikel}
+%\begin{split}
+%e_{p,q,I}^{\sigma,\tau}(x)
+%:={}&
+%a_{p,q,I}^{\sigma,\tau}
+%w(I)^{\frac1r-\frac12}
+%\frac{f(x)\chi_{\sigma I}(x)}{A_{\sigma,I}}
+%\\
+%&\times
+%\exp\left(
+%\frac{\pi i}{2\ell(I)}
+%p\cdot
+%\bigl(\Phi(\sigma^{-1}x)-c_Q\bigr)
+%\right),
+%\end{split}
+%\end{equation}
+%and put $e_{p,q,I}^{\sigma,\tau}=0$ when $A_{\sigma,I}=0$.
+%Also define
+%\begin{equation}\label{eq:h-Cwikel}
+%\begin{split}
+%h_{p,q,I}^{\sigma,\tau}(y)
+%:={}&
+%w(I)^{-1/2}
+%\chi_{\tau I^\ast}(y)
+%\\
+%&\times
+%\exp\left(
+%-\frac{\pi i}{2\ell(I)}
+%q\cdot
+%\bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
+%\right).
+%\end{split}
+%\end{equation}
+%If necessary, we replace $h_{p,q,I}^{\sigma,\tau}$ by its complex conjugate
+%according to the convention
+%\[
+%(u\otimes v)\xi=\langle\xi,v\rangle u.
+%\]
+%This has no effect on any support or norm estimate below.
+%
+%The support properties are
+%\begin{equation}\label{eq:support-Cwikel}
+%\operatorname{supp}e_{p,q,I}^{\sigma,\tau}
+%\subset\sigma I,
+%\qquad
+%\operatorname{supp}h_{p,q,I}^{\sigma,\tau}
+%\subset\tau I^\ast
+%\subset\tau(3_\Phi I).
+%\end{equation}
+%Furthermore,
+%\begin{equation}\label{eq:e-Lr-Cwikel}
+%\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
+%\leq
+%w(I)^{\frac1r-\frac12},
+%\end{equation}
+%whereas $w(I^\ast)\simeq w(I)$ implies
+%\begin{equation}\label{eq:h-Lr-Cwikel}
+%\|h_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
+%\lesssim
+%w(I)^{\frac1r-\frac12}.
+%\end{equation}
+%
+%Define
+%\begin{equation}\label{eq:lambda-Cwikel}
+%\lambda_{\sigma,I}(f)
+%:=
+%\ell(I)\,
+%w(I)^{-1/r}
+%\|f\|_{L^r(\sigma I,dw)}.
+%\end{equation}
+%A direct calculation gives
+%\[
+%\lambda_{\sigma,I}(f)
+%w(I)^{\frac1r-\frac12}
+%A_{\sigma,I}^{-1}
+%w(I)^{-1/2}
+%=
+%\frac{\ell(I)}{w(I)}.
+%\]
+%It follows from the Fourier expansion above and the dyadic partition of unity
+%used in Lemma~\ref{lem:rank-one-decomposition-Dunkl} that
+%\begin{equation}\label{eq:operator-rank-one-Cwikel}
+%M_f(-\Delta_{\D})^{-1/2}
+%=
+%C
+%\sum_{\sigma,\tau\in G}
+%\sum_{p,q\in\mathbb Z^N}
+%c_{p,q}
+%\sum_{I\in\mathbb D_\Gamma}
+%\lambda_{\sigma,I}(f)\,
+%e_{p,q,I}^{\sigma,\tau}
+%\otimes
+%h_{p,q,I}^{\sigma,\tau},
+%\end{equation}
+%initially as an identity of kernels, and hence as an identity of bilinear forms
+%on the natural test-function class.
+%
+%This is the localized refinement of
+%Lemma~\ref{lem:rank-one-decomposition-Dunkl} needed below. Notice that
+%the power $\ell(I)^{-(\N-1)}$ from the cruder version has disappeared:
+%the local size of the fractional kernel is
+%\[
+%\frac{\ell(I)}{w(I)},
+%\]
+%which is the correct scale for the present Cwikel estimate.
+%
+%\medskip
+%\noindent
+%\textbf{Step 2. A variant of XXX.}
+%
+%We prove
+%\begin{equation}\label{eq:lambda-weak-lN}
+%\left\|
+%\left\{
+%\lambda_{\sigma,I}(f)
+%\right\}_{I\in\mathbb D_\Gamma}
+%\right\|_{\ell^{N,\infty}}
+%\lesssim
+%\|f\|_{L^N(\mathbb R^N,dx)}
+%\end{equation}
+%uniformly in $\sigma\in G$.
+%
+%Since $\operatorname{span}(R)=\mathbb R^N$, we have $N_0=N$ in
+%Lemma~\ref{mulemma}. Thus
+%\[
+%\Omega=\mathbb R_+^N,
+%\]
+%and the push-forward measure
+%\[
+%\mu(E):=w(\Phi^{-1}(E))
+%\]
+%has density
+%\begin{equation}\label{eq:phi-Cwikel}
+%d\mu(u)=\phi(u)\,du,
+%\qquad
+%\phi(u)
+%=
+%|\det\Phi|^{-1}
+%\prod_{v\in R_+}
+%\left(
+%\sum_{j=1}^N a_{v,j}u_j
+%\right)^{2k(v)},
+%\end{equation}
+%where
+%\[
+%a_{v,j}\geq0.
+%\]
+%Hence $\phi$ is nondecreasing in each coordinate.
+%
+%Let
+%\[
+%Q
+%=
+%\prod_{j=1}^N
+%[m_j\ell,(m_j+1)\ell)
+%\subset\Omega,
+%\qquad m_j\in\mathbb Z_+,
+%\]
+%and let
+%\[
+%u^+
+%:=
+%((m_1+1)\ell,\ldots,(m_N+1)\ell)
+%\]
+%be its upper corner. Set
+%\[
+%Q^+
+%:=
+%\prod_{j=1}^N
+%[(m_j+\tfrac12)\ell,(m_j+1)\ell).
+%\]
+%Then
+%\[
+%|Q^+|=2^{-N}|Q|.
+%\]
+%For $u\in Q^+$,
+%\[
+%u_j
+%\geq
+%(m_j+\tfrac12)\ell
+%\geq
+%\frac12(m_j+1)\ell
+%=
+%\frac12 u_j^+.
+%\]
+%Since $a_{v,j}\geq0$,
+%\[
+%\sum_{j=1}^N a_{v,j}u_j
+%\geq
+%\frac12
+%\sum_{j=1}^N a_{v,j}u_j^+.
+%\]
+%Therefore
+%\[
+%\phi(u)
+%\geq
+%2^{-2\sum_{v\in R_+}k(v)}
+%\phi(u^+).
+%\]
+%Since
+%\[
+%2\sum_{v\in R_+}k(v)
+%=
+%\sum_{v\in R}k(v)
+%=
+%\N-N,
+%\]
+%we obtain
+%\[
+%\phi(u)
+%\geq
+%2^{-(\N-N)}\phi(u^+),
+%\qquad u\in Q^+.
+%\]
+%Consequently,
+%\begin{align}
+%\mu(Q)
+%&=
+%\int_Q\phi(u)\,du
+%\nonumber\\
+%&\geq
+%\int_{Q^+}\phi(u)\,du
+%\nonumber\\
+%&\geq
+%2^{-(\N-N)}
+%|Q^+|\phi(u^+)
+%\nonumber\\
+%&=
+%2^{-\N}|Q|\phi(u^+).
+%\label{eq:phi-average-lower}
+%\end{align}
+%Since $\phi$ is coordinatewise nondecreasing,
+%\[
+%\sup_{u\in Q}\phi(u)=\phi(u^+)
+%\]
+%in the sense of essential supremum. Hence
+%\begin{equation}\label{eq:phi-sup-average}
+%\boxed{
+%\sup_{u\in Q}\phi(u)
+%\leq
+%2^\N\frac{\mu(Q)}{|Q|}
+%}.
+%\end{equation}
+%
+%Let $I=\Phi^{-1}(Q)$. By the $G$-invariance of $dw$,
+%\begin{align*}
+%\frac1{w(I)}
+%\int_{\sigma I}|f(x)|^r\,dw(x)
+%&=
+%\frac1{\mu(Q)}
+%\int_Q
+%|f(\sigma\Phi^{-1}(u))|^r
+%\phi(u)\,du
+%\\
+%&\leq
+%\frac{\sup_Q\phi}{\mu(Q)}
+%\int_Q
+%|f(\sigma\Phi^{-1}(u))|^r\,du
+%\\
+%&\lesssim
+%\frac1{|Q|}
+%\int_Q
+%|f(\sigma\Phi^{-1}(u))|^r\,du,
+%\end{align*}
+%where the last inequality follows from
+%\eqref{eq:phi-sup-average}. Therefore,
+%by \eqref{eq:lambda-Cwikel},
+%\begin{align}
+%\lambda_{\sigma,I}(f)^r
+%&=
+%\ell(I)^r
+%\frac1{w(I)}
+%\int_{\sigma I}|f(x)|^r\,dw(x)
+%\nonumber\\
+%&\lesssim
+%\ell(Q)^r
+%\frac1{|Q|}
+%\int_Q
+%|f(\sigma\Phi^{-1}(u))|^r\,du.
+%\label{eq:lambda-to-Lebesgue-average}
+%\end{align}
+%Since $|Q|=\ell(Q)^N$,
+%\[
+%\ell(Q)^r|Q|^{-1}
+%=
+%|Q|^{\frac rN-1}.
+%\]
+%Set
+%\[
+%s:=\frac Nr.
+%\]
+%By \eqref{eq:r-range-Cwikel},
+%\[
+%1<s<\infty.
+%\]
+%Define on $\mathbb R^N$
+%\[
+%F_\sigma(u)
+%:=
+%\begin{cases}
+%|f(\sigma\Phi^{-1}(u))|^r,
+%&u\in\Omega,\\
+%0,
+%&u\notin\Omega.
+%\end{cases}
+%\]
+%Then \eqref{eq:lambda-to-Lebesgue-average} becomes
+%\begin{equation}\label{eq:lambda-r-Zhijie}
+%\lambda_{\sigma,I}(f)^r
+%\lesssim
+%|Q|^{\frac1s-1}
+%\int_QF_\sigma(u)\,du.
+%\end{equation}
+%
+%The family $\mathbb D_\Omega^0$ is a subfamily of the standard dyadic grid
+%in $\mathbb R^N$. Hence Lemma XXX, applied to $F_\sigma$
+%with exponent $s=N/r$, gives
+%\begin{align}
+%\left\|
+%\left\{
+%\lambda_{\sigma,I}(f)^r
+%\right\}_{I\in\mathbb D_\Gamma}
+%\right\|_{\ell^{N/r,\infty}}
+%&\lesssim
+%\|F_\sigma\|_{L^{N/r}(\mathbb R^N)}.
+%\label{eq:Zhijie-applied}
+%\end{align}
+%
+%For every nonnegative sequence $\{a_I\}$,
+%\begin{equation}\label{eq:weak-power-identity}
+%\left\|
+%\{a_I^r\}
+%\right\|_{\ell^{N/r,\infty}}
+%=
+%\left\|
+%\{a_I\}
+%\right\|_{\ell^{N,\infty}}^r.
+%\end{equation}
+%Indeed,
+%\[
+%\#\{I:a_I^r>t\}
+%=
+%\#\{I:a_I>t^{1/r}\},
+%\]
+%and the identity follows directly from the distribution-function definition of
+%the weak Lorentz norm.
+%
+%Furthermore,
+%\begin{align*}
+%\|F_\sigma\|_{L^{N/r}}^{1/r}
+%&=
+%\left(
+%\int_\Omega
+%|f(\sigma\Phi^{-1}(u))|^N\,du
+%\right)^{1/N}
+%\\
+%&=
+%|\det\Phi|^{1/N}
+%\left(
+%\int_{\sigma\Gamma}|f(x)|^N\,dx
+%\right)^{1/N}
+%\\
+%&\leq
+%|\det\Phi|^{1/N}
+%\|f\|_{L^N(\mathbb R^N,dx)}.
+%\end{align*}
+%Combining this with
+%\eqref{eq:Zhijie-applied} and
+%\eqref{eq:weak-power-identity} proves
+%\eqref{eq:lambda-weak-lN}.
+%
+%\medskip
+%\noindent
+%\textbf{Step 3. Nearly weak orthogonality of the rank-one factors.}
+%
+%Fix
+%\[
+%\sigma,\tau\in G,
+%\qquad
+%p,q\in\mathbb Z^N.
+%\]
+%Let
+%\[
+%U_\sigma:L^2(\Gamma,dw)\longrightarrow L^2(\sigma\Gamma,dw),
+%\qquad
+%U_\sigma u(x):=u(\sigma^{-1}x).
+%\]
+%Since $dw$ is $G$-invariant, $U_\sigma$ is unitary. Define the pullbacks
+%\[
+%\widetilde e_I
+%:=
+%U_\sigma^{-1}
+%e_{p,q,I}^{\sigma,\tau},
+%\qquad
+%\widetilde h_I
+%:=
+%U_\tau^{-1}
+%h_{p,q,I}^{\sigma,\tau}.
+%\]
+%Then
+%\[
+%\operatorname{supp}\widetilde e_I\subset I,
+%\qquad
+%\operatorname{supp}\widetilde h_I\subset I^\ast.
+%\]
+%By the construction of $\mathbb D_\Gamma$, the bi-Lipschitz property
+%\eqref{eq:biLip-N}, and $I^\ast\subset3_\Phi I$, there is a fixed constant
+%$C_\ast$ such that
+%\[
+%I\cup I^\ast
+%\subset
+%B_I^\ast
+%:=
+%B_\Gamma(z_I,C_\ast\ell(I))
+%\]
+%for a suitable $z_I\in I$. Moreover, by
+%Theorem~\ref{main:dunkldoubling},
+%\begin{equation}\label{eq:Bstar-I-measure}
+%w(B_I^\ast)\simeq w(I).
+%\end{equation}
+%From \eqref{eq:e-Lr-Cwikel} and
+%\eqref{eq:h-Lr-Cwikel},
+%\begin{equation}\label{eq:NWO-Lr}
+%\|\widetilde e_I\|_{L^r(dw)}
+%+
+%\|\widetilde h_I\|_{L^r(dw)}
+%\lesssim
+%w(I)^{\frac1r-\frac12}.
+%\end{equation}
+%
+%For $u\in L^2(\Gamma,dw)$, define
+%\[
+%\mathcal M_1u(x)
+%:=
+%\sup_{I\in\mathbb D_\Gamma}
+%\chi_I(x)
+%\frac{|\langle u,\widetilde e_I\rangle|}
+%{w(I)^{1/2}}.
+%\]
+%By H\"older's inequality, \eqref{eq:NWO-Lr}, and
+%\eqref{eq:Bstar-I-measure},
+%\begin{align*}
+%\frac{|\langle u,\widetilde e_I\rangle|}{w(I)^{1/2}}
+%&\leq
+%\frac{
+%\|\chi_{B_I^\ast}u\|_{L^{r'}(dw)}
+%\|\widetilde e_I\|_{L^r(dw)}
+%}{w(I)^{1/2}}
+%\\
+%&\lesssim
+%\|\chi_{B_I^\ast}u\|_{L^{r'}(dw)}
+%w(I)^{\frac1r-1}
+%\\
+%&=
+%\|\chi_{B_I^\ast}u\|_{L^{r'}(dw)}
+%w(I)^{-1/r'}
+%\\
+%&\lesssim
+%\left(
+%\fint_{B_I^\ast}|u|^{r'}\,dw
+%\right)^{1/r'}.
+%\end{align*}
+%Therefore
+%\begin{equation}\label{eq:M1-maximal}
+%\mathcal M_1u
+%\lesssim
+%\left(
+%M_\Gamma(|u|^{r'})
+%\right)^{1/r'},
+%\end{equation}
+%where $M_\Gamma$ denotes the Hardy--Littlewood maximal operator on the
+%doubling metric measure space $(\Gamma,\|\cdot\|,dw)$.
+%
+%Since $r'<2$, we have
+%\[
+%\frac2{r'}>1.
+%\]
+%The Hardy--Littlewood maximal operator is bounded on
+%$L^{2/r'}(\Gamma,dw)$, and hence
+%\begin{align*}
+%\|\mathcal M_1u\|_{L^2(dw)}
+%&\lesssim
+%\left\|
+%M_\Gamma(|u|^{r'})
+%\right\|_{L^{2/r'}(dw)}^{1/r'}
+%\\
+%&\lesssim
+%\||u|^{r'}\|_{L^{2/r'}(dw)}^{1/r'}
+%\\
+%&=
+%\|u\|_{L^2(dw)}.
+%\end{align*}
+%The identical argument, with $\widetilde h_I$ in place of
+%$\widetilde e_I$, proves the $L^2$ boundedness of
+%\[
+%\mathcal M_2v(x)
+%:=
+%\sup_{I\in\mathbb D_\Gamma}
+%\chi_I(x)
+%\frac{|\langle v,\widetilde h_I\rangle|}
+%{w(I)^{1/2}}.
+%\]
+%
+%Now define the bi-sublinear maximal operator
+%\[
+%\mathcal M_{\mathcal E}(u,v)(x)
+%:=
+%\sup_{I\in\mathbb D_\Gamma}
+%\chi_I(x)
+%\frac{
+%|\langle u,\widetilde e_I\rangle
+%\langle v,\widetilde h_I\rangle|
+%}{w(I)}.
+%\]
+%Then
+%\[
+%\mathcal M_{\mathcal E}(u,v)
+%\leq
+%\mathcal M_1u\,\mathcal M_2v.
+%\]
+%Thus, by Cauchy--Schwarz,
+%\begin{equation}\label{eq:ME-L2L2-L1}
+%\|
+%\mathcal M_{\mathcal E}(u,v)
+%\|_{L^1(dw)}
+%\lesssim
+%\|u\|_{L^2(dw)}
+%\|v\|_{L^2(dw)}.
+%\end{equation}
+%This is precisely the NWO estimate required in
+%\cite[Corollary~7.6 and Remark~7.9]{HKarxiv}.
+%
+%\medskip
+%\noindent
+%\textbf{Step 4. Application of Corollary 7.6.}
+%
+%For the fixed $\sigma,\tau,p,q$, consider on
+%$L^2(\Gamma,dw)$ the operator
+%\[
+%A_{\sigma,\tau,p,q}(f)
+%:=
+%\sum_{I\in\mathbb D_\Gamma}
+%\lambda_{\sigma,I}(f)
+%\widetilde e_I\otimes\widetilde h_I.
+%\]
+%Applying \cite[Corollary~7.6]{HKarxiv} with
+%\[
+%p=N,
+%\qquad
+%q=\infty,
+%\]
+%and using \eqref{eq:ME-L2L2-L1}, we obtain
+%\begin{align}
+%\|
+%A_{\sigma,\tau,p,q}(f)
+%\|_{S^{N,\infty}(L^2(\Gamma,dw))}
+%&\lesssim
+%\left\|
+%\{\lambda_{\sigma,I}(f)\}_{I\in\mathbb D_\Gamma}
+%\right\|_{\ell^{N,\infty}}
+%\nonumber\\
+%&\lesssim
+%\|f\|_{L^N(\mathbb R^N,dx)},
+%\label{eq:block-SNweak}
+%\end{align}
+%where the last inequality follows from
+%\eqref{eq:lambda-weak-lN}.
+%
+%The original block
+%\[
+%\sum_{I\in\mathbb D_\Gamma}
+%\lambda_{\sigma,I}(f)
+%e_{p,q,I}^{\sigma,\tau}
+%\otimes
+%h_{p,q,I}^{\sigma,\tau}
+%\]
+%acts from $L^2(\tau\Gamma,dw)$ to
+%$L^2(\sigma\Gamma,dw)$ and is obtained from
+%$A_{\sigma,\tau,p,q}(f)$ by unitary transformations on the
+%domain and the range. Hence its nonzero singular values coincide with those
+%of $A_{\sigma,\tau,p,q}(f)$. Therefore
+%\begin{equation}\label{eq:original-block-SNweak}
+%\left\|
+%\sum_{I\in\mathbb D_\Gamma}
+%\lambda_{\sigma,I}(f)
+%e_{p,q,I}^{\sigma,\tau}
+%\otimes
+%h_{p,q,I}^{\sigma,\tau}
+%\right\|_{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+%\lesssim
+%\|f\|_{L^N(dx)}.
+%\end{equation}
+%
+%\medskip
+%\noindent
+%\textbf{Step 5. Summation over the Fourier indices and Weyl chambers.}
+%
+%For completeness, we recall a convenient norm equivalent to the usual weak
+%Schatten quasi-norm. If $T$ is compact, let
+%\[
+%s_1(T)\geq s_2(T)\geq\cdots
+%\]
+%be its singular values and define
+%\[
+%\|T\|_{(N,\infty)}
+%:=
+%\sup_{m\geq1}
+%m^{\frac1N-1}
+%\sum_{j=1}^m s_j(T).
+%\]
+%By the Ky Fan inequality,
+%\[
+%\sum_{j=1}^m s_j(A+B)
+%\leq
+%\sum_{j=1}^m s_j(A)
+%+
+%\sum_{j=1}^m s_j(B),
+%\]
+%so $\|\cdot\|_{(N,\infty)}$ satisfies the triangle inequality.
+%
+%Moreover,
+%\[
+%m^{1/N}s_m(T)
+%\leq
+%m^{\frac1N-1}
+%\sum_{j=1}^m s_j(T),
+%\]
+%while, if
+%\[
+%K:=\sup_{j\geq1}j^{1/N}s_j(T),
+%\]
+%then
+%\[
+%s_j(T)\leq K j^{-1/N},
+%\]
+%and hence
+%\[
+%m^{\frac1N-1}
+%\sum_{j=1}^m s_j(T)
+%\leq
+%K
+%m^{\frac1N-1}
+%\sum_{j=1}^m j^{-1/N}
+%\lesssim_N K.
+%\]
+%Thus
+%\begin{equation}\label{eq:equiv-weak-Schatten-norm}
+%\|T\|_{(N,\infty)}
+%\simeq_N
+%\|T\|_{S^{N,\infty}}.
+%\end{equation}
+%
+%Using the decomposition
+%\eqref{eq:operator-rank-one-Cwikel},
+%the triangle inequality for $\|\cdot\|_{(N,\infty)}$,
+%\eqref{eq:original-block-SNweak}, and
+%\eqref{eq:cpq-l1-Cwikel}, we obtain
+%\begin{align*}
+%&
+%\|
+%M_f(-\Delta_{\D})^{-1/2}
+%\|_{S^{N,\infty}(L^2(dw))}
+%\\
+%&\qquad\lesssim_N
+%\sum_{\sigma,\tau\in G}
+%\sum_{p,q\in\mathbb Z^N}
+%c_{p,q}
+%\left\|
+%\sum_{I\in\mathbb D_\Gamma}
+%\lambda_{\sigma,I}(f)
+%e_{p,q,I}^{\sigma,\tau}
+%\otimes
+%h_{p,q,I}^{\sigma,\tau}
+%\right\|_{S^{N,\infty}}
+%\\
+%&\qquad\lesssim
+%\sum_{\sigma,\tau\in G}
+%\sum_{p,q\in\mathbb Z^N}
+%c_{p,q}
+%\|f\|_{L^N(dx)}
+%\\
+%&\qquad=
+%|G|^2
+%\left(
+%\sum_{p,q\in\mathbb Z^N}c_{p,q}
+%\right)
+%\|f\|_{L^N(dx)}
+%\\
+%&\qquad\lesssim_{N,R,k}
+%\|f\|_{L^N(\mathbb R^N,dx)}.
+%\end{align*}
+%This proves \eqref{eq:Cwikel-Dunkl} for, say, bounded compactly supported
+%$f$.
+%
+%Finally, let $f\in L^N(\mathbb R^N,dx)$ be arbitrary and choose bounded
+%compactly supported functions $f_j$ such that
+%\[
+%\|f_j-f\|_{L^N(dx)}\longrightarrow0.
+%\]
+%Applying the estimate already proved to $f_j-f_m$, we see that
+%\[
+%\left\{
+%M_{f_j}(-\Delta_{\D})^{-1/2}
+%\right\}_{j\geq1}
+%\]
+%is Cauchy in $S^{N,\infty}$ with respect to the equivalent norm
+%\eqref{eq:equiv-weak-Schatten-norm}. It therefore converges to an operator
+%$T_f\in S^{N,\infty}$ satisfying
+%\[
+%\|T_f\|_{S^{N,\infty}}
+%\lesssim_{N,R,k}
+%\|f\|_{L^N(dx)}.
+%\]
+%Since $r<N$, every $L^N(dx)$ function belongs locally to $L^r(dw)$:
+%indeed, the density $dw/dx$ is bounded on compact subsets of
+%$\mathbb R^N$, and $L^N$ embeds locally into $L^r$. Consequently the
+%kernel decomposition above is valid locally for $f$. Passing to the limit in
+%the kernel identity on the natural test-function class shows that $T_f$ is the
+%closure of the integral operator with kernel
+%\[
+%f(x)K_{\D}(x,y),
+%\]
+%that is,
+%\[
+%T_f=M_f(-\Delta_{\D})^{-1/2}.
+%\]
+%The proof is complete.
+%\end{proof}
+
+\section{Cwikel's estimate in $N>2$}
+\begin{nota}
+Fix a closed Weyl chamber $\Gamma$, and let
+\[
+\Phi:\mathbb R^N\longrightarrow\mathbb R^N
+\]
+be the linear isomorphism appearing in
+Corollary~\ref{coro:chamber-orthant}.
+
+
+Let
+\[
+\mathbb D_\Gamma
+=
+\bigcup_{j\in\mathbb Z}\mathbb D_{\Gamma,j}
+\]
+be the dyadic system over $\Gamma$ constructed in
+Corollary~\ref{Construction over gamma}.
+If
+$I\in\mathbb D_{\Gamma,j}$, then
+\[
+I=\Phi^{-1}(Q)
+\]
+for a unique standard dyadic cube $Q\subset\Omega$ with
+$\ell(Q)=2^{-j}$, and we put
+\[
+\ell(I):=\ell(Q),
+\]
+set
+\[
+I^\ast
+:=
+\Phi^{-1}\bigl((2Q)\cap\Omega\bigr).
+\]
+
+
+Let $K_{(-\Delta_{\D})^{-1/2}}(x,y)$ denote the integral kernel of
+$(-\Delta_{\D})^{-1/2}$.
+
+For $\sigma\in G,I\in\mathbb D_\Gamma$, and for every
+$f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw)$, define
+\begin{equation}\label{eq:Dunkl-lambda-rank-one}
+\lambda_{\sigma,I}(f)
+:=
+\ell(I)\,
+w(I)^{-1/r}
+\|f\|_{L^r(\sigma I,dw)}
+.
+\end{equation}
+\end{nota}
+
 \begin{lemma}\label{lem:Dunkl-fractional-kernel-derivative}
-Let $K_{\D}(x,y)$ denote the integral kernel of
-$(-\Delta_{\D})^{-1/2}$. Then, for every pair of multi-indices
-$\alpha,\beta$, there exists a constant $C_{\alpha,\beta}>0$ such that
-\begin{equation}\label{eq:Dunkl-fractional-kernel-derivative-lemma}
+Assume that $N>1$. Then for every pair of multi-indices $\alpha,\beta$, there exists
+a constant $C_{\alpha,\beta}>0$ such that
+\begin{equation}\label{eq:localized-K-derivative}
 \left|
-\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
 \right|
 \leq
 C_{\alpha,\beta}
-d(x,y)^{-(\N-1+|\alpha|+|\beta|)}
+\frac{
+d(x,y)^{1-|\alpha|-|\beta|}
+}{
+V(x,y,d(x,y))
+}
 \end{equation}
 for all $x,y\in\mathbb R^N$ satisfying $d(x,y)>0$.
 \end{lemma}
 
 \begin{proof}
-Let $h_t(x,y)$ be the heat kernel of $e^{t\Delta_{\D}}$. By
+Let $h_t(x,y)$ denote the integral kernel of the Dunkl heat semigroup
+$e^{t\Delta_{\D}}$. By
 \cite[Theorem~4.1(d)]{MR4014802}, for every pair of multi-indices
 $\alpha,\beta$, there exist constants
 $C_{\alpha,\beta},c_{\alpha,\beta}>0$ such that
-\begin{equation}\label{eq:Dunkl-heat-mixed-lemma}
+\begin{equation}\label{eq:Dunkl-heat-mixed-localized}
 \left|
 \partial_x^\alpha\partial_y^\beta h_t(x,y)
 \right|
@@ -1118,326 +2244,318 @@ V(x,y,\sqrt t)^{-1}
 \end{equation}
 for all $t>0$ and $x,y\in\mathbb R^N$.
 
-By \eqref{twosideinequ},
-\[
-w(B(z,s))
-\gtrsim
-s^N\prod_{v\in R}
-\bigl(|\langle z,v\rangle|+s\bigr)^{k(v)}
-\geq
-s^N\prod_{v\in R}s^{k(v)}
-=
-s^\N.
-\]
-Therefore,
-\[
-V(x,y,\sqrt t)
-=
-\max\{w(B(x,\sqrt t)),w(B(y,\sqrt t))\}
-\gtrsim
-t^{\N/2},
-\]
-and hence
-\[
-V(x,y,\sqrt t)^{-1}
-\lesssim
-t^{-\N/2}.
-\]
-Substituting this into
-\eqref{eq:Dunkl-heat-mixed-lemma}, we obtain
-\begin{equation}\label{eq:Dunkl-heat-simple-lemma}
-\left|
-\partial_x^\alpha\partial_y^\beta h_t(x,y)
-\right|
-\leq
-C_{\alpha,\beta}
-t^{-\frac{\N+|\alpha|+|\beta|}{2}}
-\exp\left(
--c_{\alpha,\beta}\frac{d(x,y)^2}{t}
-\right).
-\end{equation}
-By functional calculus,
+%By \eqref{twosideinequ},
+%for every $z\in\mathbb R^N$ and $s>0$,
+%\[
+%w(B(z,s))
+%\gtrsim
+%s^N
+%\prod_{v\in R}
+%\bigl(|\langle z,v\rangle|+s\bigr)^{k(v)}
+%\geq
+%s^N\prod_{v\in R}s^{k(v)}
+%=
+%s^{\N}.
+%\]
+%Hence
+%\begin{equation}\label{eq:V-global-lower-fractional}
+%V(x,y,\sqrt t)
+%\gtrsim
+%t^{\N/2},
+%\qquad t>0,
+%\end{equation}
+%uniformly in $x,y\in\mathbb R^N$.
+
+By the spectral functional calculus,
 \[
 (-\Delta_{\D})^{-1/2}
 =
-\frac1{\sqrt\pi}
+\frac{1}{\sqrt{\pi}}
 \int_0^\infty
-e^{t\Delta_{\D}}\,\frac{dt}{\sqrt t}.
+e^{t\Delta_{\D}}\,
+\frac{dt}{\sqrt t}.
 \]
- Consequently, away from the orbit diagonal,
-the corresponding integral kernel is
-\begin{equation}\label{eq:Dunkl-fractional-kernel-lemma}
-K_{\D}(x,y)
+Consequently, for $d(x,y)>0$,
+\begin{equation}\label{eq:Dunkl-fractional-kernel-localized}
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
 =
-\frac1{\sqrt\pi}
+\frac{1}{\sqrt{\pi}}
 \int_0^\infty
-h_t(x,y)\,\frac{dt}{\sqrt t},
-\qquad d(x,y)>0.
+h_t(x,y)\,\frac{dt}{\sqrt t}.
 \end{equation}
-%
-%We first verify that the integral on the right-hand side is absolutely
-%convergent. By \eqref{eq:Dunkl-heat-simple-lemma} with
-%$\alpha=\beta=0$,
-%\[
-%|h_t(x,y)|
-%\lesssim
-%t^{-\N/2}
-%\exp\left(
-%-c\frac{d(x,y)^2}{t}
-%\right).
-%\]
-%Hence, setting $\delta=d(x,y)>0$,
-%\[
-%\int_0^\infty
-%|h_t(x,y)|\,\frac{dt}{\sqrt t}
-%\lesssim
-%\int_0^\infty
-%t^{-\frac{\N+1}{2}}
-%e^{-c\delta^2/t}\,dt.
-%\]
-%With the change of variables
-%\[
-%s=\frac{\delta^2}{t},
-%\qquad
-%t=\frac{\delta^2}{s},
-%\qquad
-%dt=-\delta^2s^{-2}\,ds,
-%\]
-%we obtain
-%\begin{align*}
-%\int_0^\infty
-%t^{-\frac{\N+1}{2}}
-%e^{-c\delta^2/t}\,dt
-%&=
-%\delta^{1-\N}
-%\int_0^\infty
-%s^{\frac{\N-3}{2}}e^{-cs}\,ds.
-%\end{align*}
-%The last integral is finite because $\N>1$. This proves the absolute
-%convergence of \eqref{eq:Dunkl-fractional-kernel-lemma}.
 
-%We next justify differentiation under the integral sign. Let
-%\[
-%\mathcal K
-%\Subset
-%\{(x,y)\in\mathbb R^N\times\mathbb R^N:d(x,y)>0\}
-%\]
-%be compact. Since $d$ is continuous,
-%\[
-%\delta_{\mathcal K}
-%:=
-%\inf_{(x,y)\in\mathcal K}d(x,y)
-%>0.
-%\]
-%Thus, by \eqref{eq:Dunkl-heat-simple-lemma},
-%\[
-%\left|
-%\partial_x^\alpha\partial_y^\beta h_t(x,y)
-%\right|
-%\leq
-%C_{\alpha,\beta}
-%t^{-\frac{\N+|\alpha|+|\beta|}{2}}
-%\exp\left(
-%-c_{\alpha,\beta}
-%\frac{\delta_{\mathcal K}^2}{t}
-%\right)
-%\]
-%uniformly for $(x,y)\in\mathcal K$. After multiplication by
-%$t^{-1/2}$, the resulting majorant is integrable on $(0,\infty)$,
-%because
-%\[
-%\N+|\alpha|+|\beta|>1.
-%\]
-%Therefore dominated convergence permits differentiation under the
-%integral in \eqref{eq:Dunkl-fractional-kernel-lemma}. Hence
-%\[
-%\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
-%=
-%\frac1{\sqrt\pi}
-%\int_0^\infty
-%\partial_x^\alpha\partial_y^\beta h_t(x,y)
-%\,\frac{dt}{\sqrt t}
-%\]
-%whenever $d(x,y)>0$.
-
-Set
-\[
-m:=|\alpha|+|\beta|.
-\]
-Using \eqref{eq:Dunkl-heat-simple-lemma}, we obtain
-\begin{align*}
-\left|
-\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
-\right|
-&\lesssim
+It follows that
+$K_{(-\Delta_{\D})^{-1/2}}$ is smooth whenever $d(x,y)>0$ and
+\begin{equation}\label{eq:Dunkl-fractional-derivative-integral}
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
+=
+\frac{1}{\sqrt{\pi}}
 \int_0^\infty
+\partial_x^\alpha\partial_y^\beta h_t(x,y)
+\,\frac{dt}{\sqrt t}.
+\end{equation}
+Set
+$
+m:=|\alpha|+|\beta|.
+$
+Fix $x,y\in\mathbb R^N$ with $d(x,y)>0$. By
+\eqref{eq:Dunkl-heat-mixed-localized} and
+\eqref{eq:Dunkl-fractional-derivative-integral},
+\begin{equation}\label{eq:K-derivative-volume}
+\left|
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
+\right|
+\lesssim
+\int_0^\infty
+t^{-\frac{m+1}{2}}
+V(x,y,\sqrt t)^{-1}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt.
+\end{equation}
+
+Suppose first that
+$
+0<t\leq d(x,y)^2.
+$
+Then $\sqrt t\leq d(x,y)$. By the upper estimate in
+\eqref{doublinginequality}, for $z=x,y$,
+\[
+\frac{w(B(z,d(x,y)))}
+{w(B(z,\sqrt t))}
+\lesssim
+\left(
+\frac{d(x,y)}{\sqrt t}
+\right)^\N.
+\]
+Equivalently,
+\[
+w(B(z,\sqrt t))
+\gtrsim
+\left(
+\frac{\sqrt t}{d(x,y)}
+\right)^\N
+w(B(z,d(x,y))).
+\]
+Taking the maximum over $z=x,y$ gives
+\begin{equation}\label{eq:V-small-scale-comparison}
+V(x,y,\sqrt t)
+\gtrsim
+\left(
+\frac{\sqrt t}{d(x,y)}
+\right)^\N
+V(x,y,d(x,y)).
+\end{equation}
+Therefore,
+\begin{align*}
+&\int_0^{d(x,y)^2}
+t^{-\frac{m+1}{2}}
+V(x,y,\sqrt t)^{-1}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt
+\\
+&\qquad\lesssim
+\frac{d(x,y)^\N}{V(x,y,d(x,y))}
+\int_0^{d(x,y)^2}
 t^{-\frac{\N+m+1}{2}}
 \exp\left(
 -c\frac{d(x,y)^2}{t}
 \right)\,dt.
 \end{align*}
-Therefore
+Using again the change of variables
+$
+s=\frac{d(x,y)^2}{t},
+$
+we obtain
+\begin{align*}
+&\int_0^{d(x,y)^2}
+t^{-\frac{\N+m+1}{2}}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt=
+d(x,y)^{1-\N-m}
+\int_1^\infty
+s^{\frac{\N+m-3}{2}}e^{-cs}\,ds\lesssim
+d(x,y)^{1-\N-m}.
+\end{align*}
+Consequently,
+\begin{equation}\label{eq:K-small-time-localized}
+\int_0^{d(x,y)^2}
+t^{-\frac{m+1}{2}}
+V(x,y,\sqrt t)^{-1}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt
+\lesssim
+\frac{d(x,y)^{1-m}}{V(x,y,d(x,y))}.
+\end{equation}
+
+Suppose next that
+$
+t\geq d(x,y)^2.
+$
+Then $\sqrt t\geq d(x,y)$. By the lower estimate in
+\eqref{doublinginequality}, for $z=x,y$,
+\[
+\frac{w(B(z,\sqrt t))}
+{w(B(z,d(x,y)))}
+\gtrsim
+\left(
+\frac{\sqrt t}{d(x,y)}
+\right)^N.
+\]
+It follows that
+\begin{equation}\label{eq:V-large-scale-comparison}
+V(x,y,\sqrt t)
+\gtrsim
+\left(
+\frac{\sqrt t}{d(x,y)}
+\right)^N
+V(x,y,d(x,y)).
+\end{equation}
+Hence
+\begin{align*}
+&\int_{d(x,y)^2}^{\infty}
+t^{-\frac{m+1}{2}}
+V(x,y,\sqrt t)^{-1}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt\lesssim
+\frac{d(x,y)^N}{V(x,y,d(x,y))}
+\int_{d(x,y)^2}^{\infty}
+t^{-\frac{N+m+1}{2}}\,dt.
+\end{align*}
+Since $N>1$ and $m\geq0$, we have $N+m>1$, and therefore
+\[
+\int_{d(x,y)^2}^{\infty}
+t^{-\frac{N+m+1}{2}}\,dt
+=
+\frac{2}{N+m-1}
+d(x,y)^{1-N-m}.
+\]
+Thus
+\begin{equation}\label{eq:K-large-time-localized}
+\int_{d(x,y)^2}^{\infty}
+t^{-\frac{m+1}{2}}
+V(x,y,\sqrt t)^{-1}
+\exp\left(
+-c\frac{d(x,y)^2}{t}
+\right)\,dt
+\lesssim
+\frac{d(x,y)^{1-m}}{V(x,y,d(x,y))}.
+\end{equation}
+
+Combining
+\eqref{eq:K-derivative-volume},
+\eqref{eq:K-small-time-localized}, and
+\eqref{eq:K-large-time-localized}, we obtain
 \[
 \left|
-\partial_x^\alpha\partial_y^\beta K_{\D}(x,y)
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
 \right|
 \lesssim
-d(x,y)^{1-\N-m}
-=
-d(x,y)^{-(\N-1+|\alpha|+|\beta|)},
+\frac{d(x,y)^{1-m}}{V(x,y,d(x,y))}.
 \]
-which proves \eqref{eq:Dunkl-fractional-kernel-derivative-lemma}.
-
-The proof is complete.
+Since $m=|\alpha|+|\beta|$, this gives
+\[
+\left|
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
+\right|
+\lesssim
+\frac{
+d(x,y)^{1-|\alpha|-|\beta|}
+}{
+V(x,y,d(x,y))
+},
+\]
+which is exactly \eqref{eq:localized-K-derivative}.
 \end{proof}
 
 \begin{lemma}\label{lem:rank-one-decomposition-Dunkl}
 Assume that
-\[
-\operatorname{span}(R)=\mathbb R^N,
-\qquad
-\N>1,
-\qquad
+$
+N>1$ and $
 2<r<\infty.
-\]
-Let $K_{\D}(x,y)$ denote the integral kernel of
-$(-\Delta_{\D})^{-1/2}$.
-
-Fix a closed Weyl chamber $\Gamma$, and let
-\[
-\Phi:\mathbb R^N\longrightarrow\mathbb R^N
-\]
-be the linear isomorphism appearing in
-Corollary~\ref{coro:chamber-orthant}. Since
-$\operatorname{span}(R)=\mathbb R^N$, we have
-\[
-\Phi(\Gamma)=\Omega:=\mathbb R_+^N.
-\]
-Let
-\[
-\mathbb D_\Gamma
-=
-\bigcup_{j\in\mathbb Z}\mathbb D_{\Gamma,j}
-\]
-be the system of dyadic cubes over $\Gamma$ constructed in
-Corollary~\ref{Construction over gamma}. Thus, if
-$I\in\mathbb D_{\Gamma,j}$, then
-\[
-I=\Phi^{-1}(Q)
-\]
-for a unique standard dyadic cube $Q\subset\Omega$ with
-$\ell(Q)=2^{-j}$, and we put
-\[
-\ell(I):=\ell(Q).
-\]
-
-For $I=\Phi^{-1}(Q)\in\mathbb D_\Gamma$, let $2Q$ and $3Q$
-denote the cubes concentric with $Q$ having side lengths
-$2\ell(Q)$ and $3\ell(Q)$, respectively, and set
-\[
-I^\ast
-:=
-\Phi^{-1}\bigl((2Q)\cap\Omega\bigr),
-\qquad
-3_\Phi I
-:=
-\Phi^{-1}\bigl((3Q)\cap\Omega\bigr).
-\]
-Then
-\[
-I\subset I^\ast\subset 3_\Phi I.
-\]
-
-There exist nonnegative numbers
-$\{c_{p,q}\}_{p,q\in\mathbb Z^N}$, depending only on
-$N,R,k$ and the fixed map $\Phi$, such that, for every $M>0$,
-\begin{equation}\label{eq:Dunkl-cpq-decay}
+$
+Then there exist a constant $C>0$, nonnegative numbers
+$
+\{c_{p,q}\}_{p,q\in\mathbb Z^N},
+$ functions
+$
+\{e_{p,q,I}^{\sigma,\tau}\}_{p,q\in\mathbb Z^N,I\in\mathbb D_\Gamma,\sigma,\tau\in G},$ $
+\{
+h_{p,q,I}^{\sigma,\tau}\}_{p,q\in\mathbb Z^N,I\in\mathbb D_\Gamma,\sigma,\tau\in G},
+$
+such that
+\begin{enumerate}
+  \item for every $M>0$,\begin{equation}\label{eq:Dunkl-cpq-decay}
 c_{p,q}
 \leq
 C_M(1+|p|+|q|)^{-M},
 \qquad
-p,q\in\mathbb Z^N.
+p,q\in\mathbb Z^N;
 \end{equation}
-
-For every
-$f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw)$ there are functions
-\[
-e_{p,q,I}^{\sigma,\tau},
-\quad
-g_{p,q,I}^{\sigma,\tau},
-\qquad
-p,q\in\mathbb Z^N,\quad
-I\in\mathbb D_\Gamma,\quad
-\sigma,\tau\in G,
-\]
-such that, for almost every $(x,y)$ satisfying $d(x,y)>0$,
-\begin{equation}\label{eq:Dunkl-Riesz-rank-one}
-\begin{split}
-f(x)K_{\D}(x,y)
-&=
+  \item \begin{equation}\label{eq:Dunkl-support-e-new}
+\operatorname{supp}e_{p,q,I}^{\sigma,\tau}
+\subset \sigma I\qquad
+\operatorname{supp}h_{p,q,I}^{\sigma,\tau}
+\subset \tau I^\ast;
+\end{equation}
+\item \begin{equation}\label{eq:Dunkl-normalization-e-new}
+\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12},\qquad \|h_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}\leq w(I)^{\frac1r-\frac12};
+\end{equation}
+\item
+For every $f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw)$ and for almost every $(x,y)$ with $d(x,y)>0$,
+\begin{equation}\label{eq:Dunkl-kernel-rank-one-new}
+f(x)K_{(-\Delta_{\D})^{-1/2}}(x,y)
+=
+C
 \sum_{\sigma,\tau\in G}
 \sum_{p,q\in\mathbb Z^N}
 c_{p,q}
 \sum_{I\in\mathbb D_\Gamma}
-\ell(I)^{-(\N-1)}
-w(I)^{1-\frac1r}
-\|f\|_{L^r(\sigma I,dw)}
+\lambda_{\sigma,I}(f)\,
 e_{p,q,I}^{\sigma,\tau}(x)
-g_{p,q,I}^{\sigma,\tau}(y).
-\end{split}
+h_{p,q,I}^{\sigma,\tau}(y).
 \end{equation}
-The functions in \eqref{eq:Dunkl-Riesz-rank-one} satisfy
-\begin{equation}\label{eq:Dunkl-support-e}
-\operatorname{supp}e_{p,q,I}^{\sigma,\tau}
-\subset \sigma I
-\subset \mathcal O(3_\Phi I)
-\end{equation}
-and
-\begin{equation}\label{eq:Dunkl-support-g}
-\operatorname{supp}g_{p,q,I}^{\sigma,\tau}
-\subset \tau I^\ast
-\subset \tau(3_\Phi I)
-\subset \mathcal O(3_\Phi I),
-\end{equation}
-\begin{equation}\label{eq:Dunkl-normalization-e}
-\sup_{\substack{\sigma,\tau\in G\\
-p,q\in\mathbb Z^N,\ I\in\mathbb D_\Gamma}}
-w(I)^{\frac12-\frac1r}
-\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
-\leq 1,
-\end{equation}
-\begin{equation}\label{eq:Dunkl-normalization-g}
-\sup_{\substack{\sigma,\tau\in G\\
-p,q\in\mathbb Z^N,\ I\in\mathbb D_\Gamma}}
-w(I)^{\frac12-\frac1r}
-\|g_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
-\leq 1.
-\end{equation}
-\end{lemma}
-
-\begin{proof}
+\end{enumerate}
+\end{lemma}\begin{proof}
+Fix
+$
+f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw).
+$
 We divide the proof into several steps.
 
+\medskip
+\noindent
+\textbf{Step 1.}
 
 Fix $\sigma,\tau\in G$, and suppose that
 $
-x\in\sigma(\Gamma)^\circ,
-$ and $
-y\in\tau(\Gamma)^\circ.
+x\in \sigma(\Gamma)^\circ,$
+$
+y\in \tau(\Gamma)^\circ.
 $
 Set
 $
-x_\sigma:=\sigma^{-1}x\in\Gamma^\circ,$ and $
+x_\sigma:=\sigma^{-1}x\in\Gamma^\circ,
+$ $
 y_\tau:=\tau^{-1}y\in\Gamma^\circ,
 $
 and
-$
-u:=\Phi(x_\sigma),$ and
-$
+\[
+u:=\Phi(x_\sigma),
+\qquad
 v:=\Phi(y_\tau).
-$
-
-Since $x_\sigma,y_\tau$ belong to the same closed Weyl chamber,
+\]
+Since $x_\sigma$ and $y_\tau$ belong to the same closed Weyl chamber,
 \eqref{distanceequa} gives
 \[
 d(x,y)
@@ -1447,12 +2565,12 @@ d(x_\sigma,y_\tau)
 \|x_\sigma-y_\tau\|.
 \]
 Together with \eqref{eq:biLip-N}, this yields
-\begin{equation}\label{eq:d-Phi-comparable}
-C_\Phi^{-1}\|u-v\|
+\begin{equation}\label{eq:rankone-d-Phi}
+C_\Phi^{-1}|u-v|
 \leq
 d(x,y)
 \leq
-c_\Phi^{-1}\|u-v\|.
+c_\Phi^{-1}|u-v|.
 \end{equation}
 
 Choose $\rho\in C_c^\infty(\mathbb R^N)$ such that
@@ -1460,370 +2578,468 @@ Choose $\rho\in C_c^\infty(\mathbb R^N)$ such that
 0\leq\rho\leq1,
 \qquad
 \rho(z)=1
-\quad\text{if }|z|_\infty\leq\frac14,
+\quad\text{for }|z|\leq\frac14,
 \]
 and
 \[
 \rho(z)=0
-\quad\text{if }|z|_\infty\geq\frac12.
+\quad\text{for }|z|\geq\frac12.
 \]
-Define
-\[
+Set
+$
 \psi(z):=\rho(z)-\rho(2z).
-\]
+$
 Then
-\begin{equation}\label{eq:psi-support-Dunkl}
+\begin{equation}\label{eq:rankone-psi-support}
 \operatorname{supp}\psi
 \subset
 \left\{
-z:
-\frac18\leq |z|_\infty\leq\frac12
-\right\},
+z\in\mathbb R^N:
+\frac18\leq |z|\leq\frac12
+\right\}.
 \end{equation}
-and, for every $z\neq0$,
-\begin{equation}\label{eq:psi-partition-Dunkl}
+Moreover, for every $z\neq0$,
+\begin{equation}\label{eq:rankone-psi-partition}
 \sum_{j\in\mathbb Z}\psi(2^jz)=1.
 \end{equation}
-Indeed,
+Indeed, for $m,n\in\mathbb N$,
 \[
 \sum_{j=-m}^{n}\psi(2^jz)
 =
 \rho(2^{-m}z)-\rho(2^{n+1}z),
 \]
-and letting $m,n\to\infty$ proves
-\eqref{eq:psi-partition-Dunkl}.
+and \eqref{eq:rankone-psi-partition} follows by letting
+$m,n\to\infty$.
 
-For $j\in\mathbb Z$, and 
-for almost every $u\in\Omega$, there is a unique
-$Q\in\mathbb D_{\Omega,j}^0$ containing $u$. If
-\[
+Let $j\in\mathbb Z$. For almost every $u\in\Omega$, there is a unique
+cube
+$
+Q\in\mathbb D^0_{\Omega,j}
+$
+containing $u$. If
+$
 I:=\Phi^{-1}(Q)\in\mathbb D_{\Gamma,j},
-\]
-then $\ell(I)=2^{-j}$. Therefore,
-for $x\in\sigma(\Gamma)^\circ$ and
-$y\in\tau(\Gamma)^\circ$ with $d(x,y)>0$,
-\begin{equation}\label{eq:K-shell-decomp}
-K_{\D}(x,y)
-=
+$
+then $\ell(I)=2^{-j}$. Hence, whenever $d(x,y)>0$, we have
+$u\neq v$ by \eqref{eq:rankone-d-Phi}, and therefore
+\begin{align}
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
+&=
 \sum_{j\in\mathbb Z}
 \sum_{I\in\mathbb D_{\Gamma,j}}
 \chi_{\sigma I}(x)
-K_{\D}(x,y)
+K_{(-\Delta_{\D})^{-1/2}}(x,y)
 \psi\left(
 \frac{
 \Phi(\sigma^{-1}x)-\Phi(\tau^{-1}y)
-}{\ell(I)}
+}{
+\ell(I)
+}
 \right).
-\end{equation}
-For each fixed $(x,y)$ with $d(x,y)>0$, only finitely many
-$j$ contribute to the sum, by
-\eqref{eq:psi-support-Dunkl}.
+\label{eq:rankone-shell-decomposition}
+\end{align}
+For every fixed pair $(x,y)$ with $d(x,y)>0$, only finitely many
+values of $j$ occur in \eqref{eq:rankone-shell-decomposition}.
 
-Write
+We next record the localization of the $y$-variable. Let
 \[
-Q=\prod_{i=1}^N[m_i2^{-j},(m_i+1)2^{-j}),
+I=\Phi^{-1}(Q),
 \qquad
-m_i\in\mathbb Z_+,
+\ell:=\ell(I),
 \]
-and denote its center by $c_Q$. Suppose that
-$
-u\in Q
-$
-and
+and suppose that $u\in Q$ and
 \[
 \psi\left(\frac{u-v}{\ell}\right)\neq0.
 \]
-Then
-$
-|u-v|_\infty\leq\frac{\ell}{2}.
-$
-Since
-$
-|u-c_Q|_\infty\leq\frac{\ell}{2},
-$
-we obtain
-$
-|v-c_Q|_\infty\leq\ell.
-$
+By \eqref{eq:rankone-psi-support},
+\[
+|u-v|\leq\frac{\ell}{2}.
+\]
+Let $c_Q$ denote the center of $Q$. Since $u\in Q$, for every
+$1\leq j\leq N$,
+\[
+|u_j-(c_Q)_j|\leq\frac{\ell}{2}.
+\]
+Moreover,
+\[
+|u_j-v_j|
+\leq
+|u-v|
+\leq
+\frac{\ell}{2}.
+\]
 Hence
+\[
+|v_j-(c_Q)_j|
+\leq
+|v_j-u_j|+|u_j-(c_Q)_j|
+\leq\ell
+\]
+for every $j$. Thus
 $
-v\in(2Q)\cap\Omega.
+v\in(2Q)\cap\Omega,
 $
-Equivalently,
-\begin{equation}\label{eq:y-localization-Dunkl}
+which is equivalent to
+\begin{equation}\label{eq:rankone-y-localization}
 y\in\tau I^\ast.
 \end{equation}
-In particular,
+
+We show that
+\begin{equation}\label{eq:rankone-Istar-I}
+w(I^\ast)\simeq w(I).
+\end{equation}
+Put
 \[
-\tau I^\ast
-\subset\tau(3_\Phi I)
-\subset\mathcal O(3_\Phi I).
+z_I:=\Phi^{-1}(c_Q)\in\Gamma.
 \]
-Moreover, by the doubling property, we see that
-\begin{equation}\label{eq:wIstar-wI}
-w(I)
-\leq
+By \eqref{eq:biLip-N}, there exist constants $c_1,C_1>0$,
+independent of $I$, such that
+\[
+B_\Gamma(z_I,c_1\ell)
+\subset I
+\subset I^\ast
+\subset B_\Gamma(z_I,C_1\ell).
+\]
+Indeed, the first inclusion follows by taking $c_1>0$ sufficiently
+small, whereas the last one follows from
+\[
+(2Q)\cap\Omega
+\subset B(c_Q,\sqrt N\,\ell)
+\]
+and the boundedness of $\Phi^{-1}$. By the doubling property,
+\[
 w(I^\ast)
 \leq
-C\,w(I)
-\end{equation}
-uniformly in $I\in\mathbb D_\Gamma$.
+w(B_\Gamma(z_I,C_1\ell))
+\lesssim
+w(B_\Gamma(z_I,c_1\ell))
+\leq
+w(I).
+\]
+Since $I\subset I^\ast$, the reverse inequality is immediate, and
+\eqref{eq:rankone-Istar-I} follows.
+
+\medskip
+\noindent
+\textbf{Step 2.}
 
 Fix $\sigma,\tau\in G$ and
-$I=\Phi^{-1}(Q)\in\mathbb D_\Gamma$. Write
+$I=\Phi^{-1}(Q)\in\mathbb D_\Gamma$, and write
 $
-\ell:=\ell(I)
+\ell:=\ell(I).
 $
-and let $c_Q$ be the center of $Q$.
-
-For
+Introduce the normalized coordinates
 \[
-a=\frac{u-c_Q}{\ell},
+a:=\frac{u-c_Q}{\ell},
 \qquad
-b=\frac{v-c_Q}{\ell},
+b:=\frac{v-c_Q}{\ell}.
 \]
-the condition $u\in Q$ means
-\[
-a\in A:=[-1/2,1/2]^N.
-\]
-Furthermore, the condition
+If $u\in Q$, then
 $
-v\in(2Q)\cap\Omega
+a\in [-1/2,1/2]^N.
 $
-is equivalent to
+If $v\in(2Q)\cap\Omega$, then $b$ belongs to
 \[
-b\in B_Q
+B_Q
 :=
 \left\{
 b\in[-1,1]^N:
 c_Q+\ell b\in\Omega
 \right\}.
 \]
-Since
-\[
-(c_Q)_i=(m_i+1/2)\ell,
-\qquad m_i\in\mathbb Z_+,
-\]
-we have
-\[
-B_Q
-=
-\prod_{i=1}^N
-\left[
-\max\{-1,-m_i-1/2\},1
-\right].
-\]
-Thus the left endpoint of the $i$-th interval is equal to
-$-1/2$ if $m_i=0$ and is equal to $-1$ if $m_i\geq1$.
-Consequently, the rectangles
-$
-A\times B_Q
-$
-belong to a finite family containing at most $2^N$ different
-rectangles.
 
-We claim that there exists a number $\delta>0$, depending only
-on $N,R,k$ and $\Phi$, with the following property. For every
-$Q$ one can choose
+Write
+\[
+Q=\prod_{i=1}^N
+[m_i\ell,(m_i+1)\ell),
+\]
+where
+\[
+m_i\in\mathbb Z_+
+\quad (1\leq i\leq N_0),
+\qquad
+m_i\in\mathbb Z
+\quad (N_0<i\leq N).
+\]
+For $1\leq i\leq N_0$, the $i$-th component of $B_Q$ is
+\[
+\begin{cases}
+[-1/2,1],&m_i=0,\\
+[-1,1],&m_i\geq1,
+\end{cases}
+\]
+whereas for $i>N_0$ it is always $[-1,1]$. Hence the rectangles
 $
-\chi_Q\in C_c^\infty((-2,2)^N\times(-2,2)^N)
+[-1/2,1/2]^N\times B_Q
+$
+belong to a finite family.
+
+Consequently, for every $Q$ we may choose
+$
+\chi_Q\in
+C_c^\infty((-2,2)^N\times(-2,2)^N)
 $
 such that
 \[
 \chi_Q=1
-\quad\text{on }A\times B_Q,
+\quad\text{on }
+[-1/2,1/2]^N\times B_Q,
 \]
+and, for some sufficiently small fixed $\varepsilon_0>0$,
 \[
 \operatorname{supp}\chi_Q
 \subset
 \left\{
 (a,b):
-\operatorname{dist}\bigl((a,b),A\times B_Q\bigr)<\delta
-\right\},
+\operatorname{dist}
+\left(
+(a,b),
+[-1/2,1/2]^N\times B_Q
+\right)
+<\varepsilon_0
+\right\}.
 \]
-and, for every integer $M\geq0$,
-\begin{equation}\label{eq:chi-uniform}
-\sup_Q\|\chi_Q\|_{C^M}
+Since only finitely many such rectangles occur, these functions may
+be chosen so that, for every integer $M\geq0$,
+\begin{equation}\label{eq:rankone-chi-uniform}
+\sup_Q
+\|\chi_Q\|_{C^M(\mathbb R^{2N})}
 <\infty.
 \end{equation}
-Indeed, there are only finitely many possible rectangles
-$A\times B_Q$, and hence fixed smooth cutoff functions can be
-chosen for these finitely many rectangles.
 
-We choose $\delta>0$ sufficiently small so that the following
-additional property holds:
-\begin{equation}\label{eq:orbit-separation-neighborhood}
+We choose $\varepsilon_0$ sufficiently small so that
+\begin{equation}\label{eq:rankone-distance-scale}
 d\left(
 \sigma\Phi^{-1}(c_Q+\ell a),
 \tau\Phi^{-1}(c_Q+\ell b)
 \right)
-\geq c_0\ell
+\simeq\ell
 \end{equation}
 whenever
-$
-(a,b)\in\operatorname{supp}\chi_Q
-$
-and
-$
-a-b\in\operatorname{supp}\psi.
-$
-Let us verify this assertion.
-
-Take $(a,b)\in\operatorname{supp}\chi_Q$. There exists
-$(a_0,b_0)\in A\times B_Q$ such that
 \[
-|a-a_0|+|b-b_0|\leq C_N\delta.
+(a,b)\in\operatorname{supp}\chi_Q
+\qquad\text{and}\qquad
+a-b\in\operatorname{supp}\psi.
 \]
-If $a-b\in\operatorname{supp}\psi$, then
-$
-|a-b|_\infty\geq\frac18.
-$
-By decreasing $\delta$ if necessary, we may assume that
-$
-|a_0-b_0|_\infty\geq\frac1{16}.
-$
+Indeed, choose
+\[
+(a_0,b_0)
+\in
+[-1/2,1/2]^N\times B_Q
+\]
+such that
+\[
+|a-a_0|+|b-b_0|
+\lesssim\varepsilon_0.
+\]
+Since $a-b\in\operatorname{supp}\psi$,
+\[
+|a-b|\geq\frac18.
+\]
+Thus, after decreasing $\varepsilon_0$ if necessary,
+\[
+|a_0-b_0|\geq\frac1{16}.
+\]
 Set
 \[
 x_0'
-=
+:=
 \Phi^{-1}(c_Q+\ell a_0),
 \qquad
 y_0'
-=
+:=
 \Phi^{-1}(c_Q+\ell b_0).
 \]
 Since
-$
-c_Q+\ell a_0,\ c_Q+\ell b_0\in\Omega,
-$
-we have $x_0',y_0'\in\Gamma$. Hence
-\eqref{distanceequa} and \eqref{eq:biLip-N} imply
-\begin{align*}
+\[
+c_Q+\ell a_0,\quad c_Q+\ell b_0\in\Omega,
+\]
+we have $x_0',y_0'\in\Gamma$. Hence, by
+\eqref{distanceequa} and \eqref{eq:biLip-N},
+\[
 d(\sigma x_0',\tau y_0')
-&=
+=
 d(x_0',y_0')
-\\
-&=
+=
 \|x_0'-y_0'\|
-\\
-&\geq
-C_\Phi^{-1}
+\gtrsim
 \ell|a_0-b_0|
-\\
-&\geq
-c_1\ell.
-\end{align*}
-On the other hand, note that the orbit distance satisfies
-\begin{equation}\label{eq:d-Lipschitz}
+\gtrsim\ell.
+\]
+Moreover, directly from the definition of $d$,
+\begin{equation}\label{eq:rankone-d-Lipschitz}
 |d(x,y)-d(x',y')|
 \leq
 \|x-x'\|+\|y-y'\|.
 \end{equation}
-
-Since $\Phi^{-1}$ is linear and bounded,
+Since $\Phi^{-1}$ is bounded,
 \[
 \left\|
 \Phi^{-1}(c_Q+\ell a)
 -
 \Phi^{-1}(c_Q+\ell a_0)
 \right\|
-\lesssim\ell\delta,
+\lesssim
+\varepsilon_0\ell,
 \]
-and similarly for $b,b_0$. Thus
-\eqref{eq:d-Lipschitz} gives
+and similarly for $b$ and $b_0$. Therefore,
+\eqref{eq:rankone-d-Lipschitz} gives the lower bound in
+\eqref{eq:rankone-distance-scale} if $\varepsilon_0$ is sufficiently
+small.
+
+For the reverse estimate, we use the $G$-invariance of the orbit
+distance in both variables:
 \[
-d\left(
+d(\sigma x,\tau y)=d(x,y),
+\qquad x,y\in\mathbb R^N.
+\]
+Hence
+\begin{align*}
+&d\left(
 \sigma\Phi^{-1}(c_Q+\ell a),
 \tau\Phi^{-1}(c_Q+\ell b)
 \right)
-\geq
-c_1\ell-C\delta\ell.
+\\
+&\qquad=
+d\left(
+\Phi^{-1}(c_Q+\ell a),
+\Phi^{-1}(c_Q+\ell b)
+\right)
+\\
+&\qquad\leq
+\left\|
+\Phi^{-1}(c_Q+\ell a)
+-
+\Phi^{-1}(c_Q+\ell b)
+\right\|
+\\
+&\qquad=
+\left\|
+\Phi^{-1}\bigl(\ell(a-b)\bigr)
+\right\|
+\lesssim
+\ell |a-b|
+\lesssim
+\ell,
+\end{align*}
+where in the last step we used
+$|a-b|\leq 1/2$ on $\operatorname{supp}\psi$.
+Set
+\[
+X:=
+\sigma\Phi^{-1}(c_Q+\ell a),
+\qquad
+Y:=
+\tau\Phi^{-1}(c_Q+\ell b).
 \]
-Choosing $\delta$ so small that
-$C\delta\leq c_1/2$ proves
-\eqref{eq:orbit-separation-neighborhood}.
+For $(a,b)$ in the above support, $X$ and $Y$ lie within distance
+$C\ell$ of $\sigma z_I$ and $\tau z_I$, respectively. Combining
+\eqref{eq:rankone-distance-scale}, the doubling estimate,
+the $G$-invariance of $dw$, and \eqref{globallocalvol}, we obtain
+\[
+w(B(X,d(X,Y)))
+\simeq
+w(B(z_I,\ell))
+\simeq
+w(I)
+\]
+and similarly
+\[
+w(B(Y,d(X,Y)))
+\simeq
+w(I).
+\]
+Consequently,
+\begin{equation}\label{eq:rankone-V-I}
+V(X,Y,d(X,Y))
+\simeq
+w(I).
+\end{equation}
+
+By Lemma~\ref{lem:Dunkl-fractional-kernel-derivative},
+for every pair of multi-indices $\alpha,\beta$,
+\[
+\left|
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(X,Y)
+\right|
+\lesssim
+\frac{
+d(X,Y)^{1-|\alpha|-|\beta|}
+}{
+V(X,Y,d(X,Y))
+}.
+\]
+Combining this with
+\eqref{eq:rankone-distance-scale} and
+\eqref{eq:rankone-V-I}, we obtain
+\begin{equation}\label{eq:rankone-localized-derivative}
+\left|
+\partial_x^\alpha\partial_y^\beta
+K_{(-\Delta_{\D})^{-1/2}}(X,Y)
+\right|
+\lesssim_{\alpha,\beta}
+\frac{
+\ell^{1-|\alpha|-|\beta|}
+}{
+w(I)
+}.
+\end{equation}
+
+\medskip
+\noindent
+\textbf{Step 3. }
 
 Define
-\begin{equation}\label{eq:def-H-Dunkl}
-\begin{split}
+\begin{align}
 H_{\sigma,\tau,I}(a,b)
 :={}&
-\ell^{\N-1}
+\frac{w(I)}{\ell(I)}
 \chi_Q(a,b)\psi(a-b)
-K_{\D}\left(
-\sigma\Phi^{-1}(c_Q+\ell a),
-\tau\Phi^{-1}(c_Q+\ell b)
+K_{(-\Delta_{\D})^{-1/2}}
+\left(
+\sigma\Phi^{-1}(c_Q+\ell(I)a),
+\tau\Phi^{-1}(c_Q+\ell(I)b)
 \right).
-\end{split}
-\end{equation}
-On the support of
-$\chi_Q(a,b)\psi(a-b)$,
-\eqref{eq:orbit-separation-neighborhood} gives
-$$d\left(
-\sigma\Phi^{-1}(c_Q+\ell a),
-\tau\Phi^{-1}(c_Q+\ell b)
-\right)\gtrsim\ell.$$
-
+\label{eq:rankone-H}
+\end{align}
 We claim that, for every integer $M\geq0$,
-\begin{equation}\label{eq:H-CM-uniform}
+\begin{equation}\label{eq:rankone-H-CM}
 \sup_{\sigma,\tau\in G}
 \sup_{I\in\mathbb D_\Gamma}
 \|H_{\sigma,\tau,I}\|_{C^M(\mathbb R^{2N})}
-\leq C_M.
+<\infty.
 \end{equation}
-Indeed, consider a derivative of total order $m$ in $(a,b)$.
-Since $\Phi^{-1}$, $\sigma$ and $\tau$ are fixed linear maps,
-the chain rule give
-\begin{align*}
-&\ell^{\N-1}\ell^m
-\left|
-\partial_x^\alpha\partial_y^\beta
-K_{\D}\left(
-\sigma\Phi^{-1}(c_Q+\ell a),
-\tau\Phi^{-1}(c_Q+\ell b)
-\right)
-\right|
-\\
-&\qquad\lesssim
-\ell^{\N-1+m}
-(c_0\ell)^{-(\N-1+m)}
-\lesssim1,
-\end{align*}
-where $|\alpha|+|\beta|=m$. Combining this with
-\eqref{eq:chi-uniform} and the fixed smoothness of $\psi$
-proves \eqref{eq:H-CM-uniform}.
+Indeed, if altogether $k$ derivatives fall on the kernel term, the
+chain rule produces a factor bounded by a constant multiple of
+$\ell(I)^k$. By \eqref{eq:rankone-localized-derivative},
+the corresponding contribution is bounded by
+\[
+\frac{w(I)}{\ell(I)}
+\ell(I)^k
+\frac{\ell(I)^{1-k}}{w(I)}
+\lesssim1.
+\]
+The derivatives falling on $\chi_Q$ and $\psi$ are uniformly bounded
+by \eqref{eq:rankone-chi-uniform} and the fact that $\psi$ is fixed.
+The product rule proves \eqref{eq:rankone-H-CM}.
 
-Since $H_{\sigma,\tau,I}$ is supported in the interior of
+Since $H_{\sigma,\tau,I}$ is compactly supported in the interior of
 $
 [-2,2]^N\times[-2,2]^N,
 $
-its $4$-periodic extension in both variables is smooth. Hence
-it has the Fourier expansion
-\begin{equation}\label{eq:Dunkl-local-Fourier}
+its $4$-periodic extension is smooth. Hence
+\begin{equation}\label{eq:rankone-Fourier}
 H_{\sigma,\tau,I}(a,b)
 =
 \sum_{p,q\in\mathbb Z^N}
 b_{p,q,I}^{\sigma,\tau}
 e^{\frac{\pi i}{2}p\cdot a}
-e^{\frac{\pi i}{2}q\cdot b},
+e^{\frac{\pi i}{2}q\cdot b}.
 \end{equation}
-where
-\begin{equation}\label{eq:b-coefficients}
-\begin{split}
-b_{p,q,I}^{\sigma,\tau}
-={}&
-4^{-2N}
-\int_{[-2,2]^N}
-\int_{[-2,2]^N}
-H_{\sigma,\tau,I}(a,b)
-e^{-\frac{\pi i}{2}p\cdot a}
-e^{-\frac{\pi i}{2}q\cdot b}
-\,da\,db.
-\end{split}
-\end{equation}
-Repeated integration by parts, together with
-\eqref{eq:H-CM-uniform}, gives, for every $M>0$,
-\begin{equation}\label{eq:b-rapid}
+Repeated integration by parts and
+\eqref{eq:rankone-H-CM} yield, for every $M>0$,
+\begin{equation}\label{eq:rankone-b-rapid}
 \sup_{\sigma,\tau\in G}
 \sup_{I\in\mathbb D_\Gamma}
 |b_{p,q,I}^{\sigma,\tau}|
@@ -1831,18 +3047,26 @@ Repeated integration by parts, together with
 C_M(1+|p|+|q|)^{-M}.
 \end{equation}
 
-For $a\in A$ and $b\in B_Q$, we have $\chi_Q(a,b)=1$.
-Consequently, \eqref{eq:Dunkl-local-Fourier} implies
-\begin{equation}\label{eq:local-K-Fourier}
-\begin{split}
-&K_{\D}(x,y)
+When $x\in\sigma I$ and $y\in\tau I^\ast$, the corresponding
+normalized variables satisfy
+\[
+a\in[-1/2,1/2]^N,
+\qquad
+b\in B_Q,
+\]
+and therefore $\chi_Q(a,b)=1$. Thus
+\begin{align}
+&K_{(-\Delta_{\D})^{-1/2}}(x,y)
 \psi\left(
-\frac{\Phi(\sigma^{-1}x)-\Phi(\tau^{-1}y)}
-{\ell(I)}
+\frac{
+\Phi(\sigma^{-1}x)-\Phi(\tau^{-1}y)
+}{
+\ell(I)
+}
 \right)
-\\
+\nonumber\\
 &\quad=
-\ell(I)^{-(\N-1)}
+\frac{\ell(I)}{w(I)}
 \sum_{p,q\in\mathbb Z^N}
 b_{p,q,I}^{\sigma,\tau}
 \exp\left(
@@ -1854,92 +3078,96 @@ p\cdot
 \frac{\pi i}{2\ell(I)}
 q\cdot
 \bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
-\right)
-\end{split}
-\end{equation}
-whenever
-$
-x\in\sigma I,$ and $
-y\in\tau I^\ast.
-$
-
-The coefficients in \eqref{eq:local-K-Fourier} depend on
-$\sigma,\tau$ and $I$. We now absorb this harmless dependence
-into the normalized rank-one factors.
+\right).
+\label{eq:rankone-local-K-Fourier}
+\end{align}
 
 Define
-\begin{equation}\label{eq:def-cpq}
+\begin{equation}\label{eq:rankone-cpq}
 c_{p,q}
 :=
 \sup_{\substack{\sigma,\tau\in G\\I\in\mathbb D_\Gamma}}
 \left\{
 |b_{p,q,I}^{\sigma,\tau}|
-\left(\frac{w(I^\ast)}{w(I)}\right)^{1/2}
+\left(
+\frac{w(I^\ast)}{w(I)}
+\right)^{1/2}
 \right\}.
 \end{equation}
-By \eqref{eq:wIstar-wI} and \eqref{eq:b-rapid},
-for every $M>0$,
+By \eqref{eq:rankone-Istar-I} and
+\eqref{eq:rankone-b-rapid}, for every $M>0$,
 \[
 c_{p,q}
 \leq
 C_M(1+|p|+|q|)^{-M}.
 \]
-This proves \eqref{eq:Dunkl-cpq-decay}.
+Thus \eqref{eq:Dunkl-cpq-decay} holds.
 
-For each $\sigma,\tau,p,q,I$, define
-\begin{equation}\label{eq:def-a-pq}
+Define
+\[
 a_{p,q,I}^{\sigma,\tau}
 :=
 \begin{cases}
 \displaystyle
 \frac{b_{p,q,I}^{\sigma,\tau}}{c_{p,q}}
-\left(\frac{w(I^\ast)}{w(I)}\right)^{1/2},
-& c_{p,q}>0,\\[3mm]
+\left(
+\frac{w(I^\ast)}{w(I)}
+\right)^{1/2},
+&c_{p,q}>0,\\[3mm]
 0,&c_{p,q}=0.
 \end{cases}
+\]
+Then
+\begin{equation}\label{eq:rankone-a-bound}
+|a_{p,q,I}^{\sigma,\tau}|\leq1,
 \end{equation}
-By definition,
-\begin{equation}\label{eq:a-bound}
-|a_{p,q,I}^{\sigma,\tau}|\leq1.
-\end{equation}
-Moreover, if $c_{p,q}=0$, then necessarily
-$b_{p,q,I}^{\sigma,\tau}=0$ for every $\sigma,\tau,I$.
-Thus, in all cases,
-\begin{equation}\label{eq:b-factorization}
+and
+\begin{equation}\label{eq:rankone-b-factor}
 b_{p,q,I}^{\sigma,\tau}
 =
-c_{p,q}
-a_{p,q,I}^{\sigma,\tau}
-\left(\frac{w(I)}{w(I^\ast)}\right)^{1/2}.
+c_{p,q}a_{p,q,I}^{\sigma,\tau}
+\left(
+\frac{w(I)}{w(I^\ast)}
+\right)^{1/2}.
 \end{equation}
 
+\medskip
+\noindent
+\textbf{Step 4. }
 
-Fix $\sigma,\tau\in G$ and
-$I\in\mathbb D_\Gamma$.
-If $\|f\|_{L^r(\sigma I,dw)}>0$, define
-\begin{equation}\label{eq:def-e-Dunkl}
-\begin{split}
+If
+$
+\|f\|_{L^r(\sigma I,dw)}>0,
+$
+define
+\begin{align}
 e_{p,q,I}^{\sigma,\tau}(x)
 :={}&
 a_{p,q,I}^{\sigma,\tau}
 w(I)^{\frac1r-\frac12}
-\frac{f(x)\chi_{\sigma I}(x)}
-{\|f\|_{L^r(\sigma I,dw)}}
+\frac{
+f(x)\chi_{\sigma I}(x)
+}{
+\|f\|_{L^r(\sigma I,dw)}
+}
 \exp\left(
 \frac{\pi i}{2\ell(I)}
 p\cdot
 \bigl(\Phi(\sigma^{-1}x)-c_Q\bigr)
 \right).
-\end{split}
-\end{equation}
-If $\|f\|_{L^r(\sigma I,dw)}=0$, set
+\label{eq:rankone-e}
+\end{align}
+If
+$
+\|f\|_{L^r(\sigma I,dw)}=0,
+$
+set
 $
 e_{p,q,I}^{\sigma,\tau}:=0.
 $
-Also define
-\begin{equation}\label{eq:def-g-Dunkl}
-\begin{split}
-g_{p,q,I}^{\sigma,\tau}(y)
+Define
+\begin{align}
+h_{p,q,I}^{\sigma,\tau}(y)
 :={}&
 w(I^\ast)^{-1/2}
 \chi_{\tau I^\ast}(y)
@@ -1948,23 +3176,29 @@ w(I^\ast)^{-1/2}
 q\cdot
 \bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
 \right).
-\end{split}
-\end{equation}
-The support properties
-\eqref{eq:Dunkl-support-e}--\eqref{eq:Dunkl-support-g}
-are immediate.
+\label{eq:rankone-h}
+\end{align}
 
-Since the Dunkl measure is $G$-invariant,
+By construction,
+\[
+\operatorname{supp}e_{p,q,I}^{\sigma,\tau}
+\subset\sigma I,
+\qquad
+\operatorname{supp}h_{p,q,I}^{\sigma,\tau}
+\subset\tau I^\ast.
+\]
+
+Since $dw$ is $G$-invariant,
 \[
 w(\sigma I)=w(I),
 \qquad
 w(\tau I^\ast)=w(I^\ast).
 \]
-From \eqref{eq:a-bound} and
-\eqref{eq:def-e-Dunkl}, we obtain
+By \eqref{eq:rankone-a-bound}, if
+$\|f\|_{L^r(\sigma I,dw)}>0$, then
 \begin{align*}
 \|e_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
-&\leq
+\leq
 w(I)^{\frac1r-\frac12}
 \frac{
 \|f\chi_{\sigma I}\|_{L^r(dw)}
@@ -1974,50 +3208,125 @@ w(I)^{\frac1r-\frac12}
 =
 w(I)^{\frac1r-\frac12}.
 \end{align*}
-Therefore,
+The same estimate is trivial when
+$\|f\|_{L^r(\sigma I,dw)}=0$. Hence
 \[
-w(I)^{\frac12-\frac1r}
-\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
-\leq1,
+\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12}.
 \]
-which proves \eqref{eq:Dunkl-normalization-e}.
 
 Similarly,
 \[
-\|g_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
+\|h_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}
+=
+w(I^\ast)^{-1/2}
+w(I^\ast)^{1/r}
 =
 w(I^\ast)^{\frac1r-\frac12}.
 \]
-Hence
-\begin{align*}
-&w(I)^{\frac12-\frac1r}
-\|g_{p,q,I}^{\sigma,\tau}\|_{L^r(dw)}=
-\left(
-\frac{w(I)}{w(I^\ast)}
-\right)^{\frac12-\frac1r}
-\leq1.
-\end{align*}
+Since $I\subset I^\ast$, this yields
+\[
+w(I^\ast)^{\frac1r-\frac12}
+\leq
+w(I)^{\frac1r-\frac12}.
+\]
+Therefore,
+\begin{equation}\label{eq:rankone-normalization-proof}
+\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12},
+\qquad
+\|h_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12},
+\end{equation}
+which is precisely \eqref{eq:Dunkl-normalization-e-new}.
 
-This proves \eqref{eq:Dunkl-normalization-g}.
+\medskip
+\noindent
+\textbf{Step 5. }
 
-
-Assume first that
+Suppose first that
 $
 \|f\|_{L^r(\sigma I,dw)}>0.
 $
-Combining \eqref{eq:def-e-Dunkl},
-\eqref{eq:def-g-Dunkl} and
-\eqref{eq:b-factorization}, we obtain, for
-$x\in\sigma I$ and $y\in\tau I^\ast$,
-\begin{align}
-&c_{p,q}
-w(I)^{1-\frac1r}
-\|f\|_{L^r(\sigma I,dw)}
+By the definition of $\lambda_{\sigma,I}(f)$,
+\eqref{eq:rankone-e}, \eqref{eq:rankone-h}, and
+\eqref{eq:rankone-b-factor}, for $x\in\sigma I$ and
+$y\in\tau I^\ast$ we have
+\begin{align*}
+&c_{p,q}\lambda_{\sigma,I}(f)
 e_{p,q,I}^{\sigma,\tau}(x)
-g_{p,q,I}^{\sigma,\tau}(y)
-\nonumber\\
-&\quad=
+h_{p,q,I}^{\sigma,\tau}(y)
+\\
+&=
+c_{p,q}
+\left[
+\ell(I)w(I)^{-1/r}
+\|f\|_{L^r(\sigma I,dw)}
+\right]
+\\
+&\quad\times
+a_{p,q,I}^{\sigma,\tau}
+w(I)^{\frac1r-\frac12}
+\frac{
+f(x)
+}{
+\|f\|_{L^r(\sigma I,dw)}
+}
+w(I^\ast)^{-1/2}
+\\
+&\quad\times
+\exp\left(
+\frac{\pi i}{2\ell(I)}
+p\cdot
+\bigl(\Phi(\sigma^{-1}x)-c_Q\bigr)
+\right)
+\\
+&\quad\times
+\exp\left(
+\frac{\pi i}{2\ell(I)}
+q\cdot
+\bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
+\right)
+\\
+&=
+c_{p,q}a_{p,q,I}^{\sigma,\tau}
+\ell(I)
+w(I)^{-1/2}
+w(I^\ast)^{-1/2}
+f(x)
+\\
+&\quad\times
+\exp\left(
+\frac{\pi i}{2\ell(I)}
+p\cdot
+\bigl(\Phi(\sigma^{-1}x)-c_Q\bigr)
+\right)
+\\
+&\quad\times
+\exp\left(
+\frac{\pi i}{2\ell(I)}
+q\cdot
+\bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
+\right).
+\end{align*}
+By \eqref{eq:rankone-b-factor},
+\[
+c_{p,q}a_{p,q,I}^{\sigma,\tau}
+w(I)^{-1/2}w(I^\ast)^{-1/2}
+=
+b_{p,q,I}^{\sigma,\tau}w(I)^{-1}.
+\]
+Therefore,
+\begin{align*}
+&c_{p,q}\lambda_{\sigma,I}(f)
+e_{p,q,I}^{\sigma,\tau}(x)
+h_{p,q,I}^{\sigma,\tau}(y)\\
+&=
 b_{p,q,I}^{\sigma,\tau}
+\frac{\ell(I)}{w(I)}
 f(x)
 \exp\left(
 \frac{\pi i}{2\ell(I)}
@@ -2029,368 +3338,1662 @@ p\cdot
 q\cdot
 \bigl(\Phi(\tau^{-1}y)-c_Q\bigr)
 \right).
-\label{eq:rank-one-exact-identity}
-\end{align}
-Indeed, the powers of the measures cancel according to
-\[
-w(I)^{1-\frac1r}
-w(I)^{\frac1r-\frac12}
-w(I^\ast)^{-1/2}
-\left(\frac{w(I^\ast)}{w(I)}\right)^{1/2}
-=1.
-\]
-
-Multiplying \eqref{eq:local-K-Fourier} by $f(x)$ and using
-\eqref{eq:rank-one-exact-identity}, we get
+\end{align*}
+Summing over $p,q$ and using
+\eqref{eq:rankone-local-K-Fourier}, we obtain
 \begin{align}
-&f(x)K_{\D}(x,y)
+&f(x)K_{(-\Delta_{\D})^{-1/2}}(x,y)
 \psi\left(
 \frac{
 \Phi(\sigma^{-1}x)-\Phi(\tau^{-1}y)
-}{\ell(I)}
+}{
+\ell(I)
+}
 \right)
 \nonumber\\
-&\quad=
+&=
 \sum_{p,q\in\mathbb Z^N}
 c_{p,q}
-\ell(I)^{-(\N-1)}
-w(I)^{1-\frac1r}
-\|f\|_{L^r(\sigma I,dw)}
+\lambda_{\sigma,I}(f)
 e_{p,q,I}^{\sigma,\tau}(x)
-g_{p,q,I}^{\sigma,\tau}(y).
-\label{eq:one-piece-reconstruction}
+h_{p,q,I}^{\sigma,\tau}(y).
+\label{eq:rankone-one-piece}
 \end{align}
-If $\|f\|_{L^r(\sigma I,dw)}=0$, then $f=0$ almost everywhere on
-$\sigma I$, and hence \eqref{eq:one-piece-reconstruction}
-continues to hold for almost every $x\in\sigma I$.
 
-Moreover, if $x\in\sigma I$ but
-$y\notin\tau I^\ast$, then
-\eqref{eq:y-localization-Dunkl} shows that
-\[
-\psi\left(
-\frac{
-\Phi(\sigma^{-1}x)-\Phi(\tau^{-1}y)
-}{\ell(I)}
-\right)=0,
-\]
-while
+If
 $
-g_{p,q,I}^{\sigma,\tau}(y)=0.
+\|f\|_{L^r(\sigma I,dw)}=0,
 $
-Thus \eqref{eq:one-piece-reconstruction} is valid for almost
-every
+then $f=0$ almost everywhere on $\sigma I$, while
+$e_{p,q,I}^{\sigma,\tau}=0$. Hence
+\eqref{eq:rankone-one-piece} remains valid for almost every
+$x\in\sigma I$.
+
+If $x\in\sigma I$ but $y\notin\tau I^\ast$, then
+\eqref{eq:rankone-y-localization} implies that the left-hand side of
+\eqref{eq:rankone-one-piece} vanishes, while
+$
+h_{p,q,I}^{\sigma,\tau}(y)=0.
+$
+Thus \eqref{eq:rankone-one-piece} holds for almost every
 $
 (x,y)\in\sigma I\times\tau(\Gamma).
 $
 
-We now sum \eqref{eq:one-piece-reconstruction} over
-$I\in\mathbb D_{\Gamma,j}$ and then over $j\in\mathbb Z$.
-Using \eqref{eq:K-shell-decomp}, we obtain, for almost every
-$
+We next justify the absolute convergence needed to rearrange the
+series. Fix $\sigma,\tau$ and almost every $(x,y)$ such that
+\[
 x\in\sigma(\Gamma)^\circ,
+\qquad
 y\in\tau(\Gamma)^\circ,
-d(x,y)>0,
-$
-that
+\qquad
+d(x,y)>0.
+\]
+If a term indexed by $I$ is nonzero, then
+\[
+x\in\sigma I,
+\qquad
+y\in\tau I^\ast.
+\]
+The geometry of $I$ and $I^\ast$, together with
+\eqref{distanceequa} and \eqref{eq:biLip-N}, gives
+\[
+d(x,y)\lesssim\ell(I).
+\]
+For each fixed generation there is at most one
+$I\in\mathbb D_\Gamma$ containing $\sigma^{-1}x$.
+
+Moreover, from
+\[
+B_\Gamma(z_I,c_1\ell(I))\subset I
+\]
+and the volume estimates in the text,
+\[
+w(I)
+\gtrsim
+\ell(I)^\N.
+\]
+Using the definitions above and
+\eqref{eq:rankone-b-rapid}, we obtain, for every $M>0$,
 \begin{align*}
-f(x)K_{\D}(x,y)
-&=
+&c_{p,q}\lambda_{\sigma,I}(f)
+\left|
+e_{p,q,I}^{\sigma,\tau}(x)
+h_{p,q,I}^{\sigma,\tau}(y)
+\right|
+\\
+&\qquad\lesssim
+|f(x)|
+(1+|p|+|q|)^{-M}
+\frac{\ell(I)}{w(I)}
+\\
+&\qquad\lesssim
+|f(x)|
+(1+|p|+|q|)^{-M}
+\ell(I)^{1-\N}.
+\end{align*}
+Since $\N>1$, the sum over all dyadic scales satisfying
+\[
+\ell(I)\gtrsim d(x,y)
+\]
+converges. Choosing $M>2N$ also gives
+\[
+\sum_{p,q\in\mathbb Z^N}
+(1+|p|+|q|)^{-M}<\infty.
+\]
+Hence the relevant series is absolutely convergent for almost every
+such $(x,y)$.
+
+Summing \eqref{eq:rankone-one-piece} first over
+$I\in\mathbb D_{\Gamma,j}$ and then over $j\in\mathbb Z$, and using
+\eqref{eq:rankone-shell-decomposition}, gives
+\[
+f(x)K_{(-\Delta_{\D})^{-1/2}}(x,y)
+=
 \sum_{p,q\in\mathbb Z^N}
 c_{p,q}
 \sum_{I\in\mathbb D_\Gamma}
-\ell(I)^{-(\N-1)}
-w(I)^{1-\frac1r}
-\|f\|_{L^r(\sigma I,dw)}
+\lambda_{\sigma,I}(f)
 e_{p,q,I}^{\sigma,\tau}(x)
-g_{p,q,I}^{\sigma,\tau}(y).
-\end{align*}
-
-Finally, the interiors of the Weyl chambers
-$\{\sigma(\Gamma):\sigma\in G\}$ are pairwise disjoint and
-cover $\mathbb R^N$ up to the union of the reflecting
-hyperplanes, which is a $dw$-null set. Summing the last
-identity over $\sigma,\tau\in G$ gives exactly
-\eqref{eq:Dunkl-Riesz-rank-one}.
-
-This completes the proof.
-\end{proof}
-
-
-\begin{lemma}\label{lem:counterexample-weighted-Cwikel}
-Suppose that
+h_{p,q,I}^{\sigma,\tau}(y)
+\]
+for almost every
 \[
-dw(x)=w(x)\,dx,
+x\in\sigma(\Gamma)^\circ,
 \qquad
-w(x)=\prod_{v\in R}|\langle x,v\rangle|^{k(v)},
+y\in\tau(\Gamma)^\circ,
+\qquad
+d(x,y)>0.
 \]
-is a nontrivial Dunkl weight, that is,
-\[
-\kappa:=\sum_{v\in R}k(v)>0,
-\]
-and let $\Gamma$ be a Weyl chamber. Then the following assertion is
-false in general: if an integral operator $V$ on
-$L^2(\Gamma,dw)$ has a kernel $K(x,y)$ satisfying
-\[
-\left|
-\partial_x^\alpha\partial_y^\beta K(x,y)
-\right|
-\leq
-C_{\alpha,\beta}
-|x-y|^{-(N-1+|\alpha|+|\beta|)},
-\qquad x,y\in\Gamma,\quad x\neq y,
-\]
-then
-\[
-\|M_fV\|_{S^{N,\infty}(L^2(\Gamma,dw))}
-\lesssim
-\|f\|_{L^N(\Gamma,dx)}
-\]
-for every $f\in L^N(\Gamma,dx)$, with an implicit constant depending
-only on the constants in the kernel estimates and on the fixed Dunkl
-data.
 
-More precisely, there exist kernels $K_R$, with the constants in the
-above derivative estimates independent of $R$, and functions
-$f_R\in C_c^\infty(\Gamma)$ such that
+Finally, by the Weyl chamber decomposition established above in the
+text, the interiors of the chambers $\sigma(\Gamma)$ cover
+$\mathbb R^N$ up to the reflecting hyperplanes, which form a
+$dw$-null set. Summing over $\sigma,\tau\in G$, we obtain
 \[
-\sup_{R\gg1}\|f_R\|_{L^N(\Gamma,dx)}<\infty,
+f(x)K_{(-\Delta_{\D})^{-1/2}}(x,y)
+=
+\sum_{\sigma,\tau\in G}
+\sum_{p,q\in\mathbb Z^N}
+c_{p,q}
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+e_{p,q,I}^{\sigma,\tau}(x)
+h_{p,q,I}^{\sigma,\tau}(y)
 \]
-whereas
+for almost every $(x,y)$ with $d(x,y)>0$.
+
+Thus \eqref{eq:Dunkl-kernel-rank-one-new} holds, and the proof is
+complete.
+\end{proof}
+\begin{lemma}\label{lem:Cwikel-dyadic-distribution}
+Let $1<s<\infty$, and let $\mathbb D^0$ be the standard dyadic grid
+in $\mathbb R^N$. Suppose that
+$
+F\in L^s(\mathbb R^N),
+$
+For every $Q\in\mathbb D^0$, set
 \[
-\|M_{f_R}V_R\|_{S^{N,\infty}(L^2(\Gamma,dw))}
-\longrightarrow\infty
-\qquad\text{as }R\to\infty.
+b_Q
+:=
+|Q|^{\frac1s-1}\int_Q |F(x)|\,dx
+=
+|Q|^{-1/s'}\int_Q |F(x)|\,dx,
+\]
+Then
+\begin{equation}\label{eq:Cwikel-dyadic-distribution}
+\#\bigl\{Q\in\mathbb D^0:b_Q>t\bigr\}
+\lesssim_{N,s}
+t^{-s}\|F\|_{L^s(\mathbb R^N)}^s,
+\qquad t>0.
+\end{equation}
+Equivalently,
+\[
+\left\|\{b_Q\}_{Q\in\mathbb D^0}\right\|_{\ell^{s,\infty}}
+\lesssim_{N,s}
+\|F\|_{L^s(\mathbb R^N)}.
 \]
 \end{lemma}
 
 \begin{proof}
-Choose $\xi\in\Gamma^\circ$. Since $\xi$ lies in the interior of a
-Weyl chamber,
+Let $\mathcal E\subset\mathbb D^0$ be an arbitrary finite collection
+of dyadic cubes, and define
 \[
-\langle \xi,v\rangle\neq0
+G_{\mathcal E}(x)
+:=
+\sum_{Q\in\mathcal E}
+|Q|^{-1/s'}\chi_Q(x).
 \]
-for every $v\in R$. Hence, for every fixed $C>0$,
-\begin{equation}\label{eq:weight-along-chamber-ray}
-w(R\xi+z)\asymp R^\kappa,
-\qquad |z|\leq C,
+We first claim that
+\begin{equation}\label{eq:Cwikel-dyadic-G}
+\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}
+\lesssim_{N,s}
+(\#\mathcal E)^{1/s'}.
 \end{equation}
-uniformly for all sufficiently large $R$. Indeed,
-\[
-\begin{aligned}
-w(R\xi+z)
-&=
-\prod_{v\in R}
-\left|
-R\langle\xi,v\rangle+\langle z,v\rangle
-\right|^{k(v)}
-\\
-&=
-R^\kappa
-\prod_{v\in R}
-\left|
-\langle\xi,v\rangle
-+
-R^{-1}\langle z,v\rangle
-\right|^{k(v)},
-\end{aligned}
-\]
-Since $\xi\in\Gamma^\circ$ and the root system $R$ is finite,
-\[
-m_\xi:=\min_{v\in R}|\langle\xi,v\rangle|>0.
-\]
-Moreover, for $|z|\leq C$,
-\[
-|R^{-1}\langle z,v\rangle|
-\leq R^{-1}C\max_{u\in R}|u|.
-\]
-Thus, for all sufficiently large $R$, uniformly in $|z|\leq C$ and
-$v\in R$,
-\[
-\frac12|\langle\xi,v\rangle|
-\leq
-\left|\langle\xi,v\rangle+R^{-1}\langle z,v\rangle\right|
-\leq
-\frac32|\langle\xi,v\rangle|.
-\]
-Since $k(v)\geq0$ and $R$ is finite, it follows that
-\[
-0<c_\xi
-\leq
-\prod_{v\in R}
-\left|\langle\xi,v\rangle+R^{-1}\langle z,v\rangle\right|^{k(v)}
-\leq C_\xi<\infty
-\]
-uniformly for $|z|\leq C$ and all sufficiently large $R$.
 
-Fix nonzero functions
+Indeed, fix
 \[
-\phi,\psi\in C_c^\infty(B(0,\varepsilon)),
-\]
-where $\varepsilon>0$ is sufficiently small, and choose a fixed vector
-$a\in\mathbb R^N$ such that
-\[
-|a|>4\varepsilon.
+x\in\bigcup_{Q\in\mathcal E}Q.
 \]
 Set
 \[
-x_R:=R\xi,
-\qquad
-y_R:=R\xi+a.
-\]
-Since $\xi\in\Gamma^\circ$ and $a$ is fixed, for all sufficiently
-large $R$,
-\[
-B(x_R,\varepsilon)\cup B(y_R,\varepsilon)
-\subset\Gamma^\circ.
-\]
-
-Define
-\[
-K_R(x,y)
+\mathcal E_x
 :=
-\phi(x-x_R)\overline{\psi(y-y_R)},
-\qquad x,y\in\Gamma,
+\{Q\in\mathcal E:x\in Q\}.
 \]
-and let $V_R$ be the corresponding integral operator on
-$L^2(\Gamma,dw)$:
-\[
-V_Ru(x)
-=
-\int_\Gamma K_R(x,y)u(y)\,dw(y).
-\]
-For every pair of multi-indices $\alpha,\beta$,
-\[
-\partial_x^\alpha\partial_y^\beta K_R(x,y)
-=
-(\partial^\alpha\phi)(x-x_R)
-\overline{(\partial^\beta\psi)(y-y_R)}.
-\]
-If this expression is nonzero, then
-\[
-|x-x_R|<\varepsilon,
-\qquad
-|y-y_R|<\varepsilon,
-\]
-and therefore
-\[
-|a|-2\varepsilon
-\leq |x-y|
-\leq |a|+2\varepsilon.
-\]
-Thus $|x-y|\asymp1$ on the support of every derivative of $K_R$, with
-constants independent of $R$. It follows that
-\[
-\left|
-\partial_x^\alpha\partial_y^\beta K_R(x,y)
-\right|
-\leq
-C_{\alpha,\beta}
-|x-y|^{-(N-1+|\alpha|+|\beta|)}
-\]
-for all $x\neq y$, where $C_{\alpha,\beta}$ is independent of $R$.
+Since $\mathcal E$ is finite, there exists a cube
+$Q_x\in\mathcal E_x$ having minimal volume. Since any two cubes in
+the same dyadic grid which contain the same point are nested, every
+$Q\in\mathcal E_x$ contains $Q_x$. Thus the cubes in
+$\mathcal E_x$ belong to the chain of dyadic ancestors of $Q_x$.
 
-Put
+Denote by $Q_x^{(k)}$ the $k$-th dyadic ancestor of $Q_x$, so that
 \[
-\phi_R(x):=\phi(x-x_R),
-\qquad
-\psi_R(y):=\psi(y-y_R).
-\]
-Then
-\[
-V_Ru
+|Q_x^{(k)}|
 =
-\phi_R\,\langle u,\psi_R\rangle_{L^2(dw)},
+2^{kN}|Q_x|,
+\qquad k\geq0.
 \]
-so $V_R$ is a rank-one operator. Its unique nonzero singular value is
-\[
-s_1(V_R)
-=
-\|\phi_R\|_{L^2(dw)}
-\|\psi_R\|_{L^2(dw)}.
-\]
-By \eqref{eq:weight-along-chamber-ray},
-\[
-\begin{aligned}
-\|\phi_R\|_{L^2(dw)}^2
+It follows that
+\begin{align*}
+G_{\mathcal E}(x)
 &=
-\int_\Gamma
-|\phi(x-x_R)|^2w(x)\,dx
+\sum_{Q\in\mathcal E_x}|Q|^{-1/s'}
+\\
+&\leq
+\sum_{k=0}^{\infty}
+|Q_x^{(k)}|^{-1/s'}
+\\
+&=
+|Q_x|^{-1/s'}
+\sum_{k=0}^{\infty}
+2^{-kN/s'}
+\\
+&\lesssim_{N,s}
+|Q_x|^{-1/s'}.
+\end{align*}
+
+For each $Q\in\mathcal E$, define
+\[
+E_Q
+:=
+\left\{
+x\in\bigcup_{P\in\mathcal E}P:
+Q_x=Q
+\right\}.
+\]
+The sets $\{E_Q\}_{Q\in\mathcal E}$ are pairwise disjoint and
+satisfy
+\[
+E_Q\subset Q.
+\]
+Therefore,
+\begin{align*}
+\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}^{s'}
+&=
+\int_{\mathbb R^N}
+G_{\mathcal E}(x)^{s'}\,dx
+\\
+&\lesssim_{N,s}
+\sum_{Q\in\mathcal E}
+\int_{E_Q}|Q|^{-1}\,dx
+\\
+&=
+\sum_{Q\in\mathcal E}
+\frac{|E_Q|}{|Q|}
+\\
+&\leq
+\sum_{Q\in\mathcal E}1
+=
+\#\mathcal E.
+\end{align*}
+Taking the $s'$-th root proves
+\eqref{eq:Cwikel-dyadic-G}.
+
+We now estimate the sum of $\{b_Q\}_{Q\in\mathcal E}$. By
+H\"older's inequality and \eqref{eq:Cwikel-dyadic-G},
+\begin{align*}
+\sum_{Q\in\mathcal E}b_Q
+&=
+\sum_{Q\in\mathcal E}
+|Q|^{-1/s'}
+\int_Q|F(x)|\,dx
 \\
 &=
 \int_{\mathbb R^N}
-|\phi(z)|^2w(R\xi+z)\,dz
+|F(x)|
+\sum_{Q\in\mathcal E}
+|Q|^{-1/s'}\chi_Q(x)\,dx
 \\
-&\asymp
-R^\kappa
-\int_{\mathbb R^N}|\phi(z)|^2\,dz,
-\end{aligned}
+&=
+\int_{\mathbb R^N}
+|F(x)|G_{\mathcal E}(x)\,dx
+\\
+&\leq
+\|F\|_{L^s(\mathbb R^N)}
+\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}
+\\
+&\lesssim_{N,s}
+\|F\|_{L^s(\mathbb R^N)}
+(\#\mathcal E)^{1/s'}.
+\end{align*}
+
+Now fix $t>0$ and let
+\[
+\mathcal E
+\subset
+\{Q\in\mathbb D^0:b_Q>t\}
+\]
+be an arbitrary finite subcollection. Since $b_Q>t$ for every
+$Q\in\mathcal E$, we have
+\[
+t\,\#\mathcal E
+<
+\sum_{Q\in\mathcal E}b_Q
+\lesssim_{N,s}
+\|F\|_{L^s(\mathbb R^N)}
+(\#\mathcal E)^{1/s'}.
+\]
+If $\mathcal E\neq\varnothing$, dividing by
+$(\#\mathcal E)^{1/s'}$ and using
+\[
+1-\frac1{s'}=\frac1s,
+\]
+we obtain
+\[
+(\#\mathcal E)^{1/s}
+\lesssim_{N,s}
+t^{-1}\|F\|_{L^s(\mathbb R^N)}.
+\]
+Consequently,
+\[
+\#\mathcal E
+\lesssim_{N,s}
+t^{-s}\|F\|_{L^s(\mathbb R^N)}^s.
+\]
+Since this estimate holds for every finite subcollection
+\[
+\mathcal E
+\subset
+\{Q\in\mathbb D^0:b_Q>t\},
+\]
+it follows that
+\[
+\#\bigl\{Q\in\mathbb D^0:b_Q>t\bigr\}
+\lesssim_{N,s}
+t^{-s}\|F\|_{L^s(\mathbb R^N)}^s.
+\]
+This proves \eqref{eq:Cwikel-dyadic-distribution}, and hence also the
+stated weak $\ell^s$ estimate.
+\end{proof}
+
+\begin{lemma}\label{lem:Cwikel-lambda-weak}
+Assume that $N>2$ and $2<r<N$. Then, for every $\sigma\in G$ and
+every $f\in L^N(\mathbb R^N,dx)$, we have
+$f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw)$ and
+\begin{equation}\label{eq:Cwikel-lambda-weak}
+\left\|
+\left\{
+\lambda_{\sigma,I}(f)
+\right\}_{I\in\mathbb D_\Gamma}
+\right\|_{\ell^{N,\infty}}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\end{equation}
+The implicit constant is independent of $\sigma$ and $f$.
+\end{lemma}
+\begin{proof}
+We first note that
+$
+f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw).
+$
+Indeed, the density of $dw$ with respect to Lebesgue measure is
+$
+\prod_{v\in R_+}|\langle x,v\rangle|^{2k(v)},
+$
+which is bounded on every compact subset of $\mathbb R^N$. Hence, if
+$E\subset\mathbb R^N$ is bounded, then, since $r<N$,
+\[
+\int_E |f(x)|^r\,dw(x)
+\lesssim_E
+\int_E |f(x)|^r\,dx
+\leq
+|E|^{1-\frac rN}
+\|f\|_{L^N(\mathbb R^N,dx)}^r
+<\infty.
+\]
+Thus $\lambda_{\sigma,I}(f)$ in
+\eqref{eq:Dunkl-lambda-rank-one} is well defined.
+
+Fix $\sigma\in G$. Recall that
+$
+\Omega
+=
+\mathbb R_+^{N_0}\times\mathbb R^{N-N_0}
+$
+and, by Lemma~\ref{mulemma},
+\begin{equation}\label{eq:Cwikel-lambda-density}
+d\mu(u,z)
+=
+\phi(u)\,du\,dz,
+\qquad
+\phi(u)
+=
+|{\rm det}(\Phi)|^{-1}
+\prod_{v\in R_+}
+\left(
+\sum_{i=1}^{N_0}a_{v,i}u_i
+\right)^{2k(v)},
+\end{equation}
+where
+$
+a_{v,i}\geq0.
+$
+In particular, $\phi$ is nondecreasing in each of the variables
+$u_1,\ldots,u_{N_0}$ and is independent of the remaining
+$N-N_0$ variables.
+
+Let
+$
+I=\Phi^{-1}(Q)\in\mathbb D_\Gamma,
+$
+where
+\[
+Q
+=
+\prod_{i=1}^N
+[m_i\ell,(m_i+1)\ell)
+\subset\Omega,
+\qquad
+\ell=\ell(Q)=\ell(I),
+\]
+with
+\[
+m_i\in\mathbb Z_+,
+\qquad 1\leq i\leq N_0,
+\]
+and
+\[
+m_i\in\mathbb Z,
+\qquad N_0<i\leq N.
+\]
+Define
+$
+u^+
+:=
+\bigl(
+(m_1+1)\ell,\ldots,(m_{N_0}+1)\ell
+\bigr)
+$
+and
+\[
+Q^+
+:=
+\prod_{i=1}^{N_0}
+\left[
+\left(m_i+\frac12\right)\ell,
+(m_i+1)\ell
+\right)
+\times
+\prod_{i=N_0+1}^{N}
+[m_i\ell,(m_i+1)\ell).
+\]
+Then
+\[
+|Q^+|=2^{-N_0}|Q|.
+\]
+
+For every $(u,z)\in Q^+$ and every $1\leq i\leq N_0$,
+\[
+u_i
+\geq
+\left(m_i+\frac12\right)\ell
+\geq
+\frac12(m_i+1)\ell.
+\]
+Since $a_{v,i}\geq0$, it follows that, for every $v\in R_+$,
+\[
+\sum_{i=1}^{N_0}a_{v,i}u_i
+\geq
+\frac12
+\sum_{i=1}^{N_0}a_{v,i}(m_i+1)\ell.
+\]
+Consequently,
+\[
+\phi(u)
+\geq
+2^{-2\sum_{v\in R_+}k(v)}
+\phi(u^+).
+\]
+Since
+\[
+2\sum_{v\in R_+}k(v)
+=
+\sum_{v\in R}k(v)
+=
+\N-N,
+\]
+we obtain
+\[
+\phi(u)
+\geq
+2^{-(\N-N)}
+\phi(u^+),
+\qquad
+(u,z)\in Q^+.
+\]
+Therefore,
+\begin{align*}
+\mu(Q)
+&=
+\int_Q\phi(u)\,du\,dz
+\\
+&\geq
+\int_{Q^+}\phi(u)\,du\,dz
+\\
+&\geq
+2^{-(\N-N)}
+|Q^+|\phi(u^+)
+\\
+&=
+2^{-(\N-N+N_0)}
+|Q|\phi(u^+).
+\end{align*}
+On the other hand, by the coordinatewise monotonicity of $\phi$,
+\[
+\operatorname*{ess\,sup}_{(u,z)\in Q}\phi(u)
+\leq
+\phi(u^+).
+\]
+It follows that
+\begin{equation}\label{eq:Cwikel-density-sup-average}
+\operatorname*{ess\,sup}_{Q}\phi
+\lesssim
+\frac{\mu(Q)}{|Q|}.
+\end{equation}
+
+Since $dw$ is $G$-invariant and
+\[
+\mu(Q)=w(\Phi^{-1}(Q))=w(I),
+\]
+we have
+\begin{align*}
+\frac{1}{w(I)}
+\int_{\sigma I}|f(x)|^r\,dw(x)
+&=
+\frac{1}{w(I)}
+\int_I|f(\sigma x)|^r\,dw(x)
+\\
+&=
+\frac{1}{\mu(Q)}
+\int_Q
+|f(\sigma\Phi^{-1}(\xi))|^r\,d\mu(\xi)
+\\
+&=
+\frac{1}{\mu(Q)}
+\int_Q
+|f(\sigma\Phi^{-1}(\xi))|^r
+\phi(\xi)\,d\xi
+\\
+&\leq
+\frac{\operatorname*{ess\,sup}_{Q}\phi}{\mu(Q)}
+\int_Q
+|f(\sigma\Phi^{-1}(\xi))|^r\,d\xi
+\\
+&\lesssim
+\frac1{|Q|}
+\int_Q
+|f(\sigma\Phi^{-1}(\xi))|^r\,d\xi,
+\end{align*}
+where we used \eqref{eq:Cwikel-density-sup-average} in the last
+inequality. Hence, by the definition
+\eqref{eq:Dunkl-lambda-rank-one},
+\begin{align}
+\lambda_{\sigma,I}(f)^r
+&=
+\ell(I)^r
+\frac1{w(I)}
+\int_{\sigma I}|f(x)|^r\,dw(x)
+\nonumber\\
+&\lesssim
+\frac{\ell(Q)^r}{|Q|}
+\int_Q
+|f(\sigma\Phi^{-1}(\xi))|^r\,d\xi.
+\label{eq:Cwikel-lambda-Lebesgue}
+\end{align}
+
+Set
+\[
+s:=\frac Nr.
+\]
+Since $r<N$, we have $s>1$. Moreover,
+\[
+|Q|=\ell(Q)^N,
 \]
 and hence
 \[
-\|\phi_R\|_{L^2(dw)}
-\asymp R^{\kappa/2}.
+\frac{\ell(Q)^r}{|Q|}
+=
+|Q|^{\frac rN-1}
+=
+|Q|^{\frac1s-1}.
 \]
-Likewise,
+Define
 \[
-\|\psi_R\|_{L^2(dw)}
-\asymp R^{\kappa/2}.
+F_\sigma(\xi)
+:=
+\begin{cases}
+|f(\sigma\Phi^{-1}(\xi))|^r,
+&\xi\in\Omega,\\
+0,
+&\xi\notin\Omega.
+\end{cases}
 \]
-Consequently,
-\begin{equation}\label{eq:rank-one-growth-counterexample}
-s_1(V_R)\asymp R^\kappa.
+Then \eqref{eq:Cwikel-lambda-Lebesgue} gives
+\begin{equation}\label{eq:Cwikel-lambda-dyadic}
+\lambda_{\sigma,I}(f)^r
+\lesssim
+|Q|^{\frac1s-1}
+\int_QF_\sigma(\xi)\,d\xi.
 \end{equation}
 
-Choose $\eta\in C_c^\infty(\mathbb R^N)$ such that
+We next verify that $F_\sigma\in L^s(\mathbb R^N)$. Since
+$
+rs=N,
+$
+a change of variables $\xi=\Phi(x)$ gives
+\begin{align*}
+\|F_\sigma\|_{L^s(\mathbb R^N)}^s
+&=
+\int_\Omega
+|f(\sigma\Phi^{-1}(\xi))|^{rs}\,d\xi
+\\
+&=
+\int_\Omega
+|f(\sigma\Phi^{-1}(\xi))|^N\,d\xi
+\\
+&=
+|{\rm det}(\Phi)|
+\int_\Gamma
+|f(\sigma x)|^N\,dx
+\\
+&=
+|{\rm det}(\Phi)|
+\int_{\sigma\Gamma}
+|f(x)|^N\,dx
+\\
+&\leq
+|{\rm det}(\Phi)|
+\|f\|_{L^N(\mathbb R^N,dx)}^N
+<\infty,
+\end{align*}
+where in the fourth line we used the fact that $\sigma$ is
+orthogonal. Thus
+$
+F_\sigma\in L^s(\mathbb R^N).
+$
+
+Since $\mathbb D_\Omega^0$ is a subfamily of the standard dyadic
+system $\mathbb D^0$, we may apply
+Lemma~\ref{lem:Cwikel-dyadic-distribution} to $F_\sigma$. Together
+with \eqref{eq:Cwikel-lambda-dyadic}, this gives, for every $a>0$,
+\begin{align*}
+\#\left\{
+I\in\mathbb D_\Gamma:
+\lambda_{\sigma,I}(f)>a
+\right\}
+&\leq
+\#\left\{
+Q\in\mathbb D_\Omega^0:
+|Q|^{\frac1s-1}
+\int_QF_\sigma(\xi)\,d\xi
+\gtrsim a^r
+\right\}
+\\
+&\leq
+\#\left\{
+Q\in\mathbb D^0:
+|Q|^{\frac1s-1}
+\int_QF_\sigma(\xi)\,d\xi
+\gtrsim a^r
+\right\}
+\\
+&\lesssim
+(a^r)^{-s}
+\|F_\sigma\|_{L^s(\mathbb R^N)}^s
+\\
+&=
+a^{-rs}
+\|F_\sigma\|_{L^s(\mathbb R^N)}^s
+\\
+&\lesssim
+a^{-N}
+\|f\|_{L^N(\mathbb R^N,dx)}^N,
+\end{align*}
+where in the last line we used $rs=N$ and the estimate for
+$\|F_\sigma\|_{L^s(\mathbb R^N)}^s$ obtained above. Therefore,
 \[
-\eta=1
-\quad\text{on }\operatorname{supp}\phi,
+\#\left\{
+I\in\mathbb D_\Gamma:
+\lambda_{\sigma,I}(f)>a
+\right\}
+\lesssim
+\left(
+\frac{\|f\|_{L^N(\mathbb R^N,dx)}}{a}
+\right)^N,
+\qquad a>0.
 \]
-and define
+By the definition of the weak $\ell^N$ quasi-norm, this is exactly
 \[
-f_R(x):=\eta(x-x_R).
+\left\|
+\left\{
+\lambda_{\sigma,I}(f)
+\right\}_{I\in\mathbb D_\Gamma}
+\right\|_{\ell^{N,\infty}}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)}.
 \]
-For all sufficiently large $R$,
+All the implicit constants above depend only on the fixed structural
+parameters and are independent of $\sigma\in G$ and $f$. This
+completes the proof.
+\end{proof}
+\begin{lemma}\label{lem:Cwikel-rank-one-block}
+Assume that $N>2$ and $2<r<N$.
+Let
 \[
-\operatorname{supp}f_R\subset\Gamma^\circ,
+\left\{
+e_{p,q,I}^{\sigma,\tau}
+\right\}_{p,q\in\mathbb Z^N,\,
+I\in\mathbb D_\Gamma,\,
+\sigma,\tau\in G}
+\quad\text{and}\quad
+\left\{
+h_{p,q,I}^{\sigma,\tau}
+\right\}_{p,q\in\mathbb Z^N,\,
+I\in\mathbb D_\Gamma,\,
+\sigma,\tau\in G}
 \]
-and by translation invariance of Lebesgue measure,
+be the families obtained from
+Lemma~\ref{lem:rank-one-decomposition-Dunkl} with this choice of $r$.
+For every
 \[
-\|f_R\|_{L^N(\Gamma,dx)}
-=
-\|\eta\|_{L^N(\mathbb R^N)}.
+f\in L^N(\mathbb R^N,dx),
+\qquad
+\sigma,\tau\in G,
+\qquad
+p,q\in\mathbb Z^N,
 \]
-In particular,
+define
 \[
-\sup_{R\gg1}
-\|f_R\|_{L^N(\Gamma,dx)}
-<\infty.
+A_{\sigma,\tau,p,q}(f)
+:=
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+\left\langle
+\,\cdot,\,
+\overline{h_{p,q,I}^{\sigma,\tau}}
+\right\rangle_{L^2(\mathbb R^N,dw)}
+e_{p,q,I}^{\sigma,\tau}.
+\]
+Then
+\[
+A_{\sigma,\tau,p,q}(f)
+\in
+S^{N,\infty}\bigl(L^2(\mathbb R^N,dw)\bigr)
+\]
+and
+\begin{equation}\label{eq:Cwikel-rank-one-block}
+\left\|
+A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)},
+\end{equation}
+where the implicit constant is independent of
+$\sigma,\tau,p,q$, and $f$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:Cwikel-lambda-weak},
+\begin{equation}\label{eq:Cwikel-block-lambda-weak}
+\left\|
+\left\{
+\lambda_{\sigma,I}(f)
+\right\}_{I\in\mathbb D_\Gamma}
+\right\|_{\ell^{N,\infty}}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)},
+\end{equation}
+uniformly in $\sigma\in G$.
+
+Fix
+\[
+\sigma,\tau\in G,
+\qquad
+p,q\in\mathbb Z^N.
+\]
+For $\gamma\in G$, define
+\[
+U_\gamma:
+L^2(\Gamma,dw)
+\longrightarrow
+L^2(\gamma\Gamma,dw)
+\]
+by
+\[
+U_\gamma u(x)
+:=
+u(\gamma^{-1}x),
+\qquad x\in\gamma\Gamma.
+\]
+Since $dw$ is $G$-invariant, $U_\gamma$ is unitary. In fact, the same
+argument shows that $U_\gamma$ is an isometry on $L^s(dw)$ for every
+$1\leq s\leq\infty$.
+
+For $I\in\mathbb D_\Gamma$, define
+\[
+\widetilde e_I
+:=
+U_\sigma^{-1}
+e_{p,q,I}^{\sigma,\tau}
+\]
+and
+\[
+\widetilde h_I
+:=
+U_\tau^{-1}
+\overline{h_{p,q,I}^{\sigma,\tau}}.
+\]
+By \eqref{eq:Dunkl-support-e-new},
+\[
+\operatorname{supp}\widetilde e_I
+\subset I,
+\qquad
+\operatorname{supp}\widetilde h_I
+\subset I^\ast.
 \]
 
-Since $f_R=1$ on $\operatorname{supp}\phi_R$, we have
+We claim that
 \[
-M_{f_R}V_R=V_R.
+\{\widetilde e_I\}_{I\in\mathbb D_\Gamma}
+\quad\text{and}\quad
+\{\widetilde h_I\}_{I\in\mathbb D_\Gamma}
 \]
-As $V_R$ has rank one,
+are NWO sequences.
+
+Indeed, write
 \[
-\|V_R\|_{S^{N,\infty}(L^2(\Gamma,dw))}
+I=\Phi^{-1}(Q),
+\qquad
+I^\ast=\Phi^{-1}\bigl((2Q)\cap\Omega\bigr).
+\]
+Since $\Phi$ and $\Phi^{-1}$ are bi-Lipschitz, the set $I^\ast$ is
+contained in a fixed geometric enlargement of $I$, with the enlargement
+constant independent of $I$. Thus the support condition in the
+definition of an NWO sequence is satisfied for both families.
+
+Moreover, since $U_\sigma$ and $U_\tau$ preserve the $L^r(dw)$ norm,
+\eqref{eq:Dunkl-normalization-e-new} gives
+\begin{equation}\label{eq:Cwikel-block-NWO-norm-e}
+\|\widetilde e_I\|_{L^r(\Gamma,dw)}
 =
-s_1(V_R).
-\]
-Therefore, by \eqref{eq:rank-one-growth-counterexample},
-\[
-\|M_{f_R}V_R\|_{S^{N,\infty}(L^2(\Gamma,dw))}
-\asymp R^\kappa
-\longrightarrow\infty,
-\]
-whereas
-\[
-\|f_R\|_{L^N(\Gamma,dx)}
+\|e_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12}
+\end{equation}
+and
+\begin{equation}\label{eq:Cwikel-block-NWO-norm-h}
+\|\widetilde h_I\|_{L^r(\Gamma,dw)}
 =
-\|\eta\|_{L^N(\mathbb R^N)}
+\|h_{p,q,I}^{\sigma,\tau}\|_{L^r(\mathbb R^N,dw)}
+\leq
+w(I)^{\frac1r-\frac12}.
+\end{equation}
+Since $r>2$, these are precisely the required $L^r$ normalization
+conditions for NWO sequences. Therefore
+\[
+\{\widetilde e_I\}_{I\in\mathbb D_\Gamma}
+\quad\text{and}\quad
+\{\widetilde h_I\}_{I\in\mathbb D_\Gamma}
 \]
-is independent of $R$. This proves the assertion.
+are NWO sequences.
+
+Consider now the operator on $L^2(\Gamma,dw)$ given by
+\begin{equation}\label{eq:Cwikel-pullback-block}
+\widetilde A_{\sigma,\tau,p,q}(f)
+:=
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+\left\langle
+\,\cdot,\,
+\widetilde h_I
+\right\rangle_{L^2(\Gamma,dw)}
+\widetilde e_I.
+\end{equation}
+Applying Lemma~\ref{NWOLEMMAA2} with exponent $N$, and then
+using \eqref{eq:Cwikel-block-lambda-weak}, we obtain
+\begin{align}
+\left\|
+\widetilde A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\Gamma,dw))}
+&\lesssim
+\left\|
+\left\{
+\lambda_{\sigma,I}(f)
+\right\}_{I\in\mathbb D_\Gamma}
+\right\|_{\ell^{N,\infty}}\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\label{eq:Cwikel-pullback-block-estimate}
+\end{align}
+
+It remains to transfer this estimate back to
+$L^2(\mathbb R^N,dw)$.
+
+By \eqref{eq:Dunkl-support-e-new}, the range of
+$A_{\sigma,\tau,p,q}(f)$ is contained in
+$L^2(\sigma\Gamma,dw)$, whereas the operator vanishes on
+$L^2(\mathbb R^N\setminus\tau\Gamma,dw)$. Thus its nonzero part is an
+operator
+\[
+L^2(\tau\Gamma,dw)
+\longrightarrow
+L^2(\sigma\Gamma,dw).
+\]
+For $g\in L^2(\tau\Gamma,dw)$, put
+\[
+u:=U_\tau^{-1}g.
+\]
+Then, using the definition of $\widetilde h_I$ and the unitarity of
+$U_\tau$,
+\begin{align*}
+\left\langle
+g,
+\overline{h_{p,q,I}^{\sigma,\tau}}
+\right\rangle_{L^2(\tau\Gamma,dw)}
+&=
+\left\langle
+U_\tau^{-1}g,
+U_\tau^{-1}
+\overline{h_{p,q,I}^{\sigma,\tau}}
+\right\rangle_{L^2(\Gamma,dw)}
+=
+\langle u,\widetilde h_I\rangle_{L^2(\Gamma,dw)}.
+\end{align*}
+Also,
+\[
+e_{p,q,I}^{\sigma,\tau}
+=
+U_\sigma\widetilde e_I.
+\]
+Consequently,
+\begin{align*}
+A_{\sigma,\tau,p,q}(f)g
+&=
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+\left\langle
+g,
+\overline{h_{p,q,I}^{\sigma,\tau}}
+\right\rangle
+e_{p,q,I}^{\sigma,\tau}
+\\
+&=
+U_\sigma
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+\langle u,\widetilde h_I\rangle
+\widetilde e_I
+\\
+&=
+U_\sigma
+\widetilde A_{\sigma,\tau,p,q}(f)
+U_\tau^{-1}g.
+\end{align*}
+Hence
+\begin{equation}\label{eq:Cwikel-block-unitary-equivalence}
+A_{\sigma,\tau,p,q}(f)
+=
+U_\sigma
+\widetilde A_{\sigma,\tau,p,q}(f)
+U_\tau^{-1}
+\end{equation}
+on $L^2(\tau\Gamma,dw)$, with the left-hand side extended by zero on
+the orthogonal complement of $L^2(\tau\Gamma,dw)$.
+
+Therefore the nonzero singular values of
+$A_{\sigma,\tau,p,q}(f)$ and
+$\widetilde A_{\sigma,\tau,p,q}(f)$ coincide. In particular,
+\[
+\left\|
+A_{\sigma,\tau,p,q}(f)
+\right\|_{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+=
+\left\|
+\widetilde A_{\sigma,\tau,p,q}(f)
+\right\|_{S^{N,\infty}(L^2(\Gamma,dw))}.
+\]
+Combining this identity with
+\eqref{eq:Cwikel-pullback-block-estimate}, we conclude that
+\[
+\left\|
+A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\]
+The implicit constant is independent of
+$\sigma,\tau,p,q$, and $f$, which proves
+\eqref{eq:Cwikel-rank-one-block}.
 \end{proof}
+
+\begin{lemma}\label{lem:Cwikel-Dunkl}
+Assume that
+$
+N>2$.
+Then there exists a constant $C_{N,R,k}>0$ such that, for every
+$f\in L^N(\mathbb R^N,dx)$,
+\[
+M_f(-\Delta_{\D})^{-1/2}
+\in
+S^{N,\infty}\bigl(L^2(\mathbb R^N,dw)\bigr)
+\]
+and
+\begin{equation}\label{eq:Cwikel-Dunkl}
+\bigl\|
+M_f(-\Delta_{\D})^{-1/2}
+\bigr\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\leq
+C_{N,R,k}
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose
+$
+2<r<N.
+$
+By Lemma~\ref{lem:Cwikel-lambda-weak},
+$
+f\in L^r_{\mathrm{loc}}(\mathbb R^N,dw),
+$
+and hence Lemma~\ref{lem:rank-one-decomposition-Dunkl} is applicable
+with this choice of $r$.
+
+Let
+\[
+\{c_{p,q}\}_{p,q\in\mathbb Z^N},
+\qquad
+\{e_{p,q,I}^{\sigma,\tau}\},
+\qquad
+\{h_{p,q,I}^{\sigma,\tau}\}
+\]
+be the coefficients and functions given by
+Lemma~\ref{lem:rank-one-decomposition-Dunkl}. For
+$\sigma,\tau\in G$ and $p,q\in\mathbb Z^N$, let
+\[
+A_{\sigma,\tau,p,q}(f)
+:=
+\sum_{I\in\mathbb D_\Gamma}
+\lambda_{\sigma,I}(f)
+\left\langle
+\,\cdot,\,
+\overline{h_{p,q,I}^{\sigma,\tau}}
+\right\rangle_{L^2(\mathbb R^N,dw)}
+e_{p,q,I}^{\sigma,\tau}.
+\]
+By Lemma~\ref{lem:Cwikel-rank-one-block},
+\begin{equation}\label{eq:Cwikel-block-estimate-final}
+\left\|
+A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\lesssim
+\|f\|_{L^N(\mathbb R^N,dx)}
+\end{equation}
+uniformly in
+\[
+\sigma,\tau\in G,
+\qquad
+p,q\in\mathbb Z^N.
+\]
+
+On the other hand, by \eqref{eq:Dunkl-cpq-decay}, for every $M>0$,
+\[
+c_{p,q}
+\leq
+C_M(1+|p|+|q|)^{-M}.
+\]
+Taking $M>2N$, we obtain
+\begin{equation}\label{eq:Cwikel-cpq-l1-final}
+\sum_{p,q\in\mathbb Z^N}c_{p,q}<\infty.
+\end{equation}
+Since $G$ is finite, \eqref{eq:Cwikel-block-estimate-final} and
+\eqref{eq:Cwikel-cpq-l1-final} imply
+\begin{align*}
+&\sum_{\sigma,\tau\in G}
+\sum_{p,q\in\mathbb Z^N}
+c_{p,q}
+\left\|
+A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\\
+&\qquad\lesssim
+|G|^2
+\left(
+\sum_{p,q\in\mathbb Z^N}c_{p,q}
+\right)
+\|f\|_{L^N(\mathbb R^N,dx)}
+\\
+&\qquad\lesssim_{N,R,k}
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\end{align*}
+Therefore the series
+\[
+\sum_{\sigma,\tau\in G}
+\sum_{p,q\in\mathbb Z^N}
+c_{p,q}A_{\sigma,\tau,p,q}(f)
+\]
+converges in
+$S^{N,\infty}(L^2(\mathbb R^N,dw))$, and
+\begin{equation}\label{eq:Cwikel-summed-blocks}
+\left\|
+\sum_{\sigma,\tau\in G}
+\sum_{p,q\in\mathbb Z^N}
+c_{p,q}A_{\sigma,\tau,p,q}(f)
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\lesssim_{N,R,k}
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\end{equation}
+
+It remains only to identify the operator represented by this series.
+By the definition of $A_{\sigma,\tau,p,q}(f)$, the integral kernel of
+its summand corresponding to $I\in\mathbb D_\Gamma$ is
+\[
+\lambda_{\sigma,I}(f)
+e_{p,q,I}^{\sigma,\tau}(x)
+h_{p,q,I}^{\sigma,\tau}(y).
+\]
+Hence the kernel identity
+\eqref{eq:Dunkl-kernel-rank-one-new} in
+Lemma~\ref{lem:rank-one-decomposition-Dunkl} gives
+\[
+M_f(-\Delta_{\D})^{-1/2}
+=
+C
+\sum_{\sigma,\tau\in G}
+\sum_{p,q\in\mathbb Z^N}
+c_{p,q}A_{\sigma,\tau,p,q}(f).
+\]
+More precisely, the two sides have the same integral kernel
+\[
+f(x)K_{(-\Delta_{\D})^{-1/2}}(x,y)
+\]
+for almost every $(x,y)$ with $d(x,y)>0$; hence they agree initially
+on the natural test-function class and therefore, by the boundedness
+of the right-hand side, as operators on $L^2(\mathbb R^N,dw)$.
+
+Combining this identity with \eqref{eq:Cwikel-summed-blocks}, we obtain
+\[
+M_f(-\Delta_{\D})^{-1/2}
+\in
+S^{N,\infty}\bigl(L^2(\mathbb R^N,dw)\bigr)
+\]
+and
+\[
+\left\|
+M_f(-\Delta_{\D})^{-1/2}
+\right\|_
+{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+\lesssim_{N,R,k}
+\|f\|_{L^N(\mathbb R^N,dx)}.
+\]
+Absorbing the structural constants into $C_{N,R,k}$ gives
+\eqref{eq:Cwikel-Dunkl}.
+\end{proof}
+
+%
+%\begin{proof}
+%Fix once and for all an exponent
+%\[
+%s>2.
+%\]
+%For instance, one may take \(s=4\). Since
+%\(f\in\dot W^{1,N}(\mathbb R^N)\), the local critical
+%Sobolev--Poincar\'e inequality implies
+%\[
+%f\in L^s_{\rm loc}(\mathbb R^N,dx).
+%\]
+%Since the density \(dw/dx\) is bounded on compact subsets,
+%\[
+%f\in L^s_{\rm loc}(\mathbb R^N,dw).
+%\]
+%Thus all the local expressions below are well defined.
+%
+%We use the endpoint decomposition from
+%Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint}. Suppressing
+%temporarily the indices \(u,v,\sigma,\tau\), write
+%\[
+%e_I=e_{u,v,I}^{\sigma,\tau},
+%\qquad
+%h_I=h_{u,v,I}^{\sigma,\tau},
+%\qquad
+%\theta_I=\theta_{\sigma,\tau,I}.
+%\]
+%On the support of \(e_I(x)h_I(y)\), we have
+%\[
+%x\in\sigma I,
+%\qquad
+%y\in\tau I^*.
+%\]
+%Set
+%\[
+%\xi:=\sigma^{-1}x\in I,
+%\qquad
+%\eta:=\tau^{-1}y\in I^*.
+%\]
+%Then
+%\begin{align}
+%f(y)-f(x)
+%&=
+%f(\tau\eta)-f(\sigma\xi)
+%\nonumber\\
+%&=
+%\bigl[
+%f(\tau\eta)-f(\tau\xi)
+%\bigr]
+%+
+%\bigl[
+%f(\tau\xi)-f(\sigma\xi)
+%\bigr].
+%\label{eq:commutator-two-parts}
+%\end{align}
+%We treat these two terms separately.
+%
+%\medskip
+%\noindent
+%\textbf{Step 1. The same-chamber term.}
+%
+%Let
+%\[
+%g_\tau(z):=f(\tau z),
+%\qquad z\in\Gamma.
+%\]
+%Let \(\mathcal B_I\) be the chamber ball from
+%Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation}, and put
+%\[
+%m_{\tau,I}
+%:=
+%(g_\tau)_{\mathcal B_I,dx}.
+%\]
+%Define
+%\begin{equation}
+%\label{eq:local-same-chamber-omega}
+%\omega_{\tau,I}
+%:=
+%\left[
+%\frac1{w(I)}
+%\int_{I^*}
+%|g_\tau(z)-m_{\tau,I}|^s\,dw(z)
+%\right]^{1/s}.
+%\end{equation}
+%Since
+%\[
+%I^*\subset\mathcal B_I,
+%\qquad
+%w(\mathcal B_I)\simeq w(I),
+%\]
+%Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation} gives
+%\begin{equation}
+%\label{eq:local-omega-weak}
+%\left\|
+%\{\omega_{\tau,I}\}_{I\in\mathbb D_\Gamma}
+%\right\|_{\ell^{N,\infty}}
+%\lesssim
+%\|\nabla g_\tau\|_{L^N(\Gamma)}
+%\leq
+%\|\nabla f\|_{L^N(\mathbb R^N)}.
+%\end{equation}
+%Since \(0<\theta_I\leq1\),
+%\begin{equation}
+%\label{eq:theta-local-omega-weak}
+%\left\|
+%\{\theta_I\omega_{\tau,I}\}_{I}
+%\right\|_{\ell^{N,\infty}}
+%\lesssim
+%\|\nabla f\|_{L^N}.
+%\end{equation}
+%
+%If \(\omega_{\tau,I}>0\), define
+%\[
+%E_{I,0}:=e_I,
+%\qquad
+%H_{I,0}(y)
+%:=
+%\omega_{\tau,I}^{-1}
+%\bigl(f(y)-m_{\tau,I}\bigr)h_I(y),
+%\]
+%and
+%\[
+%E_{I,1}(x)
+%:=
+%-\omega_{\tau,I}^{-1}
+%\bigl(
+%f(\tau\sigma^{-1}x)-m_{\tau,I}
+%\bigr)e_I(x),
+%\qquad
+%H_{I,1}:=h_I.
+%\]
+%If \(\omega_{\tau,I}=0\), set these modified factors equal to zero.
+%Then
+%\begin{align}
+%&
+%\theta_I
+%\bigl[
+%f(\tau\eta)-f(\tau\xi)
+%\bigr]
+%e_I(x)h_I(y)
+%\nonumber\\
+%&\qquad=
+%\theta_I\omega_{\tau,I}
+%\sum_{\varepsilon=0}^{1}
+%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y).
+%\label{eq:same-chamber-NWO-split}
+%\end{align}
+%
+%We claim that, for each \(\varepsilon=0,1\),
+%\[
+%\{E_{I,\varepsilon}\}_{I\in\mathbb D_\Gamma},
+%\qquad
+%\{H_{I,\varepsilon}\}_{I\in\mathbb D_\Gamma}
+%\]
+%are NWO families after the same \(G\)-pullbacks as in
+%Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint}.
+%The support conditions are immediate, since multiplication by the
+%displayed functions does not enlarge supports.
+%
+%For example, using
+%\eqref{eq:endpoint-e-h-pointwise},
+%\begin{align*}
+%\|H_{I,0}\|_{L^s(dw)}
+%&\lesssim
+%\omega_{\tau,I}^{-1}
+%w(I)^{-1/2}
+%\left(
+%\int_{\tau I^*}
+%|f-m_{\tau,I}|^s\,dw
+%\right)^{1/s}
+%\\
+%&=
+%\omega_{\tau,I}^{-1}
+%w(I)^{-1/2}
+%\left(
+%\int_{I^*}
+%|g_\tau-m_{\tau,I}|^s\,dw
+%\right)^{1/s}
+%\\
+%&=
+%w(I)^{1/s-1/2}.
+%\end{align*}
+%Similarly, by the \(G\)-invariance of \(dw\),
+%\begin{align*}
+%\|E_{I,1}\|_{L^s(dw)}
+%&\lesssim
+%\omega_{\tau,I}^{-1}
+%w(I)^{-1/2}
+%\left(
+%\int_{\sigma I}
+%|f(\tau\sigma^{-1}x)-m_{\tau,I}|^s\,dw(x)
+%\right)^{1/s}
+%\\
+%&=
+%\omega_{\tau,I}^{-1}
+%w(I)^{-1/2}
+%\left(
+%\int_I
+%|g_\tau(z)-m_{\tau,I}|^s\,dw(z)
+%\right)^{1/s}
+%\\
+%&\leq
+%w(I)^{1/s-1/2}.
+%\end{align*}
+%The other two factors are the original NWO factors. Hence the claim
+%follows.
+%
+%\medskip
+%\noindent
+%\textbf{Step 2. The cross-chamber term.}
+%
+%Define
+%\[
+%H_{\sigma,\tau}(z)
+%=
+%f(\tau z)-f(\sigma z),
+%\qquad z\in\Gamma,
+%\]
+%and
+%\[
+%a_{\sigma,\tau,I}
+%=
+%\frac1{|I|}
+%\int_I H_{\sigma,\tau}(z)\,dz.
+%\]
+%Put
+%\begin{equation}
+%\label{eq:jump-residual-rho}
+%\rho_{\sigma,\tau,I}
+%:=
+%\left[
+%\frac1{w(I)}
+%\int_I
+%|H_{\sigma,\tau}(z)-a_{\sigma,\tau,I}|^s\,dw(z)
+%\right]^{1/s}.
+%\end{equation}
+%By Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation},
+%\begin{align}
+%\left\|
+%\{\rho_{\sigma,\tau,I}\}_{I}
+%\right\|_{\ell^{N,\infty}}
+%&\lesssim
+%\|\nabla H_{\sigma,\tau}\|_{L^N(\Gamma)}
+%\nonumber\\
+%&\lesssim
+%\|\nabla f\|_{L^N(\mathbb R^N)}.
+%\label{eq:jump-rho-weak}
+%\end{align}
+%Indeed,
+%\[
+%\nabla H_{\sigma,\tau}(z)
+%=
+%\tau^T\nabla f(\tau z)
+%-
+%\sigma^T\nabla f(\sigma z),
+%\]
+%and therefore
+%\[
+%\|\nabla H_{\sigma,\tau}\|_{L^N(\Gamma)}
+%\leq
+%2\|\nabla f\|_{L^N(\mathbb R^N)}.
+%\]
+%Consequently,
+%\begin{equation}
+%\label{eq:theta-jump-rho-weak}
+%\left\|
+%\{\theta_I\rho_{\sigma,\tau,I}\}_{I}
+%\right\|_{\ell^{N,\infty}}
+%\lesssim
+%\|\nabla f\|_{L^N}.
+%\end{equation}
+%
+%If \(\rho_{\sigma,\tau,I}>0\), define
+%\[
+%E_{I,2}(x)
+%:=
+%\rho_{\sigma,\tau,I}^{-1}
+%\bigl(
+%H_{\sigma,\tau}(\sigma^{-1}x)
+%-
+%a_{\sigma,\tau,I}
+%\bigr)e_I(x),
+%\qquad
+%H_{I,2}:=h_I.
+%\]
+%If \(\rho_{\sigma,\tau,I}=0\), put \(E_{I,2}=0\).
+%Then
+%\begin{align}
+%&
+%\theta_I
+%H_{\sigma,\tau}(\xi)e_I(x)h_I(y)
+%\nonumber\\
+%&\qquad=
+%\theta_I\rho_{\sigma,\tau,I}
+%E_{I,2}(x)H_{I,2}(y)
+%+
+%\theta_Ia_{\sigma,\tau,I}
+%e_I(x)h_I(y).
+%\label{eq:cross-chamber-NWO-split}
+%\end{align}
+%Exactly as above,
+%\[
+%\|E_{I,2}\|_{L^s(dw)}
+%\lesssim
+%w(I)^{1/s-1/2},
+%\]
+%because
+%\begin{align*}
+%&
+%\int_{\sigma I}
+%\left|
+%H_{\sigma,\tau}(\sigma^{-1}x)
+%-a_{\sigma,\tau,I}
+%\right|^s\,dw(x)
+%\\
+%&\qquad=
+%\int_I
+%|H_{\sigma,\tau}(z)-a_{\sigma,\tau,I}|^s\,dw(z).
+%\end{align*}
+%Thus
+%\(\{E_{I,2}\}_I\) and \(\{H_{I,2}\}_I\) are NWO families.
+%
+%The coefficient of the remaining scalar term in
+%\eqref{eq:cross-chamber-NWO-split} is controlled by
+%Lemma~\ref{lem:Dunkl-chamber-jump-averages}:
+%\begin{equation}
+%\label{eq:scalar-jump-weak-final}
+%\left\|
+%\left\{
+%\theta_Ia_{\sigma,\tau,I}
+%\right\}_{I}
+%\right\|_{\ell^{N,\infty}}
+%\lesssim
+%\|\nabla f\|_{L^N}.
+%\end{equation}
+%
+%\medskip
+%\noindent
+%\textbf{Step 3. Application of the NWO--Schatten estimate.}
+%
+%Combining
+%\eqref{eq:commutator-two-parts},
+%\eqref{eq:same-chamber-NWO-split}, and
+%\eqref{eq:cross-chamber-NWO-split}, we obtain, on each rank-one
+%piece of
+%\eqref{eq:endpoint-Dunkl-Riesz-kernel-NWO},
+%\begin{align}
+%&
+%\theta_I
+%(f(y)-f(x))
+%e_I(x)h_I(y)
+%\nonumber\\
+%&\quad=
+%\theta_I\omega_{\tau,I}
+%\sum_{\varepsilon=0}^{1}
+%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y)
+%\nonumber\\
+%&\qquad+
+%\theta_I\rho_{\sigma,\tau,I}
+%E_{I,2}(x)H_{I,2}(y)
+%+
+%\theta_Ia_{\sigma,\tau,I}
+%e_I(x)h_I(y).
+%\label{eq:four-NWO-pieces}
+%\end{align}
+%
+%For each fixed
+%\[
+%\sigma,\tau\in G,
+%\qquad
+%u,v\in\mathbb Z^N,
+%\]
+%all the families appearing on the right-hand side of
+%\eqref{eq:four-NWO-pieces} are NWO families. Therefore
+%Lemma~\ref{NWOLEMMAA2}, with
+%\[
+%p=N,
+%\qquad
+%q=\infty,
+%\]
+%together with
+%\eqref{eq:theta-local-omega-weak},
+%\eqref{eq:theta-jump-rho-weak}, and
+%\eqref{eq:scalar-jump-weak-final}, gives
+%\begin{align}
+%&
+%\left\|
+%\sum_{I\in\mathbb D_\Gamma}
+%\theta_I(f(y)-f(x))
+%e_I(x)h_I(y)
+%\right\|_{S^{N,\infty}}
+%\nonumber\\
+%&\qquad\lesssim
+%\|\nabla f\|_{L^N(\mathbb R^N)},
+%\label{eq:one-frequency-Schatten}
+%\end{align}
+%where, as usual, the displayed kernel is understood as the
+%corresponding sum of rank-one operators
+%\[
+%\lambda_I
+%\langle\,\cdot,\overline{H_I}\rangle F_I.
+%\]
+%The constant in
+%\eqref{eq:one-frequency-Schatten} is uniform in
+%\(\sigma,\tau,u,v\).
+%
+%We now return to
+%\eqref{eq:endpoint-Dunkl-Riesz-kernel-NWO}. Since
+%\(M_0>2N\),
+%\[
+%\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
+%\]
+%Moreover, \(G\) is finite. Thus, using
+%\eqref{eq:one-frequency-Schatten} and the triangle inequality for
+%an equivalent norm on \(S^{N,\infty}\) (recall that \(N>1\)),
+%we obtain
+%\begin{align*}
+%\bigl\|
+%[R_{{\rm Dunkl},j},M_f]
+%\bigr\|_{S^{N,\infty}}
+%&\lesssim
+%\sum_{\sigma,\tau\in G}
+%\sum_{u,v\in\mathbb Z^N}
+%|c_{u,v}|
+%\|\nabla f\|_{L^N}
+%\\
+%&\lesssim
+%\|\nabla f\|_{L^N(\mathbb R^N)}.
+%\end{align*}
+%Indeed, the kernel of
+%\([R_{{\rm Dunkl},j},M_f]\) is
+%\[
+%(f(y)-f(x))K_{{\rm Dunkl},j}(x,y),
+%\]
+%since our convention is
+%\[
+%[R_{{\rm Dunkl},j},M_f]
+%=
+%R_{{\rm Dunkl},j}M_f
+%-
+%M_fR_{{\rm Dunkl},j}.
+%\]
+%
+%The preceding argument initially identifies the corresponding
+%commutator form off the orbit diagonal \(d(x,y)=0\). Since that set
+%has zero \(dw\times dw\)-measure, the NWO sum defines a unique
+%operator in \(S^{N,\infty}\). By the standard local approximation
+%of homogeneous Sobolev functions, or equivalently by first applying
+%the argument to smooth Sobolev representatives and using the
+%estimate above for differences, this operator is the closure of the
+%usual commutator \([R_{{\rm Dunkl},j},M_f]\).
+%
+%Finally,
+%\[
+%\|\nabla f\|_{L^N(\mathbb R^N)}
+%=
+%\|f\|_{\dot W^{1,N}(\mathbb R^N)}.
+%\]
+%Hence
+%\[
+%[R_{{\rm Dunkl},j},M_f]
+%\in
+%S^{N,\infty}\bigl(L^2(\mathbb R^N,dw)\bigr)
+%\]
+%and
+%\[
+%\bigl\|
+%[R_{{\rm Dunkl},j},M_f]
+%\bigr\|_
+%{S^{N,\infty}(L^2(\mathbb R^N,dw))}
+%\lesssim
+%\|f\|_{\dot W^{1,N}(\mathbb R^N)}.
+%\]
+%This proves \eqref{eq:Dunkl-critical-weak-Schatten-upper}.
+%\end{proof}
+
 
 \bibliographystyle{plain}
 \bibliography{references}
