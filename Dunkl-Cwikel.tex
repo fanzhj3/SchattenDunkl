@@ -221,20 +221,6 @@ There exists a constant $C$ such that for $j\in\{1,2,\ldots,N\}$ and every $x,y$
 The proof is given in \cite[Theorem 1.1]{MR4733961}.
 \end{proof}
 
-\begin{lemma}\label{nondegenerate}
-For $j\in\{1,2,\ldots,N\}$, and for every ball $B=B(x_0,r)\subset \mathbb{R}^N$, there is another ball $\widehat{B}=B(y_0,r)$ with $y_0=x_0+5re_j$ such that for every $(x,y)\in B\times \widehat{B}$, $K_{\D,j}(x,y)$ does not change sign and satisfies
-\begin{align*}
-|K_{\D,j}(x,y)|\geq\frac{C}{w(B(x_0,r))}.
-\end{align*}
-\end{lemma}
-\begin{proof}
-The lower bound is given in \cite[Theorem 1.2]{MR4733961}, while the fact that $K_{\D,j}(x,y)$ does not change sign can be seen in the proof of \cite[Theorem 1.2]{MR4733961}. Indeed, with the choice $y_0:=x_0+5re_j$, we have $y_j-x_j\geq 3r$ for all $(x,y)\in B\times \widehat{B}$. Together with the fact that the heat kernel $h_t(x,y)$ associated with the Dunkl Laplacian is  positive, the representation
-$$K_{\D,j}(x,y)=-\frac{C}{2}\int_0^\infty \frac{y_j-x_j}{t}h_t(x,y)\frac{dt}{\sqrt{t}},$$
-implies that $K_{\D,j}(x,y)<0$ (and thus, does not change sign) on $ B\times \widehat{B}$.
-\end{proof}
-
-
-
 \subsection{Systems of dyadic cubes}
 
 
@@ -371,75 +357,16 @@ $\mathbb D^1,\ldots,\mathbb D^{2^N}$, we complete the proof of Lemma \ref{Nsyste
 %where $\kappa_N$ is a positive constant depending only on $N$.
 
 
-\subsection{Haar Basis}\label{HaarSection}
-
-
-
-Given a system of dyadic cubes $\mathscr{D}$ over $\mathbb{R}^N$, we now recall the standard way to construct an orthonormal Haar system corresponding to $\mathscr{D}$. For each $k\in\mathbb{Z}$ and $Q\in\mathscr{D}_k$, denote by $Ch(Q):=\{R\in\mathscr{D}_{k+1}:R\subseteq Q\}$. Moreover,  we let
-$$h_Q^0:=w(Q)^{-1/2}\chi_Q.$$
-Fix an enumeration $\{Q_i\}_{i=1}^{2^N}$ of $Ch(Q)$. Let
-$$\hat{Q}_i:=\bigcup_{j=i}^{2^N}Q_j$$
-and
-$$h_Q^i:=\sqrt{\frac{w(Q_i)w(\hat{Q}_{i+1})}{w(\hat{Q}_i)}}\Bigg(\frac{\chi_{Q_i}}{w(Q_i)}-\frac{\chi_{\hat{Q}_{i+1}}}{w(\hat{Q}_{i+1})}\Bigg),\quad i=1,2,\ldots,2^N-1.$$
-
-
-\begin{lemma}\label{Haarexpansion}
-For any $1<p<\infty$ and $f\in
-    L^p(\mathbb{R}^N,dw)$, we have
-    \[
-        f(x)
-        =  \sum_{Q\in\mathscr{D}}\sum_{i=1}^{2^N-1}
-            \langle f,h^{i}_{Q}\rangle_{L^2(\mathbb{R}^N,dw)} h^{i}_{Q}(x), %\quad \text{if } \mu(X)=\infty,
-    \]
-    where the sum converges both in the
-    $L^p(\mathbb{R}^N,dw)$ norm and pointwise almost everywhere.
- \end{lemma}
-
-
-\begin{lemma}
-The family of Haar functions $\{h_{Q}^{i}\}_{Q\in\mathscr{D},0\leq i\leq 2^N-1}$ has the following properties:
-    \begin{itemize}
-\item[(i)] $h_{Q}^{i}$ is supported on $Q$ for $i\in\{0,1,\ldots,2^N-1\}$;
-\item[(ii)] $h_{Q}^{i}$ is constant on each $R\in Ch(Q)$ for $i\in\{0,1,\ldots,2^N-1\}$;
-\item[(iii)] $\int_{\mathbb{R}^N} h_{Q}^{i}(x)dw(x)= 0$, for $i\in\{1,2,\ldots,2^N-1\}$;
-\item[(iv)] $\langle h_{Q}^{i},h_{Q}^{j}\rangle_{L^2(\mathbb{R}^N,dw)} = 0$ for
-$i \neq j$, $i$, $j\in\{1, 2,\ldots, 2^N- 1\}$;
-\item[(v)] The collection
-$\{h_{Q}^{i}\}_{i = 0}^{2^N-1}$
-is an orthogonal basis for the vector space $V(Q)$ of all functions on $Q$ that are constant on each sub-cube $R\in Ch(Q)$.
-\item[(vi)]
-            $
- \Norm{h_{Q}^{i}}{L^p(\mathbb{R}^N,dw)}
-    \approx w(Q)^{\frac{1}{p} - \frac{1}{2}}$
-   \quad for~1 $\leq p \leq \infty$ and $i\in\{1,2,\ldots,2^N-1\}$;
-
-    \end{itemize}
-\end{lemma}
-
-
 \subsection{Nearly weakly  orthonormal sequences}
 Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{FLLXarxiv,HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).  For our purposes, we adapt  the extension to the Dunkl setting $(\mathbb{R}^N,\|\cdot\|,w)$ rather than recalling the general  definition
 of NWO sequences and the general extension to spaces of homogeneous type.
 
-{\it Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
+\begin{definition} Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
 \begin{enumerate}
-  \item $\supp e_Q\subseteq cQ$ for some positive constant $c$ independent of $Q$
-  \item $\|e_Q\|_{L^s(\mathbb{R}^{N},dw)}\leq w(Q)^{1/s-1/2}$ for some $s>2$.
+\item $e_Q$ is supported in $cQ$ for some positive constant $c\in 2\mathbb{N}+1$ independent of $Q;$
+\item $\|e_Q\|_{L_r(\mathbb{R}^{N},w(x)dx)}\leq w(Q)^{\frac1r-\frac12}$ for some $r>2;$
 \end{enumerate}
-}
-\begin{lemma}\label{NWOLEMMAA}
-Let $1<p<\infty$, and let $\mathscr{D}$ be a
-system of dyadic cubes over $\mathbb{R}^N$. For any compact operator $ T $ on $ L ^2 (\mathbb R ^{N},dw)$, we have
-\begin{equation*}
-\Bigl(
-\sum_{Q\in \mathscr{D}} |\langle T e_Q, f_Q \rangle_{L^2(\mathbb{R}^N,dw)} | ^{p}
-\Bigr) ^{1/p} \leq C_{N,p,w} \| T \| _{S ^{p}},
-\end{equation*}
-where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences.
-\end{lemma}
-\begin{proof}
-This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
-\end{proof}
+\end{definition}
 
 \begin{lemma}\label{NWOLEMMAA2}
 Let $0<p<\infty$, $0<q\leq \infty$, and let $\mathscr{D}$ be a
@@ -2505,13 +2432,14 @@ such that
 \begin{enumerate}
 \item $e_{k,l,I}$ is supported in $I$ and $f_{k,l,I}$ is supported in $3I;$
 \item
-$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)},\quad \|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq c_{K,R,k}w(I)^{\frac1r};$$
+$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)},\quad \|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}d_Iw(I)^{\frac1r-1};$$
 \item For almost every $x,y\in\Gamma,$ we have
 \begin{equation}\label{eq:Dunkl-kernel-rank-one-new}
 f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-2N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y).
 \end{equation}
 \end{enumerate}
-\end{lemma}\begin{proof} We have
+\end{lemma}
+\begin{proof} We have
 $$K(x,y)=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
 $$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})+\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\not\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
 
@@ -2547,10 +2475,13 @@ $$f_{k,l,I}(y)=(1+|k|^2+|l|^2)^{2N+1}{\rm coef}_{k,l,I}\cdot \chi_{3I}(y)e^{i\la
 Obviously,
 $${\rm supp}(e_{k,l,I})\subset I,\quad {\rm subset}(f_{k,l,I})\subset 3I,$$
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
-$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{2N+1}|{\rm coef}_{I,k,l}|\cdot w(3I)^{\frac1r}\leq c_K''w(3I)^{\frac1r}\leq c_{K,R,k}w(I)^{\frac1r}.$$
+$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{2N+1}|{\rm coef}_{I,k,l}|\cdot w(3I)^{\frac1r}\leq c_K''\frac{d_I}{w(I)}\cdot w(3I)^{\frac1r}\leq c_{K,\kappa}d_Iw(I)^{\frac1r-1}.$$
+\end{proof}
 
-
-
+\begin{lemma}\label{intermediate cwikel estimate} We have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{K,\kappa}\Big\|\Big\{d_Iw(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}.$$
+\end{lemma}
+\begin{proof} The assertion follows from Lemma \ref{lem:rank-one-decomposition-Dunkl}, Lemma \ref{NWOLEMMAA2} and the triangle inequality. {\color{red} feel free to expand the argument if needed.}
 \end{proof}
 
 \begin{lemma}\label{lem:Cwikel-dyadic-distribution}
