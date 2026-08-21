@@ -1,8 +1,11 @@
 \documentclass{amsart}
 \usepackage{color}
+\usepackage{enumerate}
+\usepackage{amssymb}
 
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}{Lemma}
+\newtheorem{cond}{Condition}
 
 \begin{document}
 
@@ -14,6 +17,66 @@ then
 $$\|V\|_{p,\infty}\leq c_{p,n,r}\|\lambda\|_{p,\infty}.$$
 \end{thm}
 
+Denote $A=\cup_{v\in R}\{\langle x,v\rangle=0\}.$
+
+\begin{thm} Let $M=N+\sum_{v\in R}k(v).$ Let  $K:\mathbb{R}^N\times\mathbb{R}^N\to\mathbb{C}$ be such that
+$$|\partial^{\alpha}K|(x,y)\leq c_{K,\epsilon,\alpha}d(x,y)^{1-M-\alpha},\quad {\rm dist}(x,A),{\rm dist}(y,A)\geq\epsilon|x-y|.$$
+If $V_K$ is an (unbounded) integral operator with an integral kernel $K,$ then
+$$\|M_fV_K\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_K\|f\|_{L_2(\mathbb{R}^N)},\quad p>2.$$ 
+\end{thm}
+
+\begin{lem}\label{whitney lemma} 
+Let
+$$\Omega=\{(x,y):\ x,y\in\Gamma,\quad x\neq y\}.$$
+	There exists $\mathcal{F}\subset\mathcal{D}\times\mathcal{D}$ such that
+\begin{enumerate}[{\rm (i)}]
+\item the sets $\{I\times J\}_{I\times J\in\mathcal{F}}$ are pairwise disjoint;
+\item $\bigcup_{I\times J\in\mathcal{F}}I\times J=\Omega;$
+\item $s(I)=s(J)$ for every $I\times J\in\mathcal{F};$
+\item for every $I\times J\in\mathcal{F},$  we have
+$$|x-y|_{\infty}\in [2s(I),10 s(I)),\quad x\in I,\quad y\in J.$$
+\item for every $I\times J\in\mathcal{F},$ we have
+$${\rm dist}(x,\partial\Gamma),{\rm dist}(y,\partial\Gamma)\geq {\color{red} some-constant}s(I).$$
+\end{enumerate}
+\end{lem}
+\begin{proof} For each $k\in\mathbb{Z}$, set
+$$\Omega_k=\{(x,y):\ x,y\in\Gamma,\quad 2^{k+2}\leq \min\{|x-y|_{\infty},{\rm dist}(x,\partial\Gamma),{\rm dist}(y,\partial\Gamma)\}<2^{k+3}\}.$$ 
+	and
+	$$\mathcal{F}_k=\{I\times J:\ I,J\in\mathcal{D},\ s(I)=s(J)=2^k,\  (I\times J)\cap\Omega_k\neq\varnothing\}.$$
+	
+	
+	Set 
+	$$\mathcal{F}'=\bigcup_{k\in\mathbb{Z}}\mathcal{F}_k.$$
+	We first show that 
+	\begin{equation}\label{omega1}
+		\Omega=\bigcup_{I\times J\in\mathcal{F}'}I\times J.
+	\end{equation}
+	If $I\times J\in\mathcal{F}_k$ for some given $k\in\mathbb{Z}$, then $s(I)=s(J)=2^k$ and there exist $x_0\in I$ and $y_0\in J$ such that $|x_0-y_0|_{\infty}\in[2^{k+2},2^{k+3}).$ If $x\in I$ and $y\in J,$ then $|x-x_0|_{\infty}<2^k$ and $|y-y_0|_{\infty}<2^k.$ By the triangle inequality,
+	$$2s(I)=2\cdot 2^k\leq |x-y|_{\infty}<10\cdot 2^k=10s(I).$$
+	In particular, $I\times J\subset\Omega.$
+	If $(x,y)\in\Omega,$ then one can uniquely choose $k\in\mathbb{Z}$ such that
+	$$2^{k+2}\leq |x-y|_{\infty}<2^{k+3}.$$
+	Now one can uniquely choose $I\in\mathcal{D}$ such that $x\in I$ and $s(I)=2^k$ and $J\in\mathcal{D}$ such that $y\in J$ and $s(J)=2^{k}.$ Since $(x,y)\in I\times J$ and $(x,y)\in\Omega_k,$ it follows that $I\times J\in\mathcal{F}_k.$ This gives us \eqref{omega1}.
+	
+	
+	Let $\mathcal{F}$ be the set of maximal elements in $\mathcal{F}'.$ We shall show that $\mathcal{F}$ satisfies the desired assertions.    It is clear that (iii) and (iv) are satisfied. On the other hand,  elements in $\mathcal{F}$ are pairwise disjoint. Indeed, if $Q_1,Q_2\in\mathcal{F}$ are such that $Q_1\cap Q_2\neq\varnothing,$ then either $Q_1\subset Q_2$ or $Q_2\subset Q_1.$ Since both $Q_1$ and $Q_2$ are maximal elements of $\mathcal{F}',$ it follows that $Q_1=Q_2.$ 
+	We claim that every $Q\in\mathcal{F}'$ is contained in some $R\in\mathcal{F}.$ Assuming that this claim has been proved,  by \eqref{omega1}, we have
+	$$\Omega=\bigcup_{Q\in\mathcal{F}'}Q=\bigcup_{Q\in\mathcal{F}}Q.$$
+	
+	
+	Now we turn to prove the claim.  If $Q\in\mathcal{F}'$ is maximal, then set $R=Q$, otherwise
+	choose $R\in\mathcal{F}'$ such that $Q\subsetneq R$.
+	For the latter case, we have $s(R)=2s(Q)$. Indeed, let $Q=I_1\times J_1,$ $R=I_2\times J_2.$ We have $I_1\subset I_2$ and $J_1\subset J_2.$ Thus,
+	$$2s(I_2)\leq \inf_{\substack{x\in I_2\\ y\in J_2}}|x-y|_{\infty}\leq\inf_{\substack{x\in I_1\\ y\in J_1}}|x-y|_{\infty}<8s(I_1),$$
+	which implies $s(I_2)<4s(I_1).$ Since $s(I_1)$ and $s(I_2)$ are powers of $2,$ it follows that either $s(I_2)=s(I_1)$ or $s(I_2)=2s(I_1).$ However, by the fact $Q\subsetneq R$,  we only have  $s(R)=s(I_2)=2s(I_1)=2s(Q).$
+	It remains to show that $R\in\mathcal{F}$. To this end, we check that
+	$R$ is maximal. Actually, if there exists $S\in\mathcal{F}'$ such that $R\subsetneq S,$ then, by the preceding argument, $s(S)=2s(R)$ which further implies and $s(S)=4s(Q). $  However, this contradicts the fact $Q\subsetneq S$ (which implies $s(S)=2s(Q)$). Hence, $R$ is maximal.
+	
+	The proof is complete.
+\end{proof}
+
+
+
 \begin{thm}\label{kernel smoothness} Integral kernel $K:(x,y)\to K(x,y),$ $x,y\in\mathbb{R}^N,$ of $\Delta^{-\frac12},$ where $\Delta$ is Dunkl Laplacian is smooth except on the sets
 $\{x=gy\},$ $g\in G,$ or on the planes $\{\langle x,v\rangle=0\},$ $\{\langle y,v\rangle=0\}.$ 
 \end{thm}
@@ -21,9 +84,7 @@ $\{x=gy\},$ $g\in G,$ or on the planes $\{\langle x,v\rangle=0\},$ $\{\langle y,
 \end{proof}
 
 \begin{lem} We have
-$$K(\lambda x,\lambda y)=\lambda^{-M}K(x,y),\quad x,y\in\mathbb{R}^N.$$
-Here,
-$$M=N-1+\sum_{v\in R}k(v).$$
+$$K(\lambda x,\lambda y)=\lambda^{1-M}K(x,y),\quad x,y\in\mathbb{R}^N.$$
 \end{lem}
 \begin{proof} Indeed, let $D_{\lambda}$ be the dilation by $\lambda.$ It is obvious (just like in the Euclidean case) that
 $$D_{\lambda}^{-1}T_{\xi}D_{\lambda}=\lambda^{-1}T_{\xi}.$$
