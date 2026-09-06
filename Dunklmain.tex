@@ -5654,6 +5654,528 @@ This completes the proof of Theorem~\ref{lem:Dunkl-critical-weak-Schatten-upper}
 \end{proof}
 
 
+\section{Proof of lower bound}
+\begin{definition}\label{def:Dunkl-weighted-OSC}
+Let \(1\le r<\infty\). For a measurable set
+\(E\subset\mathbb R^N\) with \(0<w(E)<\infty\), set
+\[
+(f)_{E,dw}
+:=
+\frac1{w(E)}
+\int_E f\,dw
+\]
+and
+\[
+\operatorname{osc}_{r,dw}(f;E)
+:=
+\left(
+\frac1{w(E)}
+\int_E
+|f-(f)_{E,dw}|^r\,dw
+\right)^{1/r}.
+\]
+For \(0<p<\infty\) and \(0<q\le\infty\), define
+\[
+\|f\|_{OSC_{dw}^{p,q}}
+:=
+\sum_{\nu=1}^{2^N}
+\left\|
+\left\{
+\operatorname{osc}_{1,dw}(f;Q)
+\right\}_{Q\in\mathbb D^\nu}
+\right\|_{\ell^{p,q}}.
+\]
+\end{definition}
+\begin{lemma}\label{lem:Dunkl-OSC-change-measure}
+Let \(0<p<\infty\), \(0<q\leq\infty\), and \(1\leq r<\infty\). For
+\(f\in L^r_{\mathrm{loc}}(\mathbb R^N,dx)\), set
+\[
+\operatorname{osc}_{r,dw}(f;Q)
+:=
+\left(
+\frac1{w(Q)}
+\int_Q
+|f-(f)_{Q,dw}|^r\,dw
+\right)^{1/r}
+\]
+and
+\[
+\|f\|_{OSC_{dw}^{p,q}}
+:=
+\sum_{\nu=1}^{2^N}
+\left\|
+\left\{
+\operatorname{osc}_{r,dw}(f;Q)
+\right\}_{Q\in\mathbb D^\nu}
+\right\|_{\ell^{p,q}}.
+\]
+Then
+\[
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\sim
+\|f\|_{OSC_{dw}^{p,q}},
+\]
+where the implicit constants are independent of \(f\).
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:Dunkl-weight-A-infty},
+\[
+dw=\varpi\,dx,
+\qquad
+\varpi\in A_\infty(\mathbb R^N,dx).
+\]
+Moreover, both \(dx\) and \(dw\) are doubling measures. Hence
+\(dx\) and \(dw\) satisfy the \(A_\infty\)-relation in the sense of
+\cite[Proposition~1.2]{HytonenAinfty2026}. Therefore,
+\[
+\|f\|_{\operatorname{Osc}^{p,q}(dx)}
+\sim
+\|f\|_{\operatorname{Osc}^{p,q}(dw)}
+\]
+by \cite[Proposition~1.2]{HytonenAinfty2026}.
+
+By \cite[(3.1) and Lemma~3.4]{HytonenAinfty2026}, together with
+Lemma~\ref{Nsystems}, these two oscillatory norms are equivalent,
+respectively, to the dyadic norms
+\[
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\quad\text{and}\quad
+\|f\|_{OSC_{dw}^{p,q}}.
+\]
+The assertion follows.
+\end{proof}
+
+\begin{lemma}\label{lem:Dunkl-companion-ball-dyadic}
+Fix \(j\in\{1,\ldots,N\}\). For every
+\(Q\in\bigcup_{\nu=1}^{2^N}\mathbb D^\nu\), let
+\[
+r_Q:=\sqrt N\,\ell(Q),
+\qquad
+B_Q:=B(c_Q,r_Q),
+\]
+and define
+\[
+\widehat B_Q
+:=
+B(c_Q+5r_Qe_j,r_Q).
+\]
+Then
+\begin{equation}\label{eq:Dunkl-companion-weight-comparable}
+w(Q)
+\sim
+w(B_Q)
+\sim
+w(\widehat B_Q),
+\end{equation}
+and there is a constant \(C_N\), independent of \(Q\), such that
+\[
+Q\cup\widehat B_Q\subset C_NQ.
+\]
+Moreover, for every
+\((x,y)\in Q\times\widehat B_Q\),
+the kernel \(K_{\D,j}(x,y)\) does not change sign and
+\begin{equation}\label{eq:Dunkl-companion-kernel-lower-dyadic}
+|K_{\D,j}(x,y)|
+\gtrsim
+\frac1{w(Q)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since \(Q\) is a Euclidean cube,
+\[
+B\left(c_Q,\frac{\ell(Q)}2\right)
+\subset Q
+\subset B_Q.
+\]
+Hence the doubling property \eqref{doublinginequality} gives
+\[
+w(B_Q)
+\lesssim
+w\left(
+B\left(c_Q,\frac{\ell(Q)}2\right)
+\right)
+\le
+w(Q)
+\le
+w(B_Q),
+\]
+and therefore
+\[
+w(Q)\sim w(B_Q).
+\]
+Since the distance between the centers of \(B_Q\) and
+\(\widehat B_Q\) is \(5r_Q\),
+\[
+\widehat B_Q\subset 6B_Q.
+\]
+Similarly,
+\[
+B_Q\subset
+B(c_Q+5r_Qe_j,6r_Q)
+=
+6\widehat B_Q.
+\]
+The doubling property therefore yields
+\[
+w(B_Q)\sim w(\widehat B_Q),
+\]
+which proves \eqref{eq:Dunkl-companion-weight-comparable}.
+
+For \(y\in\widehat B_Q\),
+\[
+\|y-c_Q\|
+\le
+6r_Q
+=
+6\sqrt N\,\ell(Q).
+\]
+Thus \(Q\cup\widehat B_Q\) is contained in a fixed concentric
+enlargement \(C_NQ\).
+
+Finally, \(Q\subset B_Q\), so Lemma~\ref{nondegenerate}, applied to
+\(B_Q\), shows that \(K_{\D,j}\) has a fixed sign on
+\(Q\times\widehat B_Q\) and
+\[
+|K_{\D,j}(x,y)|
+\gtrsim
+\frac1{w(B_Q)}
+\sim
+\frac1{w(Q)}.
+\]
+\end{proof}
+\begin{lemma}\label{lem:Dunkl-median-oscillation-matrix-coefficient}
+Let \(f\in L^1_{\mathrm{loc}}(\mathbb R^N,dw)\) be real-valued, and assume that
+\([R_{{\rm Dunkl},j},M_f]\) is a compact operator on
+\(L^2(\mathbb R^N,dw)\). For every
+\(\nu\in\{1,\ldots,2^N\}\), there exist NWO sequences
+\[
+\{e_{Q,m}\}_{Q\in\mathbb D^\nu},
+\qquad
+\{h_{Q,m}\}_{Q\in\mathbb D^\nu},
+\qquad m=1,2,
+\]
+such that, for every \(Q\in\mathbb D^\nu\),
+\begin{align*}
+\operatorname{osc}_{1,dw}(f;Q)
+\lesssim
+\sum_{m=1}^2
+\Bigl|
+\bigl\langle
+[R_{{\rm Dunkl},j},M_f]e_{Q,m},h_{Q,m}
+\bigr\rangle_{L^2(\mathbb R^N,dw)}
+\Bigr|.
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Fix \(\nu\in\{1,\ldots,2^N\}\) and \(Q\in\mathbb D^\nu\). Set
+\[
+r_Q:=\sqrt N\,\ell(Q),
+\qquad
+B_Q:=B(c_Q,r_Q).
+\]
+Since
+\[
+B\bigl(c_Q,\ell(Q)/2\bigr)\subset Q\subset B_Q,
+\]
+by \eqref{doublinginequality},
+\[
+w(B_Q)\simeq w(Q).
+\]
+By Lemma~\ref{nondegenerate}, for
+\[
+\widehat B_Q:=B(c_Q+5r_Qe_j,r_Q),
+\]
+the kernel \(K_{\D,j}\) has a fixed sign on
+\(B_Q\times\widehat B_Q\) and
+\[
+|K_{\D,j}(x,y)|
+\gtrsim
+\frac1{w(Q)},
+\qquad
+(x,y)\in Q\times\widehat B_Q.
+\]
+Moreover,
+\[
+\widehat B_Q\subset 6B_Q,
+\qquad
+B_Q\subset 6\widehat B_Q,
+\]
+so \eqref{doublinginequality} implies
+\[
+w(\widehat B_Q)\simeq w(Q).
+\]
+Since \(\widehat B_Q\subset B(c_Q,6r_Q)\), there is a fixed \(C_N\ge1\) such that
+\[
+\widehat B_Q\subset C_NQ,
+\qquad
+w(C_NQ)\simeq w(Q).
+\]
+
+Let \(\alpha_Q\) be a \(dw\)-median of \(f\) on \(\widehat B_Q\), and define
+\begin{align*}
+E_{Q,1}&:=\bigl\{x\in Q:f(x)<\alpha_Q\bigr\},
+&
+F_{Q,1}&:=\bigl\{y\in\widehat B_Q:f(y)\ge\alpha_Q\bigr\},\\
+E_{Q,2}&:=\bigl\{x\in Q:f(x)\ge\alpha_Q\bigr\},
+&
+F_{Q,2}&:=\bigl\{y\in\widehat B_Q:f(y)\le\alpha_Q\bigr\}.
+\end{align*}
+Then
+\[
+w(F_{Q,m})
+\ge
+\frac12w(\widehat B_Q)
+\simeq
+w(Q),
+\qquad m=1,2.
+\]
+For each \(m=1,2\), \(f(y)-f(x)\) has a fixed sign on
+\(E_{Q,m}\times F_{Q,m}\), and
+\[
+|f(x)-\alpha_Q|
+\le
+|f(y)-f(x)|,
+\qquad
+(x,y)\in E_{Q,m}\times F_{Q,m}.
+\]
+Since \(K_{\D,j}\) also has a fixed sign on
+\(Q\times\widehat B_Q\), we obtain
+\begin{align*}
+\frac1{w(Q)}
+\int_{E_{Q,m}}|f-\alpha_Q|\,dw
+&\le
+\frac1{w(Q)w(F_{Q,m})}
+\int_{E_{Q,m}}\int_{F_{Q,m}}
+|f(y)-f(x)|\,dw(y)\,dw(x)\\
+&\lesssim
+\frac1{w(Q)}
+\left|
+\int_{E_{Q,m}}\int_{F_{Q,m}}
+(f(y)-f(x))K_{\D,j}(x,y)\,dw(y)\,dw(x)
+\right|.
+\end{align*}
+
+Define
+\[
+e_{Q,m}
+:=
+w(C_NQ)^{-1/2}\chi_{F_{Q,m}},
+\qquad
+h_{Q,m}
+:=
+w(Q)^{-1/2}\chi_{E_{Q,m}}.
+\]
+By the off-diagonal kernel identity
+\[
+K_{[R_{{\rm Dunkl},j},M_f]}(x,y)
+=
+(f(y)-f(x))K_{\D,j}(x,y),
+\]
+and \(w(C_NQ)\simeq w(Q)\),
+\begin{align*}
+\frac1{w(Q)}
+\int_{E_{Q,m}}|f-\alpha_Q|\,dw
+\lesssim
+\Bigl|
+\bigl\langle
+[R_{{\rm Dunkl},j},M_f]e_{Q,m},h_{Q,m}
+\bigr\rangle_{L^2(\mathbb R^N,dw)}
+\Bigr|.
+\end{align*}
+
+Furthermore,
+\[
+\operatorname{supp}h_{Q,m}\subset Q,
+\qquad
+\operatorname{supp}e_{Q,m}\subset C_NQ.
+\]
+For any fixed \(s>2\),
+\begin{align*}
+\|h_{Q,m}\|_{L^s(\mathbb R^N,dw)}
+&\le
+w(Q)^{1/s-1/2},\\
+\|e_{Q,m}\|_{L^s(\mathbb R^N,dw)}
+&\le
+w(C_NQ)^{1/s-1/2}
+\le
+w(Q)^{1/s-1/2}.
+\end{align*}
+Hence, \(\{e_{Q,m}\}_{Q\in\mathbb D^\nu}\) and
+\(\{h_{Q,m}\}_{Q\in\mathbb D^\nu}\) are NWO sequences for
+\(m=1,2\).
+
+Finally,
+\[
+|(f)_{Q,dw}-\alpha_Q|
+\le
+\frac1{w(Q)}
+\int_Q|f-\alpha_Q|\,dw,
+\]
+and therefore
+\begin{align*}
+\operatorname{osc}_{1,dw}(f;Q)
+&\le
+\frac2{w(Q)}
+\int_Q|f-\alpha_Q|\,dw\\
+&=
+2\sum_{m=1}^2
+\frac1{w(Q)}
+\int_{E_{Q,m}}|f-\alpha_Q|\,dw\\
+&\lesssim
+\sum_{m=1}^2
+\Bigl|
+\bigl\langle
+[R_{{\rm Dunkl},j},M_f]e_{Q,m},h_{Q,m}
+\bigr\rangle_{L^2(\mathbb R^N,dw)}
+\Bigr|.
+\end{align*}
+This completes the proof of Lemma~\ref{lem:Dunkl-median-oscillation-matrix-coefficient}.
+\end{proof}
+\begin{theorem}\label{lem:Dunkl-critical-weak-Schatten-lower}
+Assume that \(N\geq 1\), \(1<p<\infty\), and \(1\leq q\leq\infty\). Fix \(j\in\{1,\ldots,N\}\). Let
+\[
+f\in L^1_{\mathrm{loc}}(\mathbb R^N,dx).
+\]
+If
+\[
+[R_{{\rm Dunkl},j},M_f]
+\in
+S^{p,q}\bigl(L^2(\mathbb R^N,dw)\bigr),
+\]
+then \(f\in OSC^{p,q}(\mathbb R^N)\) and
+\begin{align}\label{eq:Dunkl-critical-weak-Schatten-lower}
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Assume first that \(f\) is real valued. Fix \(\nu\in\{1,\ldots,2^N\}\). By Lemma~\ref{lem:Dunkl-median-oscillation-matrix-coefficient}, for \(m=1,2\) there are NWO sequences
+\[
+\{e_{Q,m}\}_{Q\in\mathbb D^\nu},
+\qquad
+\{h_{Q,m}\}_{Q\in\mathbb D^\nu},
+\]
+such that
+\[
+\operatorname{osc}_{1,dw}(f;Q)
+\lesssim
+\sum_{m=1}^2
+\Bigl|
+\bigl\langle
+[R_{{\rm Dunkl},j},M_f]e_{Q,m},h_{Q,m}
+\bigr\rangle_{L^2(\mathbb R^N,dw)}
+\Bigr|.
+\]
+By the quasi triangle inequality in \(\ell^{p,q}\) and Lemma~\ref{NWOLEMMAA},
+\begin{align*}
+\left\|
+\Bigl\{
+\operatorname{osc}_{1,dw}(f;Q)
+\Bigr\}_{Q\in\mathbb D^\nu}
+\right\|_{\ell^{p,q}}
+&\lesssim
+\sum_{m=1}^2
+\left\|
+\Bigl\{
+\bigl\langle
+[R_{{\rm Dunkl},j},M_f]e_{Q,m},h_{Q,m}
+\bigr\rangle_{L^2(\mathbb R^N,dw)}
+\Bigr\}_{Q\in\mathbb D^\nu}
+\right\|_{\ell^{p,q}}\\
+&\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
+\end{align*}
+Summing over \(\nu\) and using Definition~\ref{def:Dunkl-weighted-OSC}, we obtain
+\begin{align*}
+\|f\|_{OSC_{dw}^{p,q}}
+\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
+\end{align*}
+By Lemma~\ref{lem:Dunkl-OSC-change-measure} with \(r=1\),
+\begin{align}\label{eq:Dunkl-lower-real}
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
+\end{align}
+
+For general \(f\), let \(\mathcal C\) denote complex conjugation on \(L^2(\mathbb R^N,dw)\). Since \(K_{\D,j}\) is real valued by its heat kernel representation,
+\[
+\mathcal C R_{{\rm Dunkl},j}\mathcal C
+=
+R_{{\rm Dunkl},j},
+\qquad
+\mathcal C[R_{{\rm Dunkl},j},M_f]\mathcal C
+=
+[R_{{\rm Dunkl},j},M_{\overline f}].
+\]
+Hence,
+\begin{align*}
+[R_{{\rm Dunkl},j},M_{\operatorname{Re}f}]
+&=
+\frac12
+\Bigl(
+[R_{{\rm Dunkl},j},M_f]
++
+\mathcal C[R_{{\rm Dunkl},j},M_f]\mathcal C
+\Bigr),\\
+[R_{{\rm Dunkl},j},M_{\operatorname{Im}f}]
+&=
+\frac1{2i}
+\Bigl(
+[R_{{\rm Dunkl},j},M_f]
+-
+\mathcal C[R_{{\rm Dunkl},j},M_f]\mathcal C
+\Bigr).
+\end{align*}
+Since conjugation preserves singular values,
+\begin{align*}
+\bigl\|
+[R_{{\rm Dunkl},j},M_{\operatorname{Re}f}]
+\bigr\|_{S^{p,q}}
++
+\bigl\|
+[R_{{\rm Dunkl},j},M_{\operatorname{Im}f}]
+\bigr\|_{S^{p,q}}
+\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}}.
+\end{align*}
+By \eqref{eq:Dunkl-lower-real} applied to \(\operatorname{Re}f\) and \(\operatorname{Im}f\),
+\begin{align*}
+\|\operatorname{Re}f\|_{OSC^{p,q}(\mathbb R^N)}
++
+\|\operatorname{Im}f\|_{OSC^{p,q}(\mathbb R^N)}
+\lesssim
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
+\end{align*}
+Since
+\[
+\operatorname{osc}_1(f;Q)
+\leq
+\operatorname{osc}_1(\operatorname{Re}f;Q)
++
+\operatorname{osc}_1(\operatorname{Im}f;Q),
+\]
+the quasi triangle inequality in \(\ell^{p,q}\) proves \eqref{eq:Dunkl-critical-weak-Schatten-lower}. This completes the proof of Theorem~\ref{lem:Dunkl-critical-weak-Schatten-lower}.
+\end{proof}
+
+
 
 %
 %\begin{proof}
