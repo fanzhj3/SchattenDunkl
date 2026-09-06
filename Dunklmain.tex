@@ -683,19 +683,34 @@ of NWO sequences and the general extension to spaces of homogeneous type.
 
 {\color{red}[We need to replace the following Lemma by Hytonen's version on space of homogeneous type. Zhijie Will do it later]}
 
+
+
 \begin{lemma}\label{NWOLEMMAA}
-Let $1<p<\infty$, and let $\mathscr{D}$ be a
-system of dyadic cubes over $\mathbb{R}^N$. For any compact operator $ T $ on $ L ^2 (\mathbb R ^{N},dw)$, we have
-\begin{equation*}
-\Bigl(
-\sum_{Q\in \mathscr{D}} |\langle T e_Q, f_Q \rangle_{L^2(\mathbb{R}^N,dw)} | ^{p}
-\Bigr) ^{1/p} \leq C_{N,p,w} \| T \| _{S ^{p}},
-\end{equation*}
-where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences.
+Let \(1<p<\infty\), \(1\le q\le\infty\), and let
+\(\mathscr D\) be a system of dyadic cubes over \(\mathbb R^N\).
+If
+\[
+T\in S^{p,q}\bigl(L^2(\mathbb R^N,dw)\bigr),
+\]
+then
+\[
+\left\|
+\left\{
+\langle T e_Q,f_Q\rangle_{L^2(\mathbb R^N,dw)}
+\right\}_{Q\in\mathscr D}
+\right\|_{\ell^{p,q}}
+\le
+C_{N,p,q,w}
+\|T\|_{S^{p,q}(L^2(\mathbb R^N,dw))},
+\]
+where
+\(\{e_Q\}_{Q\in\mathscr D}\) and
+\(\{f_Q\}_{Q\in\mathscr D}\) are NWO sequences.
 \end{lemma}
 \begin{proof}
 This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
 \end{proof}
+
 
 \begin{lemma}\label{NWOLEMMAA2}
 Let $0<p<\infty$, $0<q\leq \infty$, and let $\mathscr{D}$ be a
@@ -5391,154 +5406,255 @@ $[R_{{\rm Dunkl},j},M_f]\in S^{p,q}\bigl(L^2(\mathbb R^N,dw)\bigr)$. Moreover,
 \|f\|_{OSC^{p,q}(\mathbb{R}^N)}.
 \end{equation}
 \end{theorem}
+
 \begin{proof}
 Fix \(s>2\) and a closed Weyl chamber \(\Gamma\). For fixed
 \(\varepsilon\in\{0,1,2,3\}\), \(\sigma,\tau\in G\), and
-\(u,v\in\mathbb Z^N\), Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
-\eqref{comm-property2}--\eqref{comm-property3}, together with the
-\(G\)-invariance of \(dw\), show that
-\[
-\left\{
-E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
-\right\}_{I\in\mathbb D_\Gamma},
-\qquad
-\left\{
-\overline{
-H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)}
-\right\}_{I\in\mathbb D_\Gamma}
-\]
-are NWO families on \(\Gamma\). Indeed, their supports are contained in
-\(I\) and \(I^*\), respectively, and \(I^*\) is contained in a fixed
-enlargement of \(I\).
-
-The operator
-\begin{align}\label{heoperator}
-\sum_{I\in\mathbb D_\Gamma}
-A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
-\,\cdot,\,
-\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
-\right\rangle_{L^2(\mathbb R^N,dw)}
-E_{u,v,I,\varepsilon}^{\sigma,\tau}
-\end{align}
-acts from \(L^2(\tau\Gamma,dw)\) to \(L^2(\sigma\Gamma,dw)\). For \(\gamma\in G\), define
-\[
-U_\gamma:L^2(\Gamma,dw)\longrightarrow L^2(\gamma\Gamma,dw),
-\qquad
-U_\gamma g(x):=g(\gamma^{-1}x).
-\]
-By the \(G\)-invariance of \(dw\), \(U_\gamma\) is unitary. By Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} \eqref{comm-property2}, the operator \eqref{heoperator} vanishes on
-\(L^2(\tau\Gamma,dw)^\perp\), while its range is contained in
-\(L^2(\sigma\Gamma,dw)\). Note that for \(g\in L^2(\Gamma,dw)\),
+\(u,v\in\mathbb Z^N\), by Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property2}--\eqref{comm-property3} and the \(G\)-invariance of
+\(dw\),
 \begin{align*}
-&U_\sigma^{-1}
-\Bigg(
-\sum_{I\in\mathbb D_\Gamma}
-A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
-\,\cdot,\,
-\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
-\right\rangle
-E_{u,v,I,\varepsilon}^{\sigma,\tau}
-\Bigg)
-U_\tau g
-\\
-&\qquad=
-\sum_{I\in\mathbb D_\Gamma}
-A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
-g,\,
+\Bigg\{
+E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
+\Bigg\}_{I\in\mathbb D_\Gamma},
+\qquad
+\Bigg\{
 \overline{
 H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)}
-\right\rangle_{L^2(\Gamma,dw)}
-E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot).
+\Bigg\}_{I\in\mathbb D_\Gamma}
 \end{align*}
-Hence, by Lemma~\ref{NWOLEMMAA2} and Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} \eqref{comm-property4},
+are NWO families on \(\Gamma\). Their supports are contained in \(I\) and
+\(I^*\), respectively, and \(I^*\) is contained in a fixed enlargement of
+\(I\).
+
+For \(\gamma\in G\), define
 \begin{align*}
-&\left\|
+U_\gamma:L^2(\Gamma,dw)&\longrightarrow L^2(\gamma\Gamma,dw),
+&
+U_\gamma g(x)&:=g(\gamma^{-1}x).
+\end{align*}
+By the \(G\)-invariance of \(dw\), \(U_\gamma\) is unitary. By
+Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property2}, the operator
+\begin{align*}
 \sum_{I\in\mathbb D_\Gamma}
 A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
+\Big\langle
 \,\cdot,\,
 \overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
-\right\rangle_{L^2(\mathbb R^N,dw)}
+\Big\rangle_{L^2(\mathbb R^N,dw)}
 E_{u,v,I,\varepsilon}^{\sigma,\tau}
-\right\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
-\\
-&\qquad=
-\left\|
+\end{align*}
+vanishes on \(L^2(\tau\Gamma,dw)^\perp\), and its range is contained in
+\(L^2(\sigma\Gamma,dw)\). Hence, by Lemma~\ref{NWOLEMMAA2} and
+Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property4},
+\begin{align*}
+&\Bigg\|
 \sum_{I\in\mathbb D_\Gamma}
 A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
+\Big\langle
+\,\cdot,\,
+\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
+\Big\rangle_{L^2(\mathbb R^N,dw)}
+E_{u,v,I,\varepsilon}^{\sigma,\tau}
+\Bigg\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
+\\
+&\qquad=
+\Bigg\|
+\sum_{I\in\mathbb D_\Gamma}
+A_{\sigma,\tau,I,\varepsilon}(f)
+\Big\langle
 \,\cdot,\,
 \overline{
 H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)}
-\right\rangle_{L^2(\Gamma,dw)}
+\Big\rangle_{L^2(\Gamma,dw)}
 E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
-\right\|_{S^{p,q}(L^2(\Gamma,dw))}
+\Bigg\|_{S^{p,q}(L^2(\Gamma,dw))}
 \\
 &\qquad\lesssim
-\left\|
-\left\{
+\Bigg\|
+\Bigg\{
 A_{\sigma,\tau,I,\varepsilon}(f)
-\right\}_{I\in\mathbb D_\Gamma}
-\right\|_{\ell^{p,q}}
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
 \lesssim
 \|f\|_{OSC^{p,q}(\mathbb R^N)}.
 \end{align*}
 
-Choose \(M_0>2N\). By Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} \eqref{comm-property1},
-\[
-\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
-\]
- As \(G\) is finite,
-the operator series in \eqref{eq:Dunkl-commutator-kernel-NWO} therefore
-converges in \(S^{p,q}(L^2(\mathbb R^N,dw))\), and
+Choose \(M_0>2N\). By
+Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property1},
 \begin{align*}
-&\bigl\|
-[R_{{\rm Dunkl},j},M_f]
-\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}\\
-&=
-\left\|
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
+\end{align*}
+Since \(G\) is finite and \(p>1\), using an equivalent norm on
+\(S^{p,q}\) when necessary, the operator series
+\begin{align*}
+T_f
+:=
 \sum_{\varepsilon=0}^3
 \sum_{\sigma,\tau\in G}
 \sum_{u,v\in\mathbb Z^N}
 c_{u,v}
 \sum_{I\in\mathbb D_\Gamma}
 A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
+\Big\langle
 \,\cdot,\,
 \overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
-\right\rangle_{L^2(\mathbb R^N,dw)}
+\Big\rangle_{L^2(\mathbb R^N,dw)}
 E_{u,v,I,\varepsilon}^{\sigma,\tau}
-\right\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
-\\
+\end{align*}
+converges in \(S^{p,q}(L^2(\mathbb R^N,dw))\), and
+\begin{align}
+\label{eq:Dunkl-upper-Tf-bound}
+\|T_f\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
 &\lesssim
 \sum_{\varepsilon=0}^3
 \sum_{\sigma,\tau\in G}
 \sum_{u,v\in\mathbb Z^N}
 |c_{u,v}|
-\left\|
-\sum_{I\in\mathbb D_\Gamma}
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\end{align}
+
+It remains to identify \(T_f\) with the commutator. Fix \(r>p\). Since
+\(\ell^{p,q}\subset\ell^r\), by
+Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property4},
+\begin{align*}
+\Bigg\|
+\Bigg\{
 A_{\sigma,\tau,I,\varepsilon}(f)
-\left\langle
-\,\cdot,\,
-\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
-\right\rangle_{L^2(\mathbb R^N,dw)}
-E_{u,v,I,\varepsilon}^{\sigma,\tau}
-\right\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
-\\
-&\lesssim
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^r}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\end{align*}
+For \(m\in\mathbb N\), define
+\begin{align*}
+T_f^{(m)}
+:=
 \sum_{\varepsilon=0}^3
 \sum_{\sigma,\tau\in G}
 \sum_{u,v\in\mathbb Z^N}
-|c_{u,v}|\,
-\|f\|_{OSC^{p,q}(\mathbb R^N)}
+c_{u,v}
+\sum_{I\in\bigcup_{|k|\leq m}\mathbb D_{\Gamma,k}}
+A_{\sigma,\tau,I,\varepsilon}(f)
+\Big\langle
+\,\cdot,\,
+\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
+\Big\rangle_{L^2(\mathbb R^N,dw)}
+E_{u,v,I,\varepsilon}^{\sigma,\tau}.
+\end{align*}
+By Lemma~\ref{NWOLEMMAA2}, for fixed
+\(\varepsilon,\sigma,\tau,u,v\),
+\begin{align*}
+&\Bigg\|
+\sum_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
+A_{\sigma,\tau,I,\varepsilon}(f)
+\Big\langle
+\,\cdot,\,
+\overline{H_{u,v,I,\varepsilon}^{\sigma,\tau}}
+\Big\rangle
+E_{u,v,I,\varepsilon}^{\sigma,\tau}
+\Bigg\|_{S^r}\lesssim
+\Bigg\|
+\Bigg\{
+A_{\sigma,\tau,I,\varepsilon}(f)
+\Bigg\}_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
+\Bigg\|_{\ell^r}
+\longrightarrow0.
+\end{align*}
+Together with
+\(\sum_{u,v}|c_{u,v}|<\infty\) and the preceding uniform
+\(\ell^r\)-bound, this implies
+\begin{align}
+\label{eq:Dunkl-upper-generation-convergence}
+\|T_f-T_f^{(m)}\|_{S^r}
+\longrightarrow0.
+\end{align}
+
+By the independence of the defining exponent of \(OSC^{p,q}\), as in the
+proof of Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint},
+\(f\in L^s_{\mathrm{loc}}(\mathbb R^N,dw)\). Hence, for
+\(\varphi,\psi\in C_c^\infty(\mathbb R^N)\),
+\(f\varphi,\overline f\,\psi\in L^2(\mathbb R^N,dw)\), and the
+commutator form is well defined by
+\begin{align*}
+\Big\langle
+[R_{{\rm Dunkl},j},M_f]\varphi,\psi
+\Big\rangle
+:=
+\Big\langle
+R_{{\rm Dunkl},j}(f\varphi),\psi
+\Big\rangle
+-
+\Big\langle
+R_{{\rm Dunkl},j}\varphi,\overline f\,\psi
+\Big\rangle.
+\end{align*}
+Let \(R_{{\rm Dunkl},j}^{(m)}\) denote the smooth annular truncation
+obtained from the partition \eqref{supportcondi} by restricting the
+generations to \(|k|\leq m\). By the construction in the proof of
+Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint}, together with
+\eqref{keydecomp} and the absolute summability in
+Lemma~\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property1},
+\begin{align}
+\label{eq:Dunkl-upper-truncated-identification}
+\big\langle T_f^{(m)}\varphi,\psi\big\rangle
+=
+\Big\langle
+R_{{\rm Dunkl},j}^{(m)}(f\varphi),\psi
+\Big\rangle
+-
+\Big\langle
+R_{{\rm Dunkl},j}^{(m)}\varphi,\overline f\,\psi
+\Big\rangle.
+\end{align}
+By the \(L^2(dw)\) truncated-kernel representation of the Dunkl Riesz
+transform,
+\begin{align*}
+R_{{\rm Dunkl},j}^{(m)}g
+\longrightarrow
+R_{{\rm Dunkl},j}g
+\qquad\text{in }L^2(\mathbb R^N,dw),
+\qquad g\in L^2(\mathbb R^N,dw).
+\end{align*}
+Therefore, by \eqref{eq:Dunkl-upper-truncated-identification},
+\begin{align*}
+\lim_{m\to\infty}
+\big\langle T_f^{(m)}\varphi,\psi\big\rangle
+=
+\Big\langle
+[R_{{\rm Dunkl},j},M_f]\varphi,\psi
+\Big\rangle.
+\end{align*}
+On the other hand, by
+\eqref{eq:Dunkl-upper-generation-convergence},
+\begin{align*}
+\lim_{m\to\infty}
+\big\langle T_f^{(m)}\varphi,\psi\big\rangle
+=
+\big\langle T_f\varphi,\psi\big\rangle.
+\end{align*}
+Thus, \(T_f\) is the bounded extension of
+\([R_{{\rm Dunkl},j},M_f]\). Combining this identification with
+\eqref{eq:Dunkl-upper-Tf-bound}, we obtain
+\begin{align*}
+\bigl\|
+[R_{{\rm Dunkl},j},M_f]
+\bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}
 \lesssim
 \|f\|_{OSC^{p,q}(\mathbb R^N)}.
 \end{align*}
 This completes the proof of Theorem~\ref{lem:Dunkl-critical-weak-Schatten-upper}.
 \end{proof}
+
+
+
 %
 %\begin{proof}
 %Fix \(s>2\), and use the usual locally integrable representative of
