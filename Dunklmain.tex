@@ -2427,6 +2427,7 @@ This proves \eqref{eq:ball-2sided-Gamma}. The second statement follows immediate
 
 
 \section{Proof of upper bound}
+\setcounter{equation}{0}
 \begin{nota}
 Fix a closed Weyl chamber $\Gamma$, and choose a linear isomorphism
 $
@@ -5655,6 +5656,8 @@ This completes the proof of Theorem~\ref{lem:Dunkl-critical-weak-Schatten-upper}
 
 
 \section{Proof of lower bound}
+\setcounter{equation}{0}
+
 \begin{definition}\label{def:Dunkl-weighted-OSC}
 Let \(1\le r<\infty\). For a measurable set
 \(E\subset\mathbb R^N\) with \(0<w(E)<\infty\), set
@@ -6176,7 +6179,2236 @@ the quasi triangle inequality in \(\ell^{p,q}\) proves \eqref{eq:Dunkl-critical-
 \end{proof}
 
 
+\section{Spectral asymptotic formula}
+\setcounter{equation}{0}
 
+\begin{definition}
+For \(g\in G\) and \(j=1,\ldots,N\), set
+\begin{align*}
+d_{g,j}:=g^{-1}e_j,
+\qquad
+f_g(x):=f(gx).
+\end{align*}
+For \(\alpha\in R_+\), define \(S_\alpha:\mathbb C^G\to\mathbb C^G\) by
+\begin{align*}
+(S_\alpha z)_g:=z_{g\sigma_\alpha},
+\qquad g\in G.
+\end{align*}
+For \(f\in\dot W^{1,N}(\mathbb R^N)\), \(x\in\Gamma_+\), and
+\(\theta\in\mathbb S^{N-1}\), define
+\begin{align*}
+\mathfrak c_{f,j}(x,\theta)
+&:=
+\operatorname{diag}_{g\in G}
+\bigg(
+\langle d_{g,j},\nabla f_g(x)\rangle
+-
+\langle d_{g,j},\theta\rangle
+\langle\theta,\nabla f_g(x)\rangle
+\bigg)\\
+&\quad+
+\sum_{\alpha\in R_+}
+k(\alpha)
+\operatorname{diag}_{g\in G}
+\bigg(
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+\big(
+f_g(x)-f_{g\sigma_\alpha}(x)
+\big)
+\bigg)
+S_\alpha.
+\end{align*}
+For smooth \(f\), the quotients in the second term are understood by their smooth extensions across the corresponding reflection hyperplanes. For \(f\in\dot W^{1,N}(\mathbb R^N)\), \(\mathfrak c_{f,j}\) is understood almost everywhere on \(\Gamma\times\mathbb S^{N-1}\).
+\end{definition}
+
+\begin{lemma}\label{lem:Dunkl-T-commutator-exact}
+Let \(f\in W_{\mathrm{loc}}^{1,1}(\mathbb R^N)\). For every \(u\in C_c^\infty(\mathbb R^N)\),
+\begin{align}
+[T_{e_j},M_f]u(x)
+&=
+\partial_j f(x)u(x)
++
+\sum_{\alpha\in R_+}
+k(\alpha)\langle\alpha,e_j\rangle
+\frac{f(x)-f(\sigma_\alpha x)}
+{\langle\alpha,x\rangle}
+u(\sigma_\alpha x)
+\label{eq:Dunkl-T-commutator-exact}
+\end{align}
+for almost every \(x\in\mathbb R^N\). If \(N>1\) and \(f\in\dot W^{1,N}(\mathbb R^N)\), then, for every \(\alpha\in R_+\),
+\begin{align}
+\left\|
+\frac{f-f\circ\sigma_\alpha}
+{\langle\alpha,\cdot\rangle}
+\right\|_{L^N(\mathbb R^N,dx)}
+\lesssim_{N,G}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
+\label{eq:Dunkl-reflection-difference-quotient}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Pairing \(\alpha\) and \(-\alpha\) in the definition of \(T_{e_j}\), and using \(k(-\alpha)=k(\alpha)\) and \(\sigma_{-\alpha}=\sigma_\alpha\), we have
+\begin{align*}
+T_{e_j}u(x)
+=
+\partial_j u(x)
++
+\sum_{\alpha\in R_+}
+k(\alpha)\langle\alpha,e_j\rangle
+\frac{u(x)-u(\sigma_\alpha x)}
+{\langle\alpha,x\rangle}.
+\end{align*}
+Therefore,
+\begin{align*}
+[T_{e_j},M_f]u(x)
+&=
+\partial_jf(x)u(x)
++
+\sum_{\alpha\in R_+}
+k(\alpha)\langle\alpha,e_j\rangle
+\frac{f(x)-f(\sigma_\alpha x)}
+{\langle\alpha,x\rangle}
+u(\sigma_\alpha x),
+\end{align*}
+which proves \eqref{eq:Dunkl-T-commutator-exact}.
+
+Since \(R\) is normalized,
+\begin{align*}
+x-\sigma_\alpha x
+=
+\langle\alpha,x\rangle\alpha,
+\qquad
+\|x-\sigma_\alpha x\|
+=
+\sqrt{2}\,|\langle\alpha,x\rangle|.
+\end{align*}
+Hence, for almost every \(x\notin\alpha^\perp\),
+\begin{align*}
+\frac{|f(x)-f(\sigma_\alpha x)|}
+{|\langle\alpha,x\rangle|}
+=
+\sqrt{2}\,
+\mathcal G_{I,\sigma_\alpha}f(x).
+\end{align*}
+By Lemma \ref{lem:Weyl-difference-quotient} \eqref{eq:Weyl-difference-quotient},
+\begin{align*}
+\left\|
+\frac{f-f\circ\sigma_\alpha}
+{\langle\alpha,\cdot\rangle}
+\right\|_{L^N(\mathbb R^N,dx)}
+\lesssim_{N,G}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
+\end{align*}
+This completes the proof of Lemma \ref{lem:Dunkl-T-commutator-exact}.
+\end{proof}
+\begin{lemma}\label{lem:Dunkl-chamber-folding-symbol}
+Let \(\Gamma_+\) be an open Weyl chamber, let \(\Gamma\) be its closure, and let \(R_+\) be the corresponding positive subsystem. Set
+\begin{align*}
+\rho(x):=\varpi(x)^{1/2},
+\end{align*}
+and define
+\begin{align*}
+U:L^2(\mathbb R^N,dw)&\longrightarrow L^2(\Gamma,dw;\mathbb C^G),
+&
+(Uu)_g(x)&:=u(gx),\\
+V:L^2(\Gamma,dw;\mathbb C^G)&\longrightarrow L^2(\Gamma,dx;\mathbb C^G),
+&
+(Vh)(x)&:=\rho(x)h(x).
+\end{align*}
+Then \(U\) and \(V\) are unitary. If
+\begin{align*}
+\widetilde T_j
+:=
+VUT_{e_j}U^{-1}V^{-1},
+\qquad
+\widetilde P
+:=
+VU(-\Delta_{\D})U^{-1}V^{-1},
+\end{align*}
+then, on \(C_c^\infty(\Gamma_+;\mathbb C^G)\),
+\begin{align}
+(\widetilde T_jh)_g
+&=
+\partial_{d_{g,j}}h_g
+-
+\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+h_{g\sigma_\alpha},
+\label{eq:Dunkl-folded-T}\\
+\widetilde P
+&=
+-\Delta I_{\mathbb C^G}
++
+|\nabla\log\rho|^2I_{\mathbb C^G}
+-
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{S_\alpha}{\langle\alpha,x\rangle^2}.
+\label{eq:Dunkl-folded-Laplacian}
+\end{align}
+
+Assume in addition that \(N>1\), and let
+\begin{align*}
+\widetilde Q
+:=
+VU(-\Delta_{\D})^{-1/2}U^{-1}V^{-1},
+\end{align*}
+where \((-\Delta_{\D})^{-1/2}\) is defined by the spectral calculus.
+Then, for every \(\chi\in C_c^\infty(\Gamma_+)\), the operator
+\(M_\chi\widetilde Q M_\chi\), initially defined on its natural
+domain, admits a bounded extension to
+\(L^2(\Gamma,dx;\mathbb C^G)\), and this extension is a classical
+matrix-valued pseudodifferential operator of order \(-1\). Its
+principal symbol is
+\begin{align*}
+\sigma_{-1}
+\big(
+M_\chi\widetilde Q M_\chi
+\big)(x,\xi)
+=
+\chi(x)^2|\xi|^{-1}I_{\mathbb C^G}.
+\end{align*}
+Consequently, if \(x\in\Gamma_+\), \(\xi\neq0\), and
+\(\chi\in C_c^\infty(\Gamma_+)\) is identically \(1\) in a
+neighborhood of \(x\), then
+\begin{align}
+\sigma_{-1}
+\big(
+M_\chi\widetilde Q M_\chi
+\big)(x,\xi)
+=
+|\xi|^{-1}I_{\mathbb C^G}.
+\label{eq:Dunkl-folded-Q-principal-symbol}
+\end{align}
+\end{lemma}
+\begin{proof}
+The Weyl chambers \(g\Gamma_+\), \(g\in G\), are pairwise disjoint
+and cover \(\mathbb R^N\) up to the reflection hyperplanes; see
+\cite[Theorem~2.12]{HeckmanCoxeterGroups}. Since \(dw\) is
+\(G\)-invariant,
+\begin{align*}
+\|Uu\|_{L^2(\Gamma,dw;\mathbb C^G)}^2
+&=
+\sum_{g\in G}
+\int_\Gamma
+|u(gx)|^2\,dw(x)\\
+&=
+\int_{\mathbb R^N}|u(x)|^2\,dw(x).
+\end{align*}
+Conversely, for
+\(h=(h_g)_{g\in G}\in L^2(\Gamma,dw;\mathbb C^G)\), define
+\(u(gx):=h_g(x)\) for \(x\in\Gamma_+\). This determines \(u\) almost
+everywhere on \(\mathbb R^N\) and gives \(Uu=h\). Hence \(U\) is
+unitary. Since \(dw=\rho^2dx\) and \(\rho>0\) on \(\Gamma_+\),
+\(V\) is unitary as well.
+
+Pairing the roots \(\alpha\) and \(-\alpha\) in the definition of
+\(T_{e_j}\), changing variables in the root system by \(g\), and using
+the \(G\)-invariance of \(k\), we obtain, for
+\(h\in C_c^\infty(\Gamma_+;\mathbb C^G)\),
+\begin{align*}
+(UT_{e_j}U^{-1}h)_g
+=
+\partial_{d_{g,j}}h_g
++
+\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+\bigl(h_g-h_{g\sigma_\alpha}\bigr).
+\end{align*}
+On \(\Gamma_+\),
+\begin{align*}
+\nabla\log\rho(x)
+=
+\sum_{\alpha\in R_+}
+k(\alpha)\frac{\alpha}{\langle\alpha,x\rangle},
+\end{align*}
+and therefore
+\begin{align*}
+\rho\,\partial_{d_{g,j}}\rho^{-1}
+=
+\partial_{d_{g,j}}
+-
+\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}.
+\end{align*}
+Conjugation by \(V\) cancels the diagonal terms and gives
+\eqref{eq:Dunkl-folded-T}.
+
+Similarly, pairing \(\alpha\) and \(-\alpha\) in the formula for the
+Dunkl Laplacian and using \(\|\alpha\|^2=2\), we have
+\begin{align*}
+\bigl(
+U(-\Delta_{\D})U^{-1}h
+\bigr)_g
+&=
+-\Delta h_g
+-
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{\partial_\alpha h_g}
+{\langle\alpha,x\rangle}\\
+&\quad+
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{h_g-h_{g\sigma_\alpha}}
+{\langle\alpha,x\rangle^2}.
+\end{align*}
+Writing \(\phi=\log\rho\),
+\begin{align*}
+\rho
+\bigl(
+-\Delta-2\nabla\phi\cdot\nabla
+\bigr)
+\rho^{-1}
+=
+-\Delta+|\nabla\phi|^2+\Delta\phi,
+\end{align*}
+while
+\begin{align*}
+\Delta\phi
+=
+-\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{\|\alpha\|^2}{\langle\alpha,x\rangle^2}
+=
+-2\sum_{\alpha\in R_+}
+\frac{k(\alpha)}{\langle\alpha,x\rangle^2}.
+\end{align*}
+The latter term cancels the diagonal part of
+\[
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{I_{\mathbb C^G}-S_\alpha}
+{\langle\alpha,x\rangle^2},
+\]
+and hence
+\[
+\widetilde P
+=
+-\Delta I_{\mathbb C^G}
++
+|\nabla\log\rho|^2I_{\mathbb C^G}
+-
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{S_\alpha}{\langle\alpha,x\rangle^2},
+\]
+which proves \eqref{eq:Dunkl-folded-Laplacian}.
+
+Assume now that \(N>1\), fix
+\(\chi\in C_c^\infty(\Gamma_+)\), and set
+\[
+K:=\operatorname{supp}\chi.
+\]
+On \(\Gamma_+\), write
+\[
+\widetilde P=-\Delta I_{\mathbb C^G}+W(x),
+\qquad
+W(x)
+=
+|\nabla\log\rho(x)|^2I_{\mathbb C^G}
+-
+2\sum_{\alpha\in R_+}
+k(\alpha)
+\frac{S_\alpha}{\langle\alpha,x\rangle^2}.
+\]
+Thus \(W\) is a smooth Hermitian matrix-valued function on
+\(\Gamma_+\).
+
+Choose open sets
+\[
+K\Subset\Omega_0\Subset\Omega_1\Subset\Gamma_+
+\]
+and \(\eta\in C_c^\infty(\Gamma_+)\) such that
+\[
+0\leq\eta\leq1,
+\qquad
+\eta=1
+\quad\text{on a neighborhood of }\overline{\Omega_1}.
+\]
+Choose a flat torus \(M\) containing
+\(\operatorname{supp}\eta\) in one Euclidean coordinate chart.
+Since \(\eta\) is compactly supported in that chart, the differential
+operator \(M_\eta\widetilde P M_\eta\) extends smoothly by zero to
+\(M\). Define on \(L^2(M;\mathbb C^G)\)
+\begin{align}
+P_0
+:=
+M_\eta\widetilde P M_\eta
++
+M_{1-\eta}(-\Delta_M+1)M_{1-\eta}.
+\label{eq:Dunkl-local-elliptic-extension}
+\end{align}
+It is a nonnegative self-adjoint elliptic differential operator of
+order \(2\). Indeed,
+\begin{align*}
+\langle P_0u,u\rangle
+&=
+\langle
+\widetilde P(\eta u),\eta u
+\rangle
++
+\|\nabla((1-\eta)u)\|_2^2
++
+\|(1-\eta)u\|_2^2
+\geq0,
+\end{align*}
+and its principal symbol is
+\begin{align*}
+p_{0,2}(x,\xi)
+=
+\bigl(
+\eta(x)^2+(1-\eta(x))^2
+\bigr)
+|\xi|^2I_{\mathbb C^G},
+\end{align*}
+which is elliptic since
+\[
+\eta^2+(1-\eta)^2\geq\frac12.
+\]
+Moreover,
+\begin{align}
+P_0=\widetilde P
+\quad\text{on }\Omega_1.
+\label{eq:Dunkl-P-P0-local-equality}
+\end{align}
+
+Let
+\[
+H_t:=e^{-t\widetilde P},
+\qquad
+H_t^0:=e^{-tP_0}.
+\]
+We first consider
+\begin{align*}
+B_0
+:=
+\frac1{\sqrt\pi}
+\int_0^1
+t^{-1/2}H_t^0\,dt.
+\end{align*}
+Let \(\Pi_0\) be the orthogonal projection onto \(\ker P_0\).
+Since \(P_0\) is elliptic on the closed manifold \(M\),
+\(\Pi_0\) is smoothing. Applying the complex powers calculus
+\cite[Theorem~2 and p.~290]{MR0237943} to
+\(P_0+\Pi_0\), we obtain
+\begin{align*}
+(P_0+\Pi_0)^{-1/2}
+\in
+\Psi_{\mathrm{cl}}^{-1}(M;\mathbb C^G)
+\end{align*}
+with principal symbol \(p_{0,2}^{-1/2}\).
+
+Set
+\[
+F(\lambda)
+:=
+\frac1{\sqrt\pi}
+\int_0^1 t^{-1/2}e^{-t\lambda}\,dt,
+\qquad
+\lambda\geq0.
+\]
+Then \(B_0=F(P_0)\), and for \(\lambda>0\),
+\begin{align*}
+F(\lambda)-\lambda^{-1/2}
+=
+-\frac1{\sqrt\pi}
+\int_1^\infty
+t^{-1/2}e^{-t\lambda}\,dt.
+\end{align*}
+Hence
+\[
+F(\lambda)-\lambda^{-1/2}
+=
+O(\lambda^{-m})
+\qquad
+(\lambda\to\infty)
+\]
+for every \(m>0\). On \(\ker P_0\) the difference between \(B_0\)
+and \((P_0+\Pi_0)^{-1/2}\) is finite rank. It follows from elliptic
+spectral regularity that
+\begin{align*}
+B_0-(P_0+\Pi_0)^{-1/2}
+\in\Psi^{-\infty}(M;\mathbb C^G).
+\end{align*}
+Consequently,
+\begin{align}
+B_0\in\Psi_{\mathrm{cl}}^{-1}(M;\mathbb C^G),
+\qquad
+\sigma_{-1}(B_0)(x,\xi)
+=
+p_{0,2}(x,\xi)^{-1/2}.
+\label{eq:Dunkl-B0-symbol}
+\end{align}
+In particular, by \eqref{eq:Dunkl-P-P0-local-equality},
+\begin{align}
+\sigma_{-1}(B_0)(x,\xi)
+=
+|\xi|^{-1}I_{\mathbb C^G},
+\qquad
+x\in\Omega_1.
+\label{eq:Dunkl-B0-local-symbol}
+\end{align}
+
+We next compare \(H_t\) and \(H_t^0\) in the interior. Choose
+\(\zeta\in C_c^\infty(\Omega_1)\) such that
+\[
+\zeta=1
+\quad\text{on a neighborhood of }K.
+\]
+Since \(P_0=\widetilde P\) on \(\Omega_1\), Duhamel's formula gives
+\begin{align}
+M_\chi(H_t-H_t^0)M_\chi
+=
+-\int_0^t
+M_\chi H_{t-s}
+[\widetilde P,M_\zeta]
+H_s^0M_\chi\,ds.
+\label{eq:Dunkl-local-heat-Duhamel}
+\end{align}
+Indeed, for data supported in \(K\),
+\[
+v(t):=M_\zeta H_t^0M_\chi u
+\]
+satisfies
+\[
+(\partial_t+\widetilde P)v
+=
+[\widetilde P,M_\zeta]H_t^0M_\chi u,
+\qquad
+v(0)=M_\chi u,
+\]
+which yields \eqref{eq:Dunkl-local-heat-Duhamel}.
+
+Let \(h_t(x,y)\) be the Dunkl heat kernel. The integral kernel of
+\(H_t\), with respect to Lebesgue measure on \(\Gamma\), is the
+matrix
+\begin{align}
+\widetilde h_t(x,y)_{g,\ell}
+=
+\rho(x)\rho(y)\,
+h_t(gx,\ell y),
+\qquad g,\ell\in G.
+\label{eq:Dunkl-folded-heat-kernel}
+\end{align}
+For \(x,y\in\Gamma\),
+\[
+d(gx,\ell y)=d(x,y)=|x-y|.
+\]
+Together with the mixed derivative estimate for the Dunkl heat
+kernel \cite[Theorem~3.1]{MR4042416}, this implies that, whenever
+\(E,F\Subset\Gamma_+\) and
+\(\operatorname{dist}(E,F)>0\), for every pair of multi-indices
+\(\alpha,\beta\) and every \(m>0\),
+\begin{align}
+\sup_{\substack{x\in E\\y\in F}}
+\left\|
+\partial_x^\alpha
+\partial_y^\beta
+\widetilde h_t(x,y)
+\right\|
+=
+O(t^m),
+\qquad
+t\downarrow0.
+\label{eq:Dunkl-folded-heat-off-diagonal}
+\end{align}
+The heat kernel of the smooth elliptic operator \(P_0\) satisfies the
+same off-diagonal estimate on \(M\).
+
+Since
+\[
+\operatorname{supp}[\widetilde P,M_\zeta]
+\cap K
+=
+\varnothing,
+\]
+the two heat kernels occurring in
+\eqref{eq:Dunkl-local-heat-Duhamel} are evaluated between compact
+sets separated by a positive distance. The standard Gaussian
+bounds underlying
+\eqref{eq:Dunkl-folded-heat-off-diagonal} therefore give, for every
+multi-indices \(\alpha,\beta\) and every \(m>0\),
+\begin{align}
+\sup_{x,y}
+\left\|
+\partial_x^\alpha\partial_y^\beta
+K_{M_\chi(H_t-H_t^0)M_\chi}(x,y)
+\right\|
+=
+O(t^m),
+\qquad
+t\downarrow0.
+\label{eq:Dunkl-local-heat-flat}
+\end{align}
+Hence
+\begin{align}
+S_0
+:=
+\frac1{\sqrt\pi}
+\int_0^1
+t^{-1/2}
+M_\chi(H_t-H_t^0)M_\chi\,dt
+\in
+\Psi^{-\infty}.
+\label{eq:Dunkl-small-time-smoothing}
+\end{align}
+
+It remains to treat the large-time part. Let \(K_1\Subset\Gamma_+\)
+be a compact set containing \(K\). By
+\eqref{eq:Dunkl-folded-heat-kernel}, the heat-kernel derivative
+estimate cited above, and \eqref{doublinginequality}, for
+\(x,y\in K_1\) and \(t\geq1\),
+\begin{align*}
+V(gx,\ell y,\sqrt t)^{-1}
+\lesssim_{K_1}
+t^{-N/2}.
+\end{align*}
+Since \(\rho\) and all its derivatives are bounded on \(K_1\), it
+follows that, for every pair of multi-indices \(\alpha,\beta\),
+\begin{align}
+\sup_{x,y\in K_1}
+\left\|
+\partial_x^\alpha
+\partial_y^\beta
+\widetilde h_t(x,y)
+\right\|
+\lesssim_{\alpha,\beta,K_1}
+t^{-N/2},
+\qquad
+t\geq1.
+\label{eq:Dunkl-large-time-local-heat}
+\end{align}
+Since \(N>1\),
+\[
+\int_1^\infty
+t^{-1/2}t^{-N/2}\,dt
+<
+\infty.
+\]
+Thus all derivatives of
+\begin{align*}
+K_{S_\infty}(x,y)
+:=
+\frac{\chi(x)\chi(y)}{\sqrt\pi}
+\int_1^\infty
+t^{-1/2}\widetilde h_t(x,y)\,dt
+\end{align*}
+converge locally uniformly, and therefore
+\begin{align}
+S_\infty
+:=
+\frac1{\sqrt\pi}
+\int_1^\infty
+t^{-1/2}
+M_\chi H_tM_\chi\,dt
+\in
+\Psi^{-\infty}.
+\label{eq:Dunkl-large-time-smoothing}
+\end{align}
+
+For completeness, the preceding integrals give the canonical bounded
+localization of \(\widetilde P^{-1/2}\). Indeed, for
+\(\varepsilon>0\),
+\begin{align*}
+(\widetilde P+\varepsilon)^{-1/2}
+=
+\frac1{\sqrt\pi}
+\int_0^\infty
+t^{-1/2}e^{-\varepsilon t}H_t\,dt
+\end{align*}
+by the spectral theorem. The estimates
+\eqref{eq:Dunkl-local-heat-flat} and
+\eqref{eq:Dunkl-large-time-local-heat} imply that
+\[
+M_\chi(\widetilde P+\varepsilon)^{-1/2}M_\chi
+\]
+converges in operator norm, as \(\varepsilon\downarrow0\), to
+\begin{align*}
+\frac1{\sqrt\pi}
+\int_0^\infty
+t^{-1/2}M_\chi H_tM_\chi\,dt.
+\end{align*}
+On the natural domain of \(\widetilde P^{-1/2}\), this limit agrees
+with \(M_\chi\widetilde P^{-1/2}M_\chi\); hence it is its bounded
+extension.
+
+Combining
+\eqref{eq:Dunkl-small-time-smoothing},
+\eqref{eq:Dunkl-large-time-smoothing}, and the definition of \(B_0\),
+we obtain
+\begin{align*}
+M_\chi\widetilde Q M_\chi
+&=
+M_\chi B_0M_\chi
++
+S_0
++
+S_\infty.
+\end{align*}
+By \eqref{eq:Dunkl-B0-symbol},
+\(M_\chi B_0M_\chi\) is a classical matrix-valued
+pseudodifferential operator of order \(-1\), while
+\(S_0+S_\infty\) is smoothing. Therefore
+\[
+M_\chi\widetilde Q M_\chi
+\in
+\Psi_{\mathrm{cl}}^{-1},
+\]
+and, by \eqref{eq:Dunkl-B0-local-symbol},
+\begin{align*}
+\sigma_{-1}
+\bigl(
+M_\chi\widetilde Q M_\chi
+\bigr)(x,\xi)
+=
+\chi(x)^2|\xi|^{-1}I_{\mathbb C^G}.
+\end{align*}
+If \(\chi=1\) in a neighborhood of \(x\), this reduces to
+\[
+\sigma_{-1}
+\bigl(
+M_\chi\widetilde Q M_\chi
+\bigr)(x,\xi)
+=
+|\xi|^{-1}I_{\mathbb C^G},
+\]
+which proves \eqref{eq:Dunkl-folded-Q-principal-symbol}.
+\end{proof}
+
+\begin{lemma}\label{lem:Dunkl-commutator-principal-symbol}
+Let \(j\in\{1,\ldots,N\}\) and \(f\in C_c^\infty(\mathbb R^N)\), and set
+\begin{align*}
+A_{f,j}
+:=
+VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+\end{align*}
+Then, for every \(\chi\in C_c^\infty(\Gamma_+)\),
+\[
+M_\chi A_{f,j}M_\chi
+\]
+is a compactly supported classical matrix valued pseudodifferential
+operator of order \(-1\), with principal symbol
+\begin{align}
+\sigma_{-1}
+\big(
+M_\chi A_{f,j}M_\chi
+\big)(x,\xi)
+=
+\frac{\chi(x)^2}{\|\xi\|}
+\mathfrak c_{f,j}
+\bigg(
+x,\frac{\xi}{\|\xi\|}
+\bigg),
+\qquad
+x\in\Gamma_+,\quad \xi\neq0.
+\label{eq:Dunkl-commutator-principal-symbol}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Set
+\begin{align*}
+F(x)
+:=
+\operatorname{diag}_{g\in G}\big(f_g(x)\big).
+\end{align*}
+Since \(VU M_fU^{-1}V^{-1}=M_F\) and
+\(R_{\D,j}=T_{e_j}(-\Delta_{\D})^{-1/2}\),
+\begin{align}
+A_{f,j}
+=
+[\widetilde T_j,M_F]\widetilde Q
++
+\widetilde T_j[\widetilde Q,M_F].
+\label{eq:Dunkl-commutator-folded-decomposition}
+\end{align}
+By \eqref{eq:Dunkl-folded-T},
+\begin{align}
+[\widetilde T_j,M_F]
+&=
+\operatorname{diag}_{g\in G}
+\big(
+\langle d_{g,j},\nabla f_g\rangle
+\big)
+\nonumber\\
+&\quad+
+\sum_{\alpha\in R_+}
+k(\alpha)
+\operatorname{diag}_{g\in G}
+\bigg(
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+\big(
+f_g-f_{g\sigma_\alpha}
+\big)
+\bigg)S_\alpha .
+\label{eq:Dunkl-TF-folded-commutator}
+\end{align}
+
+Fix \(\chi\in C_c^\infty(\Gamma_+)\). Choose
+\(\eta,\psi\in C_c^\infty(\Gamma_+)\) such that
+\(\eta=1\) on a neighborhood of \(\operatorname{supp}\chi\) and
+\(\psi=1\) on a neighborhood of \(\operatorname{supp}\eta\), and set
+\begin{align*}
+Q_\psi
+:=
+M_\psi\widetilde Q M_\psi.
+\end{align*}
+By Lemma \ref{lem:Dunkl-chamber-folding-symbol},
+\(Q_\psi\) is a classical matrix valued pseudodifferential operator
+of order \(-1\), and on a neighborhood of
+\(\operatorname{supp}\eta\),
+\begin{align}
+q_{-1}(x,\xi)
+=
+\|\xi\|^{-1}I_{\mathbb C^G}.
+\label{eq:Dunkl-Q-qminusone}
+\end{align}
+
+We use the Kohn--Nirenberg convention
+\begin{align*}
+\operatorname{Op}(a)u(x)
+=
+(2\pi)^{-N}
+\int_{\mathbb R^{2N}}
+e^{i(x-y)\cdot\xi}
+a(x,\xi)u(y)\,dy\,d\xi.
+\end{align*}
+If \(a\) and \(b\) are classical symbols, the composition formula
+\cite[Theorem~18.1.8, p.~71]{MR0781536} gives
+\begin{align}
+a\# b
+\sim
+\sum_{\beta\in\mathbb N_0^N}
+\frac{1}{\beta!}
+\partial_\xi^\beta a\,
+D_x^\beta b,
+\qquad
+D_x:=\frac{1}{i}\partial_x.
+\label{eq:KN-composition}
+\end{align}
+
+Write, on a neighborhood of \(\operatorname{supp}\eta\),
+\begin{align*}
+\sigma(Q_\psi)(x,\xi)
+\sim
+q_{-1}(x,\xi)+q_{-2}(x,\xi)+\cdots.
+\end{align*}
+By \eqref{eq:Dunkl-folded-Laplacian},
+\begin{align*}
+\sigma(\widetilde P)(x,\xi)
+\sim
+p_2(x,\xi)+p_1(x,\xi)+p_0(x,\xi),
+\end{align*}
+where
+\begin{align*}
+p_2(x,\xi)
+=
+\|\xi\|^2I_{\mathbb C^G},
+\qquad
+p_1(x,\xi)=0.
+\end{align*}
+Since \(\widetilde Q=\widetilde P^{-1/2}\),
+\(\widetilde Q\widetilde P\widetilde Q=I\). Applying
+\eqref{eq:KN-composition} on the region where \(\psi=1\) and comparing
+the homogeneous terms of degree \(-1\), the terms containing
+\(x\)-derivatives of \(p_2\) and \(q_{-1}\) vanish, and hence
+\begin{align*}
+q_{-2}p_2q_{-1}
++
+q_{-1}p_2q_{-2}
+=
+0.
+\end{align*}
+Together with \eqref{eq:Dunkl-Q-qminusone}, this gives
+\begin{align}
+q_{-2}(x,\xi)=0
+\label{eq:Dunkl-Q-qminustwo}
+\end{align}
+on a neighborhood of \(\operatorname{supp}\eta\).
+
+Applying \eqref{eq:KN-composition} to the commutator
+\([Q_\psi,M_F]\), and using
+\eqref{eq:Dunkl-Q-qminusone}--\eqref{eq:Dunkl-Q-qminustwo}, we obtain,
+on the same neighborhood,
+\begin{align}
+\sigma_{-2}
+\big(
+[Q_\psi,M_F]
+\big)(x,\xi)
+&=
+\frac{1}{i}
+\sum_{\ell=1}^N
+\partial_{\xi_\ell}
+\big(
+\|\xi\|^{-1}
+\big)
+\partial_{x_\ell}F(x)
+\nonumber\\
+&=
+i\|\xi\|^{-3}
+\operatorname{diag}_{g\in G}
+\big(
+\langle\xi,\nabla f_g(x)\rangle
+\big).
+\label{eq:Dunkl-QF-principal-symbol}
+\end{align}
+
+Since \(\psi=1\) on a neighborhood of
+\(\operatorname{supp}\eta\) and
+\(\eta=1\) on a neighborhood of
+\(\operatorname{supp}\chi\),
+\begin{align*}
+M_\chi[\widetilde T_j,M_F]\widetilde Q M_\chi
+&=
+M_\chi[\widetilde T_j,M_F]Q_\psi M_\chi,\\
+M_\chi\widetilde T_j[\widetilde Q,M_F]M_\chi
+&=
+M_\chi\widetilde T_jM_\eta
+[Q_\psi,M_F]M_\chi.
+\end{align*}
+Both operators on the right are classical matrix valued
+pseudodifferential operators of order \(-1\).
+
+By \eqref{eq:Dunkl-TF-folded-commutator},
+\eqref{eq:Dunkl-Q-qminusone}, and the order-zero part of the
+composition formula,
+\begin{align}
+&
+\sigma_{-1}
+\big(
+M_\chi[\widetilde T_j,M_F]
+\widetilde Q M_\chi
+\big)(x,\xi)
+\nonumber\\
+&\quad=
+\frac{\chi(x)^2}{\|\xi\|}
+\operatorname{diag}_{g\in G}
+\big(
+\langle d_{g,j},\nabla f_g(x)\rangle
+\big)
+\nonumber\\
+&\qquad+
+\frac{\chi(x)^2}{\|\xi\|}
+\sum_{\alpha\in R_+}
+k(\alpha)
+\operatorname{diag}_{g\in G}
+\bigg(
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+\big(
+f_g(x)-f_{g\sigma_\alpha}(x)
+\big)
+\bigg)S_\alpha.
+\label{eq:Dunkl-first-principal-contribution}
+\end{align}
+
+Under the above Kohn--Nirenberg convention,
+\eqref{eq:Dunkl-folded-T} gives
+\begin{align*}
+\sigma_1(\widetilde T_j)(x,\xi)
+=
+i\operatorname{diag}_{g\in G}
+\big(
+\langle d_{g,j},\xi\rangle
+\big).
+\end{align*}
+Therefore, by \eqref{eq:Dunkl-QF-principal-symbol},
+\begin{align}
+&
+\sigma_{-1}
+\big(
+M_\chi\widetilde T_j
+[\widetilde Q,M_F]M_\chi
+\big)(x,\xi)
+\nonumber\\
+&\quad=
+-\chi(x)^2\|\xi\|^{-3}
+\operatorname{diag}_{g\in G}
+\big(
+\langle d_{g,j},\xi\rangle
+\langle\xi,\nabla f_g(x)\rangle
+\big).
+\label{eq:Dunkl-second-principal-contribution}
+\end{align}
+
+Combining
+\eqref{eq:Dunkl-first-principal-contribution} and
+\eqref{eq:Dunkl-second-principal-contribution}, and setting
+\begin{align*}
+\theta:=\frac{\xi}{\|\xi\|},
+\end{align*}
+we obtain
+\begin{align*}
+\sigma_{-1}
+\big(
+M_\chi A_{f,j}M_\chi
+\big)(x,\xi)
+&=
+\frac{\chi(x)^2}{\|\xi\|}
+\operatorname{diag}_{g\in G}
+\bigg(
+\langle d_{g,j},\nabla f_g(x)\rangle
+-
+\langle d_{g,j},\theta\rangle
+\langle\theta,\nabla f_g(x)\rangle
+\bigg)
+\\
+&\quad+
+\frac{\chi(x)^2}{\|\xi\|}
+\sum_{\alpha\in R_+}
+k(\alpha)
+\operatorname{diag}_{g\in G}
+\bigg(
+\frac{\langle\alpha,d_{g,j}\rangle}
+{\langle\alpha,x\rangle}
+\big(
+f_g(x)-f_{g\sigma_\alpha}(x)
+\big)
+\bigg)S_\alpha
+\\
+&=
+\frac{\chi(x)^2}{\|\xi\|}
+\mathfrak c_{f,j}(x,\theta).
+\end{align*}
+This proves \eqref{eq:Dunkl-commutator-principal-symbol}.
+\end{proof}
+
+
+
+\begin{lemma}\label{lem:Dunkl-spectral-density-Sobolev}
+Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in\dot W^{1,N}(\mathbb R^N)\). Then
+\begin{align*}
+\Bigg(
+\int_{\Gamma}
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}
+\simeq_{N,R,k}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+By the definition of \(\mathfrak c_{f,j}\), the unitary invariance of
+the Schatten norm, and \(\|d_{g,j}\|=1\),
+\begin{align*}
+\|\mathfrak c_{f,j}(x,\theta)\|_{S^N}
+&\lesssim_{R,k}
+\Bigg(
+\sum_{g\in G}
+|\nabla f_g(x)|^N
+\Bigg)^{1/N}\\
+&\quad+
+\sum_{\alpha\in R_+}
+\Bigg(
+\sum_{g\in G}
+\bigg|
+\frac{f_g(x)-f_{g\sigma_\alpha}(x)}
+{\langle\alpha,x\rangle}
+\bigg|^N
+\Bigg)^{1/N}.
+\end{align*}
+The chamber decomposition used in Lemma
+\ref{lem:Dunkl-chamber-folding-symbol} and the orthogonality of
+\(g\in G\) imply
+\begin{align*}
+\sum_{g\in G}
+\int_\Gamma
+|\nabla f_g(x)|^N\,dx
+=
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}^N.
+\end{align*}
+Moreover, since \(\|\alpha\|^2=2\),
+\begin{align*}
+|x-\sigma_\alpha x|
+=
+\sqrt{2}\,|\langle\alpha,x\rangle|,
+\end{align*}
+and hence
+\begin{align*}
+\bigg|
+\frac{f_g(x)-f_{g\sigma_\alpha}(x)}
+{\langle\alpha,x\rangle}
+\bigg|
+=
+\sqrt{2}\,
+\mathcal G_{g,g\sigma_\alpha}f(x)
+\end{align*}
+for almost every \(x\in\mathbb R^N\). By Lemma
+\ref{lem:Weyl-difference-quotient},
+\begin{align*}
+\int_\Gamma
+\bigg|
+\frac{f_g(x)-f_{g\sigma_\alpha}(x)}
+{\langle\alpha,x\rangle}
+\bigg|^N
+\,dx
+\lesssim_{N,G}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}^N
+\end{align*}
+uniformly in \(g\in G\) and \(\alpha\in R_+\). Since \(G\) and
+\(R_+\) are finite,
+\begin{align}
+\Bigg(
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}
+\lesssim_{N,R,k}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
+\label{eq:Dunkl-spectral-density-upper}
+\end{align}
+
+For the converse estimate, let \(P_g\) denote the orthogonal projection
+of \(\mathbb C^G\) onto the \(g\)-th coordinate and define
+\begin{align*}
+\mathcal E(A)
+:=
+\sum_{g\in G}P_gAP_g,
+\qquad
+A\in\mathcal L(\mathbb C^G).
+\end{align*}
+Thus, \(\mathcal E(A)\) is the diagonal part of \(A\). The pinching
+inequality for unitarily invariant norms
+\cite[p.~97, (IV.51)--(IV.52)]{BhatiaMatrixAnalysis} gives
+\begin{align}
+\|\mathcal E(A)\|_{S^N}
+\leq
+\|A\|_{S^N}.
+\label{eq:Schatten-diagonal-contraction}
+\end{align}
+
+For every \(\alpha\in R_+\), \(S_\alpha\) has zero diagonal, since
+\(g\sigma_\alpha\neq g\) for all \(g\in G\). Hence, by the definition
+of \(\mathfrak c_{f,j}\),
+\begin{align*}
+\mathcal E\big(\mathfrak c_{f,j}(x,\theta)\big)
+=
+\operatorname{diag}_{g\in G}
+\bigg(
+\langle d_{g,j},\nabla f_g(x)\rangle
+-
+\langle d_{g,j},\theta\rangle
+\langle\theta,\nabla f_g(x)\rangle
+\bigg).
+\end{align*}
+Therefore, by \eqref{eq:Schatten-diagonal-contraction},
+\begin{align}
+\|\mathfrak c_{f,j}(x,\theta)\|_{S^N}^N
+\geq
+\sum_{g\in G}
+\big|
+\langle d_{g,j},\nabla f_g(x)\rangle
+-
+\langle d_{g,j},\theta\rangle
+\langle\theta,\nabla f_g(x)\rangle
+\big|^N.
+\label{eq:Dunkl-spectral-density-diagonal-lower}
+\end{align}
+For each \(g\in G\), set
+\begin{align*}
+y:=gx,
+\qquad
+\eta:=g\theta.
+\end{align*}
+Since
+\begin{align*}
+\nabla f_g(x)
+=
+g^{-1}\nabla f(y),
+\qquad
+d_{g,j}=g^{-1}e_j,
+\end{align*}
+and \(g\) is orthogonal,
+\begin{align*}
+\langle d_{g,j},\nabla f_g(x)\rangle
+&=
+\partial_j f(y),\\
+\langle d_{g,j},\theta\rangle
+&=
+\eta_j,\\
+\langle\theta,\nabla f_g(x)\rangle
+&=
+\langle\eta,\nabla f(y)\rangle.
+\end{align*}
+Using the chamber decomposition and the orthogonal invariance of
+surface measure, \eqref{eq:Dunkl-spectral-density-diagonal-lower}
+therefore gives
+\begin{align}
+&\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\|\mathfrak c_{f,j}(x,\theta)\|_{S^N}^N
+\,d\theta\,dx
+\nonumber\\
+&\qquad\geq
+\int_{\mathbb R^N}
+\int_{\mathbb S^{N-1}}
+\big|
+\partial_jf(y)
+-
+\eta_j\langle\eta,\nabla f(y)\rangle
+\big|^N
+\,d\eta\,dy.
+\label{eq:Dunkl-spectral-density-lower-reduction}
+\end{align}
+
+For \(v\in\mathbb C^N\), set
+\begin{align*}
+\Phi_j(v)
+:=
+\Bigg(
+\int_{\mathbb S^{N-1}}
+\big|
+v_j-\eta_j\langle\eta,v\rangle
+\big|^N
+\,d\eta
+\Bigg)^{1/N}.
+\end{align*}
+Then
+\begin{align}
+\Phi_j(v)
+\simeq_N
+\|v\|.
+\label{eq:spherical-projected-gradient-norm}
+\end{align}
+Indeed, \(\Phi_j\) is a seminorm on \(\mathbb C^N\). If
+\(\Phi_j(v)=0\), continuity gives
+\begin{align*}
+v_j-\eta_j\langle\eta,v\rangle=0,
+\qquad
+\eta\in\mathbb S^{N-1}.
+\end{align*}
+Since \(N>1\), there exists \(\eta\in\mathbb S^{N-1}\) with
+\(\eta_j=0\), and therefore \(v_j=0\). It follows that
+\begin{align*}
+\langle\eta,v\rangle=0
+\end{align*}
+whenever \(\eta_j\neq0\). Since such \(\eta\) form a dense subset of
+\(\mathbb S^{N-1}\), continuity yields
+\(\langle\eta,v\rangle=0\) for every
+\(\eta\in\mathbb S^{N-1}\), and hence \(v=0\). Thus \(\Phi_j\) is a
+norm, and \eqref{eq:spherical-projected-gradient-norm} follows from
+the equivalence of norms on the finite dimensional space
+\(\mathbb C^N\).
+
+Applying \eqref{eq:spherical-projected-gradient-norm} with
+\(v=\nabla f(y)\) in
+\eqref{eq:Dunkl-spectral-density-lower-reduction}, we obtain
+\begin{align*}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}
+\lesssim_N
+\Bigg(
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}.
+\end{align*}
+Combining this estimate with
+\eqref{eq:Dunkl-spectral-density-upper} proves the assertion.
+\end{proof}
+
+\begin{lemma}\label{lem:Dunkl-automatic-wall-localization}
+Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in C_c^\infty(\mathbb R^N)\). Define
+\begin{align*}
+A_f
+:=
+VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+\end{align*}
+Then there exist \(\chi_m\in C_c^\infty(\Gamma_+)\), \(0\leq\chi_m\leq1\), such that \(\chi_m(x)\to1\) for every \(x\in\Gamma_+\) and
+\begin{align}
+\lim_{m\to\infty}
+\big\|
+A_f-M_{\chi_m}A_fM_{\chi_m}
+\big\|_{S^{N,\infty}}
+=
+0.
+\label{eq:Dunkl-automatic-wall-localization}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Fix \(s>2\), choose \(2<s_0<s\), and set
+\[
+\gamma:=\frac1{s_0}-\frac1s>0.
+\]
+Let \(r_s>s\) be as in Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation} and set \(\beta:=N/r_s\). By Lemma \ref{lem:Euclidean-OSC-critical-rigidity} \eqref{OSC-critical-rigidity-1},
+\(f\in OSC^{N,\infty}(\mathbb R^N)\), so Lemma
+\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} applies with
+\(p=N\) and \(q=\infty\).
+
+Set
+\[
+B_f:=U[R_{\D,j},M_f]U^{-1}.
+\]
+Since \(V=M_\rho\) commutes with scalar multiplication operators on
+\(\Gamma\),
+\begin{align}
+\big\|
+A_f-M_\chi A_fM_\chi
+\big\|_{S^{N,\infty}}
+=
+\big\|
+B_f-M_\chi B_fM_\chi
+\big\|_{S^{N,\infty}}
+\label{eq:Dunkl-automatic-unitary-reduction}
+\end{align}
+for every bounded scalar multiplier \(\chi\).
+
+For fixed \(\sigma,\tau\in G\), \(u,v\in\mathbb Z^N\), and
+\(\varepsilon\in\{0,1,2,3\}\), define
+\begin{align*}
+T_{u,v,\varepsilon}^{\sigma,\tau}
+:=
+\sum_{I\in\mathbb D_\Gamma}
+A_{\sigma,\tau,I,\varepsilon}(f)
+\Big\langle
+\,\cdot,\,
+\overline{
+H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)}
+\Big\rangle_{L^2(\Gamma,dw)}
+E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot).
+\end{align*}
+By the operator series identification in the proof of Theorem
+\ref{lem:Dunkl-critical-weak-Schatten-upper}, the
+\((\sigma,\tau)\) matrix entry of \(B_f\) is
+\[
+\sum_{\varepsilon=0}^3
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}T_{u,v,\varepsilon}^{\sigma,\tau},
+\]
+with convergence in \(S^{N,\infty}\). Moreover, by Lemma
+\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property2}--\eqref{comm-property3},
+\begin{align}
+\operatorname{supp}
+E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
+&\subset I,
+&
+\operatorname{supp}
+H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)
+&\subset I^*,
+\label{eq:Dunkl-automatic-NWO-support}\\
+\big\|
+E_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
+\big\|_{L^s(dw)}
++
+\big\|
+H_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)
+\big\|_{L^s(dw)}
+&\lesssim
+w(I)^{1/s-1/2}.
+\label{eq:Dunkl-automatic-NWO-Ls}
+\end{align}
+
+The definitions of \(A_{\sigma,\tau,I,\varepsilon}(f)\) in the proof of
+Lemma \ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} imply
+\begin{align}
+\big|
+A_{\sigma,\tau,I,\varepsilon}(f)
+\big|
+\lesssim_f
+\begin{cases}
+\ell(I),&\ell(I)\leq1,\\
+\ell(I)^{-\beta},&\ell(I)\geq1.
+\end{cases}
+\label{eq:Dunkl-automatic-coefficient-decay}
+\end{align}
+Indeed, for \(\varepsilon=0,1,2\), the corresponding coefficients are bounded by an \(L^{r_s}(dx)\) oscillation of a smooth compactly supported function on a set of diameter comparable with \(\ell(I)\). Hence the first estimate follows from the Lipschitz bound, while for \(\ell(I)\geq1\),
+\[
+\operatorname{osc}_{r_s}(g;E)
+\lesssim
+|E|^{-1/r_s}\|g\|_{L^{r_s}}
+\lesssim_f
+\ell(I)^{-N/r_s}.
+\]
+For \(\varepsilon=3\), writing
+\(D:=|\sigma z_I-\tau z_I|\), the definitions of
+\(\theta_{\sigma,\tau,I}\) and \(a_{\sigma,\tau,I}(f)\) imply, for
+\(\ell(I)\leq1\),
+\begin{align*}
+\big|
+A_{\sigma,\tau,I,3}(f)
+\big|
+&\lesssim_f
+\frac{\ell(I)}{\ell(I)+D}
+\big(
+\ell(I)+D
+\big)
+\lesssim_f
+\ell(I),
+\end{align*}
+whereas, for \(\ell(I)\geq1\),
+\[
+\big|
+A_{\sigma,\tau,I,3}(f)
+\big|
+\leq
+|I|^{-1}\|H_{\sigma,\tau}(f)\|_{L^1}
+\lesssim_f
+\ell(I)^{-N}
+\lesssim
+\ell(I)^{-\beta}.
+\]
+
+Let \(\Delta=\{\alpha_1,\ldots,\alpha_{N_0}\}\). For
+\(1\leq i\leq N_0\) and \(0<\delta\leq1\), set
+\[
+W_{i,\delta}
+:=
+\big\{
+x\in\Gamma:
+0\leq\langle x,\alpha_i\rangle\leq2\delta
+\big\}.
+\]
+We have
+\begin{align}
+\frac{w(W_{i,\delta}\cap I)}{w(I)}
++
+\frac{w(W_{i,\delta}\cap I^*)}{w(I)}
+\lesssim
+\min\Bigg(
+1,\frac{\delta}{\ell(I)}
+\Bigg).
+\label{eq:Dunkl-automatic-wall-ratio}
+\end{align}
+To prove this, write \(I=\Phi^{-1}(Q)\) and \(\ell:=\ell(I)\). The assertion is immediate when \(\delta>\ell/8\), since
+\(w(I^*)\lesssim w(I)\). Suppose that \(\delta\leq\ell/8\). If \(I\) or \(I^*\) meets \(W_{i,\delta}\), then the \(i\)-th coordinate interval of \(Q\) is \([0,\ell)\). By Lemma \ref{mulemma} \eqref{pushforward-density}, the density of \(\Phi_\#dw\) is
+\[
+\phi(u)
+=
+|\det(\Phi)|^{-1}
+\prod_{v\in R_+}
+\Bigg(
+\sum_{h=1}^{N_0}a_{v,h}u_h
+\Bigg)^{2k(v)},
+\]
+which is nondecreasing in every \(u_i\). If \(g\) is nonnegative and nondecreasing on an interval of length comparable with \(\ell\), then
+\[
+\int_0^{2\delta}g(t)\,dt
+\lesssim
+\frac{\delta}{\ell}
+\int g(t)\,dt.
+\]
+Applying this estimate fiberwise to \(\phi\) on \(Q\), respectively on
+\((2Q)\cap\Omega\), and using \(w(I^*)\lesssim w(I)\), we obtain
+\eqref{eq:Dunkl-automatic-wall-ratio}.
+
+Define
+\[
+\omega_{I,\delta}
+:=
+\min\Bigg(
+1,
+\Bigg(
+\frac{\delta}{\ell(I)}
+\Bigg)^\gamma
+\Bigg).
+\]
+If \(0\leq a\leq1\) and \(\operatorname{supp}a\subset W_{i,\delta}\), then by H\"{o}lder's inequality,
+\eqref{eq:Dunkl-automatic-NWO-Ls}, and
+\eqref{eq:Dunkl-automatic-wall-ratio},
+\begin{align*}
+\big\|
+aE_{u,v,I,\varepsilon}^{\sigma,\tau}(\sigma\,\cdot)
+\big\|_{L^{s_0}(dw)}
++
+\big\|
+aH_{u,v,I,\varepsilon}^{\sigma,\tau}(\tau\,\cdot)
+\big\|_{L^{s_0}(dw)}
+\lesssim
+\omega_{I,\delta}
+w(I)^{1/s_0-1/2}.
+\end{align*}
+After normalization by \(\omega_{I,\delta}\), the localized factors are NWO families with exponent \(s_0\). Hence, by Lemma \ref{NWOLEMMAA2},
+\begin{align}
+\big\|
+M_aT_{u,v,\varepsilon}^{\sigma,\tau}
+\big\|_{S^{N,\infty}}
++
+\big\|
+T_{u,v,\varepsilon}^{\sigma,\tau}M_a
+\big\|_{S^{N,\infty}}
+\lesssim
+\Bigg\|
+\Bigg\{
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{N,\infty}}.
+\label{eq:Dunkl-automatic-NWO-localization}
+\end{align}
+
+If \(\ell(I)\leq1\) and
+\(A_{\sigma,\tau,I,\varepsilon}(f)\neq0\), then \(z_I\) belongs to a fixed bounded set depending only on \(f\). Consequently, at every dyadic length \(0<\ell\leq1\),
+\begin{align}
+\#\Bigg\{
+I\in\mathbb D_\Gamma:
+\ell(I)=\ell,\
+A_{\sigma,\tau,I,\varepsilon}(f)\neq0,\
+(I\cup I^*)\cap W_{i,\delta}\neq\varnothing
+\Bigg\}
+\lesssim_f
+\Bigg(
+1+\frac{\delta}{\ell}
+\Bigg)\ell^{-(N-1)}.
+\label{eq:Dunkl-automatic-wall-count}
+\end{align}
+Indeed, under \(\Phi\), there are
+\(O(1+\delta/\ell)\) admissible intervals in the \(u_i\) coordinate and
+\(O(\ell^{-1})\) admissible intervals in each of the remaining
+\(N-1\) coordinates.
+
+For \(\ell(I)\leq\delta\),
+\eqref{eq:Dunkl-automatic-coefficient-decay} and
+\eqref{eq:Dunkl-automatic-wall-count} imply, for every \(\lambda>0\),
+\begin{align*}
+&
+\#\Bigg\{
+I:
+\ell(I)\leq\delta,\
+\big|
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\big|>\lambda
+\Bigg\}
+\\
+&\qquad\lesssim_f
+\delta
+\sum_{\substack{\ell\leq\delta\\ \lambda\lesssim_f\ell}}
+\ell^{-N}
+\lesssim_f
+\delta\lambda^{-N}.
+\end{align*}
+Therefore,
+\begin{align}
+\Bigg\|
+\Bigg\{
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\Bigg\}_{\ell(I)\leq\delta}
+\Bigg\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^{1/N}.
+\label{eq:Dunkl-automatic-fine-wall}
+\end{align}
+
+For \(\delta<\ell(I)\leq1\),
+\[
+\big|
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\big|
+\lesssim_f
+\delta^\gamma\ell(I)^{1-\gamma},
+\]
+and \eqref{eq:Dunkl-automatic-wall-count} reduces to
+\(O_f(\ell^{-(N-1)})\). Given \(\lambda>0\), set
+\[
+L
+:=
+\max\Bigg(
+\delta,
+c_f
+\Bigg(
+\frac{\lambda}{\delta^\gamma}
+\Bigg)^{1/(1-\gamma)}
+\Bigg).
+\]
+Since \(N>1\),
+\begin{align*}
+\#\Bigg\{
+I:
+\delta<\ell(I)\leq1,\
+\big|
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\big|>\lambda
+\Bigg\}
+\lesssim_f
+L^{-(N-1)}.
+\end{align*}
+If \(L=\delta\), then \(\lambda\lesssim_f\delta\), and hence
+\[
+\lambda L^{-(N-1)/N}
+\lesssim_f
+\delta^{1/N}.
+\]
+Otherwise,
+\(\lambda\lesssim_f\delta^\gamma L^{1-\gamma}\), so
+\[
+\lambda L^{-(N-1)/N}
+\lesssim_f
+\delta^\gamma L^{1/N-\gamma}
+\lesssim_f
+\delta^{\min(\gamma,1/N)}.
+\]
+Thus,
+\begin{align}
+\Bigg\|
+\Bigg\{
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\Bigg\}_{\delta<\ell(I)\leq1}
+\Bigg\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^{\min(\gamma,1/N)}.
+\label{eq:Dunkl-automatic-middle-wall}
+\end{align}
+
+For \(\ell(I)\geq1\), only \(O_f(1)\) cubes at each dyadic scale have nonzero coefficients. By
+\eqref{eq:Dunkl-automatic-coefficient-decay},
+\begin{align*}
+\sum_{\ell(I)\geq1}
+\big|
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\big|^N
+&\lesssim_f
+\delta^{\gamma N}
+\sum_{\substack{\ell\geq1\\ \ell\ {\rm dyadic}}}
+\ell^{-N(\beta+\gamma)}
+\lesssim_f
+\delta^{\gamma N}.
+\end{align*}
+Combining this with
+\eqref{eq:Dunkl-automatic-fine-wall} and
+\eqref{eq:Dunkl-automatic-middle-wall}, we obtain
+\begin{align}
+\Bigg\|
+\Bigg\{
+A_{\sigma,\tau,I,\varepsilon}(f)
+\omega_{I,\delta}
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^\kappa,
+\qquad
+\kappa:=\min\Bigg(\gamma,\frac1N\Bigg).
+\label{eq:Dunkl-automatic-wall-sequence}
+\end{align}
+By \eqref{eq:Dunkl-automatic-NWO-localization},
+\begin{align}
+\big\|
+M_aT_{u,v,\varepsilon}^{\sigma,\tau}
+\big\|_{S^{N,\infty}}
++
+\big\|
+T_{u,v,\varepsilon}^{\sigma,\tau}M_a
+\big\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa
+\label{eq:Dunkl-automatic-wall-block}
+\end{align}
+whenever \(0\leq a\leq1\) and
+\(\operatorname{supp}a\subset W_{i,\delta}\).
+
+We also need localization at infinity. Let \(0\leq b_R\leq1\) with
+\(\operatorname{supp}b_R\subset\{x\in\Gamma:\ |x|\geq R\}\).
+If \(A_{\sigma,\tau,I,\varepsilon}(f)\neq0\), then
+\begin{align}
+|z_I|
+\lesssim_f
+1+\ell(I).
+\label{eq:Dunkl-automatic-center-bound}
+\end{align}
+For \(\varepsilon=0,1\), the ball
+\(B_\Gamma(z_I,C_1\ell(I))\) must meet the support of \(f\circ\tau\); for
+\(\varepsilon=2,3\), \(I\) must meet the support of
+\(H_{\sigma,\tau}(f)\). Since
+\(|x-z_I|\lesssim\ell(I)\) for \(x\in I^*\),
+\eqref{eq:Dunkl-automatic-center-bound} shows that, for sufficiently large \(R\),
+\[
+A_{\sigma,\tau,I,\varepsilon}(f)\neq0,
+\qquad
+(I\cup I^*)\cap\{x:|x|\geq R\}\neq\varnothing
+\]
+can occur only when \(\ell(I)\gtrsim_f R\). At each such dyadic scale there are \(O_f(1)\) cubes with nonzero coefficients. Hence, by
+\eqref{eq:Dunkl-automatic-coefficient-decay} and Lemma
+\ref{NWOLEMMAA2},
+\begin{align}
+\big\|
+M_{b_R}T_{u,v,\varepsilon}^{\sigma,\tau}
+\big\|_{S^{N,\infty}}
++
+\big\|
+T_{u,v,\varepsilon}^{\sigma,\tau}M_{b_R}
+\big\|_{S^{N,\infty}}
+\lesssim_f
+R^{-\beta}.
+\label{eq:Dunkl-automatic-infinity-block}
+\end{align}
+
+Choose \(\eta\in C^\infty(\mathbb R)\), \(0\leq\eta\leq1\), such that
+\[
+\eta(t)=0\quad\text{for }t\leq1,
+\qquad
+\eta(t)=1\quad\text{for }t\geq2,
+\]
+and choose \(\zeta\in C_c^\infty(\mathbb R^N)\), \(0\leq\zeta\leq1\), such that
+\[
+\zeta=1\quad\text{on }B(0,1),
+\qquad
+\operatorname{supp}\zeta\subset B(0,2).
+\]
+For \(0<\delta\leq1\) and \(R\geq1\), define
+\begin{align*}
+\chi_{\delta,R}(x)
+:=
+\zeta(x/R)
+\prod_{i=1}^{N_0}
+\eta\Bigg(
+\frac{\langle x,\alpha_i\rangle}{\delta}
+\Bigg),
+\qquad
+x\in\Gamma_+.
+\end{align*}
+Then \(\chi_{\delta,R}\in C_c^\infty(\Gamma_+)\) and
+\(0\leq\chi_{\delta,R}\leq1\). Moreover,
+\begin{align*}
+1-\chi_{\delta,R}
+&=
+1-\zeta(\cdot/R)
+\\
+&\quad+
+\sum_{i=1}^{N_0}
+\zeta(\cdot/R)
+\prod_{h<i}
+\eta\Bigg(
+\frac{\langle\cdot,\alpha_h\rangle}{\delta}
+\Bigg)
+\Bigg(
+1-
+\eta\Bigg(
+\frac{\langle\cdot,\alpha_i\rangle}{\delta}
+\Bigg)
+\Bigg).
+\end{align*}
+The first term is supported in \(\{x:|x|\geq R\}\), while the \(i\)-th term in the sum is supported in \(W_{i,\delta}\). Since \(G\) is finite, \(S^{N,\infty}\) is normable for \(N>1\), and Lemma
+\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property1} implies
+\[
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty,
+\]
+we may sum \eqref{eq:Dunkl-automatic-wall-block} and
+\eqref{eq:Dunkl-automatic-infinity-block} over the operator series for \(B_f\). Therefore,
+\begin{align*}
+\big\|
+(I-M_{\chi_{\delta,R}})B_f
+\big\|_{S^{N,\infty}}
++
+\big\|
+B_f(I-M_{\chi_{\delta,R}})
+\big\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa+R^{-\beta}.
+\end{align*}
+Since
+\[
+B_f-M_{\chi_{\delta,R}}B_fM_{\chi_{\delta,R}}
+=
+(I-M_{\chi_{\delta,R}})B_f
++
+M_{\chi_{\delta,R}}B_f(I-M_{\chi_{\delta,R}}),
+\]
+the ideal property of \(S^{N,\infty}\) and
+\eqref{eq:Dunkl-automatic-unitary-reduction} imply
+\begin{align*}
+\big\|
+A_f-M_{\chi_{\delta,R}}A_fM_{\chi_{\delta,R}}
+\big\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa+R^{-\beta}.
+\end{align*}
+
+Define
+\[
+\chi_m:=\chi_{2^{-m},2^m}.
+\]
+Then \(\chi_m(x)\to1\) for every \(x\in\Gamma_+\), while
+\[
+\big\|
+A_f-M_{\chi_m}A_fM_{\chi_m}
+\big\|_{S^{N,\infty}}
+\lesssim_f
+2^{-m\kappa}+2^{-m\beta}
+\longrightarrow0.
+\]
+This completes the proof of Lemma \ref{lem:Dunkl-automatic-wall-localization}.
+\end{proof}
+\begin{lemma}\label{lem:Dunkl-smooth-Weyl-asymptotic}
+Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in C_c^\infty(\mathbb R^N)\). Then
+\begin{align}
+\lim_{t\to\infty}
+t^{1/N}
+\mu
+\big(
+t,[R_{\D,j},M_f]
+\big)
+=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}.
+\label{eq:Dunkl-smooth-Weyl-asymptotic}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Define
+\begin{align*}
+A_f
+:=
+VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+\end{align*}
+By Lemma \ref{lem:Dunkl-automatic-wall-localization}
+\eqref{eq:Dunkl-automatic-wall-localization}, there exist
+\(\chi_m\in C_c^\infty(\Gamma_+)\), \(0\leq\chi_m\leq1\), such that
+\(\chi_m(x)\to1\) for every \(x\in\Gamma_+\) and
+\begin{align}
+\big\|
+A_f-M_{\chi_m}A_fM_{\chi_m}
+\big\|_{S^{N,\infty}}
+\longrightarrow0.
+\label{eq:Dunkl-smooth-localization-convergence}
+\end{align}
+Set
+\[
+A_{f,m}:=M_{\chi_m}A_fM_{\chi_m},
+\qquad
+K_m:=\operatorname{supp}\chi_m.
+\]
+By Lemma \ref{lem:Dunkl-commutator-principal-symbol}
+\eqref{eq:Dunkl-commutator-principal-symbol},
+\(A_{f,m}\) is a compactly supported classical matrix valued pseudodifferential operator of order \(-1\) on \(\Gamma_+\), with
+\begin{align}
+\sigma_{-1}(A_{f,m})(x,\xi)
+=
+\frac{\chi_m(x)^2}{\|\xi\|}
+\mathfrak c_{f,j}
+\bigg(
+x,\frac{\xi}{\|\xi\|}
+\bigg),
+\qquad
+x\in\Gamma_+,\quad \xi\neq0.
+\label{eq:Dunkl-smooth-localized-symbol}
+\end{align}
+
+Choose a bounded open set \(U_m\) with
+\(K_m\Subset U_m\Subset\Gamma_+\), and choose \(L_m>0\) such that
+\[
+L_m>\sup_{x,y\in U_m}\|x-y\|_\infty.
+\]
+For
+\[
+\mathbb T_m^N:=\mathbb R^N/L_m\mathbb Z^N,
+\]
+the quotient map restricts to a diffeomorphism
+\[
+\kappa_m:U_m\longrightarrow\Omega_m:=\kappa_m(U_m),
+\]
+which is a local isometry. Since the Schwartz kernel of \(A_{f,m}\) is supported in \(K_m\times K_m\), with respect to
+\[
+L^2(\Gamma;\mathbb C^G)
+=
+L^2(U_m;\mathbb C^G)
+\oplus
+L^2(\Gamma\setminus U_m;\mathbb C^G)
+\]
+we have
+\[
+A_{f,m}=B_{f,m}\oplus0
+\]
+for some \(B_{f,m}\) on \(L^2(U_m;\mathbb C^G)\).
+
+Let
+\[
+W_m:L^2(U_m;\mathbb C^G)\longrightarrow
+L^2(\Omega_m;\mathbb C^G),
+\qquad
+W_mu:=u\circ\kappa_m^{-1}.
+\]
+Then \(W_m\) is unitary. By the invariance of classical pseudodifferential operators under smooth coordinate changes
+\cite[Theorem~18.1.17]{MR0781536},
+\[
+T_{f,m}:=W_mB_{f,m}W_m^{-1}
+\in
+\Psi_{\mathrm{cl}}^{-1}
+\big(
+\Omega_m;\mathbb C^G
+\big).
+\]
+Its Schwartz kernel is supported in
+\(\kappa_m(K_m)\times\kappa_m(K_m)\Subset\Omega_m\times\Omega_m\).
+Choose \(\vartheta_m\in C_c^\infty(\Omega_m)\) equal to \(1\) on a neighborhood of \(\kappa_m(K_m)\). Then
+\[
+T_{f,m}=M_{\vartheta_m}T_{f,m}M_{\vartheta_m}.
+\]
+Hence the zero extension of the Schwartz kernel of \(T_{f,m}\) from
+\(\Omega_m\times\Omega_m\) to
+\(\mathbb T_m^N\times\mathbb T_m^N\) is a classical pseudodifferential kernel of order \(-1\): locally in \(\Omega_m\times\Omega_m\) this follows from \(T_{f,m}\in\Psi_{\mathrm{cl}}^{-1}\), while near the boundary of \(\Omega_m\times\Omega_m\) the kernel vanishes. Denote the corresponding operator on \(\mathbb T_m^N\) by \(\widehat A_{f,m}\). Thus,
+\begin{align}
+\widehat A_{f,m}
+\in
+\Psi_{\mathrm{cl}}^{-1}
+\big(
+\mathbb T_m^N;\mathbb C^G
+\big).
+\label{eq:Dunkl-smooth-torus-Psi}
+\end{align}
+
+Since \(\kappa_m\) is a local isometry, by
+\eqref{eq:Dunkl-smooth-localized-symbol} and the transformation law for principal symbols,
+\begin{align}
+\sigma_{-1}(\widehat A_{f,m})
+\big(
+\kappa_m(x),\xi
+\big)
+=
+\frac{\chi_m(x)^2}{\|\xi\|}
+\mathfrak c_{f,j}
+\bigg(
+x,\frac{\xi}{\|\xi\|}
+\bigg),
+\qquad
+x\in U_m,\quad \xi\neq0,
+\label{eq:Dunkl-smooth-torus-symbol}
+\end{align}
+and the principal symbol vanishes outside \(\Omega_m\).
+
+With respect to
+\[
+L^2(\mathbb T_m^N;\mathbb C^G)
+=
+L^2(\Omega_m;\mathbb C^G)
+\oplus
+L^2(\mathbb T_m^N\setminus\Omega_m;\mathbb C^G),
+\]
+we have
+\[
+\widehat A_{f,m}=T_{f,m}\oplus0.
+\]
+Since \(T_{f,m}\) and \(B_{f,m}\) are unitarily equivalent,
+\begin{align}
+\mu(t,\widehat A_{f,m})
+=
+\mu(t,A_{f,m}),
+\qquad
+t>0.
+\label{eq:Dunkl-smooth-singular-values}
+\end{align}
+
+By \eqref{eq:Dunkl-smooth-torus-Psi} and the Weyl law
+\cite[Theorem~6.1]{MR4592885},
+\begin{align*}
+\lim_{t\to\infty}
+t^{1/N}\mu(t,\widehat A_{f,m})
+=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_{S^*\mathbb T_m^N}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\sigma_{-1}(\widehat A_{f,m})(z,\theta)
+\big|^N
+\,dz\,d\theta
+\Bigg)^{1/N}.
+\end{align*}
+Since the metric on \(\mathbb T_m^N\) is flat, combining
+\eqref{eq:Dunkl-smooth-torus-symbol} with
+\eqref{eq:Dunkl-smooth-singular-values}, we obtain
+\begin{align}
+\lim_{t\to\infty}
+t^{1/N}\mu(t,A_{f,m})
+=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\chi_m(x)^{2N}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N},
+\label{eq:Dunkl-smooth-localized-Weyl}
+\end{align}
+where \(\chi_m\) is identified with its zero extension to \(\Gamma\).
+
+By Lemma \ref{lem:Dunkl-spectral-density-Sobolev},
+\[
+(x,\theta)
+\longmapsto
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\]
+belongs to \(L^1(\Gamma\times\mathbb S^{N-1})\). Since
+\(0\leq\chi_m\leq1\), \(\chi_m\to1\) on \(\Gamma_+\), and
+\(\Gamma\setminus\Gamma_+\) is contained in finitely many hyperplanes, the dominated convergence theorem implies
+\begin{align}
+&\lim_{m\to\infty}
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\chi_m(x)^{2N}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}
+\nonumber\\
+&\qquad=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}.
+\label{eq:Dunkl-smooth-symbol-limit}
+\end{align}
+
+By \eqref{eq:Dunkl-smooth-localization-convergence},
+\(A_{f,m}\to A_f\) in \(S^{N,\infty}\). Combining
+\eqref{eq:Dunkl-smooth-localized-Weyl},
+\eqref{eq:Dunkl-smooth-symbol-limit}, and Lemma
+\ref{lem:weak-Schatten-asymptotic-stability}, we obtain
+\begin{align*}
+\lim_{t\to\infty}
+t^{1/N}\mu(t,A_f)
+=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}.
+\end{align*}
+Since \(U\) and \(V\) are unitary,
+\[
+\mu(t,A_f)
+=
+\mu
+\big(
+t,[R_{\D,j},M_f]
+\big),
+\qquad
+t>0.
+\]
+This completes the proof of Lemma \ref{lem:Dunkl-smooth-Weyl-asymptotic}.
+\end{proof}
+
+\begin{lemma}\label{lem:weak-Schatten-asymptotic-stability}
+Let \(0<p<\infty\), let \(\mathcal H\) be a Hilbert space, and let
+\(A,A_m\in S^{p,\infty}(\mathcal H)\), \(m\geq1\), satisfy
+\begin{align*}
+\|A_m-A\|_{S^{p,\infty}}
+\longrightarrow0.
+\end{align*}
+Suppose that, for every \(m\geq1\), the limit
+\begin{align*}
+c_m
+:=
+\lim_{t\to\infty}
+t^{1/p}\mu(t,A_m)
+\end{align*}
+exists. Then both limits
+\begin{align*}
+\lim_{m\to\infty}c_m
+\qquad\text{and}\qquad
+\lim_{t\to\infty}
+t^{1/p}\mu(t,A)
+\end{align*}
+exist and
+\begin{align*}
+\lim_{t\to\infty}
+t^{1/p}\mu(t,A)
+=
+\lim_{m\to\infty}c_m.
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+The assertion is the Birman--Solomyak approximation lemma; see \cite[Section~11.6]{MR1192782}.
+\end{proof}
+
+\begin{lemma}\label{lem:Dunkl-Weyl-Sobolev-approximation}
+Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in\dot W^{1,N}(\mathbb R^N)\). Then there exists \(f_m\in C_c^\infty(\mathbb R^N)\) such that
+\begin{align*}
+\|\nabla(f_m-f)\|_{L^N(\mathbb R^N,dx)}
+&\longrightarrow0,\\
+\big\|
+[R_{\D,j},M_{f_m}]
+-
+[R_{\D,j},M_f]
+\big\|_{S^{N,\infty}}
+&\longrightarrow0,\\
+\|\mathfrak c_{f_m,j}-\mathfrak c_{f,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}
+&\longrightarrow0.
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+By the density of \(C_c^\infty(\mathbb R^N)\) in \(\dot W^{1,N}(\mathbb R^N)\), choose \(f_m\in C_c^\infty(\mathbb R^N)\) such that
+\begin{align*}
+\|\nabla(f_m-f)\|_{L^N(\mathbb R^N,dx)}
+\longrightarrow0.
+\end{align*}
+By Theorem \ref{lem:Dunkl-critical-weak-Schatten-upper} and Lemma \ref{lem:Euclidean-OSC-critical-rigidity},
+\begin{align*}
+\big\|
+[R_{\D,j},M_{f_m}]
+-
+[R_{\D,j},M_f]
+\big\|_{S^{N,\infty}}
+&=
+\big\|
+[R_{\D,j},M_{f_m-f}]
+\big\|_{S^{N,\infty}}\\
+&\lesssim
+\|f_m-f\|_{OSC^{N,\infty}(\mathbb R^N)}
+\lesssim
+\|\nabla(f_m-f)\|_{L^N(\mathbb R^N,dx)}
+\longrightarrow0.
+\end{align*}
+By the linearity of \(f\mapsto\mathfrak c_{f,j}\) and Lemma \ref{lem:Dunkl-spectral-density-Sobolev},
+\begin{align*}
+\|\mathfrak c_{f_m,j}-\mathfrak c_{f,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}
+&=
+\|\mathfrak c_{f_m-f,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}\\
+&\lesssim_{N,R,k}
+\|\nabla(f_m-f)\|_{L^N(\mathbb R^N,dx)}
+\longrightarrow0.
+\end{align*}
+This completes the proof of Lemma \ref{lem:Dunkl-Weyl-Sobolev-approximation}.
+\end{proof}
+
+\begin{theorem}\label{thm:Dunkl-Riesz-spectral-asymptotic}
+Assume that \(N>1\) and \(j\in\{1,\ldots,N\}\). Then, for every
+\(f\in\dot W^{1,N}(\mathbb R^N)\),
+\begin{align}
+\lim_{t\to\infty}
+t^{1/N}
+\mu
+\big(
+t,[R_{\D,j},M_f]
+\big)
+=
+\Bigg(
+\frac{1}{N(2\pi)^N}
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}.
+\label{eq:Dunkl-Riesz-spectral-asymptotic}
+\end{align}
+Moreover,
+\begin{align}
+\Bigg(
+\int_\Gamma
+\int_{\mathbb S^{N-1}}
+\operatorname{tr}_{\mathbb C^G}
+\big|
+\mathfrak c_{f,j}(x,\theta)
+\big|^N
+\,d\theta\,dx
+\Bigg)^{1/N}
+\simeq_{N,R,k}
+\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
+\label{eq:Dunkl-Riesz-spectral-coefficient-Sobolev}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+By Lemma \ref{lem:Dunkl-Weyl-Sobolev-approximation}, choose
+\(f_m\in C_c^\infty(\mathbb R^N)\) such that
+\begin{align}
+\big\|
+[R_{\D,j},M_{f_m}]
+-
+[R_{\D,j},M_f]
+\big\|_{S^{N,\infty}}
+&\longrightarrow0,
+\label{eq:Dunkl-Riesz-spectral-operator-approximation}\\
+\|\mathfrak c_{f_m,j}-\mathfrak c_{f,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}
+&\longrightarrow0.
+\label{eq:Dunkl-Riesz-spectral-symbol-approximation}
+\end{align}
+By Lemma \ref{lem:Dunkl-smooth-Weyl-asymptotic}, for every \(m\),
+\begin{align*}
+\lim_{t\to\infty}
+t^{1/N}
+\mu
+\big(
+t,[R_{\D,j},M_{f_m}]
+\big)
+=
+\frac{1}{(N(2\pi)^N)^{1/N}}
+\|\mathfrak c_{f_m,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}.
+\end{align*}
+By \eqref{eq:Dunkl-Riesz-spectral-symbol-approximation},
+\begin{align*}
+\|\mathfrak c_{f_m,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}
+\longrightarrow
+\|\mathfrak c_{f,j}\|_
+{L^N(\Gamma\times\mathbb S^{N-1};S^N(\mathbb C^G))}.
+\end{align*}
+Combining this convergence with
+\eqref{eq:Dunkl-Riesz-spectral-operator-approximation}, we apply
+Lemma \ref{lem:weak-Schatten-asymptotic-stability} with \(p=N\) and obtain
+\eqref{eq:Dunkl-Riesz-spectral-asymptotic}. Finally,
+\eqref{eq:Dunkl-Riesz-spectral-coefficient-Sobolev} follows from
+Lemma \ref{lem:Dunkl-spectral-density-Sobolev}. This completes the proof of
+Theorem \ref{thm:Dunkl-Riesz-spectral-asymptotic}.
+\end{proof}
 %
 %\begin{proof}
 %Fix \(s>2\), and use the usual locally integrable representative of
@@ -7105,6 +9337,7 @@ the quasi triangle inequality in \(\ell^{p,q}\) proves \eqref{eq:Dunkl-critical-
 %\]
 %\end{proof}
 \section{Appendix}
+\setcounter{equation}{0}
 
 \begin{lemma}\label{lem:Cwikel-dyadic-distribution}
 Let $1<s<\infty$, and let $\mathbb D^0$ be the standard dyadic grid
