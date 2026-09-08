@@ -1,0 +1,49 @@
+\documentclass{amsart}
+\begin{document}
+
+We claim that
+$$(1+\Delta_{Dunkl})^{-\frac12}M_{\phi}-(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}M_{\phi}\in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$$
+if $\phi\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from boundaries of the chambers.
+
+We have
+$$LHS=\int_0^{\infty}\Big(\frac1{1+\lambda^2+\Delta_{Dunkl}}-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big)M_{\phi}d\lambda=$$
+$$=\pm\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{Dunkl}\Big)\frac1{1+\lambda^2+\Delta_{Dunkl}}M_{\phi}d\lambda=$$
+$$=\pm\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{Dunkl}\Big)M_{\phi}\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda\pm$$
+$$\pm\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{Dunkl}\Big)\frac1{1+\lambda^2+\Delta_{Dunkl}}[\Delta_{Dunkl},M_{\phi}]\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda=$$
+$$=\pm\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{Dunkl}\Big)M_{\phi}\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda\pm$$
+$$\pm\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}[\Delta_{Dunkl},M_{\phi}]\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda\pm$$
+$$\pm\int_0^{\infty}\frac1{1+\lambda^2+\Delta_{Dunkl}}[\Delta_{Dunkl},M_{\phi}]\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda.$$
+
+The operator
+$$\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{Dunkl}\Big)M_{\phi}$$
+is of the shape
+$$P+\sum_{v\in R}U_{\sigma_v}P_k,$$
+where $P$ and $P_k$ are differential operators of degree $1$ with smooth compactly (and away from the boundaries) supported coefficients. So is the operators
+$$[\Delta_{Dunkl},M_{\phi}].$$
+
+It now remains to show that
+$$\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda\in \in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)),$$
+$$\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}U_gP\frac1{1+\lambda^2+\Delta_{Dunkl}}d\lambda\in \in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)),$$
+for every differential operator $P$ of degree $1$ with smooth compactly (and away from the boundaries) supported  coefficients and for every $g\in G.$
+
+Since $M_w$ and $\Delta$ commute with $U_g,$ it follows that it is sufficient to prove only the first assertion. Fix $\psi\in C^{\infty}_c(\mathbb{R}^N)$ such that $P=PM_{\psi}.$ We write
+$$\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{Dunkl}}=$$
+$$=\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\cdot M_{\psi}\frac1{1+\lambda^2+\Delta_{Dunkl}}.$$
+Both factors are in $\mathcal{L}_{N,\infty}$ (this requires SOME SORT of Cwikel estimates). Hence, the product is in $\mathcal{L}_{\frac{9N}{10},\infty}.$ We now have
+$$\|\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{Dunkl}}\|_{\frac{9N}{10},\infty}\leq$$
+$$\leq\|\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\|_{\frac{9N}{5},\infty}\times$$
+$$\times\|M_{\psi}\frac1{1+\lambda^2+\Delta_{Dunkl}}\|_{\frac{9N}{5},\infty}.$$
+
+Obviously,
+$$\|\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\|_{\frac{9N}{5},\infty}=\|\frac1{1+\lambda^2+\Delta }M_{w^{\frac12}}PM_{w^{-\frac12}}\|_{\mathcal{L}_{\frac{9N}{5},\infty}(\mathbb{R}^N)}\leq$$
+$$\leq c_P\|(1+\lambda^2+\Delta)^{-\frac12}M_{\theta}\|_{\mathcal{L}_{\frac{9N}{5},\infty}(\mathbb{R}^N)}=$$
+$$=c_P\|(1+\lambda^2+\Delta)^{-\frac{2}{9}}\cdot(1+\lambda^2+\Delta)^{-\frac{5}{18}}M_{\theta}\|_{\mathcal{L}_{\frac{9N}{5},\infty}(\mathbb{R}^N)}\leq$$
+$$=c_P(1+\lambda^2)^{-\frac29}\|(1+\Delta)^{-\frac{5}{18}}M_{\theta}\|_{\mathcal{L}_{\frac{9N}{5},\infty}(\mathbb{R}^N)}.$$
+Similarly,
+$$\|M_{\psi}\frac1{1+\lambda^2+\Delta_{Dunkl}}\|_{\frac{9N}{5},\infty}=$$
+$$=\|M_{\psi}(1+\lambda^2+\Delta_{Dunkl})^{-\frac{5}{18}}\cdot(1+\lambda^2+\Delta_{Dunkl})^{-\frac{13}{18}}\|_{\frac{9N}{5},\infty}\leq$$
+$$\leq (1+\lambda^2)^{-\frac{13}{18}}\|M_{\psi}(1+\Delta_{Dunkl})^{-\frac{5}{18}}\|_{\frac{9N}{5},\infty}.$$
+So, the integrand is controlled by
+$$(1+\lambda^2)^{-\frac{17}{18}}.$$
+
+\end{document}
