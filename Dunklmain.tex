@@ -7428,6 +7428,7 @@ Combining this estimate with
 \eqref{eq:Dunkl-spectral-density-upper} proves the assertion.
 \end{proof}
 
+
 \begin{lemma}\label{lem:Dunkl-automatic-wall-localization}
 Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in C_c^\infty(\mathbb R^N)\). Define
 \begin{align*}
@@ -8408,6 +8409,682 @@ Lemma \ref{lem:weak-Schatten-asymptotic-stability} with \(p=N\) and obtain
 \eqref{eq:Dunkl-Riesz-spectral-coefficient-Sobolev} follows from
 Lemma \ref{lem:Dunkl-spectral-density-Sobolev}. This completes the proof of
 Theorem \ref{thm:Dunkl-Riesz-spectral-asymptotic}.
+\end{proof}
+
+\section{Alternative proof by using Dima's approach}
+\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO}
+Fix a closed Weyl chamber \(\Gamma\) and
+\(\sigma\in G\setminus\{\mathrm{Id}\}\). Suppose that \(K\) satisfies
+\begin{align*}
+\bigl|
+\partial_x^\alpha\partial_y^\beta K(x,y)
+\bigr|
+\lesssim_{\alpha,\beta}
+\frac{\|x-y\|^{1-|\alpha|-|\beta|}}
+{\|x-\sigma y\|V\bigl(x,y,\|x-y\|\bigr)}
+\end{align*}
+for every pair of multi-indices \(\alpha,\beta\) and every
+\(x,y\in\Gamma^\circ\) with \(x\neq y\). For every \(M_0>2N\), there
+exist positive numbers \(\{c_{u,v}\}_{u,v\in\mathbb Z^N}\) and
+families
+\(\{e_{u,v,I}\}_{u,v\in\mathbb Z^N,I\in\mathbb D_\Gamma}\) and
+\(\{h_{u,v,I}\}_{u,v\in\mathbb Z^N,I\in\mathbb D_\Gamma}\) such that
+\begin{align}
+|c_{u,v}|
+&\lesssim_{M_0}
+(1+|u|+|v|)^{-M_0},
+\label{eq:Weyl-off-diagonal-Fourier-decay}\\
+\operatorname{supp}e_{u,v,I}\subset I,
+\qquad
+\operatorname{supp}h_{u,v,I}
+&\subset I^*,
+\label{eq:Weyl-off-diagonal-support}\\
+|e_{u,v,I}|+|h_{u,v,I}|
+&\lesssim w(I)^{-1/2},
+\label{eq:Weyl-off-diagonal-size}
+\end{align}
+and, for almost every \(x,y\in\Gamma\) with \(x\neq y\),
+\begin{align}
+K(x,y)
+=
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+\sum_{I\in\mathbb D_\Gamma}
+\theta_{\mathrm{Id},\sigma,I}
+e_{u,v,I}(x)h_{u,v,I}(y).
+\label{eq:Weyl-off-diagonal-NWO-expansion}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Choose \(\psi\in C_c^\infty(\mathbb R^N)\) such that
+\begin{align}
+\operatorname{supp}\psi
+\subset
+\biggl\{
+z:\frac18\leq |z|\leq\frac12
+\biggr\},
+\qquad
+\sum_{m\in\mathbb Z}\psi(2^mz)=1,
+\quad z\neq0.
+\label{eq:Weyl-off-diagonal-partition}
+\end{align}
+For \(x,y\in\Gamma^\circ\), \(x\neq y\), the unique cube
+\(I\in\mathbb D_{\Gamma,m}\) containing \(x\) at each scale satisfies
+\begin{align}
+K(x,y)
+=
+\sum_{I\in\mathbb D_\Gamma}
+\chi_I(x)K(x,y)
+\psi\biggl(
+\frac{\Phi(x)-\Phi(y)}{\ell(I)}
+\biggr).
+\label{eq:Weyl-off-diagonal-localization}
+\end{align}
+If the \(I\)-th summand is nonzero, then
+\(|\Phi(x)-\Phi(y)|\leq\ell(I)/2\); hence \(y\in I^*\).
+
+Fix \(I=\Phi^{-1}(Q)\). For
+\[
+a\in\bigl(-1/2,1/2\bigr)^N,
+\qquad
+c_Q+\ell(I)b\in(2Q)\cap\Omega,
+\]
+set
+\[
+X:=\Phi^{-1}\bigl(c_Q+\ell(I)a\bigr),
+\qquad
+Y:=\Phi^{-1}\bigl(c_Q+\ell(I)b\bigr).
+\]
+Whenever \(\psi(a-b)\neq0\), by the \(G\)-invariance of \(d\) and
+\(dw\), \eqref{distanceequa}, and Lemma
+\ref{lem:Dunkl-Riesz-endpoint-local-geometry} applied with
+\((\mathrm{Id},\sigma)\),
+\begin{align}
+\|X-Y\|
+&\simeq\ell(I),\nonumber\\
+\|X-\sigma Y\|
+&\simeq\ell(I)+|z_I-\sigma z_I|,\nonumber\\
+V\bigl(X,Y,\|X-Y\|\bigr)
+&\simeq w(I).
+\label{eq:Weyl-off-diagonal-local-geometry}
+\end{align}
+Consequently,
+\begin{align}
+\bigl|
+\partial_x^\alpha\partial_y^\beta K(X,Y)
+\bigr|
+\lesssim_{\alpha,\beta}
+\theta_{\mathrm{Id},\sigma,I}
+\frac{\ell(I)^{-|\alpha|-|\beta|}}{w(I)}.
+\label{eq:Weyl-off-diagonal-local-derivative}
+\end{align}
+
+Let
+\[
+\mathcal R_Q
+:=
+\biggl\{
+(a,b):
+a\in\bigl(-1/2,1/2\bigr)^N,\
+c_Q+\ell(I)b\in(2Q)\cap\Omega
+\biggr\}.
+\]
+On \(\mathcal R_Q\), define
+\begin{align*}
+F_I(a,b)
+:=
+\frac{w(I)}{\theta_{\mathrm{Id},\sigma,I}}
+\psi(a-b)
+K\biggl(
+\Phi^{-1}\bigl(c_Q+\ell(I)a\bigr),
+\Phi^{-1}\bigl(c_Q+\ell(I)b\bigr)
+\biggr).
+\end{align*}
+By \eqref{eq:Weyl-off-diagonal-local-derivative} and the chain rule,
+for every integer \(L\geq0\),
+\begin{align}
+\sup_{I\in\mathbb D_\Gamma}
+\|F_I\|_{W^{L,\infty}(\mathcal R_Q)}
+\lesssim_L1.
+\label{eq:Weyl-off-diagonal-normalized-derivative}
+\end{align}
+The rectangles \(\mathcal R_Q\) range over finitely many fixed
+rectangular domains. Fix an integer \(L>M_0\). By the standard
+extension theorem for Sobolev spaces on rectangles, followed by
+multiplication by a fixed smooth cutoff, \(F_I\) admits an extension
+\(\widetilde F_I\) supported in
+\((-2,2)^N\times(-2,2)^N\) such that
+\begin{align}
+\widetilde F_I=F_I
+\quad\text{on }\mathcal R_Q,
+\qquad
+\sup_{I\in\mathbb D_\Gamma}
+\|\widetilde F_I\|_{W^{L,\infty}(\mathbb R^{2N})}
+\lesssim_L1.
+\label{eq:Weyl-off-diagonal-extension}
+\end{align}
+
+The \(4\)-periodic extension of \(\widetilde F_I\) has a Fourier
+expansion
+\begin{align*}
+\widetilde F_I(a,b)
+=
+\sum_{u,v\in\mathbb Z^N}
+b_{u,v,I}
+e^{\frac{\pi i}{2}u\cdot a}
+e^{\frac{\pi i}{2}v\cdot b}.
+\end{align*}
+By repeated integration by parts and
+\eqref{eq:Weyl-off-diagonal-extension},
+\begin{align*}
+\sup_{I\in\mathbb D_\Gamma}
+|b_{u,v,I}|
+\lesssim_L
+(1+|u|+|v|)^{-L}.
+\end{align*}
+Increasing the implicit constant if necessary, define
+\begin{align*}
+c_{u,v}
+:=
+C_{M_0}(1+|u|+|v|)^{-M_0}
+\end{align*}
+so that
+\(|b_{u,v,I}|\leq c_{u,v}\) for every \(I\). For
+\(I=\Phi^{-1}(Q)\), define
+\begin{align*}
+e_{u,v,I}(x)
+&:=
+\frac{b_{u,v,I}}{c_{u,v}}
+w(I)^{-1/2}\chi_I(x)
+\exp\biggl(
+\frac{\pi i}{2\ell(I)}
+u\cdot\bigl(\Phi(x)-c_Q\bigr)
+\biggr),\\
+h_{u,v,I}(y)
+&:=
+w(I)^{-1/2}\chi_{I^*}(y)
+\exp\biggl(
+\frac{\pi i}{2\ell(I)}
+v\cdot\bigl(\Phi(y)-c_Q\bigr)
+\biggr).
+\end{align*}
+Then \eqref{eq:Weyl-off-diagonal-Fourier-decay}--\eqref{eq:Weyl-off-diagonal-size}
+hold.
+
+If \(x\in I\) and \(y\in I^*\), then
+\[
+a:=\frac{\Phi(x)-c_Q}{\ell(I)},
+\qquad
+b:=\frac{\Phi(y)-c_Q}{\ell(I)}
+\]
+belong to \(\mathcal R_Q\). Hence, by
+\eqref{eq:Weyl-off-diagonal-extension} and the Fourier expansion,
+\begin{align}
+K(x,y)
+\psi\biggl(
+\frac{\Phi(x)-\Phi(y)}{\ell(I)}
+\biggr)
+=
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}\theta_{\mathrm{Id},\sigma,I}
+e_{u,v,I}(x)h_{u,v,I}(y).
+\label{eq:Weyl-off-diagonal-local-Fourier}
+\end{align}
+If \(x\in I\) and \(y\notin I^*\), both sides of
+\eqref{eq:Weyl-off-diagonal-local-Fourier} vanish. Therefore,
+\begin{align*}
+\chi_I(x)K(x,y)
+\psi\biggl(
+\frac{\Phi(x)-\Phi(y)}{\ell(I)}
+\biggr)
+=
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}\theta_{\mathrm{Id},\sigma,I}
+e_{u,v,I}(x)h_{u,v,I}(y)
+\end{align*}
+for almost every \(x,y\in\Gamma\). Summing over
+\(I\in\mathbb D_\Gamma\) and using
+\eqref{eq:Weyl-off-diagonal-partition}, we obtain
+\eqref{eq:Weyl-off-diagonal-NWO-expansion}.
+
+This completes the proof of Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}.
+\end{proof}
+
+\begin{lemma}
+\label{lem:Weyl-jump-OSC-coefficients}
+Assume that \(N\geq 1\), \(1<p<\infty\), and \(1\leq q\leq\infty\). Fix \(s>2\), a closed Weyl chamber \(\Gamma\), and \(\sigma\in G\). Let \(r_s\) be as in Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}. Then, for every \(f\in OSC^{p,q}(\mathbb R^N)\),
+\begin{align}
+&
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}
+\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
++
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}
+a_{\sigma,\mathrm{Id},I}(f)
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\label{eq:Weyl-jump-OSC-coefficients}
+\end{align}
+The implicit constant is independent of \(f\) and \(\sigma\).
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:D-and-theta}, \(0<\theta_{\sigma,\mathrm{Id},I}\leq 1\). Hence, by Lemma \ref{lem:Dunkl-H-OSC-Lorentz},
+\begin{align*}
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}
+\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
+\lesssim
+\Bigg\|
+\Bigg\{
+\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\end{align*}
+By Lemma \ref{lem:Dunkl-chamber-jump-supercritical0},
+\begin{align*}
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}
+a_{\sigma,\mathrm{Id},I}(f)
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\end{align*}
+Combining the two estimates, we obtain \eqref{eq:Weyl-jump-OSC-coefficients}.
+
+This completes the proof of Lemma \ref{lem:Weyl-jump-OSC-coefficients}.
+\end{proof}
+
+\begin{theorem}
+\label{thm:Weyl-jump-multiplier-Schatten}
+Assume that \(N\geq1\), \(1<p<\infty\), and \(1\leq q\leq\infty\). Fix a closed Weyl chamber \(\Gamma\) and \(\sigma\in G\setminus\{\mathrm{Id}\}\). Let \(T\) be an integral operator on \(L^2(\Gamma,dw)\) whose kernel \(K\) satisfies
+\begin{align*}
+\bigl|
+\partial_x^\alpha\partial_y^\beta K(x,y)
+\bigr|
+\lesssim_{\alpha,\beta}
+\frac{\|x-y\|^{1-|\alpha|-|\beta|}}
+{\|x-\sigma y\|V\bigl(x,y,\|x-y\|\bigr)}
+\end{align*}
+for every pair of multi-indices \(\alpha,\beta\) and every
+\(x,y\in\Gamma^\circ\) with \(x\neq y\). Then, for every
+\(f\in OSC^{p,q}(\mathbb R^N)\),
+\begin{align}
+M_{f-f\circ\sigma}T
+\in
+S^{p,q}\bigl(L^2(\Gamma,dw)\bigr),
+\qquad
+\bigl\|
+M_{f-f\circ\sigma}T
+\bigr\|_{S^{p,q}}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\label{eq:Weyl-jump-multiplier-Schatten}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Fix \(s>2\), let \(r_s\) be as in Lemma
+\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}, and set
+\[
+H:=H_{\sigma,\mathrm{Id}}(f)=f-f\circ\sigma.
+\]
+For \(I\in\mathbb D_\Gamma\), set
+\[
+\omega_I
+:=
+\operatorname{osc}_{r_s}(H;I),
+\qquad
+a_I
+:=
+a_{\sigma,\mathrm{Id},I}(f)
+=
+(H)_{I,dx}.
+\]
+By Lemma \ref{lem:Weyl-jump-OSC-coefficients}
+\eqref{eq:Weyl-jump-OSC-coefficients},
+\begin{align}
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}\omega_I
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
++
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}a_I
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\Bigg\|_{\ell^{p,q}}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\label{eq:Weyl-jump-two-coefficients}
+\end{align}
+In particular, \(\omega_I<\infty\) for every \(I\). By
+Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation},
+\(H\in L^s_{\mathrm{loc}}(\Gamma,dw)\).
+
+Fix \(M_0>2N\). By Lemma
+\ref{lem:Weyl-off-diagonal-kernel-NWO}, for almost every
+\(x,y\in\Gamma\) with \(x\neq y\),
+\begin{align}
+K(x,y)
+=
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+\sum_{I\in\mathbb D_\Gamma}
+\theta_{\mathrm{Id},\sigma,I}
+e_{u,v,I}(x)h_{u,v,I}(y),
+\label{eq:Weyl-jump-use-kernel-expansion}
+\end{align}
+where
+\[
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
+\]
+By \eqref{eq:D-and-theta},
+\(\theta_{\mathrm{Id},\sigma,I}
+=\theta_{\sigma,\mathrm{Id},I}\).
+
+For \(u,v\in\mathbb Z^N\) and \(I\in\mathbb D_\Gamma\), define
+\begin{align*}
+\widetilde e_{u,v,I}(x)
+:=
+\begin{cases}
+\displaystyle
+\omega_I^{-1}\bigl(H(x)-a_I\bigr)e_{u,v,I}(x),
+&\omega_I>0,\\[2mm]
+0,
+&\omega_I=0.
+\end{cases}
+\end{align*}
+By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}
+\eqref{eq:Weyl-off-diagonal-size} and Lemma
+\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation},
+\begin{align*}
+\|\widetilde e_{u,v,I}\|_{L^s(dw)}
+&\lesssim
+w(I)^{-1/2}\omega_I^{-1}
+\bigg(
+\int_I|H-a_I|^s\,dw
+\bigg)^{1/s}
+\lesssim
+w(I)^{\frac1s-\frac12}
+\end{align*}
+when \(\omega_I>0\), while the same estimate is immediate when
+\(\omega_I=0\). Moreover, by Lemma
+\ref{lem:Weyl-off-diagonal-kernel-NWO}
+\eqref{eq:Weyl-off-diagonal-support}--\eqref{eq:Weyl-off-diagonal-size}
+and \(w(I^*)\lesssim w(I)\),
+\begin{align*}
+\|e_{u,v,I}\|_{L^s(dw)}
++
+\|h_{u,v,I}\|_{L^s(dw)}
+\lesssim
+w(I)^{\frac1s-\frac12}.
+\end{align*}
+Thus, for fixed \(u,v\),
+\[
+\bigl\{\widetilde e_{u,v,I}\bigr\}_{I\in\mathbb D_\Gamma},
+\qquad
+\bigl\{e_{u,v,I}\bigr\}_{I\in\mathbb D_\Gamma},
+\qquad
+\bigl\{\overline{h_{u,v,I}}\bigr\}_{I\in\mathbb D_\Gamma}
+\]
+are NWO families.
+
+If \(\omega_I=0\), then \(H=a_I\) \(dx\)-a.e. on \(I\), and hence
+\(dw\)-a.e. on \(I\). Therefore, in all cases,
+\begin{align}
+&\theta_{\sigma,\mathrm{Id},I}
+H(x)e_{u,v,I}(x)h_{u,v,I}(y)
+\nonumber\\
+&\qquad=
+\theta_{\sigma,\mathrm{Id},I}\omega_I
+\widetilde e_{u,v,I}(x)h_{u,v,I}(y)
++
+\theta_{\sigma,\mathrm{Id},I}a_I
+e_{u,v,I}(x)h_{u,v,I}(y).
+\label{eq:Weyl-jump-two-term-decomposition}
+\end{align}
+Hence, by Lemma \ref{NWOLEMMAA2} and
+\eqref{eq:Weyl-jump-two-coefficients},
+\begin{align}
+&\Bigg\|
+\sum_{I\in\mathbb D_\Gamma}
+\theta_{\sigma,\mathrm{Id},I}\omega_I
+\bigl\langle
+\,\cdot,\overline{h_{u,v,I}}
+\bigr\rangle
+\widetilde e_{u,v,I}
++
+\sum_{I\in\mathbb D_\Gamma}
+\theta_{\sigma,\mathrm{Id},I}a_I
+\bigl\langle
+\,\cdot,\overline{h_{u,v,I}}
+\bigr\rangle
+e_{u,v,I}
+\Bigg\|_{S^{p,q}}
+\nonumber\\
+&\qquad\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)},
+\label{eq:Weyl-jump-fixed-Fourier-Schatten}
+\end{align}
+uniformly in \(u,v\).
+
+Since \(p>1\), using an equivalent norm on \(S^{p,q}\) when necessary, the series
+\begin{align}
+S_f
+:=
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+\sum_{I\in\mathbb D_\Gamma}
+\theta_{\sigma,\mathrm{Id},I}
+\Bigg(
+\omega_I
+\bigl\langle
+\,\cdot,\overline{h_{u,v,I}}
+\bigr\rangle
+\widetilde e_{u,v,I}
++
+a_I
+\bigl\langle
+\,\cdot,\overline{h_{u,v,I}}
+\bigr\rangle
+e_{u,v,I}
+\Bigg)
+\label{eq:Weyl-jump-Sf}
+\end{align}
+converges in \(S^{p,q}(L^2(\Gamma,dw))\). By
+\eqref{eq:Weyl-jump-fixed-Fourier-Schatten},
+\begin{align}
+\|S_f\|_{S^{p,q}}
+\lesssim
+\sum_{u,v\in\mathbb Z^N}
+|c_{u,v}|
+\|f\|_{OSC^{p,q}(\mathbb R^N)}
+\lesssim
+\|f\|_{OSC^{p,q}(\mathbb R^N)}.
+\label{eq:Weyl-jump-Sf-bound}
+\end{align}
+
+We identify \(S_f\) with \(M_HT\). Fix \(r>p\). By
+\(\ell^{p,q}\subset\ell^r\) and
+\eqref{eq:Weyl-jump-two-coefficients},
+\begin{align*}
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}\omega_I
+\Bigg\}_{I\in\mathbb D_\Gamma},
+\qquad
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}a_I
+\Bigg\}_{I\in\mathbb D_\Gamma}
+\in\ell^r.
+\end{align*}
+For \(m\in\mathbb N\), let \(S_f^{(m)}\) be defined by
+\eqref{eq:Weyl-jump-Sf} with the sum over \(I\) restricted to
+\(\bigcup_{|k|\leq m}\mathbb D_{\Gamma,k}\). By Lemma
+\ref{NWOLEMMAA2}, now with exponent \(r\),
+\begin{align*}
+\|S_f-S_f^{(m)}\|_{S^r}
+\lesssim
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|
+\Bigg(
+&
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}\omega_I
+\Bigg\}_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
+\Bigg\|_{\ell^r}
+\\
+&+
+\Bigg\|
+\Bigg\{
+\theta_{\sigma,\mathrm{Id},I}a_I
+\Bigg\}_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
+\Bigg\|_{\ell^r}
+\Bigg)
+\longrightarrow0.
+\end{align*}
+
+Let
+\(\varphi\in C_c^\infty(\Gamma^\circ)\) and
+\[
+\eta\in
+C_c^\infty
+\bigl(
+\Gamma^\circ\setminus\{x:\sigma x=x\}
+\bigr).
+\]
+By the construction in the proof of Lemma
+\ref{lem:Weyl-off-diagonal-kernel-NWO} and
+\eqref{eq:Weyl-jump-two-term-decomposition},
+\begin{align}
+\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
+=
+\int_\Gamma\int_\Gamma
+&H(x)K(x,y)
+\Bigg(
+\sum_{|k|\leq m}
+\psi\bigl(
+2^k(\Phi(x)-\Phi(y))
+\bigr)
+\Bigg)
+\nonumber\\
+&\qquad\qquad\times
+\varphi(y)\overline{\eta(x)}
+\,dw(y)\,dw(x).
+\label{eq:Weyl-jump-truncated-kernel}
+\end{align}
+
+Set
+\[
+\delta
+:=
+\inf_{x\in\operatorname{supp}\eta}
+\|x-\sigma x\|>0.
+\]
+For \(x\in\operatorname{supp}\eta\) and
+\(\|x-y\|<\delta/2\),
+\begin{align*}
+\|x-\sigma y\|
+\geq
+\|x-\sigma x\|-\|x-y\|
+\geq
+\frac{\delta}{2}.
+\end{align*}
+Moreover, since \(x,y\in\Gamma\), by \eqref{distanceequa} and the
+\(G\)-invariance of \(d\),
+\begin{align*}
+\|x-\sigma y\|
+\geq
+d(x,\sigma y)
+=
+d(x,y)
+=
+\|x-y\|.
+\end{align*}
+Consequently, the kernel estimate and the doubling property imply
+\begin{align*}
+\int_{\substack{y\in\Gamma\\ \|x-y\|<\delta/2}}
+|K(x,y)|\,dw(y)
+&\lesssim
+\sum_{j=1}^{\infty}
+\frac{2^{-j}\delta}{\delta}
+\frac{
+w\bigl(B(x,2^{-j}\delta)\bigr)
+}{
+w\bigl(B(x,2^{-j-1}\delta)\bigr)
+}
+\lesssim
+\sum_{j=1}^{\infty}2^{-j}
+\lesssim1
+\end{align*}
+uniformly in \(x\in\operatorname{supp}\eta\). On
+\(\operatorname{supp}\eta\times\operatorname{supp}\varphi\) with
+\(\|x-y\|\geq\delta/2\), the same annular argument involves only
+finitely many scales. Hence,
+\begin{align}
+\sup_{x\in\operatorname{supp}\eta}
+\int_{\operatorname{supp}\varphi}
+|K(x,y)|\,dw(y)
+<\infty.
+\label{eq:Weyl-jump-local-kernel-integrability}
+\end{align}
+Since \(H\in L^s_{\mathrm{loc}}(\Gamma,dw)\) with \(s>2\),
+\(H\eta\in L^2(\Gamma,dw)\cap L^1(\Gamma,dw)\). The partial sums in
+\eqref{eq:Weyl-jump-truncated-kernel} are uniformly bounded and
+converge to \(1\) for \(x\neq y\). Therefore, by
+\eqref{eq:Weyl-jump-local-kernel-integrability} and dominated
+convergence,
+\begin{align*}
+\lim_{m\to\infty}
+\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
+&=
+\int_\Gamma\int_\Gamma
+H(x)K(x,y)
+\varphi(y)\overline{\eta(x)}
+\,dw(y)\,dw(x)
+\\
+&=
+\bigl\langle
+T\varphi,\overline H\,\eta
+\bigr\rangle
+=
+\bigl\langle
+M_HT\varphi,\eta
+\bigr\rangle.
+\end{align*}
+On the other hand, the convergence in \(S^r\) implies
+\[
+\lim_{m\to\infty}
+\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
+=
+\bigl\langle S_f\varphi,\eta\bigr\rangle.
+\]
+Since \(\sigma\neq\mathrm{Id}\), the fixed point space
+\(\{x:\sigma x=x\}\) is a proper linear subspace and therefore has
+\(dw\)-measure zero. Thus,
+\(C_c^\infty\bigl(\Gamma^\circ\setminus\{x:\sigma x=x\}\bigr)\)
+is dense in \(L^2(\Gamma,dw)\), and \(S_f\) is the bounded extension
+of \(M_HT=M_{f-f\circ\sigma}T\). Combining this identification with
+\eqref{eq:Weyl-jump-Sf-bound}, we obtain
+\eqref{eq:Weyl-jump-multiplier-Schatten}.
+
+This completes the proof of Theorem \ref{thm:Weyl-jump-multiplier-Schatten}.
 \end{proof}
 %
 %\begin{proof}
@@ -9452,7 +10129,1068 @@ Assume that \(N>1\). Then the following statements hold.
 This is a well-known result due to Rochberg--Semmes.
 \end{proof}
 
+\section{Answer to Dima's question}
+\begin{lemma}\label{lem:Dunkl-automatic-wall-localization}
+Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and
+\(f\in C_c^\infty(\mathbb R^N)\). Let \(\Gamma_1\) and \(\Gamma_2\)
+be Weyl chambers, and denote their interiors by
+\(\Gamma_1^\circ\) and \(\Gamma_2^\circ\), respectively. Then there
+exist
+\[
+\varphi_m\in C_c^\infty(\Gamma_1^\circ),
+\qquad
+\psi_m\in C_c^\infty(\Gamma_2^\circ),
+\qquad
+0\leq\varphi_m,\psi_m\leq1,
+\]
+such that
+\[
+\varphi_m\longrightarrow\chi_{\Gamma_1^\circ},
+\qquad
+\psi_m\longrightarrow\chi_{\Gamma_2^\circ}
+\]
+pointwise on \(\mathbb R^N\), and
+\begin{align}
+\lim_{m\to\infty}
+\left\|
+M_{\varphi_m}
+[R_{\D,j},M_f]
+M_{\psi_m}
+-
+M_{\chi_{\Gamma_1}}
+[R_{\D,j},M_f]
+M_{\chi_{\Gamma_2}}
+\right\|_{S^{N,\infty}}
+=0.
+\label{eq:Dunkl-automatic-wall-localization}
+\end{align}
+\end{lemma}
 
+\begin{proof}
+Set
+\[
+T_f:=[R_{\D,j},M_f].
+\]
+We apply Lemma
+\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} with the fixed closed
+chamber \(\Gamma=\Gamma_1\). Choose \(\tau_0\in G\) such that
+\[
+\Gamma_2=\tau_0\Gamma_1.
+\]
+By Lemma \ref{lem:Euclidean-OSC-critical-rigidity},
+\(f\in OSC^{N,\infty}(\mathbb R^N)\), and hence the operator-series
+identification in the proof of Theorem
+\ref{lem:Dunkl-critical-weak-Schatten-upper} gives, with convergence
+in \(S^{N,\infty}\),
+\begin{align*}
+T_f
+=
+\sum_{\varepsilon=0}^3
+\sum_{\sigma,\tau\in G}
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+\sum_{I\in\mathbb D_{\Gamma_1}}
+A_{\sigma,\tau,I,\varepsilon}(f)
+\left\langle
+\,\cdot,\,
+\overline{
+H_{u,v,I,\varepsilon}^{\sigma,\tau}}
+\right\rangle
+E_{u,v,I,\varepsilon}^{\sigma,\tau}.
+\end{align*}
+By Lemma
+\ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property2},
+\[
+\operatorname{supp}
+E_{u,v,I,\varepsilon}^{\sigma,\tau}
+\subset\sigma I,
+\qquad
+\operatorname{supp}
+H_{u,v,I,\varepsilon}^{\sigma,\tau}
+\subset\tau I^*.
+\]
+Since distinct open Weyl chambers are disjoint and their boundaries
+have \(dw\)-measure zero,
+\begin{align}
+M_{\chi_{\Gamma_1}}T_fM_{\chi_{\Gamma_2}}
+=
+\sum_{\varepsilon=0}^3
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+T_{u,v,\varepsilon},
+\label{eq:Dunkl-wall-scalar-block}
+\end{align}
+where
+\begin{align*}
+T_{u,v,\varepsilon}
+:=
+\sum_{I\in\mathbb D_{\Gamma_1}}
+A_{I,\varepsilon}
+\left\langle
+\,\cdot,\,
+\overline{H_{I,\varepsilon}}
+\right\rangle
+E_{I,\varepsilon},
+\end{align*}
+and, for brevity,
+\[
+A_{I,\varepsilon}
+:=
+A_{\mathrm{Id},\tau_0,I,\varepsilon}(f),
+\quad
+E_{I,\varepsilon}
+:=
+E_{u,v,I,\varepsilon}^{\mathrm{Id},\tau_0},
+\quad
+H_{I,\varepsilon}
+:=
+H_{u,v,I,\varepsilon}^{\mathrm{Id},\tau_0}.
+\]
+Thus
+\begin{align}
+\operatorname{supp}E_{I,\varepsilon}
+&\subset I,
+&
+\operatorname{supp}H_{I,\varepsilon}
+&\subset\tau_0 I^*,
+\label{eq:Dunkl-wall-scalar-support}\\
+\|E_{I,\varepsilon}\|_{L^s(dw)}
++
+\|H_{I,\varepsilon}\|_{L^s(dw)}
+&\lesssim
+w(I)^{1/s-1/2}
+\label{eq:Dunkl-wall-scalar-Ls}
+\end{align}
+for every fixed \(s>2\).
+
+Fix \(2<s_0<s\) and set
+\[
+\gamma:=\frac1{s_0}-\frac1s>0.
+\]
+Let \(r_s>s\) be as in Lemma
+\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}, and set
+\[
+\beta:=\frac{N}{r_s}>0.
+\]
+Exactly as in the coefficient estimate in the proof of the present
+lemma in its previous formulation, the definitions of
+\(A_{\mathrm{Id},\tau_0,I,\varepsilon}(f)\) give
+\begin{align}
+|A_{I,\varepsilon}|
+\lesssim_f
+\begin{cases}
+\ell(I),&\ell(I)\leq1,\\
+\ell(I)^{-\beta},&\ell(I)\geq1.
+\end{cases}
+\label{eq:Dunkl-wall-scalar-coefficient-decay}
+\end{align}
+For \(\varepsilon=0,1,2\), this follows from the
+\(L^{r_s}(dx)\)-oscillation defining the corresponding coefficient:
+the small-scale bound follows from the Lipschitz regularity of the
+relevant smooth function, whereas
+\[
+\operatorname{osc}_{r_s}(g;E)
+\lesssim
+|E|^{-1/r_s}\|g\|_{L^{r_s}}
+\lesssim_f
+\ell(I)^{-N/r_s}
+\]
+when \(\ell(I)\geq1\). For \(\varepsilon=3\), if
+\(D=|z_I-\tau_0z_I|\), then for \(\ell(I)\leq1\),
+\[
+|A_{I,3}|
+\lesssim_f
+\frac{\ell(I)}{\ell(I)+D}
+\bigl(\ell(I)+D\bigr)
+\lesssim_f\ell(I),
+\]
+while, for \(\ell(I)\geq1\),
+\[
+|A_{I,3}|
+\lesssim_f
+\ell(I)^{-N}
+\lesssim
+\ell(I)^{-\beta}.
+\]
+
+Let
+\[
+\Delta_1=\{\alpha_1,\ldots,\alpha_{N_0}\}
+\]
+be the simple system associated with \(\Gamma_1\). For
+\(1\leq i\leq N_0\) and \(0<\delta\leq1\), set
+\[
+W_{i,\delta}
+:=
+\left\{
+x\in\Gamma_1:
+0\leq\langle x,\alpha_i\rangle\leq2\delta
+\right\}.
+\]
+As in the wall estimate in the previous proof,
+\begin{align}
+\frac{w(W_{i,\delta}\cap I)}{w(I)}
++
+\frac{w(W_{i,\delta}\cap I^*)}{w(I)}
+\lesssim
+\min\left(1,\frac{\delta}{\ell(I)}\right).
+\label{eq:Dunkl-wall-scalar-ratio}
+\end{align}
+Indeed, the assertion is immediate for
+\(\delta>\ell(I)/8\). If \(\delta\leq\ell(I)/8\), write
+\(I=\Phi^{-1}(Q)\). Whenever \(I\) or \(I^*\) meets
+\(W_{i,\delta}\), the relevant \(i\)-th coordinate interval begins at
+the boundary of \(\Omega\). By Lemma \ref{mulemma}
+\eqref{pushforward-density}, the density of \(\Phi_\#dw\) is
+nondecreasing in this coordinate. Hence the elementary estimate
+\[
+\int_0^{2\delta}g(t)\,dt
+\lesssim
+\frac{\delta}{\ell(I)}
+\int g(t)\,dt
+\]
+for nonnegative nondecreasing \(g\), applied fiberwise on \(Q\) and
+\((2Q)\cap\Omega\), yields
+\eqref{eq:Dunkl-wall-scalar-ratio}.
+
+The simple system associated with \(\Gamma_2\) is
+\[
+\Delta_2
+=
+\{\tau_0\alpha_1,\ldots,\tau_0\alpha_{N_0}\}.
+\]
+Set
+\[
+\widetilde W_{i,\delta}
+:=
+\tau_0W_{i,\delta}
+=
+\left\{
+y\in\Gamma_2:
+0\leq
+\langle y,\tau_0\alpha_i\rangle
+\leq2\delta
+\right\}.
+\]
+Since \(dw\) is \(G\)-invariant,
+\eqref{eq:Dunkl-wall-scalar-ratio} also gives the corresponding
+estimate for
+\(\widetilde W_{i,\delta}\cap\tau_0I^*\).
+
+Set
+\[
+\omega_{I,\delta}
+:=
+\min\left(
+1,
+\left(\frac{\delta}{\ell(I)}\right)^\gamma
+\right).
+\]
+If \(0\leq a\leq1\) and
+\(\operatorname{supp}a\subset W_{i,\delta}\), then
+\eqref{eq:Dunkl-wall-scalar-Ls},
+\eqref{eq:Dunkl-wall-scalar-ratio}, and H\"older's inequality give
+\[
+\|aE_{I,\varepsilon}\|_{L^{s_0}(dw)}
+\lesssim
+\omega_{I,\delta}
+w(I)^{1/s_0-1/2}.
+\]
+Likewise, if \(0\leq b\leq1\) and
+\(\operatorname{supp}b\subset\widetilde W_{i,\delta}\), then
+\[
+\|bH_{I,\varepsilon}\|_{L^{s_0}(dw)}
+\lesssim
+\omega_{I,\delta}
+w(I)^{1/s_0-1/2}.
+\]
+Here we use Lemma \ref{NWOLEMMAA2} in its standard two-family form:
+the two NWO families may be adapted to two dyadic systems related by
+a fixed measure-preserving Weyl-group element. The proof of
+Lemma \ref{NWOLEMMAA2} is unchanged, since the NWO estimates for the
+two families are used separately. Consequently,
+\begin{align}
+\|M_aT_{u,v,\varepsilon}\|_{S^{N,\infty}}
++
+\|T_{u,v,\varepsilon}M_b\|_{S^{N,\infty}}
+\lesssim
+\left\|
+\left\{
+A_{I,\varepsilon}\omega_{I,\delta}
+\right\}_{I\in\mathcal I_{i,\delta}}
+\right\|_{\ell^{N,\infty}},
+\label{eq:Dunkl-wall-scalar-NWO}
+\end{align}
+where \(\mathcal I_{i,\delta}\) denotes the cubes for which the
+corresponding localized factor is nonzero. In particular,
+\[
+I\in\mathcal I_{i,\delta}
+\quad\Longrightarrow\quad
+(I\cup I^*)\cap W_{i,\delta}\neq\varnothing.
+\]
+
+If \(\ell(I)\leq1\) and \(A_{I,\varepsilon}\neq0\), then \(z_I\)
+belongs to a fixed bounded set depending only on \(f\). Therefore,
+for every dyadic \(0<\ell\leq1\),
+\begin{align}
+\#\left\{
+I:
+\ell(I)=\ell,\
+A_{I,\varepsilon}\neq0,\
+(I\cup I^*)\cap W_{i,\delta}\neq\varnothing
+\right\}
+\lesssim_f
+\left(
+1+\frac{\delta}{\ell}
+\right)
+\ell^{-(N-1)}.
+\label{eq:Dunkl-wall-scalar-count}
+\end{align}
+Indeed, in the \(\Phi\)-coordinates there are
+\(O(1+\delta/\ell)\) admissible intervals in the \(i\)-th coordinate
+and \(O(\ell^{-1})\) admissible intervals in each of the remaining
+\(N-1\) coordinates.
+
+For \(\ell(I)\leq\delta\), we have \(\omega_{I,\delta}=1\). Hence,
+by \eqref{eq:Dunkl-wall-scalar-coefficient-decay} and
+\eqref{eq:Dunkl-wall-scalar-count},
+\begin{align*}
+&\#
+\left\{
+I\in\mathcal I_{i,\delta}:
+\ell(I)\leq\delta,\
+|A_{I,\varepsilon}\omega_{I,\delta}|>\lambda
+\right\}
+\\
+&\qquad\lesssim_f
+\delta
+\sum_{\substack{\ell\leq\delta\\
+\lambda\lesssim_f\ell}}
+\ell^{-N}
+\lesssim_f
+\delta\lambda^{-N},
+\end{align*}
+and therefore
+\begin{align}
+\left\|
+\left\{
+A_{I,\varepsilon}\omega_{I,\delta}
+\right\}_{\substack{I\in\mathcal I_{i,\delta}\\
+\ell(I)\leq\delta}}
+\right\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^{1/N}.
+\label{eq:Dunkl-wall-scalar-fine}
+\end{align}
+
+If \(\delta<\ell(I)\leq1\), then
+\[
+|A_{I,\varepsilon}\omega_{I,\delta}|
+\lesssim_f
+\delta^\gamma\ell(I)^{1-\gamma},
+\]
+whereas
+\eqref{eq:Dunkl-wall-scalar-count} reduces to
+\(O_f(\ell^{-(N-1)})\). Given \(\lambda>0\), put
+\[
+L
+:=
+\max\left(
+\delta,
+c_f
+\left(
+\frac{\lambda}{\delta^\gamma}
+\right)^{1/(1-\gamma)}
+\right).
+\]
+Then
+\[
+\#
+\left\{
+I\in\mathcal I_{i,\delta}:
+\delta<\ell(I)\leq1,\
+|A_{I,\varepsilon}\omega_{I,\delta}|>\lambda
+\right\}
+\lesssim_f
+L^{-(N-1)}.
+\]
+If \(L=\delta\), then \(\lambda\lesssim_f\delta\), and
+\[
+\lambda L^{-(N-1)/N}
+\lesssim_f
+\delta^{1/N}.
+\]
+Otherwise,
+\(\lambda\lesssim_f\delta^\gamma L^{1-\gamma}\), whence
+\[
+\lambda L^{-(N-1)/N}
+\lesssim_f
+\delta^\gamma L^{1/N-\gamma}
+\lesssim_f
+\delta^{\min(\gamma,1/N)}.
+\]
+Thus
+\begin{align}
+\left\|
+\left\{
+A_{I,\varepsilon}\omega_{I,\delta}
+\right\}_{\substack{I\in\mathcal I_{i,\delta}\\
+\delta<\ell(I)\leq1}}
+\right\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^{\min(\gamma,1/N)}.
+\label{eq:Dunkl-wall-scalar-middle}
+\end{align}
+
+For \(\ell(I)\geq1\), only \(O_f(1)\) cubes at each dyadic scale
+have nonzero coefficients. Hence
+\[
+\sum_{\substack{I\in\mathcal I_{i,\delta}\\
+\ell(I)\geq1}}
+|A_{I,\varepsilon}\omega_{I,\delta}|^N
+\lesssim_f
+\delta^{\gamma N}
+\sum_{\substack{\ell\geq1\\ \ell\ {\rm dyadic}}}
+\ell^{-N(\beta+\gamma)}
+\lesssim_f
+\delta^{\gamma N}.
+\]
+Combining this estimate with
+\eqref{eq:Dunkl-wall-scalar-fine} and
+\eqref{eq:Dunkl-wall-scalar-middle} gives
+\begin{align}
+\left\|
+\left\{
+A_{I,\varepsilon}\omega_{I,\delta}
+\right\}_{I\in\mathcal I_{i,\delta}}
+\right\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^\kappa,
+\qquad
+\kappa:=\min\left(\gamma,\frac1N\right).
+\label{eq:Dunkl-wall-scalar-sequence}
+\end{align}
+It follows from
+\eqref{eq:Dunkl-wall-scalar-NWO} that
+\begin{align}
+\|M_aT_{u,v,\varepsilon}\|_{S^{N,\infty}}
++
+\|T_{u,v,\varepsilon}M_b\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa
+\label{eq:Dunkl-wall-scalar-block}
+\end{align}
+whenever
+\[
+0\leq a\leq1,\quad
+\operatorname{supp}a\subset W_{i,\delta},
+\]
+or, respectively,
+\[
+0\leq b\leq1,\quad
+\operatorname{supp}b\subset\widetilde W_{i,\delta}.
+\]
+
+We next treat localization at infinity. Suppose
+\(0\leq a_R\leq1\) is supported in
+\[
+\Gamma_1\cap\{|x|\geq R\}.
+\]
+If \(A_{I,\varepsilon}\neq0\), then, as in the previous proof,
+\[
+|z_I|\lesssim_f1+\ell(I).
+\]
+Since \(E_{I,\varepsilon}\) is supported in \(I\), for sufficiently
+large \(R\),
+\[
+A_{I,\varepsilon}\neq0,
+\qquad
+I\cap\{|x|\geq R\}\neq\varnothing
+\]
+can occur only if
+\[
+\ell(I)\gtrsim_f R.
+\]
+At every such scale there are \(O_f(1)\) cubes with nonzero
+coefficients. Therefore
+\[
+\|M_{a_R}T_{u,v,\varepsilon}\|_{S^{N,\infty}}
+\lesssim_f
+\left(
+\sum_{\ell(I)\gtrsim_f R}
+|A_{I,\varepsilon}|^N
+\right)^{1/N}
+\lesssim_f
+R^{-\beta}.
+\]
+If \(0\leq b_R\leq1\) is supported in
+\[
+\Gamma_2\cap\{|x|\geq R\},
+\]
+then
+\[
+\operatorname{supp}H_{I,\varepsilon}
+\subset\tau_0I^*
+\]
+and \(|\tau_0x|=|x|\). The same argument gives
+\begin{align}
+\|M_{a_R}T_{u,v,\varepsilon}\|_{S^{N,\infty}}
++
+\|T_{u,v,\varepsilon}M_{b_R}\|_{S^{N,\infty}}
+\lesssim_f
+R^{-\beta}.
+\label{eq:Dunkl-wall-scalar-infinity}
+\end{align}
+
+Choose \(\eta\in C^\infty(\mathbb R)\), \(0\leq\eta\leq1\), such that
+\[
+\eta(t)=0\quad\text{for }t\leq1,
+\qquad
+\eta(t)=1\quad\text{for }t\geq2,
+\]
+and choose a radial
+\(\zeta\in C_c^\infty(\mathbb R^N)\), \(0\leq\zeta\leq1\), satisfying
+\[
+\zeta=1\quad\text{on }B(0,1),
+\qquad
+\operatorname{supp}\zeta\subset B(0,2).
+\]
+For \(0<\delta\leq1\) and \(R\geq1\), define on
+\(\mathbb R^N\)
+\begin{align*}
+\varphi_{\delta,R}(x)
+&:=
+\zeta(x/R)
+\prod_{i=1}^{N_0}
+\eta\left(
+\frac{\langle x,\alpha_i\rangle}{\delta}
+\right),\\
+\psi_{\delta,R}(x)
+&:=
+\zeta(x/R)
+\prod_{i=1}^{N_0}
+\eta\left(
+\frac{\langle x,\tau_0\alpha_i\rangle}{\delta}
+\right).
+\end{align*}
+Then
+\[
+\varphi_{\delta,R}\in C_c^\infty(\Gamma_1^\circ),
+\qquad
+\psi_{\delta,R}\in C_c^\infty(\Gamma_2^\circ),
+\qquad
+0\leq\varphi_{\delta,R},\psi_{\delta,R}\leq1.
+\]
+
+On \(\Gamma_1\),
+\begin{align*}
+1-\varphi_{\delta,R}
+&=
+1-\zeta(\cdot/R)
+\\
+&\quad+
+\sum_{i=1}^{N_0}
+\zeta(\cdot/R)
+\prod_{h<i}
+\eta\left(
+\frac{\langle\cdot,\alpha_h\rangle}{\delta}
+\right)
+\left(
+1-
+\eta\left(
+\frac{\langle\cdot,\alpha_i\rangle}{\delta}
+\right)
+\right).
+\end{align*}
+The first term is supported in
+\(\Gamma_1\cap\{|x|\geq R\}\), and the \(i\)-th term in the sum is
+supported in \(W_{i,\delta}\). The analogous decomposition for
+\(1-\psi_{\delta,R}\) on \(\Gamma_2\) has its \(i\)-th wall term
+supported in \(\widetilde W_{i,\delta}\).
+
+Since \(N>1\), \(S^{N,\infty}\) is normable. Moreover,
+Lemma \ref{lem:Dunkl-commutator-Fourier-NWO-endpoint}
+\eqref{comm-property1} gives
+\[
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
+\]
+Hence, summing
+\eqref{eq:Dunkl-wall-scalar-block} and
+\eqref{eq:Dunkl-wall-scalar-infinity} in
+\eqref{eq:Dunkl-wall-scalar-block}, over
+\(\varepsilon,u,v\), yields
+\begin{align}
+&
+\left\|
+M_{\chi_{\Gamma_1}-\varphi_{\delta,R}}
+T_f
+M_{\chi_{\Gamma_2}}
+\right\|_{S^{N,\infty}}
++
+\left\|
+M_{\chi_{\Gamma_1}}
+T_f
+M_{\chi_{\Gamma_2}-\psi_{\delta,R}}
+\right\|_{S^{N,\infty}}
+\nonumber\\
+&\qquad\lesssim_f
+\delta^\kappa+R^{-\beta}.
+\label{eq:Dunkl-wall-scalar-final-errors}
+\end{align}
+Since
+\[
+M_{\varphi_{\delta,R}}
+=
+M_{\varphi_{\delta,R}}M_{\chi_{\Gamma_1}},
+\qquad
+M_{\psi_{\delta,R}}
+=
+M_{\chi_{\Gamma_2}}M_{\psi_{\delta,R}},
+\]
+we have
+\begin{align*}
+&M_{\chi_{\Gamma_1}}T_fM_{\chi_{\Gamma_2}}
+-
+M_{\varphi_{\delta,R}}T_fM_{\psi_{\delta,R}}
+\\
+&\qquad=
+M_{\chi_{\Gamma_1}-\varphi_{\delta,R}}
+T_fM_{\chi_{\Gamma_2}}
++
+M_{\varphi_{\delta,R}}
+T_f
+M_{\chi_{\Gamma_2}-\psi_{\delta,R}}.
+\end{align*}
+By the ideal property of \(S^{N,\infty}\) and
+\eqref{eq:Dunkl-wall-scalar-final-errors},
+\[
+\left\|
+M_{\varphi_{\delta,R}}T_fM_{\psi_{\delta,R}}
+-
+M_{\chi_{\Gamma_1}}T_fM_{\chi_{\Gamma_2}}
+\right\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa+R^{-\beta}.
+\]
+
+Finally, set
+\[
+\varphi_m:=\varphi_{2^{-m},2^m},
+\qquad
+\psi_m:=\psi_{2^{-m},2^m}.
+\]
+For every \(x\in\Gamma_1^\circ\),
+\[
+\varphi_m(x)\longrightarrow1,
+\]
+whereas \(\varphi_m(x)=0\) for every
+\(x\notin\Gamma_1^\circ\). Thus
+\[
+\varphi_m\longrightarrow\chi_{\Gamma_1^\circ}
+\]
+pointwise. Similarly,
+\[
+\psi_m\longrightarrow\chi_{\Gamma_2^\circ}
+\]
+pointwise. Moreover,
+\[
+\left\|
+M_{\varphi_m}T_fM_{\psi_m}
+-
+M_{\chi_{\Gamma_1}}T_fM_{\chi_{\Gamma_2}}
+\right\|_{S^{N,\infty}}
+\lesssim_f
+2^{-m\kappa}+2^{-m\beta}
+\longrightarrow0.
+\]
+This proves \eqref{eq:Dunkl-automatic-wall-localization}.
+\end{proof}
+
+\begin{lemma}\label{lem:Weyl-jump-wall-localization}
+Let \(\Gamma\) be a closed Weyl chamber,
+\(\sigma\in G\setminus\{\mathrm{Id}\}\), and let \(T\) satisfy the
+assumptions of Theorem \ref{thm:Weyl-jump-multiplier-Schatten}.
+Assume \(N>1\) and \(f\in C_c^\infty(\mathbb R^N)\). Set
+\[
+H:=f-f\circ\sigma.
+\]
+Let
+\[
+0\leq f_m\leq1,
+\qquad
+f_m\in C_c^\infty(\Gamma^\circ),
+\]
+and suppose that
+\[
+f_m(x)\uparrow1,
+\qquad x\in\Gamma^\circ.
+\]
+Then
+\[
+\lim_{m\to\infty}
+\left\|
+M_{f_mH}T-M_HT
+\right\|_{S^{N,\infty}(L^2(\Gamma,dw))}
+=0.
+\]
+\end{lemma}
+
+\begin{proof}
+Fix \(s>2\), choose \(2<s_0<s\), and set
+\[
+\gamma:=\frac1{s_0}-\frac1s>0.
+\]
+Let \(r_s>s\) be as in Lemma
+\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}, and put
+\[
+\beta:=\frac{N}{r_s},
+\qquad
+\kappa:=\min\left(\gamma,\frac1N\right).
+\]
+
+We first establish a localization estimate for \(M_HT\).
+In the proof of Theorem
+\ref{thm:Weyl-jump-multiplier-Schatten}, for fixed
+\(u,v\in\mathbb Z^N\), one writes
+\[
+M_HT
+=
+\sum_{\varepsilon=0}^1
+\sum_{u,v\in\mathbb Z^N}
+c_{u,v}
+\sum_{I\in\mathbb D_\Gamma}
+A_{I,\varepsilon}
+\langle\,\cdot,\overline{F_{u,v,I,\varepsilon}}\rangle
+E_{u,v,I,\varepsilon},
+\]
+with convergence in \(S^{N,\infty}\), where
+\[
+A_{I,0}
+=
+\theta_{\mathrm{Id},\sigma,I}
+\operatorname{osc}_{r_s}(H;I),
+\qquad
+A_{I,1}
+=
+\theta_{\mathrm{Id},\sigma,I}(H)_{I,dx},
+\]
+and
+\[
+\operatorname{supp}E_{u,v,I,\varepsilon}\subset I,
+\qquad
+\|E_{u,v,I,\varepsilon}\|_{L^s(dw)}
++
+\|F_{u,v,I,\varepsilon}\|_{L^s(dw)}
+\lesssim
+w(I)^{1/s-1/2}.
+\]
+
+We claim that
+\begin{equation}\label{eq:Weyl-jump-local-coefficient-decay}
+|A_{I,\varepsilon}|
+\lesssim_f
+\begin{cases}
+\ell(I),&\ell(I)\leq1,\\
+\ell(I)^{-\beta},&\ell(I)\geq1,
+\end{cases}
+\qquad
+\varepsilon=0,1.
+\end{equation}
+For \(\varepsilon=0\), this follows from the smoothness and compact
+support of \(H\):
+\[
+\operatorname{osc}_{r_s}(H;I)
+\lesssim_f\ell(I),
+\qquad
+\ell(I)\leq1,
+\]
+whereas
+\[
+\operatorname{osc}_{r_s}(H;I)
+\lesssim
+|I|^{-1/r_s}\|H\|_{L^{r_s}}
+\lesssim_f
+\ell(I)^{-\beta},
+\qquad
+\ell(I)\geq1.
+\]
+
+For \(\varepsilon=1\), put
+\[
+D_I:=|z_I-\sigma z_I|.
+\]
+Since
+\[
+H(z)=f(z)-f(\sigma z),
+\]
+the Lipschitz regularity of \(f\) gives
+\[
+|H(z)|
+\lesssim_f
+|z-\sigma z|
+\lesssim
+D_I+\ell(I),
+\qquad z\in I.
+\]
+Hence
+\[
+\left|
+\theta_{\mathrm{Id},\sigma,I}(H)_{I,dx}
+\right|
+\lesssim_f
+\frac{\ell(I)}{\ell(I)+D_I}
+\bigl(\ell(I)+D_I\bigr)
+\lesssim_f
+\ell(I).
+\]
+For \(\ell(I)\geq1\),
+\[
+\left|
+\theta_{\mathrm{Id},\sigma,I}(H)_{I,dx}
+\right|
+\leq
+|I|^{-1}\|H\|_{L^1}
+\lesssim_f
+\ell(I)^{-N}
+\lesssim
+\ell(I)^{-\beta}.
+\]
+Thus \eqref{eq:Weyl-jump-local-coefficient-decay} holds.
+
+Let
+\[
+\Delta=\{\alpha_1,\ldots,\alpha_{N_0}\}
+\]
+be the simple system determining \(\Gamma\), and set
+\[
+W_{i,\delta}
+:=
+\left\{
+x\in\Gamma:
+0\leq\langle x,\alpha_i\rangle\leq2\delta
+\right\}.
+\]
+The wall estimate used in the proof of Lemma
+\ref{lem:Dunkl-automatic-wall-localization} gives
+\begin{equation}\label{eq:Weyl-jump-wall-measure-ratio}
+\frac{w(W_{i,\delta}\cap I)}{w(I)}
+\lesssim
+\min\left(1,\frac{\delta}{\ell(I)}\right).
+\end{equation}
+Consequently, if
+\[
+0\leq a\leq1,
+\qquad
+\operatorname{supp}a\subset W_{i,\delta},
+\]
+then H\"older's inequality gives
+\[
+\|aE_{u,v,I,\varepsilon}\|_{L^{s_0}(dw)}
+\lesssim
+\omega_{I,\delta}
+w(I)^{1/s_0-1/2},
+\]
+where
+\[
+\omega_{I,\delta}
+:=
+\min\left(
+1,
+\left(\frac{\delta}{\ell(I)}\right)^\gamma
+\right).
+\]
+After normalization, Lemma \ref{NWOLEMMAA2} therefore yields
+\[
+\left\|
+M_a
+\sum_{I\in\mathbb D_\Gamma}
+A_{I,\varepsilon}
+\langle\,\cdot,\overline{F_{u,v,I,\varepsilon}}\rangle
+E_{u,v,I,\varepsilon}
+\right\|_{S^{N,\infty}}
+\lesssim
+\left\|
+\{A_{I,\varepsilon}\omega_{I,\delta}\}_I
+\right\|_{\ell^{N,\infty}}.
+\]
+Using \eqref{eq:Weyl-jump-local-coefficient-decay} and exactly the
+dyadic counting argument in the proof of Lemma
+\ref{lem:Dunkl-automatic-wall-localization}, one obtains
+\[
+\left\|
+\{A_{I,\varepsilon}\omega_{I,\delta}\}_I
+\right\|_{\ell^{N,\infty}}
+\lesssim_f
+\delta^\kappa.
+\]
+Since
+\[
+\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty,
+\]
+it follows that
+\begin{equation}\label{eq:Weyl-jump-wall-localization-estimate}
+\|M_aM_HT\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa
+\end{equation}
+whenever \(a\) is supported in one of the strips
+\(W_{i,\delta}\).
+
+We also need localization at infinity. If
+\[
+0\leq a_R\leq1,
+\qquad
+\operatorname{supp}a_R
+\subset
+\Gamma\cap\{|x|\geq R\},
+\]
+then \(A_{I,\varepsilon}\neq0\) implies that \(I\) meets a fixed
+compact set depending only on \(f\). Since
+\(\operatorname{supp}E_{u,v,I,\varepsilon}\subset I\), the additional
+condition
+\[
+a_RE_{u,v,I,\varepsilon}\neq0
+\]
+forces
+\[
+\ell(I)\gtrsim_f R.
+\]
+There are only \(O_f(1)\) such cubes at each dyadic scale, and
+\eqref{eq:Weyl-jump-local-coefficient-decay} gives
+\begin{equation}\label{eq:Weyl-jump-infinity-localization-estimate}
+\|M_{a_R}M_HT\|_{S^{N,\infty}}
+\lesssim_f
+R^{-\beta}.
+\end{equation}
+
+Choose \(\eta\in C^\infty(\mathbb R)\), \(0\leq\eta\leq1\), such that
+\[
+\eta(t)=0\quad(t\leq1),
+\qquad
+\eta(t)=1\quad(t\geq2),
+\]
+and choose a radial
+\(\zeta\in C_c^\infty(\mathbb R^N)\), \(0\leq\zeta\leq1\), satisfying
+\[
+\zeta=1\quad\text{on }B(0,1),
+\qquad
+\operatorname{supp}\zeta\subset B(0,2).
+\]
+For \(0<\delta\leq1\) and \(R\geq1\), set
+\[
+\chi_{\delta,R}(x)
+:=
+\zeta(x/R)
+\prod_{i=1}^{N_0}
+\eta\left(
+\frac{\langle x,\alpha_i\rangle}{\delta}
+\right),
+\qquad x\in\Gamma.
+\]
+Then
+\[
+\chi_{\delta,R}\in C_c^\infty(\Gamma^\circ),
+\qquad
+0\leq\chi_{\delta,R}\leq1.
+\]
+The function \(1-\chi_{\delta,R}\) is the sum of one function
+supported in
+\[
+\Gamma\cap\{|x|\geq R\}
+\]
+and finitely many functions supported in the strips
+\(W_{i,\delta}\). Hence
+\eqref{eq:Weyl-jump-wall-localization-estimate} and
+\eqref{eq:Weyl-jump-infinity-localization-estimate} imply
+\begin{equation}\label{eq:Weyl-jump-special-cutoff}
+\left\|
+M_{1-\chi_{\delta,R}}M_HT
+\right\|_{S^{N,\infty}}
+\lesssim_f
+\delta^\kappa+R^{-\beta}.
+\end{equation}
+
+We now return to the prescribed sequence \(f_m\). Since
+\[
+M_{f_mH}T-M_HT
+=
+-M_{1-f_m}M_HT,
+\]
+it suffices to prove
+\[
+\|M_{1-f_m}M_HT\|_{S^{N,\infty}}\longrightarrow0.
+\]
+
+Fix \(\varepsilon>0\). By
+\eqref{eq:Weyl-jump-special-cutoff}, choose first
+\(0<\delta\leq1\) and then \(R\geq1\) so that
+\[
+\left\|
+M_{1-\chi_{\delta,R}}M_HT
+\right\|_{S^{N,\infty}}
+<\varepsilon.
+\]
+Since
+\[
+\operatorname{supp}\chi_{\delta,R}
+\Subset\Gamma^\circ
+\]
+and \(f_m\uparrow1\) pointwise on \(\Gamma^\circ\), Dini's theorem
+gives
+\[
+\sup_{\operatorname{supp}\chi_{\delta,R}}
+(1-f_m)
+\longrightarrow0.
+\]
+Moreover,
+\[
+1-f_m
+=
+(1-f_m)(1-\chi_{\delta,R})
++
+(1-f_m)\chi_{\delta,R}.
+\]
+Therefore, by the ideal property of \(S^{N,\infty}\),
+\begin{align*}
+\|M_{1-f_m}M_HT\|_{S^{N,\infty}}
+&\leq
+\|M_{1-f_m}M_{1-\chi_{\delta,R}}M_HT\|_{S^{N,\infty}}
+\\
+&\quad+
+\|M_{(1-f_m)\chi_{\delta,R}}M_HT\|_{S^{N,\infty}}
+\\
+&\leq
+\left\|
+M_{1-\chi_{\delta,R}}M_HT
+\right\|_{S^{N,\infty}}
+\\
+&\quad+
+\sup_{\operatorname{supp}\chi_{\delta,R}}(1-f_m)
+\,
+\|M_HT\|_{S^{N,\infty}}.
+\end{align*}
+The first term is \(<\varepsilon\), while the second tends to zero.
+Hence
+\[
+\limsup_{m\to\infty}
+\|M_{1-f_m}M_HT\|_{S^{N,\infty}}
+\leq\varepsilon.
+\]
+Since \(\varepsilon>0\) is arbitrary,
+\[
+\|M_{1-f_m}M_HT\|_{S^{N,\infty}}
+\longrightarrow0.
+\]
+Equivalently,
+\[
+M_{f_m(f-f\circ\sigma)}T
+\longrightarrow
+M_{f-f\circ\sigma}T
+\]
+in
+\(S^{N,\infty}(L^2(\Gamma,dw))\).
+\end{proof}
 %
 %\begin{lemma}
 %\label{lem:Dunkl-Ainfty-critical-oscillation0}
