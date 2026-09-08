@@ -1,0 +1,22 @@
+\documentclass{amsart}
+\newtheorem{thm}{Theorem}
+
+\begin{document}
+
+\begin{thm} Let $V$ be an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel $K$ satisfying 
+$$|\partial^{\alpha}_x\partial^{\beta}_yK(x,y)|\leq c_{\alpha,\beta,K}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{V(x,|x-y|)}.$$
+We have
+$$\|[M_f,V]\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_K\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
+\end{thm}
+
+\begin{thm} Let $1\neq g\in G.$ Let $V$ be an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel $K$ satisfying 
+$$|\partial^{\alpha}_x\partial^{\beta}_yK(x,y)|\leq c_{\alpha,\beta,K}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)}.$$
+We have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_K\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
+\end{thm}
+
+The first one should follow from Hytonen. The second is already written by Zhijie (though the proof is scattered across sections and is poor).
+
+The tasks are (a) to write the proof of Theorem 1 modulo Hytonen (b) to write the proof of Theorem 2 in a clear, comprehensible way (c) to infer the upper estimate from Theorems 1 and 2.
+
+\end{document}
