@@ -573,6 +573,168 @@ That oscillation semi-norm of the function $f$ with respect to measure $dx$ and 
 \begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtd}] The argument follows the one in the proof of Theorem \ref{main theorem} \eqref{mtb} {\it mutatis mutandi}.
 \end{proof}
 
+\section{Intermediate upper-bound results}
+
+\begin{theorem} Let $\Gamma$ be a chamber. Let $V$ be an integral operator on $L_2(\Gamma,w(x)dx)$ whose integral kernel $K$ satisfies the condition
+$$|\partial_x^{\alpha}\partial_y^{\beta}K(x,y)|\leq c_{K,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{V(x,|x-y|)},\quad x,y\in\Gamma.$$
+We have
+$$\|[M_f,V]\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_K\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
+\end{theorem}
+
+{\color{red} THE ASSERTION SHOULD FOLLOW FROM HYTONEN.}
+
+\begin{theorem} Let $\Gamma$ be a chamber and let $1_G\neq g\in G.$ Let $V$ be an integral operator on $L_2(\Gamma,w(x)dx)$ whose integral kernel $K$ satisfies the condition
+$$|\partial_x^{\alpha}\partial_y^{\beta}K(x,y)|\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma.$$
+We have
+$$\|M_{f-f\circ g}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_K(\|f\|_{\dot{W}^{1,N}(\Gamma)}+\|f\circ g\|_{\dot{W}^{1,N}(\Gamma)}).$$
+\end{theorem}
+
+
+\begin{nota}
+Fix a closed Weyl chamber $\Gamma$ and let $\Phi:\mathbb{R}^N\to\mathbb{R}^N$ be the linear isomorphism appearing in Corollary \ref{coro:chamber-orthant}.
+
+Let $\mathbb{D}_{\Gamma}$ be the dyadic system over $\Gamma$ constructed in
+Corollary \ref{Construction over gamma}. If $I\in\mathbb{D}_{\Gamma}$ and if $Q=\Phi(I),$ then we denote $d_I=\ell(Q).$
+\end{nota}
+
+\begin{lemma} There exists a smooth function $\psi$ supported on $[-1,1]^N\backslash(-\frac14,\frac14)^N$ such that
+$$1=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+\end{lemma}
+\begin{proof} Choose $\rho\in C_c^{\infty}(\mathbb{R}^N)$ such that $\rho=1$ on $(-\frac12,\frac12)^N$ and $\rho=0$ outside $(-1,1)^N.$ Set $\psi(z)=\rho(z)-\rho(2z).$ Clearly,
+\begin{equation}\label{eq:rankone-psi-support}
+\operatorname{supp}(\psi)\subset
+\left\{z\in\mathbb{R}^N:\quad 
+\frac14\leq |z|_{\infty}\leq 1\right\}.
+\end{equation}
+For every $z\neq0,$ we have
+\begin{equation}\label{eq:rankone-psi-partition}
+\sum_{j\in\mathbb{Z}}\psi(2^jz)=1.
+\end{equation}
+
+For every $x\in\Gamma,$ there exists a unique $I\in\mathbb{D}_{\Gamma,j}$ containing $x.$ For this $I,$ we have $d_I=2^{-j}.$ We have
+$$1=\sum_{j\in\mathbb{Z}}\psi(2^j(\Phi(x)-\Phi(y)))=\sum_{j\in\mathbb{Z}}(\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x))\psi(2^j(\Phi(x)-\Phi(y)))=$$
+$$=\sum_{j\in\mathbb{Z}}\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+
+If $x\in I$ and $\psi(\frac{\Phi(x)-\Phi(y)}{d_I})\neq 0,$ then
+$$\Phi(x)\in\Phi(I)=Q,\quad |\Phi(x)-\Phi(y)|\leq d_I=\ell(Q).$$
+We obviously have $|\Phi(x)-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|\Phi(x)-\Phi(y)|_{\infty}\leq\ell(Q).$ Thus, $|\Phi(y)-c_Q|\leq\frac32\ell(Q).$ In other words, $\Phi(y)\in 3Q$ or, equivalently, $y\in 3I.$ Thus,
+$$\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+This completes the proof.
+\end{proof}
+
+
+\begin{lemma}\label{lem:rank-one-decomposition-Dunkl} Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R} ^N,w(x)dx).$ There exist functions
+$
+\{e_{k,l,I}\}_{k,l\in\mathbb{Z}^N,I\in\mathbb{D}_{\Gamma}},$ $
+\{f_{k,l,I}\}_{k,l\in\mathbb{Z}^N,I\in\mathbb{D}_{\Gamma}},$
+such that
+\begin{enumerate}[{\rm (i)}]
+\item $e_{k,l,I}$ is supported in $I$ and $f_{k,l,I}$ is supported in $3I;$
+\item
+$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)},\quad \|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}d_Iw(I)^{\frac1r-1};$$
+\item For almost every $x,y\in\Gamma,$ we have
+\begin{equation}\label{eq:Dunkl-kernel-rank-one-new}
+f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-2N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y).
+\end{equation}
+\end{enumerate}
+\end{lemma}
+\begin{proof} We have
+$$K(x,y)=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
+$$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})+$$
+$$+\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\not\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+
+We will only consider the first sum on the right hand side. The second some can be treated similarly, but the notations become heavier. {\color{red} feel free to write the expression for the second sum if you think it is needed. the only difference is that the domain of the map $K_I$ becomes more complicated.}
+
+For every $I\in\mathbb{D}_{\Gamma}$ with $3I\subset\Gamma,$ define the map
+$$K_I:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
+by setting
+$$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
+
+It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
+$$\|K_I\|_{C^{4N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq c_K\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)}.$$
+Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
+$$\|K_I\|_{C^{4N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq c_K'\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)}.$$
+In particular,
+$$\|K_I\|_{W^{4N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq c_K''\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)}.$$
+We may, therefore, write
+$$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
+where
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{4N+2}|{\rm coef}_{k,l,I}|^2\leq (c_K''\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)})^2.$$
+In particular,
+$$|{\rm coef}_{k,l,I}|\leq c_K''(1+|k|^2+|l|^2)^{-2N-1}\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)}.$$
+
+This allows us to write
+$$\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
+$$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K_I(\frac{\Phi^{-1}(x-c_I)}{d_I},\frac{\Phi^{-1}(x)-c_I}{d_I})=$$
+$$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle}e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+%
+%$$=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-2N-1}\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}(1+|k|^2+|l|^2)^{2N+1}{\rm coef}_{k,l,I}\cdot \chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle}\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+
+We now set
+$$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
+$$f_{k,l,I}(y)=(1+|k|^2+|l|^2)^{2N+1}{\rm coef}_{k,l,I}\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+In those notations,
+$$f(x)\cdot\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
+$$=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-2N-1}\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y).$$
+
+Obviously,
+$${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
+$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
+$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{2N+1}|{\rm coef}_{I,k,l}|\cdot w(3I)^{\frac1r}\leq$$
+$$\leq c_K''\frac{d_I}{(d_I+|c_I-gc_I|)\cdot w(I)}\cdot w(3I)^{\frac1r}\leq c_K'''\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{\frac1r-1}.$$
+\end{proof}
+
+\begin{lemma}\label{intermediate cwikel estimate} We have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{K,\kappa}\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}.$$
+\end{lemma}
+
+\begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
+$$\sup_{x\in I}w(x)\leq c_{\kappa,\Phi}\frac{w(I)}{|I|}.$$
+\end{lemma}
+\begin{proof} We have
+$$w(I)\approx w(c_I,d_I)\approx d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+On the other hand, if $x\in I,$ then $|x-c_I|\leq c_{\Phi}d_I$ and, therefore,
+$$|\langle x,v\rangle|\leq |\langle x-c_I,v\rangle|+|\langle c_I,v\rangle|\leq |x-c_I|+|\langle c_I,v\rangle|\leq c_{\Phi}d_I+|\langle c_I,v\rangle|.$$
+Thus,
+$$w(x)\leq \prod_{v\in R}(c_{\Phi}d_I+|\langle c_I,v\rangle|)^{k(v)}\leq c_{\Phi,\kappa}\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+This completes the proof.
+\end{proof}
+
+\begin{lemma} Let $1_G\neq g\in G.$ We have
+$$\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I,w(x)dx)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}\leq$$
+$$\leq c_{\kappa,\Phi,r}\Big(\Big\|\Big\{|I|^{-\frac1r}\|f-f_I\|_{L_r(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}+$$
+$$+\Big\|\Big\{|I|^{-\frac1r}\|f\circ g-(f\circ g)_I\|_{L_r(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}+\Big\|\Big\{d_I|I|^{-1}\|H_g\|_{L_1(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{l_{N,\infty}}\Big).$$
+\end{lemma}
+\begin{proof} Denote by $f_{I,w}$ and, respectively, $(f\circ g)_{I,w}$ the averaging (with respect to measure $w(x)dx$) of $f$ (respectively, of $f\circ g$) over $I.$ We, obviously, have
+$$\|f-f\circ g\|_{L_r(I,w(x)dx)}\leq\|f-f_{I,w}\|_{L_r(I,w(x)dx)}+$$
+$$+\|f\circ g-(f\circ g)_{I,w}\|_{L_r(I,w(x)dx)}+|f_{I,w}-(f\circ g)_{I,w}|\cdot w(I)^{\frac1r}.$$
+Obviously,
+$$|f_{I,w}-(f\circ g)_{I,w}|\leq\|f-f\circ g\|_{L_1(I,w(x)dx)}\cdot w(I)^{-1}$$
+and
+$$\|f-f_{I,w}\|_{L_r(I,w(x)dx)}\leq 2\inf_{c\in\mathbb{R}}\|f-c\|_{L_r(I,w(x)dx)}\leq2\|f-f_I\|_{L_r(I,w(x)dx)},$$
+$$\|f\circ g-(f\circ g)_{I,w}\|_{L_r(I,w(x)dx)}\leq 2\inf_{c\in\mathbb{R}}\|f\circ g-c\|_{L_r(I,w(x)dx)}\leq2\|f\circ g-(f\circ g)_I\|_{L_r(I,w(x)dx)}.$$
+Therefore,
+$$\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I,w(x)dx)}\leq$$
+$$\leq 2w(I)^{-\frac1r}\|f-f_I\|_{L_r(I,w(x)dx)}+2w(I)^{-\frac1r}\|f\circ g-(f\circ g)_I\|_{L_r(I,w(x)dx)}+$$
+$$+\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{-1}\|f-f\circ g\|_{L_1(I,w(x)dx)}.$$
+
+Using Lemma \ref{supremum vs average}, we write
+$$w(I)^{-\frac1r}\|f-f_I\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}|I|^{-\frac1r}\|f-f_I\|_{L_r(I)},$$
+$$w(I)^{-\frac1r}\|f\circ g-(f\circ g)_I\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}|I|^{-\frac1r}\|f\circ g-(f\circ g)_I\|_{L_r(I)}.$$
+
+Obviously,
+$$|x-gx|\leq|x-c_I|+|gx-gc_I|+|c_I-gc_I|\leq c_{\kappa,\Phi}'(d_I+|c_I-gc_I|),\quad x\in I.$$
+Set
+$$H_g(x)=\frac{|f(x)-f(gx)|}{|x-gx|},\quad x\in I.$$
+We have
+$$\frac1{d_I+|c_I-gc_I|}|f-f\circ g|\leq c_{\kappa,\Phi}''H_g.$$
+Thus,
+$$\frac1{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I,w(x)dx)}\leq c_{\kappa,\Phi}''\|H_g\|_{L_1(I,w(x)dx)}.$$
+Using Lemma \ref{supremum vs average}, we conclude
+$$\frac1{d_I+|c_I-gc_I|}w(I)^{-1}\|f-f\circ g\|_{L_1(I,w(x)dx)}\leq c_{\kappa,\Phi}'''\frac1{|I|}\|H_g\|_{L_1(I)}.$$
+Combining these estimates, we complete the proof.
+\end{proof}
+
 
 \section{Constant characterization}
 \setcounter{equation}{0}
