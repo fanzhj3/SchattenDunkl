@@ -4603,16 +4603,16 @@ $$\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\subst
 The right hand side obviously belongs to $(l_{N,\infty})_0(\mathbb{D}_{\Gamma})$ and, hence, so does the left hand side. Thus,
 $${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
 $$\leq\Big\|\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
-Repeating the argument in Lemma \ref{first RS prefinal lemma} verbatim, we obtain
-$$m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\leq $$
-$$\leq c_{\Phi}'''\cdot m(I)^{\frac1N-1}\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
-for every $I\in\mathbb{D}_{\Gamma}.$ Thus,
+Obviously,
+$$|f(x)-f(y)|\leq c_N|x-y|\cdot\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}.$$
+Hence,
+$$\|f-f\circ g\|_{L_1(I)}\leq c_N\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\int_I|x-gx|dx\leq$$
+$$\leq c_{\Phi}'m(I)\times (d_I+|c_I-gc_I|)\times \|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}.$$
+Thus,
+$$\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}m(I)^{\frac1N}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}$$
+Finally,
 $${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq\frac{N}{N-1}c_{\Phi}'''\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\partial f|)\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}+$$
-$$+\frac{N}{N-1}c_{\Phi}'''\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\partial f|)\|_{L_1(gI)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\leq$$
-$$\leq\frac{N}{N-1}c_{\Phi}'''\|\mathcal{M}(|\nabla f|)\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}+$$
-$$+\frac{N}{N-1}c_{\Phi}'''\|\mathcal{M}(|\nabla f|)\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\leq$$
-$$\leq\frac{2N}{N-1}c_{\Phi}'''\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
+$$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
 \end{proof}
 
 \begin{lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
