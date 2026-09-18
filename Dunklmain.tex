@@ -599,23 +599,18 @@ $\mathbb D^1,\ldots,\mathbb D^{2^N}$, we complete the proof of Lemma \ref{Nsyste
 Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{FLLXarxiv,HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).  For our purposes, we adapt  the extension to the Dunkl setting $(\mathbb{R}^N,\|\cdot\|,w)$ rather than recalling the general  definition
 of NWO sequences and the general extension to spaces of homogeneous type.
 
-\begin{definition}\label{NWO def} Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
+\begin{definition}\label{NWO def} Let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ is called $(r,c)$-NWO if
 \begin{enumerate}
-\item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
-\item $\|e_Q\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{\frac1r-\frac12}$ for some $r>2.$
+\item ${\rm supp}(e_I)\subseteq cI$ for every $I\in\mathbb{D}_{\Gamma};$ 
+\item $\|e_I\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(I)^{\frac1r-\frac12}$ for every $I\in\mathbb{D}_{\Gamma};$
 \end{enumerate}
 \end{definition}
 
-{\color{red}[We need to replace the following Lemma by Hytonen's version on space of homogeneous type. Zhijie Will do it later]}
-
-
-\begin{lemma}\label{NWO lemma}
-Let $0<p<\infty$, $0<q\leq \infty$, and let $\mathscr{D}$ be a
-system of dyadic cubes over $\mathbb{R}^N$. Assume that
-$$A=\sum_{Q\in\mathscr{D}}\lambda_Q\langle \cdot,\,e_Q\rangle_{L^2(\mathbb{R}^N,dw)} f_Q,$$
-where $\{e_Q\}_{Q\in\mathscr{D}}$ and $\{f_Q\}_{Q\in\mathscr{D}}$ are NWO sequences and $\{\lambda_Q\}_{Q\in\mathscr{D}}$ is a sequence of scalars. We have
+\begin{lemma}\label{NWO lemma} Let $0<p<\infty,$ $0<q\leq \infty,$ and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
+$$(x,y)\to \sum_{I\in\mathbb{D}_{\Gamma}}\lambda_I e_I(x)f_I(y),\quad x,y\in\Gamma,$$
+where $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ and $\{f_I\}_{I\in\mathscr{D}_{\Gamma}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 \begin{align}\label{nwose}
-\|A\|_{S^{p,q}}\leq C_{N,p,q,w} \|\{\lambda_Q\}_Q\|_{\ell^{p,q}}.
+\|A\|_{\mathcal{L}_{p,q}(L_2(\Gamma,w(x)dx))}\leq C_{\kappa,r_1,c_1,r_2,c_2,p,q} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,q}.
 \end{align}
 \end{lemma}
 \begin{proof}
@@ -4605,7 +4600,7 @@ where
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)};$$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{\frac1r-1};$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|};$$
 \end{enumerate}
 \end{lemma}
 \begin{proof} We have
@@ -4620,17 +4615,17 @@ by setting
 $$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
 
 It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
-$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
-$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 In particular,
-$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 We may, therefore, write
 $$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
 where
-$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
 In particular,
-$$|{\rm coef}_{k,l,I}|\leq (1+|k|^2+|l|^2)^{-N-1}\cdot \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
 
 We now set
 $$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
@@ -4641,15 +4636,14 @@ $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}
 Obviously,
 $${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
-$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\cdot w(3I)^{\frac1r}\leq$$
-$$\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\cdot w(3I)^{\frac1r}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{\frac1r-1}.$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 \end{proof}
 
 \begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\sup_{x\in I}w(x)\leq c_{\kappa,\Phi}\frac{w(I)}{m(I)}.$$
 \end{lemma}
 \begin{proof} We have
-$$w(I)\approx w(c_I,d_I)\approx d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+$$w(I)\approx w(B(c_I,d_I))\approx d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
 On the other hand, if $x\in I,$ then $|x-c_I|\leq c_{\Phi}d_I$ and, therefore,
 $$|\langle x,v\rangle|\leq |\langle x-c_I,v\rangle|+|\langle c_I,v\rangle|\leq |x-c_I|+|\langle c_I,v\rangle|\leq c_{\Phi}d_I+|\langle c_I,v\rangle|.$$
 Thus,
@@ -4671,13 +4665,13 @@ $$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
 $$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
-are NWO (in the sense of Definition \ref{NWO def} with constant $c$ being $3$). Using Lemma \ref{NWO lemma}, we conclude that
+are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
 $$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\kappa,r}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\gamma}}\Big\|_{N,\infty}.$$
+$$\leq c_{\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 Therefore,
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}c_{K,\kappa}c_{\kappa,r}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\gamma}}\Big\|_{N,\infty}.$$
+$$\leq \frac{N}{N-1}c_{\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
 $$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
 Combining the last two estimates, we complete the proof.
