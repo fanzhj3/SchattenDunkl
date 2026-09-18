@@ -1,6 +1,5 @@
 \documentclass{amsart}
 \usepackage{amsmath, amsthm, amsfonts, amssymb, color}
-\usepackage{mathrsfs}
 \usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
 
 
@@ -57,60 +56,6 @@
 
 
 \tableofcontents
-
-\section{Introduction}
-
-\begin{definition}
-Let \(1\le r<\infty\). For a measurable set \(E\subset\mathbb R^N\) of finite positive measure and \(f\in L^r(E)\), define
-\[
-\operatorname{osc}_r(f;E)
-:=
-\left(
-\frac1{|E|}
-\int_E|f-(f)_E|^r\,dx
-\right)^{1/r}.
-\]
-\end{definition}
-\begin{definition}
-Let \(0<p<\infty\), \(0<q\leq\infty\), and \(1\leq r<\infty\). Define
-\[
-OSC^{p,q}(\mathbb R^N)
-:=
-\left\{
-f\in L^r_{\mathrm{loc}}(\mathbb R^N):
-\|f\|_{OSC^{p,q}(\mathbb R^N)}<\infty
-\right\},
-\]
-where
-\[
-\|f\|_{OSC^{p,q}(\mathbb R^N)}
-:=
-\sum_{\nu=1}^{2^N}
-\left\|
-\left\{
-\operatorname{osc}_r(f;Q)
-\right\}_{Q\in\mathbb D^\nu}
-\right\|_{\ell^{p,q}}.
-\]
-\end{definition}
-By \cite[Proposition 4.1]{RS}, the above definition is independent of $r$.
-
-
-
-\subsection{Notation}
-Conventionally, we let $\mathbb{N}$ denote the set of positive integers and set $\mathbb{Z}_+ := \{0\} \cup \mathbb{N}$. Throughout the paper, the symbols $C$ and $c$ denote positive constants (possibly varying from line to line) that may depend only on $N$, $p$, and the structural data $(R,k)$ of the Dunkl setting, but are independent of the main parameters (e.g., the symbol $b$ and auxiliary decay factors).
- We write $A \lesssim B$ to mean that $A \leq C B$ for some constant $C > 0$, and $A \sim B$ to mean that both $A \lesssim B$ and $B \lesssim A$ hold.
-For \(\lambda>0\) and a cube \(Q\) with sidelength \(\ell(Q)\), write \(\lambda Q\) for the cube concentric with \(Q\) and sidelength \(\lambda\,\ell(Q)\). Similarly, for every ball \(B=B(x,r)\), set \(\lambda B:=B(x,\lambda r)\). For any $1\leq p\leq\infty$, we denote by $p'$ the conjugate of $p$, which satisfies $\frac{1}{p}+\frac{1}{p'}=1$. We denote the average of a function $f$ over a measurable set $E$ by
-\[
-(f)_{E,dx}
-:=
-\frac{1}{|E|}
-\int_{E}f(x)\,dx.
-\]
-For a subset $E \subset \mathbb{R}^{N}$, we denote by $\chi_E$ its characteristic function.
-
-Denote by $\{e_j\}_{j=1}^N$ the standard orthonormal basis on $\mathbb{R}^N$.
-%For two measurable Borel sets $E$ and $F$, we use the notation ${\rm dist}(E,\,F)$ to denote the distance between them.
 
 
 \section{Preliminaries}
@@ -445,76 +390,10 @@ K_{{\rm Dunkl},j}(x,y)
 This completes the proof of Lemma~\ref{lem:Dunkl-Riesz-endpoint-derivatives}.
 \end{proof}
 
-\begin{lemma}\label{nondegenerate}
-For $j\in\{1,2,\ldots,N\}$, and for every ball $B=B(x_0,r)\subset \mathbb{R}^N$, there is another ball $\widehat{B}=B(y_0,r)$ with $y_0=x_0+5re_j$ such that for every $(x,y)\in B\times \widehat{B}$, $K_j(x,y)$ does not change sign and satisfies
-\begin{align*}
-|K_j(x,y)|\geq\frac{C}{w(B(x_0,r))}.
-\end{align*}
-\end{lemma}
-\begin{proof}
-The lower bound is given in \cite[Theorem 1.2]{MR4733961}, while the fact that $K_j(x,y)$ does not change sign can be seen in the proof of \cite[Theorem 1.2]{MR4733961}. Indeed, with the choice $y_0:=x_0+5re_j$, we have $y_j-x_j\geq 3r$ for all $(x,y)\in B\times \widehat{B}$. Together with the fact that the heat kernel $h_t(x,y)$ associated with the Dunkl Laplacian is  positive, the representation
-$$K_j(x,y)=-\frac{C}{2}\int_0^\infty \frac{y_j-x_j}{t}h_t(x,y)\frac{dt}{\sqrt{t}},$$
-implies that $K_j(x,y)<0$ (and thus, does not change sign) on $ B\times \widehat{B}$.
-\end{proof}
-
-
-
 \subsection{Systems of dyadic cubes}
 
-
-\begin{definition}\label{Defsystem}{\rm
-Let $X\subseteq \mathbb{R}^N$ be a nonempty open set. A countable family
-$
-    \mathscr{D}
-    := \bigcup_{k\in\mathbb{Z}}\mathscr{D}_{k}, \
-    \mathscr{D}_{k}
-    :=\{Q^k_{\alpha}\colon \alpha\in \mathscr{A}_k\},
-$
-of Borel sets $Q^k_{\alpha}\subseteq X$ is called \textit{a
-system of dyadic cubes over  $X$}  if it has the following properties:
-
-\begin{enumerate}
-  \item[(i)] For each $k\in\mathbb{Z}$, we have $$    X
-    = \bigcup_{\alpha\in \mathscr{A}_k} Q^k_{\alpha};$$\smallskip
-
-  \item[(ii)] $\text{If }\ell\geq k\text{, then either }
-        Q^{\ell}_{\beta}\subseteq Q^k_{\alpha}\text{ or }
-        Q^k_{\alpha}\cap Q^{\ell}_{\beta}=\varnothing$;\smallskip
-
-  \item[(iii)] $
-    \text{For each }(k,\alpha)\text{ and each } \ell\leq k,
-    \text{ there exists a unique } \beta
-    \text{ such that }Q^{k}_{\alpha}\subseteq Q^\ell_{\beta};
-$
-
-\smallskip
-
-\item[(iv)] For each $(k,\alpha)$ there exist $2^N$ indices $\beta$ such that
-    $$ Q^{k+1}_{\beta}\subseteq Q^k_{\alpha},\ {\rm and}\
-        Q^k_{\alpha} =\bigcup_{{\substack{Q\in\mathscr{D}_{k+1}\\ Q\subseteq Q^k_{\alpha}}}}Q;$$
-
-\smallskip
-
-\item[(v)] For each $(k,\alpha)$, one has $$B_X(x^k_{\alpha},A_1 2^{-k})
-    \subseteq Q^k_{\alpha}\subseteq B_X(x^k_{\alpha},A_2 2^{-k})
-    =: B(Q^k_{\alpha})$$
-    for some positive constants $A_1,A_2$ depending only on the geometry of $X$, {where we set $B_X(x,r):=B(x,r)\cap X$ for all $x\in X$ and $r>0$.}
-
-\smallskip
-
-\item [(vi)]  If $\ell\geq k$ and
-   $Q^{\ell}_{\beta}\subseteq Q^k_{\alpha}$, then
-   $$B(Q^{\ell}_{\beta})\subseteq B(Q^k_{\alpha}).$$
-\end{enumerate}
-
-
-
-   }
-\end{definition}
-
-Each $Q^k_{\alpha}$ is called a \textit{dyadic cube of generation} $k$, with center $x^k_{\alpha}\in Q^k_{\alpha}$ and side-length $\ell(Q^k_{\alpha})=2^{-k}$.
 \begin{nota}
-For every dyadic cube $Q\in\mathscr{D}$, we denote by $c_Q$ and $\ell(Q)$ its center and side-length, respectively.
+For every dyadic cube $Q\in\mathbb{D}$, we denote by $c_Q$ and $\ell(Q)$ its center and side-length, respectively.
 \end{nota}
 
 \begin{nota}\label{standardsystem}
@@ -527,93 +406,25 @@ with $(m_1,\ldots,m_N)\in \mathbb{Z}^N$. Moreover, we let $$\mathbb{D}_{\Gamma}:
 \end{nota}
 
 
-\begin{lemma}\label{Nsystems}
-There exist $2^N$ systems of dyadic cubes $\mathbb{D}^1,\mathbb{D}^2,\ldots,\mathbb{D}^{2^N}$ such that for any ball $B=B(x_B,r_B)\subset \mathbb{R}^N$ with $\frac{2^{-k-2}}{3}\leq r_B< \frac{2^{-k-1}}{3}$ for some $k\in\mathbb{Z}$,  there exists a cube ${\displaystyle Q\in\bigcup_{\nu=1}^{2^N}\mathbb{D}^\nu_k}$ such that
-$$B\subset Q\subset 12\sqrt{N} B.$$
-\end{lemma}
-
-\begin{proof}
-{\bf $\bullet$ Step 1.}  {\it Recall the one-dimensional setting given in \cite[Section 2]{MR3420475}.}
-
-Let $\mathbb{D}^{(0)}(\mathbb{R})$ be the standard system of dyadic intervals over $\mathbb{R}$ (see Notation \ref{standardsystem}).
-Let $\delta=1/3$ and define
-$$
-   \mathbb D^{(\delta)}(\mathbb R)=\bigcup_{k\in\mathbb Z} \mathbb D^{(\delta)}_k(\mathbb R),
-$$
-where for $k\geq0$,
-$$
-    \mathbb D^{(\delta)}_k(\mathbb R)=\{I+\delta \mid I\in \mathbb D_k^{(0)}(\mathbb R)\},
-$$
-while for $k<0$ and $k$ even,
-$$
-    \mathbb D^{(\delta)}_k(\mathbb R)
-    =\Big\{\Big[{m\over 2^k}+\delta+\sum_{j=(k/2)+1}^0 2^{-2j},\ {m+1\over 2^k}
-    +\delta+\sum_{j=(k/2)+1}^0 2^{-2j}\Big)\ \Big|\ m\in
-    \mathbb Z\Big\}.
-$$
-These choices together with the nestedness property property completely
-determine the collections $\mathbb D^{(\delta)}_k(\mathbb R)$ for $k<0$, $k$ odd.
-
-Fix an interval $J\subset\mathbb R$ with $2^{-k-1}/3\le |J|<2^{-k}/3$ for some $k\in\mathbb Z$. Now we set
-$A_k=\{ m\cdot 2^{-k} \mid m\in\mathbb Z \}$ for every fixed $k$ and
-\begin{enumerate}
-    \item[(1)]$A_k^{(\delta)}=\{ \delta+ m\cdot 2^{-k} \mid m\in\mathbb Z
-        \}$ for $k\geq 0$,
-
-    \item[(2)]$A_k^{(\delta)}=\{ \delta+
-        \sum_{j=(k/2)+1}^{0}2^{-2j}+ m\cdot 2^{-k} \mid m\in\mathbb Z
-        \}$ for $k<0$, $k$ even, and
-
-    \item[(3)]$A_k^{(\delta)}=\{ \delta+
-        \sum_{j=(k-1)/2+1}^{0}2^{-2j}+ m\cdot 2^{-k} \mid
-        m\in\mathbb Z \}$ for $k<0$, $k$ odd.
-\end{enumerate}
-Note that for any two different points $a,b\in A_k\cup
-A_k^{(\delta)}$, we have $|a-b|\geq 2^{-k}/3>|J|$. Thus,
-there is at most one element of $A_k\cup A_k^{(\delta)}$ contained in
-$J$. Hence, $J\cap A_k=\emptyset $ or $J\cap
-A_k^{(\delta)}=\emptyset $. Therefore, $J$ must be contained in
-some dyadic interval $I\in \mathbb D_k^{(0)}$ or $I\in \mathbb D^{(\delta)}_k$ and
-$|I|=2^{-k}\leq 6 |J|$.
-
-{\bf $\bullet$ Step 2.} {\it We extend the construction to $\mathbb{R}^N$ ($N\geq 1$).}
-
-For $\vartheta=(\vartheta_1,\vartheta_2,\ldots,\vartheta_N)\in\{0,\delta\}^N$, define
-$$\mathbb{D}^{(\vartheta)}:=\bigcup_{k\in\mathbb{Z}}\mathbb{D}_k^{(\vartheta)},\quad \mathbb{D}_k^{(\vartheta)}:=\left\{\prod_{j=1}^N I_j: I_j\in \mathbb{D}_k^{(\vartheta_j)}\right\}.$$
-Applying Step 1 to $\pi_i(B)$, where $\pi_i(B)$ denotes the $i$-th coordinate projection, we obtain $I_i\in\mathbb{D}_k^{(0)}$ or $I_i\in\mathbb{D}_k^{(\delta)}$ with $\pi_i(B)\subset I_i$ and $|I_i|=2^{-k}\leq 12 r_B$. Let $\vartheta_i\in\{0,\delta\}$
-be the corresponding shift so that $I_i\in\mathbb D_k^{(\vartheta_i)}$, set $\vartheta:=(\vartheta_1,\ldots,\vartheta_N)$, and let $Q=\prod_{j=1}^NI_j\in\mathbb{D}_k^{(\vartheta)}$. It follows that $B\subset Q$ and $\ell(Q)=2^{-k}\leq 12r_B$. Hence, for every $y\in Q$,
-$$\|y-x_B\|\leq \sqrt{N}\ell(Q)\leq 12\sqrt{N}r_B.$$
-This implies that $Q\subset B(x_B,12\sqrt{N}r_B)$. Enumerating $\big\{\mathbb D^{(\vartheta)}:\vartheta\in\{0,\delta\}^N\big\}$ as
-$\mathbb D^1,\ldots,\mathbb D^{2^N}$, we complete the proof of Lemma \ref{Nsystems}.
-\end{proof}
-
-
-
-%Hence, for any ball $B\subset \mathbb{R}^N$, via reducing to each axis in $\mathbb{R}^N$
-%and repeating the argument in $\mathbb{R}$, we see that there exist $k\in\mathbb Z$ and a cube ${\displaystyle Q\in\bigcup_{\nu=1}^{2^N}\mathbb{D}^\nu_k}$ such that
-%$$B\subset Q\subset \kappa_N B,$$
-%where $\kappa_N$ is a positive constant depending only on $N$.
-
-
 \subsection{Nearly weakly  orthonormal sequences}
 Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{FLLXarxiv,HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).  For our purposes, we adapt  the extension to the Dunkl setting $(\mathbb{R}^N,\|\cdot\|,w)$ rather than recalling the general  definition
 of NWO sequences and the general extension to spaces of homogeneous type.
 
-\begin{definition}\label{NWO def} Let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ is called $(r,c)$-NWO if
+\begin{definition}\label{NWO def} Let $\Gamma$ be a chamber. Let $\Phi$ be as in Corollary \ref{coro:chamber-orthant} and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ is called $(r,c)$-NWO if
 \begin{enumerate}
 \item ${\rm supp}(e_I)\subseteq cI$ for every $I\in\mathbb{D}_{\Gamma};$ 
 \item $\|e_I\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(I)^{\frac1r-\frac12}$ for every $I\in\mathbb{D}_{\Gamma};$
 \end{enumerate}
 \end{definition}
 
-\begin{lemma}\label{NWO lemma} Let $0<p<\infty,$ $0<q\leq \infty,$ and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
+\begin{lemma}\label{NWO lemma} Let $0<p<\infty,$ $0<q\leq \infty.$ Let $\Gamma$ be a chamber. Let $\Phi$ be as in Corollary \ref{coro:chamber-orthant} and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
 $$(x,y)\to \sum_{I\in\mathbb{D}_{\Gamma}}\lambda_I e_I(x)f_I(y),\quad x,y\in\Gamma,$$
-where $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ and $\{f_I\}_{I\in\mathscr{D}_{\Gamma}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
+where $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ and $\{f_I\}_{I\in\mathbb{D}_{\Gamma}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 \begin{align}\label{nwose}
-\|A\|_{\mathcal{L}_{p,q}(L_2(\Gamma,w(x)dx))}\leq C_{\kappa,r_1,c_1,r_2,c_2,p,q} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,q}.
+\|A\|_{\mathcal{L}_{p,q}(L_2(\Gamma,w(x)dx))}\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p,q} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,q}.
 \end{align}
 \end{lemma}
-\begin{proof}
+\begin{proof} {\color{red} state a similar lemma with $\Gamma$ replaced by $\mathbb{R}^{n_1}_+\times\mathbb{R}^{n_2}$ and more-or-less-generic weight instead of $w.$ Provide reference to the LATTER assertion. this assertion would trivially follow from the to-be-stated one.}
 This property can be found in  \cite[(1.9)]{RS} (see also \cite[Section 7]{HKarxiv}).
 \end{proof}
 
@@ -4549,7 +4360,7 @@ Lemma \ref{lem:Dunkl-spectral-density-Sobolev}. This completes the proof of
 Theorem \ref{thm:Dunkl-Riesz-spectral-asymptotic}.
 \end{proof}
 
-\section{Alternative proof by using Dima's approach}
+\section{First Rochberg-Semmes based estimate}
 
 \begin{theorem}\label{first RS-type theorem} Let $N>1.$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
 $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
@@ -4600,7 +4411,7 @@ where
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)};$$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|};$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa,\Phi}\frac{d_I}{d_I+|c_I-gc_I|};$$
 \end{enumerate}
 \end{lemma}
 \begin{proof} We have
@@ -4615,17 +4426,17 @@ by setting
 $$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
 
 It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
-$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa,\Phi}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
-$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 In particular,
-$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 We may, therefore, write
 $$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
 where
-$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
 In particular,
-$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
+$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
 
 We now set
 $$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
@@ -4636,14 +4447,14 @@ $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}
 Obviously,
 $${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
 \end{proof}
 
 \begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\sup_{x\in I}w(x)\leq c_{\kappa,\Phi}\frac{w(I)}{m(I)}.$$
 \end{lemma}
 \begin{proof} We have
-$$w(I)\approx w(B(c_I,d_I))\approx d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+$$w(I)\approx_{\Phi,\kappa} w(B(c_I,d_I))\approx_{\kappa} d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
 On the other hand, if $x\in I,$ then $|x-c_I|\leq c_{\Phi}d_I$ and, therefore,
 $$|\langle x,v\rangle|\leq |\langle x-c_I,v\rangle|+|\langle c_I,v\rangle|\leq |x-c_I|+|\langle c_I,v\rangle|\leq c_{\Phi}d_I+|\langle c_I,v\rangle|.$$
 Thus,
@@ -4664,13 +4475,13 @@ $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
 $$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}.$$
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
+$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
 are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
 $$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\leq c_{\Phi,\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 Therefore,
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}c_{\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\leq \frac{N}{N-1}c_{\Phi,\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
 $$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
 $$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
