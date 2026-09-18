@@ -417,12 +417,12 @@ of NWO sequences and the general extension to spaces of homogeneous type.
 \end{enumerate}
 \end{definition}
 
-\begin{lemma}\label{NWO lemma} Let $0<p<\infty,$ $0<q\leq \infty.$ Let $\Gamma$ be a chamber. Let $\Phi$ be as in Corollary \ref{coro:chamber-orthant} and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
+\begin{lemma}\label{NWO lemma} Let $0<p<\infty.$ Let $\Gamma$ be a chamber. Let $\Phi$ be as in Corollary \ref{coro:chamber-orthant} and let $\mathbb{D}_{\Gamma}$ be as in Corollary \ref{Construction over gamma}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
 $$(x,y)\to \sum_{I\in\mathbb{D}_{\Gamma}}\lambda_I e_I(x)f_I(y),\quad x,y\in\Gamma,$$
 where $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ and $\{f_I\}_{I\in\mathbb{D}_{\Gamma}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
-\begin{align}\label{nwose}
-\|A\|_{\mathcal{L}_{p,q}(L_2(\Gamma,w(x)dx))}\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p,q} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,q}.
-\end{align}
+$$\|A\|_{\mathcal{L}_{p,\infty}(L_2(\Gamma,w(x)dx))}\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,\infty},$$
+$${\rm dist}_{\mathcal{L}_{p,\infty}(L_2(\Gamma,w(x)dx))}\Big(A,(\mathcal{L}_{p,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq $$
+$$\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D}_{\Gamma})}\Big(\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}},(l_{p,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 \end{lemma}
 \begin{proof} {\color{red} state a similar lemma with $\Gamma$ replaced by $\mathbb{R}^{n_1}_+\times\mathbb{R}^{n_2}$ and more-or-less-generic weight instead of $w.$ Provide reference to the LATTER assertion. this assertion would trivially follow from the to-be-stated one.}
 This property can be found in  \cite[(1.9)]{RS} (see also \cite[Section 7]{HKarxiv}).
@@ -4484,10 +4484,10 @@ By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
 $$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
 are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
 $$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\Phi,\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 Therefore,
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}c_{\Phi,\kappa,r,1,\infty,3,N,\infty}c_{K,\kappa,\Phi}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\leq \frac{N}{N-1}c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
 $$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
 $$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
@@ -4546,37 +4546,35 @@ The assertion follows now from Lemma \ref{first RS prefinal lemma} and {\color{r
 
 \subsection{Proof of Theorem \ref{first RS-type convergence}}
 
-\begin{lemma} Let $f,\phi\in C^{\infty}_c(\mathbb{R}^N).$ We have {\color{red} THIS assertion is not exactly true. and not exactly THIS assertion is useful. TO BE ADJUSTED!}
-$$\|M_fV-M_{f\phi}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))},\|M_fV-M_fVM_{\phi}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{K,\kappa,r}\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}}
-\Big\|_{N,\infty}.$$
+\begin{lemma} Let $f,\phi\in C^{\infty}_c(\mathbb{R}^N).$ We have
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_{f\phi}V,(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big),$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 \end{lemma}
-\begin{proof} Let $A_{k,l}$ be as in the proof of Lemma \ref{first RS intermediate estimate}. We have
-$$M_fV-M_{f\phi}V=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}M_{1-\phi}A_{k,l},$$
+\begin{proof} We only prove the second inequality. The proof of the first one is similar, but simpler.
+
+Let $A_{k,l}$ be as in the proof of Lemma \ref{first RS intermediate estimate}. We have
 $$M_fV-M_fVM_{\phi}=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}M_{1-\phi}.$$
 By the triangle inequality,
-$$\|M_fV-M_{f\phi}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|M_{1-\phi}A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))},$$
-$$\|M_fV-M_fVM_{\phi}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}M_{1-\phi}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}.$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
+$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}\Big((1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\times{\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}M_{1-\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\Big).$$
+
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{-\frac12}\frac{(1-\phi)\cdot e_{k,l,I}}{\|f\|_{L_{\infty}(\mathbb{R}^N)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
-are $(\infty,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Obviously, $e_{k,l,I}\not\equiv0$ only if $I\cap {\rm supp}(f)\neq\emptyset.$ Hence, $(1-\phi)\cdot e_{k,l,I}\neq0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $I\cap {\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO lemma}, we conclude that
-$$\|M_{1-\phi}A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\Phi,\kappa,\infty,1,\infty,3,N,\infty}c_{K,\kappa,\Phi}\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ I\cap {\rm supp}(1-\phi)\neq\emptyset}}\Big\|_{N,\infty}.$$
-
-By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_{\infty}(\mathbb{R}^N)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\cdot(1-\phi)\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
-are $(\infty,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Obviously, $e_{k,l,I}\not\equiv0$ only if $I\cap {\rm supp}(f)\neq\emptyset.$ Obviously, $f_{k,l,I}\cdot(1-\phi)\not\equiv0$ only if $3I\cap{\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO lemma}, we conclude that
-$$\|M_{1-\phi}A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\Phi,\kappa,\infty,1,\infty,3,N,\infty}c_{K,\kappa,\Phi}\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}}\Big\|_{N,\infty}.$$
-
-Combining the estimates in the preceding paragraphs, we conclude that
-$$\|M_fV-M_{f\phi}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))},\|M_fV-M_fVM_{\phi}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq\frac{N}{N-1}c_{\Phi,\kappa,\infty,1,\infty,3,N,\infty}c_{K,\kappa,\Phi}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times\Big\|\Big\{\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}}\Big\|_{N,\infty}.$$
-This completes the proof.
+$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\cdot(1-\phi)\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
+are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Obviously, $e_{k,l,I}\not\equiv0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $f_{k,l,I}\cdot(1-\phi)\not\equiv 0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $3I\cap {\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO lemma}, we conclude that
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
+$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Iw(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I,w(x)dx)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+By Lemma \ref{supremum vs average},
+$$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
+Thus,
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
+$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}c_{\kappa,\Phi}^{\frac1r}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+Combining this estimate with the one in the first paragraph {\color{red} assign label and refer to it} yields the second inequality.
 \end{proof}
 
 \section{Appendix}
