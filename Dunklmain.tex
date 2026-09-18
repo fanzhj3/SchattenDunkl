@@ -1,7 +1,6 @@
 \documentclass{amsart}
 \usepackage{amsmath, amsthm, amsfonts, amssymb, color}
 \usepackage{mathrsfs}
-\usepackage{txfonts}
 \usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
 
 
@@ -160,7 +159,7 @@ The assertion is immediate if $k\equiv0$. Otherwise, choose $p>1$ sufficiently l
 For every $0<\beta<1$, $v\in R_+$, and Euclidean ball $B(x_0,r)$, we apply an orthogonal change of variables to deduce that
 \[
 \begin{aligned}
-\fint_{B(x_0,r)}
+\frac1{|B(x_0,r)|}\int_{B(x_0,r)}
 |\langle x,v\rangle|^{-\beta}\,dx
 &\lesssim
 \frac{1}{r|v|}
@@ -182,16 +181,16 @@ For every $0<\beta<1$, $v\in R_+$, and Euclidean ball $B(x_0,r)$, we apply an or
 Hence, by H\"older's inequality,
 \[
 \begin{aligned}
-\fint_{B(x_0,r)}
+\frac1{|B(x_0,r)|}\int_{B(x_0,r)}
 \varpi^{-\frac1{p-1}}\,dx
-&=
-\fint_{B(x_0,r)}
+&=\frac1{|B(x_0,r)|}
+\int_{B(x_0,r)}
 \prod_{v\in R_+}
 |\langle x,v\rangle|^{-\frac{2k(v)}{p-1}}\,dx\\
 &\leq
 \prod_{v\in R_+}
-\left(
-\fint_{B(x_0,r)}
+\left(\frac1{|B(x_0,r)|}
+\int_{B(x_0,r)}
 |\langle x,v\rangle|^{-\frac{2|R_+|k(v)}{p-1}}\,dx
 \right)^{\frac1{|R_+|}}\\
 &\lesssim
@@ -205,7 +204,7 @@ On the other hand, by \eqref{twosideinequ} and the
 $G$-invariance of $k$,
 \[
 \begin{aligned}
-\fint_{B(x_0,r)}\varpi\,dx
+\frac1{|B(x_0,r)|}\int_{B(x_0,r)}\varpi\,dx
 =
 \frac{w(B(x_0,r))}{|B(x_0,r)|}
 \lesssim
@@ -215,8 +214,8 @@ $G$-invariance of $k$,
 \]
 Therefore,
 \[
-\left(\fint_B\varpi\,dx\right)
-\left(\fint_B\varpi^{-\frac1{p-1}}\,dx\right)^{p-1}
+\left(\frac1{|B|}\int_B\varpi\,dx\right)
+\left(\frac1{|B|}\int_B\varpi^{-\frac1{p-1}}\,dx\right)^{p-1}
 \lesssim1
 \]
 uniformly over all Euclidean balls $B$. Thus $\varpi\in A_p(\mathbb R^N,dx)$, and hence $\varpi\in A_\infty(\mathbb R^N,dx)$.
@@ -600,45 +599,17 @@ $\mathbb D^1,\ldots,\mathbb D^{2^N}$, we complete the proof of Lemma \ref{Nsyste
 Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{FLLXarxiv,HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).  For our purposes, we adapt  the extension to the Dunkl setting $(\mathbb{R}^N,\|\cdot\|,w)$ rather than recalling the general  definition
 of NWO sequences and the general extension to spaces of homogeneous type.
 
-{\it Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
+\begin{definition}\label{NWO def} Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
 \begin{enumerate}
-  \item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
-  \item $\|e_Q\|_{L^s(\mathbb{R}^{N},dw)}\leq w(Q)^{1/s-1/2}$ for some $s>2$.
+\item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
+\item $\|e_Q\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{\frac1r-\frac12}$ for some $r>2.$
 \end{enumerate}
-}
+\end{definition}
 
 {\color{red}[We need to replace the following Lemma by Hytonen's version on space of homogeneous type. Zhijie Will do it later]}
 
 
-
-\begin{lemma}\label{NWOLEMMAA}
-Let \(1<p<\infty\), \(1\le q\le\infty\), and let
-\(\mathscr D\) be a system of dyadic cubes over \(\mathbb R^N\).
-If
-\[
-T\in S^{p,q}\bigl(L^2(\mathbb R^N,dw)\bigr),
-\]
-then
-\[
-\left\|
-\left\{
-\langle T e_Q,f_Q\rangle_{L^2(\mathbb R^N,dw)}
-\right\}_{Q\in\mathscr D}
-\right\|_{\ell^{p,q}}
-\le
-C_{N,p,q,w}
-\|T\|_{S^{p,q}(L^2(\mathbb R^N,dw))},
-\]
-where
-\(\{e_Q\}_{Q\in\mathscr D}\) and
-\(\{f_Q\}_{Q\in\mathscr D}\) are NWO sequences.
-\end{lemma}
-\begin{proof}
-This property can be found in  \cite[(1.10)]{RS} (see also \cite[Section 7]{HKarxiv}).
-\end{proof}
-
-
-\begin{lemma}\label{NWOLEMMAA2}
+\begin{lemma}\label{NWO lemma}
 Let $0<p<\infty$, $0<q\leq \infty$, and let $\mathscr{D}$ be a
 system of dyadic cubes over $\mathbb{R}^N$. Assume that
 $$A=\sum_{Q\in\mathscr{D}}\lambda_Q\langle \cdot,\,e_Q\rangle_{L^2(\mathbb{R}^N,dw)} f_Q,$$
@@ -5618,1607 +5589,143 @@ Theorem \ref{thm:Dunkl-Riesz-spectral-asymptotic}.
 \end{proof}
 
 \section{Alternative proof by using Dima's approach}
-\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO}
-Fix a closed Weyl chamber \(\Gamma\) and
-\(\sigma\in G\setminus\{\mathrm{Id}\}\). Suppose that \(K\) satisfies
-\begin{align*}
-\bigl|
-\partial_x^\alpha\partial_y^\beta K(x,y)
-\bigr|
-\lesssim_{\alpha,\beta}
-\frac{\|x-y\|^{1-|\alpha|-|\beta|}}
-{\|x-\sigma y\|V\bigl(x,y,\|x-y\|\bigr)}
-\end{align*}
-for every pair of multi-indices \(\alpha,\beta\) and every
-\(x,y\in\Gamma^\circ\) with \(x\neq y\). For every \(M_0>2N\), there
-exist positive numbers \(\{c_{u,v}\}_{u,v\in\mathbb Z^N}\) and
-families
-\(\{e_{u,v,I}\}_{u,v\in\mathbb Z^N,I\in\mathbb D_\Gamma}\) and
-\(\{h_{u,v,I}\}_{u,v\in\mathbb Z^N,I\in\mathbb D_\Gamma}\) such that
-\begin{align}
-|c_{u,v}|
-&\lesssim_{M_0}
-(1+|u|+|v|)^{-M_0},
-\label{eq:Weyl-off-diagonal-Fourier-decay}\\
-\operatorname{supp}e_{u,v,I}\subset I,
-\qquad
-\operatorname{supp}h_{u,v,I}
-&\subset I^*,
-\label{eq:Weyl-off-diagonal-support}\\
-|e_{u,v,I}|+|h_{u,v,I}|
-&\lesssim w(I)^{-1/2},
-\label{eq:Weyl-off-diagonal-size}
-\end{align}
-and, for almost every \(x,y\in\Gamma\) with \(x\neq y\),
-\begin{align}
-K(x,y)
-=
-\sum_{u,v\in\mathbb Z^N}
-c_{u,v}
-\sum_{I\in\mathbb D_\Gamma}
-\theta_{\mathrm{Id},\sigma,I}
-e_{u,v,I}(x)h_{u,v,I}(y).
-\label{eq:Weyl-off-diagonal-NWO-expansion}
-\end{align}
-\end{lemma}
 
-\begin{proof}
-Choose \(\psi\in C_c^\infty(\mathbb R^N)\) such that
-\begin{align}
-\operatorname{supp}\psi
-\subset
-\biggl\{
-z:\frac18\leq |z|\leq\frac12
-\biggr\},
-\qquad
-\sum_{m\in\mathbb Z}\psi(2^mz)=1,
-\quad z\neq0.
-\label{eq:Weyl-off-diagonal-partition}
-\end{align}
-For \(x,y\in\Gamma^\circ\), \(x\neq y\), the unique cube
-\(I\in\mathbb D_{\Gamma,m}\) containing \(x\) at each scale satisfies
-\begin{align}
-K(x,y)
-=
-\sum_{I\in\mathbb D_\Gamma}
-\chi_I(x)K(x,y)
-\psi\biggl(
-\frac{\Phi(x)-\Phi(y)}{\ell(I)}
-\biggr).
-\label{eq:Weyl-off-diagonal-localization}
-\end{align}
-If the \(I\)-th summand is nonzero, then
-\(|\Phi(x)-\Phi(y)|\leq\ell(I)/2\); hence \(y\in I^*\).
-
-Fix \(I=\Phi^{-1}(Q)\). For
-\[
-a\in\bigl(-1/2,1/2\bigr)^N,
-\qquad
-c_Q+\ell(I)b\in(2Q)\cap\Omega,
-\]
-set
-\[
-X:=\Phi^{-1}\bigl(c_Q+\ell(I)a\bigr),
-\qquad
-Y:=\Phi^{-1}\bigl(c_Q+\ell(I)b\bigr).
-\]
-Whenever \(\psi(a-b)\neq0\), by the \(G\)-invariance of \(d\) and
-\(dw\), \eqref{distanceequa}, and Lemma
-\ref{lem:Dunkl-Riesz-endpoint-local-geometry} applied with
-\((\mathrm{Id},\sigma)\),
-\begin{align}
-\|X-Y\|
-&\simeq\ell(I),\nonumber\\
-\|X-\sigma Y\|
-&\simeq\ell(I)+|z_I-\sigma z_I|,\nonumber\\
-V\bigl(X,Y,\|X-Y\|\bigr)
-&\simeq w(I).
-\label{eq:Weyl-off-diagonal-local-geometry}
-\end{align}
-Consequently,
-\begin{align}
-\bigl|
-\partial_x^\alpha\partial_y^\beta K(X,Y)
-\bigr|
-\lesssim_{\alpha,\beta}
-\theta_{\mathrm{Id},\sigma,I}
-\frac{\ell(I)^{-|\alpha|-|\beta|}}{w(I)}.
-\label{eq:Weyl-off-diagonal-local-derivative}
-\end{align}
-
-Let
-\[
-\mathcal R_Q
-:=
-\biggl\{
-(a,b):
-a\in\bigl(-1/2,1/2\bigr)^N,\
-c_Q+\ell(I)b\in(2Q)\cap\Omega
-\biggr\}.
-\]
-On \(\mathcal R_Q\), define
-\begin{align*}
-F_I(a,b)
-:=
-\frac{w(I)}{\theta_{\mathrm{Id},\sigma,I}}
-\psi(a-b)
-K\biggl(
-\Phi^{-1}\bigl(c_Q+\ell(I)a\bigr),
-\Phi^{-1}\bigl(c_Q+\ell(I)b\bigr)
-\biggr).
-\end{align*}
-By \eqref{eq:Weyl-off-diagonal-local-derivative} and the chain rule,
-for every integer \(L\geq0\),
-\begin{align}
-\sup_{I\in\mathbb D_\Gamma}
-\|F_I\|_{W^{L,\infty}(\mathcal R_Q)}
-\lesssim_L1.
-\label{eq:Weyl-off-diagonal-normalized-derivative}
-\end{align}
-The rectangles \(\mathcal R_Q\) range over finitely many fixed
-rectangular domains. Fix an integer \(L>M_0\). By the standard
-extension theorem for Sobolev spaces on rectangles, followed by
-multiplication by a fixed smooth cutoff, \(F_I\) admits an extension
-\(\widetilde F_I\) supported in
-\((-2,2)^N\times(-2,2)^N\) such that
-\begin{align}
-\widetilde F_I=F_I
-\quad\text{on }\mathcal R_Q,
-\qquad
-\sup_{I\in\mathbb D_\Gamma}
-\|\widetilde F_I\|_{W^{L,\infty}(\mathbb R^{2N})}
-\lesssim_L1.
-\label{eq:Weyl-off-diagonal-extension}
-\end{align}
-
-The \(4\)-periodic extension of \(\widetilde F_I\) has a Fourier
-expansion
-\begin{align*}
-\widetilde F_I(a,b)
-=
-\sum_{u,v\in\mathbb Z^N}
-b_{u,v,I}
-e^{\frac{\pi i}{2}u\cdot a}
-e^{\frac{\pi i}{2}v\cdot b}.
-\end{align*}
-By repeated integration by parts and
-\eqref{eq:Weyl-off-diagonal-extension},
-\begin{align*}
-\sup_{I\in\mathbb D_\Gamma}
-|b_{u,v,I}|
-\lesssim_L
-(1+|u|+|v|)^{-L}.
-\end{align*}
-Increasing the implicit constant if necessary, define
-\begin{align*}
-c_{u,v}
-:=
-C_{M_0}(1+|u|+|v|)^{-M_0}
-\end{align*}
-so that
-\(|b_{u,v,I}|\leq c_{u,v}\) for every \(I\). For
-\(I=\Phi^{-1}(Q)\), define
-\begin{align*}
-e_{u,v,I}(x)
-&:=
-\frac{b_{u,v,I}}{c_{u,v}}
-w(I)^{-1/2}\chi_I(x)
-\exp\biggl(
-\frac{\pi i}{2\ell(I)}
-u\cdot\bigl(\Phi(x)-c_Q\bigr)
-\biggr),\\
-h_{u,v,I}(y)
-&:=
-w(I)^{-1/2}\chi_{I^*}(y)
-\exp\biggl(
-\frac{\pi i}{2\ell(I)}
-v\cdot\bigl(\Phi(y)-c_Q\bigr)
-\biggr).
-\end{align*}
-Then \eqref{eq:Weyl-off-diagonal-Fourier-decay}--\eqref{eq:Weyl-off-diagonal-size}
-hold.
-
-If \(x\in I\) and \(y\in I^*\), then
-\[
-a:=\frac{\Phi(x)-c_Q}{\ell(I)},
-\qquad
-b:=\frac{\Phi(y)-c_Q}{\ell(I)}
-\]
-belong to \(\mathcal R_Q\). Hence, by
-\eqref{eq:Weyl-off-diagonal-extension} and the Fourier expansion,
-\begin{align}
-K(x,y)
-\psi\biggl(
-\frac{\Phi(x)-\Phi(y)}{\ell(I)}
-\biggr)
-=
-\sum_{u,v\in\mathbb Z^N}
-c_{u,v}\theta_{\mathrm{Id},\sigma,I}
-e_{u,v,I}(x)h_{u,v,I}(y).
-\label{eq:Weyl-off-diagonal-local-Fourier}
-\end{align}
-If \(x\in I\) and \(y\notin I^*\), both sides of
-\eqref{eq:Weyl-off-diagonal-local-Fourier} vanish. Therefore,
-\begin{align*}
-\chi_I(x)K(x,y)
-\psi\biggl(
-\frac{\Phi(x)-\Phi(y)}{\ell(I)}
-\biggr)
-=
-\sum_{u,v\in\mathbb Z^N}
-c_{u,v}\theta_{\mathrm{Id},\sigma,I}
-e_{u,v,I}(x)h_{u,v,I}(y)
-\end{align*}
-for almost every \(x,y\in\Gamma\). Summing over
-\(I\in\mathbb D_\Gamma\) and using
-\eqref{eq:Weyl-off-diagonal-partition}, we obtain
-\eqref{eq:Weyl-off-diagonal-NWO-expansion}.
-
-This completes the proof of Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}.
-\end{proof}
-
-\begin{lemma}
-\label{lem:Weyl-jump-OSC-coefficients}
-Assume that \(N\geq 1\), \(1<p<\infty\), and \(1\leq q\leq\infty\). Fix \(s>2\), a closed Weyl chamber \(\Gamma\), and \(\sigma\in G\). Let \(r_s\) be as in Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}. Then, for every \(f\in OSC^{p,q}(\mathbb R^N)\),
-\begin{align}
-&
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}
-\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-+
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}
-a_{\sigma,\mathrm{Id},I}(f)
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\label{eq:Weyl-jump-OSC-coefficients}
-\end{align}
-The implicit constant is independent of \(f\) and \(\sigma\).
-\end{lemma}
-
-\begin{proof}
-By \eqref{eq:D-and-theta}, \(0<\theta_{\sigma,\mathrm{Id},I}\leq 1\). Hence, by Lemma \ref{lem:Dunkl-H-OSC-Lorentz},
-\begin{align*}
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}
-\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-\lesssim
-\Bigg\|
-\Bigg\{
-\operatorname{osc}_{r_s}\bigl(H_{\sigma,\mathrm{Id}}(f);I\bigr)
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\end{align*}
-By Lemma \ref{lem:Dunkl-chamber-jump-supercritical0},
-\begin{align*}
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}
-a_{\sigma,\mathrm{Id},I}(f)
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\end{align*}
-Combining the two estimates, we obtain \eqref{eq:Weyl-jump-OSC-coefficients}.
-
-This completes the proof of Lemma \ref{lem:Weyl-jump-OSC-coefficients}.
-\end{proof}
-
-\begin{theorem}
-\label{thm:Weyl-jump-multiplier-Schatten}
-Assume that \(N\geq1\), \(1<p<\infty\), and \(1\leq q\leq\infty\). Fix a closed Weyl chamber \(\Gamma\) and \(\sigma\in G\setminus\{\mathrm{Id}\}\). Let \(T\) be an integral operator on \(L^2(\Gamma,dw)\) whose kernel \(K\) satisfies
-\begin{align*}
-\bigl|
-\partial_x^\alpha\partial_y^\beta K(x,y)
-\bigr|
-\lesssim_{\alpha,\beta}
-\frac{\|x-y\|^{1-|\alpha|-|\beta|}}
-{\|x-\sigma y\|V\bigl(x,y,\|x-y\|\bigr)}
-\end{align*}
-for every pair of multi-indices \(\alpha,\beta\) and every
-\(x,y\in\Gamma^\circ\) with \(x\neq y\). Then, for every
-\(f\in OSC^{p,q}(\mathbb R^N)\),
-\begin{align}
-M_{f-f\circ\sigma}T
-\in
-S^{p,q}\bigl(L^2(\Gamma,dw)\bigr),
-\qquad
-\bigl\|
-M_{f-f\circ\sigma}T
-\bigr\|_{S^{p,q}}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\label{eq:Weyl-jump-multiplier-Schatten}
-\end{align}
+\begin{theorem}\label{first RS-type theorem} Let $N>1.$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
+Let $V$ be an integral operator with integral kernel $K.$ For every $f\in\dot{W}^{1,N}(\Gamma),$ we have
+$$\|M_{f-f\circ g}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa}\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
 \end{theorem}
 
-\begin{proof}
-Fix \(s>2\), let \(r_s\) be as in Lemma
-\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation}, and set
-\[
-H:=H_{\sigma,\mathrm{Id}}(f)=f-f\circ\sigma.
-\]
-For \(I\in\mathbb D_\Gamma\), set
-\[
-\omega_I
-:=
-\operatorname{osc}_{r_s}(H;I),
-\qquad
-a_I
-:=
-a_{\sigma,\mathrm{Id},I}(f)
-=
-(H)_{I,dx}.
-\]
-By Lemma \ref{lem:Weyl-jump-OSC-coefficients}
-\eqref{eq:Weyl-jump-OSC-coefficients},
-\begin{align}
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}\omega_I
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-+
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}a_I
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\Bigg\|_{\ell^{p,q}}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\label{eq:Weyl-jump-two-coefficients}
-\end{align}
-In particular, \(\omega_I<\infty\) for every \(I\). By
-Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation},
-\(H\in L^s_{\mathrm{loc}}(\Gamma,dw)\).
+\begin{nota}
+Fix a closed Weyl chamber $\Gamma$ and let $\Phi:\mathbb{R}^N\to\mathbb{R}^N$ be the linear isomorphism appearing in Corollary \ref{coro:chamber-orthant}.
 
-Fix \(M_0>2N\). By Lemma
-\ref{lem:Weyl-off-diagonal-kernel-NWO}, for almost every
-\(x,y\in\Gamma\) with \(x\neq y\),
-\begin{align}
-K(x,y)
-=
-\sum_{u,v\in\mathbb Z^N}
-c_{u,v}
-\sum_{I\in\mathbb D_\Gamma}
-\theta_{\mathrm{Id},\sigma,I}
-e_{u,v,I}(x)h_{u,v,I}(y),
-\label{eq:Weyl-jump-use-kernel-expansion}
-\end{align}
-where
-\[
-\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
-\]
-By \eqref{eq:D-and-theta},
-\(\theta_{\mathrm{Id},\sigma,I}
-=\theta_{\sigma,\mathrm{Id},I}\).
+Let $\mathbb{D}_{\Gamma}$ be the dyadic system over $\Gamma$ constructed in
+Corollary \ref{Construction over gamma}. If $I\in\mathbb{D}_{\Gamma}$ and if $Q=\Phi(I),$ then we denote $d_I=\ell(Q).$
+\end{nota}
 
-For \(u,v\in\mathbb Z^N\) and \(I\in\mathbb D_\Gamma\), define
-\begin{align*}
-\widetilde e_{u,v,I}(x)
-:=
-\begin{cases}
-\displaystyle
-\omega_I^{-1}\bigl(H(x)-a_I\bigr)e_{u,v,I}(x),
-&\omega_I>0,\\[2mm]
-0,
-&\omega_I=0.
-\end{cases}
-\end{align*}
-By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}
-\eqref{eq:Weyl-off-diagonal-size} and Lemma
-\ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation},
-\begin{align*}
-\|\widetilde e_{u,v,I}\|_{L^s(dw)}
-&\lesssim
-w(I)^{-1/2}\omega_I^{-1}
-\bigg(
-\int_I|H-a_I|^s\,dw
-\bigg)^{1/s}
-\lesssim
-w(I)^{\frac1s-\frac12}
-\end{align*}
-when \(\omega_I>0\), while the same estimate is immediate when
-\(\omega_I=0\). Moreover, by Lemma
-\ref{lem:Weyl-off-diagonal-kernel-NWO}
-\eqref{eq:Weyl-off-diagonal-support}--\eqref{eq:Weyl-off-diagonal-size}
-and \(w(I^*)\lesssim w(I)\),
-\begin{align*}
-\|e_{u,v,I}\|_{L^s(dw)}
-+
-\|h_{u,v,I}\|_{L^s(dw)}
-\lesssim
-w(I)^{\frac1s-\frac12}.
-\end{align*}
-Thus, for fixed \(u,v\),
-\[
-\bigl\{\widetilde e_{u,v,I}\bigr\}_{I\in\mathbb D_\Gamma},
-\qquad
-\bigl\{e_{u,v,I}\bigr\}_{I\in\mathbb D_\Gamma},
-\qquad
-\bigl\{\overline{h_{u,v,I}}\bigr\}_{I\in\mathbb D_\Gamma}
-\]
-are NWO families.
+\begin{lemma} There exists a smooth function $\psi$ supported on $[-1,1]^N\backslash(-\frac14,\frac14)^N$ such that
+$$1=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+\end{lemma}
+\begin{proof} Choose $\rho\in C_c^{\infty}(\mathbb{R}^N)$ such that $\rho=1$ on $(-\frac12,\frac12)^N$ and $\rho=0$ outside $(-1,1)^N.$ Set $\psi(z)=\rho(z)-\rho(2z).$ Clearly,
+\begin{equation}\label{eq:rankone-psi-support}
+\operatorname{supp}(\psi)\subset
+\left\{z\in\mathbb{R}^N:\quad 
+\frac14\leq |z|_{\infty}\leq 1\right\}.
+\end{equation}
+For every $z\neq0,$ we have
+\begin{equation}\label{eq:rankone-psi-partition}
+\sum_{j\in\mathbb{Z}}\psi(2^jz)=1.
+\end{equation}
 
-If \(\omega_I=0\), then \(H=a_I\) \(dx\)-a.e. on \(I\), and hence
-\(dw\)-a.e. on \(I\). Therefore, in all cases,
-\begin{align}
-&\theta_{\sigma,\mathrm{Id},I}
-H(x)e_{u,v,I}(x)h_{u,v,I}(y)
-\nonumber\\
-&\qquad=
-\theta_{\sigma,\mathrm{Id},I}\omega_I
-\widetilde e_{u,v,I}(x)h_{u,v,I}(y)
-+
-\theta_{\sigma,\mathrm{Id},I}a_I
-e_{u,v,I}(x)h_{u,v,I}(y).
-\label{eq:Weyl-jump-two-term-decomposition}
-\end{align}
-Hence, by Lemma \ref{NWOLEMMAA2} and
-\eqref{eq:Weyl-jump-two-coefficients},
-\begin{align}
-&\Bigg\|
-\sum_{I\in\mathbb D_\Gamma}
-\theta_{\sigma,\mathrm{Id},I}\omega_I
-\bigl\langle
-\,\cdot,\overline{h_{u,v,I}}
-\bigr\rangle
-\widetilde e_{u,v,I}
-+
-\sum_{I\in\mathbb D_\Gamma}
-\theta_{\sigma,\mathrm{Id},I}a_I
-\bigl\langle
-\,\cdot,\overline{h_{u,v,I}}
-\bigr\rangle
-e_{u,v,I}
-\Bigg\|_{S^{p,q}}
-\nonumber\\
-&\qquad\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)},
-\label{eq:Weyl-jump-fixed-Fourier-Schatten}
-\end{align}
-uniformly in \(u,v\).
+For every $x\in\Gamma,$ there exists a unique $I\in\mathbb{D}_{\Gamma,j}$ containing $x.$ For this $I,$ we have $d_I=2^{-j}.$ We have
+$$1=\sum_{j\in\mathbb{Z}}\psi(2^j(\Phi(x)-\Phi(y)))=\sum_{j\in\mathbb{Z}}(\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x))\psi(2^j(\Phi(x)-\Phi(y)))=$$
+$$=\sum_{j\in\mathbb{Z}}\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
 
-Since \(p>1\), using an equivalent norm on \(S^{p,q}\) when necessary, the series
-\begin{align}
-S_f
-:=
-\sum_{u,v\in\mathbb Z^N}
-c_{u,v}
-\sum_{I\in\mathbb D_\Gamma}
-\theta_{\sigma,\mathrm{Id},I}
-\Bigg(
-\omega_I
-\bigl\langle
-\,\cdot,\overline{h_{u,v,I}}
-\bigr\rangle
-\widetilde e_{u,v,I}
-+
-a_I
-\bigl\langle
-\,\cdot,\overline{h_{u,v,I}}
-\bigr\rangle
-e_{u,v,I}
-\Bigg)
-\label{eq:Weyl-jump-Sf}
-\end{align}
-converges in \(S^{p,q}(L^2(\Gamma,dw))\). By
-\eqref{eq:Weyl-jump-fixed-Fourier-Schatten},
-\begin{align}
-\|S_f\|_{S^{p,q}}
-\lesssim
-\sum_{u,v\in\mathbb Z^N}
-|c_{u,v}|
-\|f\|_{OSC^{p,q}(\mathbb R^N)}
-\lesssim
-\|f\|_{OSC^{p,q}(\mathbb R^N)}.
-\label{eq:Weyl-jump-Sf-bound}
-\end{align}
-
-We identify \(S_f\) with \(M_HT\). Fix \(r>p\). By
-\(\ell^{p,q}\subset\ell^r\) and
-\eqref{eq:Weyl-jump-two-coefficients},
-\begin{align*}
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}\omega_I
-\Bigg\}_{I\in\mathbb D_\Gamma},
-\qquad
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}a_I
-\Bigg\}_{I\in\mathbb D_\Gamma}
-\in\ell^r.
-\end{align*}
-For \(m\in\mathbb N\), let \(S_f^{(m)}\) be defined by
-\eqref{eq:Weyl-jump-Sf} with the sum over \(I\) restricted to
-\(\bigcup_{|k|\leq m}\mathbb D_{\Gamma,k}\). By Lemma
-\ref{NWOLEMMAA2}, now with exponent \(r\),
-\begin{align*}
-\|S_f-S_f^{(m)}\|_{S^r}
-\lesssim
-\sum_{u,v\in\mathbb Z^N}|c_{u,v}|
-\Bigg(
-&
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}\omega_I
-\Bigg\}_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
-\Bigg\|_{\ell^r}
-\\
-&+
-\Bigg\|
-\Bigg\{
-\theta_{\sigma,\mathrm{Id},I}a_I
-\Bigg\}_{I\in\bigcup_{|k|>m}\mathbb D_{\Gamma,k}}
-\Bigg\|_{\ell^r}
-\Bigg)
-\longrightarrow0.
-\end{align*}
-
-Let
-\(\varphi\in C_c^\infty(\Gamma^\circ)\) and
-\[
-\eta\in
-C_c^\infty
-\bigl(
-\Gamma^\circ\setminus\{x:\sigma x=x\}
-\bigr).
-\]
-By the construction in the proof of Lemma
-\ref{lem:Weyl-off-diagonal-kernel-NWO} and
-\eqref{eq:Weyl-jump-two-term-decomposition},
-\begin{align}
-\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
-=
-\int_\Gamma\int_\Gamma
-&H(x)K(x,y)
-\Bigg(
-\sum_{|k|\leq m}
-\psi\bigl(
-2^k(\Phi(x)-\Phi(y))
-\bigr)
-\Bigg)
-\nonumber\\
-&\qquad\qquad\times
-\varphi(y)\overline{\eta(x)}
-\,dw(y)\,dw(x).
-\label{eq:Weyl-jump-truncated-kernel}
-\end{align}
-
-Set
-\[
-\delta
-:=
-\inf_{x\in\operatorname{supp}\eta}
-\|x-\sigma x\|>0.
-\]
-For \(x\in\operatorname{supp}\eta\) and
-\(\|x-y\|<\delta/2\),
-\begin{align*}
-\|x-\sigma y\|
-\geq
-\|x-\sigma x\|-\|x-y\|
-\geq
-\frac{\delta}{2}.
-\end{align*}
-Moreover, since \(x,y\in\Gamma\), by \eqref{distanceequa} and the
-\(G\)-invariance of \(d\),
-\begin{align*}
-\|x-\sigma y\|
-\geq
-d(x,\sigma y)
-=
-d(x,y)
-=
-\|x-y\|.
-\end{align*}
-Consequently, the kernel estimate and the doubling property imply
-\begin{align*}
-\int_{\substack{y\in\Gamma\\ \|x-y\|<\delta/2}}
-|K(x,y)|\,dw(y)
-&\lesssim
-\sum_{j=1}^{\infty}
-\frac{2^{-j}\delta}{\delta}
-\frac{
-w\bigl(B(x,2^{-j}\delta)\bigr)
-}{
-w\bigl(B(x,2^{-j-1}\delta)\bigr)
-}
-\lesssim
-\sum_{j=1}^{\infty}2^{-j}
-\lesssim1
-\end{align*}
-uniformly in \(x\in\operatorname{supp}\eta\). On
-\(\operatorname{supp}\eta\times\operatorname{supp}\varphi\) with
-\(\|x-y\|\geq\delta/2\), the same annular argument involves only
-finitely many scales. Hence,
-\begin{align}
-\sup_{x\in\operatorname{supp}\eta}
-\int_{\operatorname{supp}\varphi}
-|K(x,y)|\,dw(y)
-<\infty.
-\label{eq:Weyl-jump-local-kernel-integrability}
-\end{align}
-Since \(H\in L^s_{\mathrm{loc}}(\Gamma,dw)\) with \(s>2\),
-\(H\eta\in L^2(\Gamma,dw)\cap L^1(\Gamma,dw)\). The partial sums in
-\eqref{eq:Weyl-jump-truncated-kernel} are uniformly bounded and
-converge to \(1\) for \(x\neq y\). Therefore, by
-\eqref{eq:Weyl-jump-local-kernel-integrability} and dominated
-convergence,
-\begin{align*}
-\lim_{m\to\infty}
-\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
-&=
-\int_\Gamma\int_\Gamma
-H(x)K(x,y)
-\varphi(y)\overline{\eta(x)}
-\,dw(y)\,dw(x)
-\\
-&=
-\bigl\langle
-T\varphi,\overline H\,\eta
-\bigr\rangle
-=
-\bigl\langle
-M_HT\varphi,\eta
-\bigr\rangle.
-\end{align*}
-On the other hand, the convergence in \(S^r\) implies
-\[
-\lim_{m\to\infty}
-\bigl\langle S_f^{(m)}\varphi,\eta\bigr\rangle
-=
-\bigl\langle S_f\varphi,\eta\bigr\rangle.
-\]
-Since \(\sigma\neq\mathrm{Id}\), the fixed point space
-\(\{x:\sigma x=x\}\) is a proper linear subspace and therefore has
-\(dw\)-measure zero. Thus,
-\(C_c^\infty\bigl(\Gamma^\circ\setminus\{x:\sigma x=x\}\bigr)\)
-is dense in \(L^2(\Gamma,dw)\), and \(S_f\) is the bounded extension
-of \(M_HT=M_{f-f\circ\sigma}T\). Combining this identification with
-\eqref{eq:Weyl-jump-Sf-bound}, we obtain
-\eqref{eq:Weyl-jump-multiplier-Schatten}.
-
-This completes the proof of Theorem \ref{thm:Weyl-jump-multiplier-Schatten}.
+If $x\in I$ and $\psi(\frac{\Phi(x)-\Phi(y)}{d_I})\neq 0,$ then
+$$\Phi(x)\in\Phi(I)=Q,\quad |\Phi(x)-\Phi(y)|\leq d_I=\ell(Q).$$
+We obviously have $|\Phi(x)-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|\Phi(x)-\Phi(y)|_{\infty}\leq\ell(Q).$ Thus, $|\Phi(y)-c_Q|\leq\frac32\ell(Q).$ In other words, $\Phi(y)\in 3Q$ or, equivalently, $y\in 3I.$ Thus,
+$$\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+This completes the proof.
 \end{proof}
-%
-%\begin{proof}
-%Fix \(s>2\), and use the usual locally integrable representative of
-%\(f\in\dot W^{1,N}(\mathbb R^N)\). Set
-%\[
-%r_s:=\frac{Ns}{N+s}.
-%\]
-%Since \(N>1\) and \(s>2\), we have \(1<r_s<N\).
-%By Sobolev--Poincar\'e inequality, for every Euclidean ball \(B=B(x_0,R)\subset\mathbb R^N\),
-%\[
-%\left[
-%\frac1{|B|}
-%\int_B
-%|f-(f)_{B,dx}|^s\,dx
-%\right]^{1/s}
-%\lesssim
-%R
-%\left[
-%\frac1{|B|}
-%\int_B
-%|\nabla f|^{r_s}\,dx
-%\right]^{1/r_s}.
-%\]
-%Since \(r_s<N\), H\"older's inequality yields
-%\[
-%R
-%\left[
-%\frac1{|B|}
-%\int_B
-%|\nabla f|^{r_s}\,dx
-%\right]^{1/r_s}
-%\leq
-%R|B|^{-1/N}
-%\|\nabla f\|_{L^N(B,dx)}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N,dx)}.
-%\]
-%Thus,
-%\[
-%f\in L^s_{\mathrm{loc}}(\mathbb R^N,dx)\subset L^s_{\mathrm{loc}}(\mathbb R^N,dw).
-%\]
-%
-%By Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint},
-%\[
-%K_{{\rm Dunkl},j}(x,y)
-%=
-%\sum_{\sigma,\tau\in G}
-%\sum_{u,v\in\mathbb Z^N}
-%c_{u,v}
-%\sum_{I\in\mathbb D_\Gamma}
-%\theta_{\sigma,\tau,I}
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\]
-%for almost every \((x,y)\) with \(d(x,y)>0\), with
-%\(c_{u,v}\), \(e_{u,v,I}^{\sigma,\tau}\), and
-%\(h_{u,v,I}^{\sigma,\tau}\) satisfying the corresponding properties
-%stated in Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint}.
-%
-%Fix \(\sigma,\tau\in G\) and \(u,v\in\mathbb Z^N\). On the support of
-%$
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y),
-%$
-%we write
-%$
-%x=\sigma\xi$,
-%and $
-%y=\tau\eta,
-%$
-%where \(\xi\in I\) and \(\eta\in I^*\). Then
-%\[
-%f(y)-f(x)
-%=
-%\bigl(f(\tau\eta)-f(\tau\xi)\bigr)
-%+
-%\bigl(f(\tau\xi)-f(\sigma\xi)\bigr).
-%\]
-%
-%Set
-%$
-%g_\tau(z):=f(\tau z).
-%$
-%Since \(\tau\) is orthogonal,
-%\begin{align}\label{orthrela}
-%\|\nabla g_\tau\|_{L^N(\mathbb R^N)}
-%=
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\end{align}
-%For \(I\in\mathbb D_\Gamma\), put
-%\[
-%\omega_{\tau,I}
-%:=
-%\left[
-%\frac1{w(I)}
-%\int_{I^*}
-%\left|
-%g_\tau-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\right|^s\,dw
-%\right]^{1/s}.
-%\]
-%Since{\color{red}[CITE somewhere]}
-%\[
-%I^*
-%\subset
-%B_\Gamma(z_I,C_1\ell(I))
-%\]
-%and
-%\[
-%w\bigl(B_\Gamma(z_I,C_1\ell(I))\bigr)
-%\simeq
-%w(I),
-%\]
-%we have
-%$
-%\omega_{\tau,I}
-%\lesssim
-%\Omega_I^{(s)}(g_\tau).
-%$
-%Therefore, Combining Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation} with \eqref{orthrela}, we see that
-%\[
-%\left\|
-%\left\{
-%\theta_{\sigma,\tau,I}\omega_{\tau,I}
-%\right\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\leq
-%\left\|
-%\left\{
-%\omega_{\tau,I}
-%\right\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}\lesssim \|\nabla g_\tau\|_{L^N(\mathbb R^N)}
-%=C
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%
-%If \(\omega_{\tau,I}>0\), define
-%\[
-%E_{I,0}(x)
-%:=
-%e_{u,v,I}^{\sigma,\tau}(x),
-%\]
-%\[
-%H_{I,0}(y)
-%:=
-%\omega_{\tau,I}^{-1}
-%\left[
-%f(y)-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\right]
-%h_{u,v,I}^{\sigma,\tau}(y),
-%\]
-%and
-%\[
-%E_{I,1}(x)
-%:=
-%-\omega_{\tau,I}^{-1}
-%\left[
-%f(\tau\sigma^{-1}x)-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\right]
-%e_{u,v,I}^{\sigma,\tau}(x),
-%\]
-%\[
-%H_{I,1}(y)
-%:=
-%h_{u,v,I}^{\sigma,\tau}(y).
-%\]
-%If \(\omega_{\tau,I}=0\), set
-%\[
-%E_{I,0}:=H_{I,0}:=E_{I,1}:=H_{I,1}:=0.
-%\]
-%Hence, on the support of
-%$
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y),
-%$
-%we have
-%\begin{align}\label{deco222}
-%&\theta_{\sigma,\tau,I}
-%\bigl(f(\tau\eta)-f(\tau\xi)\bigr)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}
-%\Bigl(
-%\bigl[
-%f(y)
-%-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\bigr]
-%-
-%\bigl[
-%f(\tau\sigma^{-1}x)
-%-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\bigr]
-%\Bigr)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}\omega_{\tau,I}
-%\Biggl\{
-%e_{u,v,I}^{\sigma,\tau}(x)
-%\,
-%\omega_{\tau,I}^{-1}
-%\bigl[
-%f(y)
-%-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\bigr]
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&\hspace{42mm}
-%+
-%\Bigl(
-%-\omega_{\tau,I}^{-1}
-%\bigl[
-%f(\tau\sigma^{-1}x)
-%-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\bigr]
-%e_{u,v,I}^{\sigma,\tau}(x)
-%\Bigr)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\Biggr\}
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}\omega_{\tau,I}
-%\sum_{\varepsilon=0}^1
-%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y).
-%\end{align}
-%
-%By
-%Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint}, \(\supp E_{I,\varepsilon}\subset\sigma I\) and \(\supp H_{I,\varepsilon}\subset\tau I^*\). Moreover, using the \(G\)-invariance of \(dw\) and
-%\(I\subset I^*\), we obtain
-%\begin{align*}
-%\|H_{I,0}\|_{L^s(dw)}
-%\lesssim
-%\omega_{\tau,I}^{-1}w(I)^{-1/2}
-%\left[
-%\int_{I^*}
-%\left|
-%g_\tau-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\right|^s\,dw
-%\right]^{1/s}=
-%w(I)^{\frac1s-\frac12},
-%\end{align*}
-%and
-%\begin{align*}
-%\|E_{I,1}\|_{L^s(dw)}
-%\lesssim
-%\omega_{\tau,I}^{-1}w(I)^{-1/2}
-%\left[
-%\int_I
-%\left|
-%g_\tau-
-%(g_\tau)_{B_\Gamma(z_I,C_1\ell(I)),dx}
-%\right|^s\,dw
-%\right]^{1/s}\leq
-%w(I)^{\frac1s-\frac12}.
-%\end{align*}
-%Also, since
-%\[
-%w(I^*)
-%\leq
-%w\bigl(B_\Gamma(z_I,C_1\ell(I))\bigr)
-%\lesssim
-%w(I),
-%\]
-%by
-%Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint},
-%\[
-%\|E_{I,0}\|_{L^s(dw)}
-%+
-%\|H_{I,1}\|_{L^s(dw)}
-%\lesssim
-%w(I)^{\frac1s-\frac12}.
-%\]
-%Since pullback by an element of \(G\) preserves both the
-%\(L^2(dw)\) and \(L^s(dw)\) norms, together with{\color{red}[Cite somewhere]}
-%\[
-%I^*
-%\subset
-%B_\Gamma(z_I,C_1\ell(I))
-%\]
-%and
-%\[
-%w\bigl(B_\Gamma(z_I,C_1\ell(I))\bigr)
-%\simeq
-%w(I),
-%\]
-%shows that for each \(\varepsilon=0,1\), the families
-%\[
-%\{E_{I,\varepsilon}(\sigma\,\cdot)\}_{I\in\mathbb D_\Gamma},\quad
-%\{H_{I,\varepsilon}(\tau\,\cdot)\}_{I\in\mathbb D_\Gamma},\quad
-%\{e_{u,v,I}^{\sigma,\tau}(\sigma\,\cdot)\}_{I\in\mathbb D_\Gamma},
-%\quad\text{and}\quad
-%\{h_{u,v,I}^{\sigma,\tau}(\tau\,\cdot)\}_{I\in\mathbb D_\Gamma}
-%\]
-%are NWO families on \(\Gamma\).
-%
-%
-%{\color{red}For the second term}, set
-%\[
-%H_{\sigma,\tau}(z)
-%:=
-%f(\tau z)-f(\sigma z).
-%\]
-%Then
-%\[
-%\nabla H_{\sigma,\tau}(z)
-%=
-%\tau^T\nabla f(\tau z)
-%-
-%\sigma^T\nabla f(\sigma z),
-%\]
-%and hence
-%\[
-%\|\nabla H_{\sigma,\tau}\|_{L^N(\mathbb R^N)}
-%\leq
-%2\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%With \(a_{\sigma,\tau,I}(f)\) as in
-%Lemma~\ref{lem:Dunkl-chamber-jump-averages}, put
-%\[
-%\rho_{\sigma,\tau,I}
-%:=
-%\left[
-%\frac1{w(I)}
-%\int_I
-%|H_{\sigma,\tau}-a_{\sigma,\tau,I}(f)|^s\,dw
-%\right]^{1/s}.
-%\]
-%By the definition of \(a_{\sigma,\tau,I}(f)\), we have
-%$
-%a_{\sigma,\tau,I}(f)
-%=
-%(H_{\sigma,\tau})_{I,dx},
-%$
-%and hence
-%$
-%\rho_{\sigma,\tau,I}
-%=
-%\Xi_I^{(s)}(H_{\sigma,\tau}).
-%$
-%Therefore, by \eqref{eq:mixed-cube-weak},
-%\[
-%\left\|
-%\left\{
-%\theta_{\sigma,\tau,I}\rho_{\sigma,\tau,I}
-%\right\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%
-%If \(\rho_{\sigma,\tau,I}>0\), define
-%\[
-%E_{I,2}(x)
-%=
-%\rho_{\sigma,\tau,I}^{-1}
-%\left[
-%H_{\sigma,\tau}(\sigma^{-1}x)
-%-
-%a_{\sigma,\tau,I}(f)
-%\right]
-%e_{u,v,I}^{\sigma,\tau}(x),
-%\]
-%and
-%$
-%H_{I,2}(y)
-%:=
-%h_{u,v,I}^{\sigma,\tau}(y).
-%$
-%If \(\rho_{\sigma,\tau,I}=0\), set
-%$
-%E_{I,2}:=0.
-%$
-%Then, on the support of
-%$
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y),
-%$
-%we have
-%\begin{align}\label{deco333}
-%&\theta_{\sigma,\tau,I}
-%\bigl(f(\tau\xi)-f(\sigma\xi)\bigr)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}
-%H_{\sigma,\tau}(\sigma^{-1}x)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}
-%\Bigl(
-%H_{\sigma,\tau}(\sigma^{-1}x)
-%-
-%a_{\sigma,\tau,I}(f)
-%+
-%a_{\sigma,\tau,I}(f)
-%\Bigr)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}\rho_{\sigma,\tau,I}
-%\Bigl[
-%\rho_{\sigma,\tau,I}^{-1}
-%\bigl(
-%H_{\sigma,\tau}(\sigma^{-1}x)
-%-
-%a_{\sigma,\tau,I}(f)
-%\bigr)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%\Bigr]
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&\qquad
-%+
-%\theta_{\sigma,\tau,I}a_{\sigma,\tau,I}(f)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}\rho_{\sigma,\tau,I}
-%E_{I,2}(x)H_{I,2}(y)
-%+
-%\theta_{\sigma,\tau,I}a_{\sigma,\tau,I}(f)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y).
-%\end{align}
-%Furthermore,
-%\begin{align*}
-%\|E_{I,2}\|_{L^s(dw)}
-%\lesssim
-%\rho_{\sigma,\tau,I}^{-1}w(I)^{-1/2}
-%\left[
-%\int_I
-%|H_{\sigma,\tau}-a_{\sigma,\tau,I}(f)|^s\,dw
-%\right]^{1/s}=
-%w(I)^{\frac1s-\frac12},
-%\end{align*}
-%while
-%$
-%\|H_{I,2}\|_{L^s(dw)}
-%\lesssim
-%w(I)^{\frac1s-\frac12}.
-%$
-%Hence these are again NWO families after pullback to \(\Gamma\). By
-%Lemma~\ref{lem:Dunkl-chamber-jump-averages},
-%\[
-%\left\|
-%\left\{
-%\theta_{\sigma,\tau,I}a_{\sigma,\tau,I}(f)
-%\right\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%
-%Combining the equalities \eqref{deco222} and \eqref{deco333},
-%we see that  on the support of
-%$
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y),
-%$
-%\begin{align}\label{keydecomp}
-%&\theta_{\sigma,\tau,I}(f(y)-f(x))
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}
-%\Bigl[
-%f(\tau\eta)-f(\tau\xi)
-%+
-%f(\tau\xi)-f(\sigma\xi)
-%\Bigr]
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\nonumber\\
-%&=
-%\theta_{\sigma,\tau,I}\omega_{\tau,I}
-%\sum_{\varepsilon=0}^1
-%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y)
-%+
-%\theta_{\sigma,\tau,I}\rho_{\sigma,\tau,I}
-%E_{I,2}(x)H_{I,2}(y)
-%\\
-%&+
-%\theta_{\sigma,\tau,I}a_{\sigma,\tau,I}(f)
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)\nonumber.
-%\end{align}
-%Let \(T_{\sigma,\tau,u,v}(f)\) be the operator corresponding to the
-%kernel
-%\[
-%\sum_{I\in\mathbb D_\Gamma}
-%\theta_{\sigma,\tau,I}
-%(f(y)-f(x))
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y).
-%\]
-%It follows from \eqref{keydecomp} and Lemma~\ref{NWOLEMMAA2} that
-%\[
-%\|T_{\sigma,\tau,u,v}(f)\|_{S^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%
-%As \(G\) is finite, we see that
-%\[
-%T_f
-%:=
-%\sum_{\sigma,\tau\in G}
-%\sum_{u,v\in\mathbb Z^N}
-%c_{u,v}T_{\sigma,\tau,u,v}(f)
-%\]
-%converges in operator norm to a compact operator and satisfies
-%\[
-%\|T_f\|_{S^{N,\infty}(L^2(dw))}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%
-%It remains to identify \(T_f\). For
-%\(f\in C_c^\infty(\mathbb R^N)\), the usual truncated-kernel
-%representation of \(R_{{\rm Dunkl},j}\), together with
-%\eqref{eq:endpoint-Dunkl-Riesz-kernel-NWO}, gives
-%\[
-%T_f
-%=
-%R_{{\rm Dunkl},j}M_f-M_fR_{{\rm Dunkl},j}
-%=
-%[R_{{\rm Dunkl},j},M_f].
-%\]
-%For general \(f\in\dot W^{1,N}(\mathbb R^N)\), choose, modulo
-%additive constants,
-%\(f_m\in C_c^\infty(\mathbb R^N)\) such that
-%\[
-%\|\nabla(f_m-f)\|_{L^N}
-%\longrightarrow0
-%\]
-%and
-%\[
-%f_m\longrightarrow f
-%\quad\text{in }L^2_{\mathrm{loc}}.
-%\]
-%Applying the estimate already proved to \(f_m-f_n\) and \(f_m-f\)
-%gives
-%\[
-%\|T_{f_m}-T_f\|_{S^{N,\infty}}
-%\lesssim
-%\|\nabla(f_m-f)\|_{L^N}
-%\longrightarrow0.
-%\]
-%Moreover, for
-%\(\varphi,\psi\in C_c^\infty(\mathbb R^N)\), the local
-%\(L^2\)-convergence, the boundedness of \(dw/dx\) on compact sets, and
-%the \(L^2(dw)\)-boundedness of \(R_{{\rm Dunkl},j}\) imply
-%\[
-%\langle
-%[R_{{\rm Dunkl},j},M_{f_m}]\varphi,\psi
-%\rangle
-%\longrightarrow
-%\langle
-%[R_{{\rm Dunkl},j},M_f]\varphi,\psi
-%\rangle.
-%\]
-%Thus \(T_f\) is the bounded extension of the commutator
-%\([R_{{\rm Dunkl},j},M_f]\). Therefore
-%\[
-%\bigl\|
-%[R_{{\rm Dunkl},j},M_f]
-%\bigr\|_{S^{N,\infty}(L^2(\mathbb R^N,dw))}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}
-%=
-%\|f\|_{\dot W^{1,N}(\mathbb R^N)}.
-%\]
-%\end{proof}
-%
-%\begin{proof}
-%Fix \(s>2\). By the local critical Sobolev--Poincar\'e inequality,
-%\(f\in L^s_{\mathrm{loc}}(\mathbb R^N,dx)\); since \(dw/dx\) is bounded on compact sets, \(f\in L^s_{\mathrm{loc}}(\mathbb R^N,dw)\).
-%
-%By Lemma~\ref{lem:Dunkl-Riesz-Fourier-NWO-endpoint},
-%\[
-%K_{{\rm Dunkl},j}(x,y)
-%=
-%\sum_{\sigma,\tau\in G}
-%\sum_{u,v\in\mathbb Z^N}
-%c_{u,v}
-%\sum_{I\in\mathbb D_\Gamma}
-%\theta_{\sigma,\tau,I}
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y)
-%\]
-%for almost every \((x,y)\) with \(d(x,y)>0\), where
-%\[
-%|c_{u,v}|\lesssim(1+|u|+|v|)^{-M_0},
-%\qquad M_0>2N,
-%\]
-%and \eqref{property2}--\eqref{property3} hold.
-%
-%Fix \(\sigma,\tau\in G\) and \(u,v\in\mathbb Z^N\), and write
-%\[
-%e_I=e_{u,v,I}^{\sigma,\tau},
-%\qquad
-%h_I=h_{u,v,I}^{\sigma,\tau},
-%\qquad
-%\theta_I=\theta_{\sigma,\tau,I}.
-%\]
-%On the support of \(e_I(x)h_I(y)\), write
-%\(x=\sigma\xi\), \(y=\tau\eta\), where
-%\(\xi\in I\) and \(\eta\in I^*\). Then
-%\begin{equation*}
-%f(y)-f(x)
-%=
-%\bigl(f(\tau\eta)-f(\tau\xi)\bigr)
-%+
-%\bigl(f(\tau\xi)-f(\sigma\xi)\bigr).
-%\end{equation*}
-%
-%Set \(g_\tau(z)=f(\tau z)\). Since \(\tau\) is orthogonal,
-%\[
-%\|\nabla g_\tau\|_{L^N(\mathbb R^N)}
-%=
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%Let \(\mathcal B_I\) be as in Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation}, and put
-%\[
-%m_{\tau,I}=(g_\tau)_{\mathcal B_I,dx},
-%\qquad
-%\omega_{\tau,I}
-%=
-%\left(
-%\frac1{w(I)}
-%\int_{I^*}|g_\tau-m_{\tau,I}|^s\,dw
-%\right)^{1/s}.
-%\]
-%Since \(I^*\subset\mathcal B_I\) and \(w(\mathcal B_I)\simeq w(I)\),
-%\[
-%\omega_{\tau,I}
-%\lesssim
-%\Omega_I^{(s)}(g_\tau).
-%\]
-%Hence Lemma~\ref{lem:Dunkl-Ainfty-critical-oscillation} gives
-%\begin{equation*}
-%\left\|
-%\{\theta_I\omega_{\tau,I}\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\leq
-%\left\|
-%\{\omega_{\tau,I}\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\end{equation*}
-%
-%For \(\omega_{\tau,I}>0\), define
-%\[
-%E_{I,0}=e_I,
-%\qquad
-%H_{I,0}(y)
-%=
-%\omega_{\tau,I}^{-1}
-%\bigl(f(y)-m_{\tau,I}\bigr)h_I(y),
-%\]
-%and
-%\[
-%E_{I,1}(x)
-%=
-%-\omega_{\tau,I}^{-1}
-%\bigl(f(\tau\sigma^{-1}x)-m_{\tau,I}\bigr)e_I(x),
-%\qquad
-%H_{I,1}=h_I.
-%\]
-%If \(\omega_{\tau,I}=0\), set these four functions equal to zero. In this case
-%\(g_\tau=m_{\tau,I}\) \(dw\)-a.e. on \(I^*\), so the corresponding same-chamber term vanishes. Thus
-%\[
-%\theta_I
-%\bigl(f(\tau\eta)-f(\tau\xi)\bigr)e_I(x)h_I(y)
-%=
-%\theta_I\omega_{\tau,I}
-%\sum_{\varepsilon=0}^1
-%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y).
-%\]
-%By \eqref{property2}, the factors on the right are supported in \(\sigma I\) and \(\tau I^*\), respectively. Moreover, using \eqref{property3}, the \(G\)-invariance of \(dw\), and \(I\subset I^*\),
-%\begin{align*}
-%\|H_{I,0}\|_{L^s(dw)}
-%&\lesssim
-%\omega_{\tau,I}^{-1}w(I)^{-1/2}
-%\left(
-%\int_{I^*}|g_\tau-m_{\tau,I}|^s\,dw
-%\right)^{1/s}
-%=
-%w(I)^{\frac1s-\frac12},\\
-%\|E_{I,1}\|_{L^s(dw)}
-%&\lesssim
-%\omega_{\tau,I}^{-1}w(I)^{-1/2}
-%\left(
-%\int_I|g_\tau-m_{\tau,I}|^s\,dw
-%\right)^{1/s}
-%\leq
-%w(I)^{\frac1s-\frac12}.
-%\end{align*}
-%Also, since \(w(I^*)\leq w(\mathcal B_I)\lesssim w(I)\),
-%\[
-%\|E_{I,0}\|_{L^s(dw)}
-%+
-%\|H_{I,1}\|_{L^s(dw)}
-%\lesssim
-%w(I)^{\frac1s-\frac12}.
-%\]
-%Since pullback by an element of \(G\) preserves both the \(L^2(dw)\) and \(L^s(dw)\) norms, the NWO criterion recalled before Lemma~\ref{NWOLEMMAA2}, together with
-%\(I^*\subset\mathcal B_I\) and \(w(\mathcal B_I)\simeq w(I)\), shows that the two pairs
-%\(\{E_{I,\varepsilon}\}_I,\{H_{I,\varepsilon}\}_I\), \(\varepsilon=0,1\), are NWO families after pullback to \(\Gamma\).
-%
-%For the second term, set
-%\[
-%H_{\sigma,\tau}(z)
-%=
-%f(\tau z)-f(\sigma z).
-%\]
-%Then
-%\[
-%\nabla H_{\sigma,\tau}(z)
-%=
-%\tau^T\nabla f(\tau z)
-%-
-%\sigma^T\nabla f(\sigma z),
-%\qquad
-%\|\nabla H_{\sigma,\tau}\|_{L^N(\mathbb R^N)}
-%\leq
-%2\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%With \(a_{\sigma,\tau,I}(f)\) as in Lemma~\ref{lem:Dunkl-chamber-jump-averages}, put
-%\[
-%\rho_{\sigma,\tau,I}
-%=
-%\left(
-%\frac1{w(I)}
-%\int_I
-%|H_{\sigma,\tau}-a_{\sigma,\tau,I}(f)|^s\,dw
-%\right)^{1/s}.
-%\]
-%By \eqref{eq:mixed-cube-weak},
-%\[
-%\left\|
-%\{\theta_I\rho_{\sigma,\tau,I}\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%If \(\rho_{\sigma,\tau,I}>0\), define
-%\[
-%E_{I,2}(x)
-%=
-%\rho_{\sigma,\tau,I}^{-1}
-%\bigl(
-%H_{\sigma,\tau}(\sigma^{-1}x)
-%-a_{\sigma,\tau,I}(f)
-%\bigr)e_I(x),
-%\qquad
-%H_{I,2}=h_I,
-%\]
-%and set \(E_{I,2}=0\) if \(\rho_{\sigma,\tau,I}=0\). Then
-%\[
-%\theta_I
-%\bigl(f(\tau\xi)-f(\sigma\xi)\bigr)e_I(x)h_I(y)
-%=
-%\theta_I\rho_{\sigma,\tau,I}E_{I,2}(x)H_{I,2}(y)
-%+
-%\theta_Ia_{\sigma,\tau,I}(f)e_I(x)h_I(y).
-%\]
-%Furthermore,
-%\begin{align*}
-%\|E_{I,2}\|_{L^s(dw)}
-%&\lesssim
-%\rho_{\sigma,\tau,I}^{-1}w(I)^{-1/2}
-%\left(
-%\int_I
-%|H_{\sigma,\tau}-a_{\sigma,\tau,I}(f)|^s\,dw
-%\right)^{1/s}\\
-%&=
-%w(I)^{\frac1s-\frac12},
-%\end{align*}
-%while
-%\(\|H_{I,2}\|_{L^s(dw)}\lesssim w(I)^{1/s-1/2}\). Hence these are again NWO families after pullback. The remaining coefficients satisfy, by Lemma~\ref{lem:Dunkl-chamber-jump-averages},
-%\[
-%\left\|
-%\{\theta_Ia_{\sigma,\tau,I}(f)\}_{I\in\mathbb D_\Gamma}
-%\right\|_{\ell^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)},
-%\]
-%uniformly in \(\sigma,\tau\).
-%
-%Consequently, on the support of \(e_I(x)h_I(y)\),
-%\begin{align*}
-%\theta_I(f(y)-f(x))e_I(x)h_I(y)
-%={}&
-%\theta_I\omega_{\tau,I}
-%\sum_{\varepsilon=0}^1
-%E_{I,\varepsilon}(x)H_{I,\varepsilon}(y)\\
-%&+
-%\theta_I\rho_{\sigma,\tau,I}
-%E_{I,2}(x)H_{I,2}(y)
-%+
-%\theta_Ia_{\sigma,\tau,I}(f)e_I(x)h_I(y).
-%\end{align*}
-%Interpreting a kernel \(E(x)H(y)\) as the rank-one operator
-%\(\langle\,\cdot,\overline H\rangle E\), Lemma~\ref{NWOLEMMAA2} with
-%\(p=N\) and \(q=\infty\) yields
-%\begin{equation*}
-%\|T_{\sigma,\tau,u,v}(f)\|_{S^{N,\infty}}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)},
-%\end{equation*}
-%where \(T_{\sigma,\tau,u,v}(f)\) is the operator corresponding to the kernel
-%\[
-%\sum_{I\in\mathbb D_\Gamma}
-%\theta_{\sigma,\tau,I}
-%(f(y)-f(x))
-%e_{u,v,I}^{\sigma,\tau}(x)
-%h_{u,v,I}^{\sigma,\tau}(y).
-%\]
-%The estimate is uniform in \(\sigma,\tau,u,v\).
-%
-%Since \(N>1\), the weak Schatten quasi-norm is equivalent to the norm
-%\[
-%\|T\|_{(N,\infty)}
-%:=
-%\sup_{m\geq1}
-%m^{\frac1N-1}
-%\sum_{k=1}^m s_k(T).
-%\]
-%Indeed, the Ky Fan inequality gives the triangle inequality for
-%\(\|\cdot\|_{(N,\infty)}\), while
-%\[
-%m^{1/N}s_m(T)
-%\leq
-%m^{\frac1N-1}\sum_{k=1}^m s_k(T)
-%\lesssim_N
-%\sup_{k\geq1}k^{1/N}s_k(T),
-%\]
-%the last inequality following from
-%\(\sum_{k=1}^m k^{-1/N}\lesssim_N m^{1-1/N}\). Hence
-%\[
-%\|T\|_{(N,\infty)}
-%\simeq_N
-%\|T\|_{S^{N,\infty}}.
-%\]
-%Since \(M_0>2N\),
-%\[
-%\sum_{u,v\in\mathbb Z^N}|c_{u,v}|<\infty.
-%\]
-%As \(G\) is finite, the preceding block estimate and the triangle inequality for
-%\(\|\cdot\|_{(N,\infty)}\) show that the series
-%\[
-%T_f
-%:=
-%\sum_{\sigma,\tau\in G}
-%\sum_{u,v\in\mathbb Z^N}
-%c_{u,v}T_{\sigma,\tau,u,v}(f)
-%\]
-%converges in operator norm to a compact operator and satisfies
-%\[
-%\|T_f\|_{S^{N,\infty}(L^2(dw))}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}.
-%\]
-%Indeed, the same estimate applied to the tail of the absolutely summable
-%\(\{c_{u,v}\}\) gives convergence in \(\|\cdot\|_{(N,\infty)}\), hence in operator norm, and the Ky Fan sums pass to the operator-norm limit.
-%
-%It remains to identify \(T_f\). For \(f\in C_c^\infty(\mathbb R^N)\), the usual truncated-kernel representation of \(R_{{\rm Dunkl},j}\), together with
-%\eqref{eq:endpoint-Dunkl-Riesz-kernel-NWO}, gives
-%\[
-%T_f
-%=
-%R_{{\rm Dunkl},j}M_f-M_fR_{{\rm Dunkl},j}
-%=
-%[R_{{\rm Dunkl},j},M_f].
-%\]
-%For general \(f\in\dot W^{1,N}(\mathbb R^N)\), choose, modulo additive constants,
-%\(f_m\in C_c^\infty(\mathbb R^N)\) such that
-%\[
-%\|\nabla(f_m-f)\|_{L^N}\longrightarrow0
-%\]
-%and \(f_m\to f\) in \(L^2_{\mathrm{loc}}\). Applying the estimate already proved to
-%\(f_m-f_n\) and \(f_m-f\) gives
-%\[
-%\|T_{f_m}-T_f\|_{S^{N,\infty}}
-%\lesssim
-%\|\nabla(f_m-f)\|_{L^N}
-%\longrightarrow0.
-%\]
-%Moreover, for \(\varphi,\psi\in C_c^\infty(\mathbb R^N)\),
-%the local \(L^2\)-convergence and the \(L^2(dw)\)-boundedness of
-%\(R_{{\rm Dunkl},j}\) imply
-%\[
-%\langle [R_{{\rm Dunkl},j},M_{f_m}]\varphi,\psi\rangle
-%\longrightarrow
-%\langle [R_{{\rm Dunkl},j},M_f]\varphi,\psi\rangle.
-%\]
-%Thus \(T_f\) is the bounded extension of the commutator
-%\([R_{{\rm Dunkl},j},M_f]\). Therefore
-%\[
-%\bigl\|
-%[R_{{\rm Dunkl},j},M_f]
-%\bigr\|_{S^{N,\infty}(L^2(\mathbb R^N,dw))}
-%\lesssim
-%\|\nabla f\|_{L^N(\mathbb R^N)}
-%=
-%\|f\|_{\dot W^{1,N}(\mathbb R^N)}.
-%\]
-%\end{proof}
+
+\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO}
+Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
+We have
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y),$$
+where
+\begin{enumerate}
+\item $e_{k,l,I}$ is supported in $I$ and $f_{k,l,I}$ is supported in $3I;$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
+$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(\mathbb{R}^N,w(x)dx)};$$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
+$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{\frac1r-1};$$
+\end{enumerate}
+\end{lemma}
+\begin{proof} We have
+$$K(x,y)=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
+$$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})+\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\not\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+
+We will only consider the first sum. The second some can be treated similarly, but the notations become heavier. {\color{red} feel free to write the expression for the second sum if you think it is needed. the only difference is that the domain of the map $K_I$ becomes more complicated.}
+
+For every $I\in\mathbb{D}_{\Gamma}$ with $3I\subset\Gamma,$ define the map
+$$K_I:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
+by setting
+$$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
+
+It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
+$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
+$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+In particular,
+$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+We may, therefore, write
+$$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
+where
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
+In particular,
+$$|{\rm coef}_{k,l,I}|\leq (1+|k|^2+|l|^2)^{-N-1}\cdot \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+
+We now set
+$$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
+$$f_{k,l,I}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,I}\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+This allows us to write
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y).$$
+
+Obviously,
+$${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
+$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
+$$\|f_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\cdot w(3I)^{\frac1r}\leq$$
+$$\leq \frac{c_{K,\kappa}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\cdot w(3I)^{\frac1r}\leq c_{K,\kappa}\frac{d_I}{d_I+|c_I-gc_I|}w(I)^{\frac1r-1}.$$
+\end{proof}
+
+\begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
+$$\sup_{x\in I}w(x)\leq c_{\kappa,\Phi}\frac{w(I)}{m(I)}.$$
+\end{lemma}
+\begin{proof} We have
+$$w(I)\approx w(c_I,d_I)\approx d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+On the other hand, if $x\in I,$ then $|x-c_I|\leq c_{\Phi}d_I$ and, therefore,
+$$|\langle x,v\rangle|\leq |\langle x-c_I,v\rangle|+|\langle c_I,v\rangle|\leq |x-c_I|+|\langle c_I,v\rangle|\leq c_{\Phi}d_I+|\langle c_I,v\rangle|.$$
+Thus,
+$$w(x)\leq \prod_{v\in R}(c_{\Phi}d_I+|\langle c_I,v\rangle|)^{k(v)}\leq c_{\Phi,\kappa}\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+This completes the proof.
+\end{proof}
+
+\begin{lemma}\label{first RS intermediate estimate} Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ We have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa,r}\Big\|\Big\{m(I)^{-\frac1r}\|f\|_{L_r(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+\Big\|_{N,\infty}.$$
+\end{lemma}
+\begin{proof} Let $A_{k,l}$ be the integral operator with integral kernel given by the formula
+$$(x,y)\to\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y),\quad x,y\in\Gamma,\quad k,l\in\mathbb{Z}^N.$$
+By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, we have
+$$M_fV=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}.$$
+By the triangle inequality,
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}.$$
+
+By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
+$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
+are NWO (in the sense of Definition \ref{NWO def} with constant $c$ being $3$). Using Lemma \ref{NWO lemma}, we conclude that
+$$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
+$$\leq c_{\kappa,r}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\gamma}}\Big\|_{N,\infty}.$$
+Therefore,
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}c_{K,\kappa}c_{\kappa,r}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\gamma}}\Big\|_{N,\infty}.$$
+By Lemma \ref{supremum vs average},
+$$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
+Combining the last two estimates, we complete the proof.
+\end{proof}
+
+\begin{lemma}\label{first RS final lemma} {\color{red} spell out the assumptions.}
+$$\Big\|\Big\{m(I)^{-\frac1r}\|f\|_{L_r(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+\Big\|_{N,\infty}\leq c_{\Phi}\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
+\end{lemma}
+
+
+\begin{proof}[Proof of Theorem \ref{first RS-type theorem}] The assertion follows by combining Lemmas \ref{first RS intermediate estimate} and \ref{first RS final lemma}.
+\end{proof}
+
 \section{Appendix}
 \setcounter{equation}{0}
 
