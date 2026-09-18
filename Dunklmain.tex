@@ -1,91 +1,22 @@
-\documentclass[12pt]{amsart}
-\usepackage{ amsmath, amsthm, amsfonts, amssymb, color}
- \usepackage{mathrsfs}
-\usepackage{amsfonts, amsmath}
- \usepackage{amsmath,amstext,amsthm,amssymb,amsxtra}
- \usepackage{txfonts} %also pxfonts
- \usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
- \allowdisplaybreaks
- \usepackage{pgf,tikz}
- \usepackage{multirow}%newtablepackage1
- \usepackage{diagbox} %newtablepackage2
-\usepackage{cite}
- \usepackage{tikz}
+\documentclass{amsart}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, color}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage[colorlinks, citecolor=blue,pagebackref,hypertexnames=false]{hyperref}
 
-\usetikzlibrary{decorations.pathreplacing}
 
- %\usepackage{showkeys}
- \textwidth =166mm
- \textheight =232mm
-\marginparsep=0cm
-\oddsidemargin=2mm
-\evensidemargin=2mm
-\headheight=13pt
-\headsep=0.8cm
-\parskip=0pt
-\hfuzz=6pt
-\widowpenalty=10000
- \setlength{\topmargin}{-0.2cm}
-
-\DeclareMathOperator*{\essinf}{ess\ inf}
-\DeclareMathOperator*{\esssup}{ess\ sup}
-\setcounter {tocdepth}{1}
 \begin{document}
 
- \baselineskip 16.6pt
-\hfuzz=6pt
-
-\widowpenalty=10000
-
-\newtheorem{cl}{Claim}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{coro}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{nota}[theorem]{Notation}
-%\theoremstyle{definition}
 \newtheorem{assum}{Assumption}[section]
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
-\renewcommand{\theequation}
-{\thesection.\arabic{equation}}
 
-\def\SL{\sqrt H}
-
-\newcommand{\mar}[1]{{\marginpar{\sffamily{\scriptsize
-        #1}}}}
-
-\newcommand{\as}[1]{{\mar{AS:#1}}}
-\newcommand{\cE}{\mathcal{E}}
-\newcommand\R{\mathbb{R}}
-\newcommand\RR{\mathbb{R}}
-\newcommand\CC{\mathbb{C}}
-\newcommand\D {{\rm Dunkl}}
-\newcommand\NN{\mathbb{N}}
-\newcommand\N {{\bf N}}
-\newcommand\ZZ{\mathbb{Z}}
-\newcommand\HH{\mathbb{H}}
-\newcommand\Z{\mathbb{Z}}
-\def\RN {\mathbb{R}^n}
-\renewcommand\Re{\operatorname{Re}}
-\renewcommand\Im{\operatorname{Im}}
-
-\newcommand{\mc}{\mathcal}
-
-\def\hs{\hspace{0.33cm}}
-\newcommand{\la}{\alpha}
-\newcommand{\eps}{\tau}
-\newcommand{\pl}{\partial}
-\newcommand{\supp}{{\rm supp}{\hspace{.05cm}}}
-\newcommand{\x}{\times}
-\newcommand{\lag}{\langle}
-\newcommand{\rag}{\rangle}
-
-\newcommand\wrt{\,{\rm d}}
-
-\newcommand{\norm}[2]{|#1|_{#2}}
-\newcommand{\Norm}[2]{\|#1\|_{#2}}
 
 \title[Schatten class properties of Dunkl--Riesz transform commutators]{Weyl--Chamber geometry, Poincar\'e inequality meets Schatten class properties of Dunkl--Riesz transform commutators}
 
@@ -96,11 +27,6 @@
 \email{fanzhj3@mail2.sysu.edu.cn}
 
 
-
-
-
-
-
 \author{Ji Li}
 \address{Ji Li, Department of Mathematics, Macquarie University,NSW2109, Australia}
 \email{ji.li@mq.edu.au}
@@ -108,15 +34,15 @@
 
 
 \author{Dmitriy Zanin}
-\address{Dmitriy Zanin, University of New South Wales, Kensington, NSW 2052, Australia}
-\email{d.zanin@unsw.edu.au}
+\address{School of Mathematics and Statistics, HNP-LAMA, Central South University, Changsha 410075, China}
+\email{d.zanin@csu.edu.cn}
 
 
 
 
 
 
-  \date{\today}
+\date{}
 
  \subjclass[2010]{47B10, 42B20, 43A85}
 \keywords{Schatten class, Riesz transform commutators, Dunkl operator, Besov space, Nearly weakly orthogonal sequence}
@@ -133,7 +59,6 @@
 
 \tableofcontents
 
-%\newpage
 \section{Introduction}
 
 \begin{definition}
@@ -204,17 +129,17 @@ Define the Dunkl measure $dw$ on $\mathbb{R}^N$ by
 $$
 dw(x) :=\prod_{v \in R} |\langle x,v\rangle|^{k(v)} dx,
 $$
-where $dx$ stands for the Lebesgue measure on $\mathbb{R}^N$. Let $B(x,r):=\{y\in \mathbb{R}^N:\|x-y\|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. Let $\N:=N+\sum_{v\in R}k(v)$. Note that
-$$w(B(tx,tr))=t^{\N}w(B(x,r)),\ {\rm for}\ x\in\mathbb{R}^N,\ t,r>0.$$
+where $dx$ stands for the Lebesgue measure on $\mathbb{R}^N$. Let $B(x,r):=\{y\in \mathbb{R}^N:\|x-y\|< r\}$ be the Euclidean ball centred at $x$ with radius $r>0$. Let $\mathbf{N}:=N+\sum_{v\in R}k(v)$. Note that
+$$w(B(tx,tr))=t^{\mathbf{N}}w(B(x,r)),\ {\rm for}\ x\in\mathbb{R}^N,\ t,r>0.$$
 Furthermore,
 \begin{align}\label{twosideinequ}
   w(B(x,r))\sim r^N \prod_{v \in R}(|\langle x, v \rangle |+r)^{k(v)},
 \end{align}
 where the implicit constant only depends on $N,R$ and $k$.  It follows from \eqref{twosideinequ} that there exists a constant $C\geq 1$ such that for every $x\in \mathbb{R}^N$,
 \begin{align}\label{doublinginequality}
-C^{-1}\left(\frac{r_2}{r_1}\right)^N\leq \frac{w(B(x,r_2))}{w(B(x,r_1))}\leq C\left(\frac{r_2}{r_1}\right)^\N,\ {\rm for}\ 0<r_1<r_2,
+C^{-1}\left(\frac{r_2}{r_1}\right)^N\leq \frac{w(B(x,r_2))}{w(B(x,r_1))}\leq C\left(\frac{r_2}{r_1}\right)^{\mathbf{N}},\ {\rm for}\ 0<r_1<r_2,
 \end{align}
-so the numbers $\N$ and $N$ are called the upper and lower homogeneous dimensions, respectively.
+so the numbers $\mathbf{N}$ and $N$ are called the upper and lower homogeneous dimensions, respectively.
 
 {\color{red}[Add the definition of $A_\infty$. Zhijie will do it.]}
 \begin{lemma}\label{lem:Dunkl-weight-A-infty}
@@ -299,10 +224,11 @@ uniformly over all Euclidean balls $B$. Thus $\varpi\in A_p(\mathbb R^N,dx)$, an
 
 The Dunkl operators $T_\xi$ are defined by
 $$T_\xi f(x):=\partial_\xi f(x)+\sum_{v\in R}\frac{k(v)}{2}\langle v,\xi\rangle\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle},$$
-where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by $$\Delta_{\D}f(x):=\sum_{j=1}^N T_{e_j}^2f(x)=\Delta_{\mathbb{R}^N}f(x)+\sum_{v\in R}k(v)\delta_v f(x),$$
+where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by
+$$\Delta_{{\rm Dunkl}}f(x):=\sum_{j=1}^N T_{e_j}^2f(x)=\Delta_{\mathbb{R}^N}f(x)+\sum_{v\in R}k(v)\delta_v f(x),$$
 where $\Delta_{\mathbb{R}^N}$ is the Laplacian on $\mathbb{R}^N$ and $\delta_v$ is defined by
 $$\delta_v f(x):=\frac{\partial_v f(x)}{\langle v,x\rangle}-\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle^2}.$$
-In this article, we consider the Dunkl-Riesz transforms defined by $R_{\D,j}:=T_{e_j}(-\Delta_{\D})^{-1/2}$, $j=1,2,\ldots,N$.
+In this article, we consider the Dunkl-Riesz transforms defined by $R_{{\rm Dunkl},j}:=T_{e_j}(-\Delta_{{\rm Dunkl}})^{-1/2}$, $j=1,2,\ldots,N$.
 
 
 \begin{definition}{\rm
@@ -325,7 +251,7 @@ w(B(x,r)) \leq w(\mathcal O(B(x,r))) \leq |G|w(B(x,r))
 \]
 for all $x \in \mathbb{R}^N$ and $r>0$. We also denote $B^d(x,r):= \{y\in \mathbb{R}^N: d(x,y)<r\}$, i.e., $B^d(x,r)=\mathcal O(B(x,r))$.
 
-Denote by $K_{\D,j}(x,y)$ the integral kernel of $R_{\D,j}$. For every $x,y\in\mathbb{R}^N$ and $r>0$, let
+Denote by $K_j(x,y)$ the integral kernel of $R_{{\rm Dunkl},j}.$ For every $x,y\in\mathbb{R}^N$ and $r>0$, let
 $$V(x,y,r):=\max\{w(B(x,r)),w(B(y,r))\}.$$
 The following lemma establishes derivative estimates for the Dunkl--Riesz transform kernel.
 \begin{lemma}
@@ -412,7 +338,7 @@ V(x,y,\sqrt t)^{-1}
 \lesssim
 V(x,y,d(x,y))^{-1}
 \begin{cases}
-\displaystyle \left(\frac{d(x,y)}{\sqrt t}\right)^{\N},
+\displaystyle \left(\frac{d(x,y)}{\sqrt t}\right)^{\mathbf{N}},
 &0<t\leq d(x,y)^2,\\[2mm]
 \displaystyle \left(\frac{d(x,y)}{\sqrt t}\right)^N,
 &t\geq d(x,y)^2.
@@ -426,9 +352,9 @@ V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt\\
 &\quad\lesssim
 \frac1{V(x,y,d(x,y))}
 \Bigg(
-d(x,y)^\N
+d(x,y)^{\mathbf{N}}
 \int_0^{d(x,y)^2}
-t^{-\frac{\N+|\alpha|+|\beta|+1}{2}}
+t^{-\frac{\mathbf{N}+|\alpha|+|\beta|+1}{2}}
 e^{-cd(x,y)^2/t}\,dt
 +
 d(x,y)^N
@@ -451,9 +377,9 @@ V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt\\
 &\quad\lesssim
 \frac1{V(x,y,d(x,y))}
 \Bigg(
-d(x,y)^\N
+d(x,y)^{\mathbf{N}}
 \int_0^{d(x,y)^2}
-t^{-\frac{\N+|\alpha|+|\beta|}{2}}
+t^{-\frac{\mathbf{N}+|\alpha|+|\beta|}{2}}
 e^{-cd(x,y)^2/t}\,dt
 +
 d(x,y)^N
@@ -486,9 +412,9 @@ t^{-3/2}
 V(x,y,\sqrt t)^{-1}
 e^{-cd(x,y)^2/t}\,dt\\
 &\quad\lesssim
-\frac{d(x,y)^\N}{\|x-y\|^2V(x,y,d(x,y))}
+\frac{d(x,y)^{\mathbf{N}}}{\|x-y\|^2V(x,y,d(x,y))}
 \int_0^{d(x,y)^2}
-t^{-\frac{\N+1}{2}}e^{-cd(x,y)^2/t}\,dt\\
+t^{-\frac{\mathbf{N}+1}{2}}e^{-cd(x,y)^2/t}\,dt\\
 &\qquad+
 \frac{d(x,y)}{\|x-y\|^2V(x,y,d(x,y))}
 \int_{d(x,y)^2}^{\|x-y\|^2}\frac{dt}{t}
@@ -521,15 +447,15 @@ This completes the proof of Lemma~\ref{lem:Dunkl-Riesz-endpoint-derivatives}.
 \end{proof}
 
 \begin{lemma}\label{nondegenerate}
-For $j\in\{1,2,\ldots,N\}$, and for every ball $B=B(x_0,r)\subset \mathbb{R}^N$, there is another ball $\widehat{B}=B(y_0,r)$ with $y_0=x_0+5re_j$ such that for every $(x,y)\in B\times \widehat{B}$, $K_{\D,j}(x,y)$ does not change sign and satisfies
+For $j\in\{1,2,\ldots,N\}$, and for every ball $B=B(x_0,r)\subset \mathbb{R}^N$, there is another ball $\widehat{B}=B(y_0,r)$ with $y_0=x_0+5re_j$ such that for every $(x,y)\in B\times \widehat{B}$, $K_j(x,y)$ does not change sign and satisfies
 \begin{align*}
-|K_{\D,j}(x,y)|\geq\frac{C}{w(B(x_0,r))}.
+|K_j(x,y)|\geq\frac{C}{w(B(x_0,r))}.
 \end{align*}
 \end{lemma}
 \begin{proof}
-The lower bound is given in \cite[Theorem 1.2]{MR4733961}, while the fact that $K_{\D,j}(x,y)$ does not change sign can be seen in the proof of \cite[Theorem 1.2]{MR4733961}. Indeed, with the choice $y_0:=x_0+5re_j$, we have $y_j-x_j\geq 3r$ for all $(x,y)\in B\times \widehat{B}$. Together with the fact that the heat kernel $h_t(x,y)$ associated with the Dunkl Laplacian is  positive, the representation
-$$K_{\D,j}(x,y)=-\frac{C}{2}\int_0^\infty \frac{y_j-x_j}{t}h_t(x,y)\frac{dt}{\sqrt{t}},$$
-implies that $K_{\D,j}(x,y)<0$ (and thus, does not change sign) on $ B\times \widehat{B}$.
+The lower bound is given in \cite[Theorem 1.2]{MR4733961}, while the fact that $K_j(x,y)$ does not change sign can be seen in the proof of \cite[Theorem 1.2]{MR4733961}. Indeed, with the choice $y_0:=x_0+5re_j$, we have $y_j-x_j\geq 3r$ for all $(x,y)\in B\times \widehat{B}$. Together with the fact that the heat kernel $h_t(x,y)$ associated with the Dunkl Laplacian is  positive, the representation
+$$K_j(x,y)=-\frac{C}{2}\int_0^\infty \frac{y_j-x_j}{t}h_t(x,y)\frac{dt}{\sqrt{t}},$$
+implies that $K_j(x,y)<0$ (and thus, does not change sign) on $ B\times \widehat{B}$.
 \end{proof}
 
 
@@ -676,7 +602,7 @@ of NWO sequences and the general extension to spaces of homogeneous type.
 
 {\it Let $\mathscr{D}$ be a system of dyadic cubes. A sequence of functions $\{e_Q\}_{Q\in\mathscr{D}}$ is an NWO sequence if
 \begin{enumerate}
-  \item $\supp e_Q\subseteq cQ$ for some positive constant $c$ independent of $Q$
+  \item ${\rm supp}(e_Q)\subseteq cQ$ for some positive constant $c$ independent of $Q$
   \item $\|e_Q\|_{L^s(\mathbb{R}^{N},dw)}\leq w(Q)^{1/s-1/2}$ for some $s>2$.
 \end{enumerate}
 }
@@ -3583,9 +3509,9 @@ Q\cup\widehat B_Q\subset C_NQ.
 \]
 Moreover, for every
 \((x,y)\in Q\times\widehat B_Q\),
-the kernel \(K_{\D,j}(x,y)\) does not change sign and
+the kernel \(K_j(x,y)\) does not change sign and
 \begin{equation}\label{eq:Dunkl-companion-kernel-lower-dyadic}
-|K_{\D,j}(x,y)|
+|K_j(x,y)|
 \gtrsim
 \frac1{w(Q)}.
 \end{equation}
@@ -3644,10 +3570,10 @@ Thus \(Q\cup\widehat B_Q\) is contained in a fixed concentric
 enlargement \(C_NQ\).
 
 Finally, \(Q\subset B_Q\), so Lemma~\ref{nondegenerate}, applied to
-\(B_Q\), shows that \(K_{\D,j}\) has a fixed sign on
+\(B_Q\), shows that \(K_j\) has a fixed sign on
 \(Q\times\widehat B_Q\) and
 \[
-|K_{\D,j}(x,y)|
+|K_j(x,y)|
 \gtrsim
 \frac1{w(B_Q)}
 \sim
@@ -3697,10 +3623,10 @@ By Lemma~\ref{nondegenerate}, for
 \[
 \widehat B_Q:=B(c_Q+5r_Qe_j,r_Q),
 \]
-the kernel \(K_{\D,j}\) has a fixed sign on
+the kernel \(K_j\) has a fixed sign on
 \(B_Q\times\widehat B_Q\) and
 \[
-|K_{\D,j}(x,y)|
+|K_j(x,y)|
 \gtrsim
 \frac1{w(Q)},
 \qquad
@@ -3750,7 +3676,7 @@ For each \(m=1,2\), \(f(y)-f(x)\) has a fixed sign on
 \qquad
 (x,y)\in E_{Q,m}\times F_{Q,m}.
 \]
-Since \(K_{\D,j}\) also has a fixed sign on
+Since \(K_j\) also has a fixed sign on
 \(Q\times\widehat B_Q\), we obtain
 \begin{align*}
 \frac1{w(Q)}
@@ -3763,7 +3689,7 @@ Since \(K_{\D,j}\) also has a fixed sign on
 \frac1{w(Q)}
 \left|
 \int_{E_{Q,m}}\int_{F_{Q,m}}
-(f(y)-f(x))K_{\D,j}(x,y)\,dw(y)\,dw(x)
+(f(y)-f(x))K_j(x,y)\,dw(y)\,dw(x)
 \right|.
 \end{align*}
 
@@ -3781,7 +3707,7 @@ By the off-diagonal kernel identity
 \[
 K_{[R_{{\rm Dunkl},j},M_f]}(x,y)
 =
-(f(y)-f(x))K_{\D,j}(x,y),
+(f(y)-f(x))K_j(x,y),
 \]
 and \(w(C_NQ)\simeq w(Q)\),
 \begin{align*}
@@ -3920,7 +3846,7 @@ By Lemma~\ref{lem:Dunkl-OSC-change-measure} with \(r=1\),
 \bigr\|_{S^{p,q}(L^2(\mathbb R^N,dw))}.
 \end{align}
 
-For general \(f\), let \(\mathcal C\) denote complex conjugation on \(L^2(\mathbb R^N,dw)\). Since \(K_{\D,j}\) is real valued by its heat kernel representation,
+For general \(f\), let \(\mathcal C\) denote complex conjugation on \(L^2(\mathbb R^N,dw)\). Since \(K_j\) is real valued by its heat kernel representation,
 \[
 \mathcal C R_{{\rm Dunkl},j}\mathcal C
 =
@@ -4131,7 +4057,7 @@ VUT_{e_j}U^{-1}V^{-1},
 \qquad
 \widetilde P
 :=
-VU(-\Delta_{\D})U^{-1}V^{-1},
+VU(-\Delta_{{\rm Dunkl}})U^{-1}V^{-1},
 \end{align*}
 then, on \(C_c^\infty(\Gamma_+;\mathbb C^G)\),
 \begin{align}
@@ -4161,9 +4087,9 @@ Assume in addition that \(N>1\), and let
 \begin{align*}
 \widetilde Q
 :=
-VU(-\Delta_{\D})^{-1/2}U^{-1}V^{-1},
+VU(-\Delta_{{\rm Dunkl}})^{-1/2}U^{-1}V^{-1},
 \end{align*}
-where \((-\Delta_{\D})^{-1/2}\) is defined by the spectral calculus.
+where \((-\Delta_{{\rm Dunkl}})^{-1/2}\) is defined by the spectral calculus.
 Then, for every \(\chi\in C_c^\infty(\Gamma_+)\), the operator
 \(M_\chi\widetilde Q M_\chi\), initially defined on its natural
 domain, admits a bounded extension to
@@ -4252,7 +4178,7 @@ Similarly, pairing \(\alpha\) and \(-\alpha\) in the formula for the
 Dunkl Laplacian and using \(\|\alpha\|^2=2\), we have
 \begin{align*}
 \bigl(
-U(-\Delta_{\D})U^{-1}h
+U(-\Delta_{{\rm Dunkl}})U^{-1}h
 \bigr)_g
 &=
 -\Delta h_g
@@ -4695,7 +4621,7 @@ Let \(j\in\{1,\ldots,N\}\) and \(f\in C_c^\infty(\mathbb R^N)\), and set
 \begin{align*}
 A_{f,j}
 :=
-VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+VU[R_{{\rm Dunkl},j},M_f]U^{-1}V^{-1}.
 \end{align*}
 Then, for every \(\chi\in C_c^\infty(\Gamma_+)\),
 \[
@@ -4728,7 +4654,7 @@ F(x)
 \operatorname{diag}_{g\in G}\big(f_g(x)\big).
 \end{align*}
 Since \(VU M_fU^{-1}V^{-1}=M_F\) and
-\(R_{\D,j}=T_{e_j}(-\Delta_{\D})^{-1/2}\),
+\(R_{{\rm Dunkl},j}=T_{e_j}(-\Delta_{{\rm Dunkl}})^{-1/2}\),
 \begin{align}
 A_{f,j}
 =
@@ -5240,7 +5166,7 @@ Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in C_c^\infty(\mathbb R^N)\
 \begin{align*}
 A_f
 :=
-VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+VU[R_{{\rm Dunkl},j},M_f]U^{-1}V^{-1}.
 \end{align*}
 Then there exist \(\chi_m\in C_c^\infty(\Gamma_+)\), \(0\leq\chi_m\leq1\), such that \(\chi_m(x)\to1\) for every \(x\in\Gamma_+\) and
 \begin{align}
@@ -5266,7 +5192,7 @@ Let \(r_s>s\) be as in Lemma \ref{lem:Dunkl-mixed-cube-to-Lebesgue-oscillation} 
 
 Set
 \[
-B_f:=U[R_{\D,j},M_f]U^{-1}.
+B_f:=U[R_{{\rm Dunkl},j},M_f]U^{-1}.
 \]
 Since \(V=M_\rho\) commutes with scalar multiplication operators on
 \(\Gamma\),
@@ -5770,7 +5696,7 @@ Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in C_c^\infty(\mathbb R^N)\
 t^{1/N}
 \mu
 \big(
-t,[R_{\D,j},M_f]
+t,[R_{{\rm Dunkl},j},M_f]
 \big)
 =
 \Bigg(
@@ -5792,7 +5718,7 @@ Define
 \begin{align*}
 A_f
 :=
-VU[R_{\D,j},M_f]U^{-1}V^{-1}.
+VU[R_{{\rm Dunkl},j},M_f]U^{-1}V^{-1}.
 \end{align*}
 By Lemma \ref{lem:Dunkl-automatic-wall-localization}
 \eqref{eq:Dunkl-automatic-wall-localization}, there exist
@@ -6035,7 +5961,7 @@ Since \(U\) and \(V\) are unitary,
 =
 \mu
 \big(
-t,[R_{\D,j},M_f]
+t,[R_{{\rm Dunkl},j},M_f]
 \big),
 \qquad
 t>0.
@@ -6083,9 +6009,9 @@ Assume that \(N>1\), \(j\in\{1,\ldots,N\}\), and \(f\in\dot W^{1,N}(\mathbb R^N)
 \|\nabla(f_m-f)\|_{L^N(\mathbb R^N,dx)}
 &\longrightarrow0,\\
 \big\|
-[R_{\D,j},M_{f_m}]
+[R_{{\rm Dunkl},j},M_{f_m}]
 -
-[R_{\D,j},M_f]
+[R_{{\rm Dunkl},j},M_f]
 \big\|_{S^{N,\infty}}
 &\longrightarrow0,\\
 \|\mathfrak c_{f_m,j}-\mathfrak c_{f,j}\|_
@@ -6103,13 +6029,13 @@ By the density of \(C_c^\infty(\mathbb R^N)\) in \(\dot W^{1,N}(\mathbb R^N)\), 
 By Theorem \ref{lem:Dunkl-critical-weak-Schatten-upper} and Lemma \ref{lem:Euclidean-OSC-critical-rigidity},
 \begin{align*}
 \big\|
-[R_{\D,j},M_{f_m}]
+[R_{{\rm Dunkl},j},M_{f_m}]
 -
-[R_{\D,j},M_f]
+[R_{{\rm Dunkl},j},M_f]
 \big\|_{S^{N,\infty}}
 &=
 \big\|
-[R_{\D,j},M_{f_m-f}]
+[R_{{\rm Dunkl},j},M_{f_m-f}]
 \big\|_{S^{N,\infty}}\\
 &\lesssim
 \|f_m-f\|_{OSC^{N,\infty}(\mathbb R^N)}
@@ -6139,7 +6065,7 @@ Assume that \(N>1\) and \(j\in\{1,\ldots,N\}\). Then, for every
 t^{1/N}
 \mu
 \big(
-t,[R_{\D,j},M_f]
+t,[R_{{\rm Dunkl},j},M_f]
 \big)
 =
 \Bigg(
@@ -6176,9 +6102,9 @@ By Lemma \ref{lem:Dunkl-Weyl-Sobolev-approximation}, choose
 \(f_m\in C_c^\infty(\mathbb R^N)\) such that
 \begin{align}
 \big\|
-[R_{\D,j},M_{f_m}]
+[R_{{\rm Dunkl},j},M_{f_m}]
 -
-[R_{\D,j},M_f]
+[R_{{\rm Dunkl},j},M_f]
 \big\|_{S^{N,\infty}}
 &\longrightarrow0,
 \label{eq:Dunkl-Riesz-spectral-operator-approximation}\\
@@ -6193,7 +6119,7 @@ By Lemma \ref{lem:Dunkl-smooth-Weyl-asymptotic}, for every \(m\),
 t^{1/N}
 \mu
 \big(
-t,[R_{\D,j},M_{f_m}]
+t,[R_{{\rm Dunkl},j},M_{f_m}]
 \big)
 =
 \frac{1}{(N(2\pi)^N)^{1/N}}
@@ -7960,11 +7886,11 @@ pointwise on \(\mathbb R^N\), and
 \lim_{m\to\infty}
 \left\|
 M_{\varphi_m}
-[R_{\D,j},M_f]
+[R_{{\rm Dunkl},j},M_f]
 M_{\psi_m}
 -
 M_{\chi_{\Gamma_1}}
-[R_{\D,j},M_f]
+[R_{{\rm Dunkl},j},M_f]
 M_{\chi_{\Gamma_2}}
 \right\|_{S^{N,\infty}}
 =0.
@@ -7975,7 +7901,7 @@ M_{\chi_{\Gamma_2}}
 \begin{proof}
 Set
 \[
-T_f:=[R_{\D,j},M_f].
+T_f:=[R_{{\rm Dunkl},j},M_f].
 \]
 We apply Lemma
 \ref{lem:Dunkl-commutator-Fourier-NWO-endpoint} with the fixed closed
