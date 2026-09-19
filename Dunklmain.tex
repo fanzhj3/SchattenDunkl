@@ -4362,8 +4362,6 @@ Theorem \ref{thm:Dunkl-Riesz-spectral-asymptotic}.
 
 \section{First Rochberg-Semmes based estimate}
 
-{\color{red} it seems that we need $N>2,$ not $N>1.$ indeed, in Lemma \ref{first RS final lemma} we use Lemma \ref{lem:Cwikel-dyadic-distribution} --- and this requires $N>r.$ I mentioned this while in Guangzhou, but at the time we just ignored this issue. this is THE ONLY place where $N>2$ is used.}
-
 \begin{theorem}\label{first RS-type theorem} Let $N>1.$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
 $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
 Let $V$ be an integral operator with integral kernel $K.$ For every $f\in\dot{W}^{1,N}(\Gamma),$ we have
@@ -4419,7 +4417,7 @@ where
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)};$$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa,\Phi}\frac{d_I}{d_I+|c_I-gc_I|};$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa,\Phi}\frac{d_I}{|c_I-gc_I|};$$
 \end{enumerate}
 \end{lemma}
 \begin{proof} We have
@@ -4434,17 +4432,17 @@ by setting
 $$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
 
 It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
-$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa,\Phi}'}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa,\Phi}'}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
 Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
-$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}''}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}''}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
 In particular,
-$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
 We may, therefore, write
 $$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
 where
-$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\Big)^2.$$
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}\Big)^2.$$
 In particular,
-$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
+$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
 
 We now set
 $$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
@@ -4455,7 +4453,7 @@ $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}
 Obviously,
 $${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}.$$
+$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
 \end{proof}
 
 \begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
@@ -4471,7 +4469,7 @@ This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{first RS intermediate estimate} Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ We have
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa,\Phi,r}\Big\|\Big\{m(I)^{-\frac1r}\|f\|_{L_r(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa,\Phi,r}\Big\|\Big\{m(I)^{-\frac1r}\|f\|_{L_r(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}.$$
 \end{lemma}
 \begin{proof} Let $A_{k,l}$ be the integral operator with integral kernel given by the formula
@@ -4483,21 +4481,21 @@ $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
 $$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}.$$
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
+$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
 are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
 $$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 Therefore,
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
 $$\leq \frac{N}{N-1}c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
 $$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS prefinal lemma}
-$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+\begin{lemma}\label{first RS prefinal lemma} Let $f\in\dot{W}^{1,N}(\Gamma)\cap\dot{W}^{1,N}(g\Gamma).$ We have
+$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}\leq c_{\Phi}(\|f\|_{\dot{W}^{1,N}(\Gamma)}+\|f\|_{\dot{W}^{1,N}(g\Gamma)}).$$
 \end{lemma}
 \begin{proof} Let $\mathcal{M}$ be the Hardy--Littlewood maximal operator on $\mathbb{R}^N.$ By \cite[Theorem~3]{MR1226425}, for almost every $x\in\mathbb{R}^N,$ 
@@ -4507,16 +4505,16 @@ $$|x-gx|\leq 2|x-c_I|+|c_I-gc_I|,\quad x\in I,\quad y\in gI.$$
 Obviously,
 $$|x-c_I|\leq\frac{d^{\frac12}}{2}\|\Phi\|_{\infty}d_I,\quad x\in I.$$
 Hence,
-$$|x-gx|\leq \max\{1,d^{\frac12}\|\Phi\|_{\infty}\}\cdot(d_I+|c_I-gc_I|),\quad x\in I,\quad y\in gI.$$
+$$|x-gx|\leq c_{\Phi}'|c_I-gc_I|,\quad x\in I.$$
 Thus,
-$$|f(x)-f(gx)|\leq c_{\Phi}'\cdot (d_I+|c_I-gc_I|)\cdot\big((\mathcal{M}(|\nabla f|))(x)+(\mathcal{M}(|\nabla f|))(gx)\bigr).$$
+$$|f(x)-f(gx)|\leq c_{\Phi}''\cdot |c_I-gc_I|\cdot\big((\mathcal{M}(|\nabla f|))(x)+(\mathcal{M}(|\nabla f|))(gx)\bigr).$$
 This immediately implies
-$$\frac1{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}''\cdot\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
+$$\frac1{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}''\cdot\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
 for every $I\in\mathbb{D}_{\Gamma}.$ Hence,
-$$m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot \frac{d_I}{d_I+|c_I-gc_I|}\leq $$
+$$m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot \frac{d_I}{|c_I-gc_I|}\leq $$
 $$\leq c_{\Phi}'''\cdot m(I)^{\frac1N-1}\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
 for every $I\in\mathbb{D}_{\Gamma}.$ Thus,
-$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}\leq$$
 $$\leq c_{\Phi}'''\frac{N}{N-1}\Big(\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
 $$+\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}\Big)\leq $$
@@ -4525,24 +4523,24 @@ $$\leq c_{\Phi}'''\frac{N}{N-1}c_N\|\mathcal{M}\|_{L_N(\mathbb{R}^N)\circlearrow
 \end{proof}
 
 
-\begin{lemma}\label{first RS final lemma} Let $2<r<N$ and let $f\in\dot{W}^{1,N}(\Gamma)\cap\dot{W}^{1,N}(g\Gamma).$ We have
-$$\Big\|\Big\{m(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+\begin{lemma}\label{first RS final lemma} Let $r>N$ and let $f\in\dot{W}^{1,N}(\Gamma)\cap\dot{W}^{1,N}(g\Gamma).$ We have
+$$\Big\|\Big\{m(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}\leq c_{\Phi}(\|f\|_{\dot{W}^{1,N}(\Gamma)}+\|f\|_{\dot{W}^{1,N}(g\Gamma)}).$$
 \end{lemma}
 \begin{proof} We obviously have
 $$\|f-f\circ g\|_{L_r(I)}\leq\Big\|f-\frac1{m(I)}\int_If\Big\|_{L_r(I)}+$$
 $$+\Big\|f\circ g-\frac1{m(I)}\int_I(f\circ g)\Big\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}.$$
-By Poincare inequality,
+Let $p\in(0,N)$ be such that $\frac1r=\frac1p-\frac1N.$ By Sobolev inequality,
 $$\|f-f\circ g\|_{L_r(I)}\leq$$
-$$\leq c_{\Phi,r}\Big(m(I)^{\frac1N}\|\nabla f\|_{L_r(I)}+m(I)^{\frac1N}\|\nabla(f\circ g)\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}\Big).$$
+$$\leq c_{\Phi,r}'\Big(\|\nabla f\|_{L_p(I)}+\|\nabla(f\circ g)\|_{L_p(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}\Big).$$
 
 
 By the triangle inequality,
-$$\Big\|\Big\{m(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+$$\Big\|\Big\{m(I)^{-\frac1r}\|f-f\circ g\|_{L_r(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}\leq$$
-$$\leq \frac{N}{N-1}c_{\Phi,r}\Big\|\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
-$$+\frac{N}{N-1}c_{\Phi,r}\Big\|\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(gI)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
-$$+\frac{N}{N-1}c_{\Phi,r}\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{d_I+|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+$$\leq c_{\Phi,r}''\Big\|\Big\{m(I)^{\frac1N-\frac1p}\|\nabla f\|_{L_p(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
+$$+c_{\Phi,r}''\Big\|\Big\{m(I)^{\frac1N-\frac1p}\|\nabla f\|_{L_p(gI)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
+$$+c_{\Phi,r}''\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
 \Big\|_{N,\infty}.$$
 The assertion follows now from Lemma \ref{lem:Cwikel-dyadic-distribution} (for the first two summands) and Lemma \ref{first RS prefinal lemma} (for the last summand).
 \end{proof}
@@ -4555,9 +4553,9 @@ The assertion follows now from Lemma \ref{lem:Cwikel-dyadic-distribution} (for t
 
 \begin{lemma}\label{first RS convergence lemma} Let $f,\phi\in C^{\infty}_c(\mathbb{R}^N).$ If $0\leq\phi\leq1,$ then
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_{f\phi}V,(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big),$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big),$$
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 \end{lemma}
 \begin{proof} We only prove the second inequality. The proof of the first one is similar, but simpler.
 
@@ -4570,17 +4568,17 @@ $$\times{\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}M_{1-
 
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{d_I+|c_I-gc_I|}{d_I}f_{k,l,I}\cdot(1-\phi)\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
+$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{|c_I-gc_I|}{d_I}f_{k,l,I}\cdot(1-\phi)\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
 are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Obviously, $e_{k,l,I}\not\equiv0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $f_{k,l,I}\cdot(1-\phi)\not\equiv 0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $3I\cap {\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO lemma}, we conclude that
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
 $$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Iw(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I,w(x)dx)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Iw(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I,w(x)dx)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 By Lemma \ref{supremum vs average},
 $$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
 Thus,
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
 $$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}c_{\kappa,\Phi}^{\frac1r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 Combining this estimate with the one in the first paragraph {\color{red} assign label and refer to it} yields the second inequality.
 \end{proof}
 
@@ -4621,29 +4619,29 @@ Passing $n\to\infty$ and using Lemma \ref{first RS extra convergence for sets}, 
 \end{proof}
 
 \begin{lemma}\label{first RS without r convergence lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
 $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
 \end{lemma}
 \begin{proof} For a given $n\in\mathbb{Z},$ we have
-$$\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I>2^{-n}}}\leq 2\|f\|_{L_1(\mathbb{R}^N)} \Big\{m(I)^{-1}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}}.$$
+$$\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I>2^{-n}}}\leq c_{\Phi}'\|f\|_{L_1(\mathbb{R}^N)} \Big\{m(I)^{-1}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}}.$$
 The right hand side obviously belongs to $(l_{N,\infty})_0(\mathbb{D}_{\Gamma})$ and, hence, so does the left hand side. Thus,
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq\Big\|\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+$$\leq\Big\|\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
 Obviously,
 $$|f(x)-f(y)|\leq c_N|x-y|\cdot\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}.$$
 Hence,
 $$\|f-f\circ g\|_{L_1(I)}\leq c_N\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\int_I|x-gx|dx\leq$$
-$$\leq c_{\Phi}'m(I)\times (d_I+|c_I-gc_I|)\times \|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}.$$
+$$\leq c_{\Phi}''m(I)\times |c_I-gc_I|\times \|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}.$$
 Thus,
-$$\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}m(I)^{\frac1N}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}$$
+$$\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}'''m(I)^{\frac1N}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}$$
 Finally,
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
 $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
 Passing $n\to\infty$ and using Lemma \ref{first RS extra convergence for sets}, we complete the proof.
 \end{proof}
 
 \begin{lemma}\label{first RS final convergence lemma} Let $r>2.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
 $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
 \end{lemma}
 \begin{proof} We obviously have
@@ -4651,12 +4649,12 @@ $$\|f-f\circ g\|_{L_r(I)}\leq\Big\|f-\frac1{m(I)}\int_If\Big\|_{L_r(I)}+$$
 $$+\Big\|f\circ g-\frac1{m(I)}\int_I(f\circ g)\Big\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}.$$
 By Poincare inequality,
 $$\|f-f\circ g\|_{L_r(I)}\leq$$
-$$\leq c_{\Phi,r}\Big(m(I)^{\frac1N}\|\nabla f\|_{L_r(I)}+m(I)^{\frac1N}\|\nabla(f\circ g)\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}\Big).$$
+$$\leq c_{\Phi,r}'\Big(m(I)^{\frac1N}\|\nabla f\|_{L_r(I)}+m(I)^{\frac1N}\|\nabla(f\circ g)\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}\Big).$$
 By the triangle inequality,
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq\frac{N}{N-1}c_{\Phi,r}{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
-$$+\frac{N}{N-1}c_{\Phi,r}{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(gI)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
-$$+{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{d_I+|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+$$\leq c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
+$$+c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(gI)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
+$$+c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
 The assertion follows from Lemmas \ref{first RS with r convergence lemma} and \ref{first RS without r convergence lemma}.
 \end{proof}
 
