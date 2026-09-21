@@ -276,7 +276,7 @@ This completes the proof.
 Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Let $K$ be as in Theorem \ref{first RS-type theorem}. We have
 $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y),$$
 where
-\begin{enumerate}
+\begin{enumerate}[{\rm (i)}]
 \item $e_{k,l,I}$ is supported in $I$ and $f_{k,l,I}$ is supported in $3I;$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)};$$
@@ -561,7 +561,7 @@ Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$
 $$(f(x)-f(y))\cdot K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}^{(1)}(x)f_{k,l,I}^{(1)}(y)-$$
 $$-\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}^{(2)}(x)f_{k,l,I}^{(2)}(y)$$
 where
-\begin{enumerate}
+\begin{enumerate}[{\rm (i)}]
 \item $e_{k,l,I}^{(1)}$ and $e_{k,l,I}^{(2)}$ are supported in $I$ and $f_{k,l,I}^{(1)}$ and $f_{k,l,I}^{(2)}$ are supported in $3I;$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
 $$\|e_{k,l,I}^{(1)}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq\Big\|f-\frac1{m(3I)}\int_{3I}f\Big\|_{L_r(3I,w(x)dx)};$$
@@ -584,155 +584,65 @@ The assertion follows immediately.
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mta},\eqref{mtc}}
 
-The following lemma establishes derivative estimates for the Dunkl--Riesz transform kernel.
-\begin{lemma}
-\label{lem:Dunkl-Riesz-endpoint-derivatives}
-Assume that $N\geq 2.$ For every pair of multi-indices $\alpha,\beta$, every $j\in\{1,\ldots,N\}$, and every $x,y\in\mathbb R^N$ with $d(x,y)>0$,
-\begin{equation}
-\label{eq:Dunkl-Riesz-endpoint-derivatives}
-\left|
-\partial_x^\alpha\partial_y^\beta
-K_{{\rm Dunkl},j}(x,y)
-\right|
-\lesssim_{\alpha,\beta,R,k}
-\frac{d(x,y)}{\|x-y\|}
-\frac{d(x,y)^{-(|\alpha|+|\beta|)}}
-{V(x,y,d(x,y))}.
-\end{equation}
+Denote for brevity
+$$V(x,y,t)=\max\{w(B(x,t)),w(B(y,t))\}$$
+
+\begin{lemma}\label{heat kernel estimate} For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^N_+,$ for every $t>0,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t^{1-\frac{|\alpha|_1+|\beta|_1}{2}}|x-y|^{-2}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2).$$
 \end{lemma}
-\begin{proof}
-{\bf Case 1.} Suppose that $|\alpha|+|\beta|=0$.
-By \cite[Theorem~1.1]{MR4733961},
-\[
-|K_{{\rm Dunkl},j}(x,y)|
-\lesssim
-\frac{d(x,y)}{\|x-y\|}
-\frac{1}{w(B(x,d(x,y)))}.
-\]
-By the definition of $d$, the $G$-invariance of $dw$, and
-\eqref{doublinginequality},
-\[
-V(x,y,d(x,y))
-\lesssim
-w(B(x,d(x,y))),
-\]
-and hence \eqref{eq:Dunkl-Riesz-endpoint-derivatives} follows.
+\begin{proof} This is (slightly weakened form of) Theorem 3.1 in \cite{MR4042416}.
+\end{proof}
 
-{\bf Case 2.} Suppose that $|\alpha|+|\beta|\geq1$. By \cite[Theorem~3.1]{MR4042416},
-\[
-\left|
-\partial_x^\alpha\partial_y^\beta h_t(x,y)
-\right|
-\lesssim_{\alpha,\beta,R,k}
-t^{-\frac{|\alpha|+|\beta|}{2}}
-\left(1+\frac{\|x-y\|}{\sqrt t}\right)^{-2}
-V(x,y,\sqrt t)^{-1}
-e^{-cd(x,y)^2/t}.
-\]
-Recall from the proof of Lemma~\ref{nondegenerate} that
-\[
-K_{{\rm Dunkl},j}(x,y)
-=
--\frac{C}{2}\int_0^\infty
-(y_j-x_j)h_t(x,y)\,\frac{dt}{t^{3/2}}.
-\]
-Since
-\[
-\partial_x^\alpha\partial_y^\beta
-\bigl((y_j-x_j)h_t(x,y)\bigr)
-=
-(y_j-x_j)\partial_x^\alpha\partial_y^\beta h_t(x,y)
--\alpha_j\partial_x^{\alpha-e_j}\partial_y^\beta h_t(x,y)
-+\beta_j\partial_x^\alpha\partial_y^{\beta-e_j}h_t(x,y),
-\]
-where the corresponding term is omitted if $\alpha_j=0$ or $\beta_j=0$,
-we obtain
-\begin{align*}
-\left|
-\partial_x^\alpha\partial_y^\beta
-K_{{\rm Dunkl},j}(x,y)
-\right|
-&\lesssim
-\frac1{\|x-y\|}
-\int_0^\infty
-t^{-\frac{|\alpha|+|\beta|+1}{2}}
-V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt \\
-&\quad+
-\frac1{\|x-y\|^2}
-\int_0^\infty
-t^{-\frac{|\alpha|+|\beta|}{2}}
-V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt.
-\end{align*}
-By \eqref{doublinginequality},
-\[
-V(x,y,\sqrt t)^{-1}
-\lesssim
-V(x,y,d(x,y))^{-1}
+\begin{lemma}\label{zhijie kernel estimate} Suppose $s+N>2.$ We have
+$$\int_0^{\infty}t^{-\frac{s}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq c_{\kappa,s}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}.$$
+\end{lemma}
+\begin{proof} By \eqref{doublinginequality},
+$$V(x,y,t^{\frac12})^{-1}\leq c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times
 \begin{cases}
-\displaystyle \left(\frac{d(x,y)}{\sqrt t}\right)^{\mathbf{N}},
-&0<t\leq d(x,y)^2,\\[2mm]
-\displaystyle \left(\frac{d(x,y)}{\sqrt t}\right)^N,
-&t\geq d(x,y)^2.
-\end{cases}
-\]
-Hence,
-\begin{align*}
-&\int_0^\infty
-t^{-\frac{|\alpha|+|\beta|+1}{2}}
-V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt\\
-&\quad\lesssim
-\frac1{V(x,y,d(x,y))}
-\Bigg(
-d(x,y)^{\mathbf{N}}
-\int_0^{d(x,y)^2}
-t^{-\frac{\mathbf{N}+|\alpha|+|\beta|+1}{2}}
-e^{-cd(x,y)^2/t}\,dt
-+
-d(x,y)^N
-\int_{d(x,y)^2}^\infty
-t^{-\frac{N+|\alpha|+|\beta|+1}{2}}\,dt
-\Bigg)\\
-&\quad\lesssim
-\frac{d(x,y)^{1-|\alpha|-|\beta|}}
-{V(x,y,d(x,y))}.
-\end{align*}
-The first integral in the parentheses is estimated by the change of variables
-$s=d(x,y)^2/t$, while the second one converges since
-$N+|\alpha|+|\beta|>1$.
+\left(\frac{d(x,y)}{t^{\frac12}}\right)^{\mathbf{N}},
+&0<t\leq d(x,y)^2,\\
+\left(\frac{d(x,y)}{t^{\frac12}}\right)^N,&t\geq d(x,y)^2.
+\end{cases}$$
+Therefore,
+$$\int_0^{\infty}t^{-\frac{s}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq$$
+$$\leq c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times\int_0^{d(x,y)^2}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^{\mathbf{N}}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times\int_{d(x,y)^2}^{\infty}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^N\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt=$$
+$$=c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}\times\int_0^1t^{-\frac{s+\mathbf{N}}{2}}\exp(-\frac{c_{\kappa}}{t})dt+$$
+$$+c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}\times\int_1^{\infty}t^{-\frac{s+N}{2}}\exp(-\frac{c_{\kappa}}{t})dt.$$
+\end{proof}
 
-{\bf Case 2.1.} Suppose that $N+|\alpha|+|\beta|>2$. We apply the same argument to see that
-\begin{align*}
-&\int_0^\infty
-t^{-\frac{|\alpha|+|\beta|}{2}}
-V(x,y,\sqrt t)^{-1}e^{-cd(x,y)^2/t}\,dt\\
-&\quad\lesssim
-\frac1{V(x,y,d(x,y))}
-\Bigg(
-d(x,y)^{\mathbf{N}}
-\int_0^{d(x,y)^2}
-t^{-\frac{\mathbf{N}+|\alpha|+|\beta|}{2}}
-e^{-cd(x,y)^2/t}\,dt
-+
-d(x,y)^N
-\int_{d(x,y)^2}^\infty
-t^{-\frac{N+|\alpha|+|\beta|}{2}}\,dt
-\Bigg)\\
-&\quad\lesssim
-\frac{d(x,y)^{2-|\alpha|-|\beta|}}
-{V(x,y,d(x,y))}.
-\end{align*}
-Since $d(x,y)\leq\|x-y\|$, it follows that
-\[
-\left|
-\partial_x^\alpha\partial_y^\beta
-K_{{\rm Dunkl},j}(x,y)
-\right|
-\lesssim_{\alpha,\beta,R,k}
-\frac{d(x,y)}{\|x-y\|}
-\frac{d(x,y)^{-(|\alpha|+|\beta|)}}
-{V(x,y,d(x,y))}.
-\]
-This completes the proof of Lemma~\ref{lem:Dunkl-Riesz-endpoint-derivatives}.
+The following lemma establishes derivative estimates for the integral kernels of Dunkl-Riesz transforms.
+\begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives}
+Let $N\geq 2.$ For every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|
+\leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{|x-y|\cdot V(x,y,d(x,y))},\quad x,y\in\mathbb{R}^N.$$
+\end{lemma}
+\begin{proof} We have
+$$\Delta_{{\rm Dunkl}}^{-\frac12}=\pi^{-\frac12}\int_0^{\infty}e^{-t\Delta_{{\rm Dunkl}}}\frac{dt}{t^{\frac12}}.$$
+Hence,
+$$K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(x,y)=\pi^{-\frac12}\int_0^{\infty}h_t(x,y)\frac{dt}{t^{\frac12}}.$$
+Obviously,
+$$K_{R_{{\rm Dunkl},j}}(x,y)=(T_jK_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y),$$
+where $T_j$ on the right hand side acts in the $x$ variable. Taking into account that
+$$(T_jh_t)(x,y)=\frac{(y-x)_j}{2t}h_t(x,y),$$
+we conclude that
+$$K_{R_{{\rm Dunkl},j}}(x,y)=\frac{(y-x)_j}{2\pi^{\frac12}}\int_0^{\infty}h_t(x,y)\frac{dt}{t^{\frac32}}.$$
+By the Leibniz rule,
+$$(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)=\frac{(y-x)_j}{2\pi^{\frac12}}\int_0^{\infty}(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)\frac{dt}{t^{\frac32}}-$$
+$$-\frac{\alpha_j}{2\pi^{\frac12}}\int_0^{\infty}(\partial_x^{\alpha-e_j}\partial_y^{\beta}h_t)(x,y)\frac{dt}{t^{\frac32}}+\frac{\beta_j}{2\pi^{\frac12}}\int_0^{\infty}(\partial_x^{\alpha}\partial_y^{\beta-e_j}h_t)(x,y)\frac{dt}{t^{\frac32}}.$$
+Of course, if $\alpha_j=0$ (respectively, $\beta_j=0$), then the second (respectively, the third) summand on the right hand side does not exist.
+
+Using Lemma \ref{heat kernel estimate}, we estimate
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|\leq$$
+$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\int_0^{\infty}t^{-\frac{1+|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
+Applying Lemma \ref{zhijie kernel estimate}, we conclude
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|\leq$$
+$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}+$$
+$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-|\alpha|_1-|\beta|_1}+$$
+$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}.$$
+The assertion follows immediately.
 \end{proof}
 
 
