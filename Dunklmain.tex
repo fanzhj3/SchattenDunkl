@@ -60,7 +60,7 @@
 
 \section{Introduction}
 
-\begin{theorem}\label{main theorem} Let $R$ be a normalised root system in $\mathbb{R}^N$ and let $G$ be the corresponding finite reflection group. Let $k:R\to\mathbb{R}_+$ be $G$-invariant multiplicity function. Let $R_{{\rm Dunkl},j}$ be the $j$-th Dunkl-Riesz transform corresponding to $R$ and $k.$ Let $w$ be the Dunkl weight corresponding to $R$ and $k.$ Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
+\begin{theorem}\label{main theorem} Let $R$ be a normalised root system in $\mathbb{R}^N,$ $N\geq 2,$ and let $G$ be the corresponding finite reflection group. Let $k:R\to\mathbb{R}_+$ be $G$-invariant multiplicity function. Let $R_{{\rm Dunkl},j}$ be the $j$-th Dunkl-Riesz transform corresponding to $R$ and $k.$ Let $w$ be the Dunkl weight corresponding to $R$ and $k.$ Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
 \begin{enumerate}[{\rm (i)}]
 \item\label{mta} If $f\in\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N),$ $p>N,$ then $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx)).$ Furthermore,
 $$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{p,R,k}\|f\|_{\dot{W}^{\frac{N}{p},p}(\mathbb{R}^N)};$$
@@ -587,7 +587,7 @@ The assertion follows immediately.
 The following lemma establishes derivative estimates for the Dunkl--Riesz transform kernel.
 \begin{lemma}
 \label{lem:Dunkl-Riesz-endpoint-derivatives}
-Assume that $N\geq 1$. Then for every pair of multi-indices $\alpha,\beta$, every $j\in\{1,\ldots,N\}$, and every $x,y\in\mathbb R^N$ with $d(x,y)>0$,
+Assume that $N\geq 2.$ For every pair of multi-indices $\alpha,\beta$, every $j\in\{1,\ldots,N\}$, and every $x,y\in\mathbb R^N$ with $d(x,y)>0$,
 \begin{equation}
 \label{eq:Dunkl-Riesz-endpoint-derivatives}
 \left|
@@ -730,48 +730,6 @@ K_{{\rm Dunkl},j}(x,y)
 \lesssim_{\alpha,\beta,R,k}
 \frac{d(x,y)}{\|x-y\|}
 \frac{d(x,y)^{-(|\alpha|+|\beta|)}}
-{V(x,y,d(x,y))}.
-\]
-
-{\bf Case 2.2.} Suppose that $N=1$ and $|\alpha|+|\beta|=1$. For the terms in which a derivative falls on $y_j-x_j$, retaining the factor
-$\bigl(1+\|x-y\|/\sqrt t\bigr)^{-2}$ and splitting the integral at
-$d(x,y)^2$ and $\|x-y\|^2$, we obtain from \eqref{doublinginequality}
-\begin{align*}
-&\int_0^\infty
-t^{-3/2}
-\left(1+\frac{\|x-y\|}{\sqrt t}\right)^{-2}
-V(x,y,\sqrt t)^{-1}
-e^{-cd(x,y)^2/t}\,dt\\
-&\quad\lesssim
-\frac{d(x,y)^{\mathbf{N}}}{\|x-y\|^2V(x,y,d(x,y))}
-\int_0^{d(x,y)^2}
-t^{-\frac{\mathbf{N}+1}{2}}e^{-cd(x,y)^2/t}\,dt\\
-&\qquad+
-\frac{d(x,y)}{\|x-y\|^2V(x,y,d(x,y))}
-\int_{d(x,y)^2}^{\|x-y\|^2}\frac{dt}{t}
-+
-\frac{d(x,y)}{V(x,y,d(x,y))}
-\int_{\|x-y\|^2}^\infty\frac{dt}{t^2}\\
-&\quad\lesssim
-\frac{1}{\|x-y\|V(x,y,d(x,y))},
-\end{align*}
-where we used
-\[
-\frac{d(x,y)}{\|x-y\|}
-\log\frac{\|x-y\|}{d(x,y)}
-\lesssim 1.
-\]
-Combining this estimate with the preceding estimate for the first term, we obtain
-\[
-\left|
-\partial_x^\alpha\partial_y^\beta
-K_{{\rm Dunkl},j}(x,y)
-\right|
-\lesssim_{\alpha,\beta,R,k}
-\frac{1}{\|x-y\|V(x,y,d(x,y))}
-=
-\frac{d(x,y)}{\|x-y\|}
-\frac{d(x,y)^{-1}}
 {V(x,y,d(x,y))}.
 \]
 This completes the proof of Lemma~\ref{lem:Dunkl-Riesz-endpoint-derivatives}.
