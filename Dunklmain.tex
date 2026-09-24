@@ -169,41 +169,41 @@ $$w(B(x,r)\cap\Gamma)\geq c_{\kappa}w(B(x,r)).$$
 In particular, $(\Gamma,|\cdot|,w(x)dx)$ is a doubling metric measure space.
 \end{theorem}
 
-\begin{nota} Let $\alpha:2^{N_1}\to\mathbb{R}_+.$ Set
-$$w_{\alpha}(x)=\prod_{A\subset\{1,\cdots,N_1\}}(\sum_{k\in A}x_k)^{\alpha_A},\quad x\in\mathbb{R}_+^{N_1}.$$
+\begin{nota} Let $\theta:2^{N_1}\to\mathbb{R}_+.$ Set
+$$w_{\theta}(x)=\prod_{A\subset\{1,\cdots,N_1\}}(\sum_{k\in A}x_k)^{\theta_A},\quad x\in\mathbb{R}_+^{N_1}.$$
 \end{nota}
 
-\begin{lemma}\label{s2 upper estimate} For every $\alpha:2^{N_1}\to\mathbb{R}_+$ and for every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2},$ we have
-$$\int_{B(x,r)}w_{\alpha}(y_1,\cdots,y_{N_1})dy\leq c_{N,\alpha}^{(1)}r^Nw_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1}).$$
+\begin{lemma}\label{s2 upper estimate} For every $\theta:2^{N_1}\to\mathbb{R}_+$ and for every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2},$ we have
+$$\int_{B(x,r)}w_{\theta}(y_1,\cdots,y_{N_1})dy\leq c_{N,\theta}^{(1)}r^Nw_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1}).$$
 \end{lemma}
 \begin{proof} Obviously,
 $$B(x,r)\subset \Big(\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]\Big)\times B((x_{N_1+1},\cdots,x_N),r).$$
 Thus,
-$$\int_{B(x,r)}w_{\alpha}(y_1,\cdots,y_{N_1})dy\leq$$
-$$\leq\int_{\big(\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]\big)\times B((x_{N_1+1},\cdots,x_N),r)}w_{\alpha}(y_1,\cdots,y_{N_1})dy=$$
-$$=\int_{\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]}w_{\alpha}(u)du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}\leq$$
-$$\leq\int_{\times_{k=1}^{N_1}[0,x_k+r]}w_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}=$$
-$$=w_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times\prod_{k=1}^{N_1}(x_k+r-(x_k-r)_+)du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}\leq $$
-$$\leq w_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times(2r)^{N_1}\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}.$$
+$$\int_{B(x,r)}w_{\theta}(y_1,\cdots,y_{N_1})dy\leq$$
+$$\leq\int_{\big(\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]\big)\times B((x_{N_1+1},\cdots,x_N),r)}w_{\theta}(y_1,\cdots,y_{N_1})dy=$$
+$$=\int_{\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]}w_{\theta}(u)du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}\leq$$
+$$\leq\int_{\times_{k=1}^{N_1}[0,x_k+r]}w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}=$$
+$$=w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times\prod_{k=1}^{N_1}(x_k+r-(x_k-r)_+)du\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}\leq $$
+$$\leq w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times(2r)^{N_1}\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}.$$
 \end{proof}
 
-\begin{lemma}\label{s2 lower estimate} For every $\alpha:2^{N_1}\to\mathbb{R}_+$ and for every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2},$ we have
-$$\int_{B(x,r)\cap(\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2})}w_{\alpha}(y_1,\cdots,y_{N_1})dy\geq c_{N,\alpha}^{(2)}r^Nw_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1}).$$
+\begin{lemma}\label{s2 lower estimate} For every $\theta:2^{N_1}\to\mathbb{R}_+$ and for every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2},$ we have
+$$\int_{B(x,r)\cap(\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2})}w_{\theta}(y_1,\cdots,y_{N_1})dy\geq c_{N,\theta}^{(2)}r^Nw_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1}).$$
 \end{lemma}
 \begin{proof} Obviously,
 $$x+[\frac{r}{2N},\frac{r}{N}]^N\subset B(x,r)\cap (\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}).$$
 It follows that
-$$\int_{B(x,r)\cap(\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2})}w_{\alpha}(y_1,\cdots,y_{N_1})dy\geq $$
-$$\geq\int_{x+[\frac{r}{2N},\frac{r}{N}]^N}w_{\alpha}(y_1,\cdots,y_{N_1})dy=$$
-$$=\int_{(x_1,\cdots,x_{N_1})+[\frac{r}{2N},\frac{r}{N}]^{N_1}}w_{\alpha}(u)du\times (\frac{r}{2N})^{N_2}\geq $$
-$$\geq \int_{(x_1,\cdots,x_{N_1})+[\frac{r}{2N},\frac{r}{N}]^{N_1}}w_{\alpha}((x_1,\cdots,x_{N_1})+\frac{r}{2N}\mathbf{1}_{N_1})du\times (\frac{r}{2N})^{N_2}=$$
-$$=w_{\alpha}((x_1,\cdots,x_{N_1})+\frac{r}{2N}\mathbf{1}_{N_1})\times(\frac{r}{2N})^N\geq $$
-$$\geq w_{\alpha}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times(\frac{r}{2N})^N\times (2N)^{-\sum_{A\subset\{1,\cdots,N_1\}}\alpha_A}.$$
+$$\int_{B(x,r)\cap(\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2})}w_{\theta}(y_1,\cdots,y_{N_1})dy\geq $$
+$$\geq\int_{x+[\frac{r}{2N},\frac{r}{N}]^N}w_{\theta}(y_1,\cdots,y_{N_1})dy=$$
+$$=\int_{(x_1,\cdots,x_{N_1})+[\frac{r}{2N},\frac{r}{N}]^{N_1}}w_{\theta}(u)du\times (\frac{r}{2N})^{N_2}\geq $$
+$$\geq \int_{(x_1,\cdots,x_{N_1})+[\frac{r}{2N},\frac{r}{N}]^{N_1}}w_{\theta}((x_1,\cdots,x_{N_1})+\frac{r}{2N}\mathbf{1}_{N_1})du\times (\frac{r}{2N})^{N_2}=$$
+$$=w_{\theta}((x_1,\cdots,x_{N_1})+\frac{r}{2N}\mathbf{1}_{N_1})\times(\frac{r}{2N})^N\geq $$
+$$\geq w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})\times(\frac{r}{2N})^N\times (2N)^{-\sum_{A\subset\{1,\cdots,N_1\}}\theta_A}.$$
 \end{proof}
 
 
-\begin{lemma}\label{s2 trivial lemma} There exists $\alpha:2^{N_1}\to\mathbb{R}_+$ such that
-$$c_{\kappa}^{-1}w_{\alpha}(x_1,\cdots,x_{N_1})\leq w(\Phi^{-1}(x))\leq c_{\kappa}w_{\alpha}(x_1,\cdots,x_{N_1}),\quad x\in\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2}.$$
+\begin{lemma}\label{s2 trivial lemma} There exists $\theta:2^{N_1}\to\mathbb{R}_+$ such that
+$$c_{\kappa}^{-1}w_{\theta}(x_1,\cdots,x_{N_1})\leq w(\Phi^{-1}(x))\leq c_{\kappa}w_{\theta}(x_1,\cdots,x_{N_1}),\quad x\in\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2}.$$
 \end{lemma}
 \begin{proof} For every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}$ and for every $v\in R,$ we have
 $$\langle \Phi^{-1}(x),v\rangle=\langle x,(\Phi^{-1})^{\ast}(v)\rangle.$$
@@ -227,28 +227,23 @@ This completes the proof.
 
 \section{First Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{first RS-type theorem} Let $N>1.$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
-$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-gy|\cdot V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
-Let $V$ be an integral operator with integral kernel $K.$ For every $f\in\dot{W}^{1,N}(\Gamma),$ we have
-$$\|M_{f-f\circ g}V\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa}(\|f\|_{\dot{W}^{1,N}(\Gamma)}+\|f\|_{\dot{W}^{1,N}(g\Gamma)}).$$
+\begin{theorem}\label{first RS-type theorem} Let $N>1.$ Let $\theta:2^N\to\mathbb{R}_+.$ Fix $1\neq\sigma\in\mathbb{Z}_2^N.$ Suppose that $K:\mathbb{R}^N_+\times\mathbb{R}^N_+\to\mathbb{C}$
+satisfies
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-\sigma y|\cdot w_{\theta}(x,|x-y|)},\quad x,y\in\mathbb{R}^N_+,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
+Let $V$ be an integral operator on $L_2(\mathbb{R}_+^N,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on {\color{red} specify where} we have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\mathbb{R}_+^N)}.$$
 \end{theorem}
 
-\begin{theorem}\label{first RS-type convergence} In the setting of Theorem \ref{first RS-type theorem}, let $f\in C^{\infty}_c(\mathbb{R}^N).$ If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\to0$$
+\begin{theorem}\label{first RS-type convergence} Suppose we are the setting of Theorem \ref{first RS-type theorem}. If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))\Big)\to0$$
 as $m\to\infty.$
 \end{theorem}
-
-\begin{nota}\label{gamma notation}
-Fix a closed Weyl chamber $\Gamma$ and let $\Phi:\mathbb{R}^N\to\mathbb{R}^N$ be the linear isomorphism given by Theorem \ref{phi theorem}. Let
-$$\mathbb{D}_{\Gamma}=\{\Phi^{-1}(Q)\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}}}.$$
-If $I\in\mathbb{D}_{\Gamma}$ and if $Q=\Phi(I),$ then we denote $d_I=\ell(Q).$
-\end{nota}
 
 \subsection{Proof of Theorem \ref{first RS-type theorem}}
 
 
 \begin{lemma} There exists a smooth function $\psi$ supported on $[-1,1]^N\backslash(-\frac14,\frac14)^N$ such that
-$$1=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+$$1=\sum_{Q\in\mathbb{D}}\chi_Q(x)\chi_{3Q}(y)\psi(\frac{x-y}{\ell(Q)}).$$
 \end{lemma}
 \begin{proof} Choose $\rho\in C_c^{\infty}(\mathbb{R}^N)$ such that $\rho=1$ on $(-\frac12,\frac12)^N$ and $\rho=0$ outside $(-1,1)^N.$ Set $\psi(z)=\rho(z)-\rho(2z).$ Clearly,
 \begin{equation}\label{eq:rankone-psi-support}
@@ -261,118 +256,98 @@ For every $z\neq0,$ we have
 \sum_{j\in\mathbb{Z}}\psi(2^jz)=1.
 \end{equation}
 
-For every $x\in\Gamma,$ there exists a unique $I\in\mathbb{D}_{\Gamma,j}$ containing $x.$ For this $I,$ we have $d_I=2^{-j}.$ We have
-$$1=\sum_{j\in\mathbb{Z}}\psi(2^j(\Phi(x)-\Phi(y)))=\sum_{j\in\mathbb{Z}}(\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x))\psi(2^j(\Phi(x)-\Phi(y)))=$$
-$$=\sum_{j\in\mathbb{Z}}\sum_{I\in\mathbb{D}_{\Gamma,j}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+For every $x,$ there exists a unique $Q\in\mathbb{D}_j$ containing $x.$ For this $Q,$ we have $\ell(Q)=2^{-j}.$ We have
+$$1=\sum_{j\in\mathbb{Z}}\psi(2^j(x-y))=\sum_{j\in\mathbb{Z}}(\sum_{Q\in\mathbb{D}_j}\chi_Q(x))\psi(2^j(x-y))=$$
+$$=\sum_{j\in\mathbb{Z}}\sum_{Q\in\mathbb{D}_j}\chi_Q(x)\psi(\frac{x-y}{\ell(Q)})=\sum_{Q\in\mathbb{D}}\chi_Q(x)\psi(\frac{x-y}{\ell(Q)}).$$
 
-If $x\in I$ and $\psi(\frac{\Phi(x)-\Phi(y)}{d_I})\neq 0,$ then
-$$\Phi(x)\in\Phi(I)=Q,\quad |\Phi(x)-\Phi(y)|\leq d_I=\ell(Q).$$
-We obviously have $|\Phi(x)-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|\Phi(x)-\Phi(y)|_{\infty}\leq\ell(Q).$ Thus, $|\Phi(y)-c_Q|\leq\frac32\ell(Q).$ In other words, $\Phi(y)\in 3Q$ or, equivalently, $y\in 3I.$ Thus,
-$$\chi_I(x)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=\chi_I(x)\chi_{3I}(y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+If $x\in Q$ and $\psi(\frac{x-y}{\ell_Q})\neq 0,$ then
+$$x\in Q,\quad |x-y|_{\infty}\leq\ell(Q).$$
+We obviously have $|x-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|x-y|_{\infty}\leq\ell(Q).$ Thus, $|y-c_Q|_{\infty}\leq\frac32\ell(Q).$ In other words, $y\in 3Q.$ Thus,
+$$\chi_Q(x)\psi(\frac{x-y}{\ell(Q)})=\chi_Q(x)\chi_{3Q}(y)\psi(\frac{x-y}{\ell(Q)}).$$
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO}
-Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ Fix a closed Weyl chamber $\Gamma$ and $1_G\neq g\in G.$ Let $K$ be as in Theorem \ref{first RS-type theorem}. We have
-$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y),$$
+\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO} Let $r>2.$ In the setting of Theorem \ref{first RS-type theorem}, we have
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y),$$
 where
 \begin{enumerate}[{\rm (i)}]
-\item $e_{k,l,I}$ is supported in $I$ and $f_{k,l,I}$ is supported in $3I;$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)};$$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa,\Phi}\frac{d_I}{|c_I-gc_I|};$$
+\item $e_{k,l,Q}$ is supported in $Q$ and $f_{k,l,Q}$ is supported in $3Q;$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D},$ we have
+$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_r(Q,w_{\theta}(x)dx)};$$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D},$ we have
+$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa}\frac{\ell(Q)}{|c_Q-\sigma c_Q|};$$
 \end{enumerate}
 \end{lemma}
-\begin{proof} We have
-$$K(x,y)=\sum_{I\in\mathbb{D}_{\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})=$$
-$$=\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I})+\sum_{\substack{I\in\mathbb{D}_{\Gamma}\\ 3I\not\subset\Gamma}}\chi_I(x)\chi_{3I}(y)K(x,y)\psi(\frac{\Phi(x)-\Phi(y)}{d_I}).$$
+\begin{proof} For every $x,y\in \mathbb{R}^N_+,$ we have
+$$K(x,y)=\sum_{Q\in\mathbb{D}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi(\frac{x-y}{\ell(Q)})=$$
+$$=\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi(\frac{x-y}{\ell(Q)})=$$
 
-We will only consider the first sum. The second some can be treated similarly, but the notations become heavier. {\color{red} feel free to write the expression for the second sum if you think it is needed. the only difference is that the domain of the map $K_I$ becomes more complicated.}
-
-For every $I\in\mathbb{D}_{\Gamma}$ with $3I\subset\Gamma,$ define the map
-$$K_I:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
+For every $Q\in\mathbb{D}$ with $3Q\subset\mathbb{R}^N_+,$ define the map
+$$K_Q:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
 by setting
-$$K_I(a,b)=K(c_I+d_I\Phi^{-1}(a),c_I+d_I\Phi^{-1}(b))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
+$$K_Q(a,b)=K(c_Q+a\ell(Q),c_Q+b\ell(Q))\psi(a-b),\quad a\in [-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
+If $Q\in\mathbb{D}$ is such that $3Q\not\subset\mathbb{R}^N_+,$ then the definition of $K_Q$ is the same, $a$ also runs through $[-\frac12,\frac12]^N,$ but the parallelepiped $b$ runs through is slightly smaller. {\color{red} to co-authors: if you wish, specify the domain of $b$ also.} {\it In what follows, we lighten the notations by pretending that $b$ is always defined on $[-\frac32,\frac32]^N.$}
 
-It follows from the assumption on $K$ that {\color{red} feel free to prove this if you think this requires a proof. however, do not prove it here --- make a separate lemma instead.}
-$$\|K_I\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\kappa,\Phi}'}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
-Hence, there exists an extension $K_I:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
-$$\|K_I\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}''}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
+It follows from the assumption on $K$ that
+$$\|K_Q\|_{C^{2N+2}([-\frac32,\frac32]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\theta}'}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
+Hence, there exists an extension $K_Q:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
+$$\|K_Q\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\theta}''}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
 In particular,
-$$\|K_I\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
+$$\|K_Q\|_{W^{2N+2.2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
 We may, therefore, write
-$$K_I(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,I}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
+$$K_Q(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,Q}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
 where
-$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,I}|^2\leq \Big(\frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}\Big)^2.$$
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,Q}|^2\leq \Big(\frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}\Big)^2.$$
 In particular,
-$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
+$$(1+|k|^2+|l|^2)^{N+1}\cdot|{\rm coef}_{k,l,Q}|\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|},\quad k,l\in\mathbb{Z}^N.$$
 
 We now set
-$$e_{k,l,I}(x)=f(x)\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
-$$f_{k,l,I}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,I}\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+$$e_{k,l,Q}(x)=f(x)\chi_Q(x)e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},$$
+$$f_{k,l,Q}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,Q}\cdot \chi_{3Q}(y)e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle}.$$
 This allows us to write
-$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y).$$
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y).$$
 
 Obviously,
-$${\rm supp}(e_{k,l,I})\subset I,\quad {\rm supp}(f_{k,l,I})\subset 3I,$$
-$$\|e_{k,l,I}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\|f\|_{L_r(I,w(x)dx)},$$
-$$\|f_{k,l,I}\|_{L_{\infty}(\mathbb{R}^N,w(x)dx)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{I,k,l}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)}\cdot \frac{d_I}{|c_I-gc_I|}.$$
+$${\rm supp}(e_{k,l,Q})\subset Q,\quad {\rm supp}(f_{k,l,Q})\subset 3Q,$$
+$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_r(Q,w(x)dx)},$$
+$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{k,l,Q}|\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
 \end{proof}
 
-\begin{definition}\label{NWO Gamma def} Let $\Gamma$ be a chamber. Let $\Phi$ be as in Theorem \ref{phi theorem} and let $\mathbb{D}_{\Gamma}$ be as in Notation \ref{gamma notation}. Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ is called $(r,c)$-NWO if
-\begin{enumerate}
-\item ${\rm supp}(e_I)\subseteq cI$ for every $I\in\mathbb{D}_{\Gamma};$ 
-\item $\|e_I\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(I)^{\frac1r-\frac12}$ for every $I\in\mathbb{D}_{\Gamma};$
-\end{enumerate}
-\end{definition}
-
-\begin{lemma}\label{NWO Gamma lemma} Let $0<p<\infty.$ Let $\Gamma$ be a chamber. Let $\Phi$ be as in Theorem \ref{phi theorem} and let $\mathbb{D}_{\Gamma}$ be as in Notation \ref{gamma notation}. Suppose that $A$ is an integral operator on $L_2(\Gamma,w(x)dx)$ with integral kernel 
-$$(x,y)\to \sum_{I\in\mathbb{D}_{\Gamma}}\lambda_I e_I(x)f_I(y),\quad x,y\in\Gamma,$$
-where $\{e_I\}_{I\in\mathbb{D}_{\Gamma}}$ and $\{f_I\}_{I\in\mathbb{D}_{\Gamma}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
-$$\|A\|_{\mathcal{L}_{p,\infty}(L_2(\Gamma,w(x)dx))}\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p} \|\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}}\|_{p,\infty},$$
-$${\rm dist}_{\mathcal{L}_{p,\infty}(L_2(\Gamma,w(x)dx))}\Big(A,(\mathcal{L}_{p,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq $$
-$$\leq C_{\Phi,\kappa,r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D}_{\Gamma})}\Big(\{\lambda_I\}_{I\in\mathbb{D}_{\Gamma}},(l_{p,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
-\end{lemma}
-\begin{proof} The assertion follows immediately from Lemma \ref{NWO lemma}.
-\end{proof}
-
-
-\begin{lemma}\label{supremum vs average} For every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\sup_{x\in I}w(x)\leq c_{\kappa,\Phi}\frac{w(I)}{m(I)}.$$
+\begin{lemma}\label{supremum vs average} For every $Q\in\mathbb{D}$ with $Q\subset\mathbb{R}^N_+,$ we have
+$$\sup_{x\in Q}w_{\theta}(x)\leq c_{\theta}\frac{w_{\theta}(Q)}{m(Q)}.$$
 \end{lemma}
 \begin{proof} We have
-$$w(I)\approx_{\Phi,\kappa} w(B(c_I,d_I))\approx_{\kappa} d_I^N\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
-On the other hand, if $x\in I,$ then $|x-c_I|\leq c_{\Phi}d_I$ and, therefore,
-$$|\langle x,v\rangle|\leq |\langle x-c_I,v\rangle|+|\langle c_I,v\rangle|\leq |x-c_I|+|\langle c_I,v\rangle|\leq c_{\Phi}d_I+|\langle c_I,v\rangle|.$$
+$$w(Q)\geq c_{\theta}\prod_{A\subset\{1,\cdots,N\}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
+On the other hand, if $x\in Q,$ then $|x-c_Q|_{\infty}\leq \frac12\ell(Q)$ and, therefore,
+$$\sum_{k\in A}x_k\leq \frac{|A|}{2}\ell_Q+\sum_{k\in A}(c_Q)_k\leq N(\ell_Q+\sum_{k\in A}(c_Q)_k).$$
 Thus,
-$$w(x)\leq \prod_{v\in R}(c_{\Phi}d_I+|\langle c_I,v\rangle|)^{k(v)}\leq c_{\Phi,\kappa}\prod_{v\in R}(|\langle c_I,v\rangle|+d_I)^{k(v)}.$$
+$$w(x)=\prod_{A\subset\{1,\cdots,N\}}(\sum_{k\in A}x_k)^{\theta_A}\leq N^{\sum_{A\subset\{1,\cdots,N\}}\theta_A}\prod_{A\subset\{1,\cdots,N\}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS intermediate estimate} Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ We have
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa,\Phi,r}\Big\|\Big\{m(I)^{-\frac1r}\|f\|_{L_r(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
+\begin{lemma}\label{first RS intermediate estimate} Let $2<r<\infty.$  LIn the setting of Theorem \ref{first RS-type theorem}, we have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq c_{K,\theta,r}\Big\|\Big\{m(Q)^{-\frac1r}\|f\|_{L_r(Q)}\cdot\frac{\ell(Q)}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}
 \Big\|_{N,\infty}.$$
 \end{lemma}
 \begin{proof} Let $A_{k,l}$ be the integral operator with integral kernel given by the formula
-$$(x,y)\to\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}(x)f_{k,l,I}(y),\quad x,y\in\Gamma,\quad k,l\in\mathbb{Z}^N.$$
+$$(x,y)\to\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y),\quad x,y\in\mathbb{R}^N_+,\quad k,l\in\mathbb{Z}^N.$$
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, we have
 $$M_fV=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}.$$
 By the triangle inequality,
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}.$$
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}.$$
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{|c_I-gc_I|}{d_I}f_{k,l,I}\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
-are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO Gamma def}. Using Lemma \ref{NWO Gamma lemma}, we conclude that
-$$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa}\Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\Big\{w_{\theta}(Q)^{\frac1r-\frac12}\frac{e_{k,l,Q}}{\|f\|_{L_r(Q,w_{\theta}(x)dx)}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}},\quad \Big\{c_{K,\theta}^{-1}w_{\theta}(Q)^{\frac12}\cdot\frac{|c_Q-\sigma c_Q|}{\ell_Q}f_{k,l,Q}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}$$
+are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
+$$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
+$$\leq c_{\theta,r,1,\infty,3,N}c_{K,\theta}\Big\|\Big\{w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\Big\|_{N,\infty}.$$
 Therefore,
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times \Big\|\Big\{w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}.$$
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}c_{\theta,r,1,\infty,3,N}c_{K,\theta}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\times \Big\|\Big\{w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
-$$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
+$$w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\frac1r}m(Q)^{-\frac1r}\|f\|_{L_r(Q)},\quad Q\in\mathbb{D},\quad Q\subset\mathbb{R}^N_+.$$
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
@@ -645,6 +620,44 @@ $$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\times c_{\ka
 The assertion follows immediately.
 \end{proof}
 
+\begin{lemma} Let $\Gamma$ be an open chamber and let $1\neq g\in G.$ We have
+\begin{enumerate}[{\rm (i)}]
+\item $\bar{\Gamma}\cap g\bar{\Gamma}$ is $k$-dimensional chamber of $\Gamma$ for some $1\leq k<d.$ 
+\item $g(x)=x$ for $x\in \bar{\Gamma}\cap g\bar{\Gamma}.$
+\end{enumerate}
+\end{lemma}
+\begin{proof} {\color{red} must be a standard material. reference to be found.}
+\end{proof}
+
+\begin{lemma} Let $A:\mathbb{R}^N\to\mathbb{R}^N$ be a bijective linear map. Suppose $$A(\overline{\mathbb{R}^N_+})\cap\overline{\mathbb{R}^N_+}=\mathbb{R}^k_+\times\{0\},\quad A|_{\mathbb{R}^k\times\{0\}}={\rm id}.$$
+Set $\sigma:x\to(x_1,\cdots,x_k,-x_{k+1},\cdots,-x_N).$ We have
+$$|x-Ay|\geq c_A|x-\sigma y|,\quad x,y\in\mathbb{R}^N_+.$$
+\end{lemma}
+\begin{proof} Since $A|_{\mathbb{R}^k\times\{0\}}={\rm id},$ it follows that
+$$A=
+\begin{pmatrix}
+1&B\\
+0&D
+\end{pmatrix}
+$$
+where $1$ is $k\times k$ matrix, $B$ is $k\times(N-k)$ matrix and $D$ is $(N-k)\times(N-k)$ matrix.
+
+{\bf Step 1:} We claim that $D(\mathbb{R}^{N-k}_+)\cap\mathbb{R}^{N-k}_+=\{0\}.$
+
+Let $w\in\mathbb{R}^{N-k}_+$ be such that $Dw\geq0.$ Set $x=(t,\cdots,t,w)\in\mathbb{R}^N,$ where $t\in\mathbb{R}_+$ is such that $t\geq|Bw|_{\infty}.$ We have $x\geq0$ (this is obvious) and $Ax\geq0$ (because $t(1,\cdots,1)+Bw\geq0$ and $Dw\geq0$). Since $A(\overline{\mathbb{R}^N_+})\cap\overline{\mathbb{R}^N_+}=\mathbb{R}^k_+\times\{0\},$ it follows that $x\in \mathbb{R}^k_+\times\{0\}.$ In other words, $w=0.$
+
+{\bf Step 2:} It follows from Step 1 that $z-Dw\neq0$ for $z,w\in\mathbb{R}^{N-k}_+$ (unless $z=w=0$). Hence,  $|z-Dw|\geq c_D(|z|+|w|)$ for $z,w\in\mathbb{R}^{N-k}_+.$
+
+Set $x=(u,z)$ and $y=(v,w)$ with $u,v\in\mathbb{R}^k_+$ and $z,w\in\mathbb{R}^{N-k}_+.$ We have
+$$|x-Ay|=|(u-v-Bw,z-Dw)|\geq |z-Dw|\geq c_D(|z|+|w|).$$
+On the other hand, we have
+$$|x-Ay|=|(u-v-Bw,z-Dw)|\geq |u-v|-|Bw|\geq |u-v|-\|B\|_{\infty}|w|.$$
+Thus,
+$$(1+c_D^{-1}\|B\|_{\infty})|x-Ay|\geq |u-v|.$$
+Finally,
+$$(1+c_D^{-1}\|B\|_{\infty}+c_D^{-1})|x-Ay|\geq |u-v|+|z|+|w|\geq|(u-v,z+w)|=|x-\sigma y|.$$
+This completes the proof.
+\end{proof}
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb},\eqref{mtd}}\label{lower estimate section}
 
