@@ -227,15 +227,15 @@ This completes the proof.
 
 \section{First Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{first RS-type theorem} Let $N>1.$ Let $\theta:2^N\to\mathbb{R}_+.$ Fix $1\neq\sigma\in\mathbb{Z}_2^N.$ Suppose that $K:\mathbb{R}^N_+\times\mathbb{R}^N_+\to\mathbb{C}$
+\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let ${\rm id}\neq\sigma:\mathbb{R}^N\times\mathbb{R}^N$ be the reflection with respect to $F.$ Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
-$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-\sigma y|\cdot w_{\theta}(x,|x-y|)},\quad x,y\in\mathbb{R}^N_+,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
-Let $V$ be an integral operator on $L_2(\mathbb{R}_+^N,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on {\color{red} specify where} we have
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\mathbb{R}_+^N)}.$$
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-\sigma y|\cdot w_{\theta}(x,|x-y|)},\quad x,y\in\Omega,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
+Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on the fixed point set of $\sigma$ we have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\Omega)}.$$
 \end{theorem}
 
 \begin{theorem}\label{first RS-type convergence} Suppose we are the setting of Theorem \ref{first RS-type theorem}. If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}_+^N,w_{\theta}(x)dx))\Big)\to0$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\to0$$
 as $m\to\infty.$
 \end{theorem}
 
@@ -267,26 +267,26 @@ $$\chi_Q(x)\psi(\frac{x-y}{\ell(Q)})=\chi_Q(x)\chi_{3Q}(y)\psi(\frac{x-y}{\ell(Q
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO} Let $r>2.$ In the setting of Theorem \ref{first RS-type theorem}, we have
-$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y),$$
+\begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO} In the setting of Theorem \ref{first RS-type theorem}, we have
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y),$$
 where
 \begin{enumerate}[{\rm (i)}]
-\item $e_{k,l,Q}$ is supported in $Q$ and $f_{k,l,Q}$ is supported in $3Q;$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D},$ we have
-$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_r(Q,w_{\theta}(x)dx)};$$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D},$ we have
+\item $e_{k,l,Q}$ is supported in $Q$ and $f_{k,l,Q}$ is supported in $3Q$ for every $Q\in\mathbb{D}$ with $Q\subset\Omega;$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
+$$\|e_{k,l,Q}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)};$$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
 $$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa}\frac{\ell(Q)}{|c_Q-\sigma c_Q|};$$
 \end{enumerate}
 \end{lemma}
-\begin{proof} For every $x,y\in \mathbb{R}^N_+,$ we have
+\begin{proof} For every $x,y\in \Omega,$ we have
 $$K(x,y)=\sum_{Q\in\mathbb{D}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi(\frac{x-y}{\ell(Q)})=$$
-$$=\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi(\frac{x-y}{\ell(Q)})=$$
+$$=\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi(\frac{x-y}{\ell(Q)})=$$
 
-For every $Q\in\mathbb{D}$ with $3Q\subset\mathbb{R}^N_+,$ define the map
+For every $Q\in\mathbb{D}$ with $3Q\subset\Omega,$ define the map
 $$K_Q:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
 by setting
 $$K_Q(a,b)=K(c_Q+a\ell(Q),c_Q+b\ell(Q))\psi(a-b),\quad a\in [-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
-If $Q\in\mathbb{D}$ is such that $3Q\not\subset\mathbb{R}^N_+,$ then the definition of $K_Q$ is the same, $a$ also runs through $[-\frac12,\frac12]^N,$ but the parallelepiped $b$ runs through is slightly smaller. {\color{red} to co-authors: if you wish, specify the domain of $b$ also.} {\it In what follows, we lighten the notations by pretending that $b$ is always defined on $[-\frac32,\frac32]^N.$}
+If $Q\in\mathbb{D}$ is such that $3Q\not\subset\Omega,$ then the definition of $K_Q$ is the same, $a$ also runs through $[-\frac12,\frac12]^N,$ but the parallelepiped $b$ runs through is slightly smaller. {\color{red} to co-authors: if you wish, specify the domain of $b$ also.} {\it In what follows, we lighten the notations by pretending that $b$ is always defined on $[-\frac32,\frac32]^N.$}
 
 It follows from the assumption on $K$ that
 $$\|K_Q\|_{C^{2N+2}([-\frac32,\frac32]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\theta}'}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
@@ -305,15 +305,15 @@ We now set
 $$e_{k,l,Q}(x)=f(x)\chi_Q(x)e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},$$
 $$f_{k,l,Q}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,Q}\cdot \chi_{3Q}(y)e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle}.$$
 This allows us to write
-$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y).$$
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y).$$
 
 Obviously,
 $${\rm supp}(e_{k,l,Q})\subset Q,\quad {\rm supp}(f_{k,l,Q})\subset 3Q,$$
-$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_r(Q,w(x)dx)},$$
+$$\|e_{k,l,Q}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_{2N}(Q,w(x)dx)},$$
 $$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{k,l,Q}|\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{|c_Q-\sigma c_Q|}.$$
 \end{proof}
 
-\begin{lemma}\label{supremum vs average} For every $Q\in\mathbb{D}$ with $Q\subset\mathbb{R}^N_+,$ we have
+\begin{lemma}\label{supremum vs average} For every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
 $$\sup_{x\in Q}w_{\theta}(x)\leq c_{\theta}\frac{w_{\theta}(Q)}{m(Q)}.$$
 \end{lemma}
 \begin{proof} We have
@@ -325,46 +325,43 @@ $$w(x)=\prod_{A\subset\{1,\cdots,N\}}(\sum_{k\in A}x_k)^{\theta_A}\leq N^{\sum_{
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS intermediate estimate} Let $2<r<\infty.$  LIn the setting of Theorem \ref{first RS-type theorem}, we have
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq c_{K,\theta,r}\Big\|\Big\{m(Q)^{-\frac1r}\|f\|_{L_r(Q)}\cdot\frac{\ell(Q)}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}
+\begin{lemma}\label{first RS intermediate estimate} In the setting of Theorem \ref{first RS-type theorem}, we have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\Big\|\Big\{m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)}\cdot\frac{\ell(Q)}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}.$$
 \end{lemma}
 \begin{proof} Let $A_{k,l}$ be the integral operator with integral kernel given by the formula
-$$(x,y)\to\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}e_{k,l,Q}(x)f_{k,l,Q}(y),\quad x,y\in\mathbb{R}^N_+,\quad k,l\in\mathbb{Z}^N.$$
+$$(x,y)\to\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y),\quad x,y\in\Omega,\quad k,l\in\mathbb{Z}^N.$$
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, we have
 $$M_fV=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}.$$
 By the triangle inequality,
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}.$$
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}.$$
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w_{\theta}(Q)^{\frac1r-\frac12}\frac{e_{k,l,Q}}{\|f\|_{L_r(Q,w_{\theta}(x)dx)}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}},\quad \Big\{c_{K,\theta}^{-1}w_{\theta}(Q)^{\frac12}\cdot\frac{|c_Q-\sigma c_Q|}{\ell_Q}f_{k,l,Q}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}$$
-are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
-$$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
-$$\leq c_{\theta,r,1,\infty,3,N}c_{K,\theta}\Big\|\Big\{w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\Big\|_{N,\infty}.$$
+$$\Big\{w_{\theta}(Q)^{\frac1{2N}-\frac12}\frac{e_{k,l,Q}}{\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}},\quad \Big\{c_{K,\theta}^{-1}w_{\theta}(Q)^{\frac12}\cdot\frac{|c_Q-\sigma c_Q|}{\ell_Q}f_{k,l,Q}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}$$
+are $(2N,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
+$$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq$$
+$$\leq c_{\theta,2N,1,\infty,3,N}c_{K,\theta}\Big\|\Big\{w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\Big\|_{N,\infty}.$$
 Therefore,
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N_+,w_{\theta}(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}c_{\theta,r,1,\infty,3,N}c_{K,\theta}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times \Big\|\Big\{w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\mathbb{R}^N_+}}\Big\|_{N,\infty}.$$
+$$\leq \frac{N}{N-1}c_{\theta,2N,1,\infty,3,N}c_{K,\theta}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
+$$\times \Big\|\Big\{w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\cdot\frac{\ell_Q}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\Big\|_{N,\infty}.$$
 By Lemma \ref{supremum vs average},
-$$w_{\theta}(Q)^{-\frac1r}\|f\|_{L_r(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\frac1r}m(Q)^{-\frac1r}\|f\|_{L_r(Q)},\quad Q\in\mathbb{D},\quad Q\subset\mathbb{R}^N_+.$$
+$$w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\frac1{2N}}m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)},\quad Q\in\mathbb{D},\quad Q\subset\Omega.$$
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS prefinal lemma} Let $f\in\dot{W}^{1,N}(\Gamma)\cap\dot{W}^{1,N}(g\Gamma).$ We have
-$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
-\Big\|_{N,\infty}\leq c_{\Phi}(\|f\|_{\dot{W}^{1,N}(\Gamma)}+\|f\|_{\dot{W}^{1,N}(g\Gamma)}).$$
+\begin{lemma}\label{first RS prefinal lemma} In the setting of Theorem \ref{first RS-type theorem}, we have
+$$\Big\|\Big\{m(I)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{|c_Q-\sigma c_Q|}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+\Big\|_{N,\infty}\leq c_N\||\nabla f|\|_{L_N(\Omega)}.$$
 \end{lemma}
-\begin{proof} Let $\mathcal{M}$ be the Hardy--Littlewood maximal operator on $\mathbb{R}^N.$ By \cite[Theorem~3]{MR1226425}, for almost every $x\in\mathbb{R}^N,$ 
-$$|f(x)-f(gx)|\leq c_N|x-gx|\cdot \big((\mathcal{M}(|\nabla f|))(x)+(\mathcal{M}(|\nabla f|))(gx)\bigr).$$
+\begin{proof} Let $\mathcal{M}$ be the Hardy--Littlewood maximal operator on $\mathbb{R}^N.$ By \cite[Theorem~3]{MR1226425}, we have {\color{red} NO! we must handle this difficulty!}
+$$|f(x)|\leq c_N{\rm dist}(x,F)\cdot (\mathcal{M}(|\nabla f|))(x),\quad x\in\Omega.$$
 We have
-$$|x-gx|\leq 2|x-c_I|+|c_I-gc_I|,\quad x\in I,\quad y\in gI.$$
-Obviously,
-$$|x-c_I|\leq\frac{d^{\frac12}}{2}\|\Phi\|_{\infty}d_I,\quad x\in I.$$
-Hence,
-$$|x-gx|\leq c_{\Phi}'|c_I-gc_I|,\quad x\in I.$$
+$${\rm dist}(x,F)\leq |x-c_Q|+{\rm dist}(c_Q,F)\leq \frac{d^{\frac12}}{2}\ell(Q)+{\rm dist}(c_Q,F)\leq$$
+$$\leq (N^{\frac12}+1){\rm dist}(c_Q,F)\leq (N^{\frac12}+1)|c_Q-\sigma c_Q|,\quad x\in Q.$$
 Thus,
-$$|f(x)-f(gx)|\leq c_{\Phi}''\cdot |c_I-gc_I|\cdot\big((\mathcal{M}(|\nabla f|))(x)+(\mathcal{M}(|\nabla f|))(gx)\bigr).$$
+$$|f(x)-f(gx)|\leq c_N\cdot (N^{\frac12}+1)\cdot |c_Q-\sigma c_Q|\cdot(\mathcal{M}(|\nabla f|))(x).$$
 This immediately implies
 $$\frac1{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}''\cdot\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
 for every $I\in\mathbb{D}_{\Gamma}.$ Hence,
