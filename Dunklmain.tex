@@ -620,7 +620,7 @@ $$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\times c_{\ka
 The assertion follows immediately.
 \end{proof}
 
-\begin{lemma} Let $\Gamma$ be an open chamber and let $1\neq g\in G.$ We have
+\begin{lemma}\label{chamber properties} Let $\Gamma$ be an open chamber and let $1\neq g\in G.$ We have
 \begin{enumerate}[{\rm (i)}]
 \item $\bar{\Gamma}\cap g\bar{\Gamma}$ is $k$-dimensional chamber of $\Gamma$ for some $1\leq k<d.$ 
 \item $g(x)=x$ for $x\in \bar{\Gamma}\cap g\bar{\Gamma}.$
@@ -629,11 +629,17 @@ The assertion follows immediately.
 \begin{proof} {\color{red} must be a standard material. reference to be found.}
 \end{proof}
 
-\begin{lemma} Let $A:\mathbb{R}^N\to\mathbb{R}^N$ be a bijective linear map. Suppose $$A(\overline{\mathbb{R}^N_+})\cap\overline{\mathbb{R}^N_+}=\mathbb{R}^k_+\times\{0\},\quad A|_{\mathbb{R}^k\times\{0\}}={\rm id}.$$
-Set $\sigma:x\to(x_1,\cdots,x_k,-x_{k+1},\cdots,-x_N).$ We have
-$$|x-Ay|\geq c_A|x-\sigma y|,\quad x,y\in\mathbb{R}^N_+.$$
+\begin{lemma}\label{length comparison lemma} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $A:\mathbb{R}^N\to\mathbb{R}^N$ be a bijective linear map. Suppose $A(\bar{\Omega})\cap\bar{\Omega}=F,$  $A|_F={\rm id}.$ Suppose also that $A:\mathbb{R}^{N_1}\times\{0\}\to\mathbb{R}^{N_1}\times\{0\},$  $A:\{0\}\times\mathbb{R}^{N_2}\to\{0\}\times\mathbb{R}^{N_2}$ and $A|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id}.$ Let $\sigma:\mathbb{R}^N\times\mathbb{R}^N$ be the reflection with respect to $F.$ We have
+$$|x-Ay|\geq c_A|x-\sigma y|,\quad x,y\in\Omega.$$
 \end{lemma}
-\begin{proof} Since $A|_{\mathbb{R}^k\times\{0\}}={\rm id},$ it follows that
+\begin{proof} In what follows, we prove the assertion for the case when $F$ has non-zero dimension. The case ${\rm dim}(F)=0$ (i.e., the case $F=\{0\}$) is similar but simpler.
+
+Since $A,\sigma:\mathbb{R}^{N_1}\times\{0\}\to\mathbb{R}^{N_1}\times\{0\},$  $A,\sigma:\{0\}\times\mathbb{R}^{N_2}\to\{0\}\times\mathbb{R}^{N_2},$ and $A|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id}$ and $\sigma|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id},$ it suffices to prove the assertion for the case $N_1=N,$ $N_2=0.$
+
+Without loss of generality, we may assume that $F=\mathbb{R}^k_+\times\{0\}$ with $1\leq k\leq N.$
+
+
+Since $A|_{\mathbb{R}^k\times\{0\}}={\rm id},$ it follows that
 $$A=
 \begin{pmatrix}
 1&B\\
@@ -656,6 +662,51 @@ Thus,
 $$(1+c_D^{-1}\|B\|_{\infty})|x-Ay|\geq |u-v|.$$
 Finally,
 $$(1+c_D^{-1}\|B\|_{\infty}+c_D^{-1})|x-Ay|\geq |u-v|+|z|+|w|\geq|(u-v,z+w)|=|x-\sigma y|.$$
+This completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtc}] We prove the assertion under {\it a priori} restriction $f\in C^{\infty}_c(\mathbb{R}^N).$ Passing to the case of $f\in\dot{W}^{1,N}(\mathbb{R}^N)$ is standard (see e.g {\color{red} refer to our papers}).
+
+It suffices to estimate, for every chamber $\Gamma$ and for every $g\in G,$ the operator $M_{\chi_{\Gamma}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{\Gamma}}.$ In other words, it suffices to estimate an operator with integral kernel
+$$(f(y)-f(x))K_{R_{{\rm Dunkl},j}}(x,y),\quad x\in\Gamma,\quad y\in g\Gamma,$$
+on the Hilbert space $L_2(\mathbb{R}^N,w(x)dx).$ In other words, it suffices to estimate an operator with integral kernel
+$$(f(gy)-f(x))K_{R_{{\rm Dunkl},j}}(x,gy),\quad x,y\in\Gamma,$$
+on the Hilbert space $L_2(\Gamma,w(x)dx).$ 
+
+Let $N_1={\rm dim}({\rm span}(R)),$ $N_2=N-N_1$ and let $\Omega=\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2}.$ For a concrete chamber $\Gamma,$ let $\Phi:\mathbb{R}^N\to\mathbb{R}^N$ be a linear isomorphism given in Theorem \ref{phi theorem} so that $\Phi(\Gamma)=\Omega.$ Without loss of generality, $\Phi({\rm span}(R))=\mathbb{R}^{N_1}\times\{0\}$ and $\Phi({\rm span}(R)^{\perp})=\{0\}\times\mathbb{R}^{N_2}.$
+
+It suffices to estimate an operator with integral kernel
+$$(f(g\Phi^{-1}y)-f(\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+on the Hilbert space $L_2(\Omega,w(\Phi^{-1}x)dx).$ Using Lemma \ref{s2 trivial lemma}, it suffices to estimate an operator with integral kernel
+$$(f(g\Phi^{-1}y)-f(\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$
+
+For $g=1_G,$ we need to estimate an operator with integral kernel
+$$(f(\Phi^{-1}y)-f(\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,\Phi^{-1}y),\quad x,y\in\Omega,$$
+on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$
+
+For $g\in 1_G,$ it suffices to estimate operators with integral kernels
+$$(f(g\Phi^{-1}y)-f(g\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+and, respectively,
+$$(f(g\Phi^{-1}x)-f(\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$
+
+Denote by $V_{g,G,j}$ integral operator on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel 
+$$K_{g,G,j}(x,y)=K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega.$$
+
+For $g=1_G,$ it suffices to estimate operator $[M_{f\circ\Phi^{-1}},V_{g,G,j}]$ on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ\Phi^{-1},$ we obtain the required estimate.
+
+For $g\neq 1_G,$ it suffices to estimate operators $[M_{f\circ g\Phi^{-1}},V_{g,G,j}]$ and $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\Phi g\Phi^{-1}y|}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
+By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension) and let $\sigma$ be the reflection with respect to $F$ as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\sigma y|}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1},$ we obtain the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,G,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain the required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$
+
 This completes the proof.
 \end{proof}
 
