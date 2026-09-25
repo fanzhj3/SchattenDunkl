@@ -227,10 +227,10 @@ This completes the proof.
 
 \section{First Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let ${\rm id}\neq\sigma:\mathbb{R}^N\times\mathbb{R}^N$ be the reflection with respect to $F.$ Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
+\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
-$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{|x-\sigma y|\cdot w_{\theta}(x,|x-y|)},\quad x,y\in\Omega,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
-Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{(|x-y|+{\rm dist}(x,F))\cdot w_{\theta}(B(x,|x-y|))}$$
+for every $x,y\in\Omega$ and for every $\alpha,\beta\in\mathbb{Z}^N_+.$ Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\Omega)}.$$
 \end{theorem}
 
@@ -265,27 +265,6 @@ $$\chi_Q(x)\psi(\frac{x-y}{\ell(Q)})=\chi_Q(x)\chi_{3Q}(y)\psi(\frac{x-y}{\ell(Q
 This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{for first RS elementary lemma} If $Q\in\mathbb{D}$ is such that $Q\subset\Omega,$ $x\in Q$ and $y\in 3Q\cap\Omega,$ then
-$$\frac{|x-y|}{|x-\sigma y|}\leq\frac{3N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
-\end{lemma}
-\begin{proof} We either have ${\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac32\ell(Q)$ or ${\rm dist}_{l_{\infty}^N}(c_Q,F)=\frac12\ell(Q).$
-
-Suppose first that ${\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac32\ell(Q).$ We have
-$$|x-\sigma y|\geq|x-\sigma y|_{\infty}\geq |c_Q-\sigma c_Q|_{\infty}-|x-c_Q|_{\infty}-|y-c_Q|_{\infty}=$$
-$$=2{\rm dist}_{l_{\infty}^N}(c_Q,F)-|x-c_Q|_{\infty}-|y-c_Q|_{\infty}.$$
-Since $x\in Q$ and $y\in 3Q,$ it follows that $|x-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|y-c_Q|_{\infty}\leq\frac32\ell(Q).$ Thus,
-$$|x-\sigma y|\geq 2{\rm dist}_{l_{\infty}^N}(c_Q,F)-2\ell(Q)=$$
-$$=\frac23{\rm dist}_{l_{\infty}^N}(c_Q,F)+\frac43\big({\rm dist}_{l_{\infty}^N}(c_Q,F)-\frac32\ell(Q)\big)\geq$$
-$$\geq\frac23{\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac23N^{-\frac12}{\rm dist}(c_Q,F).$$
-On the other hand,
-$$|x-y|\leq N^{\frac12}|x-y|_{\infty}\leq N^{\frac12}(|x-c_Q|_{\infty}+|y-c_Q|_{\infty})\leq 2N^{\frac12}\ell(Q).$$
-Thus,
-$$\frac{|x-y|}{|x-\sigma y|}\leq \frac{3N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
-
-Suppose now that ${\rm dist}_{l_{\infty}^N}(c_Q,F)=\frac12\ell(Q).$ It follows that
-$$\frac{|x-y|}{|x-\sigma y|}\leq 1=\frac{2\ell(Q)}{{\rm dist}_{l_{\infty}^N}(c_Q,F)}\leq\frac{2N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
-\end{proof}
-
 \begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO} In the setting of Theorem \ref{first RS-type theorem}, we have
 $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y),$$
 where
@@ -307,7 +286,7 @@ by setting
 $$K_Q(a,b)=K(c_Q+a\ell(Q),c_Q+b\ell(Q))\psi(a-b),\quad a\in [-\frac12,\frac12]^N,\quad b\in[-\frac32,\frac32]^N.$$
 If $Q\in\mathbb{D}$ is such that $3Q\not\subset\Omega,$ then the definition of $K_Q$ is the same, $a$ also runs through $[-\frac12,\frac12]^N,$ but the parallelepiped $b$ runs through is slightly smaller. {\color{red} to co-authors: if you wish, specify the domain of $b$ also.} {\it In what follows, we lighten the notations by pretending that $b$ is always defined on $[-\frac32,\frac32]^N.$}
 
-It follows from the assumption on $K$ and Lemma \ref{for first RS elementary lemma} that
+It follows from the assumption on $K$ that
 $$\|K_Q\|_{C^{2N+2}([-\frac32,\frac32]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\theta}'}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{{\rm dist}(c_Q,F)}.$$
 Hence, there exists an extension $K_Q:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$ such that
 $$\|K_Q\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq \frac{c_{K,\theta}''}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{{\rm dist}(c_Q,F)}.$$
@@ -583,38 +562,35 @@ The assertion follows immediately.
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mta},\eqref{mtc}}
 
-Denote for brevity
-$$V(x,y,t)=\max\{w(B(x,t)),w(B(y,t))\}$$
-
 \begin{lemma}\label{heat kernel estimate} For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^N_+,$ for every $t>0,$ we have
-$$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t^{1-\frac{|\alpha|_1+|\beta|_1}{2}}|x-y|^{-2}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2).$$
+$$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t^{1-\frac{|\alpha|_1+|\beta|_1}{2}}|x-y|^{-2}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2).$$
 \end{lemma}
 \begin{proof} This is (slightly weakened form of) Theorem 3.1 in \cite{MR4042416}.
 \end{proof}
 
 \begin{lemma}\label{zhijie kernel estimate} Suppose $s+N>2.$ We have
-$$\int_0^{\infty}t^{-\frac{s}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq c_{\kappa,s}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}.$$
+$$\int_0^{\infty}t^{-\frac{s}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq c_{\kappa,s}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-s}.$$
 \end{lemma}
 \begin{proof} By \eqref{doublinginequality},
-$$V(x,y,t^{\frac12})^{-1}\leq c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times
+$$w(B(x,t^{\frac12}))^{-1}\leq c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times
 \begin{cases}
 \left(\frac{d(x,y)}{t^{\frac12}}\right)^{\mathbf{N}},
 &0<t\leq d(x,y)^2,\\
 \left(\frac{d(x,y)}{t^{\frac12}}\right)^N,&t\geq d(x,y)^2.
 \end{cases}$$
 Therefore,
-$$\int_0^{\infty}t^{-\frac{s}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq$$
-$$\leq c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times\int_0^{d(x,y)^2}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^{\mathbf{N}}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
-$$+c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times\int_{d(x,y)^2}^{\infty}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^N\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt=$$
-$$=c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}\times\int_0^1t^{-\frac{s+\mathbf{N}}{2}}\exp(-\frac{c_{\kappa}}{t})dt+$$
-$$+c_{\kappa}^{(1)}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-s}\times\int_1^{\infty}t^{-\frac{s+N}{2}}\exp(-\frac{c_{\kappa}}{t})dt.$$
+$$\int_0^{\infty}t^{-\frac{s}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt\leq$$
+$$\leq c_{\kappa}^{(1)}w(B(x,d(x,y))^{-1}\times\int_0^{d(x,y)^2}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^{\mathbf{N}}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times\int_{d(x,y)^2}^{\infty}t^{-\frac{s}{2}}\left(\frac{d(x,y)}{t^{\frac12}}\right)^N\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt=$$
+$$=c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-s}\times\int_0^1t^{-\frac{s+\mathbf{N}}{2}}\exp(-\frac{c_{\kappa}}{t})dt+$$
+$$+c_{\kappa}^{(1)}w(B(x,d(x,y))/)^{-1}\times d(x,y)^{2-s}\times\int_1^{\infty}t^{-\frac{s+N}{2}}\exp(-\frac{c_{\kappa}}{t})dt.$$
 \end{proof}
 
 The following lemma establishes derivative estimates for the integral kernels of Dunkl-Riesz transforms.
 \begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives}
 Let $N\geq 2.$ For every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|
-\leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{|x-y|\cdot V(x,y,d(x,y))},\quad x,y\in\mathbb{R}^N.$$
+\leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{|x-y|\cdot w(B(x,d(x,y)))},\quad x,y\in\mathbb{R}^N.$$
 \end{lemma}
 \begin{proof} We have
 $$\Delta_{{\rm Dunkl}}^{-\frac12}=\pi^{-\frac12}\int_0^{\infty}e^{-t\Delta_{{\rm Dunkl}}}\frac{dt}{t^{\frac12}}.$$
@@ -633,14 +609,14 @@ Of course, if $\alpha_j=0$ (respectively, $\beta_j=0$), then the second (respect
 
 Using Lemma \ref{heat kernel estimate}, we estimate
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|\leq$$
-$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\int_0^{\infty}t^{-\frac{1+|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
-$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
-$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}V(x,y,t^{\frac12})^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
+$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\int_0^{\infty}t^{-\frac{1+|\alpha|_1+|\beta|_1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt+$$
+$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
 Applying Lemma \ref{zhijie kernel estimate}, we conclude
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|\leq$$
-$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}+$$
-$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{2-|\alpha|_1-|\beta|_1}+$$
-$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}V(x,y,d(x,y))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}.$$
+$$\leq \frac{c_{\kappa,\alpha,\beta}}{2\pi^{\frac12}|x-y|}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}w(B(x,d(x,y)))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}+$$
+$$+\frac{\alpha_jc_{\kappa,\alpha-e_j,\beta}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,|\alpha|_1+|\beta|_1}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-|\alpha|_1-|\beta|_1}+$$
+$$+\frac{\beta_jc_{\kappa,\alpha,\beta-e_j}}{2\pi^{\frac12}|x-y|^2}\times c_{\kappa,1+|\alpha|_1+|\beta|_1}w(B(x,d(x,y)))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}.$$
 The assertion follows immediately.
 \end{proof}
 
@@ -653,10 +629,12 @@ The assertion follows immediately.
 \begin{proof} {\color{red} must be a standard material. reference to be found.}
 \end{proof}
 
-\begin{lemma}\label{length comparison lemma} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $A:\mathbb{R}^N\to\mathbb{R}^N$ be a bijective linear map. Suppose $A(\bar{\Omega})\cap\bar{\Omega}=F,$  $A|_F={\rm id}.$ Suppose also that $A:\mathbb{R}^{N_1}\times\{0\}\to\mathbb{R}^{N_1}\times\{0\},$  $A:\{0\}\times\mathbb{R}^{N_2}\to\{0\}\times\mathbb{R}^{N_2}$ and $A|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id}.$ Let $\sigma:\mathbb{R}^N\times\mathbb{R}^N$ be the reflection with respect to $F.$ We have
-$$|x-Ay|\geq c_A|x-\sigma y|,\quad x,y\in\Omega.$$
+\begin{lemma}\label{length comparison lemma} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $A:\mathbb{R}^N\to\mathbb{R}^N$ be a bijective linear map. Suppose $A(\bar{\Omega})\cap\bar{\Omega}=F,$  $A|_F={\rm id}.$ Suppose also that $A:\mathbb{R}^{N_1}\times\{0\}\to\mathbb{R}^{N_1}\times\{0\},$  $A:\{0\}\times\mathbb{R}^{N_2}\to\{0\}\times\mathbb{R}^{N_2}$ and $A|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id}.$ We have
+$$|x-Ay|\geq c_A(|x-y|+{\rm dist}(x,F)),\quad x,y\in\Omega.$$
 \end{lemma}
 \begin{proof} In what follows, we prove the assertion for the case when $F$ has non-zero dimension. The case ${\rm dim}(F)=0$ (i.e., the case $F=\{0\}$) is similar but simpler.
+
+Denote by $\sigma$ the reflection with respect to $F.$
 
 Since $A,\sigma:\mathbb{R}^{N_1}\times\{0\}\to\mathbb{R}^{N_1}\times\{0\},$  $A,\sigma:\{0\}\times\mathbb{R}^{N_2}\to\{0\}\times\mathbb{R}^{N_2},$ and $A|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id}$ and $\sigma|_{\{0\}\times\mathbb{R}^{N_2}}={\rm id},$ it suffices to prove the assertion for the case $N_1=N,$ $N_2=0.$
 
@@ -686,7 +664,9 @@ Thus,
 $$(1+c_D^{-1}\|B\|_{\infty})|x-Ay|\geq |u-v|.$$
 Finally,
 $$(1+c_D^{-1}\|B\|_{\infty}+c_D^{-1})|x-Ay|\geq |u-v|+|z|+|w|\geq|(u-v,z+w)|=|x-\sigma y|.$$
-This completes the proof.
+Obviously,
+$$|x-\sigma y|\geq \max\{|x-y|,{\rm dist}(x,F)\}\geq\frac12(|x-y|+{\rm dist}(x,F)).$$
+Combining the last two estimates, we complete the proof.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtc}] We prove the assertion under {\it a priori} restriction $f\in C^{\infty}_c(\mathbb{R}^N).$ Passing to the case of $f\in\dot{W}^{1,N}(\mathbb{R}^N)$ is standard (see e.g {\color{red} refer to our papers}).
@@ -720,15 +700,15 @@ $$K_{g,G,j}(x,y)=K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omeg
 
 For $g=1_G,$ it suffices to estimate operator $[M_{f\circ\Phi^{-1}},V_{g,G,j}]$ on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
-\leq c_{\kappa,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
 Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ\Phi^{-1},$ we obtain the required estimate.
 
 For $g\neq 1_G,$ it suffices to estimate operators $[M_{f\circ g\Phi^{-1}},V_{g,G,j}]$ and $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
-\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\Phi g\Phi^{-1}y|}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
-By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension) and let $\sigma$ be the reflection with respect to $F$ as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\Phi g\Phi^{-1}y|}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
+By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F=\Phi(g\bar{G}\cap G)$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension) as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
-\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\sigma y|}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(x,|x-y|)},\quad x,y\in\Omega.$$
+\leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-y|+{\rm dist}(x,F)}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
 Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1},$ we obtain the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,G,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain the required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$
 
 This completes the proof.
