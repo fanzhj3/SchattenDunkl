@@ -144,7 +144,7 @@ Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orth
 {\color{red} Definition \ref{NWO def} and Lemma \ref{NWO lemma} as stated below are my understanding of Hytonen's Corollary 8.2 and Lemma 8.7. Please check whether this understanding is the correct one!}
 
 \begin{definition}\label{NWO def} Let $w\in A_2(\mathbb{R}^N).$ Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_Q\}_{Q\in\mathbb{D}}$ is called $(r,c)$-NWO if
-\begin{enumerate}
+\begin{enumerate}[{\rm (i)}]
 \item ${\rm supp}(e_Q)\subseteq cQ$ for every $Q\in\mathbb{D};$ 
 \item $\|e_Q\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq w(Q)^{\frac1r-\frac12}$ for every $Q\in\mathbb{D};$
 \end{enumerate}
@@ -307,7 +307,7 @@ $$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in
 
 Obviously,
 $${\rm supp}(e_{k,l,Q})\subset Q,\quad {\rm supp}(f_{k,l,Q})\subset 3Q,$$
-$$\|e_{k,l,Q}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_{2N}(Q,w(x)dx)},$$
+$$\|e_{k,l,Q}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)},$$
 $$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{k,l,Q}|\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{{\rm dist}(c_Q,F)}.$$
 \end{proof}
 
@@ -412,33 +412,32 @@ The assertion follows now from Lemma \ref{lem:Cwikel-dyadic-distribution} (for t
 \subsection{Proof of Theorem \ref{first RS-type convergence}}
 
 \begin{lemma}\label{first RS convergence lemma} Let $f,\phi\in C^{\infty}_c(\mathbb{R}^N).$ If $0\leq\phi\leq1,$ then
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_{f\phi}V,(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big),$$
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq c_{K,\kappa,\phi,r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_fV-M_{f\phi}V,(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\leq c_{K,\theta}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_{2N}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big),$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\leq c_{K,\theta}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_{2N}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big).$$
 \end{lemma}
 \begin{proof} We only prove the second inequality. The proof of the first one is similar, but simpler.
 
 Let $A_{k,l}$ be as in the proof of Lemma \ref{first RS intermediate estimate}. We have
 $$M_fV-M_fVM_{\phi}=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}M_{1-\phi}.$$
 By the triangle inequality,
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_fV-M_fVM_{\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\leq$$
 $$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}\Big((1+|k|^2+|l|^2)^{-N-1}\times$$
-$$\times{\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}M_{1-\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\Big).$$
-
+$$\times{\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(A_{k,l}M_{1-\phi},(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\Big).$$
 
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
-$$\Big\{w(I)^{\frac1r-\frac12}\frac{e_{k,l,I}}{\|f\|_{L_r(I,w(x)dx)}}\Big\}_{I\in\mathbb{D}_{\Gamma}},\quad \Big\{c_{K,\kappa,\Phi}^{-1}w(I)^{\frac12}\cdot\frac{|c_I-gc_I|}{d_I}f_{k,l,I}\cdot(1-\phi)\Big\}_{I\in\mathbb{D}_{\Gamma}}$$
-are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO Gamma def}. Obviously, $e_{k,l,I}\not\equiv0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $f_{k,l,I}\cdot(1-\phi)\not\equiv 0$ only if $I\cap {\rm supp}(f)\neq\emptyset$ and $3I\cap {\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO Gamma lemma}, we conclude that
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
-$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Iw(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I,w(x)dx)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$$\Big\{w_{\theta}(Q)^{\frac1{2N}-\frac12}\frac{e_{k,l,Q}}{\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}},\quad \Big\{c_{K,\theta}^{-1}w_{\theta}(Q)^{\frac12}\cdot\frac{{\rm dist}(c_Q,F)}{\ell(Q)}f_{k,l,Q}\cdot(1-\phi)\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}$$
+are $(2N,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Obviously, $e_{k,l,Q}\not\equiv0$ only if $Q\cap {\rm supp}(f)\neq\emptyset$ and $f_{k,l,Q}\cdot(1-\phi)\not\equiv 0$ only if $3I\cap {\rm supp}(1-\phi)\neq\emptyset.$ Using Lemma \ref{NWO lemma}, we conclude that
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\leq$$
+$$\leq c_{\theta,2N,1,\infty,3,N}c_{K,\theta}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)w_{\theta}(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big).$$
 By Lemma \ref{supremum vs average},
-$$w(I)^{-\frac1r}\|f\|_{L_r(I,w(x)dx)}\leq c_{\kappa,\Phi}^{\frac1r}m(I)^{-\frac1r}\|f\|_{L_r(I)},\quad I\in\mathbb{D}_{\Gamma}.$$
+$$w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\frac1{2N}}m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)},\quad Q\in\mathbb{D},\quad Q\subset\Omega.$$
 Thus,
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\leq$$
-$$\leq c_{\Phi,\kappa,r,1,\infty,3,N}c_{K,\kappa,\Phi}c_{\kappa,\Phi}^{\frac1r}\times$$
-$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(A_{k,l}(1-\phi),(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\leq$$
+$$\leq c_{\theta,2N,1,\infty,3,N}c_{K,\theta}c_{\theta}^{\frac1{2N}}\times$$
+$$\times{\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_{2N}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big).$$
 Combining this estimate with the one in the first paragraph {\color{red} assign label and refer to it} yields the second inequality.
 \end{proof}
 
@@ -465,21 +464,21 @@ $$\lim_{\epsilon\to0}m(A_{\epsilon}\cap B_{\epsilon})=m(A\cap B).$$
 Passing $\epsilon\to0$ in the second last display, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS with r convergence lemma} Let $r>2.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq c_N\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
+\begin{lemma}\label{first RS with r convergence lemma} For every $f,\phi\in C^{\infty}_c(\mathbb{R}^N),$ we have
+$${\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{m(Q)^{-\frac1{2N}}\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)\leq$$
+$$\leq c_N\|\nabla f\|_{L_{\infty}(\Omega)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
 \end{lemma}
 \begin{proof} For a given $n\in\mathbb{Z},$ we have
-$$\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I>2^{-n}}}\leq\|\nabla f\|_{L_r(\mathbb{R}^N)}\Big\{m(I)^{\frac1N-\frac1r}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I>2^{-n}}}.$$
-The right hand side obviously belongs to $(l_{N,\infty})_0(\mathbb{D}_{\Gamma})$ and, hence, so does the left hand side. Thus,
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq\Big\|\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\leq$$
-$$\leq\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\frac1N}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset\\ d_I\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D}_{\Gamma})}.$$
+$$\Big\{m(Q)^{-\frac1{2N}}\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset\\ \ell(Q)>2^{-n}}}\leq\|\nabla f\|_{L_{\frac{2N}{3}}(\mathbb{R}^N)}\Big\{m(I)^{-\frac1{2N}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset\\ \ell(Q)>2^{-n}}}.$$
+The right hand side obviously belongs to $(l_{N,\infty})_0(\mathbb{D})$ and, hence, so does the left hand side. Thus,
+$${\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{m(Q)^{-\frac1{2N}}\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)\leq$$
+$$\leq\Big\|\Big\{m(Q)^{-\frac1{2N}}\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset\\ \ell(Q)\leq 2^{-n}}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
+$$\leq\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(Q)^{\frac1N}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ 3Q\cap {\rm supp}(1-\phi)\neq\emptyset\\ \ell(Q)\leq 2^{-N}}}\Big\|_{l_{N,\infty}(\mathbb{D})}.$$
 Passing $n\to\infty$ and using Lemma \ref{first RS extra convergence for sets}, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS without r convergence lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+\begin{lemma}\label{first RS without r convergence lemma} For every $f,\phi\in C^{\infty}_c(\mathbb{R}^N)$ such that $f$ vanishes on $F,$ we have
+$${\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-1}}{{\rm dist}(c_Q,F)}\|f\|_{L_1(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)\leq$$
 $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
 \end{lemma}
 \begin{proof} For a given $n\in\mathbb{Z},$ we have
@@ -500,25 +499,22 @@ $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times\Big\|\Big\{m(I)^{\f
 Passing $n\to\infty$ and using Lemma \ref{first RS extra convergence for sets}, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS final convergence lemma} Let $r>2.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ and for every $n\in\mathbb{N},$ we have
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
+\begin{lemma}\label{first RS final convergence lemma} For every $f,\phi\in C^{\infty}_c(\mathbb{R}^N)$ such that $f$ vanishes on $F,$ we have
+$${\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_{2N}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)\leq$$
 $$\leq c_{\Phi}\|\nabla f\|_{L_{\infty}(\mathbb{R}^N)}\times m^{\frac1N}({\rm supp}(f)\cap{\rm supp}(1-\phi)).$$
 \end{lemma}
 \begin{proof} We obviously have
-$$\|f-f\circ g\|_{L_r(I)}\leq\Big\|f-\frac1{m(I)}\int_If\Big\|_{L_r(I)}+$$
-$$+\Big\|f\circ g-\frac1{m(I)}\int_I(f\circ g)\Big\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}.$$
-By Poincare inequality,
-$$\|f-f\circ g\|_{L_r(I)}\leq$$
-$$\leq c_{\Phi,r}'\Big(m(I)^{\frac1N}\|\nabla f\|_{L_r(I)}+m(I)^{\frac1N}\|\nabla(f\circ g)\|_{L_r(I)}+m(I)^{\frac1r-1}\|f-f\circ g\|_{L_1(I)}\Big).$$
+$$\|f\|_{L_{2N}(Q)}\leq\Big\|f-\frac1{m(Q)}\int_Qf\Big\|_{L_{2N}(Q)}+m(Q)^{\frac1{2N}-1}\|f\|_{L_1(Q)}.$$
+By Sobolev inequality,
+$$\|f\|_{L_{2N}(Q)}\leq c_N\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}+m(Q)^{\frac1{2N}-1}\|f\|_{L_1(Q)}.$$
 By the triangle inequality,
-$${\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-\frac1r}}{|c_I-gc_I|}\|f-f\circ g\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)\leq$$
-$$\leq c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
-$$+c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{m(I)^{\frac1N-\frac1r}\|\nabla f\|_{L_r(gI)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big)+$$
-$$+c_{\Phi,r}''{\rm dist}_{l_{N,\infty}(\mathbb{D}_{\Gamma})}\Big(\Big\{\frac{d_Im(I)^{-1}}{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\Big\}_{\substack{I\in\mathbb{D}_{\Gamma}\\ I\cap {\rm supp}(f)\neq\emptyset\\ 3I\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D}_{\Gamma})\Big).$$
+$${\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-\frac1{2N}}}{{\rm dist}(c_Q,F)}\|f\|_{L_r(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)\leq$$
+$$\leq \frac{2N}{N-1}c_N\cdot {\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{m(Q)^{-\frac1{2N}}\|\nabla f\|_{L_{\frac{2N}{3}}(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big)+$$
+$$+\frac{N}{N-1}{\rm dist}_{l_{N,\infty}(\mathbb{D})}\Big(\Big\{\frac{\ell(Q)m(Q)^{-1}}{{\rm dist}(c_Q,F)}\|f\|_{L_1(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega\\ Q\cap {\rm supp}(f)\neq\emptyset\\ Q\cap {\rm supp}(1-\phi)\neq\emptyset}},(l_{N,\infty})_0(\mathbb{D})\Big).$$
 The assertion follows from Lemmas \ref{first RS with r convergence lemma} and \ref{first RS without r convergence lemma}.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{first RS-type convergence}] The assertion follows by combining Lemmas \ref{first RS convergence lemma} (applied with $f-f\circ g$ instead of $f$) and \ref{first RS final convergence lemma}.
+\begin{proof}[Proof of Theorem \ref{first RS-type convergence}] The assertion follows by combining Lemmas \ref{first RS convergence lemma} and \ref{first RS final convergence lemma}.
 \end{proof}
 
 \section{Second Rochberg-Semmes based estimate}
