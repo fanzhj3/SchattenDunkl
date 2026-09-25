@@ -368,33 +368,46 @@ $$w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS prefinal lemma} Let $Q$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
-$$\Big\|\Big\{m(I)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+\begin{lemma}\label{first RS prefinal lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
+$$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}\leq c_N\||\nabla f|\|_{L_N(\Omega)}.$$
+{\color{red} I proved the lemma for the case $F\neq\{0\}.$}
 \end{lemma}
-\begin{proof} Let $\mathcal{M}$ be the Hardy--Littlewood maximal operator on $\mathbb{R}^N.$ By \cite[Theorem~3]{MR1226425}, we have {\color{red} NO! we must handle this difficulty!}
-$$|f(x)|\leq c_N{\rm dist}(x,F)\cdot (\mathcal{M}(|\nabla f|))(x),\quad x\in\Omega.$$
-We have
-$${\rm dist}(x,F)\leq |x-c_Q|+{\rm dist}(c_Q,F)\leq \frac{d^{\frac12}}{2}\ell(Q)+{\rm dist}(c_Q,F)\leq$$
-$$\leq (N^{\frac12}+1){\rm dist}(c_Q,F)\leq (N^{\frac12}+1)|c_Q-\sigma c_Q|,\quad x\in Q.$$
+\begin{proof} Choose $S\subset\{1,\cdots,N_1\}$ such that
+$$F=\{x\in\mathbb{R}^N:\ x_k\geq0,\ k\in S,\ x_l=0,\ 1\leq l\leq N_1,\ l\notin S\}.$$
+Define dilation $D_t:\mathbb{R}^N\to\mathbb{R}^N$ by setting
+$$(D_tx)_j=
+\begin{cases}
+tx_j,& 1\leq j\leq N_1,\ j\notin S\\
+x_j,&\mbox{otherwise}
+\end{cases}
+$$
+We obviously have
+$$f(x)=f(D_1x)-f(D_0x)=\int_0^1\frac{d}{dt}f(D_tx)dt=\sum_{\substack{1\leq j\leq N_1\\ j\notin S}}x_j\cdot \int_0^1(\partial_j f)(D_tx)dt.$$
+Since $x_j\leq{\rm dist}(x,F),$ it follows that
+$$|f(x)|\leq {\rm dist}(x,F)\cdot \sum_{j=1}^N\int_0^1|(\partial_jf)|(D_tx)dt.$$
+In other words,
+$$|f|\leq {\rm dist}(x,F)\cdot \sum_{j=1}^N\int_0^1(|\partial_jf|\circ D_t)dt\leq {\rm dist}(x,F)\cdot N\int_0^1(|\nabla f|\circ D_t)dt.$$
+
+If $x\in Q,$ then
+$${\rm dist}(x,F)\leq{\rm dist}(c_Q,F)+|x-c_Q|\leq {\rm dist}(c_Q,F)+\frac{N}{2}\ell(Q)\leq (N+1){\rm dist}(c_Q,F).$$
+Therefore,
+$$\frac1{{\rm dist}(c_Q,F)}\|f\|_{L_1(Q)}\leq N(N+1)\Big\|\int_0^1(|\nabla f|\circ D_t)dt\Big\|_{L_1(Q)}.$$
 Thus,
-$$|f(x)-f(gx)|\leq c_N\cdot (N^{\frac12}+1)\cdot |c_Q-\sigma c_Q|\cdot(\mathcal{M}(|\nabla f|))(x).$$
-This immediately implies
-$$\frac1{|c_I-gc_I|}\|f-f\circ g\|_{L_1(I)}\leq c_{\Phi}''\cdot\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
-for every $I\in\mathbb{D}_{\Gamma}.$ Hence,
-$$m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot \frac{d_I}{|c_I-gc_I|}\leq $$
-$$\leq c_{\Phi}'''\cdot m(I)^{\frac1N-1}\Big(\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}+\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big)$$
-for every $I\in\mathbb{D}_{\Gamma}.$ Thus,
-$$\Big\|\Big\{m(I)^{-1}\|f-f\circ g\|_{L_1(I)}\cdot\frac{d_I}{|c_I-gc_I|}\Big\}_{I\in\mathbb{D}_{\Gamma}}
-\Big\|_{N,\infty}\leq$$
-$$\leq c_{\Phi}'''\frac{N}{N-1}\Big(\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\nabla f|)\|_{L_1(I)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}+$$
-$$+\Big\|\Big\{m(I)^{\frac1N-1}\|\mathcal{M}(|\nabla f|)\|_{L_1(gI)}\Big\}_{I\in\mathbb{D}_{\Gamma}}\Big\|_{N,\infty}\Big)\leq $$
-$$\stackrel{L.\ref{lem:Cwikel-dyadic-distribution}}{\leq}c_{\Phi}'''\frac{N}{N-1}c_N\Big(\|\mathcal{M}(|\nabla f|)\|_{L_N(\Gamma)}+\|\mathcal{M}(|\nabla f|)\|_{L_N(g\Gamma)}\Big)\leq $$
-$$\leq c_{\Phi}'''\frac{N}{N-1}c_N\|\mathcal{M}\|_{L_N(\mathbb{R}^N)\circlearrowleft}\Big(\|\nabla f\|_{L_N(\Gamma)}+\|\nabla f\|_{L_N(g\Gamma)}\Big).$$
+$$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+\Big\|_{N,\infty}\leq $$
+$$\leq N(N+1)\Big\|\Big\{m(Q)^{\frac1N-1}\Big\|\int_0^1(|\nabla f|\circ D_t)dt\Big\|_{L_1(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+\Big\|_{N,\infty}.$$
+Using Lemma \ref{lem:Cwikel-dyadic-distribution}, we write
+$$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+\Big\|_{N,\infty}\leq $$
+$$\leq C_N\|\int_0^1(|\nabla f|\circ D_t)dt\|_{L_N(\Omega)}\leq$$
+$$\leq C_N\int_0^1\||\nabla f|\circ D_t\|_{L_N(\Omega)}dt=C_N\||\nabla f|\|_{L_N(\Omega)}\cdot\int_0^1t^{\frac{N_1-|S|}{N}}dt.$$
+Since $N_1-|S|>-N,$ the assertion follows.
 \end{proof}
 
 
-\begin{lemma}\label{first RS final lemma} Let $Q$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
+\begin{lemma}\label{first RS final lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\Big\|\Big\{m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}\leq c_N\||\nabla f|\|_{L_N(\mathbb{R}^N)}.$$
 \end{lemma}
