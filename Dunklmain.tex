@@ -268,20 +268,22 @@ This completes the proof.
 \begin{lemma}\label{for first RS elementary lemma} If $Q\in\mathbb{D}$ is such that $Q\subset\Omega,$ $x\in Q$ and $y\in 3Q\cap\Omega,$ then
 $$\frac{|x-y|}{|x-\sigma y|}\leq\frac{3N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
 \end{lemma}
-\begin{proof} Suppose first that $3Q\subset\Omega.$ We have
+\begin{proof} We either have ${\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac32\ell(Q)$ or ${\rm dist}_{l_{\infty}^N}(c_Q,F)=\frac12\ell(Q).$
+
+Suppose first that ${\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac32\ell(Q).$ We have
 $$|x-\sigma y|\geq|x-\sigma y|_{\infty}\geq |c_Q-\sigma c_Q|_{\infty}-|x-c_Q|_{\infty}-|y-c_Q|_{\infty}=$$
 $$=2{\rm dist}_{l_{\infty}^N}(c_Q,F)-|x-c_Q|_{\infty}-|y-c_Q|_{\infty}.$$
-Since $3Q\subset\Omega,$ it follows that ${\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac32\ell(Q).$ Since $x\in Q$ and $y\in 3Q,$ it follows that $|x-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|y-c_Q|_{\infty}\leq\frac32\ell(Q).$ Thus,
+Since $x\in Q$ and $y\in 3Q,$ it follows that $|x-c_Q|_{\infty}\leq\frac12\ell(Q)$ and $|y-c_Q|_{\infty}\leq\frac32\ell(Q).$ Thus,
 $$|x-\sigma y|\geq 2{\rm dist}_{l_{\infty}^N}(c_Q,F)-2\ell(Q)=$$
 $$=\frac23{\rm dist}_{l_{\infty}^N}(c_Q,F)+\frac43\big({\rm dist}_{l_{\infty}^N}(c_Q,F)-\frac32\ell(Q)\big)\geq$$
 $$\geq\frac23{\rm dist}_{l_{\infty}^N}(c_Q,F)\geq\frac23N^{-\frac12}{\rm dist}(c_Q,F).$$
 On the other hand,
 $$|x-y|\leq N^{\frac12}|x-y|_{\infty}\leq N^{\frac12}(|x-c_Q|_{\infty}+|y-c_Q|_{\infty})\leq 2N^{\frac12}\ell(Q).$$
 Thus,
-$$\frac{|x-y|}{|x-\sigma y|}\leq \frac{3N\ell(Q)}{{\rm dist}(x,F)}.$$
+$$\frac{|x-y|}{|x-\sigma y|}\leq \frac{3N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
 
-If cube $Q$ touches the boundary of $\Omega,$ then 
-$$\frac{|x-y|}{|x-\sigma y|}\leq 1=\frac{2\ell(Q)}{{\rm dist}(c_Q,F)}.$$
+Suppose now that ${\rm dist}_{l_{\infty}^N}(c_Q,F)=\frac12\ell(Q).$ It follows that
+$$\frac{|x-y|}{|x-\sigma y|}\leq 1=\frac{2\ell(Q)}{{\rm dist}_{l_{\infty}^N}(c_Q,F)}\leq\frac{2N\ell(Q)}{{\rm dist}(c_Q,F)}.$$
 \end{proof}
 
 \begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO} In the setting of Theorem \ref{first RS-type theorem}, we have
