@@ -160,6 +160,15 @@ $$\leq C_{w,r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D})}\Big(\{\lambd
 \begin{proof} The assertion follows from Corollary 8.2 and Lemma 8.7 in \cite{HKarxiv}.
 \end{proof}
 
+\begin{lemma}\label{NWO lower estimate} Let $w\in A_2(\mathbb{R}^N).$ Let $1<p<\infty.$ Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,w(x)dx)$ with integral kernel 
+$$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
+where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
+$$\Big\|\Big\{\langle A e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{p,q}(\mathbb{D})}\leq c_{w,r_1,c_1,r_2,c_2,p,q}\|A\|_{\mathcal{L}_{p,q}(L_2(\mathbb{R}^N,w(x)dx))}.$$
+\end{lemma}
+\begin{proof} The assertion follows from Corollary 8.2 and Lemma 8.7 in \cite{HKarxiv}.
+\end{proof}
+
+
 
 
 \section{Chamber is a doubling metric measure space}
@@ -722,14 +731,22 @@ This completes the proof.
 
 \section{Proof of Theorem \ref{main theorem} \eqref{mtb},\eqref{mtd}}\label{lower estimate section}
 
-
-\begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathcal{D}.$ We have
-$$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
+\begin{lemma}\label{nondegenerate} Let $1\leq j\leq N.$ If $x_j\geq y_j,$ then
+$$K_{{\rm Dunkl},j}(x,y)\geq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+If $x_j\leq y_j,$ then
+$$K_{{\rm Dunkl},j}(x,y)\leq c_{R,k}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
 \end{lemma}
-\begin{proof} {\color{red} TO BE DONE. Follows from Lemma \ref{nondegenerate}.}
+\begin{proof} The proof is identical to that in \cite[Theorem 1.2]{MR4733961}.
 \end{proof}
 
-\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathcal{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
+
+\begin{lemma}\label{nondegenerate corollary} Let $Q\in\mathbb{D}.$ We have
+$$K_j(x,y)\geq \frac{c_k}{w(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j.$$
+\end{lemma}
+\begin{proof} The assertion follows immediately from Lemma \ref{nondegenerate}.
+\end{proof}
+
+\begin{lemma}\label{improved zhijie lemma} Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[R_{{\rm Dunkl},j},M_f]$ is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ For every $Q\in\mathbb{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12}$ and such that
 $$\frac1{w(3Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq c_k|\langle[R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}|.$$
 \end{lemma}
 \begin{proof} Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
@@ -782,16 +799,16 @@ $$\frac{c_k'}{w(Q)}\int_{3Q}|f(y)-f_{3Q}|w(y)dy\leq 2|\langle[R_{{\rm Dunkl},j},
 \end{proof}
 
 \begin{lemma}\label{standard} Suppose that $1<p<\infty$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
-$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\Big\|_{l_p(\mathcal{D})}\leq$$
+$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathbb{D}}\Big\|_{l_p(\mathbb{D})}\leq$$
 $$\leq c_k\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_p(L_2(\mathbb{R}^N,w(x)dx))}.$$
 If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ for some $j\in\{1,2,\cdots,N\},$ then
-$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathcal{D}}\Big\|_{l_{N,\infty}(\mathcal{D})}\leq$$
+$$\Big\|\Big\{\frac1{w(3Q)}\int_{3Q}|f(x)-f_{3Q}|w(x)dx\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
 $$\leq c_k\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}.$$
 \end{lemma}
 \begin{proof} We prove only the first assertion. The proof of the second one follows {\it mutatis mutandi}.
 
-Let $\{\xi_Q\}_{Q\in\mathcal{D}}$ and $\{\eta_Q\}_{Q\in\mathcal{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
-$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathcal{D}}\in l_p.$$
+Let $\{\xi_Q\}_{Q\in\mathbb{D}}$ and $\{\eta_Q\}_{Q\in\mathbb{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
+$$\Big\{\langle [R_{{\rm Dunkl},j},M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,w(x)dx)}\Big\}_{Q\in\mathbb{D}}\in l_p.$$
 The first assertion follows now from Lemma \ref{improved zhijie lemma}.
 \end{proof}
 
