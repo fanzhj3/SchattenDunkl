@@ -273,7 +273,7 @@ where
 \item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
 $$\|e_{k,l,Q}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)};$$
 \item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
-$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa}\frac{\ell(Q)}{{\rm dist}(c_Q,F)};$$
+$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}\leq \frac{c_{K,\theta}}{w_{\theta}(Q)}\cdot \frac{\ell(Q)}{{\rm dist}(c_Q,F)};$$
 \end{enumerate}
 \end{lemma}
 \begin{proof} For every $x,y\in \Omega,$ we have
@@ -529,38 +529,38 @@ The assertion follows from Lemmas \ref{first RS with r convergence lemma} and \r
 
 \section{Second Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{second RS-type theorem} Let $N>1.$ Fix a closed Weyl chamber $\Gamma.$ Suppose that $K:\Gamma\times\Gamma\to\mathbb{C}$ satisfies
-$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{V(x,|x-y|)},\quad x,y\in\Gamma,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
-Let $V$ be an integral operator with integral kernel $K.$ For every $f\in\dot{W}^{1,N}(\Gamma),$ we have
-$$\|[M_f,V]\|_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\leq c_{K,\kappa}\|f\|_{\dot{W}^{1,N}(\Gamma)}.$$
+\begin{theorem}\label{second RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
+satisfies
+$$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega,\quad\alpha,\beta\in\mathbb{Z}^N_+.$$
+Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in\dot{W}^{1,N}(\Omega),$ we have
+$$\|[M_f,V]\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\|f\|_{\dot{W}^{1,N}(\Omega)}.$$
 \end{theorem}
 
-\begin{theorem}\label{second RS-type convergence} In the setting of Theorem \ref{second RS-type theorem}, let $f\in C^{\infty}_c(\mathbb{R}^N).$ If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
-$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Gamma,w(x)dx))}\Big(M_{\phi_m}\cdot [M_f,V]\cdot M_{\phi_m}- [M_f,V],(\mathcal{L}_{N,\infty})_0(L_2(\Gamma,w(x)dx))\Big)\to0$$
+\begin{theorem}\label{second RS-type convergence} Suppose we are in the setting of Theorem \ref{second RS-type theorem}. If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
+$${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot [M_f,V]\cdot M_{\phi_m}- [M_f,V],(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\to0$$
 as $m\to\infty.$
 \end{theorem}
 
-\begin{lemma}\label{lem:Weyl-diagonal-kernel-NWO}
-Assume that $N>1$ and $2<r<\infty.$ Let $f\in L_r^{\mathrm{loc}}(\mathbb{R}^N).$ Fix a closed Weyl chamber $\Gamma.$ Let $K$ be as in Theorem \ref{first RS-type theorem}. We have
-$$(f(x)-f(y))\cdot K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}^{(1)}(x)f_{k,l,I}^{(1)}(y)-$$
-$$-\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{I\in\mathbb{D}_{\Gamma}}e_{k,l,I}^{(2)}(x)f_{k,l,I}^{(2)}(y)$$
+\begin{lemma}\label{lem:Weyl-diagonal-kernel-NWO} In the setting of Theorem \ref{second RS-type theorem}, we have
+$$(f(x)-f(y))\cdot K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}^{(1)}(x)f_{k,l,Q}^{(1)}(y)-$$
+$$-\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}^{(2)}(x)f_{k,l,Q}^{(2)}(y)$$
 where
 \begin{enumerate}[{\rm (i)}]
-\item $e_{k,l,I}^{(1)}$ and $e_{k,l,I}^{(2)}$ are supported in $I$ and $f_{k,l,I}^{(1)}$ and $f_{k,l,I}^{(2)}$ are supported in $3I;$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|e_{k,l,I}^{(1)}\|_{L_r(\mathbb{R}^N,w(x)dx)}\leq\Big\|f-\frac1{m(3I)}\int_{3I}f\Big\|_{L_r(3I,w(x)dx)};$$
-$$\|f_{k,l,I}^{(2)}\|_{L_r(\mathbb{R}^N,w(x)dx)}=\Big\|f-\frac1{m(3I)}\int_{3I}f\Big\|_{L_r(3I,w(x)dx)};$$
-\item for every $k,l\in\mathbb{Z}^N$ and for every $I\in\mathbb{D}_{\Gamma},$ we have
-$$\|f_{k,l,I}^{(1)}\|_{L_{\infty}(\mathbb{R}^N)},\|e_{k,l,I}^{(2)}\|_{L_{\infty}(\mathbb{R}^N)}\leq c_{K,\kappa,\Phi};$$
+\item $e_{k,l,Q}^{(1)}$ and $e_{k,l,Q}^{(2)}$ are supported in $Q,$ while $f_{k,l,Q}^{(1)}$ and $f_{k,l,Q}^{(2)}$ are supported in $3Q$ for every $Q\in\mathbb{D}$ with $Q\subset\Omega;$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
+$$\|e_{k,l,Q}^{(1)}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}\leq\Big\|f-\frac1{m(3Q\cap\Omega)}\int_{3Q\cap\Omega}f\Big\|_{L_{2N}(3Q\cap\Omega,w_{\theta}(x)dx)};$$
+$$\|f_{k,l,Q}^{(2)}\|_{L_{2N}(\mathbb{R}^N,w_{\theta}(x)dx)}=\Big\|f-\frac1{m(3Q\cap\Omega)}\int_{3Q\cap\Omega}f\Big\|_{L_{2N}(3Q\cap\Omega,w_{\theta}(x)dx)};$$
+\item for every $k,l\in\mathbb{Z}^N$ and for every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
+$$\|f_{k,l,Q}^{(1)}\|_{L_{\infty}(\mathbb{R}^N)},\|e_{k,l,Q}^{(2)}\|_{L_{\infty}(\mathbb{R}^N)}\leq \frac{c_{K,\theta}}{w_{\theta}(Q)};$$
 \end{enumerate}
 \end{lemma}
 \begin{proof} Repeating the argument in Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO} {\it mutatis mutandi}, we obtain
-$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\kappa,\Phi}}{w(I)},\quad k,l\in\mathbb{Z}^N,\quad I\in\mathbb{D}_{\Gamma}.$$
+$$(1+|k|^2+|l|^2)^{-N-1}\cdot|{\rm coef}_{k,l,I}|\leq \frac{c_{K,\theta}}{w_{\theta}(Q)},\quad k,l\in\mathbb{Z}^N,\quad Q\in\mathbb{D},\quad ,\quad Q\subset\Omega.$$
 Set
-$$e_{k,l,I}^{(1)}(x)=\Big(f(x)-\frac1{m(3I)}\int_{3I}f\Big)\cdot\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
-$$f_{k,l,I}^{(1)}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,I}\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle},$$
-$$e_{k,l,I}^{(2)}(x)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,I}\cdot\chi_I(x)e^{i\langle k,\frac{\Phi^{-1}(x-c_I)}{d_I}\rangle},$$
-$$f_{k,l,I}^{(2)}(y)=\Big(f(y)-\frac1{m(3I)}\int_{3I}f\Big)\cdot \chi_{3I}(y)e^{i\langle l,\frac{\Phi^{-1}(y-c_I)}{d_I}\rangle}.$$
+$$e_{k,l,Q}^{(1)}(x)=\Big(f(x)-\frac1{m(3Q\cap\Omega)}\int_{3Q\cap\Omega}f\Big)\cdot\chi_Q(x)e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},$$
+$$f_{k,l,Q}^{(1)}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,Q}\cdot \chi_{3Q}(y)e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle},$$
+$$e_{k,l,Q}^{(2)}(x)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,Q}\cdot\chi_Q(x)e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},$$
+$$f_{k,l,Q}^{(2)}(y)=\Big(f(y)-\frac1{m(3Q\cap\Omega)}\int_{3Q\cap\Omega}f\Big)\cdot \chi_{3Q}(y)e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle}.$$
 The assertion follows immediately.
 \end{proof}
 
