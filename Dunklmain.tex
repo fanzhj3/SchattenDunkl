@@ -236,14 +236,12 @@ This completes the proof.
 
 \section{First Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (of non-zero, but not necessarily of maximal dimension). Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
+\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
 $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{(|x-y|+{\rm dist}(x,F))\cdot w_{\theta}(B(x,|x-y|))}$$
-for every $x,y\in\Omega$ and for every $\alpha,\beta\in\mathbb{Z}^N_+.$ Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\Omega)}.$$
+for every $x,y\in\Omega$ and for every $\alpha,\beta\in\mathbb{Z}^N_+.$ Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\Big(\||\nabla f|\|_{L_N(\Omega)}+\Big\|\frac{f}{{\rm dist}(\cdot,F)}\Big\|_{L_N(\Omega)}\Big).$$
 \end{theorem}
-
-{\color{red} we need a version of Theorem \ref{first RS-type theorem} for $F=\{0\}.$ the current argument cannot work in principle for this case (see the red color after Lemma \ref{first RS prefinal lemma}). }
 
 \begin{theorem}\label{first RS-type convergence} Suppose we are the setting of Theorem \ref{first RS-type theorem}. If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\to0$$
@@ -360,47 +358,21 @@ $$w_{\theta}(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q,w_{\theta}(x)dx)}\leq c_{\theta}^{\
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
-\begin{lemma}\label{first RS prefinal lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
+\begin{lemma}\label{first RS prefinal lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N),$  we have
 $$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
-\Big\|_{N,\infty}\leq c_N\||\nabla f|\|_{L_N(\Omega)}.$$
+\Big\|_{N,\infty}\leq c_N\Big\|\frac{f}{{\rm dist}(\cdot,F)}\Big\|_{L_N(\Omega)}.$$
 \end{lemma}
-\begin{proof} Choose $S\subset\{1,\cdots,N_1\}$ such that
-$$F=\{x\in\mathbb{R}^N:\ x_k\geq0,\ k\in S,\ x_l=0,\ 1\leq l\leq N_1,\ l\notin S\}.$$
-Define dilation $D_t:\mathbb{R}^N\to\mathbb{R}^N$ by setting
-$$(D_tx)_j=
-\begin{cases}
-tx_j,& 1\leq j\leq N_1,\ j\notin S\\
-x_j,&\mbox{otherwise}
-\end{cases}
-$$
-We obviously have
-$$f(x)=f(D_1x)-f(D_0x)=\int_0^1\frac{d}{dt}f(D_tx)dt=\sum_{\substack{1\leq j\leq N_1\\ j\notin S}}x_j\cdot \int_0^1(\partial_j f)(D_tx)dt.$$
-Since $x_j\leq{\rm dist}(x,F),$ it follows that
-$$|f(x)|\leq {\rm dist}(x,F)\cdot \sum_{j=1}^N\int_0^1|(\partial_jf)|(D_tx)dt.$$
-In other words,
-$$|f|\leq {\rm dist}(x,F)\cdot \sum_{j=1}^N\int_0^1(|\partial_jf|\circ D_t)dt\leq {\rm dist}(x,F)\cdot N\int_0^1(|\nabla f|\circ D_t)dt.$$
-
-If $x\in Q,$ then
-$${\rm dist}(x,F)\leq{\rm dist}(c_Q,F)+|x-c_Q|\leq {\rm dist}(c_Q,F)+\frac{N}{2}\ell(Q)\leq (N+1){\rm dist}(c_Q,F).$$
-Therefore,
-$$\frac1{{\rm dist}(c_Q,F)}\|f\|_{L_1(Q)}\leq N(N+1)\Big\|\int_0^1(|\nabla f|\circ D_t)dt\Big\|_{L_1(Q)}.$$
+\begin{proof} We have
+$${\rm dist}(x,F)\leq{\rm dist}(c_Q,F)+|x-c_Q|\leq (N+1){\rm dist}(c_Q,F),\quad x\in Q.$$
 Thus,
+$$\frac1{{\rm dist}(c_Q,F)}\|f\|_{L_1(Q)}\leq (N+1)\Big\|\frac{f}{{\rm dist}(\cdot,F)}\Big\|_{L_1(Q)}.$$
+In particular,
 $$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}\leq $$
-$$\leq N(N+1)\Big\|\Big\{m(Q)^{\frac1N-1}\Big\|\int_0^1(|\nabla f|\circ D_t)dt\Big\|_{L_1(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
+$$\leq (N+1)\Big\|\Big\{m(Q)^{\frac1N-1}\Big\|\frac{f}{{\rm dist}(\cdot,F)}\Big\|_{L_1(Q)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}.$$
-Using Lemma \ref{lem:Cwikel-dyadic-distribution}, we write
-$$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
-\Big\|_{N,\infty}\leq $$
-$$\leq C_N\Big\|\int_0^1(|\nabla f|\circ D_t)dt\Big\|_{L_N(\Omega)}\leq$$
-$$\leq C_N\int_0^1\||\nabla f|\circ D_t\|_{L_N(\Omega)}dt=C_N\||\nabla f|\|_{L_N(\Omega)}\cdot\int_0^1t^{\frac{|S|-N_1}{N}}dt.$$
-Since $|S|-N_1>-N,$ the assertion follows.
+The assertion follows now from Lemma \ref{lem:Cwikel-dyadic-distribution}.
 \end{proof}
-
-{\color{red} for $F=\{0\},$ Lemma \ref{first RS prefinal lemma} is FALSE. indeed, if it is true, then, given that $\{f\in C^{\infty}_c(\mathbb{R}^N):\ f(0)=0\}$ is dense in $C^{\infty}_c(\mathbb{R}^N)$ (in the norm $\|\cdot\|_{\dot{W}^{1,N}(\mathbb{R}^N)}$), then it is also true without restriction $f(0)=0.$ so, the left hand side should be finite for $f=\chi_{[0,1]^N}.$ In other words,
-$$\Big\{\frac{\ell(Q)}{|c_Q|}\}_{\substack{Q\in\mathbb{D}\\ Q\subset[0,1]^N}}\in l_{1,\infty}(\mathbb{D}).$$
-however, this is not the case: the left hand side does not even belong to $c_0(\mathbb{D}).$!!!
-}
 
 \begin{lemma}\label{first RS final lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\Big\|\Big\{m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
@@ -689,6 +661,22 @@ $$|x-\sigma y|\geq \max\{|x-y|,{\rm dist}(x,F)\}\geq\frac12(|x-y|+{\rm dist}(x,F
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
+\begin{lemma}\label{maximal function lemma} We have
+$$\Big\|\frac{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}{{\rm dist}(\cdot,F)}\Big\|_{L_N(\Omega)}\leq c_{\Phi}\||\nabla f|\|_{L_N(\mathbb{R}^N)}.$$
+\end{lemma}
+\begin{proof} Denote $h=f\circ\Phi^{-1}.$ Since $f\in C^{\infty}_c(\mathbb{R}^N),$ it follows that
+$$|h(x)-h(y)|\leq c_N{\rm dist}(x,y)\cdot ((\mathcal{M}(|\nabla h|))(x)+(\mathcal{M}(|\nabla h|))(y)),\quad x,y\in\mathbb{R}^N.$$
+It is of crucial importance that the inequality holds for all $x$ and $y$ (not just for almost all) --- and it is exactly at this place we need the continuity of $f.$ Denote $A=\Phi g\Phi^{-1}.$ For every $x\in\mathbb{R}^N,$ we have
+$$|f(g\Phi^{-1}x)-f(\Phi^{-1}x)|=|h(Ax)-h(x)|\leq c_N|Ax-x|\cdot ((\mathcal{M}h)(x)+(\mathcal{M}h)(Ax)).$$
+Take $z\in F$ such that $|x-z|={\rm dist}(x,F).$ Since $A|_F={\rm id},$ it follows that
+$$Ax-x=A(x-z)-(x-z)+(Az-z)=A(x-z)-(x-z).$$
+In particular,
+$$|Ax-x|\leq (1+\|A\|_{\infty})\cdot{\rm dist}(x,F).$$
+Thus,
+$$\frac{|f\circ g\Phi^{-1}-f\circ\Phi^{-1}|}{{\rm dist}(\cdot,F)}\leq \mathcal{M}(|\nabla h|)+(\mathcal{M}(|\nabla h|))\circ A.$$
+The assertion follows now from the boundedness of the maximal function operator on $L_N(\mathbb{R}^N).$
+\end{proof}
+
 \begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtc}] We prove the assertion under {\it a priori} restriction $f\in C^{\infty}_c(\mathbb{R}^N).$ Passing to the case of $f\in\dot{W}^{1,N}(\mathbb{R}^N)$ is standard (see e.g {\color{red} refer to our papers}).
 
 It suffices to estimate, for every chamber $\Gamma$ and for every $g\in G,$ the operator $M_{\chi_{\Gamma}}[R_{{\rm Dunkl},j},M_f]M_{\chi_{\Gamma}}.$ In other words, it suffices to estimate an operator with integral kernel
@@ -721,7 +709,11 @@ $$K_{g,\Gamma,j}(x,y)=K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in
 For $g=1_G,$ it suffices to estimate operator $[M_{f\circ\Phi^{-1}},V_{g,\Gamma,j}]$ on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
-Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ\Phi^{-1},$ we obtain the required estimate.
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ\Phi^{-1},$ we obtain 
+$$\|[M_{f\circ\Phi^{-1}},V_{g,\Gamma,j}]\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{g,\Gamma,\Phi,\theta}\||\nabla(f\circ\Phi^{-1})|\|_{L_N(\Omega)}.$$
+Noting that 
+$$\||\nabla(f\circ\Phi^{-1})|\|_{L_N(\Omega)}=c_{\Phi}\||\nabla f|\|_{L_N(\Gamma)},$$
+we infer the required estimate.
 
 For $g\neq 1_G,$ it suffices to estimate operators $[M_{f\circ g\Phi^{-1}},V_{g,\Gamma,j}]$ and $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}.$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
@@ -729,7 +721,14 @@ $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F=\Phi(g\bar{\Gamma}\cap\bar{\Gamma})$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension) as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-y|+{\rm dist}(x,F)}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
-Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ g\Phi^{-1},$ we obtain the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,\Gamma,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain the required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}.$ {\color{red} not yet!!! so far, we successfully handle the cases $g\bar{\Gamma}\cap\bar{\Gamma}\neq\{0\}.$ the seemingly simpler case $g\bar{\Gamma}\cap\bar{\Gamma}=\{0\}$ requires the analogue of Theorem \ref{first RS-type theorem}.}
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ\Phi^{-1},$ we obtain 
+$$\|[M_{f\circ\Phi^{-1}},V_{g,\Gamma,j}]\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{g,\Gamma,\Phi,\theta}\||\nabla(f\circ\Phi^{-1})|\|_{L_N(\Omega)}.$$
+Noting that 
+$$\||\nabla(f\circ\Phi^{-1})|\|_{L_N(\Omega)}=c_{\Phi}\||\nabla f|\|_{L_N(\Gamma)},$$
+we infer the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,\Gamma,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain 
+$$\|M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq$$
+$$\leq c_{g,\Gamma,\Phi,\theta}\Big(\|\nabla(f\circ g\Phi^{-1}-f\circ\Phi^{-1})\|_{L_N(\Omega)}+\Big\|\frac{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}{{\rm dist}(\cdot,F)}\Big\|_{L_N(\Omega)}\Big).$$
+The required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}$ follows now from Lemma \ref{maximal function lemma}.
 
 This completes the proof.
 \end{proof}
