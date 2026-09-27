@@ -236,12 +236,14 @@ This completes the proof.
 
 \section{First Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension). Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
+\begin{theorem}\label{first RS-type theorem} Let $N\geq 2,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let $F$ be a face of $\Omega$ (of non-zero, but not necessarily of maximal dimension). Let $\theta:2^N\to\mathbb{R}_+.$ Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
 $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{(|x-y|+{\rm dist}(x,F))\cdot w_{\theta}(B(x,|x-y|))}$$
 for every $x,y\in\Omega$ and for every $\alpha,\beta\in\mathbb{Z}^N_+.$ Let $V$ be an integral operator on $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\leq c_{K,\theta}\||\nabla f|\|_{L_N(\Omega)}.$$
 \end{theorem}
+
+{\color{red} we need a version of Theorem \ref{first RS-type theorem} for $F=\{0\}.$ the current argument cannot work in principle for this case (see the red color after Lemma \ref{first RS prefinal lemma}). }
 
 \begin{theorem}\label{first RS-type convergence} Suppose we are the setting of Theorem \ref{first RS-type theorem}. If $0\leq\phi_m\leq 1$ for $m\geq1$ are in $C^{\infty}_c(\mathbb{R}^N)$ and ${\rm supp}(1-\phi_m)$ increases to $\mathbb{R}^N,$ then
 $${\rm dist}_{\mathcal{L}_{N,\infty}(L_2(\Omega,w_{\theta}(x)dx))}\Big(M_{\phi_m}\cdot M_fV\cdot M_{\phi_m}-M_fV,(\mathcal{L}_{N,\infty})_0(L_2(\Omega,w_{\theta}(x)dx))\Big)\to0$$
@@ -361,7 +363,6 @@ Combining the last two estimates, we complete the proof.
 \begin{lemma}\label{first RS prefinal lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\Big\|\Big\{m(Q)^{-1}\|f\|_{L_1(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
 \Big\|_{N,\infty}\leq c_N\||\nabla f|\|_{L_N(\Omega)}.$$
-{\color{red} I proved the lemma for the case $F\neq\{0\}.$}
 \end{lemma}
 \begin{proof} Choose $S\subset\{1,\cdots,N_1\}$ such that
 $$F=\{x\in\mathbb{R}^N:\ x_k\geq0,\ k\in S,\ x_l=0,\ 1\leq l\leq N_1,\ l\notin S\}.$$
@@ -396,6 +397,10 @@ $$\leq C_N\int_0^1\||\nabla f|\circ D_t\|_{L_N(\Omega)}dt=C_N\||\nabla f|\|_{L_N
 Since $|S|-N_1>-N,$ the assertion follows.
 \end{proof}
 
+{\color{red} for $F=\{0\},$ Lemma \ref{first RS prefinal lemma} is FALSE. indeed, if it is true, then, given that $\{f\in C^{\infty}_c(\mathbb{R}^N):\ f(0)=0\}$ is dense in $C^{\infty}_c(\mathbb{R}^N)$ (in the norm $\|\cdot\|_{\dot{W}^{1,N}(\mathbb{R}^N)}$), then it is also true without restriction $f(0)=0.$ so, the left hand side should be finite for $f=\chi_{[0,1]^N}.$ In other words,
+$$\Big\{\frac{\ell(Q)}{|c_Q|}\}_{\substack{Q\in\mathbb{D}\\ Q\subset[0,1]^N}}\in l_{1,\infty}(\mathbb{D}).$$
+however, this is not the case: the left hand side does not even belong to $c_0(\mathbb{D}).$!!!
+}
 
 \begin{lemma}\label{first RS final lemma} Let $\Omega$ and $F$ be as in Theorem \ref{first RS-type theorem}. For every $f\in C^{\infty}_c(\mathbb{R}^N)$ vanishing on $F,$ we have
 $$\Big\|\Big\{m(Q)^{-\frac1{2N}}\|f\|_{L_{2N}(Q)}\cdot\frac{\ell(Q)}{{\rm dist}(c_Q,F)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
@@ -710,21 +715,21 @@ and, respectively,
 $$(f(g\Phi^{-1}x)-f(\Phi^{-1}x))K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
 on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$
 
-Denote by $V_{g,G,j}$ integral operator on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel 
-$$K_{g,G,j}(x,y)=K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega.$$
+Denote by $V_{g,\Gamma,j}$ integral operator on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx)$ with integral kernel 
+$$K_{g,\Gamma,j}(x,y)=K_{R_{{\rm Dunkl},j}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega.$$
 
-For $g=1_G,$ it suffices to estimate operator $[M_{f\circ\Phi^{-1}},V_{g,G,j}]$ on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta,$ we have
-$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+For $g=1_G,$ it suffices to estimate operator $[M_{f\circ\Phi^{-1}},V_{g,\Gamma,j}]$ on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
-Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ\Phi^{-1},$ we obtain the required estimate.
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ\Phi^{-1},$ we obtain the required estimate.
 
-For $g\neq 1_G,$ it suffices to estimate operators $[M_{f\circ g\Phi^{-1}},V_{g,G,j}]$ and $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
-$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+For $g\neq 1_G,$ it suffices to estimate operators $[M_{f\circ g\Phi^{-1}},V_{g,\Gamma,j}]$ and $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}.$ By Lemmas \ref{lem:Dunkl-Riesz-endpoint-derivatives} and \ref{s2 trivial lemma}, for every pair of multi-indices $\alpha,\beta$ and for every $1\leq j\leq N,$ we have
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-\Phi g\Phi^{-1}y|}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
-By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F=\Phi(g\bar{G}\cap G)$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension) as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
-$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,G,j})(x,y)|
+By Lemma \ref{chamber properties}, the matrix $\Phi g\Phi^{-1}$ satisfies the assumptions in Lemma \ref{length comparison lemma}. Let $F=\Phi(g\bar{\Gamma}\cap\bar{\Gamma})$ be a face of $\Omega$ (not necessarily of maximal dimension, possibly of zero dimension) as given by Lemma \ref{length comparison lemma}. It follows from Lemma \ref{length comparison lemma} that
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{g,\Gamma,j})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{|x-y|}{|x-y|+{\rm dist}(x,F)}\frac{|x-y|^{-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega.$$
-Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1},$ we obtain the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,G,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,G,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain the required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,G,j}.$
+Applying Theorem \ref{second RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ g\Phi^{-1},$ we obtain the required estimate for $[M_{f\circ g\Phi^{-1}},V_{g,\Gamma,j}].$ Applying Theorem \ref{first RS-type theorem} to the operator $V_{g,\Gamma,j}$ and to the function $f\circ g\Phi^{-1}-f\circ\Phi^{-1},$ we obtain the required estimate for $M_{f\circ g\Phi^{-1}-f\circ\Phi^{-1}}V_{g,\Gamma,j}.$ {\color{red} not yet!!! so far, we successfully handle the cases $g\bar{\Gamma}\cap\bar{\Gamma}\neq\{0\}.$ the seemingly simpler case $g\bar{\Gamma}\cap\bar{\Gamma}=\{0\}$ requires the analogue of Theorem \ref{first RS-type theorem}.}
 
 This completes the proof.
 \end{proof}
