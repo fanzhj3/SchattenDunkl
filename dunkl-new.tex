@@ -842,88 +842,76 @@ converges absolutely in $\mathcal{L}_{\frac{2N}{3},\infty}$ and the assertion fo
 $$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in (\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{theorem}
 
-
-\begin{lemma}\label{fappr inclusion first lemma} If $P$ is a differential operator of degree 1 with smooth compactly supported coefficients and if the coefficients are supported away from the hyperplanes $\{x:\ \langle x,v\rangle=0\},$ $v\in R,$ then
-$$\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}d\lambda\in\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
-\end{lemma}
-\begin{proof} Fix $\psi\in C^{\infty}_c(\mathbb{R}^N)$ such that $P=PM_{\psi}.$ We have $P=M_{w^{-\frac12}}P'M_{w^{\frac12}},$ where $P'$ is a differential operator of degree 1 with smooth compactly supported coefficients. We write
-$$\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}=$$
-$$=\Big(M_{w^{-\frac12}}\frac1{1+\lambda^2+\Delta}P'M_{w^{\frac12}}\Big)\times M_{\psi}\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}.$$
-Hence,
-$$\Big\|\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}\Big\|_{\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
-$$\leq 2^{\frac{3}{2N}}\Big\|M_{w^{-\frac12}}\frac1{1+\lambda^2+\Delta}P'M_{w^{\frac12}}\Big\|_{\mathcal{L}_{2N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\times$$
-$$\times\Big\|M_{\psi}\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}\Big\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
-$$\leq 2^{\frac{3}{2N}}\Big\|\frac1{1+\lambda^2+\Delta}P'\Big\|_{\mathcal{L}_{2N,\infty}(L_2(\mathbb{R}^N))}\times$$
-$$\times(1+\lambda^2)^{-\frac12}\Big\|M_{\psi}\Delta_{{\rm Dunkl}}^{-\frac12}\Big\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
-$$\leq\frac{c_{P'}}{(1+\lambda^2)^{\frac14}}\times\frac{c_{\psi}}{(1+\lambda^2)^{\frac12}}.$$
-Hence, the integral converges absolutely.
-\end{proof}
-
-\begin{lemma}\label{fappr inclusion second lemma} If $P$ is a differential operator of degree 1 with smooth compactly supported coefficients and if the coefficients are supported away from the hyperplanes $\{x:\ \langle x,v\rangle=0\},$ $v\in R,$ then
-$$\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}d\lambda\in\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
-\end{lemma}
-\begin{proof} We have $P=M_{w^{-\frac12}}P'M_{w^{\frac12}},$ where $P'$ is a differential operator of degree 1 with smooth compactly supported coefficients. Therefore,
-$$\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}=$$
-$$=M_{w^{-\frac12}}\times\frac1{1+\lambda^2+\Delta}P'\frac1{1+\lambda^2+\Delta}\times M_{w^{\frac12}}.$$
-Hence,
-$$\Big\|\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big\|_{\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx))}=$$
-$$=\Big\|\frac1{1+\lambda^2+\Delta}P'\frac1{1+\lambda^2+\Delta}\Big\|_{\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N))}\leq\frac{c_{P'}}{(1+\lambda^2)^{\frac34}}.$$
-Hence, our integral converges absolutely.
-\end{proof}
-
-\begin{lemma}\label{fapprs final lemma} If $f\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{x:\ \langle x,v\rangle=0\},$ $v\in R,$ then
-$$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in \mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
+\begin{lemma}\label{s10 abstract lemma} Let $A,B_1,B_2$ be such that $B_1,B_2\geq1.$ Suppose that
+\begin{enumerate}[{\rm (i)}]
+\item\label{s10aa} $A(B_2-B_1)B_2^{-\frac12},$ $[B_1,A]B_1^{-\frac12}$ and $[B_1,A]B_2^{-\frac12}$ are bounded;
+\item\label{s10ab} there exists $A'$ with $B_1^{-\frac34}A'\in\mathcal{L}_{\frac{2N}{3},\infty}$ such that $A=A'A$ and $[B_1,A]=A'[B_1,A];$
+\end{enumerate}
+We have
+$$AB_1^{-\frac12}-AB_2^{-\frac12}\in\mathcal{L}_{\frac{2N}{3},\infty}.$$
 \end{lemma}
 \begin{proof} We have
-$$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}=$$
-$$=\frac2{\pi}\int_0^{\infty}M_f\Big(\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big)d\lambda.$$
-Obviously,
-$$M_f\Big(\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big)=$$
-$$=M_f\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{{\rm Dunkl}}\Big)\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}=$$
-$$=\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}M_f\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{{\rm Dunkl}}\Big)\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}+$$
-$$+\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\times$$
-$$\times\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{{\rm Dunkl}}\Big)\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}=$$
-$$=\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}M_f\Big(M_{w^{-\frac12}}\Delta M_{w^{\frac12}}-\Delta_{{\rm Dunkl}}\Big)\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}+$$
-$$+\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}-$$
-$$-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}.$$
-
-We have
-$$M_f\Big(\Delta_{{\rm Dunkl}}-M_{w^{-\frac12}}\Delta M_{w^{\frac12}}\Big)+[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]=$$
-$$=P+\sum_{v\in R}P_vO_v+\sum_{v,v'\in R}P_{v,v'}O_vO_{v'},$$
-where $P,$ $\{P_v\}_{v\in R}$ and $\{P_{v,v'}\}_{v,v'\in R}$ are differential operators of degree $1$ with smooth compactly supported coefficients. Commutator $[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]=P',$ where $P'$ is a differential operator of degree $1$ with smooth compactly supported coefficients. Moreover, coefficients of $P,$ $P'$ and $\{P_v\}_{v\in R}$ are supported away from the hyperplanes $\big\{\{x:\ \langle x,v\rangle=0\}\big\}_{v\in R}.$ Since $\Delta_{{\rm Dunkl}}$ commutes with $O_v,$ $v\in R,$ it follows that 
-$$M_f\Big(\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}\Big)=$$
-$$=\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}+$$
-$$+\sum_{v\in R}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P_v\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}\times O_v+$$
-$$+\sum_{v,v'\in R}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P_{v,v'}\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}\times O_vO_{v'}-$$
-$$-\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P'\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}.$$
+$$B_k^{-\frac12}=\frac{2}{\pi}\int_0^{\infty}\frac{d\lambda}{\lambda^2+B_k},\quad k=1,2.$$
 Thus,
-$$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}=$$
-$$=\frac2{\pi}\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}d\lambda+$$
-$$+\frac2{\pi}\sum_{v\in R}\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P_v\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}d\lambda\times O_v+$$
-$$+\frac2{\pi}\sum_{v,v'\in R}\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P_{v,v'}\frac1{1+\lambda^2+\Delta_{{\rm Dunkl}}}d\lambda\times O_vO_{v'}-$$
-$$-\frac2{\pi}\int_0^{\infty}\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}P'\frac1{1+\lambda^2+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}}d\lambda.$$
-The assertion follows now from Lemmas \ref{fappr inclusion first lemma} and \ref{fappr inclusion second lemma}.
+$$AB_1^{-\frac12}-AB_2^{-\frac12}=\int_0^{\infty}A(\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_2})d\lambda.$$
+Obviously,
+$$A(\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_2})=A\frac1{\lambda^2+B_1}(B_2-B_1)\frac1{\lambda^2+B_2}=$$
+$$=\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}+\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_1}(B_2-B_1)\frac1{\lambda^2+B_2}=$$
+$$=\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}+\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_2}.$$
+
+Consider, for example, the first summand. We write
+$$\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}=\frac1{\lambda^2+B_1}A'\cdot A(B_2-B_1)\frac1{\lambda^2+B_2}=$$
+$$=\frac{B_1^{\frac34}}{\lambda^2+B_1}\cdot B_1^{-\frac34}A'\cdot A(B_2-B_1)B_2^{-\frac12}\cdot\frac{B_2^{\frac12}}{\lambda^2+B_2}.$$
+Thus,
+$$\|\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}\|_{\frac{3N}{4},\infty}\leq$$
+$$\leq\|\frac{B_1^{\frac34}}{\lambda^2+B_1}\|_{\infty}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot\|\frac{B_2^{\frac12}}{\lambda^2+B_2}\|_{\infty}\leq$$
+$$\leq\sup_{t\geq1}\frac{t^{\frac34}}{\lambda^2+t}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot\sup_{t\geq1}\frac{t^{\frac12}}{\lambda^2+t}\leq$$
+$$\leq(\lambda^2+1)^{-\frac14}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot(\lambda^2+1)^{-\frac12}.$$
+Hence, the first summand is absolutely integrable in $\mathcal{L}_{\frac{3N}{4},\infty}.$ Similarly, so are the other summands. This completes the proof.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{second approximation theorem}] Choose a sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ such that (a) $0\leq\phi_n\leq1$ for $n\geq1$ (b) $\phi_n$ is supported away from the hyperplanes $\{x:\ \langle x,v\rangle=0\},$ $v\in R,$ for $n\geq 1$ (c) ${\rm supp}(\phi_n)\uparrow\mathbb{R}^N$ as $n\to\infty.$
+\begin{lemma}\label{s10 verification lemma} Let $P$ be a differential operator of degree $1$ with smooth compactly supported coefficients. Suppose that the coefficients are supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$ The operators
+$$P(1+\Delta_{{\rm Dunkl}})^{-\frac12},\quad P(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}$$
+are bounded on $L_2(\mathbb{R}^N,w(x)dx).$
+\end{lemma}
 
-By Lemma \ref{fapprs final lemma},
-$$M_{f\phi_n}(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_{f\phi_n}(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in \mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx))$$
+\begin{proof}[Proof of Theorem \ref{second approximation theorem}]
+
+{\bf Step 1:} Suppose first that $f$ is supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$
+
+We apply Lemma \ref{s10 abstract lemma} with $A=M_f,$ $B_1=1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}}$ and $B_2=1+\Delta_{{\rm Dunkl}}.$
+
+Choose $\phi\in C^{\infty}_c(\mathbb{R}^N)$ such that $f=f\phi$ and set $A'=M_{\phi}.$ We have
+$$M_{\phi}[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f]=[M_{w^{-\frac12}}\Delta M_{w^{\frac12}},M_f].$$
+Thus, $A=A'A$ and $[B_1,A]=A'[B_1,A].$ It follows from the usual Cwikel estimates that $B_1^{-\frac34}A'\in\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ This verifies the assumption \eqref{s10ab} in Lemma \ref{s10 abstract lemma}.
+
+Note that $[B_1,A]$ is a differential operator $P$ of degree $1$ with smooth compactly supported coefficients. Furthermore, the coefficients are supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$ By Lemma \ref{s10 verification lemma}, the operators
+$$[B_1,A]B_1^{-\frac12}=P(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12},\quad [B_1,A]B_2^{-\frac12}=P(1+\Delta_{{\rm Dunkl}})^{-\frac12},$$
+are bounded on $L_2(\mathbb{R}^N,w(x)dx).$ Note that there exist differential operators $\{P_g\}_{g\in G}$ of degree $1$ with smooth compactly supported coefficients such that the coefficients are supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}$ and such that
+$$A(B_2-B_1)=\sum_{g\in G}P_gU_g.$$
+Since $\{U_g\}_{g\in G}$ commute with $\Delta_{{\rm Dunkl}},$ it follows that
+$$A(B_2-B_1)=\sum_{g\in G}P_g(1+\Delta_{{\rm Dunkl}})^{-\frac12}\cdot U_g$$
+is bounded on $L_2(\mathbb{R}^N,w(x)dx).$ This verifies the assumption \eqref{s10aa} in Lemma \ref{s10 abstract lemma}.
+
+Using Lemma \ref{s10 abstract lemma}, we infer the claim of Step 1.
+
+{\bf Step 2:} Choose a sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ such that (a) $0\leq\phi_n\leq1$ for $n\geq1$ (b) $\phi_n$ is supported away from the hyperplanes $\{x:\ \langle x,v\rangle=0\},$ $v\in R,$ for $n\geq 1$ (c) ${\rm supp}(\phi_n)\uparrow\mathbb{R}^N$ as $n\to\infty.$
+
+By Step 1,
+$$M_{f\phi_n}(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_{f\phi_n}(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in (\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$$
 for every $n\geq1.$
 
 By Theorem \ref{dunkl cwikel theorem},
 $$M_{f\phi_n}(1+\Delta_{{\rm Dunkl}})^{-\frac12}\to M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}$$
 in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ as $n\to\infty.$ By the usual Cwikel estimate,
 $$M_{f\phi_n}(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\to M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}$$
-in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ as $n\to\infty.$
-
-Thus,
-$$M_{f\phi_n}(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_{f\phi_n}(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in (\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$$
-for every $n\geq1$ and
+in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ as $n\to\infty.$ Thus
 $$\lim_{n\to\infty}M_{f\phi_n}(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_{f\phi_n}(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}=$$
 $$=M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12},$$
 where the limit is understood in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ Since the separable part $(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$ is closed in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)),$ the assertion follows.
 \end{proof}
+
+
 
 
 \section{Final approximation theorem}
