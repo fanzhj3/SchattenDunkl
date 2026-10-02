@@ -744,41 +744,19 @@ $$+(1+\Delta_{{\rm Dunkl}})^{-1}[\Delta_{{\rm Dunkl}},M_f]\cdot M_{\phi}(1+\Delt
 In the first summand on the right hand side, the first factor belongs to the ideal $\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by Lemma \ref{second power lemma} and the second one belongs to the ideal $\mathcal{L}_{\frac{N}{n-1},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by inductive assumption. In the second summand on the right hand side, the first factor belongs to the ideal $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by Lemma \ref{base of induction}, the second factor belongs to the ideal $\mathcal{L}_{\frac{N}{n},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by inductive assumption and the third one is obviously bounded. 
 \end{proof}
 
-\begin{lemma}\label{one more base of induction} Let $l\in\mathbb{Z}_+$ with $l>1.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
-$$(1+\Delta_{{\rm Dunkl}})^{\frac12} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
-belongs to $\mathcal{L}_{\frac{N}{l-1},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
-\end{lemma}
-\begin{proof} We have
-$$T_{e_k}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=M_fT_{e_k}(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}+[T_{e_k},M_f](1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=$$
-$$=M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l-1}{2}}\times \frac{T_{e_k}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}+M_{\partial_kf}(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}+$$
-$$+\frac12\sum_{v\in R}v_k\kappa(v)M_{\delta_vf}(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}.$$
-By Lemma \ref{higher power lemma}, the summands on the right hand side belong to $\mathcal{L}_{\frac{N}{l-1},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ Also by Lemma \ref{higher power lemma}, the operator
-$$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
-belongs to $\mathcal{L}_{\frac{N}{l-1},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ 
-
-We have
-$$(1+\Delta_{{\rm Dunkl}})^{\frac12}=(1+\Delta_{{\rm Dunkl}})^{\frac12}(1+\sum_{j=1}^N|T_{e_j}|)^{-1}\times (1+\sum_{j=1}^N|T_{e_j}|)=$$
-$$=(1+\Delta_{{\rm Dunkl}})^{\frac12}(1+\sum_{j=1}^N|T_{e_j}|)^{-1}+$$
-$$+\sum_{k=1}^N(1+\Delta_{{\rm Dunkl}})^{\frac12}(1+\sum_{j=1}^N|T_{e_j}|)^{-1}\times {\rm sgn}(T_{e_k})\times T(e_k).$$
-Combining this with the estimates from the preceding paragraph, we complete the proof.
-\end{proof}
-
 
 \begin{lemma}\label{smoothness integer lemma} Let $k,l\in\mathbb{Z}_+$ with $l>k.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
-$$(1+\Delta_{{\rm Dunkl}})^{\frac{k}{2}} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
+$$T_{e_{m_1}}\cdots T_{e_{m_k}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
 belongs to $\mathcal{L}_{\frac{N}{l-k},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
 \end{lemma}
-\begin{proof} We prove the assertion by induction on $k.$ Base of induction (i.e., the cases $k=0$ and $k=1$) are established in Lemma \ref{higher power lemma} and Lemma \ref{one more base of induction}.
+\begin{proof} We prove the assertion by induction on $k.$ Base of induction (i.e., the case $k=0$) is established in Lemma \ref{higher power lemma}.
 
 We have
-$$(1+\Delta_{{\rm Dunkl}})^{\frac{k}{2}} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}+$$
-$$+(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}[\Delta_{{\rm Dunkl}},M_f](1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=$$
-$$\stackrel{L.\ref{commutator with delta}}{=}(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}+$$
-$$+\sum_{j=1}^N(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_{f_j^{(1)}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}\times\frac{T_{e_j}}{1+\Delta_{{\rm Dunkl}}}+$$
-$$+\sum_{j=1}^N\sum_{v\in R}c_{j,v}(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_{f_v^{(1)}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}\times(\frac{T_{e_j}}{1+\Delta_{{\rm Dunkl}}}O_v+O_v\frac{T_{e_j}}{1+\Delta_{{\rm Dunkl}}})+$$
-$$+(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_{f^{(2)}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}\times (1+\Delta_{{\rm Dunkl}})^{-1}+$$
-$$+\sum_{v\in R}(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_{f_v^{(2)}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}\times (1+\Delta_{{\rm Dunkl}})^{-1}O_v+$$
-$$+\sum_{v,v'\in R}(1+\Delta_{{\rm Dunkl}})^{\frac{k-2}{2}}M_{f_{v,v'}^{(2)}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-2}{2}}\times (1+\Delta_{{\rm Dunkl}})^{-1}O_{v'}O_v.$$
+$$T_{e_{m_1}}\cdots T_{e_{m_k}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=T_{e_{m_1}}\cdots T_{e_{m_{k-1}}}M_fT_{e_{m_k}}(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}+$$
+$$+T_{e_{m_1}}\cdots T_{e_{m_{k-1}}}[T_{e_{m_k}},M_f](1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}=$$
+$$=T_{e_{m_1}}\cdots T_{e_{m_{k-1}}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l-1}{2}}\times\frac{T_{e_{m_k}}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}+$$
+$$+T_{e_{m_1}}\cdots T_{e_{m_{k-1}}}M_{\partial_{m_k}f}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-1}{2}}\times (1+\Delta_{{\rm Dunkl}})^{-\frac12}+$$
+$$+\frac12\sum_{v\in R}v_{m_k}\kappa(v)T_{e_{m_1}}\cdots T_{e_{m_{k-1}}}M_{\delta_vf}(1+\Delta_{{\rm Dunkl}})^{-\frac{l-1}{2}}\times  (1+\Delta_{{\rm Dunkl}})^{-\frac12}O_v.$$
 In each summand on the right hand side, the first factor belongs to the ideal $\mathcal{L}_{\frac{N}{l-k},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by inductive assumption and the second factor is obviously bounded. This yields the step of induction and, hence, completes the proof.
 \end{proof}
 
@@ -787,17 +765,24 @@ In each summand on the right hand side, the first factor belongs to the ideal $\
 $$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{s_2}{2}}$$
 belongs to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
 \end{lemma}
-\begin{proof} {\bf Step 1:} Let $k,l\in\mathbb{Z}$ with $k+l>0.$ We have
-$$(1+\Delta_{{\rm Dunkl}})^{-\frac{k}{2}} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
-belongs to $\mathcal{L}_{\frac{N}{k+l},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
+\begin{proof} {\bf Step 1:} Let us prove the assertion for $s_1,s_2\in\mathbb{Z}.$
 
-Indeed, if $k\leq0,$ then $l\geq |k|$ and the claim follows from Lemma \ref{smoothness integer lemma} (applied with $|k|$ and $l$). If $l\leq 0,$ then the claim follows from that for $k\leq0$ by taking the adjoint. If $k,l\geq0,$ then, according to Lemma \ref{smoothness integer lemma} the operators
-$$(1+\Delta_{{\rm Dunkl}})^{-\frac{k+l}{2}} M_f,\quad M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{k+l}{2}}$$
-belong to $\mathcal{L}_{\frac{N}{k+l},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ The claim for $k,l\geq0$ follows now from the Hadamard 3 lines theorem.
+Suppose first $s_1\leq 0.$ Denote $k=-s_1\geq0$ and $l=s_2>k.$ Denote for brevity
+$$V=(1+\Delta_{{\rm Dunkl}})^{\frac{k}{2}}(1+\sum_{j_1,\cdots,j_k=1}^N|T_{e_{j_1}}\cdots T_{e_{j_k}}|)^{-1}.$$
+Obviously, $V$ is bounded. We have
+$$(1+\Delta_{{\rm Dunkl}})^{\frac{k}{2}}=V\times (1+\sum_{m_1,\cdots,m_k=1}^N|T_{e_{m_1}}\cdots T_{e_{m_k}}|)=V+$$
+$$+\sum_{m_1,\cdots,m_k=1}^NV\times{\rm sgn}(T_{e_{m_1}}\cdots T_{e_{m_k}})^{\ast}\times T_{e_{m_1}}\cdots T_{e_{m_k}}.$$
+It, therefore, suffices to prove that operators
+$$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}},\quad T_{e_{m_1}}\cdots T_{e_{m_k}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
+belong to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
+This is established in Lemma \ref{higher power lemma} and Lemma \ref{smoothness integer lemma}, respectively. Hence, the claim is proved for $s_1,s_2\in\mathbb{Z}$ and $s_1\leq0.$
 
-{\bf Step 2:} The general case follows now from Hadamard 3 lines theorem.
+If $s_2\leq 0,$ then the claim follows from that for $s_2\leq0$ by taking the adjoint. If $s_1,s_2\geq0,$ then, according to Lemma \ref{smoothness integer lemma} the operators
+$$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1+s_2}{2}} M_f,\quad M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1+s_2}{2}}$$
+belong to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ The claim for $s_1,s_2\geq0$ follows now from the Hadamard 3 lines theorem.
+
+{\bf Step 2:} The general case follows now from Step 1 by complex interpolation.
 \end{proof}
-
 
 \begin{proof}[Proof of Theorem \ref{smoothness theorem} \eqref{smoothb}] Choose $\phi\in C^{\infty}_c(\mathbb{R}^N)$ such that $(f\circ U_g)\cdot\phi=f\circ U_g$ for every $g\in G.$ It follows that
 $$[\Delta_{{\rm Dunkl}},M_f]=[\Delta_{{\rm Dunkl}},M_f]M_{\phi}.$$
