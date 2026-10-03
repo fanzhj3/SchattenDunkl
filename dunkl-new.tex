@@ -1022,8 +1022,26 @@ The assertion follows from Lemma \ref{s11 main lemma}.
 \section{Spectral asymptotic formula}
 \setcounter{equation}{0}
 
+We have a natural action $\alpha$ of $G$ on $B(L_2(\mathbb{R}^N))$ and, therefore, on $\Pi$ --- the $C^{\ast}$-algebra of operators admitting principal symbol. {\color{red} write precisely if it is $T\to U_g^{-1}TU_g$ or $T\to U_gTU_g^{-1}.$}
+
+Let ${\rm sym}:\Pi\to(C_0+\mathbb{C})(\mathbb{R}^N)\otimes_{{\rm min}}C(\mathbb{S}^{N-1})$ be the principal symbol mapping.
+
+Define the action $\beta$ of $G$ on $(C_0+\mathbb{C})(\mathbb{R}^N)\otimes_{{\rm min}}C(\mathbb{S}^{N-1})$ by setting
+$$(\beta(g))(f\otimes h)=(f\circ g)\otimes (h\circ g).$$
+{\color{red} check whether there should be $g$ or $g^{-1}$ in each of the tensor factors.}
+
+We have equivariance relation {\color{red} check it!}
+$${\rm sym}(\alpha(g)(T))=(\beta(g))({\rm sym}(T)).$$
+
+Clearly, ${\rm sym}$ is surjective, ${\rm ker}({\rm sym})$ is $\alpha$-invariant. Hence, there exists a natural $\ast$-homomorphism $$\pi\rtimes G:\Pi\rtimes_{\alpha}G\to ((C_0+\mathbb{C})(\mathbb{R}^N)\otimes_{{\rm min}}C(\mathbb{S}^{N-1}))\rtimes_{\beta}G.$$
+
+Next, the standard trace $\int_{\mathbb{R}^N}\otimes\int_{\mathbb{S}^{N-1}}$ on $(C_0+\mathbb{C})(\mathbb{R}^N)\otimes_{{\rm min}}C(\mathbb{S}^{N-1})$ is $\beta$-invariant. Hence, there exists a natural trace 
+$$(\int_{\mathbb{R}^N}\otimes\int_{\mathbb{S}^{N-1}})\rtimes G$$
+on $((C_0+\mathbb{C})(\mathbb{R}^N)\otimes_{{\rm min}}C(\mathbb{S}^{N-1}))\rtimes_{\beta}G.$
+
+
 \begin{theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $T\in\Pi\rtimes_{\alpha}G$ compactly supported from the right, we have
-$$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})={\color{red}what???}.$$
+$$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})=c_{\alpha}\|({\rm sym}\rtimes G)(T)\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta})}.$$
 \end{theorem}
 
 
