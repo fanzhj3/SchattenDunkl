@@ -60,12 +60,12 @@
 
 \section{Introduction}
 
-\begin{theorem}\label{main theorem} Let $R$ be a normalised root system in $\mathbb{R}^N,$ $N\geq 2,$ and let $G$ be the corresponding finite reflection group. Let $k:R\to\mathbb{R}_+$ be $G$-invariant multiplicity function. Let $R_{{\rm Dunkl},j}$ be the $j$-th Dunkl-Riesz transform corresponding to $R$ and $k.$ Let $w$ be the Dunkl weight corresponding to $R$ and $k.$ Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
+\begin{theorem}\label{main theorem} Let $R$ be a normalised root system in $\mathbb{R}^N,$ $N\geq 2,$ and let $G$ be the corresponding finite reflection group. Let $\kappa:R\to\mathbb{R}_+$ be $G$-invariant multiplicity function. Let $R_{{\rm Dunkl},j}$ be the $j$-th Dunkl-Riesz transform corresponding to $R$ and $k.$ Let $w$ be the Dunkl weight corresponding to $R$ and $k.$ Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
 \begin{enumerate}[{\rm (i)}]
 \item\label{mta} If $f\in\dot{W}^{1,N}(\mathbb{R}^N),$ then $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ Furthermore,
-$$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{R,k}\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)};$$
+$$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{\kappa}\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)};$$
 \item\label{mtb} If $[R_{{\rm Dunkl},j},M_f]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)),$ then $f\in\dot{W}^{1,N}(\mathbb{R}^N).$ Furthermore,
-$$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\geq c_{R,k}^{-1}\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)};$$
+$$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\geq c_{\kappa}^{-1}\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)};$$
 \end{enumerate}
 \end{theorem}
 
@@ -341,7 +341,7 @@ Combining the last two estimates, we complete the proof.
 \section{Proof of special Cwikel estimate in Dunkl setting}
 
 \begin{lemma}\label{heat kernel estimate} For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^N_+,$ for every $t>0,$ we have
-$$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t^{1-\frac{|\alpha|_1+|\beta|_1}{2}}d(x,y)^{-2}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2).$$
+$$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t^{-\frac{|\alpha|_1+|\beta|_1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2).$$
 \end{lemma}
 \begin{proof} This is (slightly weakened form of) Theorem 3.1 in \cite{MR4042416}.
 \end{proof}
@@ -366,10 +366,9 @@ $$+c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-s}\times\int_1^{\infty}t^
 
 The following lemma establishes derivative estimates for the integral kernels of Dunkl-Riesz transforms.
 
-\begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives} For every pair of multi-indices $\alpha,\beta,$ for every $1\leq j\leq N$ with $N+|\alpha|_1+|\beta|_1>3,$ we have 
+\begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives} Let $N\geq2.$ For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^n_+,$ we have 
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y)|
 \leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{w(B(x,d(x,y)))},\quad x,y\in\mathbb{R}^N.$$
-{\color{red} an issue here is that for $\alpha=\beta=0,$ this imposes the condition $N\geq 4.$ it would be good to prove something like this under the assumption $N\geq 3.$}
 \end{lemma}
 \begin{proof} We have
 $$\Delta_{{\rm Dunkl}}^{-\frac12}=\pi^{-\frac12}\int_0^{\infty}e^{-t\Delta_{{\rm Dunkl}}}\frac{dt}{t^{\frac12}}.$$
@@ -378,10 +377,10 @@ $$K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(x,y)=\pi^{-\frac12}\int_0^{\infty}h_t(x,y)
 
 Using Lemma \ref{heat kernel estimate}, we estimate
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{R_{{\rm Dunkl},j}})(x,y)|\leq$$
-$$\leq \frac{c_{\kappa,\alpha,\beta}}{\pi^{\frac12} d(x,y)^2}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1-1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
-Applying Lemma \ref{zhijie kernel estimate}, we conclude
+$$\leq \frac{c_{\kappa,\alpha,\beta}}{\pi^{\frac12}}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1+1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
+Applying Lemma \ref{zhijie kernel estimate} with $s=1+|\alpha|_1+|\beta|_1,$ we conclude
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y)|\leq$$
-$$\leq \pi^{-\frac12}c_{\kappa,\alpha,\beta}\times c_{\kappa,|\alpha|_1+|\beta|_1-1}w(B(x,d(x,y)))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}.$$
+$$\leq \pi^{-\frac12}c_{\kappa,\alpha,\beta}\times c_{\kappa,|\alpha|_1+|\beta|_1+1}w(B(x,d(x,y)))^{-1}\times d(x,y)^{1-|\alpha|_1-|\beta|_1}.$$
 The assertion follows immediately.
 \end{proof}
 
@@ -398,7 +397,7 @@ This completes the proof.
 \end{proof}
 
 
-\begin{theorem}\label{dunkl cwikel theorem} Let $N\geq 4.$ We have
+\begin{theorem}\label{dunkl cwikel theorem} Let $N\geq 3.$ We have
 $$\|M_f\Delta_{{\rm Dunkl}}^{-\frac12}\Big\|_{\mathcal{L}_{\frac{N}{s},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{\kappa}\|f\|_{L_N(\mathbb{R}^N)}.$$
 \end{theorem}
 \begin{proof} It suffices to estimate, for every chamber $\Gamma$ and for every $g\in G,$ the operator $M_{\chi_{\Gamma}\cdot f}\Delta_{{\rm Dunkl}}^{-\frac12}M_{\chi_{g\Gamma}}.$ In other words, it suffices to estimate an operator with integral kernel
@@ -443,7 +442,7 @@ $$\|\delta_vf\|_{L_N(\mathbb{R}^N)}\leq\int_0^1\|D_t(\partial_Nf)\|_{L_N(\mathbb
 $$=\int_0^1t^{-\frac1N}\|\partial_Nf\|_{L_N(\mathbb{R}^N)}dt=\frac{N}{N-1}\|\partial_Nf\|_{L_N(\mathbb{R}^N)}.$$
 \end{proof}
 
-\begin{lemma}\label{from doi lemma} For every $N\geq1,$ we have
+\begin{lemma}\label{from doi lemma} For every $N>1,$ we have
 $$\|[B,A]B^{-1}\|_{N,\infty}\leq c_N\|B^{-1}[B^2,A]B^{-1}\|_{N,\infty}.$$
 \end{lemma}
 
