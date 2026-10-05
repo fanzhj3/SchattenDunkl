@@ -1051,9 +1051,6 @@ The assertion follows from Lemma \ref{s11 main lemma}.
 $$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})=c_{\alpha}\|({\rm sym}\rtimes G)(T)\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta})}.$$
 \end{theorem}
 
-{\color{red} here is argument by the chatbot, rewritten by me and checked and re-written by chatbot. so, the question is indeed reduced to matrix-valued FSZ. to be written carefully.}
-
-
 \begin{definition} Let $G$ be a Weyl group, acting orthogonally on $\mathbb{R}^N$, and let
 $\Gamma$ be a fixed chamber. Let $\{e_g\}_{g\in G}$ be the standard basis of $\mathbb{C}^G.$ Define a surjective partial isometry $W:L_2(\mathbb{R}^N)\otimes\mathbb{C}^G
 \longrightarrow L_2(\mathbb{R}^N)$ by setting 
@@ -1121,22 +1118,251 @@ $$M_F\Delta^{-\frac12}M_{\chi_{\Gamma}}-M_{F\chi_{\Gamma}}\Delta^{-\frac12}\in(\
 for every $F\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$
 \end{proof}
 
-\begin{theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $S\in\Pi\otimes M_m(\mathbb{C}),$ compactly supported from the right, we have
+\begin{theorem}\label{matrix amplification asymptotics theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $S\in\Pi\otimes M_m(\mathbb{C}),$ compactly supported from the right, we have
 $$\lim_{t\to\infty}t^{\frac1N}\mu(t,S(\Delta^{-\frac12}\otimes 1))=c_N\|({\rm sym}\otimes {\rm id})(S)\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\otimes M_m(\mathbb{C}))}.$$
 \end{theorem}
+
+{\color{red} the following proposition is proved by the chatbot. to be verified and rewritten!}
+
+\begin{proposition}\label{symbol norm equality}
+Let $A=L_{\infty}(\mathbb{R}^N)\bar{\otimes} L_{\infty}(\mathbb{S}^{n-1}).$ Recall that $G$ acts on $A$ by the formula
+$$(\beta(g))(f\otimes 1)=(f\circ g^{-1})\otimes 1,\quad(\beta(g))(1\otimes h)=1\otimes (h\circ g^{-1}).$$
+Let
+$$T=\sum_{g\in G}\sum_{k=1}^K(f_{k,g}\otimes h_{k,g})U_g\in A\rtimes_{\beta}G.$$
+Let $\Gamma$ be a chamber. We have
+\[
+\begin{aligned}
+\|T\|_{L_n(A\rtimes_{\beta}G)}
+&=
+\left\|
+\sum_{g,g'\in G}\sum_{k=1}^{K}
+\Big[
+\big((f_{k,g}\chi_{g'\Gamma})\circ g'\big)
+\otimes
+(h_{k,g}\circ g')
+\Big]
+\otimes
+E_{g',g^{-1}g'}
+\right\|_{L_n(A\overline{\otimes}M_G)}.
+\end{aligned}
+\]
+\end{proposition}
+
+\begin{proof}
+
+We first recall the standard matrix realization of the finite group
+crossed product.  Define
+\[
+\Phi:A\rtimes_{\beta}G
+\longrightarrow
+A\overline{\otimes}M_G
+\]
+by
+\[
+\Phi(a)
+=
+\sum_{g'\in G}
+\beta(g'^{-1})(a)\otimes E_{g',g'},
+\]
+and
+\[
+\Phi(U_g)
+=
+\sum_{g'\in G}
+1\otimes E_{g',g^{-1}g'}.
+\]
+It follows that
+\[
+\Phi(aU_g)
+=
+\sum_{g'\in G}
+\beta(g'^{-1})(a)
+\otimes E_{g',g^{-1}g'}.
+\]
+
+Therefore,
+\[
+\begin{aligned}
+\Phi(T)
+&=
+\sum_{g\in G}\sum_{k=1}^{K}
+\Phi\big((f_{k,g}\otimes h_{k,g})U_g\big)
+\\
+&=
+\sum_{g,g'\in G}\sum_{k=1}^{K}
+\beta(g'^{-1})(f_{k,g}\otimes h_{k,g})
+\otimes E_{g',g^{-1}g'}.
+\end{aligned}
+\]
+By the definition of the action,
+\[
+\beta(g'^{-1})(f_{k,g}\otimes h_{k,g})
+=
+(f_{k,g}\circ g')\otimes(h_{k,g}\circ g').
+\]
+Hence
+\begin{equation}
+\Phi(T)
+=
+\sum_{g,g'\in G}\sum_{k=1}^{K}
+\big[
+(f_{k,g}\circ g')
+\otimes
+(h_{k,g}\circ g')
+\big]
+\otimes E_{g',g^{-1}g'}.
+\tag{1}
+\end{equation}
+
+For $(x,\omega)\in\mathbb{R}^{n}\times S^{n-1}$, set
+\[
+F(x,\omega)
+=
+\Phi(T)(x,\omega).
+\]
+The action of $G$ on $\mathbb{R}^{n}\times S^{n-1}$ is
+measure preserving.  Moreover, for every $s\in G$,
+the matrix $F(sx,s\omega)$ is unitarily conjugate to
+$F(x,\omega)$ by a permutation matrix.  Consequently,
+\begin{equation}\label{2bot}
+\|F(sx,s\omega)\|_{S_n}
+=
+\|F(x,\omega)\|_{S_n},
+\qquad s\in G.
+\end{equation}
+
+Using the invariance in \eqref{2bot}, we obtain
+\[
+\begin{aligned}
+\int_{\mathbb{R}^{n}}
+\int_{S^{n-1}}
+\|F(x,\omega)\|_{S_n}^{\,n}
+\,d\omega\,dx
+&=
+\sum_{s\in G}
+\int_{s\Gamma}
+\int_{S^{n-1}}
+\|F(x,\omega)\|_{S_n}^{\,n}
+\,d\omega\,dx
+\\
+&=
+|G|
+\int_{\Gamma}
+\int_{S^{n-1}}
+\|F(x,\omega)\|_{S_n}^{\,n}
+\,d\omega\,dx.
+\end{aligned}
+\tag{3}
+\]
+
+The trace on $M_G$ is non-normalized.  Thus
+\[
+\operatorname{tr}_{G}
+=
+\frac{1}{|G|}\operatorname{Tr}_{G}.
+\]
+Under the above matrix realization, the trace on the crossed product
+corresponds to the normalized matrix trace.  Consequently,
+\[
+\begin{aligned}
+\|T\|_{L_n(A\rtimes_{\beta}G)}^{\,n}
+&=
+\frac{1}{|G|}
+\|\Phi(T)\|_{L_n(A\overline{\otimes}M_G)}^{\,n}.
+\end{aligned}
+\tag{4}
+\]
+Equivalently,
+\[
+\|T\|_{L_n(A\rtimes_{\beta}G)}
+=
+|G|^{-1/n}
+\|\Phi(T)\|_{L_n(A\overline{\otimes}M_G)}.
+\tag{5}
+\]
+
+Combining \eqref{3} and \eqref{4}, we get
+\[
+\|T\|_{L_n(A\rtimes_{\beta}G)}^{\,n}
+=
+\int_{\Gamma}
+\int_{S^{n-1}}
+\|F(x,\omega)\|_{S_n}^{\,n}
+\,d\omega\,dx.
+\tag{6}
+\]
+
+It remains to rewrite the restriction of $F$ to $\Gamma$.
+For $g'\in G$, we have
+\[
+\chi_{g'\Gamma}\circ g'
+=
+\chi_{\Gamma}.
+\]
+Hence, for $x\in\Gamma$,
+\[
+(f_{k,g}\circ g')(x)
+=
+\big((f_{k,g}\chi_{g'\Gamma})\circ g'\big)(x).
+\]
+Therefore, by \eqref{1},
+\[
+\begin{aligned}
+\chi_{\Gamma}(x)F(x,\omega)
+&=
+\sum_{g,g'\in G}\sum_{k=1}^{K}
+\Big[
+\big((f_{k,g}\chi_{g'\Gamma})\circ g'\big)(x)
+\\
+&\hspace{4cm}\otimes
+(h_{k,g}\circ g')(\omega)
+\Big]
+\otimes E_{g',g^{-1}g'}.
+\end{aligned}
+\]
+Thus, using \eqref{6},
+\[
+\begin{aligned}
+\|T\|_{L_n(A\rtimes_{\beta}G)}
+&=
+\left\|
+\sum_{g,g'\in G}\sum_{k=1}^{K}
+\Big[
+\big((f_{k,g}\chi_{g'\Gamma})\circ g'\big)
+\otimes
+(h_{k,g}\circ g')
+\Big]
+\otimes
+E_{g',g^{-1}g'}
+\right\|_{L_n(A\overline{\otimes}M_G)}.
+\end{aligned}
+\]
+
+This proves the desired identity.
+
+\end{proof}
+
+
+
 
 \begin{proof}[Proof of Theorem \ref{crossed product asymptotics theorem}] Suppose first 
 $$T=\sum_{g\in G}\sum_{k=1}^Kh_{k,g}\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f_{k,g}}U_g$$
 with $h_{k,g}\in C^{\infty}(\mathbb{S}^{N-1})$ and with $f_{k,g}\in C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$ Using Lemma \ref{fifth asymptotics lemma}, we write
-$$W^{\ast}TW\in S(\Delta^{-\frac12}\otimes 1)+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G),$$
+$$W^{\ast}T\Delta^{-\frac12}W\in S(\Delta^{-\frac12}\otimes 1)+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G),$$
 where
 $$S=\sum_{g,g'\in G}\sum_{k=1}^K\Big[(h_{k,g}\circ g')
 \big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{(f_{k,g}\chi_{g'\Gamma})\circ g'}\Big]\otimes E_{g',g^{-1}g'}.$$
 Obviously, $S\in\Pi\otimes M_G(\mathbb{C})$ is compactly supported from the right. We have
-$$({\rm sym}\otimes{\rm id})(S)=\sum_{g,g'\in G}\sum_{k=1}^K\Big[(h_{k,g}\circ g')\otimes ((f_{k,g}\chi_{g'\Gamma})\circ g')\Big]\otimes E_{g',g^{-1}g'}.$$
+$$({\rm sym}\otimes{\rm id})(S)=\sum_{g,g'\in G}\sum_{k=1}^K\Big[((f_{k,g}\chi_{g'\Gamma})\circ g')\otimes(h_{k,g}\circ g')\Big]\otimes E_{g',g^{-1}g'}.$$
+Using Theorem \ref{matrix amplification asymptotics theorem} and Lemma \ref{bs separable lemma}, we conclude that
+$$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})=\lim_{t\to\infty}t^{\frac1N}\mu(t,W^{\ast}T\Delta^{-\frac12}W)=\lim_{t\to\infty}t^{\frac1N}\mu(t,S(\Delta^{-\frac12}\otimes 1))=$$
+$$=c_N\|({\rm sym}\otimes {\rm id})(S)\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\otimes M_G(\mathbb{C}))}=$$
+$$=c_N\Big\|\sum_{g,g'\in G}\sum_{k=1}^K\Big[((f_{k,g}\chi_{g'\Gamma})\circ g')\otimes(h_{k,g}\circ g')\Big]\otimes E_{g',g^{-1}g'}\Big\|_{L_N(A\otimes M_G(\mathbb{C}))}=$$
+$$\stackrel{P.\ref{symbol norm equality}}{=}c_N\Big\|\sum_{g\in G}\sum_{k=1}^K\Big[f_{k,g}\otimes h_{k,g}\Big]U_g\Big\|_{L_N(A\rtimes_{\beta}G)}=$$
+$$=c_N\Big\|({\rm sym}\rtimes G)(T)\Big\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta}G)}.$$
+This completes the proof for our special $T.$
 
-
-
+{\color{red} write an argument for a general $T.$}
 \end{proof}
 
 
