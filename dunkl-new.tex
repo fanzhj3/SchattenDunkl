@@ -361,6 +361,94 @@ $${\bf w}(Q)^{-\frac1r}\|f\|_{L_r(Q,{\bf w}(x)dx)}\leq \Big(\frac1{{\bf w}(Q)}\c
 Combining the last two estimates, we complete the proof.
 \end{proof}
 
+\begin{lemma}\label{lem:Cwikel-dyadic-distribution}
+Let $1<s<\infty$, and let $\mathbb D^0$ be the standard dyadic grid
+in $\mathbb R^N$. Suppose that
+$
+F\in L^s(\mathbb R^N).
+$
+Then there exists a constant $C>0$ such that
+\[
+\left\|\left\{|Q|^{-1/s'}\int_Q |F(x)|\,dx\right\}_{Q\in\mathbb D^0}\right\|_{\ell^{s,\infty}}
+\leq C
+\|F\|_{L^s(\mathbb R^N)}.
+\]
+\end{lemma}
+\begin{proof}
+Let $\mathcal E\subset\mathbb D^0$ be finite and set
+\[
+G_{\mathcal E}(x)
+:=
+\sum_{Q\in\mathcal E}|Q|^{-1/s'}\chi_Q(x).
+\]
+Since the dyadic cubes containing any fixed $x$ are totally ordered by inclusion, for each
+$x\in\bigcup_{Q\in\mathcal E}Q$ we may choose a cube $Q_x\in\mathcal E$ of minimal volume such that $x\in Q_x$. Every $Q\in\mathcal E$ containing $x$ is then a dyadic ancestor of $Q_x$. Since the volume increases by the factor $2^N$ at each generation,
+\[
+G_{\mathcal E}(x)
+=
+\sum_{\substack{Q\in\mathcal E\\ x\in Q}}|Q|^{-1/s'}
+\leq
+|Q_x|^{-1/s'}
+\sum_{k=0}^{\infty}2^{-kN/s'}
+\lesssim_{N,s}
+\sup_{Q\in\mathcal E}|Q|^{-1/s'}\chi_Q(x).
+\]
+Consequently,
+\begin{align*}
+\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}^{s'}
+\lesssim_{N,s}
+\int_{\mathbb R^N}
+\sup_{Q\in\mathcal E}|Q|^{-1}\chi_Q(x)\,dx\leq
+\int_{\mathbb R^N}
+\sum_{Q\in\mathcal E}|Q|^{-1}\chi_Q(x)\,dx
+=
+\#\mathcal E.
+\end{align*}
+and hence,
+\[
+\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}
+\lesssim_{N,s}
+(\#\mathcal E)^{1/s'}.
+\]
+By H\"older's inequality,
+\begin{align*}
+\sum_{Q\in\mathcal E}|Q|^{-1/s'}\int_Q|F(x)|\,dx
+=
+\int_{\mathbb R^N}|F(x)|G_{\mathcal E}(x)\,dx\lesssim_{N,s}
+\|F\|_{L^s(\mathbb R^N)}(\#\mathcal E)^{1/s'}.
+\end{align*}
+
+Fix $t>0$ and let $\mathcal E$ be any finite subcollection of the dyadic cubes satisfying
+\[
+|Q|^{-1/s'}\int_Q|F(x)|\,dx>t.
+\]
+Then
+\[
+t\,\#\mathcal E
+<
+\sum_{Q\in\mathcal E}|Q|^{-1/s'}\int_Q|F(x)|\,dx
+\lesssim_{N,s}
+\|F\|_{L^s(\mathbb R^N)}(\#\mathcal E)^{1/s'},
+\]
+so
+\[
+\#\mathcal E
+\lesssim_{N,s}
+t^{-s}\|F\|_{L^s(\mathbb R^N)}^s.
+\]
+Since $\mathcal E$ is arbitrary,
+\[
+\#\Bigg\{
+Q\in\mathbb D^0:
+|Q|^{-1/s'}\int_Q|F(x)|\,dx>t
+\Bigg\}
+\lesssim_{N,s}
+t^{-s}\|F\|_{L^s(\mathbb R^N)}^s,
+\qquad t>0.
+\]
+The asserted weak $\ell^s$ estimate follows. This completes the proof of Lemma~\ref{lem:Cwikel-dyadic-distribution}.
+\end{proof}
+
 \begin{proof}[Proof of Theorem \ref{RS-type theorem}] Take $r\in(2,N).$ The assertion follows by combining Lemmas \ref{RS intermediate estimate} and \ref{lem:Cwikel-dyadic-distribution}.
 \end{proof}
 
@@ -1366,98 +1454,6 @@ This completes the proof for our special $T.$
 \end{proof}
 
 
-\appendix
-
-\section{Zhijie lemma}
-\setcounter{equation}{0}
-
-\begin{lemma}\label{lem:Cwikel-dyadic-distribution}
-Let $1<s<\infty$, and let $\mathbb D^0$ be the standard dyadic grid
-in $\mathbb R^N$. Suppose that
-$
-F\in L^s(\mathbb R^N).
-$
-Then there exists a constant $C>0$ such that
-\[
-\left\|\left\{|Q|^{-1/s'}\int_Q |F(x)|\,dx\right\}_{Q\in\mathbb D^0}\right\|_{\ell^{s,\infty}}
-\leq C
-\|F\|_{L^s(\mathbb R^N)}.
-\]
-\end{lemma}
-\begin{proof}
-Let $\mathcal E\subset\mathbb D^0$ be finite and set
-\[
-G_{\mathcal E}(x)
-:=
-\sum_{Q\in\mathcal E}|Q|^{-1/s'}\chi_Q(x).
-\]
-Since the dyadic cubes containing any fixed $x$ are totally ordered by inclusion, for each
-$x\in\bigcup_{Q\in\mathcal E}Q$ we may choose a cube $Q_x\in\mathcal E$ of minimal volume such that $x\in Q_x$. Every $Q\in\mathcal E$ containing $x$ is then a dyadic ancestor of $Q_x$. Since the volume increases by the factor $2^N$ at each generation,
-\[
-G_{\mathcal E}(x)
-=
-\sum_{\substack{Q\in\mathcal E\\ x\in Q}}|Q|^{-1/s'}
-\leq
-|Q_x|^{-1/s'}
-\sum_{k=0}^{\infty}2^{-kN/s'}
-\lesssim_{N,s}
-\sup_{Q\in\mathcal E}|Q|^{-1/s'}\chi_Q(x).
-\]
-Consequently,
-\begin{align*}
-\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}^{s'}
-\lesssim_{N,s}
-\int_{\mathbb R^N}
-\sup_{Q\in\mathcal E}|Q|^{-1}\chi_Q(x)\,dx\leq
-\int_{\mathbb R^N}
-\sum_{Q\in\mathcal E}|Q|^{-1}\chi_Q(x)\,dx
-=
-\#\mathcal E.
-\end{align*}
-and hence,
-\[
-\|G_{\mathcal E}\|_{L^{s'}(\mathbb R^N)}
-\lesssim_{N,s}
-(\#\mathcal E)^{1/s'}.
-\]
-By H\"older's inequality,
-\begin{align*}
-\sum_{Q\in\mathcal E}|Q|^{-1/s'}\int_Q|F(x)|\,dx
-=
-\int_{\mathbb R^N}|F(x)|G_{\mathcal E}(x)\,dx\lesssim_{N,s}
-\|F\|_{L^s(\mathbb R^N)}(\#\mathcal E)^{1/s'}.
-\end{align*}
-
-Fix $t>0$ and let $\mathcal E$ be any finite subcollection of the dyadic cubes satisfying
-\[
-|Q|^{-1/s'}\int_Q|F(x)|\,dx>t.
-\]
-Then
-\[
-t\,\#\mathcal E
-<
-\sum_{Q\in\mathcal E}|Q|^{-1/s'}\int_Q|F(x)|\,dx
-\lesssim_{N,s}
-\|F\|_{L^s(\mathbb R^N)}(\#\mathcal E)^{1/s'},
-\]
-so
-\[
-\#\mathcal E
-\lesssim_{N,s}
-t^{-s}\|F\|_{L^s(\mathbb R^N)}^s.
-\]
-Since $\mathcal E$ is arbitrary,
-\[
-\#\Bigg\{
-Q\in\mathbb D^0:
-|Q|^{-1/s'}\int_Q|F(x)|\,dx>t
-\Bigg\}
-\lesssim_{N,s}
-t^{-s}\|F\|_{L^s(\mathbb R^N)}^s,
-\qquad t>0.
-\]
-The asserted weak $\ell^s$ estimate follows. This completes the proof of Lemma~\ref{lem:Cwikel-dyadic-distribution}.
-\end{proof}
 
 
 \bibliographystyle{plain}
