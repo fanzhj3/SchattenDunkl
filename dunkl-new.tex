@@ -1047,426 +1047,97 @@ The assertion follows from Lemma \ref{s11 main lemma}.
 
 
 
-\begin{theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $T\in\Pi\rtimes_{\alpha}G$ compactly supported from the right, we have
+\begin{theorem}\label{crossed product asymptotics theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $T\in\Pi\rtimes_{\alpha}G$ compactly supported from the right, we have
 $$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})=c_{\alpha}\|({\rm sym}\rtimes G)(T)\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta})}.$$
 \end{theorem}
 
 {\color{red} here is argument by the chatbot, rewritten by me and checked and re-written by chatbot. so, the question is indeed reduced to matrix-valued FSZ. to be written carefully.}
 
 
+\begin{definition} Let $G$ be a Weyl group, acting orthogonally on $\mathbb{R}^N$, and let
+$\Gamma$ be a fixed chamber. Let $\{e_g\}_{g\in G}$ be the standard basis of $\mathbb{C}^G.$ Define a surjective partial isometry $W:L_2(\mathbb{R}^N)\otimes\mathbb{C}^G
+\longrightarrow L_2(\mathbb{R}^N)$ by setting 
+$$W\left(\sum_{g\in G}\xi_g\otimes e_g\right)=
+\sum_{g\in G}(\xi_g|_\Gamma)\circ g^{-1}.$$
+\end{definition}
+The crucial observation is
+$$\mu(W^{\ast}TW)=\mu(T),\quad
+T\in B(L_2(\mathbb{R}^N)).$$
+Indeed, this is true for every surjective isometry.
 
-Let $G$ be a Weyl group, acting orthogonally on $\mathbb{R}^N$, and let
-$\Gamma$ be a fixed chamber.  We use the convention
-\[
-U_g\xi=\xi\circ g^{-1},\qquad g\in G.
-\]
-Thus $U_g$ is unitary on $L_2(\mathbb{R}^N)$ and
-\[
-U_gL_2(\Gamma)=L_2(g\Gamma).
-\]
-
-Let $\{e_g\}_{g\in G}$ be the standard basis of $\mathbb{C}^G$.
-
-Define
-\[
-W:L_2(\mathbb{R}^N)\otimes\mathbb{C}^G
-\longrightarrow L_2(\mathbb{R}^N)
-\]
-by
-\[
-W\left(\sum_{g\in G}\xi_g\otimes e_g\right)
-=
-\sum_{g\in G}U_gM_{\chi_\Gamma}\xi_g
-=
-\sum_{g\in G}(\xi_g|_\Gamma)\circ g^{-1}.
-\]
-Since the chambers $g\Gamma$ partition $\mathbb{R}^N$ up to a null
-set, we have
-\[
-WW^*={\rm id}_{L_2(\mathbb{R}^N)},
-\qquad
-W^*W=M_{\chi_\Gamma}\otimes{\rm id}_{\mathbb{C}^G}.
-\]
-Consequently, for the singular-value distribution $\mu$,
-\[
-\mu(W^*TW)=\mu(T),
-\qquad
-T\in B(L_2(\mathbb{R}^N)),
-\]
-where the equality is understood after discarding the zero singular
-values coming from $\ker W$.
-
-\begin{lemma}
-If $f\in C^\infty_c(\mathbb{R}^N)$, then
-\[
-M_f\Delta^{-1/2}
-\in
-\sum_{g\in G}
-M_{f\chi_{g\Gamma}}\Delta^{-1/2}M_{\chi_{g\Gamma}}
-+
-(\mathcal{L}_{N,\infty})_0
-(L_2(\mathbb{R}^N)).
-\]
+\begin{lemma}\label{first asymptotics lemma} If $f\in C^{\infty}_c(\mathbb{R}^N),$ then
+$$M_f\Delta^{-\frac12}\in\sum_{g\in G}M_{f\chi_{g\Gamma}}\Delta^{-\frac12}M_{\chi_{g\Gamma}}+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)).$$
 \end{lemma}
-
-\begin{proof}
-This follows from Theorem 4.1 in FSZ-TAMS.
+\begin{proof} This follows from Theorem 4.1 in \cite{MR4549699}.
 \end{proof}
 
-\begin{lemma}
-If $f\in C^\infty_c(\mathbb{R}^N)$ and
-$h\in C^\infty(\mathbb{S}^{N-1})$, then
-\[
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)M_f
-\in
-\sum_{g\in G}
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-+
-\mathcal{K}(L_2(\mathbb{R}^N)).
-\]
+\begin{lemma}\label{second asymptotics lemma} If $f\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}$ and if
+$h\in C^{\infty}(\mathbb{S}^{N-1}),$ then
+$$h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_f
+\in\sum_{g\in G}M_{\chi_{g\Gamma}}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f\chi_{g\Gamma}}+\mathcal{K}(L_2(\mathbb{R}^N)).$$
 \end{lemma}
-\begin{proof} {\color{red} This is true. We need to provide a proof or a reference.}
+\begin{proof} Indeed, $f\chi_{g\Gamma}\in C^{\infty}_c(\mathbb{R}^N)$ for $g\in\Gamma.$ Hence, {\color{red} this requires a reference!!}
+$$[h\big(\frac{\nabla}{\Delta^{\frac12}}\big),M_{f\chi_{g\Gamma}}]\in \mathcal{K}(L_2(\mathbb{R}^N)),\quad g\in G.$$
+The assertion follows now from the following algebraic identity.
+$$h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_f=\sum_{g\in G}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f\chi_{g\Gamma}}=\sum_{g\in G}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f\chi_{g\Gamma}}\cdot M_{\chi_{g\Gamma}}=$$
+$$=\sum_{g\in G}M_{f\chi_{g\Gamma}}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)\cdot M_{\chi_{g\Gamma}}+\sum_{g\in G}[h\big(\frac{\nabla}{\Delta^{\frac12}}\big),M_{f\chi_{g\Gamma}}]\cdot M_{\chi_{g\Gamma}}=$$
+$$=\sum_{g\in G}M_{\chi_{g\Gamma}}\cdot M_{f\chi_{g\Gamma}}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)\cdot M_{\chi_{g\Gamma}}+\sum_{g\in G}[h\big(\frac{\nabla}{\Delta^{\frac12}}\big),M_{f\chi_{g\Gamma}}]\cdot M_{\chi_{g\Gamma}}=$$
+$$=\sum_{g\in G}M_{\chi_{g\Gamma}}\cdot h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f\chi_{g\Gamma}}\cdot M_{\chi_{g\Gamma}}+\sum_{g\in G}M_{\chi_{g\Gamma}}\cdot [M_{f\chi_{g\Gamma}},h\big(\frac{\nabla}{\Delta^{\frac12}}\big)]\cdot M_{\chi_{g\Gamma}}+$$
+$$+\sum_{g\in G}[h\big(\frac{\nabla}{\Delta^{\frac12}}\big),M_{f\chi_{g\Gamma}}]\cdot M_{\chi_{g\Gamma}}.$$
 \end{proof}
 
-\begin{lemma}
-Let $f\in C^\infty_c(\mathbb{R}^N)$ and let $g\in G$.  We have
-\[
-W^*M_fW
-=
-\sum_{g\in G}
-M_{(f\chi_{g\Gamma})\circ g}
-\otimes E_{g,g},
-\]
-\[
-W^*
-\left(
-M_{\chi_{g\Gamma}}\Delta^{-1/2}M_{\chi_{g\Gamma}}
-\right)
-W
-=
-M_{\chi_\Gamma}\Delta^{-1/2}M_{\chi_\Gamma}
-\otimes E_{g,g},
-\]
-and
-\[
-W^*
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{\chi_{g\Gamma}}
-W
-=
-M_{\chi_\Gamma}
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{\chi_\Gamma}
-\otimes E_{g,g}.
-\]
-Moreover,
-\[
-W^*U_gW
-=
-\sum_{g'\in G}
-M_{\chi_\Gamma}\otimes E_{gg',g'}.
-\]
+\begin{lemma}\label{third asymptotics lemma} Let $f\in C^{\infty}_c(\mathbb{R}^N)$ and let $g\in G.$  We have
+$$W^{\ast}M_fW=\sum_{g\in G}M_{(f\chi_{g\Gamma})\circ g}\otimes E_{g,g},$$
+$$W^{\ast}\big(M_{\chi_{g\Gamma}}\Delta^{-\frac12}M_{\chi_{g\Gamma}}\big)W=M_{\chi_{\Gamma}}\Delta^{-\frac12}M_{\chi_{\Gamma}}\otimes E_{g,g},$$
+$$W^{\ast}M_{\chi_{g\Gamma}}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{\chi_{g\Gamma}}W=M_{\chi_{\Gamma}}(h\circ g)\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{\chi_{\Gamma}}\otimes E_{g,g},$$
+$$W^{\ast}U_gW=\sum_{g'\in G}M_{\chi_{\Gamma}}\otimes E_{gg',g'}.$$
 \end{lemma}
-
-\begin{proof}
-Write
-\[
-P=M_{\chi_\Gamma}.
-\]
-Then
-\[
-W=\sum_{g\in G}U_gP\otimes\langle e_g,\cdot\rangle,
-\qquad
-W^*
-=
-\sum_{g\in G}PU_g^*\otimes |e_g\rangle.
-\]
-
-For the first identity, the $(g,g)$ matrix entry is
-\[
-PU_g^*M_fU_gP
-=
-PM_{f\circ g}P
-=
-M_{\chi_\Gamma(f\circ g)}.
-\]
-Since
-\[
-\chi_\Gamma(f\circ g)
-=
-(f\chi_{g\Gamma})\circ g,
-\]
-we obtain
-\[
-W^*M_fW
-=
-\sum_{g\in G}
-M_{(f\chi_{g\Gamma})\circ g}\otimes E_{g,g}.
-\]
-
-Similarly,
-\[
-PU_g^*M_{\chi_{g\Gamma}}U_gP
-=
-P,
-\]
-and, since $\Delta^{-1/2}$ is invariant under orthogonal changes of
-variables,
-\[
-U_g^*\Delta^{-1/2}U_g
-=
-\Delta^{-1/2}.
-\]
-Hence
-\[
-W^*
-\left(
-M_{\chi_{g\Gamma}}\Delta^{-1/2}M_{\chi_{g\Gamma}}
-\right)
-W
-=
-M_{\chi_\Gamma}\Delta^{-1/2}M_{\chi_\Gamma}
-\otimes E_{g,g}.
-\]
-
-For the Fourier multiplier, we use
-\[
-U_g^*
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-U_g
-=
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right).
-\]
-
-Therefore
-\[
-W^*
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{\chi_{g\Gamma}}
-W
-=
-M_{\chi_\Gamma}
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{\chi_\Gamma}
-\otimes E_{g,g}.
-\]
-
-Finally, the $(k,g')$ matrix entry of $W^*U_gW$ is
-\[
-PU_k^*U_gU_{g'}P.
-\]
-This vanishes unless
-\[
-k=gg',
-\]
-in which case it equals $P$.  Hence
-\[
-W^*U_gW
-=
-\sum_{g'\in G}
-M_{\chi_\Gamma}\otimes E_{gg',g'}.
-\]
+\begin{proof} The third assertion follows from the equality
+$$U_g^{-1}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)U_g=(h\circ g)\big(\frac{\nabla}{\Delta^{\frac12}}\big).$$
+The other assertions are obvious.
 \end{proof}
 
-\begin{lemma}
-Modulo the separable part of $\mathcal{L}_{N,\infty}$, one has
-\[
-\begin{aligned}
-&W^*
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}W
-\\
-&\qquad\equiv
-\sum_{g\in G}
-\Bigg[
-M_{\chi_\Gamma}
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g\Gamma})\circ g}
-\Delta^{-1/2}
-M_{\chi_\Gamma}
-\Bigg]
-\otimes E_{g,g}.
-\end{aligned}
-\]
+\begin{lemma}\label{fourth asymptotics lemma} If $f\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}$ and if
+$h\in C^{\infty}(\mathbb{S}^{N-1}),$ then
+$$W^{\ast}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_f\Delta^{-\frac12}W\in$$
+$$\in\sum_{g\in G}\Big[M_{\chi_{\Gamma}}(h\circ g)
+\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{(f\chi_{g\Gamma})\circ g}\Delta^{-\frac12}M_{\chi_{\Gamma}}\Big]\otimes E_{g,g}+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G).$$
 \end{lemma}
-
-\begin{proof}
-By the second lemma,
-\[
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)M_f
-\equiv
-\sum_{g\in G}
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-\]
-modulo the separable part.  Hence
-\[
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}
-\equiv
-\sum_{g\in G}
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-\Delta^{-1/2}.
-\]
-
-Applying the first lemma to the localized multiplier and multiplying
-on the left by $M_{\chi_{g\Gamma}}$, all chamber terms except the
-$g$-th one vanish.  Thus
-\[
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}\Delta^{-1/2}
-\equiv
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-\Delta^{-1/2}
-M_{\chi_{g\Gamma}}.
-\]
-Consequently,
-\[
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}
-\equiv
-\sum_{g\in G}
-M_{\chi_{g\Gamma}}
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-\Delta^{-1/2}
-M_{\chi_{g\Gamma}}.
-\]
-
-Each summand maps $L_2(g\Gamma)$ into $L_2(g\Gamma)$.
-Therefore its conjugate by $W$ is diagonal.  Its $g$-th diagonal
-entry is
-\[
-M_{\chi_\Gamma}
-U_g^*
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{f\chi_{g\Gamma}}
-\Delta^{-1/2}
-U_g
-M_{\chi_\Gamma}.
-\]
-Using
-\[
-U_g^*
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-U_g
-=
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-\]
-and
-\[
-U_g^*M_{f\chi_{g\Gamma}}U_g
-=
-M_{(f\chi_{g\Gamma})\circ g},
-\]
-we obtain
-\[
-M_{\chi_\Gamma}
-(h\circ g)
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g\Gamma})\circ g}
-\Delta^{-1/2}
-M_{\chi_\Gamma}.
-\]
-This proves the claim.
+\begin{proof} We write $f=f_1f_2,$ where $f_1,f_2\in C^{\infty}_c(\mathbb{R}^N)$ are supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$ The assertion follows from Lemma \ref{first asymptotics lemma} (applied with $f_2$ in place of $f$), Lemma \ref{second asymptotics lemma} (applied with $f_1$ in place of $f$) and Lemma \ref{third asymptotics lemma}.
 \end{proof}
 
-\begin{lemma}
-Modulo the separable part of $\mathcal{L}_{N,\infty}$, one has
-$$W^*h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}U_gW=$$
-$$=\sum_{g'\in G}
-\Bigg[
-(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}
-\Bigg]
-\otimes E_{g',g^{-1}g'}.$$
+\begin{lemma}\label{fifth asymptotics lemma}
+If $f\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}$ and if
+$h\in C^{\infty}(\mathbb{S}^{N-1}),$ then
+$$W^{\ast}h\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_f\Delta^{-\frac12}U_gW\in$$
+$$\in\sum_{g'\in G}\Big[(h\circ g')
+\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{(f\chi_{g'\Gamma})\circ g'}\Delta^{-\frac12}\Big]\otimes E_{g',g^{-1}g'}+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G).$$
 \end{lemma}
-\begin{proof} \[
-\begin{aligned}
-&W^*
-h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}W
-\\
-&\qquad\equiv
-\sum_{g'\in G}
-\Bigg[
-M_{\chi_\Gamma}
-(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}
-M_{\chi_\Gamma}
-\Bigg]
-\otimes E_{g',g'}.
-\end{aligned}
-\]
-On the other hand, we have
-\[
-W^*U_gW
-=
-\sum_{g''\in G}
-M_{\chi_\Gamma}\otimes E_{gg'',g''}.
-\]
-Thus,
-$$W^*h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}W=$$
-$$=\sum_{g'\in G}
-\Bigg[
-M_{\chi_\Gamma}
-(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}
-M_{\chi_\Gamma}
-\Bigg]
-\otimes E_{g',g'}\times$$
-$$\times \sum_{g''\in G}
-M_{\chi_\Gamma}\otimes E_{gg'',g''}.$$
-We obviously have $gg''=g'$ and, hence, $g''=g^{-1}g'.$ Hence,
-$$W^*h\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_f\Delta^{-1/2}W=$$
-$$=\sum_{g'\in G}
-\Bigg[
-M_{\chi_\Gamma}
-(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}
-M_{\chi_\Gamma}
-\Bigg]
-\otimes E_{g',g^{-1}g'}.$$
-It remains to note that
-$$M_{\chi_\Gamma}
-(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}
-M_{\chi_\Gamma}
-=(h\circ g')
-\left(\frac{\nabla}{\Delta^{1/2}}\right)
-M_{(f\chi_{g'\Gamma})\circ g'}
-\Delta^{-1/2}$$
-modulo separable part.
+\begin{proof} The assertion follows from Lemma \ref{fourth asymptotics lemma} and the facts (see the proof of Lemma \ref{second asymptotics lemma} for the first one and Theorem 4.1 in \cite{MR4549699} for the second one) that
+$$M_{\chi_{\Gamma}}(h\circ g)
+\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_F-(h\circ g)\big(\frac{\nabla}{\Delta^{\frac12}}\big)
+M_F\in\mathcal{K}(L_2(\mathbb{R}^N)),$$
+$$M_F\Delta^{-\frac12}M_{\chi_{\Gamma}}-M_{F\chi_{\Gamma}}\Delta^{-\frac12}\in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)),$$
+for every $F\in C^{\infty}_c(\mathbb{R}^N)$ is supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$
 \end{proof}
 
+\begin{theorem} Let $N>2.$ Let $\Pi$ be the $C^{\ast}$-algebra of operators admitting principal symbol. For every $S\in\Pi\otimes M_m(\mathbb{C}),$ compactly supported from the right, we have
+$$\lim_{t\to\infty}t^{\frac1N}\mu(t,S(\Delta^{-\frac12}\otimes 1))=c_N\|({\rm sym}\otimes {\rm id})(S)\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\otimes M_m(\mathbb{C}))}.$$
+\end{theorem}
+
+\begin{proof}[Proof of Theorem \ref{crossed product asymptotics theorem}] Suppose first 
+$$T=\sum_{g\in G}\sum_{k=1}^Kh_{k,g}\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f_{k,g}}U_g$$
+with $h_{k,g}\in C^{\infty}(\mathbb{S}^{N-1})$ and with $f_{k,g}\in C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$ Using Lemma \ref{fifth asymptotics lemma}, we write
+$$W^{\ast}TW\in S(\Delta^{-\frac12}\otimes 1)+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G),$$
+where
+$$S=\sum_{g,g'\in G}\sum_{k=1}^K\Big[(h_{k,g}\circ g')
+\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{(f_{k,g}\chi_{g'\Gamma})\circ g'}\Big]\otimes E_{g',g^{-1}g'}.$$
+Obviously, $S\in\Pi\otimes M_G(\mathbb{C})$ is compactly supported from the right. We have
+$$({\rm sym}\otimes{\rm id})(S)=\sum_{g,g'\in G}\sum_{k=1}^K\Big[(h_{k,g}\circ g')\otimes ((f_{k,g}\chi_{g'\Gamma})\circ g')\Big]\otimes E_{g',g^{-1}g'}.$$
+
+
+
+\end{proof}
 
 
 \appendix
