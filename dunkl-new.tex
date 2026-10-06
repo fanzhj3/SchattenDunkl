@@ -87,7 +87,7 @@ Define the Dunkl weight on $\mathbb{R}^N$ by
 $$w(x)=\prod_{v\in R} |\langle x,v\rangle|^{\kappa(v)},\quad x\in\mathbb{R}^N.$$
 Dunkl measure $w(x)dx$ is also denoted by $w.$
 
-Let $B(x,r):=\{y\in \mathbb{R}^N:\ |x-y|< r\}.$ Let $\mathbf{N}:=N+\sum_{v\in R}k(v)$. Note that
+Let $B(x,r):=\{y\in \mathbb{R}^N:\ |x-y|< r\}.$ Let $\mathbf{N}:=N+\sum_{v\in R}\kappa(v)$. Note that
 $$w(B(tx,tr))=t^{\mathbf{N}}w(B(x,r)),\ {\rm for}\ x\in\mathbb{R}^N,\ t,r>0.$$
 Furthermore,
 \begin{align}\label{twosideinequ}
@@ -100,7 +100,7 @@ C^{-1}\left(\frac{r_2}{r_1}\right)^N\leq \frac{w(B(x,r_2))}{w(B(x,r_1))}\leq C\l
 so the numbers $\mathbf{N}$ and $N$ are called the upper and lower homogeneous dimensions, respectively.
 
 The Dunkl operators $T_\xi$ are defined by
-$$T_\xi f(x):=\partial_\xi f(x)+\sum_{v\in R}\frac{k(v)}{2}\langle v,\xi\rangle\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle},$$
+$$T_\xi f(x):=\partial_\xi f(x)+\sum_{v\in R}\frac{\kappa(v)}{2}\langle v,\xi\rangle\frac{f(x)-f(\sigma_v(x))}{\langle v,x\rangle},$$
 where $\partial_\xi f$ denotes the directional derivative of $f$ in the direction $\xi$. Furthermore, the Dunkl Laplacian is defined by
 $$\Delta_{{\rm Dunkl}}=-\sum_{j=1}^N T_{e_j}^2.$$
 
@@ -458,7 +458,7 @@ This completes the proof.
 
 
 \begin{theorem}\label{dunkl cwikel theorem} Let $N\geq 3.$ We have
-$$\|M_f\Delta_{{\rm Dunkl}}^{-\frac12}\Big\|_{\mathcal{L}_{\frac{N}{s},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{\kappa}\|f\|_{L_N(\mathbb{R}^N)}.$$
+$$\|M_f\Delta_{{\rm Dunkl}}^{-\frac12}\Big\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{\kappa}\|f\|_{L_N(\mathbb{R}^N)}.$$
 \end{theorem}
 \begin{proof} It suffices to estimate, for every chamber $\Gamma$ and for every $g\in G,$ the operator $M_{\chi_{\Gamma}\cdot f}\Delta_{{\rm Dunkl}}^{-\frac12}M_{\chi_{g\Gamma}}.$ In other words, it suffices to estimate an operator with integral kernel
 $$f(x)K_{{\rm Dunkl}^{-\frac12}}(x,y),\quad x,y\in\Gamma,\quad y\in g\Gamma,$$
@@ -531,7 +531,7 @@ Combining the estimates in the last two paragraphs, we obtain
 $$\|[R_{{\rm Dunkl},j},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
 $$\leq c_N'\sum_{k=1}^N\|\Delta_{{\rm Dunkl}}^{-\frac12}[T_{e_k},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}+$$
 $$+c_N'\sum_{k=1}^N\|[T_{e_k},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}.$$
-Using Lemma \ref{tj commutator fact}, the fact that $\Delta_{{\rm Dunkl}}$ commutes with $O_v$ and the triangle inequality, we obtain
+Using Lemma \ref{tj commutator fact}, the fact that $\Delta_{{\rm Dunkl}}$ commutes with $U_v$ and the triangle inequality, we obtain
 $$\|[T_{e_k},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
 $$\leq\frac{N}{N-1}\|M_{\partial_kf}\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}+$$
 $$+\frac{N}{2(N-1)}\sum_{v\in R}|v|\kappa(v)\|M_{\delta_vf}\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}.$$
@@ -626,24 +626,24 @@ $$\sup_{x\in Q}w(x)\leq \frac{c_{\kappa}}{m(Q)}\int_Qw(x)dx.$$
 \begin{proof} If $x=c_Q+y,$ $y\in [-\frac12s(Q),\frac12s(Q)]^d,$ then
 $$|\langle x,v\rangle|\leq |\langle c_Q,v\rangle|+r|\langle y,v\rangle|\leq |\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q).$$
 Thus,
-$$w(x)=\prod_{v\in R}|\langle x,v\rangle|^{k(v)}\leq\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{k(v)}.$$
+$$w(x)=\prod_{v\in R}|\langle x,v\rangle|^{\kappa(v)}\leq\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{\kappa(v)}.$$
 In particular,
-$$LHS\leq \prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{k(v)}.$$
+$$LHS\leq \prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{\kappa(v)}.$$
 
 Fix chamber $\Gamma$ such that $c_Q\in\Gamma.$ We have
 $$\int_Qw(x)dx\geq\int_{c_Q+(B(0,\frac12s(Q))\cap\Gamma)}w(x)dx=\int_{B(0,\frac12s(Q))\cap\Gamma}w(c_Q+y)dy.$$
 If $y\in\Gamma,$ then
 $$|\langle c_Q+y,v\rangle|=|\langle c_Q,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
 Thus,
-$$w(c_Q+y)=\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{k(v)}.$$
+$$w(c_Q+y)=\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{\kappa(v)}.$$
 Hence,
 $$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma}\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{k(v)}dy.$$
 Fix a closed cone $\Gamma'\subset\Gamma$ such that (i) interior of $\Gamma'$ is non-empty and (ii) $\partial\Gamma\cap\partial\Gamma'=\{0\}.$ We have
 $$|\langle y,v\rangle|\geq c_{\Gamma'}|y|,\quad y\in\Gamma',\quad v\in R.$$
 We, therefore, have
-$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma'}\prod_{v\in R}(|\langle c_Q,v\rangle|+c_{\Gamma'}|y|)^{k(v)}dy\geq$$
-$$\geq \int_{\substack{y\in\Gamma'\\ \frac14s(Q)\leq|y|\leq \frac14s(Q)}}\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac12c_{\Gamma'}s(Q))^{k(v)}dy=$$
-$$=s(Q)^N\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac14c_{\Gamma'}s(Q))^{k(v)}\times (2^{-N}-4^{-N})\int_{\substack{y\in\Gamma'\\ |y|\leq1}}dy.$$
+$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma'}\prod_{v\in R}(|\langle c_Q,v\rangle|+c_{\Gamma'}|y|)^{\kappa(v)}dy\geq$$
+$$\geq \int_{\substack{y\in\Gamma'\\ \frac14s(Q)\leq|y|\leq \frac14s(Q)}}\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac12c_{\Gamma'}s(Q))^{\kappa(v)}dy=$$
+$$=s(Q)^N\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac14c_{\Gamma'}s(Q))^{\kappa(v)}\times (2^{-N}-4^{-N})\int_{\substack{y\in\Gamma'\\ |y|\leq1}}dy.$$
 Combining this with the preceding paragraph, we complete the proof.
 \end{proof}
 
@@ -1006,13 +1006,14 @@ $$-M_f(1+\Delta_{{\rm Dunkl}})^{-1}\cdot (1+\Delta_{{\rm Dunkl}})h(\nabla_{{\rm 
 In the first summand on the right hand side, the first and the second factors are bounded and the third one belongs to $\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by Lemma \ref{higher power lemma}. In the second summand on the right hand side, the second and the third factors are bounded and the first one belongs to $\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by Lemma \ref{higher power lemma}. 
 \end{proof}
 
-\begin{lemma}\label{s11 abstract lemma} Let $\{B_j\}_{j=1}^N$ and $\{D_j\}_{j=1}^N$ be commuting tuples of self-adjoint operators. Denote $\langle B\rangle=(1+\sum_{j=1}^NB_j^2)^{\frac12}$ and $\langle D\rangle=(1+\sum_{j=1}^ND_j^2)^{\frac12}.$ Suppose that there exists a sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ with
+\begin{lemma}\label{s11 abstract lemma} Let $\{B_j\}_{j=1}^N$ and $\{D_j\}_{j=1}^N$ be commuting tuples of self-adjoint operators on $L_2(\mathbb(R)^N,w(x)dx).$ Denote
+$$\langle B\rangle=(1+\sum_{j=1}^NB_j^2)^{\frac12},\quad\langle D\rangle=(1+\sum_{j=1}^ND_j^2)^{\frac12}.$$ Suppose that there exists a sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ with
 \begin{enumerate}[{\rm (i)}]
 \item $0\leq\phi_n\leq1$ for $n\geq1$ and ${\rm supp}(\phi_n)\uparrow\mathbb{R}^N$ as $n\to\infty;$
 \item 
 $$M_{\phi_n}\langle B\rangle^{-1}-M_{\phi_n}\langle D\rangle^{-1}\in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)),\quad n\geq1;$$
-\item $M_{\phi_n}(B_k-D_k)$ is bounded\footnote{By a constant which depends also on $n.$} and compactly supported for $n\geq 1$ and $1\leq k\leq K;$
-\item $[D_k,M_{f\phi_n}]$ is bounded\footnote{By a constant which depends also on $n.$} and compactly supported for $n\geq 1$ and $1\leq k\leq K;$
+\item $M_{\phi_n}(B_k-D_k)$ is bounded\footnote{By a constant which depends also on $n.$} and compactly supported for $n\geq 1$ and $1\leq k\leq N;$
+\item $[D_k,M_{f\phi_n}]$ is bounded\footnote{By a constant which depends also on $n.$} and compactly supported for $n\geq 1$ and $1\leq k\leq N;$
 \item $[\langle D\rangle^{-1},M_{f\phi_n}]\in(\mathcal{L}_{N,\infty})_0(\mathbb{R}^N,w(x)dx)$ for every $n\geq1;$
 \item
 $$\|M_h\langle B\rangle^{-1}\|_{\mathcal{L}_{N,\infty}(\mathbb{R}^N,w(x)dx)}\leq c_N\|h\|_{L_N(\mathbb{R}^N)},\quad h\in L_N(\mathbb{R}^N),$$
@@ -1022,8 +1023,8 @@ We have
 $$\frac{B_j}{\langle B\rangle}M_f\frac{B_k}{\langle B\rangle^2}-\frac{D_j}{\langle D\rangle}M_f\frac{D_k}{\langle D\rangle^2}\in(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{lemma}
 \begin{proof} Choose real-valued $\psi_n\in C^{\infty}_c(\mathbb{R}^N)$ such that
-$$M_{\phi_n}(B_k-D_k)=M_{\phi_n}(B_k-D_k)\cdot M_{\psi_n},\quad 1\leq k\leq K,$$
-$$[M_{f\phi_n},D_k]=M_{\psi_n}\cdot [M_{f\phi_n},D_k]\cdot M_{\psi_n},\quad 1\leq k\leq K.$$
+$$M_{\phi_n}(B_k-D_k)=M_{\phi_n}(B_k-D_k)\cdot M_{\psi_n},\quad 1\leq k\leq N,$$
+$$[M_{f\phi_n},D_k]=M_{\psi_n}\cdot [M_{f\phi_n},D_k]\cdot M_{\psi_n},\quad 1\leq k\leq N.$$
 We have
 $$\frac{B_j}{\langle B\rangle}M_{f\phi_n}\frac{B_k}{\langle B\rangle^2}-\frac{D_j}{\langle D\rangle}M_{f\phi_n}\frac{D_k}{\langle D\rangle^2}=\frac{B_j}{\langle B\rangle}\cdot M_f\Big(M_{\phi_n}\langle B\rangle^{-1}-M_{\phi_n}\langle D\rangle^{-1}\Big)\cdot\frac{B_k}{\langle B\rangle}+$$
 $$+\frac{B_j}{\langle B\rangle}\cdot [M_{f\phi_n},\langle D\rangle^{-1}]\cdot\frac{B_k}{\langle B\rangle}+\frac{B_j}{\langle B\rangle}\cdot\langle D\rangle^{-1}M_f\cdot M_{\phi_n}(B_k-D_k)\cdot M_{\psi_n}\langle B\rangle^{-1}+$$
@@ -1042,7 +1043,7 @@ $$\leq\Big\|M_{f(1-\phi_n)}\langle D\rangle^{-1}\Big\|_{\mathcal{L}_{N,\infty}(L
 Thus,
 $$\lim_{n\to\infty}\frac{B_j}{\langle B\rangle}M_{f\phi_n}\frac{B_k}{\langle B\rangle^2}-\frac{D_j}{\langle D\rangle}M_{f\phi_n}\frac{D_k}{\langle D\rangle^2}=$$
 $$=\frac{B_j}{\langle B\rangle}M_f\frac{B_k}{\langle B\rangle^2}-\frac{D_j}{\langle D\rangle}M_f\frac{D_k}{\langle D\rangle^2},$$
-where the limit is take in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ Since $(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$ is closed in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)),$ the assertion follows.
+where the limit is taken in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ Since $(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx))$ is closed in $\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)),$ the assertion follows.
 \end{proof}
 
 \begin{lemma}\label{s11 main lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N),$ 
@@ -1051,7 +1052,7 @@ $$\in M_{w^{-\frac12}}R_jM_fR_kU_v\Delta^{-\frac12}M_{w^{\frac12}}+(\mathcal{L}_
 $$\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}M_fU_v\frac{T_{e_j}}{1+\Delta_{{\rm Dunkl}}}\in $$
 $$\in M_{w^{-\frac12}}R_jM_fU_vR_k\Delta^{-\frac12}M_{w^{\frac12}}+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{lemma}
-\begin{proof} The assertion follows by applying Lemma \ref{s11 abstract lemma} to the tuples $(T_{e_1},\cdots,T_{e_N})$ and $(M_{w^{-\frac12}}\partial_1M_{w^{\frac12}},\cdot,M_{w^{-\frac12}}\partial_NM_{w^{\frac12}})$ and sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$
+\begin{proof} The assertion follows by applying Lemma \ref{s11 abstract lemma} to the tuples $(T_{e_1},\cdots,T_{e_N})$ and $(M_{w^{-\frac12}}\partial_1M_{w^{\frac12}},\cdots,M_{w^{-\frac12}}\partial_NM_{w^{\frac12}})$ and sequence $\{\phi_n\}_{n\geq1}\subset C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$
 \end{proof}
 
 
