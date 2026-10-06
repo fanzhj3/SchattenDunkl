@@ -191,7 +191,19 @@ Next, the standard trace $\int_{\mathbb{R}^N}\otimes\int_{\mathbb{S}^{N-1}}$ on 
 $$(\int_{\mathbb{R}^N}\otimes\int_{\mathbb{S}^{N-1}})\rtimes G$$
 on $(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta}G.$
 
+\subsection{Birman-Solomyak lemmas}
 
+\begin{lemma}\label{bs separable lemma} Let $A\in\mathcal{L}_{p,\infty}$ and $B\in(\mathcal{L}_{p,\infty})_0.$ If
+$$\lim_{t\to\infty}t^{\frac1p}\mu(t,A)=c,$$
+then also
+$$\lim_{t\to\infty}t^{\frac1p}\mu(t,A+B)=c.$$
+\end{lemma}
+
+\begin{lemma}\label{bs limit lemma} Let $\{A_k\}_{k\geq1}\subset\mathcal{L}_{p,\infty}.$ If
+$$\lim_{t\to\infty}t^{\frac1p}\mu(t,A_k)=c_k,\quad k\geq1,$$
+and if $A_k\to A$ in $\mathcal{L}_{p,\infty}$ as $k\to\infty,$ then the following limits exist and are equal
+$$\lim_{t\to\infty}t^{\frac1p}\mu(t,A)=\lim_{k\to\infty}c_k.$$
+\end{lemma}
 
 \section{Chamber is a doubling metric measure space}
 
@@ -1214,32 +1226,31 @@ $$(\beta(g)\otimes{\rm id})(\Phi(X))=(1\otimes 1\otimes V_g^{-1})\Phi(X)(1\otime
 
 
 
-\begin{proof}[Proof of Theorem \ref{crossed product asymptotics theorem}] Suppose first 
+\begin{proof}[Proof of Theorem \ref{crossed product asymptotics theorem}] {\bf Step 1:} Suppose first 
 $$T=\sum_{g\in G}\sum_{k=1}^Kh_{k,g}\big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{f_{k,g}}U_g$$
-with $h_{k,g}\in C^{\infty}(\mathbb{S}^{N-1})$ and with $f_{k,g}\in C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$ Using Lemma \ref{fifth asymptotics lemma}, we write
+with $h_{k,g}\in C^{\infty}(\mathbb{S}^{N-1})$ and with $f_{k,g}\in C^{\infty}_c(\mathbb{R}^N)$ supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R}.$
+
+Using Lemma \ref{fifth asymptotics lemma}, we write
 $$W^{\ast}T\Delta^{-\frac12}W\in S(\Delta^{-\frac12}\otimes 1)+(\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N)\otimes\mathbb{C}^G),$$
 where
 $$S=\sum_{g,g'\in G}\sum_{k=1}^K\Big[(h_{k,g}\circ g')
 \big(\frac{\nabla}{\Delta^{\frac12}}\big)M_{(f_{k,g}\chi_{g'\Gamma})\circ g'}\Big]\otimes E_{g',g^{-1}g'}.$$
 Obviously, $S\in\Pi\otimes M_G(\mathbb{C})$ is compactly supported from the right. We have
 $$({\rm sym}\otimes{\rm id})(S)=\sum_{g,g'\in G}\sum_{k=1}^K\Big[((f_{k,g}\chi_{g'\Gamma})\circ g')\otimes(h_{k,g}\circ g')\Big]\otimes E_{g',g^{-1}g'}=$$
-$$\stackrel{L.\ref{phi bot lemma}}{=}\Phi(\sum_{g\in G}\sum_{k=1}^K(f_{k,g}\otimes h_{k,g}))\cdot((\chi_{\Gamma}\otimes1)1_{G}).$$
+$$\stackrel{L.\ref{phi bot lemma}}{=}\Phi(\sum_{g\in G}\sum_{k=1}^K(f_{k,g}\otimes h_{k,g}))\cdot(\chi_{\Gamma}\otimes1_{C(\mathbb{S}^{N-1})}\otimes 1_{M_G(\mathbb{C})}).$$
 Using Theorem \ref{matrix amplification asymptotics theorem} and Lemma \ref{bs separable lemma}, we conclude that
 $$\lim_{t\to\infty}t^{\frac1N}\mu(t,T\Delta^{-\frac12})=\lim_{t\to\infty}t^{\frac1N}\mu(t,W^{\ast}T\Delta^{-\frac12}W)=\lim_{t\to\infty}t^{\frac1N}\mu(t,S(\Delta^{-\frac12}\otimes 1))=$$
-$$=c_N\Big\|\Phi(\sum_{g\in G}\sum_{k=1}^K(f_{k,g}\otimes h_{k,g}))\cdot((\chi_{\Gamma}\otimes1)1_{G})\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}.$$
-
-Using Lemma \ref{phit g invariance lemma}, we write
-$$\Big\|\Phi(X)\cdot((\chi_{\Gamma}\otimes1)1_{G})\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}=$$
-$$=|G|^{\frac1N}\Big\|\Phi(X)\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}=$$
-$$=\|X\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta} G)}$$
-for every $X\in L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta} G).$
+$$=c_N\Big\|\Phi(\sum_{g\in G}\sum_{k=1}^K(f_{k,g}\otimes h_{k,g}))\cdot(\chi_{\Gamma}\otimes1_{C(\mathbb{S}^{N-1})}\otimes 1_{M_G(\mathbb{C})})\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}.$$
+For every $X\in L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta} G),$ we have
+$$\Big\|\Phi(X)\cdot(\chi_{\Gamma}\otimes1_{C(\mathbb{S}^{N-1})}\otimes 1_{M_G(\mathbb{C})})\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}=$$
+$$\stackrel{L.\ref{phit g invariance lemma}}{=}|G|^{-\frac1N}\Big\|\Phi(X)\Big\|_{L_N(L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1})\otimes M_G(\mathbb{C}))}=$$
+$$\stackrel{L.\ref{phi bot lemma}}{=}\|X\|_{L_N((L_{\infty}(\mathbb{R}^N)\bar{\otimes}L_{\infty}(\mathbb{S}^{N-1}))\rtimes_{\beta} G)}.$$
 This completes the proof for our special $T.$
 
-{\color{red} write an argument for a general $T.$}
+{\bf Step 2:} Consider now the general $T.$ There exists (see e.g. the proof of Theorem 3.5 in \cite{DAO3}) a sequence $T_K\to T$ in $\Pi\rtimes_{\alpha}G$ such that
+$$T_K=T_K'+\sum_{g\in G}\sum_{k=1}^Kh_{K,k,g}(\frac{\nabla}{\Delta^{\frac12}})M_{f_{K,k,g}}U_g,\quad 1\leq k\leq K.$$
+Here, $h_{K,k,g}\in C^{\infty}(\mathbb{S}^{N-1}),$ $f_{K,k,g}\in C^{\infty}_c(\mathbb{R}^N)$ are supported away from the hyperplanes $\{\{\langle x,v\rangle=0\}\}_{v\in R},$ $T_K'\in\mathcal{K}(L_2(\mathbb{R}^N))$ is compactly supported from the right. The assertion follows now from Step 1 and Lemmas \ref{bs separable lemma}, \ref{bs limit lemma}.
 \end{proof}
-
-
-
 
 \bibliographystyle{plain}
 \bibliography{references}
