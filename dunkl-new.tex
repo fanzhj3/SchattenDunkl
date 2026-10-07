@@ -621,7 +621,7 @@ $$\leq|\langle[V,M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.$$
 
 \begin{lemma}\label{standard} Let ${\bf w}\in A_p(\mathbb{R}^N)$ for $1<p<\infty.$ In the setting of Theorem \ref{abstract lower bound thm}, we have,
 $$\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
-$$\leq c_{K,{\bf w}}\|{\bf w}\|_{A_p(\mathbb{R}^N)}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
+$$\leq c_{K,{\bf w}}[{\bf w}]_{A_p(\mathbb{R}^N)}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
 \end{lemma}
 \begin{proof} Let $\{\xi_Q\}_{Q\in\mathbb{D}}$ and $\{\eta_Q\}_{Q\in\mathbb{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
 $$\Big\|\Big\{\langle [V,M_f]\xi_Q,\eta_Q \rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq $$
@@ -636,8 +636,8 @@ Taking the latter inequality to the power $p,$ we obtain
 $$\|f-c\|_{L_{\frac1p}(3Q)}\leq\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}\cdot (\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx)^{p-1}.$$ 
 Thus,
 $$\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
-$$\leq c_{K,{\bf w}}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\times\sup_{Q\in\mathbb{D}}\frac{m(Q)^p}{{\bf w}(Q)}(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx)^{p-1}.$$
-Replacing the supremum over $\mathbb{D}$ with (an obviously bigger) supremum over all cubes in $\mathbb{R}^N,$ we obtain exactly $\|{\bf w}\|_{A_p(\mathbb{R}^N)}.$ This completes the proof.
+$$\leq c_{K,{\bf w}}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\times\sup_{Q\in\mathbb{D}}\frac{{\bf w}(Q)}{m(Q)^p}(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx)^{p-1}.$$
+Replacing the supremum over $\mathbb{D}$ with (an obviously bigger) supremum over all cubes in $\mathbb{R}^N,$ we obtain exactly $[{\bf w}]_{A_p(\mathbb{R}^N)}$ (see Definition 7.1.3 in \cite{Grafakos-1}). This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{oscillation implied sobolev} Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ For every $p\in(1,\infty),$ we have
@@ -675,7 +675,7 @@ The second assertion follows now from \eqref{twosideinequ}.
 \end{proof}
 
 
-\begin{lemma}\label{ainfty w lemma} We have $w\in A_{\infty}(\mathbb{R}^N).$ 
+\begin{lemma}\label{ainfty w lemma} We have $w\in A_{\infty}(\mathbb{R}^N).$ Thus, $w\in A_p(\mathbb{R}^N)$ for some $1<p<\infty.$
 \end{lemma}
 \begin{proof} It follows from Lemma \ref{ainfty verification lemma}
 $$\sup_{x\in Q}w(x)\leq \frac{c_{\kappa}}{m(Q)}\int_Qw(x)dx$$
