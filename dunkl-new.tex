@@ -637,7 +637,7 @@ $$\|f-c\|_{L_{\frac1p}(3Q)}\leq\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}\cdot (\int_{3Q}{\b
 Thus,
 $$\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
 $$\leq c_{K,{\bf w}}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\times\sup_{Q\in\mathbb{D}}\frac{m(Q)^p}{{\bf w}(Q)}(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx)^{p-1}.$$
-The supremum on the right hand side is exactly $\|{\bf w}\|_{A_p(\mathbb{R}^N)}.$ This completes the proof.
+Replacing the supremum over $\mathbb{D}$ with (an obviously bigger) supremum over all cubes in $\mathbb{R}^N,$ we obtain exactly $\|{\bf w}\|_{A_p(\mathbb{R}^N)}.$ This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{oscillation implied sobolev} Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ For every $p\in(1,\infty),$ we have
@@ -659,60 +659,27 @@ $$K_{{\rm Dunkl},j}(x,y)\leq c_{\kappa}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x
 \begin{proof} The proof is identical to that in \cite[Theorem 1.2]{MR4733961}.
 \end{proof}
 
-%
-%\begin{lemma}\label{for reverse holder first lemma} Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). We have
-%$$\sup_{x\in Q}w(x)\leq \frac{c_{\kappa}}{m(Q)}\int_Qw(x)dx.$$
-%\end{lemma}
-%\begin{proof} If $x=c_Q+y,$ $y\in [-\frac12s(Q),\frac12s(Q)]^d,$ then
-%$$|\langle x,v\rangle|\leq |\langle c_Q,v\rangle|+r|\langle y,v\rangle|\leq |\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q).$$
-%Thus,
-%$$w(x)=\prod_{v\in R}|\langle x,v\rangle|^{\kappa(v)}\leq\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{\kappa(v)}.$$
-%In particular,
-%$$LHS\leq \prod_{v\in R}(|\langle c_Q,v\rangle|+\frac{\sqrt{d}}{2}s(Q))^{\kappa(v)}.$$
-%
-%Fix chamber $\Gamma$ such that $c_Q\in\Gamma.$ We have
-%$$\int_Qw(x)dx\geq\int_{c_Q+(B(0,\frac12s(Q))\cap\Gamma)}w(x)dx=\int_{B(0,\frac12s(Q))\cap\Gamma}w(c_Q+y)dy.$$
-%If $y\in\Gamma,$ then
-%$$|\langle c_Q+y,v\rangle|=|\langle c_Q,v\rangle|+|\langle y,v\rangle|,\quad v\in R.$$
-%Thus,
-%$$w(c_Q+y)=\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{\kappa(v)}.$$
-%Hence,
-%$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma}\prod_{v\in R}(|\langle c_Q,v\rangle|+|\langle y,v\rangle|)^{k(v)}dy.$$
-%Fix a closed cone $\Gamma'\subset\Gamma$ such that (i) interior of $\Gamma'$ is non-empty and (ii) $\partial\Gamma\cap\partial\Gamma'=\{0\}.$ We have
-%$$|\langle y,v\rangle|\geq c_{\Gamma'}|y|,\quad y\in\Gamma',\quad v\in R.$$
-%We, therefore, have
-%$$\int_Qw(x)dx\geq\int_{B(0,\frac12s(Q))\cap\Gamma'}\prod_{v\in R}(|\langle c_Q,v\rangle|+c_{\Gamma'}|y|)^{\kappa(v)}dy\geq$$
-%$$\geq \int_{\substack{y\in\Gamma'\\ \frac14s(Q)\leq|y|\leq \frac14s(Q)}}\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac12c_{\Gamma'}s(Q))^{\kappa(v)}dy=$$
-%$$=s(Q)^N\prod_{v\in R}(|\langle c_Q,v\rangle|+\frac14c_{\Gamma'}s(Q))^{\kappa(v)}\times (2^{-N}-4^{-N})\int_{\substack{y\in\Gamma'\\ |y|\leq1}}dy.$$
-%Combining this with the preceding paragraph, we complete the proof.
-%\end{proof}
-
-\begin{lemma}\label{ainfty w lemma} Suppose $1<t<1+\frac1{|R|\cdot\max_{v\in R}\kappa(v)}.$ Let $Q$ be a cube in $\mathbb{R}^N$ (with sides parallel to coordinate hyperplanes). We have
-$$\Big(\frac{\int_Qw^{1-t}(x)dx}{\int_Qw(x)dx}\Big)^{\frac1t}\leq c_{t,\kappa} \frac{m(Q)}{\int_Qw(x)dx}.$$
+\begin{lemma}\label{ainfty verification lemma} Let $Q$ be a cube in $\mathbb{R}^N.$ We have
+$$\sup_{x\in Q}w(x)\leq N^{\sum_{v\in R}\kappa(v)}\cdot\prod_{v\in R}(|\langle c_Q,v\rangle|+\ell(Q))^{\kappa(v)},$$
+$$\frac{w(Q)}{m(Q)}\geq c_{\kappa}\prod_{v\in R}(|\langle c_Q,v\rangle|+\ell(Q))^{\kappa(v)}.$$
 \end{lemma}
-\begin{proof} If $v\in R$ is such that
-$$\sqrt{d}s(Q)\leq |\langle c_Q,v\rangle|,$$
-then
-$$|\langle x,v\rangle|\geq |\langle c_Q,v\rangle|-|\langle x-c_Q,v\rangle|\geq |\langle c_Q,v\rangle|-\frac{\sqrt{d}}{2}s(Q)\geq \frac12|\langle c_Q,v\rangle|,\quad x\in Q.$$
-In this case,
-$$\int_Q|\langle x,v\rangle|^{(1-t)|R|\kappa(v)}dx\leq 2^{(t-1)|R|\kappa(v)}|\langle c_Q,v\rangle|^{(1-t)|R|\kappa(v)}\cdot\int_Qdx=$$
-$$=2^{(t-1)|R|\kappa(v)}|\langle x_0,v\rangle|^{(1-t)|R|\kappa(v)}\cdot s(Q)^N.$$
+\begin{proof} If $x\in Q,$ then $x=c_Q+y,$ $|y|\leq N\ell(Q).$ Thus,
+$$|\langle x,v\rangle|\leq|\langle c_Q,v\rangle|+|\langle y,v\rangle|\leq |\langle c_Q,v\rangle|+N\ell(Q).$$
+Thus,
+$$w(x)=\prod_{v\in R}|\langle x,v\rangle|^{\kappa(v)}\leq\prod_{v\in R}(|\langle c_Q,v\rangle|+N\ell(Q))^{\kappa(v)}.$$
+This immediately yields first the assertion.
 
-If $v\in R$ is such that
-$$|\langle c_Q,v\rangle|\leq \sqrt{d}s(Q),$$
-then let $y_0=\langle c_Q,v\rangle$ and $z_0=c_Q-y_0v.$ Let us introduce new variables $y=\langle x,v\rangle$ and $z=x-yv$ (it varies in the plane orthogonal to $v$). We write
-$$\int_Q|\langle x,v\rangle|^{(1-t)|R|\kappa(v)}dx\leq\int_{|x-c_Q|\leq\frac{\sqrt{d}}{2}s(Q)}|\langle x,v\rangle|^{(1-t)|R|\kappa(v)}dx\leq$$
-$$\leq \int_{|y-y_0|,|z-z_0|\leq \frac{\sqrt{d}}{2}r}|y|^{(1-t)|R|\kappa(v)}dydz=$$
-$$=(\frac{\sqrt{d}}{2}s(Q))^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y-y_0|\leq \frac{\sqrt{d}}{2}s(Q)}|y|^{(1-t)|R|\kappa(v)}dy\leq$$
-$$=(\frac{\sqrt{d}}{2}s(Q))^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq \frac{3\sqrt{d}}{2}s(Q)}|y|^{(1-t)|R|\kappa(v)}dy=$$
-$$=s(Q)^{N+(1-t)|R|\kappa(v)}\cdot (\frac{\sqrt{d}}{2})^{N-1}{\rm Vol}(\mathbb{B}^{N-1})\cdot\int_{|y|\leq \frac{3\sqrt{d}}{2}}|y|^{(1-t)|R|\kappa(v)}dy.$$
+We have $B(c_Q,\frac12\ell(Q))\subset Q.$ Thus,
+$$\frac{w(Q)}{m(Q)}\geq\frac{w(B(c_Q,\frac12\ell(Q)))}{m(Q)}=c_N\frac{w(B(c_Q,\frac12\ell(Q)))}{m(B(c_Q,\frac12\ell(Q)))}.$$
+The second assertion follows now from \eqref{twosideinequ}.
+\end{proof}
 
-Combining the estimates in the preceding paragraphs, we write
-$$\int_Q|\langle x,v\rangle|^{(1-t)|R|\kappa(v)}dx\leq c_1s(Q)^N\big(\max\{|\langle c_Q,v\rangle|,r\}\big)^{(1-t)|R|\kappa(v)}.$$
-By H\"older inequality,
-$$\int_Qw^{1-t}(x)dx\leq \prod_{v\in R}\Big(\int_Q|\langle x,v\rangle|^{(1-t)|R|\kappa(v)}dx\Big)^{\frac1{|R|}}\leq$$
-$$\leq c_2s(Q)^N\prod_{v\in R}\big(\max\{|\langle c_Q,v\rangle|,s(Q)\}\big)^{(1-t)\kappa(v)}.$$
-The assertion follows easily.
+
+\begin{lemma}\label{ainfty w lemma} We have $w\in A_{\infty}(\mathbb{R}^N).$ 
+\end{lemma}
+\begin{proof} It follows from Lemma \ref{ainfty verification lemma}
+$$\sup_{x\in Q}w(x)\leq \frac{c_{\kappa}}{m(Q)}\int_Qw(x)dx$$
+holds for every cube in $\mathbb{R}^N.$ The assertion follows from Theorem 7.3.3 (c) in \cite{Grafakos-1}.
 \end{proof}
 
 
