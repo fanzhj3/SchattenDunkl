@@ -121,9 +121,8 @@ The following assertion can be found in e.g. Theorem 2 on p.166 in \cite{Bourbak
 \end{theorem}
 
 
-
-
-\subsection{System of dyadic cubes}
+\subsection{Nearly weakly  orthonormal sequences}
+Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).
 
 \begin{nota}\label{standardsystem}
 Let
@@ -134,9 +133,6 @@ $$\frac{m}{2^k}+[0,2^{-k})^N,\quad m\in\mathbb{Z}^N.$$
 For every dyadic cube $Q\in\mathbb{D}$, we denote by $c_Q$ and $\ell(Q)$ its center and side-length, respectively.
 \end{nota}
 
-
-\subsection{Nearly weakly  orthonormal sequences}
-Rochberg and Semmes \cite{RS} introduced the notion of \emph{nearly weakly  orthonormal (NWO)} sequences of functions. This notion has since proved highly effective in characterizing Schatten class membership of  singular integral commutators in a variety of contexts (see \cite{HKarxiv,MR4756021,MR4552581,MR4873796,LLW,RS,Zhangwei1,Zhangwei2}). The properties of NWO sequences were originally investigated in the Euclidean setting (equipped with Lebesgue measure), but the extension to spaces of homogeneous type is straightforward once a system of dyadic cubes is available in this general framework (see \cite[Section 13]{HKarxiv} for a complete proof).
 
 {\color{red} Definition \ref{NWO def} and Lemma \ref{NWO lemma} as stated below are my understanding of Hytonen's Corollary 8.2 and Lemma 8.7. Please check whether this understanding is the correct one!}
 
@@ -157,7 +153,7 @@ $$\leq C_{{\bf w},r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D})}\Big(\{
 \begin{proof} The assertion follows from Corollary 8.2 and Lemma 8.7 in \cite{HKarxiv}.
 \end{proof}
 
-\begin{lemma}\label{NWO lower estimate} Let $w\in A_2(\mathbb{R}^N).$ Let $1<p<\infty.$ {\color{red} Should we also ask that our metric-measure space is of homogeneous type?}  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
+\begin{lemma}\label{NWO lower estimate} Let ${\bf w}\in A_2(\mathbb{R}^N).$ Let $1<p<\infty.$ {\color{red} Should we also ask that our metric-measure space is of homogeneous type?}  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
 $$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
 where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 $$\Big\|\Big\{\langle A e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{p,q}(\mathbb{D})}\leq c_{{\bf w},r_1,c_1,r_2,c_2,p,q}\|A\|_{\mathcal{L}_{p,q}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
