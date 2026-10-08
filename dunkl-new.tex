@@ -134,16 +134,16 @@ For every dyadic cube $Q\in\mathbb{D}$, we denote by $c_Q$ and $\ell(Q)$ its cen
 \end{nota}
 
 
-{\color{red} Definition \ref{NWO def} and Lemma \ref{NWO lemma} as stated below are my understanding of Hytonen's Corollary 8.2 and Lemma 8.7. Please check whether this understanding is the correct one!}
+{\color{red} Definition \ref{NWO def} and Lemma \ref{NWO lemma} are stated as my understanding of Hytonen's Section 7. Hytonen DOES NOT STATE HIS ASSUMPTIONS ON MEASURE!!!!}
 
-\begin{definition}\label{NWO def} Let ${\bf w}\in A_2(\mathbb{R}^N).$ Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_Q\}_{Q\in\mathbb{D}}$ is called $(r,c)$-NWO if
+\begin{definition}\label{NWO def} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_Q\}_{Q\in\mathbb{D}}$ is called $(r,c)$-NWO if
 \begin{enumerate}[{\rm (i)}]
 \item ${\rm supp}(e_Q)\subseteq cQ$ for every $Q\in\mathbb{D};$ 
 \item $\|e_Q\|_{L_r(\mathbb{R}^N,{\bf w}(x)dx)}\leq {\bf w}(Q)^{\frac1r-\frac12}$ for every $Q\in\mathbb{D};$
 \end{enumerate}
 \end{definition}
 
-\begin{lemma}\label{NWO lemma} Let ${\bf w}\in A_2(\mathbb{R}^N).$ Let $0<p<\infty.$ {\color{red} Should we also ask that our metric-measure space is of homogeneous type?}  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
+\begin{lemma}\label{NWO lemma} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $0<p<\infty.$  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
 $$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
 where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 $$\|A\|_{\mathcal{L}_{p,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\leq C_{w,r_1,c_1,r_2,c_2,p} \|\{\lambda_Q\}_{Q\in\mathbb{D}}\|_{p,\infty},$$
@@ -153,7 +153,7 @@ $$\leq C_{{\bf w},r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D})}\Big(\{
 \begin{proof} The assertion follows from Corollary 8.2 and Lemma 8.7 in \cite{HKarxiv}.
 \end{proof}
 
-\begin{lemma}\label{NWO lower estimate} Let ${\bf w}\in A_2(\mathbb{R}^N).$ Let $1<p<\infty.$ {\color{red} Should we also ask that our metric-measure space is of homogeneous type?}  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
+\begin{lemma}\label{NWO lower estimate} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $1<p<\infty.$ Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel 
 $$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
 where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 $$\Big\|\Big\{\langle A e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{p,q}(\mathbb{D})}\leq c_{{\bf w},r_1,c_1,r_2,c_2,p,q}\|A\|_{\mathcal{L}_{p,q}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
@@ -266,9 +266,9 @@ This completes the proof.
 
 \section{Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{RS-type theorem} Let $N\geq 3,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let ${\bf w}\in A_2(\Omega)$ be such that
+\begin{theorem}\label{RS-type theorem} Let $N\geq 3,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} and be such that
 $$\sup_{x\in Q}{\bf w}(x)\leq c_{{\bf w}}\frac{{\bf w}(Q)}{m(Q)},\quad Q\in\mathbb{D},\quad Q\subset\Omega.$$
-{\color{red} Should we also ask that our metric-measure space is of homogeneous type?} Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
+Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
 $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{{\bf w}(B(x,|x-y|))},\quad x,y\in\Omega,\quad \alpha,\beta\in\mathbb{Z}^N_+.$$
 Let $V$ be an integral operator on $L_2(\Omega,{\bf w}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
