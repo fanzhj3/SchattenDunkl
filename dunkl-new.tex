@@ -831,61 +831,311 @@ Let ${\bf w}\in A_{\infty}$ and let $V$ be an integral operator on $L_2(\mathbb{
 $$\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)}\leq c_{K,{\bf w}}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(\mathbb{R}^N,{\bf w}(x)dx)}.$$
 \end{theorem}
 
-\begin{lemma}\label{improved zhijie lemma} Let $V$ be as in the assumptions of Theorem \ref{abstract lower bound thm}. Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that the commutator $[V,M_f]$ is bounded on $L_2(\mathbb{R}^N,{\bf w}(x)dx).$ For every $Q\in\mathbb{D},$ there exist $\xi_Q$ and $\eta_Q$ supported in $7Q$ such that $$\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}\leq m(Q)^{-\frac12},$$
-$$\frac1{{\bf w}(Q)}\min_{c\in\mathbb{R}}\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}\leq c_{K,{\bf w}}|\langle[V,M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.$$
+\begin{lemma}\label{improved zhijie lemma}
+Let $V$ be as in the assumptions of Theorem \ref{abstract lower bound thm}.
+Let real-valued $f\in L_1^{{\rm loc}}(\mathbb{R}^N)$ be such that
+the commutator $[V,M_f]$ is bounded on
+$L_2(\mathbb{R}^N,{\bf w}(x)dx).$
+For every $Q\in\mathbb{D},$ there exist $\xi_Q$ and $\eta_Q$
+supported in $7Q$ such that
+$$
+\|\xi_Q\|_{\infty},\|\eta_Q\|_{\infty}
+\leq {\color{red}{\bf w}(Q)^{-\frac12}},
+$$
+$$
+\frac1{{\bf w}(Q)}
+\min_{c\in\mathbb{R}}
+\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}
+\leq
+c_{K,{\bf w}}
+|\langle[V,M_f]\xi_Q,\eta_Q\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.
+$$
 \end{lemma}
-\begin{proof} It follows from the assumptions on $K$ that
-$$K(x,y)\geq \frac{c_{K,{\bf w}}}{{\bf w}(Q)},\quad x\in 3Q,\quad y\in Q+3s(Q)e_j,\quad Q\in\mathbb{D}.$$
+
+\begin{proof}
+It follows from the assumptions on $K$
+{\color{red}and the doubling property of ${\bf w}$} that
+$$
+K(x,y)\geq
+\frac{c_{K,{\bf w}}}{{\bf w}(Q)},
+\quad x\in 3Q,\quad
+y\in Q+3{\color{red}\ell(Q)}e_j,
+\quad Q\in\mathbb{D}.
+$$
 Here, $c_{K,{\bf w}}$ is some strictly positive constant.
 
-Let $\alpha$ be the median of $f$ on $3Q$ and $\beta$ be the median of $f$ on $Q+3s(Q)e_j.$ Assume for definiteness $\alpha\geq\beta.$ Set
-$$A_1=\{x\in 3Q:\ f(x)\geq\alpha\},\quad B_1=\{x\in Q+3s(Q)e_j:\ f(x)\leq\beta\},$$
-$$A_2=\{x\in 3Q:\ f(x)\leq\beta\},\quad B_2=\{x\in Q+3s(Q)e_j:\ f(x)\geq\beta\},$$
-$$\xi_{Q,k}={\bf w}(Q)^{-\frac12}\chi_{A_k},\quad \eta_{Q,k}={\bf w}(Q)^{-\frac12}\chi_{B_k},\quad k=1,2.$$
+Let $\alpha$ be the
+{\color{red}${\bf w}(x)dx$-median}
+of $f$ on $3Q$ and $\beta$ be the
+{\color{red}${\bf w}(x)dx$-median}
+of $f$ on $Q+3{\color{red}\ell(Q)}e_j.$
+Assume for definiteness $\alpha\geq\beta$
+{\color{red}(otherwise, replace $f$ by $-f$).}
+Set
+$$
+A_1=\{x\in 3Q:\ f(x)\geq\alpha\},
+\quad
+B_1=\{x\in Q+3{\color{red}\ell(Q)}e_j:
+\ f(x)\leq\beta\},
+$$
+$$
+A_2=\{x\in 3Q:\ f(x)\leq\beta\},
+\quad
+B_2=\{x\in Q+3{\color{red}\ell(Q)}e_j:
+\ f(x)\geq\beta\},
+$$
+$$
+\xi_{Q,k}={\bf w}(Q)^{-\frac12}
+\chi_{{\color{red}B_k}},
+\quad
+\eta_{Q,k}={\bf w}(Q)^{-\frac12}
+\chi_{{\color{red}A_k}},
+\quad k=1,2.
+$$
 
 We have
-$$\langle [V,M_f]\xi_{Q,k},\eta_{Q,k}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}=$$
-$$=\frac1{{\bf w}(Q)}\int_{B_k\times A_k}K(x,y)(f(y)-f(x)){\bf w}(x){\bf w}(y)dxdy.$$
+$$
+\langle[V,M_f]\xi_{Q,k},\eta_{Q,k}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}
+=
+$$
+$$
+=
+\frac1{{\bf w}(Q)}
+\int_{{\color{red}A_k\times B_k}}
+K(x,y)(f(y)-f(x))
+{\bf w}(x){\bf w}(y)dxdy.
+$$
 
-If $x\in B_1$ and $y\in A_1,$ then
-$$f(y)-f(x)=(f(y)-\alpha)+(\alpha-\beta)+(\beta-f(x))=$$
-$$=|f(y)-\alpha|+|\alpha-\beta|+|f(x)-\beta|\geq |f(y)-\alpha|+|\alpha-\beta|\geq0.$$
-If $x\in B_2$ and $y\in A_2,$ then
-$$f(y)-f(x)=(f(y)-\beta)+(\beta-f(x))=$$
-$$=-|f(y)-\beta|-|f(x)-\beta|\leq -|f(y)-\beta|\leq 0.$$
+If {\color{red}$x\in A_1$ and $y\in B_1$,}
+then
+$$
+{\color{red}
+f(x)-f(y)
+=(f(x)-\alpha)+(\alpha-\beta)+(\beta-f(y))
+}
+$$
+$$
+{\color{red}
+=|f(x)-\alpha|+|\alpha-\beta|+|f(y)-\beta|
+\geq |f(x)-\alpha|+|\alpha-\beta|
+\geq0.
+}
+$$
+If {\color{red}$x\in A_2$ and $y\in B_2$,}
+then
+$$
+{\color{red}
+f(y)-f(x)
+=(f(y)-\beta)+(\beta-f(x))
+}
+$$
+$$
+{\color{red}
+=|f(y)-\beta|+|f(x)-\beta|
+\geq |f(x)-\beta|
+\geq0.
+}
+$$
+
+{\color{red}
+Since ${\bf w}\in A_{\infty}$, the weight ${\bf w}$
+is doubling. By the definition of weighted medians,
+$$
+{\bf w}(A_1)
+\geq\frac12{\bf w}(3Q)
+\geq\frac12{\bf w}(Q)
+$$
+and
+$$
+{\bf w}(B_k)
+\geq\frac12{\bf w}(Q+3\ell(Q)e_j)
+\geq c_{\bf w}{\bf w}(Q),
+\quad k=1,2.
+$$
+}
 
 Thus,
-$$\langle[V,M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\geq $$
-$$\geq \frac1{{\bf w}(Q)}\int_{B_1\times A_1}K(x,y)\big(|f(y)-\alpha|+|\alpha-\beta|\big){\bf w}(x){\bf w}(y)dxdy\geq $$
-$$\geq\frac{c_{K,{\bf w}}}{{\bf w}^2(Q)}\int_{B_1\times A_1}\big(|f(y)-\alpha|+|\alpha-\beta|\big){\bf w}(x){\bf w}(y)dxdy=$$
-$$=\frac{c_{K,{\bf w}}{\bf w}(B_1)}{{\bf w}^2(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy+|\alpha-\beta|{\bf w}(A_1)\Big)\geq $$
-$$=\frac{c_{K,{\bf w}}}{2{\bf w}(Q)}\cdot\Big(\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy+|\alpha-\beta|\cdot \frac12{\bf w}(Q)\Big)$$
+$$
+{\color{red}-}
+\langle[V,M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}
+\geq
+$$
+$$
+\geq
+\frac1{{\bf w}(Q)}
+\int_{{\color{red}A_1\times B_1}}
+K(x,y)
+\big(
+|f({\color{red}x})-\alpha|
++|\alpha-\beta|
+\big)
+{\bf w}(x){\bf w}(y)dxdy
+\geq
+$$
+$$
+\geq
+\frac{c_{K,{\bf w}}}{{\bf w}^2(Q)}
+\int_{{\color{red}A_1\times B_1}}
+\big(
+|f({\color{red}x})-\alpha|
++|\alpha-\beta|
+\big)
+{\bf w}(x){\bf w}(y)dxdy
+=
+$$
+$$
+=
+\frac{c_{K,{\bf w}}{\bf w}(B_1)}
+{{\bf w}^2(Q)}
+\cdot
+\Big(
+\int_{A_1}|f({\color{red}x})-\alpha|
+{\bf w}(x)dx
++
+|\alpha-\beta|{\bf w}(A_1)
+\Big)
+\geq
+$$
+$$
+{\color{red}
+\geq
+\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}
+\cdot
+\Big(
+\int_{A_1}|f(x)-\alpha|{\bf w}(x)dx
++
+|\alpha-\beta|{\bf w}(Q)
+\Big)
+}
+$$
 and
-$$-\langle[V,M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\geq $$
-$$\geq \frac1{{\bf w}(Q)}\int_{B_2\times A_2}K(x,y)|f(y)-\beta|{\bf w}(x){\bf w}(y)dxdy\geq $$
-$$\geq\frac{c_{K,{\bf w}}}{{\bf w}^2(Q)}\int_{B_2\times A_2}|f(y)-\beta|{\bf w}(x){\bf w}(y)dxdy=$$
-$$=\frac{c_{K,{\bf w}}{\bf w}(B_2)}{{\bf w}^2(Q)}\cdot\int_{A_2}|f(y)-\beta|{\bf w}(y)dy\geq $$
-$$\geq\frac{c_{K,{\bf w}}}{2{\bf w}(Q)}\int_{A_2}|f(y)-\beta|{\bf w}(y)dy.$$
+$$
+{\color{red}
+\langle[V,M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}
+}
+\geq
+$$
+$$
+\geq
+\frac1{{\bf w}(Q)}
+\int_{{\color{red}A_2\times B_2}}
+K(x,y)|f({\color{red}x})-\beta|
+{\bf w}(x){\bf w}(y)dxdy
+\geq
+$$
+$$
+\geq
+\frac{c_{K,{\bf w}}}{{\bf w}^2(Q)}
+\int_{{\color{red}A_2\times B_2}}
+|f({\color{red}x})-\beta|
+{\bf w}(x){\bf w}(y)dxdy
+=
+$$
+$$
+=
+\frac{c_{K,{\bf w}}{\bf w}(B_2)}
+{{\bf w}^2(Q)}
+\cdot
+\int_{A_2}|f({\color{red}x})-\beta|
+{\bf w}(x)dx
+\geq
+$$
+$$
+{\color{red}
+\geq
+\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}
+\int_{A_2}|f(x)-\beta|{\bf w}(x)dx.
+}
+$$
 
 It remains to note that
-$$\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}=\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy+$$
-$$+\int_{A_2}|f(y)-\alpha|{\bf w}(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|f(y)-\alpha|{\bf w}(y)dy\leq$$
-$$\leq\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy+\int_{A_2}|f(y)-\beta|{\bf w}(y)dy$$
-$$+\int_{A_2}|\alpha-\beta|{\bf w}(y)dy+\int_{3Q\backslash(A_1\cup A_2)}|\alpha-\beta|{\bf w}(y)dy\leq$$
-$$\leq\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy+\int_{A_2}|f(y)-\beta|{\bf w}(y)dy+|\alpha-\beta|{\bf w}(3Q).$$
+$$
+\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}
+=
+\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy
++
+$$
+$$
++
+\int_{A_2}|f(y)-\alpha|{\bf w}(y)dy
++
+\int_{3Q\backslash(A_1\cup A_2)}
+|f(y)-\alpha|{\bf w}(y)dy
+\leq
+$$
+$$
+\leq
+\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy
++
+\int_{A_2}|f(y)-\beta|{\bf w}(y)dy
+$$
+$$
++
+\int_{A_2}|\alpha-\beta|{\bf w}(y)dy
++
+\int_{3Q\backslash(A_1\cup A_2)}
+|\alpha-\beta|{\bf w}(y)dy
+\leq
+$$
+$$
+\leq
+\int_{A_1}|f(y)-\alpha|{\bf w}(y)dy
++
+\int_{A_2}|f(y)-\beta|{\bf w}(y)dy
++
+|\alpha-\beta|{\bf w}(3Q).
+$$
+
+{\color{red}
+Since ${\bf w}$ is doubling, we have
+${\bf w}(3Q)\leq c_{\bf w}{\bf w}(Q)$.
+}
 Combining the last $3$ inequalities, we conclude
-$$\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}\leq\max_{k=1,2}|\langle[V,M_f]\xi_{Q,k},\eta_{Q,k}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.$$
+$$
+\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}
+\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}
+\leq
+\max_{k=1,2}
+|\langle[V,M_f]\xi_{Q,k},\eta_{Q,k}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.
+$$
 
 If
-$$|\langle[V,M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|\geq |\langle[V,M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|,$$
-then we set $\xi_Q=\xi_{Q,1}$ and $\eta=\eta_{Q,1}.$ Otherwise, set $\xi_Q=\xi_{Q,2}$ and $\eta_Q=\eta_{Q,2}.$ Thus,
-$$\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}\min_{c\in\mathbb{R}}\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}\leq\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}\leq$$
-$$\leq|\langle[V,M_f]\xi_Q,\eta_Q\rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.$$
+$$
+|\langle[V,M_f]\xi_{Q,1},\eta_{Q,1}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}|
+\geq
+|\langle[V,M_f]\xi_{Q,2},\eta_{Q,2}\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}|,
+$$
+then we set $\xi_Q=\xi_{Q,1}$ and
+$\eta{\color{red}{}_Q}=\eta_{Q,1}.$
+Otherwise, set $\xi_Q=\xi_{Q,2}$
+and $\eta_Q=\eta_{Q,2}.$
+Thus,
+$$
+\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}
+\min_{c\in\mathbb{R}}
+\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}
+\leq
+\frac{c_{K,{\bf w}}'}{{\bf w}(Q)}
+\|f-\alpha\|_{L_1(3Q,{\bf w}(x)dx)}
+\leq
+$$
+$$
+\leq
+|\langle[V,M_f]\xi_Q,\eta_Q\rangle_{
+L_2(\mathbb{R}^N,{\bf w}(x)dx)}|.
+$$
 \end{proof}
 
 \begin{lemma}\label{standard} Let ${\bf w}\in A_p(\mathbb{R}^N)$ for $1<p<\infty.$ In the setting of Theorem \ref{abstract lower bound thm}, we have,
 $$\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
-$$\leq c_{K,{\bf w}}[{\bf w}]_{A_p(\mathbb{R}^N)}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
+$$\leq c_{K,{\bf w}{\color{red},p}}[{\bf w}]_{A_p(\mathbb{R}^N)}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
 \end{lemma}
 \begin{proof} Let $\{\xi_Q\}_{Q\in\mathbb{D}}$ and $\{\eta_Q\}_{Q\in\mathbb{D}}$ be functions constructed in Lemma \ref{improved zhijie lemma}. By Lemma \ref{NWO lower estimate},
 $$\Big\|\Big\{\langle [V,M_f]\xi_Q,\eta_Q \rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq $$
@@ -901,12 +1151,40 @@ $$\|f-c\|_{L_{\frac1p}(3Q)}\leq\|f-c\|_{L_1(3Q,{\bf w}(x)dx)}\cdot (\int_{3Q}{\b
 Thus,
 $$\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}\leq$$
 $$\leq c_{K,{\bf w}}\|[V,M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\times\sup_{Q\in\mathbb{D}}\frac{{\bf w}(Q)}{m(Q)^p}(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx)^{p-1}.$$
-Replacing the supremum over $\mathbb{D}$ with (an obviously bigger) supremum over all cubes in $\mathbb{R}^N,$ we obtain exactly $[{\bf w}]_{A_p(\mathbb{R}^N)}$ (see Definition 7.1.3 in \cite{Grafakos-1}). This completes the proof.
+{\color{red}
+Since ${\bf w}(Q)\leq{\bf w}(3Q)$ and $m(3Q)=3^Nm(Q),$ we have
+$$
+\sup_{Q\in\mathbb{D}}\frac{{\bf w}(Q)}{m(Q)^p}
+\Big(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx\Big)^{p-1}
+\leq
+$$
+$$
+\leq 3^{Np}
+\sup_{Q\in\mathbb{D}}\frac{{\bf w}(3Q)}{m(3Q)^p}
+\Big(\int_{3Q}{\bf w}^{-\frac1{p-1}}(x)dx\Big)^{p-1}
+\leq 3^{Np}[{\bf w}]_{A_p(\mathbb{R}^N)},
+$$
+}
+where we used Definition 7.1.3 in \cite{Grafakos-1}. This completes the proof.
 \end{proof}
 
-\begin{lemma}\label{oscillation implied sobolev} Let $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$ For every $p\in(1,\infty),$ we have
-$$\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)}\leq c_{p,N}\Big\|\Big\{\frac1{m(Q)^p}\min_{c\in\mathbb{R}}\|f-c\|_{L_{\frac1p}(3Q)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{N,\infty}(\mathbb{D})}.$$
+{\color{red}
+\begin{lemma}\label{oscillation implied sobolev}
+Let $N\geq2$ and $f\in L_1^{{\rm loc}}(\mathbb{R}^N).$
+For every $p\in(1,\infty),$ we have
+$$
+\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)}
+\leq c_{p,N}
+\Big\|
+\Big\{
+\frac1{m(Q)^p}
+\min_{c\in\mathbb{R}}
+\|f-c\|_{L_{\frac1p}(3Q)}
+\Big\}_{Q\in\mathbb{D}}
+\Big\|_{l_{N,\infty}(\mathbb{D})}.
+$$
 \end{lemma}
+}
 \begin{proof} {\color{red} supply reference!}
 \end{proof}
 
@@ -914,12 +1192,26 @@ $$\|f\|_{\dot{W}^{1,N}(\mathbb{R}^N)}\leq c_{p,N}\Big\|\Big\{\frac1{m(Q)^p}\min_
 \end{proof}
 
 \subsection{Proof of Theorem \ref{main theorem} \eqref{mtb}}
-
-\begin{lemma}\label{nondegenerate} Let $1\leq j\leq N.$ If $x_j\geq y_j,$ then
-$$K_{{\rm Dunkl},j}(x,y)\geq c_{\kappa}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+{\color{red}[Check the definition of Riesz transform and the sign in the below lemma]
+\begin{lemma}\label{nondegenerate}
+Let $1\leq j\leq N.$
+{\color{red}For every $x,y\in\mathbb{R}^N$ with $d(x,y)>0$,}
+if $x_j\geq y_j,$ then
+$$
+K_{{\rm Dunkl},j}(x,y)
+{\color{red}\leq}
+c_{\kappa}\frac{{\color{red}y_j-x_j}}{|x-y|}
+\cdot\frac1{w(B(x,|x-y|))}.
+$$
 If $x_j\leq y_j,$ then
-$$K_{{\rm Dunkl},j}(x,y)\leq c_{\kappa}\frac{x_j-y_j}{|x-y|}\cdot\frac1{w(B(x,|x-y|))}.$$
+$$
+K_{{\rm Dunkl},j}(x,y)
+{\color{red}\geq}
+c_{\kappa}\frac{{\color{red}y_j-x_j}}{|x-y|}
+\cdot\frac1{w(B(x,|x-y|))}.
+$$
 \end{lemma}
+}
 \begin{proof} The proof is identical to that in \cite[Theorem 1.2]{MR4733961}.
 \end{proof}
 
@@ -947,10 +1239,10 @@ holds for every cube in $\mathbb{R}^N.$ The assertion follows from Theorem 7.3.3
 \end{proof}
 
 
-\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtb}] Since $R_{{\rm Dunkl},j}$ is self-adjoint on $L_2(\mathbb{R}^N,w(x)dx),$ it follows that
-$$[R_{{\rm Dunkl},j},M_f]^{\ast}=-[R_{{\rm Dunkl},j},M_{\bar{f}}].$$
+\begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mtb}] Since $R_{{\rm Dunkl},j}$ is {\color{red}skew-adjoint} on $L_2(\mathbb{R}^N,w(x)dx),$ it follows that
+$$[R_{{\rm Dunkl},j},M_f]^{\ast}={\color{red}[R_{{\rm Dunkl},j},M_{\bar{f}}]}.$$
 Thus,
-$$[R_{{\rm Dunkl},j},M_{\Re(f)}],[R_{{\rm Dunkl},j},M_{\Re(f)}]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
+$$[R_{{\rm Dunkl},j},M_{\Re(f)}],[R_{{\rm Dunkl},j},M_{{\color{red}\Im(f)}}]\in\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
 Hence, we may assume without loss of generality that $f$ is real-valued. It follows from Lemmas \ref{nondegenerate} and \ref{ainfty w lemma} that the assumptions in Theorem \ref{abstract lower bound thm} are satisfied for $V=R_{{\rm Dunkl},j}$ and ${\bf w}=w.$ The assertion follows now from Theorem \ref{abstract lower bound thm}.
 \end{proof}
 
