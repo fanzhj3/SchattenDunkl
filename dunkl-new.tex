@@ -136,14 +136,14 @@ For every dyadic cube $Q\in\mathbb{D}$, we denote by $c_Q$ and $\ell(Q)$ its cen
 
 {\color{red} Definition \ref{NWO def} and Lemma \ref{NWO lemma} are stated as my understanding of Hytonen's Section 7. Hytonen DOES NOT STATE HIS ASSUMPTIONS ON MEASURE!!!!}
 
-\begin{definition}\label{NWO def} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_Q\}_{Q\in\mathbb{D}}$ is called $(r,c)$-NWO if
+\begin{definition}\label{NWO def} Let measure ${\bf w}(x)dx$ be doubling. Let $c>0$ and $2<r\leq\infty.$ A sequence of functions $\{e_Q\}_{Q\in\mathbb{D}}$ is called $(r,c)$-NWO if
 \begin{enumerate}[{\rm (i)}]
 \item ${\rm supp}(e_Q)\subseteq cQ$ for every $Q\in\mathbb{D};$
 \item $\|e_Q\|_{L_r(\mathbb{R}^N,{\bf w}(x)dx)}\leq {\bf w}(Q)^{\frac1r-\frac12}$ for every $Q\in\mathbb{D};$
 \end{enumerate}
 \end{definition}
 
-\begin{lemma}\label{NWO lemma} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $0<p<\infty.$  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel
+\begin{lemma}\label{NWO lemma} Let measure ${\bf w}(x)dx$ be doubling. Let $0<p<\infty.$  Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel
 $$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
 where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 $$\|A\|_{\mathcal{L}_{p,\infty}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}\leq C_{w,r_1,c_1,r_2,c_2,p} \|\{\lambda_Q\}_{Q\in\mathbb{D}}\|_{p,\infty},$$
@@ -153,7 +153,7 @@ $$\leq C_{{\bf w},r_1,c_1,r_2,c_2,p}{\rm dist}_{l_{p,\infty}(\mathbb{D})}\Big(\{
 \begin{proof} The assertion follows from Corollary 8.2 and Lemma 8.7 in \cite{HKarxiv}.
 \end{proof}
 
-\begin{lemma}\label{NWO lower estimate} Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} Let $1<p<\infty.$ Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel
+\begin{lemma}\label{NWO lower estimate} Let measure ${\bf w}(x)dx$ be doubling. Let $1<p<\infty.$ Suppose that $A$ is an integral operator on $L_2(\mathbb{R}^N,{\bf w}(x)dx)$ with integral kernel
 $$(x,y)\to \sum_{Q\in\mathbb{D}}\lambda_Q e_Q(x)f_Q(y),\quad x,y\in\mathbb{R}^N,$$
 where $\{e_Q\}_{Q\in\mathbb{D}}$ and $\{f_Q\}_{Q\in\mathbb{D}}$ are $(r_1,c_1)$-NWO and $(r_2,c_2)$-NWO sequences, respectively. We have
 $$\Big\|\Big\{\langle A e_Q,f_Q \rangle_{L_2(\mathbb{R}^N,{\bf w}(x)dx)}\Big\}_{Q\in\mathbb{D}}\Big\|_{l_{p,q}(\mathbb{D})}\leq c_{{\bf w},r_1,c_1,r_2,c_2,p,q}\|A\|_{\mathcal{L}_{p,q}(L_2(\mathbb{R}^N,{\bf w}(x)dx))}.$$
@@ -231,58 +231,19 @@ $$\int_{B(x,r)\cap(\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2})}w_{\theta}(y_1,\cdo
 \end{lemma}
 \begin{proof}
 Obviously,
-$$
-{\color{red}B(x,r)\cap
-(\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2})}
-\subset
-\Big(\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]\Big)
-\times B((x_{N_1+1},\cdots,x_N),r).
-$$
+$$B(x,r)\cap(\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2})
+\supset \Big(\times_{k=1}^{N_1}[x_k+\frac{r}{3N_1},x_k+\frac{r}{2N_1}]\Big)
+\times B((x_{N_1+1},\cdots,x_N),\frac{r}{2}).$$
 Thus,
-$$
-\int_{B(x,r)}w_{\theta}(y_1,\cdots,y_{N_1})dy
-{\color{red}
-=
-\int_{B(x,r)\cap
-(\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2})}
-w_{\theta}(y_1,\cdots,y_{N_1})dy}
-\leq
-$$
-$$
-\leq
-\int_{\big(\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]\big)
-\times B((x_{N_1+1},\cdots,x_N),r)}
-w_{\theta}(y_1,\cdots,y_{N_1})dy
-=
-$$
-$$
-=
-\int_{\times_{k=1}^{N_1}[(x_k-r)_+,x_k+r]}
-w_{\theta}(u)du
-\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}
-\leq
-$$
-$$
-\leq
-\int_{\times_{k=1}^{N_1}
-{\color{red}[(x_k-r)_+,x_k+r]}}
-w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})du
-\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}
-=
-$$
-$$
-=
-w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})
-\times\prod_{k=1}^{N_1}(x_k+r-(x_k-r)_+)
-\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}
-\leq
-$$
-$$
-\leq
-w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})
-\times(2r)^{N_1}
-\times {\rm Vol}(\mathbb{B}_{N_2})r^{N_2}.
-$$
+$$\int_{B(x,r)\cap (\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2})}w_{\theta}(y_1,\cdots,y_{N_1})dy\geq$$
+$$\geq \int_{\big(\times_{k=1}^{N_1}[x_k+\frac{r}{3N_1},x_k+\frac{r}{2N_1}]\big)
+\times B((x_{N_1+1},\cdots,x_N),\frac{r}{2})}w_{\theta}(y_1,\cdots,y_{N_1})dy\geq $$
+$$\geq \int_{\big(\times_{k=1}^{N_1}[x_k+\frac{r}{3N_1},x_k+\frac{r}{2N_1}]\big)\times B((x_{N_1+1},\cdots,x_N),\frac{r}{2})}w_{\theta}(x_1+\frac{r}{3N_1},\cdots,x_{N_1}+\frac{r}{3N_1})dy=$$
+$$=\int_{\big(\times_{k=1}^{N_1}[0,\frac{r}{6N_1}]\big)\times  B(0,\frac{r}{2})}w_{\theta}(x_1+\frac{r}{3N_1},\cdots,x_{N_1}+\frac{r}{3N_1})dy\geq$$
+$$\geq\int_{\big(\times_{k=1}^{N_1}[0,\frac{r}{6N_1}]\big)\times B(0,\frac{r}{2})}w_{\theta}(\frac{x_1+r}{3N_1},\cdots,\frac{x_{N_1}+r}{3N_1})dy=$$
+$$=w_{\theta}((x_1,\cdots,x_{N_1})+r\mathbf{1}_{N_1})
+\times(\frac{r}{6N_1})^{N_1}
+\times {\rm Vol}(\mathbb{B}_{N_2})(\frac{r}{2})^{N_2}\times (3N_1)^{-\sum_{A\subset\{1,\cdots,N_1\}}\theta_A}.$$
 \end{proof}
 
 
@@ -292,29 +253,13 @@ $$c_{\kappa}^{-1}w_{\theta}(x_1,\cdots,x_{N_1})\leq w(\Phi^{-1}(x))\leq c_{\kapp
 \begin{proof}
 For every $x\in\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}$ and for every $v\in R,$ we have
 $$\langle \Phi^{-1}(x),v\rangle=\langle x,(\Phi^{-1})^{\ast}(v)\rangle.$$
-The latter expression has the same sign (positive or negative) on the whole cone $\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Hence,
-$$
-{\color{red}
-\big((\Phi^{-1})^{\ast}(v)\big)_k
-\begin{cases}
-\geq 0,& 1\leq k\leq N_1,\\
-=0,& k>N_1
-\end{cases}
-\quad\text{or}\quad
-\big((\Phi^{-1})^{\ast}(v)\big)_k
-\begin{cases}
-\leq 0,& 1\leq k\leq N_1,\\
-=0,& k>N_1.
-\end{cases}
-}
-$$
-Let $A_v$ be the set of those $1\leq k\leq N_1$ with
-$\big((\Phi^{-1})^{\ast}(v)\big)_{{\color{red}k}}$
-being {\color{red}nonzero}. We, obviously, have
+The latter expression has the same sign (positive or negative) on the whole cone $\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Hence, either $(\Phi^{-1})^{\ast}v\geq0$ or $(\Phi^{-1})^{\ast}v\leq0$ for every $v\in R.$ In addition to that, $((\Phi^{-1})^{\ast}(v))_k=0$ for $v\in R$ and for $k>N_1.$ Let
+$$A_v=\big\{1\leq k\leq N_1:\ \big((\Phi^{-1})^{\ast}(v)\big)_k\neq0\big\}.$$
+We, obviously, have
 $$c_{\Phi,v}^{-1}\sum_{k\in A_v}x_k\leq |\langle \Phi^{-1}(x),v\rangle|\leq c_{\Phi,v}\sum_{k\in A_v}x_k,\quad x\in \mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$$
 Thus,
 $$\prod_{v\in R}c_{\Phi,v}^{-\kappa(v)}(\sum_{k\in A_v}x_k)^{\kappa(v)}
-\leq w({\color{red}\Phi^{-1}(x)})\leq
+\leq w(\Phi^{-1}(x))\leq
 \prod_{v\in R}c_{\Phi,v}^{\kappa(v)}(\sum_{k\in A_v}x_k)^{\kappa(v)},\quad x\in\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2}.$$
 This completes the proof.
 \end{proof}
@@ -341,7 +286,7 @@ This completes the proof.
 
 \section{Rochberg-Semmes based estimate}
 
-\begin{theorem}\label{RS-type theorem} Let $N\geq 3,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let ${\bf w}$ satisfy {\color{red} WHICH CONDITIONS?} and be such that
+\begin{theorem}\label{RS-type theorem} Let $N\geq 3,$ $1\leq N_1\leq N$ and $N_2=N-N_1.$ Let $\Omega=\mathbb{R}^{N_1}_+\times\mathbb{R}^{N_2}.$ Let measure ${\bf w}(x)dx$ be doubling on $\Omega$ and suppose that
 $$\sup_{x\in Q}{\bf w}(x)\leq c_{{\bf w}}\frac{{\bf w}(Q)}{m(Q)},\quad Q\in\mathbb{D},\quad Q\subset\Omega.$$
 Suppose that $K:\Omega\times\Omega\to\mathbb{C}$
 satisfies
@@ -349,8 +294,9 @@ $$\bigl|\partial_x^{\alpha}\partial_y^{\beta}K\bigr|(x,y)\leq c_{K,\alpha,\beta}
 Let $V$ be an integral operator on $L_2(\Omega,{\bf w}(x)dx)$ with integral kernel $K.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
 $$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\bf w}(x)dx))}\leq c_{K,{\bf w}}\| f\|_{L_N(\Omega)}.$$
 \end{theorem}
+
 \begin{lemma}\label{Keydecomposition}
-There exists a smooth function $\psi$ supported on $[-1,1]^N\backslash(-\frac14,\frac14)^N$ such that {\color{red}for every $x,y\in\mathbb{R}^N$ with $x\neq y$,}
+There exists a smooth function $\psi$ supported on $[-1,1]^N\backslash(-\frac14,\frac14)^N$ such that for every $x,y\in\mathbb{R}^N$ with $x\neq y,$
 $$1=\sum_{Q\in\mathbb{D}}\chi_Q(x)\chi_{3Q}(y)\psi(\frac{x-y}{\ell(Q)}).$$
 \end{lemma}
 \begin{proof} Choose $\rho\in C_c^{\infty}(\mathbb{R}^N)$ such that $\rho=1$ on $(-\frac12,\frac12)^N$ and $\rho=0$ outside $(-1,1)^N.$ Set $\psi(z)=\rho(z)-\rho(2z).$ Clearly,
@@ -374,17 +320,8 @@ This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{lem:Weyl-off-diagonal-kernel-NWO}
-Let $r>2.$ In the setting of Theorem \ref{RS-type theorem},
-{\color{red}suppose in addition that ${\bf w}(x)dx$ is doubling on $\Omega$.}
-We have
-$$
-f(x)K(x,y)=
-\sum_{k,l\in\mathbb{Z}^N}
-(1+|k|^2+|l|^2)^{-N-1}
-\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
-e_{k,l,Q}(x)f_{k,l,Q}(y),
-\quad {\color{red}x,y\in\Omega,\ x\neq y},
-$$
+Let $r>2.$ In the setting of Theorem \ref{RS-type theorem}, we have
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y),\quad x,y\in\Omega,\ x\neq y,$$
 where
 \begin{enumerate}[{\rm (i)}]
 \item $e_{k,l,Q}$ is supported in $Q$ and
@@ -392,196 +329,53 @@ $f_{k,l,Q}$ is supported in $3Q$ for every
 $Q\in\mathbb{D}$ with $Q\subset\Omega;$
 \item for every $k,l\in\mathbb{Z}^N$ and for every
 $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
-$$
-\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,{\bf w}(x)dx)}
-=
-\|f\|_{L_r(Q,{\bf w}(x)dx)};
-$$
+$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,{\bf w}(x)dx)}=\|f\|_{L_r(Q,{\bf w}(x)dx)};$$
 \item for every $k,l\in\mathbb{Z}^N$ and for every
 $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
-$$
-\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}
-\leq
-\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)};
-$$
+$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}\leq\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)};$$
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-For every $x,y\in \Omega$ {\color{red}with $x\neq y$,}
-we have
-$$
-K(x,y)=
-\sum_{Q\in\mathbb{D}}
-\chi_Q(x)\chi_{3Q}(y)K(x,y)
-\psi\left(\frac{x-y}{\ell(Q)}\right)
-$$
-$$
-=
-\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
-\chi_Q(x)\chi_{3Q}(y)K(x,y)
-\psi\left(\frac{x-y}{\ell(Q)}\right).
-$$
+For every $x,y\in \Omega$ with $x\neq y,$ we have
+$$K(x,y)=\sum_{Q\in\mathbb{D}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi\left(\frac{x-y}{\ell(Q)}\right)$$
+$$=\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\chi_Q(x)\chi_{3Q}(y)K(x,y)\psi\left(\frac{x-y}{\ell(Q)}\right).$$
 
 For every $Q\in\mathbb{D}$ with $3Q\subset\Omega,$
 define the map
-$$
-K_Q:
-[-\frac12,\frac12]^N
-\times[-\frac32,\frac32]^N
-\to\mathbb{C}
-$$
+$$K_Q:[-\frac12,\frac12]^N\times[-\frac32,\frac32]^N\to\mathbb{C}$$
 by setting
-$$
-K_Q(a,b)=
-K(c_Q+a\ell(Q),c_Q+b\ell(Q))\psi(a-b),
-\quad
-a\in[-\frac12,\frac12]^N,
-\quad
-b\in[-\frac32,\frac32]^N.
-$$
-If $Q\in\mathbb{D}$ {\color{red}with $Q\subset\Omega$}
-is such that $3Q\not\subset\Omega,$
-then the definition of $K_Q$ is the same,
-$a$ also runs through $[-\frac12,\frac12]^N,$
-but {\color{red}
-$b$ runs through
-$[-\frac32,\frac32]^N
-\cap\frac{\Omega-c_Q}{\ell(Q)}$.}
-{\color{red}
-Let $D_Q$ denote the domain of $K_Q$ in either case.}
+$$K_Q(a,b)=K(c_Q+a\ell(Q),c_Q+b\ell(Q))\psi(a-b),\quad a\in[-\frac12,\frac12]^N,\quad
+b\in[-\frac32,\frac32]^N.$$
+If $Q\in\mathbb{D}$ with $Q\subset\Omega$ is such that $3Q\not\subset\Omega,$ then the definition of $K_Q$ is the same, $a$ also runs through $[-\frac12,\frac12]^N,$ but $b$ runs through a smaller parallelepiped. {\it To lighten the notation, in this proof, we write $[-\frac32,\frac32]^N$ instead of the domain of $b.$}
 
-{\color{red}
-If $(a,b)\in D_Q$ and $\psi(a-b)\neq0,$
-then
-$$
-\frac14\ell(Q)
-\leq
-|c_Q+a\ell(Q)-c_Q-b\ell(Q)|
-\leq
-\sqrt N\ell(Q).
-$$
-Since
-$Q\subset B(c_Q+a\ell(Q),\sqrt N\ell(Q)),$
-the doubling property of ${\bf w}$ implies
-$$
-{\bf w}(Q)
-\lesssim_{{\bf w},N}
-{\bf w}\bigl(
-B(c_Q+a\ell(Q),
-|a-b|\ell(Q))
-\bigr).
-$$
-}
-It follows from the assumption on $K$
-{\color{red}and the doubling property of ${\bf w}$}
+It follows from the assumption on $K$ and from the doubling property of ${\bf w}(x)dx$ that
 that
-$$
-\|K_Q\|_{C^{2N+2}({\color{red}D_Q})}
-\leq
-\frac{c_{K,\theta}'\cdot\ell(Q)}
-{{\bf w}(Q)}.
-$$
-{\color{red}
-The domains $D_Q$ are rectangles of finitely many
-shapes, independent of $Q$.
-By the standard extension theorem for
-$C^{2N+2}$ functions on rectangles,
-the extension operators can be chosen with
-norms uniformly bounded in $Q$.}
+$$\|K_Q\|_{C^{2N+2}([-\frac12,\frac12]^N\times[-\frac32,\frac32]^N)}\leq\frac{c_{K,\theta}'\cdot\ell(Q)}{{\bf w}(Q)}.$$
 Hence, there exists an extension
 $K_Q:\mathbb{T}^N\times\mathbb{T}^N\to\mathbb{C}$
 such that
-$$
-\|K_Q\|_{C^{2N+2}(
-\mathbb{T}^N\times\mathbb{T}^N)}
-\leq
-\frac{c_{K,\theta}''\cdot\ell(Q)}
-{{\bf w}(Q)}.
-$$
+$$\|K_Q\|_{C^{2N+2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq\frac{c_{K,\theta}''\cdot\ell(Q)}{{\bf w}(Q)}.$$
 In particular,
-$$
-\|K_Q\|_{
-W^{{\color{red}2N+2}}
-(\mathbb{T}^N\times\mathbb{T}^N)}
-\leq
-\frac{c_{K,\theta}\cdot\ell(Q)}
-{{\bf w}(Q)}.
-$$
+$$\|K_Q\|_{W^{2N+2,2}(\mathbb{T}^N\times\mathbb{T}^N)}\leq\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)}.$$
 We may, therefore, write
-$$
-K_Q(a,b)=
-\sum_{k,l\in\mathbb{Z}^N}
-{\rm coef}_{k,l,Q}
-e^{i\langle k,a\rangle}
-e^{i\langle l,b\rangle},
-\quad a,b\in\mathbb{T}^N,
-$$
+$$K_Q(a,b)=\sum_{k,l\in\mathbb{Z}^N}{\rm coef}_{k,l,Q}e^{i\langle k,a\rangle}e^{i\langle l,b\rangle},\quad a,b\in\mathbb{T}^N,$$
 where
-$$
-\sum_{k,l\in\mathbb{Z}^N}
-(1+|k|^2+|l|^2)^{2N+2}
-|{\rm coef}_{k,l,Q}|^2
-\leq
-\Big(
-\frac{c_{K,\theta}\cdot\ell(Q)}
-{{\bf w}(Q)}
-\Big)^2.
-$$
+$$\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{2N+2}|{\rm coef}_{k,l,Q}|^2\leq\Big(\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)}\Big)^2.$$
 In particular,
-$$
-(1+|k|^2+|l|^2)^{N+1}
-\cdot|{\rm coef}_{k,l,Q}|
-\leq
-\frac{c_{K,\theta}\cdot\ell(Q)}
-{{\bf w}(Q)},
-\quad k,l\in\mathbb{Z}^N.
-$$
+$$(1+|k|^2+|l|^2)^{N+1}\cdot|{\rm coef}_{k,l,Q}|\leq\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)},\quad k,l\in\mathbb{Z}^N.$$
 
 We now set
-$$
-e_{k,l,Q}(x)=
-f(x)\chi_Q(x)
-e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},
-$$
-$$
-f_{k,l,Q}(y)=
-(1+|k|^2+|l|^2)^{N+1}
-{\rm coef}_{k,l,Q}
-\cdot
-\chi_{3Q}(y)
-e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle}.
-$$
+$$e_{k,l,Q}(x)=f(x)\chi_Q(x)e^{i\langle k,\frac{x-c_Q}{\ell(Q)}\rangle},$$
+$$f_{k,l,Q}(y)=(1+|k|^2+|l|^2)^{N+1}{\rm coef}_{k,l,Q}\cdot\chi_{3Q}(y)e^{i\langle l,\frac{y-c_Q}{\ell(Q)}\rangle}.$$
 This allows us to write
-$$
-f(x)K(x,y)=
-\sum_{k,l\in\mathbb{Z}^N}
-(1+|k|^2+|l|^2)^{-N-1}
-\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}
-e_{k,l,Q}(x)f_{k,l,Q}(y).
-$$
+$$f(x)K(x,y)=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}(y).$$
 
 Obviously,
-$$
-{\rm supp}(e_{k,l,Q})\subset Q,
-\quad
-{\rm supp}(f_{k,l,Q})\subset 3Q,
-$$
-$$
-\|e_{k,l,Q}\|_{
-L_r(\mathbb{R}^N,{\bf w}(x)dx)}
-=
-\|f\|_{L_r(Q,{\bf w}(x)dx)},
-$$
-$$
-\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}
-=
-(1+|k|^2+|l|^2)^{N+1}
-|{\rm coef}_{k,l,Q}|
-\leq
-\frac{c_{K,\theta}\cdot\ell(Q)}
-{{\bf w}(Q)}.
-$$
+$${\rm supp}(e_{k,l,Q})\subset Q,\quad{\rm supp}(f_{k,l,Q})\subset 3Q,$$
+$$\|e_{k,l,Q}\|_{L_r(\mathbb{R}^N,{\bf w}(x)dx)}=\|f\|_{L_r(Q,{\bf w}(x)dx)},$$
+$$\|f_{k,l,Q}\|_{L_{\infty}(\mathbb{R}^N)}=(1+|k|^2+|l|^2)^{N+1}|{\rm coef}_{k,l,Q}|
+\leq\frac{c_{K,\theta}\cdot\ell(Q)}{{\bf w}(Q)}.$$
 \end{proof}
 
 
@@ -594,17 +388,16 @@ $$(x,y)\to\sum_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}e_{k,l,Q}(x)f_{k,l,Q}
 By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, we have
 $$M_fV=\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}A_{k,l}.$$
 By the triangle inequality,
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\color{red}{\bf w}}(x)dx))}\leq$$
-$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\color{red}{\bf w}}(x)dx))}.$$
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\bf w}(x)dx))}\leq$$
+$$\leq \frac{N}{N-1}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1} \|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\bf w}(x)dx))}.$$
 
-By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences
+By Lemma \ref{lem:Weyl-off-diagonal-kernel-NWO}, the sequences\footnote{The quotient in the first sequence is defined to be zero whenever $f=0$ on $Q.$}
 $$\Big\{{\bf w}(Q)^{\frac1r-\frac12}\frac{e_{k,l,Q}}{\|f\|_{L_r(Q,{\bf w}(x)dx)}}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}},\quad \Big\{\frac{c_{K,\theta}^{-1}{\bf w}(Q)^{\frac12}}{\ell(Q)}f_{k,l,Q}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}$$
-{\color{red}where the quotient in the first sequence is defined to be zero whenever $\|f\|_{L_r(Q,{\bf w}(x)dx)}=0$,}
 are $(r,1)$-NWO and, respectively, $(\infty,3)$-NWO in the sense of Definition \ref{NWO def}. Using Lemma \ref{NWO lemma}, we conclude that
 $$\|A_{k,l}\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\bf w}(x)dx))}\leq$$
 $$\leq c_{\theta,r,1,\infty,3,N}c_{K,\theta}\Big\|\Big\{\ell(Q){\bf w}(Q)^{-\frac1r}\|f\|_{L_r(Q,{\bf w}(x)dx)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\Big\|_{N,\infty}.$$
 Therefore,
-$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2({\color{red}\Omega},{\bf w}(x)dx))}\leq$$
+$$\|M_fV\|_{\mathcal{L}_{N,\infty}(L_2(\Omega,{\bf w}(x)dx))}\leq$$
 $$\leq \frac{N}{N-1}c_{\theta,r,1,\infty,3,N}c_{K,\theta}\sum_{k,l\in\mathbb{Z}^N}(1+|k|^2+|l|^2)^{-N-1}\times$$
 $$\times \Big\|\Big\{\ell(Q){\bf w}(Q)^{-\frac1r}\|f\|_{L_r(Q,{\bf w}(x)dx)}\Big\}_{\substack{Q\in\mathbb{D}\\ Q\subset\Omega}}\Big\|_{N,\infty}.$$
 Obviously,
@@ -656,17 +449,9 @@ $$|(\partial_x^{\alpha}\partial_y^{\beta}h_t)(x,y)|\leq c_{\kappa,\alpha,\beta}t
 \end{proof}
 
 \begin{lemma}\label{zhijie kernel estimate}
-Suppose $s+N>2.$
-{\color{red}For every $x,y\in\mathbb{R}^N$ with $d(x,y)>0$,}
-we have
-$$
-\int_0^{\infty}t^{-\frac{s}{2}}
-w(B(x,t^{\frac12}))^{-1}
-\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt
-\leq
-c_{\kappa,s}w(B(x,d(x,y)))^{-1}
-\times d(x,y)^{2-s}.
-$$
+Suppose $s+N>2.$ For every $x,y\in\mathbb{R}^N$ with $d(x,y)>0,$ we have
+$$\int_0^{\infty}t^{-\frac{s}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt
+\leq c_{\kappa,s}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-s}.$$
 \end{lemma}
 \begin{proof} By \eqref{doublinginequality},
 $$w(B(x,t^{\frac12}))^{-1}\leq c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times
@@ -685,9 +470,9 @@ $$+c_{\kappa}^{(1)}w(B(x,d(x,y)))^{-1}\times d(x,y)^{2-s}\times\int_1^{\infty}t^
 
 The following lemma establishes derivative estimates for the integral kernels of Dunkl-Riesz transforms.
 
-\begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives} Let $N\geq2.$ For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^{\color{red}N}_+,$ we have
+\begin{lemma}\label{lem:Dunkl-Riesz-endpoint-derivatives} Let $N\geq2.$ For every pair of multi-indices $\alpha,\beta\in\mathbb{Z}^N_+,$ we have
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y)|
-\leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{w(B(x,d(x,y)))},\quad x,y\in\mathbb{R}^N{\color{red},\quad d(x,y)>0}.$$
+\leq c_{\kappa,\alpha,\beta}\frac{d(x,y)^{1-|\alpha|_1-|\beta|_1}}{w(B(x,d(x,y)))},\quad x,y\in\mathbb{R}^N,\quad d(x,y)>0.$$
 \end{lemma}
 \begin{proof} We have
 $$\Delta_{{\rm Dunkl}}^{-\frac12}=\pi^{-\frac12}\int_0^{\infty}e^{-t\Delta_{{\rm Dunkl}}}\frac{dt}{t^{\frac12}}.$$
@@ -695,7 +480,7 @@ Hence,
 $$K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(x,y)=\pi^{-\frac12}\int_0^{\infty}h_t(x,y)\frac{dt}{t^{\frac12}}.$$
 
 Using Lemma \ref{heat kernel estimate}, we estimate
-$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}})(x,y)|\leq$$
+$$|(\partial_x^{\alpha}\partial_y^{\beta}K_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y)|\leq$$
 $$\leq \frac{c_{\kappa,\alpha,\beta}}{\pi^{\frac12}}\int_0^{\infty}t^{-\frac{|\alpha|_1+|\beta|_1+1}{2}}w(B(x,t^{\frac12}))^{-1}\exp(-\frac{c_{\kappa}}{t}d(x,y)^2)dt.$$
 Applying Lemma \ref{zhijie kernel estimate} with $s=1+|\alpha|_1+|\beta|_1,$ we conclude
 $$|(\partial_x^{\alpha}\partial_y^{\beta}K_{\Delta_{{\rm Dunkl}}^{-\frac12}})(x,y)|\leq$$
@@ -706,14 +491,13 @@ The assertion follows immediately.
 \begin{lemma}\label{supremum vs average} For every $Q\in\mathbb{D}$ with $Q\subset\Omega,$ we have
 $$\sup_{x\in Q}w_{\theta}(x)\leq c_{\theta}\frac{w_{\theta}(Q)}{m(Q)}.$$
 \end{lemma}
-\begin{proof}
-{\color{red}If $\theta_{\varnothing}>0$, then $w_{\theta}\equiv0$ and the assertion is trivial. Hence, we assume $\theta_{\varnothing}=0$ and use the convention $0^0=1$.}
-We have
-$$w_{{\color{red}\theta}}(Q)\geq {\color{red}c_{\theta}m(Q)}\prod_{{\color{red}\varnothing\neq A\subset\{1,\cdots,N_1\}}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
+\begin{proof} Without loss of generality, we assume $\theta_{\varnothing}=0$ and use the convention $0^0=1.$ We have
+$$w_{\theta}(Q)\geq c_{\theta}m(Q)\prod_{\varnothing\neq A\subset\{1,\cdots,N_1\}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
 On the other hand, if $x\in Q,$ then $|x-c_Q|_{\infty}\leq \frac12\ell(Q)$ and, therefore,
 $$\sum_{k\in A}x_k\leq \frac{|A|}{2}\ell_Q+\sum_{k\in A}(c_Q)_k\leq N(\ell_Q+\sum_{k\in A}(c_Q)_k).$$
 Thus,
-$$w_{{\color{red}\theta}}(x)=\prod_{{\color{red}\varnothing\neq A\subset\{1,\cdots,N_1\}}}(\sum_{k\in A}x_k)^{\theta_A}\leq N^{\sum_{{\color{red}\varnothing\neq A\subset\{1,\cdots,N_1\}}}\theta_A}\prod_{{\color{red}\varnothing\neq A\subset\{1,\cdots,N_1\}}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
+$$w_{\theta}(x)=\prod_{\varnothing\neq A\subset\{1,\cdots,N_1\}}(\sum_{k\in A}x_k)^{\theta_A}\leq $$
+$$\leq N^{\sum_{\varnothing\neq A\subset\{1,\cdots,N_1\}}\theta_A}\prod_{\varnothing\neq A\subset\{1,\cdots,N_1\}}(\ell_Q+\sum_{k\in A}(c_Q)_k)^{\theta_A}.$$
 This completes the proof.
 \end{proof}
 
@@ -722,21 +506,21 @@ This completes the proof.
 $$\|M_f\Delta_{{\rm Dunkl}}^{-\frac12}\Big\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq c_{\kappa}\|f\|_{L_N(\mathbb{R}^N)}.$$
 \end{theorem}
 \begin{proof} It suffices to estimate, for every chamber $\Gamma$ and for every $g\in G,$ the operator $M_{\chi_{\Gamma}\cdot f}\Delta_{{\rm Dunkl}}^{-\frac12}M_{\chi_{g\Gamma}}.$ In other words, it suffices to estimate an operator with integral kernel
-$$f(x)K_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}}(x,y),\quad {\color{red}x\in\Gamma},\quad y\in g\Gamma,$$
+$$f(x)K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(x,y),\quad x\in\Gamma,\quad y\in g\Gamma,$$
 on the Hilbert space $L_2(\mathbb{R}^N,w(x)dx).$ In other words, it suffices to estimate an operator with integral kernel
-$$f(x)K_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}}(x,gy),\quad x,y\in\Gamma,$$
+$$f(x)K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(x,gy),\quad x,y\in\Gamma,$$
 on the Hilbert space $L_2(\Gamma,w(x)dx).$
 
 Let $N_1={\rm dim}({\rm span}(R)),$ $N_2=N-N_1$ and let $\Omega=\mathbb{R}_+^{N_1}\times\mathbb{R}^{N_2}.$ For a concrete chamber $\Gamma,$ let $\Phi:\mathbb{R}^N\to\mathbb{R}^N$ be a linear isomorphism given in Theorem \ref{phi theorem} so that $\Phi(\Gamma)=\Omega.$
 
 It suffices to estimate an operator with integral kernel
-$$f(\Phi^{-1}x)K_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+$$f(\Phi^{-1}x)K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
 on the Hilbert space $L_2(\Omega,w(\Phi^{-1}x)dx).$ Using Lemma \ref{s2 trivial lemma}, it suffices to estimate an operator with integral kernel
-$$f(\Phi^{-1}x)K_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
+$$f(\Phi^{-1}x)K_{\Delta_{{\rm Dunkl}}^{-\frac12}}(\Phi^{-1}x,g\Phi^{-1}y),\quad x,y\in\Omega,$$
 on the Hilbert space $L_2(\Omega,w_{\theta}(x)dx).$
 
 By Lemma \ref{lem:Dunkl-Riesz-endpoint-derivatives},
-$$\Big|\partial^{\alpha}_x\partial^{\beta}_yK_{{\color{red}\Delta_{{\rm Dunkl}}^{-\frac12}}}(\Phi^{-1}x,g\Phi^{-1}y)\Big|\leq c_{\alpha,\beta,\kappa}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega{\color{red},\quad x\neq y}.$$
+$$\Big|\partial^{\alpha}_x\partial^{\beta}_yK_{\Delta_{{\rm Dunkl}}^{-\frac12}}(\Phi^{-1}x,g\Phi^{-1}y)\Big|\leq c_{\alpha,\beta,\kappa}\frac{|x-y|^{1-|\alpha|_1-|\beta|_1}}{w_{\theta}(B(x,|x-y|))},\quad x,y\in\Omega,\quad x\neq y.$$
 The other assumptions in Theorem \ref{RS-type theorem} follow from Lemma \ref{supremum vs average}, Lemma \ref{s2 upper estimate} and Lemma \ref{s2 lower estimate}. The assertion follows now from Theorem \ref{RS-type theorem}.
 \end{proof}
 
@@ -762,26 +546,12 @@ $$\|\delta_vf\|_{L_N(\mathbb{R}^N)}\leq\int_{-1}^1\|D_t(\partial_Nf)\|_{L_N(\mat
 $$=\int_{-1}^1|t|^{-\frac1N}\|\partial_Nf\|_{L_N(\mathbb{R}^N)}dt=\frac{2N}{N-1}\|\partial_Nf\|_{L_N(\mathbb{R}^N)}.$$
 \end{proof}
 
-\begin{lemma}\label{from doi lemma}
-For every $N>1,$
-{\color{red}
-let $B$ be a positive injective self-adjoint operator
-on a Hilbert space $H$, and let $A\in B(H)$ satisfy
-$A(\operatorname{Dom}(B))\subset\operatorname{Dom}(B)$.
-Suppose that $B^{-1}[B^2,A]B^{-1}$, interpreted
-in the quadratic-form sense on vectors with bounded
-spectral support away from zero, extends to an operator
-in $\mathcal{L}_{N,\infty}(H)$.}
-We have
-$$
-\|[B,A]B^{-1}\|_{N,\infty}
-\leq
-c_N\|B^{-1}[B^2,A]B^{-1}\|_{N,\infty}.
-$$
+\begin{lemma}\label{from doi lemma} Let $N>1.$ Let $B$ be a positive self-adjoint operator on a Hilbert space $H$ with trivial kernel. Let $A\in B(H)$ satisfy $A:{\rm dom}(B)\to{\rm dom}(B).$ Suppose that $B^{-1}[B^2,A]B^{-1},$ interpreted in the quadratic-form sense on vectors with bounded spectral support away from zero, extends to an operator in $\mathcal{L}_{N,\infty}(H).$ We have
+$$\|[B,A]B^{-1}\|_{N,\infty}\leq c_N\|B^{-1}[B^2,A]B^{-1}\|_{N,\infty}.$$
 \end{lemma}
 
 \begin{proof}[Proof of Theorem \ref{main theorem} \eqref{mta}]
-We prove the assertion {\color{red}for $N\geq3$} under {\it a priori} restriction $f\in C^{\infty}_c(\mathbb{R}^N).$ Passing to the case of $f\in\dot{W}^{1,N}(\mathbb{R}^N)$ is standard (see e.g {\color{red} refer to our papers}).
+We prove the assertion for $N\geq3$ under {\it a priori} restriction $f\in C^{\infty}_c(\mathbb{R}^N).$ Passing to the case of $f\in\dot{W}^{1,N}(\mathbb{R}^N)$ is standard (see e.g {\color{red} refer to our papers}).
 
 We have
 $$[R_{{\rm Dunkl},j},M_f]=[T_{e_j}\Delta_{{\rm Dunkl}}^{-\frac12},M_f]=[T_{e_j},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}+T_{e_j}[\Delta_{{\rm Dunkl}}^{-\frac12},M_f]=$$
@@ -797,7 +567,7 @@ $$+\frac{N}{N-1}c_N\|\Delta_{{\rm Dunkl}}^{-\frac12}[\Delta_{{\rm Dunkl}},M_f]\D
 
 Note that
 $$\Delta_{{\rm Dunkl}}^{-\frac12}[\Delta_{{\rm Dunkl}},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}=$$
-$$={\color{red}-}\sum_{k=1}^N\Delta_{{\rm Dunkl}}^{-\frac12}[T_{e_k},M_f]R_{{\rm Dunkl},k}{\color{red}-}\sum_{k=1}^N R_{{\rm Dunkl},k}[T_{e_k},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}.$$
+$$=-\sum_{k=1}^N\Delta_{{\rm Dunkl}}^{-\frac12}[T_{e_k},M_f]R_{{\rm Dunkl},k}-\sum_{k=1}^N R_{{\rm Dunkl},k}[T_{e_k},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}.$$
 By triangle inequality,
 $$\|\Delta_{{\rm Dunkl}}^{-\frac12}[\Delta_{{\rm Dunkl}},M_f]\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
 $$\leq\frac{N}{N-1}\sum_{k=1}^N\|\Delta_{{\rm Dunkl}}^{-\frac12}[T_{e_k},M_f]\|_{\mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx))}+$$
