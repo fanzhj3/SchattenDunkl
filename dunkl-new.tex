@@ -1260,20 +1260,23 @@ belongs to $\mathcal{L}_{\frac{N}{s_1+s_2-n},\infty}(L_2(\mathbb{R}^N,w(x)dx));$
 \end{theorem}
 
 \begin{lemma}\label{commutator with delta} Let $f\in C^{\infty}_c(\mathbb{R}^N).$ We have
-$$[\Delta_{{\rm Dunkl}},M_f]=2\sum_{j=1}^NM_{\partial_jf}T_{e_j}+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)M_{\delta_vf}(T_{e_j}U_v+U_vT_{e_j})+\sum_{g\in G}M_{f_g}U_g.$$
+$$[\Delta_{{\rm Dunkl}},M_f]={\color{red}-}2\sum_{j=1}^NM_{\partial_jf}T_{e_j}{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)M_{\delta_vf}(T_{e_j}U_v+U_vT_{e_j})+\sum_{g\in G}M_{f_g}U_g.$$
 All functions on the right hand side are smooth and compactly supported.
 \end{lemma}
 \begin{proof} We have
-$$[\Delta_{{\rm Dunkl}},M_f]=\sum_{j=1}^NT_{e_j}[T_{e_j},M_f]+[T_{e_j},M_f]T_{e_j}=$$
-$$=\sum_{j=1}^NT_{e_j}M_{\partial_jf}+M_{\partial_jf}T_{e_j}+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(T_{e_j}M_{\delta_vf}U_v+M_{\delta_vf}U_vT_{e_j}\big)=$$
-$$=2\sum_{j=1}^NM_{\partial_jf}T_{e_j}+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(M_{\delta_vf}T_{e_j}U_v+M_{\delta_vf}U_vT_{e_j}\big)+$$
-$$+\sum_{j=1}^N[T_{e_j},M_{\partial_jf}]+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)[T_{e_j},M_{\delta_vf}]U_v=$$
-$$=2\sum_{j=1}^NM_{\partial_jf}T_{e_j}+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(M_{\delta_vf}T_{e_j}U_v+M_{\delta_vf}U_vT_{e_j}\big)+$$
-$$+\sum_{j=1}^NM_{\partial_j^2f}+\frac12\sum_{j=1}^N\sum_{v\in R}\alpha_j\kappa(v)M_{\delta_v(\partial_jf)}U_v+$$
-$$+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)M_{\partial_j(\delta_vf)}U_v+\frac14\sum_{j=1}^N\sum_{v,v'\in R}v_jv_j'\kappa(v)\kappa(v')M_{\delta_{v'}\delta_vf}U_{v'}U_v.$$
+$$[\Delta_{{\rm Dunkl}},M_f]={\color{red}-}\sum_{j=1}^N{\color{red}\big(}T_{e_j}[T_{e_j},M_f]+[T_{e_j},M_f]T_{e_j}{\color{red}\big)}=$$
+$$={\color{red}-}\sum_{j=1}^N{\color{red}\big(}T_{e_j}M_{\partial_jf}+M_{\partial_jf}T_{e_j}{\color{red}\big)}{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(T_{e_j}M_{\delta_vf}U_v+M_{\delta_vf}U_vT_{e_j}\big)=$$
+$$={\color{red}-}2\sum_{j=1}^NM_{\partial_jf}T_{e_j}{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(M_{\delta_vf}T_{e_j}U_v+M_{\delta_vf}U_vT_{e_j}\big)+$$
+$${\color{red}-}\sum_{j=1}^N[T_{e_j},M_{\partial_jf}]{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)[T_{e_j},M_{\delta_vf}]U_v=$$
+$$={\color{red}-}2\sum_{j=1}^NM_{\partial_jf}T_{e_j}{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)\big(M_{\delta_vf}T_{e_j}U_v+M_{\delta_vf}U_vT_{e_j}\big)+$$
+$${\color{red}-}\sum_{j=1}^NM_{\partial_j^2f}{\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}{\color{red}v_j}\kappa(v)M_{\delta_v(\partial_jf)}U_v+$$
+$${\color{red}-}\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)M_{\partial_j(\delta_vf)}U_v{\color{red}-}\frac14\sum_{j=1}^N\sum_{v,v'\in R}v_jv_j'\kappa(v)\kappa(v')M_{\delta_{v'}\delta_vf}U_{v'}U_v.$$
+{\color{red}Absorbing the signs of the zero-order terms into the functions $f_g$, we obtain the assertion.}
 \end{proof}
 
-\begin{lemma}\label{base of induction} For every $f\in C^{\infty}_c(\mathbb{R}^N),$ the operator
+\begin{lemma}\label{base of induction}
+{\color{red}Let $N\geq3$.}
+For every $f\in C^{\infty}_c(\mathbb{R}^N),$ the operator
 $$[\Delta_{{\rm Dunkl}},M_f](1+\Delta_{{\rm Dunkl}})^{-\frac12}$$
 is bounded and
 $$(1+\Delta_{{\rm Dunkl}})^{-1}[\Delta_{{\rm Dunkl}},M_f]\in \mathcal{L}_{N,\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
@@ -1285,7 +1288,9 @@ $$\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}},\quad 1\leq j\leq N,$$
 are bounded, the assertion follows from Lemma \ref{commutator with delta}.
 \end{proof}
 
-\begin{lemma}\label{step of induction} For every $n\in\mathbb{N},$ the operator\footnote{Commutators are repeated $n$ times}
+\begin{lemma}\label{step of induction}
+{\color{red}Let $N\geq3$ and $f\in C_c^\infty(\mathbb{R}^N)$.}
+For every $n\in\mathbb{N},$ the operator\footnote{Commutators are repeated $n$ times}
 $$[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots](1+\Delta_{{\rm Dunkl}})^{-\frac{n}{2}}$$
 is bounded.
 \end{lemma}
@@ -1296,8 +1301,8 @@ We prove the assertion by induction on $f.$ The $n$-th statement is "for every $
 ${\rm Expr}_n(f)$ is bounded." Base of induction is given by Lemma \ref{base of induction}. It suffices to prove the step of induction.
 
 Since each $T_{e_j}$ and each $U_v$ commutes with $\Delta_{{\rm Dunkl}},$ it follows from Lemma \ref{commutator with delta} that
-$${\rm Expr}_{n+1}(f)=2\sum_{j=1}^N{\rm Expr}_n(\partial_jf)\cdot \frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}+$$
-$$+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v){\rm Expr}_n(\delta_vf)\cdot (\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}U_v+U_v\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}})+$$
+$${\rm Expr}_{n+1}(f)={\color{red}-}2\sum_{j=1}^N{\rm Expr}_n(\partial_jf)\cdot \frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}{\color{red}-}$$
+$$\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v){\rm Expr}_n(\delta_vf)\cdot (\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}}U_v+U_v\frac{T_{e_j}}{(1+\Delta_{{\rm Dunkl}})^{\frac12}})+$$
 $$+\sum_{g\in G}{\rm Expr}_n(f_g)\cdot (1+\Delta_{{\rm Dunkl}})^{-\frac12}U_g.$$
 In each summand, the first factor is bounded by inductive assumption and the second factor is obviously bounded. This yields the step of induction and, hence, completes the proof.
 \end{proof}
@@ -1305,12 +1310,17 @@ In each summand, the first factor is bounded by inductive assumption and the sec
 \begin{proof}[Proof of Theorem \ref{smoothness theorem} \eqref{smootha}] The assertion follows from Lemma \ref{step of induction} and Hadamard 3 lines theorem.
 \end{proof}
 
-\begin{lemma}\label{second power lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
+\begin{lemma}\label{second power lemma}
+{\color{red}Let $N\geq3$.}
+For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
 $$M_f(1+\Delta_{{\rm Dunkl}})^{-1}\in \mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{lemma}
 \begin{proof} Set
 $$\mathcal{D}=\sum_{j=1}^N\gamma_j\otimes T_{e_j},$$
-where $\{\gamma_j\}_{j=1}^N$ are Pauli matrices. We have
+where {\color{red}$\{\gamma_j\}_{j=1}^N$ are matrices on $\mathbb{C}^{2^{\lfloor N/2\rfloor}}$ satisfying
+$\gamma_j^*=-\gamma_j$ and
+$\gamma_j\gamma_k+\gamma_k\gamma_j=-2\delta_{jk}I$.}
+We have
 $$1\otimes M_f(1+\Delta_{{\rm Dunkl}})^{-1}=(1\otimes M_f)(\mathcal{D}^2+1)^{-1}=(1\otimes M_f)(\mathcal{D}+i)^{-1}(\mathcal{D}-i)^{-1}=$$
 $$=(\mathcal{D}+i)^{-1}(1\otimes M_f)(\mathcal{D}-i)^{-1}+[1\otimes M_f,(\mathcal{D}+i)^{-1}](\mathcal{D}-i)^{-1}=$$
 $$=(\mathcal{D}+i)^{-1}(1\otimes M_f)(\mathcal{D}-i)^{-1}+(\mathcal{D}+i)^{-1}[\mathcal{D},1\otimes M_f](\mathcal{D}^2+1)^{-1}=$$
@@ -1323,9 +1333,9 @@ $$=(\mathcal{D}+i)^{-1}(1\otimes M_f)(\mathcal{D}-i)^{-1}+\sum_{j=1}^N(\mathcal{
 $$+\frac12\sum_{j=1}^N\sum_{v\in R}v_j\kappa(v)(\mathcal{D}+i)^{-1}(1\otimes M_{\delta_vf})(\mathcal{D}^2+1)^{-1}\cdot (\gamma_j\otimes U_v).$$
 Clearly,
 $$\|(\mathcal{D}+i)^{-1}(1\otimes M_f)(\mathcal{D}-i)^{-1}\|_{\mathcal{L}_{\frac{N}{2},\infty}(\mathbb{C}^{2^{\lfloor\frac{N}{2}\rfloor}}\otimes L_2(\mathbb{R}^N,w(x)dx))}=$$
-$$=\|(\Delta_{{\rm Dunkl}}+1)^{-\frac12}M_f(\Delta_{{\rm Dunkl}}+1)^{-\frac12}\|_{\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
-$$=\|\Delta_{{\rm Dunkl}}^{-\frac12}M_f\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
-$$\leq 2^{\frac2N}\|M_{|f|^{\frac12}}\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))}^2\leq$$
+$$={\color{red}2^{\frac{2\lfloor N/2\rfloor}{N}}}\|(\Delta_{{\rm Dunkl}}+1)^{-\frac12}M_f(\Delta_{{\rm Dunkl}}+1)^{-\frac12}\|_{\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
+$$\leq {\color{red}2^{\frac{2\lfloor N/2\rfloor}{N}}}\|\Delta_{{\rm Dunkl}}^{-\frac12}M_f\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{\frac{N}{2},\infty}(L_2(\mathbb{R}^N,w(x)dx))}\leq$$
+$$\leq {\color{red}2^{\frac{2\lfloor N/2\rfloor}{N}}}2^{\frac2N}\|M_{|f|^{\frac12}}\Delta_{{\rm Dunkl}}^{-\frac12}\|_{\mathcal{L}_{{\color{red}N},\infty}(L_2(\mathbb{R}^N,w(x)dx))}^2\leq$$
 $$\stackrel{Th.\ref{dunkl cwikel theorem}}{\leq}c_{N,\kappa}\||f|^{\frac12}\|_{L_N(\mathbb{R}^N)}^2=c_{N,\kappa}\|f\|_{L_{\frac{N}{2}}(\mathbb{R}^N)}$$
 and, similarly,
 $$\|(\mathcal{D}+i)^{-1}(1\otimes M_{\partial_jf})(\mathcal{D}^2+1)^{-1}\|_{\mathcal{L}_{\frac{N}{2},\infty}(\mathbb{C}^{2^{\lfloor\frac{N}{2}\rfloor}}\otimes L_2(\mathbb{R}^N,w(x)dx))}\leq c_{N,\kappa}\|\partial_jf\|_{L_{\frac{N}{2}}(\mathbb{R}^N)},$$
@@ -1334,7 +1344,9 @@ This completes the proof.
 \end{proof}
 
 
-\begin{lemma}\label{higher power lemma} For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
+\begin{lemma}\label{higher power lemma}
+{\color{red}Let $N\geq3$.}
+For every {\color{red}integer $n\geq1$ and every} $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
 $$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{n}{2}}\in \mathcal{L}_{\frac{N}{n},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{lemma}
 \begin{proof} We prove the assertion by induction on $f.$ The $n$-th statement is "for every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
@@ -1354,7 +1366,7 @@ In the first summand on the right hand side, the first factor belongs to the ide
 \end{proof}
 
 
-\begin{lemma}\label{smoothness integer lemma} Let $k,l\in\mathbb{Z}_+$ with $l>k.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
+\begin{lemma}\label{smoothness integer lemma} {\color{red}Let $N\geq3$.} Let $k,l\in\mathbb{Z}_+$ with $l>k.$ For every $f\in C^{\infty}_c(\mathbb{R}^N),$ we have
 $$T_{e_{m_1}}\cdots T_{e_{m_k}}M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}}$$
 belongs to $\mathcal{L}_{\frac{N}{l-k},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
 \end{lemma}
@@ -1370,7 +1382,9 @@ In each summand on the right hand side, the first factor belongs to the ideal $\
 \end{proof}
 
 
-\begin{lemma}\label{smoothness final lemma} Let $s_1,s_2\in\mathbb{R}$ be such that $s_1+s_2>0.$ We have
+\begin{lemma}\label{smoothness final lemma}
+{\color{red}Let $N\geq3$ and $f\in C_c^\infty(\mathbb{R}^N)$.}
+Let $s_1,s_2\in\mathbb{R}$ be such that $s_1+s_2>0.$ We have
 $$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}} M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{s_2}{2}}$$
 belongs to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
 \end{lemma}
@@ -1386,18 +1400,67 @@ $$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{l}{2}},\quad T_{e_{m_1}}\cdots T_{e_{m_k}}
 belong to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$
 This is established in Lemma \ref{higher power lemma} and Lemma \ref{smoothness integer lemma}, respectively. Hence, the claim is proved for $s_1,s_2\in\mathbb{Z}$ and $s_1\leq0.$
 
-If $s_2\leq 0,$ then the claim follows from that for $s_2\leq0$ by taking the adjoint. If $s_1,s_2\geq0,$ then, according to Lemma \ref{smoothness integer lemma} the operators
+If $s_2\leq 0,$ then the claim follows from that for {\color{red}$s_1\leq0$} by taking the adjoint. If $s_1,s_2\geq0,$ then, according to Lemma \ref{smoothness integer lemma} the operators
 $$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1+s_2}{2}} M_f,\quad M_f(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1+s_2}{2}}$$
 belong to $\mathcal{L}_{\frac{N}{s_1+s_2},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$ The claim for $s_1,s_2\geq0$ follows now from the Hadamard 3 lines theorem.
 
-{\bf Step 2:} The general case follows now from Step 1 by complex interpolation.
+{\bf Step 2:} {\color{red}
+Set $A=1+\Delta_{{\rm Dunkl}}.$
+For every integer $m\geq0,$ we have
+$$
+A^mM_fA^{-m}
+=
+\sum_{j=0}^m\binom{m}{j}
+\underbrace{
+[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},
+\cdots,[\Delta_{{\rm Dunkl}},M_f]\cdots]]
+}_{j\text{ commutators}}
+A^{-j},
+$$
+where the summand corresponding to $j=0$ is $M_f$.
+By Lemma \ref{step of induction}, every summand on the right hand side is bounded. Thus,
+$$
+A^mM_fA^{-m}\in B(L_2(\mathbb{R}^N,w(x)dx)),
+\qquad m\geq0.
+$$
+Taking adjoints and applying the Hadamard 3 lines theorem, we obtain
+$$
+A^tM_fA^{-t}\in B(L_2(\mathbb{R}^N,w(x)dx)),
+\qquad t\in\mathbb{R}.
+$$
+Consequently, for every $s_1,s_2\in\mathbb{R}$ with
+$s_1+s_2=0,$ we have
+$$
+A^{-\frac{s_1}{2}}M_fA^{-\frac{s_2}{2}}
+\in B(L_2(\mathbb{R}^N,w(x)dx)).
+$$
+
+On the other hand, Step 1 and complex interpolation imply that, for every integer $m\geq1$ and every $s_1\in\mathbb{R},$
+$$
+A^{-\frac{s_1}{2}}M_f
+A^{-\frac{m-s_1}{2}}
+\in
+\mathcal{L}_{\frac{N}{m},\infty}
+(L_2(\mathbb{R}^N,w(x)dx)).
+$$
+Indeed, this follows by interpolating between two consecutive integer values of $s_1$ while keeping $s_1+s_2=m$.
+
+Finally, interpolating between two consecutive nonnegative integer values of $s_1+s_2$, using the preceding boundedness estimate when $s_1+s_2=0$, yields
+$$
+A^{-\frac{s_1}{2}}M_fA^{-\frac{s_2}{2}}
+\in
+\mathcal{L}_{\frac{N}{s_1+s_2},\infty}
+(L_2(\mathbb{R}^N,w(x)dx)),
+\qquad s_1+s_2>0.
+$$
+}
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{smoothness theorem} \eqref{smoothb}] Choose $\phi\in C^{\infty}_c(\mathbb{R}^N)$ such that $(f\circ U_g)\cdot\phi=f\circ U_g$ for every $g\in G.$ It follows that
 $$[\Delta_{{\rm Dunkl}},M_f]=[\Delta_{{\rm Dunkl}},M_f]M_{\phi}.$$
 We have
-$$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}}[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots](1+\Delta_{{\rm Dunkl}})^{-\frac{s}{2}}=$$
-$$=(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}}[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots]M_{\phi}(1+\Delta_{{\rm Dunkl}})^{-\frac{s}{2}}=$$
+$$(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}}[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots](1+\Delta_{{\rm Dunkl}})^{-\frac{{\color{red}s_2}}{2}}=$$
+$$=(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}}[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots]M_{\phi}(1+\Delta_{{\rm Dunkl}})^{-\frac{{\color{red}s_2}}{2}}=$$
 $$=(1+\Delta_{{\rm Dunkl}})^{-\frac{s_1}{2}}[\Delta_{{\rm Dunkl}},[\Delta_{{\rm Dunkl}},[\cdots,M_f]\cdots](1+\Delta_{{\rm Dunkl}})^{-\frac{n-s_1}{2}}\times$$
 $$\times (1+\Delta_{{\rm Dunkl}})^{-\frac{s_1-n}{2}}M_{\phi}(1+\Delta_{{\rm Dunkl}})^{-\frac{s_2}{2}}.$$
 The first factor is bounded by Theorem \ref{smoothness theorem} \eqref{smootha}. The second factor belongs to $\mathcal{L}_{\frac{N}{s_1+s_2-n},\infty}(L_2(\mathbb{R}^N,w(x)dx))$ by Lemma \ref{smoothness final lemma}.
