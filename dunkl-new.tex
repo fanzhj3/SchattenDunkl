@@ -1482,7 +1482,7 @@ $$[(1+\Delta_{{\rm Dunkl}})^{\frac12},M_f](1+\Delta_{{\rm Dunkl}})^{-\frac12}-\f
 $$\in\mathcal{L}_{\frac{2N}{3},\infty}(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{theorem}
 
-\begin{lemma}\label{cgrs-like abstract lemma} Let $B\geq 1.$ Suppose
+\begin{lemma}\label{cgrs-like abstract lemma} Let $B\geq 1.$ {\color{red}[Need the priori assumption on $A$ and $B$ here]}Suppose
 $$B^{-1}[B^2,[B^2,A]]B^{-\frac{5}{2}}\in\mathcal{L}_{\frac{2N}{3},\infty}.$$
 We have
 $$[B,A]B^{-1}-\frac12[B^2,A]B^{-2}\in\mathcal{L}_{\frac{2N}{3},\infty}.$$
@@ -1522,32 +1522,176 @@ converges absolutely in $\mathcal{L}_{\frac{2N}{3},\infty}$ and the assertion fo
 $$M_f(1+\Delta_{{\rm Dunkl}})^{-\frac12}-M_f(1+M_{w^{-\frac12}}\Delta M_{w^{\frac12}})^{-\frac12}\in (\mathcal{L}_{N,\infty})_0(L_2(\mathbb{R}^N,w(x)dx)).$$
 \end{theorem}
 
-\begin{lemma}\label{s10 abstract lemma} Let $A,B_1,B_2$ be such that $B_1,B_2\geq1.$ Suppose that
+\begin{lemma}\label{s10 abstract lemma}
+Let $A,B_1,B_2$ be such that $B_1,B_2\geq1.$
+{\color{red}
+Assume that $B_1,B_2$ are positive self-adjoint
+operators on a Hilbert space $H$, that $A\in B(H)$
+satisfies
+$A(\operatorname{Dom}(B_1))\subset\operatorname{Dom}(B_1)$,
+and that, for every $\lambda\geq0$,
+$$
+\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_2}
+=
+\frac1{\lambda^2+B_1}
+(B_2-B_1)
+\frac1{\lambda^2+B_2}
+$$
+holds in the sense of bounded extensions.
+}
+Suppose that
 \begin{enumerate}[{\rm (i)}]
-\item\label{s10aa} $A(B_2-B_1)B_2^{-\frac12},$ $[B_1,A]B_1^{-\frac12}$ and $[B_1,A]B_2^{-\frac12}$ are bounded;
-\item\label{s10ab} there exists $A'$ with $B_1^{-\frac34}A'\in\mathcal{L}_{\frac{2N}{3},\infty}$ such that $A=A'A$ and $[B_1,A]=A'[B_1,A];$
+\item\label{s10aa}
+$A(B_2-B_1)B_2^{-\frac12},$
+$[B_1,A]B_1^{-\frac12}$ and
+$[B_1,A]B_2^{-\frac12}$ are bounded;
+\item\label{s10ab}
+there exists {\color{red}a bounded operator} $A'$
+with
+$B_1^{-\frac34}A'\in
+\mathcal{L}_{\frac{2N}{3},\infty}$
+such that
+$A=A'A$ and $[B_1,A]=A'[B_1,A];$
 \end{enumerate}
 We have
-$$AB_1^{-\frac12}-AB_2^{-\frac12}\in\mathcal{L}_{\frac{2N}{3},\infty}.$$
+$$
+AB_1^{-\frac12}-AB_2^{-\frac12}
+\in\mathcal{L}_{\frac{2N}{3},\infty}.
+$$
 \end{lemma}
-\begin{proof} We have
-$$B_k^{-\frac12}=\frac{2}{\pi}\int_0^{\infty}\frac{d\lambda}{\lambda^2+B_k},\quad k=1,2.$$
+
+\begin{proof}
+We have
+$$
+B_k^{-\frac12}
+=
+\frac{2}{\pi}
+\int_0^{\infty}
+\frac{d\lambda}{\lambda^2+B_k},
+\quad k=1,2.
+$$
 Thus,
-$$AB_1^{-\frac12}-AB_2^{-\frac12}=\int_0^{\infty}A(\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_2})d\lambda.$$
+$$
+AB_1^{-\frac12}-AB_2^{-\frac12}
+=
+{\color{red}\frac{2}{\pi}}
+\int_0^{\infty}
+A\left(
+\frac1{\lambda^2+B_1}
+-
+\frac1{\lambda^2+B_2}
+\right)d\lambda.
+$$
 Obviously,
-$$A(\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_2})=A\frac1{\lambda^2+B_1}(B_2-B_1)\frac1{\lambda^2+B_2}=$$
-$$=\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}+\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_1}(B_2-B_1)\frac1{\lambda^2+B_2}=$$
-$$=\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}+\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_1}-\frac1{\lambda^2+B_1}[B_1,A]\frac1{\lambda^2+B_2}.$$
+$$
+A\left(
+\frac1{\lambda^2+B_1}
+-
+\frac1{\lambda^2+B_2}
+\right)
+=
+A\frac1{\lambda^2+B_1}
+(B_2-B_1)
+\frac1{\lambda^2+B_2}
+=
+$$
+$$
+=
+\frac1{\lambda^2+B_1}
+A(B_2-B_1)
+\frac1{\lambda^2+B_2}
++
+\frac1{\lambda^2+B_1}
+[B_1,A]
+\frac1{\lambda^2+B_1}
+(B_2-B_1)
+\frac1{\lambda^2+B_2}
+=
+$$
+$$
+=
+\frac1{\lambda^2+B_1}
+A(B_2-B_1)
+\frac1{\lambda^2+B_2}
++
+\frac1{\lambda^2+B_1}
+[B_1,A]
+\frac1{\lambda^2+B_1}
+-
+\frac1{\lambda^2+B_1}
+[B_1,A]
+\frac1{\lambda^2+B_2}.
+$$
 
 Consider, for example, the first summand. We write
-$$\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}=\frac1{\lambda^2+B_1}A'\cdot A(B_2-B_1)\frac1{\lambda^2+B_2}=$$
-$$=\frac{B_1^{\frac34}}{\lambda^2+B_1}\cdot B_1^{-\frac34}A'\cdot A(B_2-B_1)B_2^{-\frac12}\cdot\frac{B_2^{\frac12}}{\lambda^2+B_2}.$$
+$$
+\frac1{\lambda^2+B_1}
+A(B_2-B_1)
+\frac1{\lambda^2+B_2}
+=
+\frac1{\lambda^2+B_1}
+A'\cdot A(B_2-B_1)
+\frac1{\lambda^2+B_2}
+=
+$$
+$$
+=
+\frac{B_1^{\frac34}}{\lambda^2+B_1}
+\cdot B_1^{-\frac34}A'
+\cdot A(B_2-B_1)B_2^{-\frac12}
+\cdot\frac{B_2^{\frac12}}{\lambda^2+B_2}.
+$$
 Thus,
-$$\|\frac1{\lambda^2+B_1}A(B_2-B_1)\frac1{\lambda^2+B_2}\|_{\frac{3N}{4},\infty}\leq$$
-$$\leq\|\frac{B_1^{\frac34}}{\lambda^2+B_1}\|_{\infty}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot\|\frac{B_2^{\frac12}}{\lambda^2+B_2}\|_{\infty}\leq$$
-$$\leq\sup_{t\geq1}\frac{t^{\frac34}}{\lambda^2+t}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot\sup_{t\geq1}\frac{t^{\frac12}}{\lambda^2+t}\leq$$
-$$\leq(\lambda^2+1)^{-\frac14}\cdot\|B_1^{-\frac34}A'\|_{\frac{3N}{4},\infty}\cdot\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}\cdot(\lambda^2+1)^{-\frac12}.$$
-Hence, the first summand is absolutely integrable in $\mathcal{L}_{\frac{3N}{4},\infty}.$ Similarly, so are the other summands. This completes the proof.
+$$
+\left\|
+\frac1{\lambda^2+B_1}
+A(B_2-B_1)
+\frac1{\lambda^2+B_2}
+\right\|_{{\color{red}\frac{2N}{3}},\infty}
+\leq
+$$
+$$
+\leq
+\left\|
+\frac{B_1^{\frac34}}{\lambda^2+B_1}
+\right\|_{\infty}
+\cdot
+\|B_1^{-\frac34}A'\|_{{\color{red}\frac{2N}{3}},\infty}
+\cdot
+\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}
+\cdot
+\left\|
+\frac{B_2^{\frac12}}{\lambda^2+B_2}
+\right\|_{\infty}
+\leq
+$$
+$$
+\leq
+\sup_{t\geq1}
+\frac{t^{\frac34}}{\lambda^2+t}
+\cdot
+\|B_1^{-\frac34}A'\|_{{\color{red}\frac{2N}{3}},\infty}
+\cdot
+\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}
+\cdot
+\sup_{t\geq1}
+\frac{t^{\frac12}}{\lambda^2+t}
+\leq
+$$
+$$
+\leq
+(\lambda^2+1)^{-\frac14}
+\cdot
+\|B_1^{-\frac34}A'\|_{{\color{red}\frac{2N}{3}},\infty}
+\cdot
+\|A(B_2-B_1)B_2^{-\frac12}\|_{\infty}
+\cdot
+(\lambda^2+1)^{-\frac12}.
+$$
+Hence, the first summand is absolutely integrable
+in $\mathcal{L}_{{\color{red}\frac{2N}{3}},\infty}.$
+Similarly, so are the other summands.
+This completes the proof.
 \end{proof}
 
 \begin{lemma}\label{s10 verification lemma} Let $P$ be a differential operator of degree $1$ with smooth compactly supported coefficients. Suppose that the coefficients are supported away from the hyperplanes $\{\{x:\ \langle x,v\rangle=0\}\}_{v\in R}.$ The operators
